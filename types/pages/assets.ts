@@ -1,5 +1,5 @@
-import { ExtractValFromObj } from "./utils/extractors";
-import { AllCurNames, AllCurNamesScope } from "../data/data-unions";
+import { ExtractValFromObj } from "../utils/extractors";
+import { AllCurNames, AllCurNamesScope } from "../../data/data-unions";
 
 export type TIconPaths = "/icon-checkmark" | "/icon-unaviable";
 
@@ -44,7 +44,6 @@ export type AssetsTableItem<T extends AllCurNamesScope> = {
 };
 
 export type AssetsTableItems = AssetsTableItem<AllCurNamesScope>[];
-
 
 //*  USAGE
 

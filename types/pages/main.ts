@@ -1,5 +1,5 @@
-import { ExtractValFromObj } from "./utils/extractors";
-import { AllCurNames, AllCurNamesScope } from "../data/data-unions";
+import { ExtractValFromObj } from "../utils/extractors";
+import { AllCurNames, AllCurNamesScope } from "../../data/data-unions";
 
 export type MainLinks = {
     label: string;
@@ -90,9 +90,11 @@ export type MainAdvantItem<T extends string> = {
     content: string;
 };
 
-const mainAdvantItem = {
+export type MainAdvantItems = MainAdvantItem<MainAdvantIconPaths>[];
+
+const mainAdvantItem: MainAdvantItem<MainAdvantIconPaths> = {
     id: 5,
     imgPath: "/icon-layers",
     title: "jjgfjjjfgbjhg",
     content: "ueitrtetiihnkgfg",
-}
+};
