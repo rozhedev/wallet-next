@@ -1,13 +1,13 @@
-import { AllCurNamesScope } from "@/data/data-unions";
-import { ExtractValFromObj} from '@/types/utils/extractors';
+import { AllCurNotationsScope } from "@/data/currencies";
+import { ExtractValFromObj } from "@/types/utils/extractors";
 
-export type CabinetAssetItem<T extends AllCurNamesScope> = {
+export type CabinetAssetItem<T extends AllCurNotationsScope> = {
     id: number;
     curIcon: `img/icons/crypto/${T}.svg`;
     curName: T;
 };
 
-export type CabinetBalanceItem<T extends CabinetAssetItem<AllCurNamesScope>> = {
+export type CabinetBalanceItem<T extends CabinetAssetItem<AllCurNotationsScope>> = {
     id: number;
     curIcon: ExtractValFromObj<T, "curIcon">;
     curName: ExtractValFromObj<T, "curName">;

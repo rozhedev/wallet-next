@@ -1,9 +1,8 @@
-import { AllCurNamesScope } from "@/data/data-unions";
-import { ExtractValFromObj, combine } from "@/types/utils/extractors";
+import { AllCurNotationsScope, WalletFormats } from "@/data/currencies";
 
-type recepientValues = `bc${string}` | `0x${string}` | `${string} &#10142; ${string}` | "Internal transaction";
+type recepientValues = WalletFormats | `${string} &#10142; ${string}` | "Internal transaction";
 
-export type HistoryTableItem<T extends AllCurNamesScope> = {
+export type UserHistoryItem<T extends AllCurNotationsScope> = {
     id: number;
     operationType: "Replenish" | "Withdraw" | "Exchange" | "Airdrop";
     curName: T;
@@ -17,4 +16,4 @@ export type HistoryTableItem<T extends AllCurNamesScope> = {
     time: string;
 };
 
-export type HistoryTableItems = HistoryTableItem<AllCurNamesScope>[];
+export type UserHistoryItems = UserHistoryItem<AllCurNotationsScope>[];

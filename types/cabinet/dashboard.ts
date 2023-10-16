@@ -1,6 +1,6 @@
-import { AllCurNamesScope } from "@/data/data-unions";
+import { AllCurNotationsScope } from "@/data/currencies";
 import { ExtractValFromObj } from "@/types/utils/extractors";
-import { HistoryTableItem } from "@/types/cabinet/history";
+import { UserHistoryItem } from "@/types/cabinet/history";
 
 export type DashboardStatItem = {
     id: number;
@@ -11,7 +11,7 @@ export type DashboardStatItem = {
 
 export type DashboardStatItems = DashboardStatItem[];
 
-export type DashboardActionItem<T extends HistoryTableItem<AllCurNamesScope>> = {
+export type DashboardHistoryItem<T extends UserHistoryItem<AllCurNotationsScope>> = {
     id: number;
     modifClass: "get" | "send" | "wait" | "info";
     imgPath: `img/icons/interface/${string}.svg`;
@@ -23,4 +23,4 @@ export type DashboardActionItem<T extends HistoryTableItem<AllCurNamesScope>> = 
     curName: ExtractValFromObj<T, "curName">;
 };
 
-export type DashboardActionItems = DashboardActionItem<HistoryTableItem<AllCurNamesScope>>[];
+export type DashboardHistoryItems = DashboardHistoryItem<UserHistoryItem<AllCurNotationsScope>>[];

@@ -1,5 +1,5 @@
 import { ExtractValFromObj } from "../utils/extractors";
-import { AllCurNames, AllCurNamesScope } from "../../data/data-unions";
+import { AllCurNotations, AllCurNotationsScope } from "../../data/currencies";
 
 export type TIconPaths = "/icon-checkmark" | "/icon-unaviable";
 
@@ -13,7 +13,7 @@ type TIconsItemConfig = {
     stacking: boolean;
 };
 
-type TIconsPathsItem<T extends AllCurNamesScope> = {
+type TIconsPathsItem<T extends AllCurNotationsScope> = {
     id: number;
     // * curName need for correct icon manage
     curName: T;
@@ -26,7 +26,7 @@ type TIconsPathsItem<T extends AllCurNamesScope> = {
     stacking: TIconPaths;
 };
 
-type TIconsPathsItemPure = Omit<TIconsPathsItem<AllCurNamesScope>, "id" | "curName">;
+type TIconsPathsItemPure = Omit<TIconsPathsItem<AllCurNotationsScope>, "id" | "curName">;
 type TIconsPathsItems = TIconsPathsItemPure[];
 
 export function checkIconStatus(isCurAvailable: boolean): TIconPaths {
@@ -35,7 +35,7 @@ export function checkIconStatus(isCurAvailable: boolean): TIconPaths {
     return path;
 }
 
-export type AssetsTableItem<T extends AllCurNamesScope> = {
+export type AssetsTableItem<T extends AllCurNotationsScope> = {
     id: number;
     order: number;
     curIcon: `img/icons/crypto/${T}.svg`;
@@ -43,7 +43,7 @@ export type AssetsTableItem<T extends AllCurNamesScope> = {
     iconPaths: TIconsPathsItemPure;
 };
 
-export type AssetsTableItems = AssetsTableItem<AllCurNamesScope>[];
+export type AssetsTableItems = AssetsTableItem<AllCurNotationsScope>[];
 
 //*  USAGE
 
@@ -57,7 +57,7 @@ const iconStatusConfig: TIconsItemConfig = {
     stacking: true,
 };
 
-export const assetsTableItem: AssetsTableItem<AllCurNamesScope> = {
+export const assetsTableItem: AssetsTableItem<AllCurNotationsScope> = {
     id: 2,
     order: 2,
     curIcon: "img/icons/crypto/ethereum-ETH.svg",

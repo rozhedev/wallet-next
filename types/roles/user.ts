@@ -1,27 +1,23 @@
-import { AllCurNamesScope } from "@/data/data-unions";
+import { UserBalances } from "@/data/currencies";
 
 export type UserAuthInfo = {
+    id: number;
     username: string;
     email: string;
+    country: string;
     passphrase: string[];
-}
-
-export type Useragent = {
-    appVersion: string;
-    cookieEnebled: boolean;
-    language: string;
-    platform: string;
-    ip: string;
-}
-
-export type LinkedUserData = {
-    refLink: `https://domain.com/${string}`;
-}
-
-export type UserAppConfig = {
-    addedCurrencies: AllCurNamesScope[];
     isFinishedSurvey: boolean;
     isConnectedWallet: boolean;
-    balances: number[];
-}
+    balances: UserBalances;
+};
 
+export type Useragent = {
+    id: number;
+    appVersion: string;
+    cookieEnebled: boolean;
+    // * get country from browser language
+    country: string;
+    platform: string;
+    ip: string;
+    refLink: `https://domain.com/${string}`;
+};
