@@ -1,9 +1,9 @@
 import { ExtractValFromObj } from "../utils/extractors";
 import { AllCurNotations, AllCurNotationsScope } from "../../data/currencies";
 
-export type TIconPaths = "/icon-checkmark" | "/icon-unaviable";
+export type IconPaths = "/icon-checkmark" | "/icon-unaviable";
 
-type TIconsItemConfig = {
+type IconsItemConfig = {
     sendPC: boolean;
     receivePC: boolean;
     sendPhone: boolean;
@@ -13,24 +13,24 @@ type TIconsItemConfig = {
     stacking: boolean;
 };
 
-type TIconsPathsItem<T extends AllCurNotationsScope> = {
+type IconsPathsItem<T extends AllCurNotationsScope> = {
     id: number;
     // * curName need for correct icon manage
     curName: T;
-    sendPC: TIconPaths;
-    receivePC: TIconPaths;
-    sendPhone: TIconPaths;
-    receivePhone: TIconPaths;
-    exchange: TIconPaths;
-    buy: TIconPaths;
-    stacking: TIconPaths;
+    sendPC: IconPaths;
+    receivePC: IconPaths;
+    sendPhone: IconPaths;
+    receivePhone: IconPaths;
+    exchange: IconPaths;
+    buy: IconPaths;
+    stacking: IconPaths;
 };
 
-type TIconsPathsItemPure = Omit<TIconsPathsItem<AllCurNotationsScope>, "id" | "curName">;
-type TIconsPathsItems = TIconsPathsItemPure[];
+type IconsPathsItemPure = Omit<IconsPathsItem<AllCurNotationsScope>, "id" | "curName">;
+type IconsPathsItems = IconsPathsItemPure[];
 
-export function checkIconStatus(isCurAvailable: boolean): TIconPaths {
-    let path: TIconPaths;
+export function checkIconStatus(isCurAvailable: boolean): IconPaths {
+    let path: IconPaths;
     isCurAvailable ? (path = "/icon-checkmark") : (path = "/icon-unaviable");
     return path;
 }
@@ -40,14 +40,14 @@ export type AssetsTableItem<T extends AllCurNotationsScope> = {
     order: number;
     curIcon: `img/icons/crypto/${T}.svg`;
     curName: T;
-    iconPaths: TIconsPathsItemPure;
+    iconPaths: IconsPathsItemPure;
 };
 
 export type AssetsTableItems = AssetsTableItem<AllCurNotationsScope>[];
 
 //*  USAGE
 
-const iconStatusConfig: TIconsItemConfig = {
+const iconStatusConfig: IconsItemConfig = {
     sendPC: true,
     receivePC: false,
     sendPhone: true,

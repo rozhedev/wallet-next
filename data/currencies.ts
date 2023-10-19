@@ -406,3 +406,8 @@ export type UserBalances = {
     [AllCurNames.xrp]: UserBalance;
     [AllCurNames.zcash]: UserBalance;
 };
+
+// * Other common data
+
+export type RefLink = `https://domain.com/${string}`;
+
