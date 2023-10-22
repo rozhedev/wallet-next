@@ -1,17 +1,15 @@
 import { ExtractValFromObj } from "../utils/extractors";
-import { AllCurNotations, AllCurNotationsScope } from "../../data/currencies";
+import { AllCurNames, AllCurNotations, AllCurNotationsScope, CurIconPath } from "../../data/currencies";
 
 export type MainLinks = {
     label: string;
     path: `/${string}`;
-    // getBreadcrumbs: () => string,
 }[];
 
 const aviableLinks: MainLinks = [
     {
         label: "Home",
         path: "/",
-        // getBreadcrumbs: () => "",
     },
     {
         label: "Assets",
@@ -48,18 +46,18 @@ const aviableLinks: MainLinks = [
 export type MainAssetsItem<T extends AllCurNotationsScope> = {
     id: `${T}-tooltip`;
     tooltipDisableAttr: "" | "disabled";
-    imgPath: `img/icons/crypto/${T}.svg`;
+    imgPath: CurIconPath<AllCurNotationsScope>;
     imgAlt: T;
     title: T;
 };
 
 export type MainAssetsItems = MainAssetsItem<AllCurNotationsScope>[];
 
-const mainAssetItem: MainAssetsItem<ExtractValFromObj<AllCurNotations, "bitcoin">> = {
+const mainAssetItem: MainAssetsItem<ExtractValFromObj<AllCurNotations, AllCurNames.bitcoin>> = {
     id: "bitcoin-tooltip",
     tooltipDisableAttr: "",
     imgPath: `img/icons/crypto/bitcoin-BTC.svg`,
-    imgAlt: "bitcoin",
+    imgAlt: AllCurNames.bitcoin,
     title: "Bitcoin (BTC)",
 };
 
@@ -67,8 +65,8 @@ const mainAssetItem: MainAssetsItem<ExtractValFromObj<AllCurNotations, "bitcoin"
 
 export type MainRateItem<T extends AllCurNotationsScope> = {
     id: `${T}-rate`;
-    imgPath: `img/icons/crypto/${T}.svg`;
-    rate: `$${number}`;
+    imgPath: CurIconPath<AllCurNotationsScope>;
+    rate: number;
     imgVector: "/arrow-top" | "/arrow-bottom";
 };
 
@@ -77,7 +75,7 @@ export type MainRateItems = MainRateItem<AllCurNotationsScope>[];
 const mainRateItem: MainRateItem<AllCurNotationsScope> = {
     id: "bitcoin-rate",
     imgPath: "img/icons/crypto/bitcoin-BTC.svg",
-    rate: "$8888",
+    rate: 8888,
     imgVector: "/arrow-top",
 };
 

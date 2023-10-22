@@ -1,5 +1,5 @@
 import { ExtractValFromObj } from "../utils/extractors";
-import { AllCurNotations, AllCurNotationsScope } from "../../data/currencies";
+import { AllCurNotations, AllCurNotationsScope, CurIconPath } from "../../data/currencies";
 
 export type IconPaths = "/icon-checkmark" | "/icon-unaviable";
 
@@ -38,7 +38,7 @@ export function checkIconStatus(isCurAvailable: boolean): IconPaths {
 export type AssetsTableItem<T extends AllCurNotationsScope> = {
     id: number;
     order: number;
-    curIcon: `img/icons/crypto/${T}.svg`;
+    curIcon: CurIconPath<AllCurNotationsScope>;
     curName: T;
     iconPaths: IconsPathsItemPure;
 };

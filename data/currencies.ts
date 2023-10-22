@@ -78,6 +78,10 @@ export enum AllCurNames {
     zcash = "zcash",
 }
 
+// export type AllCurNamesScope = {
+//     [key in keyof typeof AllCurNames]: (typeof AllCurNames)[key];
+// };
+
 // * Currencies notations scope
 export type AllCurNotations = {
     [AllCurNames.aave]: AllCurNames.aave | "Aave" | "AAVE" | "Aave (AAVE)" | "aave-AAVE";
@@ -411,3 +415,11 @@ export type UserBalances = {
 
 export type RefLink = `https://domain.com/${string}`;
 
+type IconPathFolders = "countries" | "interface" | "web3";
+
+export type IconPath = `img/icons/${IconPathFolders}/${string}.svg`;
+export type CurIconPath<U extends AllCurNotationsScope> = `img/icons/crypto/${U}.svg`;
+
+// export function pathBuilder(mainFolder: string, subFolder: string, item: string) {
+
+// }

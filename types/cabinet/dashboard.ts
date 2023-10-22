@@ -1,10 +1,10 @@
-import { AllCurNotationsScope } from "@/data/currencies";
+import { AllCurNotationsScope, IconPath } from "@/data/currencies";
 import { ExtractValFromObj } from "@/types/utils/extractors";
 import { UserHistoryItem } from "@/types/cabinet/history";
 
 export type DashboardStatItem = {
     id: number;
-    imgPath: `img/icons/interface/${string}.svg`;
+    imgPath: IconPath;
     title: string;
     value: number;
 };
@@ -14,7 +14,7 @@ export type DashboardStatItems = DashboardStatItem[];
 export type DashboardHistoryItem<T extends UserHistoryItem<AllCurNotationsScope>> = {
     id: number;
     modifClass: "get" | "send" | "wait" | "info";
-    imgPath: `img/icons/interface/${string}.svg`;
+    imgPath: IconPath;
     operationType: ExtractValFromObj<T, "operationType">;
     date: ExtractValFromObj<T, "date">;
     time: ExtractValFromObj<T, "time">;
