@@ -1,4 +1,4 @@
-import { RefLink, UserBalances } from "@/data/currencies";
+import { RefLink, UserBalances } from "@/types/data/currencies";
 
 export type Useragent = {
     id: number;
@@ -15,7 +15,7 @@ export type UserAuthInfo = {
     id: number;
     username: string;
     email: string;
-    country: string;
+    addedCountry: string;
     passphrase: string[];
     isFinishedSurvey: boolean;
     isConnectedWallet: boolean;

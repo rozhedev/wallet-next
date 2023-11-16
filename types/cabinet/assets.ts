@@ -1,4 +1,4 @@
-import { AllCurNotationsScope, CurIconPath } from "@/data/currencies";
+import { AllCurNotationsScope, CurIconPath } from "@/types/data/currencies";
 import { ExtractValFromObj } from "@/types/utils/extractors";
 
 export type CabinetAssetItem<T extends AllCurNotationsScope> = {

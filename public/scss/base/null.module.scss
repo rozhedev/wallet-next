@@ -1,0 +1,141 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+aside,
+nav,
+footer,
+header,
+section {
+    display: block;
+}
+html {
+    font-size: $font-size;
+    font-family: $font-family, sans-serif;
+    font-weight: 400;
+    line-height: 1.3333;
+    letter-spacing: 0.02em;
+    color: $dark-color;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    // text-rendering: optimizeLegibility;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 1.125rem;
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        font-size: 1rem;
+    }
+}
+body._lock {
+    overflow: hidden !important;
+}
+input,
+button,
+textarea {
+    font-family: $font-family, sans-serif;
+    font-size: inherit;
+}
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+    background-color: inherit;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+    object-fit: cover;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+select {
+    // A reset of styles, including removing the default dropdown arrow
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+
+    // Stack above custom arrow
+    z-index: 1;
+    &::-ms-expand {
+        display: none;
+    }
+    // Remove focus outline, will add on alternate element
+    outline: none;
+}
+
+svg, svg * {
+    stroke-miterlimit: 5;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+/* Убираем стандартный маркер Chrome */
+// details summary::-webkit-details-marker {
+//     display: none;
+// }
+// /* Убираем стандартный маркер Firefox */
+// details > summary {
+//     list-style: none;
+// }
+//-webkit-overflow-scrolling: touch;
+/*
+&::-webkit-scrollbar {
+	display: none;
+}
+*/

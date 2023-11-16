@@ -1,4 +1,4 @@
-import { AllCurNotationsScope, CurIconPath } from "@/data/currencies";
+import { AllCurNotationsScope, CurIconPath } from "@/types/data/currencies";
 
 export type WatchlistItemPage<T extends AllCurNotationsScope> = {
     id: T;
@@ -19,9 +19,8 @@ export type WatchlistItemPage<T extends AllCurNotationsScope> = {
         dayHourHigh: number;
         marketCup: number;
         circulatingSupply: number;
-    }
+    };
 };
-
 
 // * Watchlist
 

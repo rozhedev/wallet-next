@@ -1,0 +1,24 @@
+// * Only global styles
+
+@use "sass:math";
+
+// * VARIABLES
+@import "base/vars.module.scss";
+
+// * NULLSTYLE
+@import "base/null.module.scss";
+
+// * GRID
+@import "base/grid.module.scss";
+
+// * MIXINS
+@import "base/mixins.module.scss";
+
+// * UI
+@import "base/ui.module.scss";
+@import "base/preloader.module.scss";
+@import "base/btns.module.scss";
+@import "base/inputs.module.scss";
+
+// * Temp import for local ui page
+@import "base/test.module.scss";

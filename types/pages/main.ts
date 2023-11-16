@@ -1,5 +1,5 @@
 import { ExtractValFromObj } from "../utils/extractors";
-import { AllCurNames, AllCurNotations, AllCurNotationsScope, CurIconPath } from "../../data/currencies";
+import { AllCurNames, AllCurNotations, AllCurNotationsScope, CurIconPath } from "../data/currencies";
 
 export type MainLinks = {
     label: string;

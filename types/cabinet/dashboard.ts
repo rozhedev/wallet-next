@@ -1,4 +1,4 @@
-import { AllCurNotationsScope, IconPath } from "@/data/currencies";
+import { AllCurNotationsScope, IconPath } from "@/types/data/currencies";
 import { ExtractValFromObj } from "@/types/utils/extractors";
 import { UserHistoryItem } from "@/types/cabinet/history";
 

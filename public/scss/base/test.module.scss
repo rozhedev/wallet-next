@@ -1,0 +1,25 @@
+.test {
+    background: none;
+    margin: 150px 0 100px;
+    color: initial;
+    .header {
+        background-color: $dark-color;
+    }
+}
+
+.test .select--header {
+    background-color: $dark-color;
+}
+
+.form-test {
+    background-color: $light-color;
+}
+
+.form-test {
+    width: 600px;
+    max-width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(17, 17, 17, 0.3);
+    padding: 30px;
+}

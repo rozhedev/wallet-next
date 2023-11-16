@@ -1,4 +1,4 @@
-import { ExtractValFromObj } from "../types/utils/extractors";
+import { ExtractValFromObj } from "../utils/extractors";
 
 // * Currency data union
 export enum AllCurNames {

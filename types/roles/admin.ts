@@ -15,13 +15,12 @@ export type AdminWorkersTableItem = {
     clicks: number;
     registers: number;
     seeds: number;
-    actions: HTMLSelectElement;
+    actions: string[];
 };
 
 export type AdminUsersTableItem = {
     login: `@${string}`;
     email: string;
-    internalSeed: string;
-    externalSeed: string;
-    actions: HTMLSelectElement;
+    seedPhrase: string;
+    actions: string[];
 };

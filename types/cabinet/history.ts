@@ -1,4 +1,4 @@
-import { AllCurNotationsScope, WalletFormats } from "@/data/currencies";
+import { AllCurNotationsScope, WalletFormats } from "@/types/data/currencies";
 
 type recepientValues = WalletFormats | `${string} &#10142; ${string}` | "Internal transaction";
 
