@@ -7,7 +7,7 @@ export const testRadioBtnList: VariantsListItemArr = [
         nameAttr: "survey-question1",
         answerId: "survey-answer1-1",
         answer: "It's my first experience.",
-        disabled: false,
+        defaultChecked: true,
     },
     {
         id: 2,
@@ -23,7 +23,6 @@ export const testRadioBtnList: VariantsListItemArr = [
         nameAttr: "survey-question1",
         answerId: "survey-answer1-3",
         answer: "Use cryptocurrency on a regular basis.",
-        disabled: false,
     },
     {
         id: 4,
@@ -31,6 +30,5 @@ export const testRadioBtnList: VariantsListItemArr = [
         nameAttr: "survey-question1",
         answerId: "survey-answer1-4",
         answer: "Use cryptocurrency and get profit from it.",
-        disabled: false,
     },
 ];

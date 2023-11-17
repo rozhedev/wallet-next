@@ -8,6 +8,7 @@ import VariantsList from "@/components/VariantsList/VariantsList";
 import { testRadioBtnList } from "@/data/radioBtnVariants";
 import { testCheckboxList } from "@/data/checkboxBtnVariants";
 import Toggle from "@/ui/Toggle/Toggle";
+import { testToggleBtnList } from "@/data/toggleBtnVariants";
 
 export default function Home() {
     return (
@@ -214,7 +215,9 @@ export default function Home() {
                         <VariantsList dataArr={testRadioBtnList} />
                         <VariantsList dataArr={testCheckboxList} />
                         <br />
-                        <Toggle
+                        <VariantsList dataArr={testToggleBtnList} />
+                        <br />
+                        {/* <Toggle
                             id="toggle-test-normal"
                             nameAttr="toggle-test-normal"
                             classNameModif="toggle"
@@ -239,7 +242,7 @@ export default function Home() {
                             label="Confirmation before sending cryptocurrency 3"
                             disabled={false}
                             defaultChecked={true}
-                        />
+                        /> */}
                     </form>
                 </div>
             </div>

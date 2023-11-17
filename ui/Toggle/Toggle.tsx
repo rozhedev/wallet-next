@@ -1,12 +1,12 @@
 import React from "react";
 import { ToggleProps } from "./types";
 
-const Toggle = ({ id, nameAttr, classNameModif, label, disabled, defaultChecked }: ToggleProps) => {
+const Toggle = ({ id, nameAttr, classNameModif, label, disabled = false, defaultChecked = false }: ToggleProps) => {
     return (
         <div className={`form-conroller ${classNameModif}`}>
             <label
                 className="toggle__inner"
-                htmlFor={nameAttr}
+                htmlFor={id}
             >
                 <input
                     type="checkbox"
