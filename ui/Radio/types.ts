@@ -1,6 +1,6 @@
 export type RadioBtnProps = {
-    nameAttr: string;
     id: string;
+    nameAttr: string;
     label: string;
     disabled: boolean;
 };

@@ -7,6 +7,7 @@ import Select from "@/ui/Select/Select";
 import VariantsList from "@/components/VariantsList/VariantsList";
 import { testRadioBtnList } from "@/data/radioBtnVariants";
 import { testCheckboxList } from "@/data/checkboxBtnVariants";
+import Toggle from "@/ui/Toggle/Toggle";
 
 export default function Home() {
     return (
@@ -210,8 +211,35 @@ export default function Home() {
                         id="signup-form"
                         className="form form-test"
                     >
-                        <VariantsList dataArr={testRadioBtnList}/>
-                        <VariantsList dataArr={testCheckboxList}/> 
+                        <VariantsList dataArr={testRadioBtnList} />
+                        <VariantsList dataArr={testCheckboxList} />
+                        <br />
+                        <Toggle
+                            id="toggle-test-normal"
+                            nameAttr="toggle-test-normal"
+                            classNameModif="toggle"
+                            label="Confirmation before sending cryptocurrency 1"
+                            disabled={false}
+                            defaultChecked={false}
+                        />
+                        <br />
+                        <Toggle
+                            id="toggle-test-disabled"
+                            nameAttr="toggle-test1"
+                            classNameModif="toggle--disabled"
+                            label="Confirmation before sending cryptocurrency 2"
+                            disabled={false}
+                            defaultChecked={false}
+                        />
+                        <br />
+                        <Toggle
+                            id="toggle-test-readonly"
+                            nameAttr="toggle-test2"
+                            classNameModif="toggle--readonly"
+                            label="Confirmation before sending cryptocurrency 3"
+                            disabled={false}
+                            defaultChecked={true}
+                        />
                     </form>
                 </div>
             </div>

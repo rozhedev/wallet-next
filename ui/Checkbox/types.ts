@@ -1,6 +1,6 @@
 export type CheckboxProps = {
-    nameAttr: string;
     id: string;
+    nameAttr: string;
     label: string;
     disabled: boolean;
 };
