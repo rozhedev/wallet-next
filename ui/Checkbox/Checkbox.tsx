@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import { CheckboxProps } from "./types";
 
-const Radio = ({ id, nameAttr, label, disabled = false, defaultChecked = false }: CheckboxProps) => {
+const Radio: FC<CheckboxProps> = ({ id, nameAttr, label, disabled = false, defaultChecked = false }) => {
     return (
         <div className="form-conroller checkbox">
             <input

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import { BtnProps } from "./types";
 
-const Btn = ({ type, disabled, className, children }: BtnProps) => {
+const Btn: FC<BtnProps> = ({ type, disabled, className, children }) => {
     return (
         <button
             type={type}

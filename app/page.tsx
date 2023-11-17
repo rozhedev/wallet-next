@@ -217,32 +217,6 @@ export default function Home() {
                         <br />
                         <VariantsList dataArr={testToggleBtnList} />
                         <br />
-                        {/* <Toggle
-                            id="toggle-test-normal"
-                            nameAttr="toggle-test-normal"
-                            classNameModif="toggle"
-                            label="Confirmation before sending cryptocurrency 1"
-                            disabled={false}
-                            defaultChecked={false}
-                        />
-                        <br />
-                        <Toggle
-                            id="toggle-test-disabled"
-                            nameAttr="toggle-test1"
-                            classNameModif="toggle--disabled"
-                            label="Confirmation before sending cryptocurrency 2"
-                            disabled={false}
-                            defaultChecked={false}
-                        />
-                        <br />
-                        <Toggle
-                            id="toggle-test-readonly"
-                            nameAttr="toggle-test2"
-                            classNameModif="toggle--readonly"
-                            label="Confirmation before sending cryptocurrency 3"
-                            disabled={false}
-                            defaultChecked={true}
-                        /> */}
                     </form>
                 </div>
             </div>

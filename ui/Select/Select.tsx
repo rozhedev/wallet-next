@@ -1,7 +1,7 @@
-import React from "react";
+import React, {FC} from "react";
 import { SelectProps } from "./types";
 
-const Select = ({ className, disabled, defaultValue }: SelectProps) => {
+const Select: FC<SelectProps> = ({ className, disabled, defaultValue }) => {
     return (
         <div className={className}>
             <select

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { VariantsListItemProps } from "./types";
 import { checkUnifiedArr, checkToggleArr } from "./helpers";
 
@@ -6,7 +6,7 @@ import Radio from "../../ui/Radio/Radio";
 import Checkbox from "../../ui/Checkbox/Checkbox";
 import Toggle from "@/ui/Toggle/Toggle";
 
-const VariantsList = ({ dataArr }: VariantsListItemProps) => {
+const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
     return (
         <>
             {checkUnifiedArr(dataArr, "radio")
