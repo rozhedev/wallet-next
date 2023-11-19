@@ -1,22 +1,13 @@
-export type DropdownClassNames = {
-    dropdown?: string;
-    dropdownBody?: string;
-    dropdownButton?: string;
-};
-
 export type DropdownProps = {
-    children?: React.ReactNode;
-    className?: DropdownClassNames;
+    children: React.ReactNode;
 };
 
 export type DropdownBtnProps = {
-    children?: React.ReactNode;
-    className?: DropdownClassNames;
+    children: React.ReactNode;
 };
 
 export type DropdownMenuProps = {
-    children?: React.ReactNode;
-    className?: DropdownClassNames;
+    children: React.ReactNode;
     transition?: number;
 };
 

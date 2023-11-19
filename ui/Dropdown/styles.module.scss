@@ -1,81 +1,175 @@
-$primary-shadow:
-    rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-$transition: 0.6s all;
-
-/* ----- Открытие/закрытие Dropdown ----- */
-$positionDropdown: -500px;
-$transition: 0.15s;
-
 .dropdown {
     position: relative;
-    width: fit-content;
-
-    &-menu {
-        content: '';
-        position: absolute;
-        bottom: -95px;
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
-        height: max-content;
-        width: max-content;
-        background-color: white;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        box-shadow: $primary-shadow;
-        z-index: 103;
-
-        &.enter {
-            opacity: 0;
+    & > .navlink {
+        span {
+            @include str-trim;
+            max-width: 9rem;
         }
-
-        &.enter-active {
-            opacity: 1;
-            transition: opacity $transition;
-        }
-
-        &.exit {
-            opacity: 1;
-            transition: opacity $transition;
-        }
-
-        &.exit-active {
-            opacity: 0;
-            transition: opacity $transition;
-        }
-    }
-}
-
-// * Config styles
-
-.DropdownPage-MenuItem {
-    padding: 0 1rem;
-    cursor: pointer;
-    transition: all 0.6s;
-    &:hover {
-        color: salmon;
-    }
-}
-
-.DropdownCatalog {
-    &-Menu {
-        padding: 4px;
-    }
-
-    &-MenuItem {
         display: flex;
         align-items: center;
-        margin: 3px;
-        padding: 0 16px;
-        min-height: 44px;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.15s;
-
-        &:hover {
-            background-color: rgba(223, 213, 195, 1);
+        svg {
+            margin: 0rem 0rem 0rem 0.4rem;
+            stroke: $dark-color;
         }
+        @include hover {
+            color: $white-color !important;
+            svg {
+                stroke: $white-color;
+            }
+            &::after {
+                display: none;
+            }
+            &:active {
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.dropdown-menu {
+    z-index: 5;
+    position: absolute;
+    top: calc(100% + 0.65rem);
+    left: 0;
+    margin: auto;
+    padding: 0.5rem 0.75rem;
+    width: fit-content;
+    height: fit-content;
+
+    background-color: $white-color;
+    border-radius: $sm-border-radius;
+    border: 3px solid $primary-lightgray-color;
+    box-shadow: $item-shadow;
+    transform: translate(0, -0.5rem);
+    transition:
+        opacity 150ms ease-in-out,
+        transform 150ms ease-in-out;
+
+    &.enter {
+        opacity: 0;
+    }
+    &.enter-active {
+        opacity: 1;
+        transition: opacity $transition;
+    }
+    &.exit {
+        opacity: 1;
+        transition: opacity $transition;
+    }
+    &.exit-active {
+        opacity: 0;
+        transition: opacity $transition;
+    }
+}
+
+// * Not work
+// .dropdown-menu.enter-active ~ .dropdown-button > svg:last-of-type {
+//     transform: translate(180deg);
+// }
+
+// * Hard styling for prevent use !important
+.dropdown .dropdown-links .navlink {
+    width: 100%;
+    transition: $transition;
+    span {
+        white-space: nowrap;
+        transition: $transition;
+    }
+    svg {
+        stroke: $dark-color;
+        stroke-width: map-get($map: $stroke-width, $key: xs);
+    }
+    @include hover {
+        color: $darken-accent;
+        svg {
+            stroke: $darken-accent;
+        }
+        span {
+            color: $darken-accent;
+        }
+    }
+}
+
+// * Local styling
+.header .menu__list .dropdown-links, .dropdown-links { // * <- correct selector
+    display: flex;
+    flex-direction: column;
+    li:not(:first-of-type) {
+        margin-top: 0.4rem;
+    }
+    .navlink {
+        font-size: 1.15rem;
+        color: $dark-color;
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.assets-cab .asset-actions ul,
+.watchlist .assets-table-item {
+    .dropdown .navlink {
+        svg {
+            @include icon-size(20px, 0);
+            margin: 0 0.4rem 0 0;
+            stroke: $dark-color;
+        }
+        @include hover {
+            color: $darken-accent;
+            svg {
+                stroke: $darken-accent;
+            }
+        }
+    }
+}
+
+.assets-cab .balance-item .asset-actions ul {
+    .dropdown > .dropdown-button {
+        @include hover {
+            color: $dark-color !important;
+            svg {
+                stroke: $dark-color;
+            }
+        }
+        svg:last-of-type {
+            margin: 0 0 0 0.4rem;
+        }
+    }
+    .dropdown .dropdown-menu {
+        left: auto;
+        right: 0;
+    }
+}
+
+.header-cab,
+.assets-table-item {
+    .dropdown {
+        svg:first-of-type {
+            margin: 0 0.4rem 0 0;
+        }
+        .dropdown-menu {
+            left: auto;
+            right: 0;
+        }
+    }
+    .dropdown.active svg:first-of-type {
+        transform: rotate(0deg);
+    }
+}
+
+.watchlist .assets-table-item .dropdown {
+    & > .navlink {
+        padding: 0 0.5rem;
+        svg {
+            @include icon-size(24px, 0);
+            margin: 0;
+            stroke: $dark-color;
+        }
+    }
+    svg:first-of-type {
+        transform: rotate(0deg);
+    }
+    .dropdown-links .navlink span {
+        font-weight: 400;
     }
 }

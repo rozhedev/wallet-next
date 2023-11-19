@@ -1,4 +1,6 @@
-export const testLinksData = [
+import { DropdownLinkProps } from "@/ui/Dropdown/types";
+
+export const testLinksData: DropdownLinkProps[] = [
     {
         href: "/home",
         label: "Home",
@@ -6,12 +8,12 @@ export const testLinksData = [
     },
     {
         href: "/about",
-        label: "about",
+        label: "About",
         className: "navlink"
     },
     {
         href: "/faq",
-        label: "faq",
+        label: "FAQ",
         className: "navlink"
     },
 ]

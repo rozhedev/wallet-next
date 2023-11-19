@@ -14,7 +14,7 @@ import { testRadioBtnList } from "@/data/test/radioBtnVariants";
 import { testCheckboxList } from "@/data/test/checkboxBtnVariants";
 import { testToggleBtnList } from "@/data/test/toggleBtnVariants";
 import { testSelectData, testSelectLang } from "@/data/test/selectData";
-import second, { testLinksData } from '@/data/test/linksData'
+import { testLinksData } from "@/data/test/linksData";
 
 export default function Home() {
     return (
@@ -234,27 +234,33 @@ export default function Home() {
                     }
                 />
                 <br />
+                <br />
                 <Dropdown>
-                    <Dropdown.Btn className={{ dropdownButton: "DropdownPage-MenuItem" }}>
+                    <Dropdown.Btn>
                         <span>Smartphones</span>
+                        <svg
+                            viewBox="0 0 64 64"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M52.48 21.76L32 42.24L11.52 21.76" />
+                        </svg>
                     </Dropdown.Btn>
-                    <Dropdown.Menu className={{ dropdownBody: "dropdown-menu" }}>
-                    <ul className="dropdown-links">
-                    {testLinksData.map((link) => (
-                        <li>
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={link.className}
-                            >
-                                {/* {link.svgIcon} */}
-                               <span>{link.label}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+                    <Dropdown.Menu>
+                        {testLinksData.map((link) => (
+                            <li key={link.href}>
+                                <Link
+                                    href={link.href}
+                                    className={link.className}
+                                >
+                                    {link.svgIcon}
+                                    <span>{link.label}</span>
+                                </Link>
+                            </li>
+                        ))}
                     </Dropdown.Menu>
                 </Dropdown>
+                <br />
                 <br />
                 <div className="form-wrapper">
                     <form
