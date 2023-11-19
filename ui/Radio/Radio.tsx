@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { RadioBtnProps } from "./types";
+import type { RadioBtnProps } from "./types";
 
 const Radio: FC<RadioBtnProps> = ({ id, nameAttr, label, disabled = false }) => {
     return (

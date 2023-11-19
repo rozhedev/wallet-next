@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { CheckboxProps } from "./types";
+import type { CheckboxProps } from "./types";
 
 const Radio: FC<CheckboxProps> = ({ id, nameAttr, label, disabled = false, defaultChecked = false }) => {
     return (

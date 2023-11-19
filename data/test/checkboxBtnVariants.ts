@@ -1,4 +1,4 @@
-import { VariantsListItemArr } from "../components/VariantsList/types";
+import { VariantsListItemArr } from "../../components/VariantsList/types";
 
 export const testCheckboxList: VariantsListItemArr = [
     {

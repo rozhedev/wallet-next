@@ -4,9 +4,7 @@ import { HeaderProps } from "./types";
 
 const Header: FC<HeaderProps> = ({ linkArr }) => {
     return (
-        <>
-           
-        </>
+        <></>
     );
 };
 

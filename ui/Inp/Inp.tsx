@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { InpProps } from "./types";
+import type { InpProps } from "./types";
 
 // { formData, onChange }: InpProps
 

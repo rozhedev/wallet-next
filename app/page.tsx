@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
@@ -5,10 +7,14 @@ import Btn from "@/ui/Btn/Btn";
 import Inp from "@/ui/Inp/Inp";
 import Select from "@/ui/Select/Select";
 import VariantsList from "@/components/VariantsList/VariantsList";
-import { testRadioBtnList } from "@/data/radioBtnVariants";
-import { testCheckboxList } from "@/data/checkboxBtnVariants";
-import Toggle from "@/ui/Toggle/Toggle";
-import { testToggleBtnList } from "@/data/toggleBtnVariants";
+import Dropdown from "@/ui/Dropdown/index";
+// import Dropdown from "@/ui/Dropdown_old/Dropdown";
+
+import { testRadioBtnList } from "@/data/test/radioBtnVariants";
+import { testCheckboxList } from "@/data/test/checkboxBtnVariants";
+import { testToggleBtnList } from "@/data/test/toggleBtnVariants";
+import { testSelectData, testSelectLang } from "@/data/test/selectData";
+import second, { testLinksData } from '@/data/test/linksData'
 
 export default function Home() {
     return (
@@ -198,13 +204,57 @@ export default function Home() {
                     className="select"
                     defaultValue="Сортировка по"
                     disabled={false}
+                    options={testSelectData}
                 />
                 <br />
                 <Select
                     className="select select--disabled"
                     defaultValue="Сортировка по"
                     disabled={true}
+                    options={testSelectData}
                 />
+                <br />
+                <Select
+                    className="select select--header"
+                    defaultValue="Сортировка по"
+                    disabled={false}
+                    options={testSelectLang}
+                    svgIcon={
+                        <svg
+                            viewBox="0 0 64 64"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M54.8571 17.3372C47.9088 21.3484 40.023 23.45 32 23.4286C23.977 23.45 16.0911 21.3484 9.14282 17.3372" />
+                            <path d="M9.14282 46.72C16.0814 42.7247 23.9476 40.6218 31.9542 40.6218C39.9609 40.6218 47.8271 42.7247 54.7657 46.72" />
+                            <path d="M28.5713 59.4287C22.6366 51.5157 19.4285 41.8913 19.4285 32.0001C19.4285 22.1089 22.6366 12.4845 28.5713 4.57153" />
+                            <path d="M35.4285 4.57153C41.3632 12.4845 44.5713 22.1089 44.5713 32.0001C44.5713 41.8913 41.3632 51.5157 35.4285 59.4287" />
+                            <path d="M32.0001 59.4287C47.1485 59.4287 59.4287 47.1485 59.4287 32.0001C59.4287 16.8517 47.1485 4.57153 32.0001 4.57153C16.8517 4.57153 4.57153 16.8517 4.57153 32.0001C4.57153 47.1485 16.8517 59.4287 32.0001 59.4287Z" />
+                        </svg>
+                    }
+                />
+                <br />
+                <Dropdown>
+                    <Dropdown.Btn className={{ dropdownButton: "DropdownPage-MenuItem" }}>
+                        <span>Smartphones</span>
+                    </Dropdown.Btn>
+                    <Dropdown.Menu className={{ dropdownBody: "dropdown-menu" }}>
+                    <ul className="dropdown-links">
+                    {testLinksData.map((link) => (
+                        <li>
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={link.className}
+                            >
+                                {/* {link.svgIcon} */}
+                               <span>{link.label}</span>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+                    </Dropdown.Menu>
+                </Dropdown>
                 <br />
                 <div className="form-wrapper">
                     <form

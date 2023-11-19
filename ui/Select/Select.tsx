@@ -1,9 +1,10 @@
-import React, {FC} from "react";
-import { SelectProps } from "./types";
+import React, { FC } from "react";
+import type { SelectProps } from "./types";
 
-const Select: FC<SelectProps> = ({ className, disabled, defaultValue }) => {
+const Select: FC<SelectProps> = ({ className, options, disabled, defaultValue, svgIcon }) => {
     return (
         <div className={className}>
+            {svgIcon}
             <select
                 id="standard-select"
                 title="standard-select"
@@ -16,11 +17,14 @@ const Select: FC<SelectProps> = ({ className, disabled, defaultValue }) => {
                 >
                     {defaultValue}
                 </option>
-                <option value="Option 2">Option 2</option>
-                <option value="Option 3">Option 3</option>
-                <option value="Option 4">Option 4</option>
-                <option value="Option 5">Option 5</option>
-                <option value="Option length">Option that has too long of a value to fit</option>
+                {options.map((opt) => (
+                    <option
+                        key={opt.value}
+                        value={opt.value}
+                    >
+                        {opt.label}
+                    </option>
+                ))}
             </select>
             <span className="focus"></span>
         </div>

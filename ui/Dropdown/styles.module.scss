@@ -1,0 +1,81 @@
+$primary-shadow:
+    rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+$transition: 0.6s all;
+
+/* ----- Открытие/закрытие Dropdown ----- */
+$positionDropdown: -500px;
+$transition: 0.15s;
+
+.dropdown {
+    position: relative;
+    width: fit-content;
+
+    &-menu {
+        content: '';
+        position: absolute;
+        bottom: -95px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        height: max-content;
+        width: max-content;
+        background-color: white;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        box-shadow: $primary-shadow;
+        z-index: 103;
+
+        &.enter {
+            opacity: 0;
+        }
+
+        &.enter-active {
+            opacity: 1;
+            transition: opacity $transition;
+        }
+
+        &.exit {
+            opacity: 1;
+            transition: opacity $transition;
+        }
+
+        &.exit-active {
+            opacity: 0;
+            transition: opacity $transition;
+        }
+    }
+}
+
+// * Config styles
+
+.DropdownPage-MenuItem {
+    padding: 0 1rem;
+    cursor: pointer;
+    transition: all 0.6s;
+    &:hover {
+        color: salmon;
+    }
+}
+
+.DropdownCatalog {
+    &-Menu {
+        padding: 4px;
+    }
+
+    &-MenuItem {
+        display: flex;
+        align-items: center;
+        margin: 3px;
+        padding: 0 16px;
+        min-height: 44px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.15s;
+
+        &:hover {
+            background-color: rgba(223, 213, 195, 1);
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { ToggleProps } from "./types";
+import type { ToggleProps } from "./types";
 
 const Toggle: FC<ToggleProps> = ({ id, nameAttr, classNameModif, label, disabled = false, defaultChecked = false }) => {
     return (
