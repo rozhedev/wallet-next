@@ -7,12 +7,21 @@ import { DropdownProvider } from "./dropdownContext";
 import type { DropdownProps, DropdownBtnProps, DropdownMenuProps, DropdownLinkProps } from "./types";
 import { TRANSITION_DELAY } from "../../constants/transition";
 
+const CLASS_LIST = {
+    navlink: "navlink",
+    dropdown: "dropdown",
+    dropdownBtn: "dropdown-button",
+    dropdownMenu: "dropdown-menu",
+    dropdownLinks: "dropdown-links",
+    enterActive: "enter-active",
+}
+
 export const Dropdown = ({ children }: DropdownProps): JSX.Element => {
     const dropdownState = useDropdown();
 
     return (
         <DropdownProvider value={dropdownState}>
-            <div className="dropdown">{children}</div>
+            <div className={`${CLASS_LIST.dropdown}`}>{children}</div>
         </DropdownProvider>
     );
 };
@@ -23,7 +32,11 @@ const DropdownBtn: FC<DropdownBtnProps> = ({ children }) => {
 
     return (
         <div
-            className="navlink dropdown-button"
+            className={`
+            ${CLASS_LIST.navlink}
+             ${CLASS_LIST.dropdownBtn}
+             ${dropdownState?.isDropdownOpen ? CLASS_LIST.enterActive : ""}
+            `}
             onClick={dropdownState?.onClickButtonDropdown}
             ref={dropdownState?.refButtonDropdown}
         >
@@ -40,7 +53,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ children, transition }) => {
 
     return (
         <CSSTransition
-            className="dropdown-menu"
+            className={`${CLASS_LIST.dropdownMenu}`}
             in={dropdownState?.isDropdownOpen}
             nodeRef={dropdownState?.refDropdownMenu}
             onClick={dropdownState?.onClickButtonDropdown}
@@ -48,7 +61,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ children, transition }) => {
             unmountOnExit
         >
             <div ref={dropdownState?.refDropdownMenu}>
-                <ul className="dropdown-links">{children}</ul>
+                <ul className={`${CLASS_LIST.dropdownLinks}`}>{children}</ul>
             </div>
         </CSSTransition>
     );

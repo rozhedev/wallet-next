@@ -12,10 +12,7 @@
             stroke: $dark-color;
         }
         @include hover {
-            color: $white-color !important;
-            svg {
-                stroke: $white-color;
-            }
+            color: inherit !important;
             &::after {
                 display: none;
             }
@@ -24,6 +21,10 @@
             }
         }
     }
+}
+
+.dropdown-button.enter-active > svg:last-of-type {
+    transform: rotate(180deg);
 }
 
 .dropdown-menu {
@@ -62,11 +63,6 @@
     }
 }
 
-// * Not work
-// .dropdown-menu.enter-active ~ .dropdown-button > svg:last-of-type {
-//     transform: translate(180deg);
-// }
-
 // * Hard styling for prevent use !important
 .dropdown .dropdown-links .navlink {
     width: 100%;
@@ -91,6 +87,12 @@
 }
 
 // * Local styling
+
+.header .dropdown > .navlink {
+    @include hover {
+        color: $white-color !important;
+    }
+}
 .header .menu__list .dropdown-links, .dropdown-links { // * <- correct selector
     display: flex;
     flex-direction: column;
@@ -126,7 +128,6 @@
 .assets-cab .balance-item .asset-actions ul {
     .dropdown > .dropdown-button {
         @include hover {
-            color: $dark-color !important;
             svg {
                 stroke: $dark-color;
             }
