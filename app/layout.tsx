@@ -38,11 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className={titilliumWeb.className}>
-                <div className="wrapper">
-                    <div className="page">
-                        {children}
-                    </div>
-                </div>
+                <div className="wrapper">{children}</div>
             </body>
         </html>
     );

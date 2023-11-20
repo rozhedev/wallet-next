@@ -1,22 +1,15 @@
 import React, { FC } from "react";
 import type { SelectProps } from "./types";
 
-const Select: FC<SelectProps> = ({ className, options, disabled, defaultValue, svgIcon }) => {
+const Select: FC<SelectProps> = ({ id, title, className, options, disabled, svgIcon }) => {
     return (
         <div className={className}>
             {svgIcon}
             <select
-                id="standard-select"
-                title="standard-select"
+                id={id}
+                title={title}
                 disabled={disabled}
             >
-                <option
-                    key="disabled-option"
-                    disabled
-                    value="Сортировка по"
-                >
-                    {defaultValue}
-                </option>
                 {options.map((opt) => (
                     <option
                         key={opt.value}

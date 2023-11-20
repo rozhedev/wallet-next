@@ -6,7 +6,7 @@ import Radio from "../../ui/Radio/Radio";
 import Checkbox from "../../ui/Checkbox/Checkbox";
 import Toggle from "@/ui/Toggle/Toggle";
 
-const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
+export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
     return (
         <>
             {checkUnifiedArr(dataArr, "radio")
@@ -44,5 +44,3 @@ const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
         </>
     );
 };
-
-export default VariantsList;

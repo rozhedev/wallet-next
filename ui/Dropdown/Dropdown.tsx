@@ -4,7 +4,7 @@ import type { FC } from "react";
 import { CSSTransition } from "react-transition-group";
 import { useDropdown, useDropdownContext } from "./useDropdown";
 import { DropdownProvider } from "./dropdownContext";
-import type { DropdownProps, DropdownBtnProps, DropdownMenuProps, DropdownLinkProps } from "./types";
+import type { DropdownProps, DropdownBtnProps, DropdownMenuProps } from "./types";
 import { TRANSITION_DELAY } from "../../constants/transition";
 
 const CLASS_LIST = {
@@ -68,8 +68,3 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ children, transition }) => {
 };
 
 Dropdown.Menu = DropdownMenu;
-
-// * Dropdown link
-const DropdownLink: FC<DropdownLinkProps> = ({}) => {
-    return <></>;
-};

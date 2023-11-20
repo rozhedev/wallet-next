@@ -10,10 +10,3 @@ export type DropdownMenuProps = {
     children: React.ReactNode;
     transition?: number;
 };
-
-export type DropdownLinkProps = {
-    href: `/${string}`;
-    label: string;
-    className: `navlink${"" | " js-modal-open"}`;
-    svgIcon?: React.ReactNode;
-};

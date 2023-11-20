@@ -1,19 +1,19 @@
-import { DropdownLinkProps } from "@/ui/Dropdown/types";
+import { LinkListItem } from "@/components/LinkList/index";
 
-export const testLinksData: DropdownLinkProps[] = [
+export const testLinksData: LinkListItem[] = [
     {
-        href: "/home",
+        href: "/",
         label: "Home",
-        className: "navlink"
+        className: "navlink",
     },
     {
-        href: "/about",
-        label: "About",
-        className: "navlink"
+        href: "/pages/assets",
+        label: "Assets",
+        className: "navlink",
     },
     {
-        href: "/faq",
+        href: "/pages/faq",
         label: "FAQ",
-        className: "navlink"
+        className: "navlink",
     },
-]
+];

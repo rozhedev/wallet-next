@@ -24,4 +24,5 @@
 @import "base/test.module.scss";
 
 // * Components
-@import "../../ui/Dropdown/styles.module.scss"
+@import "@/ui/Dropdown/styles.module.scss";
+@import "@/components/layout/Header/styles.module.scss";
