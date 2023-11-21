@@ -20,9 +20,17 @@
 @import "base/btns.module.scss";
 @import "base/inputs.module.scss";
 
-// * Temp import for local ui page
-@import "base/test.module.scss";
+// * LIBS
+// @import 'libs/swiper.scss';
 
-// * Components
+// * COMPONENTS
 @import "@/ui/Dropdown/styles.module.scss";
+
+// * LAYOUT
 @import "@/components/layout/Header/styles.module.scss";
+@import "@/components/layout/Footer/styles.module.scss";
+
+// * PAGES
+@import "pages/main.module.scss";
+// * Temp import for local ui page
+@import "pages/test.module.scss";

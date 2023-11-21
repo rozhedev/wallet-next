@@ -61,4 +61,4 @@ export const langSelectOptions: {label: string, value: string}[] = [
         label: "DE",
         value: "de-deutsch",
     },
-]
+];

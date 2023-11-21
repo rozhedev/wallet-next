@@ -1,14 +1,16 @@
 "use client"
 
-import Header from "@/components/layout/Header";
+import Header from "@/components/layout/Header/index";
 import Dropdown from "@/ui/Dropdown";
+import Footer from '@/components/layout/Footer/index'
 
 import LinkList from "@/components/LinkList/index";
 import { headerLinks, dropdownLinks, langSelectOptions } from "@/components/layout/Header/data";
+import {footerInfoLinks, footerDiscoverLinks} from '@/components/layout/Footer/data'
 
 export default function PagesLayout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="wrapper">
+        <>
             <Header
                 linksArr={headerLinks}
                 langOptionsArr={langSelectOptions}
@@ -30,6 +32,10 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
                 </Dropdown>
             </Header>
             <div className="page">{children}</div>
-        </div>
+            <Footer>
+                <Footer.NavColumn title="Wallet Info" linksArr={footerInfoLinks}/>
+                <Footer.NavColumn title="Discover" linksArr={footerDiscoverLinks}/>
+            </Footer>
+        </>
     );
 }

@@ -1,4 +1,6 @@
-import React, { FC } from "react";
+"use client"
+
+import React, { FC, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,6 +11,9 @@ import LinkList from "@/components/LinkList/index";
 import logo from "@/public/img/logo.svg";
 
 export const Header: FC<HeaderProps> = ({ linksArr, children, langOptionsArr }) => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const menuOpenHandler = () => setIsMenuOpen((prevState) => !prevState);
+
     return (
         <header className="header">
             <div className="container">
@@ -22,10 +27,11 @@ export const Header: FC<HeaderProps> = ({ linksArr, children, langOptionsArr }) 
                     />
                 </Link>
                 <div className="menu">
-                    <div className="menu__icon">
+                    <div className={`menu__icon ${isMenuOpen ? "_active" : ""}`}
+                    onClick={menuOpenHandler} >
                         <span></span>
                     </div>
-                    <nav className="menu__body">
+                    <nav className={`menu__body ${isMenuOpen ? "_active" : ""}`}>
                         <ul className="menu__list">
                             <LinkList linksArr={linksArr} />
 

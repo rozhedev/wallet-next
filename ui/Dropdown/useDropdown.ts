@@ -9,7 +9,7 @@ export const useDropdownContext = (): TDropdownState | null => {
 type TUseDropdown = () => TDropdownState;
 
 export const useDropdown: TUseDropdown = () => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
     const refButtonDropdown = useRef<HTMLDivElement>(null);
     const refDropdownMenu = useRef<HTMLDivElement>(null);
 
@@ -19,10 +19,15 @@ export const useDropdown: TUseDropdown = () => {
 
     const handleClickOutsideDropdown = useCallback(
         (event: MouseEvent) => {
-            if (isDropdownOpen && refButtonDropdown.current && event.target instanceof HTMLElement && !refButtonDropdown.current.contains(event.target)) {
-                if (refDropdownMenu.current && !refDropdownMenu.current.contains(event.target)) {
-                    setIsDropdownOpen((prevState: boolean) => (prevState ? false : prevState));
-                }
+            if (
+                isDropdownOpen &&
+                refButtonDropdown.current &&
+                event.target instanceof HTMLElement &&
+                !refButtonDropdown.current.contains(event.target) &&
+                refDropdownMenu.current &&
+                !refDropdownMenu.current.contains(event.target)
+            ) {
+                setIsDropdownOpen((prevState: boolean) => (prevState ? false : prevState));
             }
         },
         [isDropdownOpen]

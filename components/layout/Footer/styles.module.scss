@@ -1,0 +1,94 @@
+$footer-bg-path: '../../../public/img/photos/bg/footer.svg';
+
+.footer {
+    width: 100vw;
+    padding: 3rem 0;
+    background: url($footer-bg-path) top center / cover no-repeat;
+    color: $white-color;
+
+    @include bp(md) {
+        .footer__copyright {
+            margin: 1.5rem 0;
+            align-items: center;
+        }
+        .footer__subscribe {
+            margin-top: 3rem;
+        }
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        & > div {
+            width: 33.3333%;
+            &:not(:first-of-type) {
+                padding-left: calc($grid-gap * 2.5);
+            }
+            &:nth-child(n + 4) {
+                padding-top: 2rem;
+            }
+            &:nth-child(4n) {
+                padding-left: 0;
+            }
+        }
+        @include bp(xl) {
+            & > div {
+                &:not(:first-of-type) {
+                    padding-left: calc($grid-gap * 1.5);
+                }
+                &:nth-child(4n) {
+                    padding-left: 0;
+                }
+            }
+        }
+        @include bp(md) {
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            & > div {
+                width: 100%;
+                &:not(:first-of-type) {
+                    padding-left: 0;
+                }
+                &:nth-child(n + 4) {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+
+    // * FOOTER CONTENT
+    &__copyright {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 2rem 0;
+        font-weight: 400;
+        cursor: auto;
+    }
+    .footer-nav-column {
+        .h3 {
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        &__list {
+            margin-top: 1rem;
+            & > li {
+                margin-top: 1rem;
+            }
+            .navlink {
+                color: $white-color;
+                @include hover {
+                    color: $primary-accent-color;
+                }
+            }
+        }
+        @include bp(md) {
+            &:not(:last-of-type) {
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
