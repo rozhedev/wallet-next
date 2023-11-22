@@ -1,4 +1,4 @@
-export type RadioBtnProps = {
+export type TRadioBtnProps = {
     id: string;
     nameAttr: string;
     label: string;

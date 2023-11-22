@@ -1,10 +1,10 @@
-import { LinkListItem } from "@/components/LinkList";
+import { TLinkListItem } from "@/components/LinkList";
 
-export type FooterProps = {
+export type TFooterProps = {
     children: React.ReactNode[];
 };
 
-export type FooterNavColumnProps = {
+export type TFooterNavColumnProps = {
     title: string;
-    linksArr: LinkListItem[]
+    linksArr: TLinkListItem[];
 };

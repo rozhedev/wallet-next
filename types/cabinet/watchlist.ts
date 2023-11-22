@@ -1,9 +1,9 @@
-import { AllCurNotationsScope, CurIconPath } from "@/types/data/currencies";
+import { TAllCurNotesScope, TCurIconPath } from "@/types/data/currencies";
 
-export type WatchlistItemPage<T extends AllCurNotationsScope> = {
-    id: T;
-    iconPath: CurIconPath<T>;
-    curName: T;
+export type TWatchlistItemPage<TScope extends TAllCurNotesScope> = {
+    id: TScope;
+    iconPath: TCurIconPath<TScope>;
+    curName: TScope;
     price: number;
     isAddedToWatchlist: boolean;
     timeChanges: {
@@ -24,14 +24,14 @@ export type WatchlistItemPage<T extends AllCurNotationsScope> = {
 
 // * Watchlist
 
-export type WatchlistTableItem<T extends AllCurNotationsScope> = {
+export type TWatchlistTableItem<TScope extends TAllCurNotesScope> = {
     id: number;
-    iconPath: CurIconPath<T>;
-    curName: T;
+    iconPath: TCurIconPath<TScope>;
+    curName: TScope;
     price: number;
     change24h: number;
     volume: number;
     marketCup: number;
 };
 
-export type WatchlistTableItems = WatchlistTableItem<AllCurNotationsScope>[];
+export type TWatchlistTableItemArr = TWatchlistTableItem<TAllCurNotesScope>[];

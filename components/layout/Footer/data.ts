@@ -1,8 +1,8 @@
-import type { LinkListItem } from "@/components/LinkList";
+import type { TLinkListItem } from "@/components/LinkList";
 import { headerLinks, dropdownLinks } from "@/components/layout/Header/data";
 
-const tempArr = [...headerLinks].slice(1);  // * Remove home link
-export const footerInfoLinks: LinkListItem[] = tempArr.concat([
+const tempArr = [...headerLinks].slice(1); // * Remove home link
+export const footerInfoLinks: TLinkListItem[] = tempArr.concat([
     {
         href: "/pages/register",
         label: "Register wallet",
@@ -14,4 +14,4 @@ export const footerInfoLinks: LinkListItem[] = tempArr.concat([
         className: "navlink",
     },
 ]);
-export const footerDiscoverLinks: LinkListItem[] = dropdownLinks;
+export const footerDiscoverLinks: TLinkListItem[] = dropdownLinks;

@@ -1,9 +1,9 @@
-export type ToggleModifClassNames = "toggle" | "toggle--disabled" | "toggle--readonly";
+export type T_ToggleModifClassNames = "toggle" | "toggle--disabled" | "toggle--readonly";
 
-export type ToggleProps = {
+export type T_ToggleProps = {
     id: string;
     nameAttr: string;
-    classNameModif?: ToggleModifClassNames;
+    classNameModif?: T_ToggleModifClassNames;
     label: string;
     disabled?: boolean;
     defaultChecked?: boolean;

@@ -83,7 +83,7 @@ export enum AllCurNames {
 // };
 
 // * Currencies notations scope
-export type AllCurNotations = {
+export type TAllCurNotes = {
     [AllCurNames.aave]: AllCurNames.aave | "Aave" | "AAVE" | "Aave (AAVE)" | "aave-AAVE";
 
     [AllCurNames.algorand]: AllCurNames.algorand | "Algorand" | "ALGO" | "algo" | "Algorand (ALGO)" | "algorand-ALGO";
@@ -234,84 +234,84 @@ export type AllCurNotations = {
 };
 
 // * Currency data scope
-export type AllCurNotationsScope =
-    | ExtractValFromObj<AllCurNotations, AllCurNames.aave>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.algorand>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.amp>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.anchorProtocol>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.avalanche>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.axieInfinity>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.binanceCoin>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.binanceUsd>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.bitcoin>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.bitcoinBep2>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.bitcoinCash>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.bitcoinSv>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.bitTorrent>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.cardano>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.celo>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.chainlink>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.chiliz>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.compound>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.cosmos>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.cronos>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.dai>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.dash>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.decentraland>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.dogecoin>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.elrond>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.enjinCoin>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.eos>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.ethereum>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.ethereumClassic>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.fantom>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.filecoin>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.flow>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.ftxToken>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.gala>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.harmony>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.hedera>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.helium>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.holo>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.internetComputer>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.iota>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.kadena>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.klaytn>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.kuCoinToken>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.kusama>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.litecoin>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.maker>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.monero>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.nearProtocol>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.neo>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.nexo>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.polkadot>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.polygon>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.secret>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.shibainu>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.solana>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.stacks>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.stellar>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.terra>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.tether>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.tezos>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.theGraph>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.theSandbox>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.thetaNetwork>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.thorChain>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.tron>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.uma>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.uniswap>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.unusSedLeo>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.usdCoin>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.veChain>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.waves>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.wrappedBitcoin>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.xrp>
-    | ExtractValFromObj<AllCurNotations, AllCurNames.zcash>;
+export type TAllCurNotesScope =
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.aave>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.algorand>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.amp>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.anchorProtocol>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.avalanche>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.axieInfinity>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.binanceCoin>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.binanceUsd>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.bitcoin>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.bitcoinBep2>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.bitcoinCash>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.bitcoinSv>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.bitTorrent>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.cardano>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.celo>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.chainlink>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.chiliz>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.compound>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.cosmos>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.cronos>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.dai>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.dash>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.decentraland>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.dogecoin>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.elrond>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.enjinCoin>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.eos>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.ethereum>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.ethereumClassic>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.fantom>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.filecoin>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.flow>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.ftxToken>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.gala>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.harmony>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.hedera>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.helium>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.holo>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.internetComputer>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.iota>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.kadena>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.klaytn>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.kuCoinToken>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.kusama>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.litecoin>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.maker>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.monero>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.nearProtocol>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.neo>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.nexo>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.polkadot>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.polygon>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.secret>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.shibainu>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.solana>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.stacks>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.stellar>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.terra>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.tether>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.tezos>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.theGraph>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.theSandbox>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.thetaNetwork>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.thorChain>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.tron>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.uma>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.uniswap>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.unusSedLeo>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.usdCoin>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.veChain>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.waves>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.wrappedBitcoin>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.xrp>
+    | ExtractValFromObj<TAllCurNotes, AllCurNames.zcash>;
 
 // * Wallet addr & balance
-export type WalletFormats =
+export type TWalletFormatsScope =
     | `bc${string}`
     | `0x${string}`
     | `q${string}`
@@ -328,97 +328,97 @@ export type WalletFormats =
     | `t1${string}`;
 
 // * User balances for dashboard
-type UserBalance = {
+type TUserBalance = {
     isAdded: boolean;
     balance: number;
-    wallet: WalletFormats;
+    wallet: TWalletFormatsScope;
 };
 
-export type UserBalances = {
-    [AllCurNames.aave]: UserBalance;
-    [AllCurNames.algorand]: UserBalance;
-    [AllCurNames.amp]: UserBalance;
-    [AllCurNames.anchorProtocol]: UserBalance;
-    [AllCurNames.avalanche]: UserBalance;
-    [AllCurNames.axieInfinity]: UserBalance;
-    [AllCurNames.binanceCoin]: UserBalance;
-    [AllCurNames.binanceUsd]: UserBalance;
-    [AllCurNames.bitcoin]: UserBalance;
-    [AllCurNames.bitcoinBep2]: UserBalance;
-    [AllCurNames.bitcoinCash]: UserBalance;
-    [AllCurNames.bitcoinSv]: UserBalance;
-    [AllCurNames.bitTorrent]: UserBalance;
-    [AllCurNames.cardano]: UserBalance;
-    [AllCurNames.celo]: UserBalance;
-    [AllCurNames.chainlink]: UserBalance;
-    [AllCurNames.chiliz]: UserBalance;
-    [AllCurNames.compound]: UserBalance;
-    [AllCurNames.cosmos]: UserBalance;
-    [AllCurNames.cronos]: UserBalance;
-    [AllCurNames.dai]: UserBalance;
-    [AllCurNames.dash]: UserBalance;
-    [AllCurNames.decentraland]: UserBalance;
-    [AllCurNames.dogecoin]: UserBalance;
-    [AllCurNames.elrond]: UserBalance;
-    [AllCurNames.enjinCoin]: UserBalance;
-    [AllCurNames.eos]: UserBalance;
-    [AllCurNames.ethereum]: UserBalance;
-    [AllCurNames.ethereumClassic]: UserBalance;
-    [AllCurNames.fantom]: UserBalance;
-    [AllCurNames.filecoin]: UserBalance;
-    [AllCurNames.flow]: UserBalance;
-    [AllCurNames.ftxToken]: UserBalance;
-    [AllCurNames.gala]: UserBalance;
-    [AllCurNames.harmony]: UserBalance;
-    [AllCurNames.hedera]: UserBalance;
-    [AllCurNames.helium]: UserBalance;
-    [AllCurNames.holo]: UserBalance;
-    [AllCurNames.internetComputer]: UserBalance;
-    [AllCurNames.iota]: UserBalance;
-    [AllCurNames.kadena]: UserBalance;
-    [AllCurNames.klaytn]: UserBalance;
-    [AllCurNames.kuCoinToken]: UserBalance;
-    [AllCurNames.kusama]: UserBalance;
-    [AllCurNames.litecoin]: UserBalance;
-    [AllCurNames.maker]: UserBalance;
-    [AllCurNames.monero]: UserBalance;
-    [AllCurNames.nearProtocol]: UserBalance;
-    [AllCurNames.neo]: UserBalance;
-    [AllCurNames.nexo]: UserBalance;
-    [AllCurNames.polkadot]: UserBalance;
-    [AllCurNames.polygon]: UserBalance;
-    [AllCurNames.secret]: UserBalance;
-    [AllCurNames.shibainu]: UserBalance;
-    [AllCurNames.solana]: UserBalance;
-    [AllCurNames.stacks]: UserBalance;
-    [AllCurNames.stellar]: UserBalance;
-    [AllCurNames.terra]: UserBalance;
-    [AllCurNames.tether]: UserBalance;
-    [AllCurNames.tezos]: UserBalance;
-    [AllCurNames.theGraph]: UserBalance;
-    [AllCurNames.theSandbox]: UserBalance;
-    [AllCurNames.thetaNetwork]: UserBalance;
-    [AllCurNames.thorChain]: UserBalance;
-    [AllCurNames.tron]: UserBalance;
-    [AllCurNames.uma]: UserBalance;
-    [AllCurNames.uniswap]: UserBalance;
-    [AllCurNames.unusSedLeo]: UserBalance;
-    [AllCurNames.usdCoin]: UserBalance;
-    [AllCurNames.veChain]: UserBalance;
-    [AllCurNames.waves]: UserBalance;
-    [AllCurNames.wrappedBitcoin]: UserBalance;
-    [AllCurNames.xrp]: UserBalance;
-    [AllCurNames.zcash]: UserBalance;
+export type TUserBalanceConfig = {
+    [AllCurNames.aave]: TUserBalance;
+    [AllCurNames.algorand]: TUserBalance;
+    [AllCurNames.amp]: TUserBalance;
+    [AllCurNames.anchorProtocol]: TUserBalance;
+    [AllCurNames.avalanche]: TUserBalance;
+    [AllCurNames.axieInfinity]: TUserBalance;
+    [AllCurNames.binanceCoin]: TUserBalance;
+    [AllCurNames.binanceUsd]: TUserBalance;
+    [AllCurNames.bitcoin]: TUserBalance;
+    [AllCurNames.bitcoinBep2]: TUserBalance;
+    [AllCurNames.bitcoinCash]: TUserBalance;
+    [AllCurNames.bitcoinSv]: TUserBalance;
+    [AllCurNames.bitTorrent]: TUserBalance;
+    [AllCurNames.cardano]: TUserBalance;
+    [AllCurNames.celo]: TUserBalance;
+    [AllCurNames.chainlink]: TUserBalance;
+    [AllCurNames.chiliz]: TUserBalance;
+    [AllCurNames.compound]: TUserBalance;
+    [AllCurNames.cosmos]: TUserBalance;
+    [AllCurNames.cronos]: TUserBalance;
+    [AllCurNames.dai]: TUserBalance;
+    [AllCurNames.dash]: TUserBalance;
+    [AllCurNames.decentraland]: TUserBalance;
+    [AllCurNames.dogecoin]: TUserBalance;
+    [AllCurNames.elrond]: TUserBalance;
+    [AllCurNames.enjinCoin]: TUserBalance;
+    [AllCurNames.eos]: TUserBalance;
+    [AllCurNames.ethereum]: TUserBalance;
+    [AllCurNames.ethereumClassic]: TUserBalance;
+    [AllCurNames.fantom]: TUserBalance;
+    [AllCurNames.filecoin]: TUserBalance;
+    [AllCurNames.flow]: TUserBalance;
+    [AllCurNames.ftxToken]: TUserBalance;
+    [AllCurNames.gala]: TUserBalance;
+    [AllCurNames.harmony]: TUserBalance;
+    [AllCurNames.hedera]: TUserBalance;
+    [AllCurNames.helium]: TUserBalance;
+    [AllCurNames.holo]: TUserBalance;
+    [AllCurNames.internetComputer]: TUserBalance;
+    [AllCurNames.iota]: TUserBalance;
+    [AllCurNames.kadena]: TUserBalance;
+    [AllCurNames.klaytn]: TUserBalance;
+    [AllCurNames.kuCoinToken]: TUserBalance;
+    [AllCurNames.kusama]: TUserBalance;
+    [AllCurNames.litecoin]: TUserBalance;
+    [AllCurNames.maker]: TUserBalance;
+    [AllCurNames.monero]: TUserBalance;
+    [AllCurNames.nearProtocol]: TUserBalance;
+    [AllCurNames.neo]: TUserBalance;
+    [AllCurNames.nexo]: TUserBalance;
+    [AllCurNames.polkadot]: TUserBalance;
+    [AllCurNames.polygon]: TUserBalance;
+    [AllCurNames.secret]: TUserBalance;
+    [AllCurNames.shibainu]: TUserBalance;
+    [AllCurNames.solana]: TUserBalance;
+    [AllCurNames.stacks]: TUserBalance;
+    [AllCurNames.stellar]: TUserBalance;
+    [AllCurNames.terra]: TUserBalance;
+    [AllCurNames.tether]: TUserBalance;
+    [AllCurNames.tezos]: TUserBalance;
+    [AllCurNames.theGraph]: TUserBalance;
+    [AllCurNames.theSandbox]: TUserBalance;
+    [AllCurNames.thetaNetwork]: TUserBalance;
+    [AllCurNames.thorChain]: TUserBalance;
+    [AllCurNames.tron]: TUserBalance;
+    [AllCurNames.uma]: TUserBalance;
+    [AllCurNames.uniswap]: TUserBalance;
+    [AllCurNames.unusSedLeo]: TUserBalance;
+    [AllCurNames.usdCoin]: TUserBalance;
+    [AllCurNames.veChain]: TUserBalance;
+    [AllCurNames.waves]: TUserBalance;
+    [AllCurNames.wrappedBitcoin]: TUserBalance;
+    [AllCurNames.xrp]: TUserBalance;
+    [AllCurNames.zcash]: TUserBalance;
 };
 
 // * Other common data
 
-export type RefLink = `https://domain.com/${string}`;
+export type TRefLink = `https://domain.com/${string}`;
 
-type IconPathFolders = "countries" | "interface" | "web3";
+type TIconPathFolders = "countries" | "interface" | "web3";
 
-export type IconPath = `img/icons/${IconPathFolders}/${string}.svg`;
-export type CurIconPath<U extends AllCurNotationsScope> = `img/icons/crypto/${U}.svg`;
+export type TIconPath = `img/icons/${TIconPathFolders}/${string}.svg`;
+export type TCurIconPath<TScope extends TAllCurNotesScope> = `img/icons/crypto/${TScope}.svg`;
 
 // export function pathBuilder(mainFolder: string, subFolder: string, item: string) {
 

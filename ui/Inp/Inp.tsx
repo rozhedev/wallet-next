@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import type { InpProps } from "./types";
+import type { TInpProps } from "./types";
 
-// { formData, onChange }: InpProps
+// { formData, onChange }: TInpProps
 
-const Inp: FC<InpProps> = ({ className, disabled }) => {
+const Inp: FC<TInpProps> = ({ className, disabled }) => {
     return (
         <input
             type="text"

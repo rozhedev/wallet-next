@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import type { LinkListProps } from "./types";
+import type { TLinkListProps } from "./types";
 import Link from "next/link";
 
-export const LinkList: FC<LinkListProps> = ({ linksArr }) => {
+export const LinkList: FC<TLinkListProps> = ({ linksArr }) => {
     return (
         <>
             {linksArr.map((link) => (

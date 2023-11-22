@@ -4,12 +4,12 @@ import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import type { FooterProps, FooterNavColumnProps } from "./types";
+import type { TFooterProps, TFooterNavColumnProps } from "./types";
 import LinkList from "@/components/LinkList/index";
 
 import logo from "@/public/img/logo.svg";
 
-export const Footer = ({ children }: FooterProps): JSX.Element => {
+export const Footer = ({ children }: TFooterProps): JSX.Element => {
     return (
         <footer className="footer">
             <div className="container">
@@ -32,7 +32,7 @@ export const Footer = ({ children }: FooterProps): JSX.Element => {
 };
 
 // * Footer navigation
-const FooterNavColumn: FC<FooterNavColumnProps> = ({ title, linksArr }) => {
+const FooterNavColumn: FC<TFooterNavColumnProps> = ({ title, linksArr }) => {
     return (
         <div className="footer-nav-column">
             <h5 className="h3">{title}</h5>

@@ -1,8 +1,8 @@
-import { AllCurNotationsScope, WalletFormats } from "@/types/data/currencies";
+import { TAllCurNotesScope, TWalletFormatsScope } from "@/types/data/currencies";
 
-type recepientValues = WalletFormats | `${string} &#10142; ${string}` | "Internal transaction";
+type TRecepientValues = TWalletFormatsScope | `${string} &#10142; ${string}` | "Internal transaction";
 
-export type UserHistoryItem<T extends AllCurNotationsScope> = {
+export type TUserHistoryItem<T extends TAllCurNotesScope> = {
     id: number;
     operationType: "Replenish" | "Withdraw" | "Exchange" | "Airdrop";
     curName: T;
@@ -11,9 +11,9 @@ export type UserHistoryItem<T extends AllCurNotationsScope> = {
     transactionId: string;
     // * Additional prop for linked descr in history preview in
     // * dashboard & history table
-    recepient: recepientValues;
+    recepient: TRecepientValues;
     date: string;
     time: string;
 };
 
-export type UserHistoryItems = UserHistoryItem<AllCurNotationsScope>[];
+export type TUserHistoryItemArr = TUserHistoryItem<TAllCurNotesScope>[];

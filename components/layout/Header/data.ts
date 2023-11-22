@@ -1,10 +1,10 @@
-import type { LinkListItem } from "@/components/LinkList"
+import type { TLinkListItem } from "@/components/LinkList";
 
-export const headerLinks: LinkListItem[] = [
+export const headerLinks: TLinkListItem[] = [
     {
         href: "/",
         label: "Home",
-        className: "navlink", 
+        className: "navlink",
     },
     {
         href: "/pages/assets",
@@ -18,11 +18,11 @@ export const headerLinks: LinkListItem[] = [
     },
 ];
 
-export const dropdownLinks: LinkListItem[] = [
+export const dropdownLinks: TLinkListItem[] = [
     {
         href: "/pages/faq",
         label: "Popular questions",
-        className: "navlink", 
+        className: "navlink",
     },
     {
         href: "/pages/privacy-policy",
@@ -34,9 +34,9 @@ export const dropdownLinks: LinkListItem[] = [
         label: "Terms of Service",
         className: "navlink",
     },
-]
+];
 
-export const langSelectOptions: {label: string, value: string}[] = [
+export const langSelectOptions: { label: string; value: string }[] = [
     {
         label: "ENG",
         value: "eng-english",

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import type { ToggleProps } from "./types";
+import type { T_ToggleProps } from "./types";
 
-const Toggle: FC<ToggleProps> = ({ id, nameAttr, classNameModif, label, disabled = false, defaultChecked = false }) => {
+const Toggle: FC<T_ToggleProps> = ({ id, nameAttr, classNameModif, label, disabled = false, defaultChecked = false }) => {
     return (
         <div className={`form-conroller ${classNameModif}`}>
             <label

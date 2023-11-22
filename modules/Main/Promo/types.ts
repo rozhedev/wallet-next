@@ -1,3 +1,3 @@
-export type PromoProps = {
+export type TPromoProps = {
     title: string;
 };

@@ -1,4 +1,4 @@
-export type BtnProps = {
+export type TBtnProps = {
     type: "submit" | "button";
     className: string;
     children: React.ReactNode;

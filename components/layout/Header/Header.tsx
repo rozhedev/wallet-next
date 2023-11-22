@@ -4,13 +4,13 @@ import React, { FC, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import type { HeaderProps } from "./types";
+import type { THeaderProps } from "./types";
 import Select from "@/ui/Select/Select";
 import LinkList from "@/components/LinkList/index";
 
 import logo from "@/public/img/logo.svg";
 
-export const Header: FC<HeaderProps> = ({ linksArr, children, langOptionsArr }) => {
+export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuOpenHandler = () => setIsMenuOpen((prevState) => !prevState);
 

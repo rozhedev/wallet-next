@@ -1,6 +1,6 @@
-import { VariantsListItemArr } from "../../components/VariantsList/types";
+import { TVariantsListItemArr } from "../../components/VariantsList/types";
 
-export const testRadioBtnList: VariantsListItemArr = [
+export const testRadioBtnList: TVariantsListItemArr = [
     {
         id: 1,
         type: "radio",

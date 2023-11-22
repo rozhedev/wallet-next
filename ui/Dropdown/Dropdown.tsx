@@ -4,7 +4,7 @@ import type { FC } from "react";
 import { CSSTransition } from "react-transition-group";
 import { useDropdown, useDropdownContext } from "./useDropdown";
 import { DropdownProvider } from "./dropdownContext";
-import type { DropdownProps, DropdownBtnProps, DropdownMenuProps } from "./types";
+import type { TDropdownProps, TDropdownBtnProps, TDropdownMenuProps } from "./types";
 import { TRANSITION_DELAY } from "../../constants/transition";
 
 const CLASS_LIST = {
@@ -16,7 +16,7 @@ const CLASS_LIST = {
     enterActive: "enter-active",
 };
 
-export const Dropdown = ({ children }: DropdownProps): JSX.Element => {
+export const Dropdown = ({ children }: TDropdownProps): JSX.Element => {
     const dropdownState = useDropdown();
 
     return (
@@ -27,7 +27,7 @@ export const Dropdown = ({ children }: DropdownProps): JSX.Element => {
 };
 
 // * Dropdown button
-const DropdownBtn: FC<DropdownBtnProps> = ({ children }) => {
+const DropdownBtn: FC<TDropdownBtnProps> = ({ children }) => {
     const dropdownState = useDropdownContext();
 
     return (
@@ -48,7 +48,7 @@ const DropdownBtn: FC<DropdownBtnProps> = ({ children }) => {
 Dropdown.Btn = DropdownBtn;
 
 // * Dropdown menu
-const DropdownMenu: FC<DropdownMenuProps> = ({ children, transition }) => {
+const DropdownMenu: FC<TDropdownMenuProps> = ({ children, transition }) => {
     const dropdownState = useDropdownContext();
 
     return (

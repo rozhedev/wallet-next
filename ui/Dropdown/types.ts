@@ -1,12 +1,12 @@
-export type DropdownProps = {
+export type TDropdownProps = {
     children: React.ReactNode;
 };
 
-export type DropdownBtnProps = {
+export type TDropdownBtnProps = {
     children: React.ReactNode;
 };
 
-export type DropdownMenuProps = {
+export type TDropdownMenuProps = {
     children: React.ReactNode;
     transition?: number;
 };

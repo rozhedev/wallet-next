@@ -1,6 +1,6 @@
-export type SettingsItem = {
+export type TSettingsItem = {
     label: string;
     isEnabled: boolean; 
 }
 
-export type SettingsItems = SettingsItem[];
+export type TSettingsItemArr = TSettingsItem[];

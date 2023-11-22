@@ -1,4 +1,4 @@
-export type CheckboxProps = {
+export type TCheckboxProps = {
     id: string;
     nameAttr: string;
     label: string;

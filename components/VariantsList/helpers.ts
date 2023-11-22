@@ -1,6 +1,6 @@
-import { VariantsListItemArr, VariantsInpAttr } from "./types";
-import { ToggleModifClassNames } from "@/ui/Toggle/types";
+import { TVariantsListItemArr, TVariantsInpAttr } from "./types";
+import { T_ToggleModifClassNames } from "@/ui/Toggle/types";
 
-export const checkUnifiedArr = (arr: VariantsListItemArr, itemType: VariantsInpAttr) => arr.every((item) => item.type === itemType);
+export const checkUnifiedArr = (arr: TVariantsListItemArr, itemType: TVariantsInpAttr) => arr.every((item) => item.type === itemType);
 
-export const checkToggleArr = (arr: VariantsListItemArr, prop: "classNameModif" | "defaultChecked") => arr.every((item) => item.hasOwnProperty(prop));
+export const checkToggleArr = (arr: TVariantsListItemArr, prop: "classNameModif" | "defaultChecked") => arr.every((item) => item.hasOwnProperty(prop));

@@ -1,16 +1,16 @@
-import { AllCurNotationsScope, CurIconPath } from "@/types/data/currencies";
+import { TAllCurNotesScope, TCurIconPath } from "@/types/data/currencies";
 import { ExtractValFromObj } from "@/types/utils/extractors";
 
-export type CabinetAssetItem<T extends AllCurNotationsScope> = {
+export type TCabinetAssetItem<TCurScope extends TAllCurNotesScope> = {
     id: number;
-    curIcon: CurIconPath<T>;
-    curName: T;
+    curIcon: TCurIconPath<TCurScope>;
+    curName: TCurScope;
 };
 
-export type CabinetBalanceItem<T extends CabinetAssetItem<AllCurNotationsScope>> = {
+export type TCabinetBalanceItem<TAssetItem extends TCabinetAssetItem<TAllCurNotesScope>> = {
     id: number;
-    curIcon: ExtractValFromObj<T, "curIcon">;
-    curName: ExtractValFromObj<T, "curName">;
+    curIcon: ExtractValFromObj<TAssetItem, "curIcon">;
+    curName: ExtractValFromObj<TAssetItem, "curName">;
     pureAmount: number;
     usdAmount: number;
 };

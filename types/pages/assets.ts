@@ -1,9 +1,9 @@
 import { ExtractValFromObj } from "../utils/extractors";
-import { AllCurNotations, AllCurNotationsScope, CurIconPath } from "../data/currencies";
+import { TAllCurNotes, TAllCurNotesScope, TCurIconPath } from "../data/currencies";
 
-export type IconPaths = "/icon-checkmark" | "/icon-unaviable";
+export type TIconPath = "/icon-checkmark" | "/icon-unaviable";
 
-type IconsItemConfig = {
+type TIconsItemConfig = {
     sendPC: boolean;
     receivePC: boolean;
     sendPhone: boolean;
@@ -13,41 +13,41 @@ type IconsItemConfig = {
     stacking: boolean;
 };
 
-type IconsPathsItem<T extends AllCurNotationsScope> = {
+type TIconsPathItem<TScope extends TAllCurNotesScope> = {
     id: number;
     // * curName need for correct icon manage
-    curName: T;
-    sendPC: IconPaths;
-    receivePC: IconPaths;
-    sendPhone: IconPaths;
-    receivePhone: IconPaths;
-    exchange: IconPaths;
-    buy: IconPaths;
-    stacking: IconPaths;
+    curName: TScope;
+    sendPC: TIconPath;
+    receivePC: TIconPath;
+    sendPhone: TIconPath;
+    receivePhone: TIconPath;
+    exchange: TIconPath;
+    buy: TIconPath;
+    stacking: TIconPath;
 };
 
-type IconsPathsItemPure = Omit<IconsPathsItem<AllCurNotationsScope>, "id" | "curName">;
-type IconsPathsItems = IconsPathsItemPure[];
+type TIconsPathItemPure = Omit<TIconsPathItem<TAllCurNotesScope>, "id" | "curName">;
+type TIconsPathItems = TIconsPathItemPure[];
 
-export function checkIconStatus(isCurAvailable: boolean): IconPaths {
-    let path: IconPaths;
+export function checkIconStatus(isCurAvailable: boolean): TIconPath {
+    let path: TIconPath;
     isCurAvailable ? (path = "/icon-checkmark") : (path = "/icon-unaviable");
     return path;
 }
 
-export type AssetsTableItem<T extends AllCurNotationsScope> = {
+export type TAssetsTableItem<TScope extends TAllCurNotesScope> = {
     id: number;
     order: number;
-    curIcon: CurIconPath<AllCurNotationsScope>;
-    curName: T;
-    iconPaths: IconsPathsItemPure;
+    curIcon: TCurIconPath<TAllCurNotesScope>;
+    curName: TScope;
+    iconPaths: TIconsPathItemPure;
 };
 
-export type AssetsTableItems = AssetsTableItem<AllCurNotationsScope>[];
+export type AssetsTableItems = TAssetsTableItem<TAllCurNotesScope>[];
 
 //*  USAGE
 
-const iconStatusConfig: IconsItemConfig = {
+const iconStatusConfig: TIconsItemConfig = {
     sendPC: true,
     receivePC: false,
     sendPhone: true,
@@ -57,7 +57,7 @@ const iconStatusConfig: IconsItemConfig = {
     stacking: true,
 };
 
-export const assetsTableItem: AssetsTableItem<AllCurNotationsScope> = {
+export const assetsTableItem: TAssetsTableItem<TAllCurNotesScope> = {
     id: 2,
     order: 2,
     curIcon: "img/icons/crypto/ethereum-ETH.svg",

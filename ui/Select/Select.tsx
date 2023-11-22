@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import type { SelectProps } from "./types";
+import type { TSelectProps } from "./types";
 
-const Select: FC<SelectProps> = ({ id, title, className, options, disabled, svgIcon }) => {
+const Select: FC<TSelectProps> = ({ id, title, className, options, disabled, svgIcon }) => {
     return (
         <div className={className}>
             {svgIcon}

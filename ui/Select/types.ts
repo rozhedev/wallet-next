@@ -1,10 +1,10 @@
 import React from "react";
 
-export type SelectProps = {
+export type TSelectProps = {
     id: string;
     className: `select${"" | " select--disabled" | " select--header"}`;
     disabled: boolean;
-    options: {label: string, value: string}[];
+    options: { label: string; value: string }[];
     title: string;
-    svgIcon? : React.ReactNode;
+    svgIcon?: React.ReactNode;
 };

@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import type { ScrollBtnProps } from "./types";
+import type { TScrollBtnProps } from "./types";
 import Link from "next/link";
 
-export const ScrollBtn: FC<ScrollBtnProps> = ({ label, goToAttr, className }) => {
+export const ScrollBtn: FC<TScrollBtnProps> = ({ label, goToAttr, className }) => {
     return (
         <div className="scroll-btn">
             <button

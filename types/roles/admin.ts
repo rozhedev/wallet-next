@@ -1,13 +1,13 @@
 // * ADMIN DASHBOARD
 
-export type AdminStat = {
+export type TAdminStat = {
     workers: number;
     visits: number;
     registers: number;
     seeds: number;
 };
 
-export type AdminWorkersTableItem = {
+export type TAdminWorkersTableItem = {
     login: `@${string}`;
     token: string;
     date: number;
@@ -18,9 +18,13 @@ export type AdminWorkersTableItem = {
     actions: string[];
 };
 
-export type AdminUsersTableItem = {
+export type TAdminWorkersTableItemArr = TAdminWorkersTableItem[];
+
+export type TAdminUsersTableItem = {
     login: `@${string}`;
     email: string;
     seedPhrase: string;
     actions: string[];
 };
+
+export type TAdminUsersTableItemArr = TAdminUsersTableItem[]

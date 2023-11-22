@@ -1,4 +1,4 @@
-export type LinkListItem = {
+export type TLinkListItem = {
     href: `/${string}`;
     label: string;
     className: `navlink${"" | " js-modal-open"}`;
@@ -8,6 +8,6 @@ export type LinkListItem = {
 // For btns
 // | `btn ${"btn-fill" | "btn-fill-sm" | "btn-fill-xs" | "btn-outline" | "btn-outline-sm" | "btn-outline-xs"}
 
-export type LinkListProps = {
-    linksArr: LinkListItem[];
-}
+export type TLinkListProps = {
+    linksArr: TLinkListItem[];
+};

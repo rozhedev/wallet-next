@@ -1,6 +1,6 @@
-import { VariantsListItemArr } from "../../components/VariantsList/types";
+import { TVariantsListItemArr } from "../../components/VariantsList/types";
 
-export const testCheckboxList: VariantsListItemArr = [
+export const testCheckboxList: TVariantsListItemArr = [
     {
         id: 1,
         type: "checkbox",

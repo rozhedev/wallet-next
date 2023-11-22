@@ -1,20 +1,20 @@
-type FaqCategories = "General questions" | "Financial questions" | "Security questions";
+type TFaqCategory = "General questions" | "Financial questions" | "Security questions";
 
-export type FaqItem = {
-    id: number
-    title: string,
-    answer: string,
-}
+export type TFaqItem = {
+    id: number;
+    title: string;
+    answer: string;
+};
 
-export type FaqItemTab = {
-    id: number,
-    category: FaqCategories,
-    items: FaqItem[],
-}
+export type TFaqItemTab = {
+    id: number;
+    category: TFaqCategory;
+    items: TFaqItem[];
+};
 
-export type FaqItemTabs = FaqItemTab[];
+export type TFaqItemTabArr = TFaqItemTab[];
 
-const answers: FaqItemTab = {
+const answers: TFaqItemTab = {
     id: 5,
     category: "Financial questions",
     items: [
@@ -28,5 +28,5 @@ const answers: FaqItemTab = {
             title: "What is cryptocurrency?",
             answer: "We define cryptocurrencies as: a digital medium of exchange using strong cryptography to secure financial transactions, control the creation of additional units, and verify the transfer of assets.677",
         },
-    ]
-}
+    ],
+};

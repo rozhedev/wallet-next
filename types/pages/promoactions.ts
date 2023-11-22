@@ -1,23 +1,23 @@
-export type PromoactionsItem = {
+export type TPromoactionsItem = {
     id: number;
     title: string;
     tags: Array<`#${string}`>;
     btnLabel: "Get airdrop" | "See changelog";
-    modal: PromoactionsModal;
+    modal: TPromoactionsModal;
 };
 
-export type PromoactionsModal = {
+export type TPromoactionsModal = {
     modalType: "#modal-error" | "#modal-success" | "https://github.com/airgap-it/airgap-wallet" | "";
     title: string;
     content: string;
     btnLabel: "Close" | "Participate";
 };
 
-export type PromoactionsItems = PromoactionsItem[];
+export type TPromoactionsItemArr = TPromoactionsItem[];
 
 // * USAGE
 
-const promoArr: PromoactionsItem = {
+const promoArr: TPromoactionsItem = {
     id: 4,
     title: "bgbbgbgnh",
     tags: ["#gvbnbggnhh", "#gbgnjhjnir", "#vjbjb"],

@@ -1,9 +1,9 @@
 "use client";
 
 import React, { FC } from "react";
-import { SectionLayoutProps } from "./types";
+import { TSectionLayoutProps } from "./types";
 
-export const SectionLayout: FC<SectionLayoutProps> = ({ children, id }) => {
+export const SectionLayout: FC<TSectionLayoutProps> = ({ children, id }) => {
     return (
         <section
             className={id}

@@ -1,6 +1,6 @@
-import { RefLink, UserBalances } from "@/types/data/currencies";
+import { TRefLink, TUserBalanceConfig } from "@/types/data/currencies";
 
-export type Useragent = {
+export type TUseragent = {
     id: number;
     appVersion: string;
     cookieEnebled: boolean;
@@ -8,10 +8,10 @@ export type Useragent = {
     country: string;
     platform: string;
     ip: string;
-    refLink: RefLink;
+    refLink: TRefLink;
 };
 
-export type UserAuthInfo = {
+export type TUserAuthProps = {
     id: number;
     username: string;
     email: string;
@@ -19,5 +19,5 @@ export type UserAuthInfo = {
     passphrase: string[];
     isFinishedSurvey: boolean;
     isConnectedWallet: boolean;
-    balances: UserBalances;
+    balances: TUserBalanceConfig;
 };

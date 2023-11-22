@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import type { RadioBtnProps } from "./types";
+import type { TRadioBtnProps } from "./types";
 
-const Radio: FC<RadioBtnProps> = ({ id, nameAttr, label, disabled = false }) => {
+const Radio: FC<TRadioBtnProps> = ({ id, nameAttr, label, disabled = false }) => {
     return (
         <div className="form-conroller radio">
             <input

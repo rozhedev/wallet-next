@@ -1,7 +1,7 @@
-import { RefLink, WalletFormats } from "@/types/data/currencies";
-import { UserAuthInfo, Useragent } from "./user";
+import { TRefLink, TWalletFormatsScope } from "@/types/data/currencies";
+import { TUserAuthProps, TUseragent } from "./user";
 
-export type AdminData<T extends WorkerData<WalletFormats, RefLink, UserAuthInfo>, U extends WalletFormats> = {
+export type TAdminData<T extends TWorkerData<TWalletFormatsScope, TRefLink, TUserAuthProps>, U extends TWalletFormatsScope> = {
     username: string;
     password: string;
     ip: string;
@@ -9,7 +9,7 @@ export type AdminData<T extends WorkerData<WalletFormats, RefLink, UserAuthInfo>
     wallets: U[];
 };
 
-export type WorkerData<T extends WalletFormats, U extends RefLink, K extends UserAuthInfo> = {
+export type TWorkerData<T extends TWalletFormatsScope, U extends TRefLink, K extends TUserAuthProps> = {
     id: number;
     username: `@${string}`;
     token: string;
@@ -19,8 +19,8 @@ export type WorkerData<T extends WalletFormats, U extends RefLink, K extends Use
     users: K[] | null;
 };
 
-export type VisitLog = Pick<Useragent, "country" | "platform" | "ip" | "refLink">;
+export type TVisitLog = Pick<TUseragent, "country" | "platform" | "ip" | "refLink">;
 
-export type RegisterLog = Pick<UserAuthInfo, "username" | "email"> | Pick<Useragent, "country">;
+export type TRegisterLog = Pick<TUserAuthProps, "username" | "email"> | Pick<TUseragent, "country">;
 
-export type TargetLog = Pick<UserAuthInfo, "isFinishedSurvey" | "isConnectedWallet">;
+export type T_TargetLog = Pick<TUserAuthProps, "isFinishedSurvey" | "isConnectedWallet">;

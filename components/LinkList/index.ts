@@ -1,2 +1,2 @@
 export { LinkList as default } from "./LinkList";
-export type { LinkListItem } from "./types"
+export type { TLinkListItem } from "./types";

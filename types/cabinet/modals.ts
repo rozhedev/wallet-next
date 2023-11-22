@@ -1,6 +1,6 @@
-export type SurveyModalItem = {
+export type TSurveyModalItem = {
     question: string;
     answers: string[];
 }
 
-export type SurveyModalItems = SurveyModalItem[];
+export type TSurveyModalItemArr = TSurveyModalItem[];

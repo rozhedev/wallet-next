@@ -3,11 +3,11 @@
 import React, { FC } from "react";
 import Link from "next/link";
 
-import type { PromoProps } from "./types";
+import type { TPromoProps } from "./types";
 import Btn from "@/ui/Btn/Btn";
 import ScrollBtn from "@/components/ScrollBtn";
 
-export const Promo: FC<PromoProps> = ({ title }) => {
+export const Promo: FC<TPromoProps> = ({ title }) => {
     return (
         <div className="promo__inner">
             <h1 className="h1">{title}</h1>
@@ -41,7 +41,11 @@ export const Promo: FC<PromoProps> = ({ title }) => {
                     </svg>
                 </Link>
             </div>
-            <ScrollBtn label="Scroll down" goToAttr="#main-assets" className="btn btn-fill scroll-btn__toggle"/>
+            <ScrollBtn
+                label="Scroll down"
+                goToAttr="#main-assets"
+                className="btn btn-fill scroll-btn__toggle"
+            />
         </div>
     );
 };

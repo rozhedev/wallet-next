@@ -1,19 +1,19 @@
-import { ToggleModifClassNames } from "@/ui/Toggle/types";
+import { T_ToggleModifClassNames } from "@/ui/Toggle/types";
 
-export type VariantsInpAttr = "radio" | "checkbox";
+export type TVariantsInpAttr = "radio" | "checkbox";
 
-type VariantsListItem = {
+type TVariantsListItem = {
     id: number;
-    type: VariantsInpAttr;
+    type: TVariantsInpAttr;
     nameAttr: `survey-question${number}`;
     answerId: `survey-answer${number}-${number}`;
     answer: string;
     disabled?: boolean;
-    classNameModif?: ToggleModifClassNames;
+    classNameModif?: T_ToggleModifClassNames;
     defaultChecked?: boolean;
 };
-export type VariantsListItemArr = VariantsListItem[];
+export type TVariantsListItemArr = TVariantsListItem[];
 
 export type VariantsListItemProps = {
-    dataArr: VariantsListItemArr;
+    dataArr: TVariantsListItemArr;
 };

@@ -1,6 +1,6 @@
-import { LinkListItem } from "@/components/LinkList/index";
+import { TLinkListItem } from "@/components/LinkList/index";
 
-export const testLinksData: LinkListItem[] = [
+export const testLinksData: TLinkListItem[] = [
     {
         href: "/",
         label: "Home",
