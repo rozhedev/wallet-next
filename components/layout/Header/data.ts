@@ -62,3 +62,5 @@ export const langSelectOptions: {label: string, value: string}[] = [
         value: "de-deutsch",
     },
 ];
+
+export let isMenuListOpen: boolean = false;

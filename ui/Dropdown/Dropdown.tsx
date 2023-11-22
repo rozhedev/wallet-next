@@ -14,7 +14,7 @@ const CLASS_LIST = {
     dropdownMenu: "dropdown-menu",
     dropdownLinks: "dropdown-links",
     enterActive: "enter-active",
-}
+};
 
 export const Dropdown = ({ children }: DropdownProps): JSX.Element => {
     const dropdownState = useDropdown();

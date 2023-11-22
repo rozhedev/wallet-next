@@ -1,5 +1,6 @@
 .dropdown {
     position: relative;
+    transition: $transition;
     & > .navlink {
         span {
             @include str-trim;

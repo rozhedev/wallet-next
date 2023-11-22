@@ -74,6 +74,10 @@ body._touch .menu__link {
     flex: 1 1 auto;
 }
 
+body:has(.header .menu._active) {
+    overflow: hidden !important;
+}
+
 @media (min-width: map-get($grid-breakpoints, lg)) {
     .menu__list {
         display: flex;

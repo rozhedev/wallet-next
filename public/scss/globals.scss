@@ -19,16 +19,21 @@
 @import "base/preloader.module.scss";
 @import "base/btns.module.scss";
 @import "base/inputs.module.scss";
+@import "base/scroll.module.scss";
 
 // * LIBS
 // @import 'libs/swiper.scss';
 
-// * COMPONENTS
+// * UI & COMPONENTS
 @import "@/ui/Dropdown/styles.module.scss";
+@import "@/components/ScrollBtn/styles.module.scss";
 
 // * LAYOUT
 @import "@/components/layout/Header/styles.module.scss";
 @import "@/components/layout/Footer/styles.module.scss";
+
+// * MAIN SECTION
+@import "@/modules/Main/Promo/styles.module.scss";
 
 // * PAGES
 @import "pages/main.module.scss";

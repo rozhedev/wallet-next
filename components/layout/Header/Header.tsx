@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { FC, useState } from "react";
 import Image from "next/image";
@@ -14,6 +14,15 @@ export const Header: FC<HeaderProps> = ({ linksArr, children, langOptionsArr }) 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuOpenHandler = () => setIsMenuOpen((prevState) => !prevState);
 
+    // * Scroll disabling
+    if (typeof window !== "undefined") {
+        const bodyTag = document.body;
+        isMenuOpen ? bodyTag.classList.add("_lock") : bodyTag.classList.remove("_lock");
+
+        // * Other solution
+        // document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+    }
+
     return (
         <header className="header">
             <div className="container">
@@ -27,17 +36,17 @@ export const Header: FC<HeaderProps> = ({ linksArr, children, langOptionsArr }) 
                     />
                 </Link>
                 <div className="menu">
-                    <div className={`menu__icon ${isMenuOpen ? "_active" : ""}`}
-                    onClick={menuOpenHandler} >
+                    <div
+                        className={`menu__icon ${isMenuOpen ? "_active" : ""}`}
+                        onClick={menuOpenHandler}
+                    >
                         <span></span>
                     </div>
                     <nav className={`menu__body ${isMenuOpen ? "_active" : ""}`}>
                         <ul className="menu__list">
                             <LinkList linksArr={linksArr} />
 
-                            <li>
-                                {children}
-                            </li>
+                            <li>{children}</li>
                             <li className="inline-btn">
                                 <Link
                                     href="/register"
