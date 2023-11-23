@@ -11,7 +11,12 @@ import SectionLayout from "@/components/layout/SectionLayout";
 import { headerLinks, dropdownLinks, langSelectOptions } from "@/components/layout/Header/data";
 import { footerInfoLinks, footerDiscoverLinks } from "@/components/layout/Footer/data";
 import Promo from "@/modules/Main/Promo";
+import MainAssets from "@/modules/Main/MainAssets";
+
 import { promoTitle } from "@/modules/Main/Promo/data";
+import { mainAssetsPromo } from "@/modules/Main/MainAssets/data";
+import { curPromoCount } from "@/data/pages/common";
+import { mainAssetItemArr } from '@/components/items/MainAssetsItem/index';
 
 export default function Home() {
     return (
@@ -49,12 +54,11 @@ export default function Home() {
                     </div>
                 </section>
                 <SectionLayout id="main-assets">
-                    <span style={{ color: "#fff" }}>
-                        Main assets. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi dicta in, est suscipit quod cumque, dolorum illum quaerat quisquam ratione enim tempore nemo
-                        incidunt voluptate aliquid sapiente quos maxime qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, magni. Praesentium soluta impedit corporis ut eaque velit,
-                        ducimus, ipsam repudiandae dolore ex alias laborum itaque, omnis earum officiis aspernatur at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo possimus itaque
-                        dignissimos porro sequi velit saepe, nam, labore qui nostrum, asperiores consequuntur voluptatibus libero obcaecati aperiam deleniti ab voluptates incidunt.
-                    </span>
+                    <MainAssets
+                        promoTitle={mainAssetsPromo}
+                        curCount={curPromoCount}
+                        dataArr={mainAssetItemArr}
+                    />
                 </SectionLayout>
             </main>
             <Footer>

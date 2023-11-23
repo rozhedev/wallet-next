@@ -1,46 +1,6 @@
 import { ExtractValFromObj } from "../utils/extractors";
 import { AllCurNames, TAllCurNotes, TAllCurNotesScope, TCurIconPath } from "../data/currencies";
 
-export type TMainLinksArr = {
-    label: string;
-    path: `/${string}`;
-}[];
-
-const aviableLinks: TMainLinksArr = [
-    {
-        label: "Home",
-        path: "/",
-    },
-    {
-        label: "Assets",
-        path: "/assets",
-    },
-    {
-        label: "Promoactions",
-        path: "/promoactions",
-    },
-    {
-        label: "Popular questions",
-        path: "/faq",
-    },
-    {
-        label: "Privacy Policy",
-        path: "/privacy",
-    },
-    {
-        label: "Terms of Service",
-        path: "/terms",
-    },
-    {
-        label: "Register",
-        path: "/register",
-    },
-    {
-        label: "Sign in",
-        path: "/signin",
-    },
-];
-
 // * TMainAssetsItem
 
 export type TMainAssetsItem<TScope extends TAllCurNotesScope> = {

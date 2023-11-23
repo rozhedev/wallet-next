@@ -417,8 +417,8 @@ export type TRefLink = `https://domain.com/${string}`;
 
 type TIconPathFolders = "countries" | "interface" | "web3";
 
-export type TIconPath = `img/icons/${TIconPathFolders}/${string}.svg`;
-export type TCurIconPath<TScope extends TAllCurNotesScope> = `img/icons/crypto/${TScope}.svg`;
+export type TIconPath = `@/public/img/icons/${TIconPathFolders}/${string}.svg`;
+export type TCurIconPath<TScope extends TAllCurNotesScope> = `@/public/img/icons/crypto/${TScope}.svg`;
 
 // export function pathBuilder(mainFolder: string, subFolder: string, item: string) {
 
