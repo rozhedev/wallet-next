@@ -28,6 +28,8 @@
 @import "@/ui/Dropdown/styles.module.scss";
 @import "@/components/ScrollBtn/styles.module.scss";
 @import "@/components/items/MainAssetsItem/styles.module.scss";
+@import "@/components/items/MainRateItem/styles.module.scss";
+
 
 // * LAYOUT
 @import "@/components/layout/Header/styles.module.scss";
@@ -36,6 +38,7 @@
 // * MAIN SECTION
 @import "@/modules/Main/Promo/styles.module.scss";
 @import "@/modules/Main/MainAssets/styles.module.scss";
+@import "@/modules/Main/MainRate/styles.module.scss";
 
 // * PAGES
 @import "pages/main.module.scss";

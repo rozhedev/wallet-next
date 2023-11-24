@@ -1,0 +1,89 @@
+.main-rate-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+    background-color: rgba($color: $white-color, $alpha: 0.8);
+    backdrop-filter: blur($blur-value);
+
+    border: 2px solid rgba($color: $dark-color, $alpha: 0.12);
+    color: $dark-color;
+    border-radius: $sm-border-radius;
+    cursor: pointer;
+    transition: $transition;
+
+    @include bp(xl) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    @include bp(lg) {
+        padding: 1rem;
+    }
+    @include hover {
+        background-color: $white-color;
+    }
+    &__icon img,
+    &__dir-icon svg {
+        @include icon-size(map-get($icon-size, md), $sm-border-radius);
+        @include bp(md) {
+            @include icon-size(28px, $sm-border-radius);
+        }
+    }
+    &__content,
+    &__output {
+        display: flex;
+        align-items: center;
+    }
+    // * Block with currency name & icon
+    &__content .h3 {
+        margin-left: 0.75rem;
+        font-weight: 400;
+        @include bp(md) {
+            font-size: 1.38rem;
+        }
+        @include bp(sm) {
+            font-size: 1.5rem;
+        }
+    }
+    // * Block with currency rate & direction icon
+    &__output {
+        @include bp(xl) {
+            margin-top: 1rem;
+        }
+        .output {
+            margin-right: 0.5rem;
+            text-align: right;
+            @include bp(md) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    &__dir-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            stroke-width: map-get($map: $stroke-width, $key: sm);
+        }
+    }
+
+    // * STATE CLASSES
+    &.top {
+        .main-rate-item__output .output {
+            color: $success-green;
+        }
+        .main-rate-item__dir-icon svg {
+            stroke: $success-green;
+            transform: rotate(0deg);
+        }
+    } 
+    &.bottom {
+        .main-rate-item__output .output {
+            color: $error-red;
+        }
+        .main-rate-item__dir-icon svg {
+            stroke: $error-red;
+            transform: rotate(90deg);
+        }
+    }   
+}

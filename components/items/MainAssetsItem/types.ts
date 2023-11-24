@@ -1,12 +1,12 @@
-import { TAllCurNotesScope, TCurIconPath } from "@/types/data/currencies";
+import { AllCurNames, TAllCurNotesScope, TCurIconPath } from "@/types/data/currencies";
 
 // * TMainAssetsItem
-export type TMainAssetsItem<TScope extends TAllCurNotesScope> = {
-    id: `${TScope}-tooltip`;
+export type TMainAssetsItem<TScope extends TAllCurNotesScope, UName extends AllCurNames> = {
+    id: `${UName}-tooltip`;
     disabled: boolean;
     imgPath: TCurIconPath<TAllCurNotesScope>;
     imgAlt: TScope;
     title: TScope;
 };
 
-export type TMainAssetsItemArr = TMainAssetsItem<TAllCurNotesScope>[];
+export type TMainAssetsItemArr = TMainAssetsItem<TAllCurNotesScope, AllCurNames>[];

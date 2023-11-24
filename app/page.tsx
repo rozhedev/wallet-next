@@ -12,11 +12,13 @@ import { headerLinks, dropdownLinks, langSelectOptions } from "@/components/layo
 import { footerInfoLinks, footerDiscoverLinks } from "@/components/layout/Footer/data";
 import Promo from "@/modules/Main/Promo";
 import MainAssets from "@/modules/Main/MainAssets";
+import MainRate from "@/modules/Main/MainRate";
 
 import { promoTitle } from "@/modules/Main/Promo/data";
 import { mainAssetsPromo } from "@/modules/Main/MainAssets/data";
 import { curPromoCount } from "@/data/pages/common";
 import { mainAssetItemArr } from '@/components/items/MainAssetsItem/index';
+import { mainRateItemArr } from "@/components/items/MainRateItem";
 
 export default function Home() {
     return (
@@ -59,6 +61,9 @@ export default function Home() {
                         curCount={curPromoCount}
                         dataArr={mainAssetItemArr}
                     />
+                </SectionLayout>
+                <SectionLayout id="exchange-rate">
+                    <MainRate dataArr={mainRateItemArr}/>
                 </SectionLayout>
             </main>
             <Footer>
