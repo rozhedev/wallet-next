@@ -12,20 +12,3 @@
         }
     }
 }
-
-// * TIPPY CONFIG
-
-.main-asset-theme {
-    font-size: 0.9rem;
-    font-weight: 500;
-    background-color: $light-color;
-    color: $dark-color;
-}
-
-.main-asset-theme[data-placement^='top'] .tippy-arrow {
-    border-top-color: $white-color;
-}
-
-.tooltip-disable .main-asset-theme {
-    display: none;
-}

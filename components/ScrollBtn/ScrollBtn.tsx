@@ -3,8 +3,6 @@ import { Link as ScrollLink } from "react-scroll";
 import type { TScrollBtnProps } from "./types";
 
 export const ScrollBtn: FC<TScrollBtnProps> = ({ label, goToAttr, className }) => {
-    const clickHandler = () => {};
-
     return (
         <ScrollLink to="main-assets" smooth={true} duration={600}>
             <div className="scroll-btn">
@@ -12,7 +10,6 @@ export const ScrollBtn: FC<TScrollBtnProps> = ({ label, goToAttr, className }) =
                     type="button"
                     className={className}
                     data-goto={goToAttr}
-                    onClick={clickHandler}
                 >
                     <svg
                         width="32"
