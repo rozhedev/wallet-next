@@ -178,7 +178,7 @@ export type TAllCurNotes = {
 
     [AllCurNames.monero]: AllCurNames.monero | "Monero" | "XMR" | "xmr" | "Monero (XMR)" | "monero-XMR";
 
-    [AllCurNames.nearProtocol]: AllCurNames.nearProtocol | "NEAR Protocol" | "NEAR" | "near" | "NEAR Protocol (NEAR)" | "near-protocol-NEAR";
+    [AllCurNames.nearProtocol]: AllCurNames.nearProtocol | "NEAR Protocol" | "NEAR" | "near" | "NEAR Protocol (NEAR)" | "Near (NEAR)" | "near-protocol-NEAR";
 
     [AllCurNames.neo]: AllCurNames.neo | "Neo" | "NEO" | "Neo (NEO)" | "neo-NEO";
 

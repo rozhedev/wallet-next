@@ -18,8 +18,32 @@ import polygonMATIC from "@/public/img/icons/crypto/polygon-MATIC.svg";
 import cronosCRO from "@/public/img/icons/crypto/cronos-CRO.svg";
 import wrappedBitcoinWBTC from "@/public/img/icons/crypto/wrapped-bitcoin-WBTC.svg";
 import algorandALGO from "@/public/img/icons/crypto/algorand-ALGO.svg";
+import litecoinLTC from "@/public/img/icons/crypto/litecoin-LTC.svg";
+import chainlinkLINK from "@/public/img/icons/crypto/chainlink-LINK.svg";
+import daiDAI from "@/public/img/icons/crypto/dai-DAI.svg";
+import bitcoinCashBCH from "@/public/img/icons/crypto/bitcoin-cash-BCH.svg";
+import fantomFTM from "@/public/img/icons/crypto/fantom-FTM.svg";
+import axieInfinityAXS from "@/public/img/icons/crypto/axie-infinity-AXS.svg";
+import tronTRX from "@/public/img/icons/crypto/tron-TRX.svg";
+import stellarXLM from "@/public/img/icons/crypto/stellar-XLM.svg";
+import nearNEAR from "@/public/img/icons/crypto/near-NEAR.svg";
+import ftxTokenFTX from "@/public/img/icons/crypto/ftx-token-FTX.svg";
+import cosmosATOM from "@/public/img/icons/crypto/cosmos-ATOM.svg";
+import veChainVET from "@/public/img/icons/crypto/ve-chain-VET.svg";
+import hederaHBAR from "@/public/img/icons/crypto/hedera-hashgraph-HBAR.svg";
+import sandboxSAND from "@/public/img/icons/crypto/sandbox-SAND.svg";
+import filecoinFIL from "@/public/img/icons/crypto/filecoin-FIL.svg";
+import internetComputerICP from "@/public/img/icons/crypto/internet-computer-ICP.svg";
+import thetaTHETA from "@/public/img/icons/crypto/theta-THETA.svg";
+import elrondEGLD from "@/public/img/icons/crypto/elrond-EGLD.svg";
+import ethereumClassicETC from "@/public/img/icons/crypto/ethereum-classic-ETC.svg";
+import moneroXLM from "@/public/img/icons/crypto/monero-XMR.svg";
+import heliumHNT from "@/public/img/icons/crypto/helium-HNT.svg";
+import tezosXTZ from "@/public/img/icons/crypto/tezos-XTZ.svg";
+import iotaMIOTA from "@/public/img/icons/crypto/iota-MIOTA.svg";
+import aaveAAVE from "@/public/img/icons/crypto/aave-AAVE.svg";
 
-
+// * Data
 export const mainAssetItemArr: TMainAssetsItemArr = [
     {
         id: `${AllCurNames.bitcoin}-tooltip`,
@@ -133,5 +157,172 @@ export const mainAssetItemArr: TMainAssetsItemArr = [
         imgAlt: AllCurNames.algorand,
         title: "Algorand (ALGO)",
     },
-    
+    {
+        id: `${AllCurNames.litecoin}-tooltip`,
+        disabled: false,
+        imgPath: litecoinLTC,
+        imgAlt: AllCurNames.litecoin,
+        title: "Litecoin (LTC)",
+    },
+    {
+        id: `${AllCurNames.chainlink}-tooltip`,
+        disabled: false,
+        imgPath: chainlinkLINK,
+        imgAlt: AllCurNames.chainlink,
+        title: "Chainlink (LINK)",
+    },
+    {
+        id: `${AllCurNames.dai}-tooltip`,
+        disabled: false,
+        imgPath: daiDAI,
+        imgAlt: AllCurNames.dai,
+        title: "Dai (DAI)",
+    },
+    {
+        id: `${AllCurNames.bitcoinCash}-tooltip`,
+        disabled: false,
+        imgPath: bitcoinCashBCH,
+        imgAlt: AllCurNames.bitcoinCash,
+        title: "Bitcoin Cash (BCH)",
+    },
+    {
+        id: `${AllCurNames.fantom}-tooltip`,
+        disabled: false,
+        imgPath: fantomFTM,
+        imgAlt: AllCurNames.fantom,
+        title: "Fantom (FTM)",
+    },
+    {
+        id: `${AllCurNames.axieInfinity}-tooltip`,
+        disabled: false,
+        imgPath: axieInfinityAXS,
+        imgAlt: AllCurNames.axieInfinity,
+        title: "Axie Infinity (AXS)",
+    },
+    {
+        id: `${AllCurNames.tron}-tooltip`,
+        disabled: false,
+        imgPath: tronTRX,
+        imgAlt: AllCurNames.tron,
+        title: "Tron (TRX)",
+    },
+    {
+        id: `${AllCurNames.stellar}-tooltip`,
+        disabled: false,
+        imgPath: stellarXLM,
+        imgAlt: AllCurNames.stellar,
+        title: "Stellar (XLM)",
+    },
+    {
+        id: `${AllCurNames.nearProtocol}-tooltip`,
+        disabled: false,
+        imgPath: nearNEAR,
+        imgAlt: AllCurNames.nearProtocol,
+        title: "Near (NEAR)",
+    },
+    {
+        id: `${AllCurNames.ftxToken}-tooltip`,
+        disabled: false,
+        imgPath: ftxTokenFTX,
+        imgAlt: AllCurNames.ftxToken,
+        title: "FTX Token (FTX)",
+    },
+    {
+        id: `${AllCurNames.cosmos}-tooltip`,
+        disabled: false,
+        imgPath: cosmosATOM,
+        imgAlt: AllCurNames.cosmos,
+        title: "Cosmos (ATOM)",
+    },
+    {
+        id: `${AllCurNames.veChain}-tooltip`,
+        disabled: false,
+        imgPath: veChainVET,
+        imgAlt: AllCurNames.veChain,
+        title: "Ve Chain (VET)",
+    },
+    {
+        id: `${AllCurNames.hedera}-tooltip`,
+        disabled: false,
+        imgPath: hederaHBAR,
+        imgAlt: AllCurNames.hedera,
+        title: "Hedera (HBAR)",
+    },
+    {
+        id: `${AllCurNames.theSandbox}-tooltip`,
+        disabled: false,
+        imgPath: sandboxSAND,
+        imgAlt: AllCurNames.theSandbox,
+        title: "The Sandbox (SAND)",
+    },
+    {
+        id: `${AllCurNames.filecoin}-tooltip`,
+        disabled: false,
+        imgPath: filecoinFIL,
+        imgAlt: AllCurNames.filecoin,
+        title: "Filecoin (FIL)",
+    },
+    {
+        id: `${AllCurNames.internetComputer}-tooltip`,
+        disabled: false,
+        imgPath: internetComputerICP,
+        imgAlt: AllCurNames.internetComputer,
+        title: "Internet Computer (ICP)",
+    },
+    {
+        id: `${AllCurNames.thetaNetwork}-tooltip`,
+        disabled: false,
+        imgPath: thetaTHETA,
+        imgAlt: AllCurNames.thetaNetwork,
+        title: "Theta Network (THETA)",
+    },
+    {
+        id: `${AllCurNames.elrond}-tooltip`,
+        disabled: false,
+        imgPath: elrondEGLD,
+        imgAlt: AllCurNames.elrond,
+        title: "Elrond (EGLD)",
+    },
+    {
+        id: `${AllCurNames.ethereumClassic}-tooltip`,
+        disabled: true,
+        imgPath: ethereumClassicETC,
+        imgAlt: AllCurNames.ethereumClassic,
+        title: "Ethereum Classic (ETC)",
+    },
+    {
+        id: `${AllCurNames.monero}-tooltip`,
+        disabled: true,
+        imgPath: moneroXLM,
+        imgAlt: AllCurNames.monero,
+        title: "Monero (XMR)",
+    },
+    {
+        id: `${AllCurNames.helium}-tooltip`,
+        disabled: false,
+        imgPath: heliumHNT,
+        imgAlt: AllCurNames.helium,
+        title: "Helium (HNT)",
+    },
+    {
+        id: `${AllCurNames.tezos}-tooltip`,
+        disabled: false,
+        imgPath: tezosXTZ,
+        imgAlt: AllCurNames.tezos,
+        title: "Tezos (XTZ)",
+    },
+    {
+        id: `${AllCurNames.iota}-tooltip`,
+        disabled: false,
+        imgPath: iotaMIOTA,
+        imgAlt: AllCurNames.iota,
+        title: "IOTA (MIOTA)",
+    },
+    {
+        id: `${AllCurNames.aave}-tooltip`,
+        disabled: false,
+        imgPath: aaveAAVE,
+        imgAlt: AllCurNames.aave,
+        title: "Aave (AAVE)",
+    },
 ];
