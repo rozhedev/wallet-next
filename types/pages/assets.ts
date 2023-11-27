@@ -60,7 +60,7 @@ const iconStatusConfig: TIconsItemConfig = {
 export const assetsTableItem: TAssetsTableItem<TAllCurNotesScope> = {
     id: 2,
     order: 2,
-    curIcon: "img/icons/crypto/ethereum-ETH.svg",
+    curIcon: "@/public/img/icons/crypto/ethereum-ETH.svg",
     curName: "Ethereum",
     iconPaths: {
         sendPC: checkIconStatus(iconStatusConfig.sendPC),

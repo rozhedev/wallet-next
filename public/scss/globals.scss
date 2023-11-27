@@ -22,7 +22,7 @@
 @import "base/scroll.module.scss";
 
 // * LIBS
-// @import 'libs/swiper.scss';
+@import "tippy.js/dist/tippy.css"; 
 
 // * UI & COMPONENTS
 @import "@/ui/Dropdown/styles.module.scss";

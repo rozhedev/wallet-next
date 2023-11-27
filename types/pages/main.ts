@@ -16,7 +16,7 @@ export type TMainAssetsItemArr = TMainAssetsItem<TAllCurNotesScope>[];
 const mainAssetItem: TMainAssetsItem<ExtractValFromObj<TAllCurNotes, AllCurNames.bitcoin>> = {
     id: "bitcoin-tooltip",
     tooltipDisableAttr: "",
-    imgPath: `img/icons/crypto/bitcoin-BTC.svg`,
+    imgPath: `@/public/img/icons/crypto/bitcoin-BTC.svg`,
     imgAlt: AllCurNames.bitcoin,
     title: "Bitcoin (BTC)",
 };
@@ -34,7 +34,7 @@ export type TMainRateItemArr = TMainRateItem<TAllCurNotesScope>[];
 
 const mainRateItem: TMainRateItem<TAllCurNotesScope> = {
     id: "bitcoin-rate",
-    imgPath: "img/icons/crypto/bitcoin-BTC.svg",
+    imgPath: "@/public/img/icons/crypto/bitcoin-BTC.svg",
     rate: 8888,
     imgVector: "/arrow-top",
 };

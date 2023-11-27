@@ -1,13 +1,13 @@
 import React, { FC } from "react";
-import type { TMainRateItem } from "./types";
+import type { TApiLinkMask, TMainRateItem } from "./types";
 import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
 import Image from "next/image";
 
-export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames>> = ({ id, title, imgPath, imgAlt, rate, rateId, isIncreased }) => {
+export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames, TApiLinkMask>> = ({id, className, title, imgPath, imgAlt, rate }) => {
     return (
         <div
-            className={`main-rate-item ${isIncreased ? "top" : "bottom"}`}
             id={id}
+            className={className}
         >
             <div className="main-rate-item__content">
                 <div className="main-rate-item__icon">
@@ -19,12 +19,7 @@ export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames>> = (
                 <h5 className="h3">{title}</h5>
             </div>
             <div className="main-rate-item__output">
-                <span
-                    className="output"
-                    id={rateId}
-                >
-                    {rate}
-                </span>
+                <span className="output">${rate}</span>
                 <div className="main-rate-item__dir-icon">
                     <svg
                         viewBox="0 0 64 64"
