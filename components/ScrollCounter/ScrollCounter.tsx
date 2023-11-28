@@ -1,12 +1,14 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC, useRef } from "react";
 import type { TScrollCounterProps } from "./types";
 import CountUp, { useCountUp } from "react-countup";
 
 export const ScrollCounter: FC<TScrollCounterProps> = ({ curCount }) => {
+    // * Don't change props values
     useCountUp({
         ref: "main-assets-count-value",
+        startOnMount: false,
         start: 0,
         end: curCount,
         duration: 5,
@@ -25,10 +27,8 @@ export const ScrollCounter: FC<TScrollCounterProps> = ({ curCount }) => {
                 <CountUp
                     start={0}
                     end={curCount}
-                    duration={5}
                     enableScrollSpy={true}
                     scrollSpyOnce={true}
-                    scrollSpyDelay={1000}
                 />
             </span>
         </span>

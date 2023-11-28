@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { lazy } from "react";
 
 import Dropdown from "@/ui/Dropdown";
 import LinkList from "@/components/LinkList";
@@ -16,9 +16,9 @@ import MainRate from "@/modules/Main/MainRate";
 
 import { promoTitle } from "@/modules/Main/Promo/data";
 import { mainAssetsPromo } from "@/modules/Main/MainAssets/data";
-import { curPromoCount } from "@/data/pages/common";
-import { mainAssetItemArr } from '@/components/items/MainAssetsItem/index';
+import { mainAssetItemArr } from "@/components/items/MainAssetsItem/index";
 import { mainRateItemArr } from "@/components/items/MainRateItem";
+import Advant from "@/modules/Main/Advant";
 
 export default function Home() {
     return (
@@ -58,12 +58,14 @@ export default function Home() {
                 <SectionLayout id="main-assets">
                     <MainAssets
                         promoTitle={mainAssetsPromo}
-                        curCount={curPromoCount}
                         dataArr={mainAssetItemArr}
                     />
                 </SectionLayout>
                 <SectionLayout id="exchange-rate">
-                    <MainRate dataArr={mainRateItemArr}/>
+                    <MainRate dataArr={mainRateItemArr} />
+                </SectionLayout>
+                <SectionLayout id="advant">
+                    <Advant />
                 </SectionLayout>
             </main>
             <Footer>
