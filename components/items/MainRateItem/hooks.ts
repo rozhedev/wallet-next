@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import { TApiLinkMask } from "@/components/items/MainRateItem/types";
 
 export const useFetching = (cb: any) => {
-    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isLoad, setIsLoad] = useState<boolean>(false);
     const [loadErr, setLoadErr] = useState<string>("");
 
-    const fetching = async () => {
+    const fetchContent = async () => {
         try {
-            setIsLoading(true);
+            setIsLoad(true);
             await cb();
         } catch (err: any) {
             setLoadErr(err.message);
         } finally {
-            setIsLoading(false);
+            setIsLoad(false);
         }
     };
-    return [fetching, isLoading, loadErr];
+    return [fetchContent, isLoad, loadErr];
 };
 
 export const getSocketCurRate = (apiLink: TApiLinkMask) => {
@@ -29,6 +29,7 @@ export const getSocketCurRate = (apiLink: TApiLinkMask) => {
         };
         ws.onerror = function (e) {
             console.error(e, e.timeStamp);
+            reject("Error. Log in console")
         };
     });
 };

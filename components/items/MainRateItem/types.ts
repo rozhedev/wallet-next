@@ -1,7 +1,6 @@
 import { AllCurNames, TAllCurNotesScope, TCurIconPath } from "@/types/data/currencies";
 
-export type TApiLinkMask = `wss://stream.binance.com:9443/ws/${string}@trade`
-
+export type TApiLinkMask = `wss://stream.binance.com:9443/ws/${string}@trade`;
 
 // * TMainAssetsItem
 export type TMainRateItem<TScope extends TAllCurNotesScope, UName extends AllCurNames, VMask extends TApiLinkMask> = {
@@ -13,3 +12,15 @@ export type TMainRateItem<TScope extends TAllCurNotesScope, UName extends AllCur
 };
 
 export type TMainRateItemArr = TMainRateItem<TAllCurNotesScope, AllCurNames, TApiLinkMask>[];
+
+export type TRateSkeletonProps = {
+    uniqueKey: string;
+    speed: number;
+    width: number;
+    height: number;
+    bgColor: `#${string}` | "transparent";
+    foregroundColor: `#${string}`;
+    rectWidth: number;
+    rectHeight: number;
+    borderRadius: number;
+};
