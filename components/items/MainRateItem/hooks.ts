@@ -18,7 +18,7 @@ export const useFetching = (cb: any) => {
     return [fetchContent, isLoad, loadErr];
 };
 
-export const getSocketCurRate = (apiLink: TApiLinkMask) => {
+export const getCurRatePromise = (apiLink: TApiLinkMask) => {
     let ws: WebSocket = new WebSocket(apiLink);
 
     return new Promise(function (resolve, reject) {
@@ -29,7 +29,7 @@ export const getSocketCurRate = (apiLink: TApiLinkMask) => {
         };
         ws.onerror = function (e) {
             console.error(e, e.timeStamp);
-            reject("Error. Log in console")
+            reject("Error. Log in console");
         };
     });
 };

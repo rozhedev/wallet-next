@@ -1,0 +1,11 @@
+.main-assets__count {
+    font-size: 7.5rem;
+    font-weight: 300;
+    line-height: 1.25;
+    letter-spacing: 0.08em;
+    color: $primary-accent-color;
+    text-shadow: 0 0 12px rgba($color: $primary-accent-color, $alpha: 0.4);
+    @include bp(md) {
+        font-size: 6rem;
+    }
+}

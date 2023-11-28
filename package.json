@@ -12,13 +12,16 @@
     "dependencies": {
         "@tippyjs/react": "^4.2.6",
         "@types/react-transition-group": "^4.4.9",
+        "count-up": "^1.0.4",
         "next": "13.5.4",
         "react": "^18",
         "react-content-loader": "^6.2.1",
+        "react-countup": "^6.5.0",
         "react-dom": "^18",
         "react-scroll": "^1.9.0",
         "react-transition-group": "^4.4.5",
         "sass": "^1.69.5",
+        "uninstall": "^0.0.0",
         "zustand": "^4.4.3"
     },
     "devDependencies": {

@@ -4,7 +4,7 @@ import React, { FC, useEffect, useState, useRef } from "react";
 import type { TApiLinkMask, TMainRateItem } from "./types";
 import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
 import Image from "next/image";
-import { getSocketCurRate } from "./hooks";
+import { getCurRatePromise } from "./hooks";
 import RateSkeleton from "./RateSkeleton";
 
 export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames, TApiLinkMask>> = ({ id, title, imgPath, imgAlt, apiLink }) => {
@@ -14,7 +14,7 @@ export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames, TApi
 
     const prevRateRef = useRef(0);
     useEffect(() => {
-        getSocketCurRate(apiLink).then((res: any) => {
+        getCurRatePromise(apiLink).then((res: any) => {
             res = +res;
             setRate(res);
             setIsLoading(true);
