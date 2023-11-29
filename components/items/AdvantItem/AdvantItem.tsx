@@ -2,7 +2,7 @@
 
 import React, { FC } from "react";
 import type { TMainAdvantItem } from "./types";
-import { Accordion } from "@/common/details-anim";
+import { Accordion } from "@/utils/details-anim";
 
 export const AdvantItem: FC<TMainAdvantItem> = ({ svgIcon, title, descr }) => {
     // * Add class instance in details elements for animation

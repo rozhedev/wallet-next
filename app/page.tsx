@@ -14,6 +14,7 @@ import Promo from "@/modules/Main/Promo";
 import MainAssets from "@/modules/Main/MainAssets";
 import MainRate from "@/modules/Main/MainRate";
 import Advant from "@/modules/Main/Advant";
+import MainDownload from "@/modules/Main/MainDownload";
 
 import { promoTitle } from "@/modules/Main/Promo/data";
 import { mainAssetsPromo } from "@/modules/Main/MainAssets/data";
@@ -67,6 +68,9 @@ export default function Home() {
                 </SectionLayout>
                 <SectionLayout id="advant">
                     <Advant dataArr={mainAdvantItemArr}/>
+                </SectionLayout>
+                <SectionLayout id="download">
+                    <MainDownload dataArr={[]}/>
                 </SectionLayout>
             </main>
             <Footer>

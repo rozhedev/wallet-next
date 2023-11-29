@@ -23,7 +23,7 @@ export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames, TApi
             const prevValue = prevRateRef.current;
 
             // * For prevent stopping rate update
-            prevValue === res && setIsIncreased((prevState) => !prevState);
+            prevValue === res && setIsIncreased(() => !isIncreased);
             prevValue < res ? setIsIncreased(true) : setIsIncreased(false);
 
             // * Round values

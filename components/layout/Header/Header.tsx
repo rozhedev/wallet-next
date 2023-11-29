@@ -12,7 +12,7 @@ import logo from "@/public/img/logo.svg";
 
 export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const menuOpenHandler = () => setIsMenuOpen((prevState) => !prevState);
+    const menuOpenHandler = () => setIsMenuOpen(() => !isMenuOpen);
 
     // * Scroll disabling
     if (typeof window !== "undefined") {
