@@ -26,6 +26,7 @@
     }
     .btn {
         margin: 2.5rem auto 0;
+        width: fit-content;
         box-shadow: $advant-outset-shadow, inset 4px -4px 0px 0px rgba($color: $dark-color, $alpha: 0);
         transition: 0.5s all linear;
         @include hover {

@@ -13,14 +13,15 @@ import { footerInfoLinks, footerDiscoverLinks } from "@/components/layout/Footer
 import Promo from "@/modules/Main/Promo";
 import MainAssets from "@/modules/Main/MainAssets";
 import MainRate from "@/modules/Main/MainRate";
+import Advant from "@/modules/Main/Advant";
 
 import { promoTitle } from "@/modules/Main/Promo/data";
 import { mainAssetsPromo } from "@/modules/Main/MainAssets/data";
 import { mainAssetItemArr } from "@/components/items/MainAssetsItem/index";
 import { mainRateItemArr } from "@/components/items/MainRateItem";
-import Advant from "@/modules/Main/Advant";
+import { mainAdvantItemArr } from "@/components/items/AdvantItem/data";
 
-export default function Home() {
+export default function Home() {    
     return (
         <>
             <main
@@ -65,7 +66,7 @@ export default function Home() {
                     <MainRate dataArr={mainRateItemArr} />
                 </SectionLayout>
                 <SectionLayout id="advant">
-                    <Advant />
+                    <Advant dataArr={mainAdvantItemArr}/>
                 </SectionLayout>
             </main>
             <Footer>

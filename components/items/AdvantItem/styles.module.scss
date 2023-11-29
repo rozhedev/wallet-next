@@ -1,0 +1,75 @@
+.advant-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 1rem;
+    background-color: $white-color;
+    border-radius: $sm-border-radius;
+
+    border: 2px solid rgba($color: $dark-color, $alpha: 0.32);
+    box-shadow: $advant-outset-shadow, inset 4px -4px 0px 0px rgba($color: $dark-color, $alpha: 0);
+    cursor: text;
+    transition: 0.5s all linear;
+
+    @include hover {
+        box-shadow: 0px 0px 0px 0px rgba($color: $dark-color, $alpha: 0), $advant-inset-shadow;
+    }
+    @include bp(sm) {
+        width: 100%;
+    }
+
+    // * ELEMENTS
+    .h5 {
+        margin: 0.5rem 0 1rem;
+        font-size: 1.375rem;
+        font-weight: 400;
+        line-height: 1.46;
+        letter-spacing: 0.02em;
+        @include bp(md) {
+            font-size: 1.25rem;
+            line-height: 1.56;
+        }
+    }
+    .accordion-content {
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba($color: $dark-color, $alpha: 0.32);
+        text-align: justify;
+        font-size: 1rem;
+    }
+    &__icon .advant-item__svg,
+    .advant-item__svg * {
+        @include icon-size(96px, 0);
+        stroke: $dark-color;
+        stroke-width: calc(map-get($map: $stroke-width, $key: sm) / 3) ;
+        @include bp(md) {
+            @include icon-size(map-get($icon-size, xl), 0);
+        }
+    }
+
+    // * COLORING ICONS
+    &:nth-of-type(1) .advant-item__svg *,
+    &:nth-of-type(8) .advant-item__svg *,
+    &:nth-of-type(9) .advant-item__svg *,
+    &:nth-of-type(16) .advant-item__svg * {
+        stroke: $dark-color;
+    }
+    &:nth-of-type(2) .advant-item__svg *,
+    &:nth-of-type(7) .advant-item__svg *,
+    &:nth-of-type(10) .advant-item__svg *,
+    &:nth-of-type(15) .advant-item__svg * {
+        stroke: $success-green;
+    }
+    &:nth-of-type(3) .advant-item__svg *,
+    &:nth-of-type(6) .advant-item__svg *,
+    &:nth-of-type(10) .advant-item__svg *,
+    &:nth-of-type(15) .advant-item__svg * {
+        stroke: $error-red;
+    }
+    &:nth-of-type(4) .advant-item__svg *,
+    &:nth-of-type(5) .advant-item__svg *,
+    &:nth-of-type(12) .advant-item__svg *,
+    &:nth-of-type(13) .advant-item__svg * {
+        stroke: $primary-accent-color;
+    }
+}

@@ -38,24 +38,12 @@ $promo-bg-path: '../../../public/img/photos/bg/promo.svg';
         @include bp(sm) {
             width: 100%;
             flex-direction: column-reverse;
-            // * Before transfer to React uncomment this & remove "#" styles
-            // form .btn {
-            //     margin-top: 2.5rem;
-            //     width: 100%;
-            //     &:last-of-type {
-            //         margin-top: 0;
-            //     }
-            // }
-            // * #
-            form {
+            .btn {
                 margin-top: 2.5rem;
                 width: 100%;
                 &:last-of-type {
                     margin-top: 0;
                 }
-            }
-            .btn {
-                width: 100%;
             }
         }
         .btn {
