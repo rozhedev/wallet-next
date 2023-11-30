@@ -1,2 +1,2 @@
 export { Promo as default } from "./Promo";
-export { promoTitle } from './data';
+export { promoTitle,  } from './data';

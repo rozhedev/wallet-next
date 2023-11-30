@@ -16,11 +16,12 @@ import MainRate from "@/modules/Main/MainRate";
 import Advant from "@/modules/Main/Advant";
 import MainDownload from "@/modules/Main/MainDownload";
 
-import { promoTitle } from "@/modules/Main/Promo/data";
-import { mainAssetsPromo } from "@/modules/Main/MainAssets/data";
-import { mainAssetItemArr } from "@/components/items/MainAssetsItem/index";
+import { promoTitle } from "@/modules/Main/Promo";
+import { mainAssetsPromo } from "@/modules/Main/MainAssets";
+import { mainAssetItemArr } from "@/components/items/MainAssetsItem";
 import { mainRateItemArr } from "@/components/items/MainRateItem";
-import { mainAdvantItemArr } from "@/components/items/AdvantItem/data";
+import { mainAdvantItemArr } from "@/components/items/AdvantItem";
+import { downloadColumnArr } from "@/components/DownloadColumn";
 
 export default function Home() {    
     return (
@@ -70,7 +71,7 @@ export default function Home() {
                     <Advant dataArr={mainAdvantItemArr}/>
                 </SectionLayout>
                 <SectionLayout id="download">
-                    <MainDownload dataArr={[]}/>
+                    <MainDownload dataArr={downloadColumnArr}/>
                 </SectionLayout>
             </main>
             <Footer>

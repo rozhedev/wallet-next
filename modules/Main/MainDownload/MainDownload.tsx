@@ -1,17 +1,13 @@
 import React, { FC, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import FsLightbox from "fslightbox-react";
 
 import type { TMainDownloadProps } from "./types";
+import DownloadColumn, { TDownloadColumnItem } from "@/components/DownloadColumn";
 
 import desctopPhoneMockup from "@/public/img/photos/mockups/desktop_and_phone_apps.webp";
-import badgeMSStore from "@/public/img/photos/badges/MS-Store/English_MS_864X312.svg";
-import badgeMacAppStore from "@/public/img/photos/badges/Download-on-the-Mac-App-Store/US/Badge_US-UK_RGB_blk_092917.svg";
-import badgeAppStore from "@/public/img/photos/badges/Download-on-the-App-Store/US/App_Store_Badge_US-UK_RGB_blk_092917.svg";
-import badgeGooglePlay from "@/public/img/photos/badges/Google-Play/google-play-badge.webp";
 
-export const MainDownload: FC<TMainDownloadProps> = ({}) => {
+export const MainDownload: FC<TMainDownloadProps> = ({ dataArr }) => {
     const [isImgOpen, setIsImgOpen] = useState<boolean>(true);
     return (
         <>
@@ -51,58 +47,14 @@ export const MainDownload: FC<TMainDownloadProps> = ({}) => {
 
             <h4 className="h3 section-title">Download for your platform:</h4>
             <div className="inner">
-                <div className="download-column">
-                    <span className="primary-subtitle">Desktop</span>
-                    <div>
-                        <Link
-                            className="btn btn-fill btn--windows"
-                            href="/"
-                        >
-                            <Image
-                                className="download-column__btn-img"
-                                src={badgeMSStore}
-                                alt="Download on Microsoft Store"
-                            />
-                        </Link>
-
-                        <Link
-                            className="btn btn-fill btn--mac-appstore"
-                            href="/"
-                        >
-                            <Image 
-                                className="download-column__btn-img"
-                                src={badgeMacAppStore}
-                                alt="Download on the Mac App Store"
-                            />
-                        </Link>
-                    </div>
-                </div>
-                <div className="download-column">
-                    <span className="primary-subtitle">Mobile</span>
-                    <div>
-                        <Link
-                            className="btn btn-fill btn--appstore"
-                            href="/"
-                        >
-                            <Image 
-                                className="download-column__btn-img"
-                                src={badgeAppStore}
-                                alt="Download on the Mac App Store"
-                            />
-                        </Link>
-
-                        <Link
-                            className="btn btn-fill btn--google-play"
-                            href="/"
-                        >
-                            <Image
-                                className="download-column__btn-img"
-                                src={badgeGooglePlay}
-                                alt="Get it on Google Play"
-                            />
-                        </Link>
-                    </div>
-                </div>
+                {dataArr.map((item: TDownloadColumnItem) => (
+                    <DownloadColumn
+                        key={item.key}
+                        title={item.title}
+                        btnModifArr={item.btnModifArr}
+                        badgeImgPropsArr={item.badgeImgPropsArr}
+                    />
+                ))}
             </div>
         </>
     );

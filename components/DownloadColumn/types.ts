@@ -1,15 +1,11 @@
-export type TDownloadColumnItem2 = {
-    href: `/${string}`;
-    label: string;
-    className: `navlink${"" | " js-modal-open"}`;
-    svgIcon?: React.ReactNode;
-};
-
 export type TDownloadColumnItem = {
+    key: number;
     title: "Desktop" | "Mobile";
-    btnModif: "btn--windows" | "btn--mac-appstore" | "btn--appstore" | "btn--google-play";
-    imgPath: `@/public/img/photos/badges${string}.svg`[];
-    imgAlt: string[];
+    btnModifArr: Array<"btn--windows" | "btn--mac-appstore" | "btn--appstore" | "btn--google-play">;
+    badgeImgPropsArr: {
+        src: `@/public/img/photos/badges/${string}.svg`,
+        alt: string,
+    }[]
 };
 
 export type TDownloadColumnArr = TDownloadColumnItem[];

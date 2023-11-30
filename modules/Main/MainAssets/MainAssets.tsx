@@ -2,9 +2,10 @@ import React, { FC } from "react";
 import Link from "next/link";
 
 import type { TMainAssetsProps } from "./types";
-import MainAssetsItem from "@/components/items/MainAssetsItem";
+import MainAssetsItem, { TMainAssetsItem } from "@/components/items/MainAssetsItem";
 import ScrollCounter from "@/components/ScrollCounter";
 import { curPromoCount } from "@/data/pages/common";
+import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
 
 export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
     return (
@@ -14,7 +15,7 @@ export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
                 <span className="h4">{promoTitle}</span>
             </div>
             <div className="inner">
-                {dataArr.map((item) => (
+                {dataArr.map((item: TMainAssetsItem<TAllCurNotesScope, AllCurNames>) => (
                     <MainAssetsItem
                         key={item.id}
                         id={item.id}
