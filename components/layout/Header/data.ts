@@ -7,12 +7,12 @@ export const headerLinks: TLinkListItem[] = [
         className: "navlink",
     },
     {
-        href: "/pages/assets",
+        href: "/assets",
         label: "Assets",
         className: "navlink",
     },
     {
-        href: "/pages/promoactions",
+        href: "/promoactions",
         label: "Promoactions",
         className: "navlink",
     },
@@ -20,17 +20,17 @@ export const headerLinks: TLinkListItem[] = [
 
 export const dropdownLinks: TLinkListItem[] = [
     {
-        href: "/pages/faq",
+        href: "/faq",
         label: "Popular questions",
         className: "navlink",
     },
     {
-        href: "/pages/privacy-policy",
+        href: "/privacy-policy",
         label: "Privacy Policy",
         className: "navlink",
     },
     {
-        href: "/pages/terms",
+        href: "/terms",
         label: "Terms of Service",
         className: "navlink",
     },

@@ -17,6 +17,7 @@ export const Footer = ({ children }: TFooterProps): JSX.Element => {
                     <Link
                         href="/"
                         className="logo"
+                        scroll={false}
                     >
                         <Image
                             src={logo}

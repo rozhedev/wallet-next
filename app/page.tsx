@@ -23,7 +23,7 @@ import { mainRateItemArr } from "@/components/items/MainRateItem";
 import { mainAdvantItemArr } from "@/components/items/AdvantItem";
 import { downloadColumnArr } from "@/components/DownloadColumn";
 
-export default function Home() {    
+export default function Home() {
     return (
         <>
             <main
@@ -68,10 +68,10 @@ export default function Home() {
                     <MainRate dataArr={mainRateItemArr} />
                 </SectionLayout>
                 <SectionLayout id="advant">
-                    <Advant dataArr={mainAdvantItemArr}/>
+                    <Advant dataArr={mainAdvantItemArr} />
                 </SectionLayout>
                 <SectionLayout id="download">
-                    <MainDownload dataArr={downloadColumnArr}/>
+                    <MainDownload dataArr={downloadColumnArr} />
                 </SectionLayout>
             </main>
             <Footer>

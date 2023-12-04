@@ -13,9 +13,16 @@
     & > * {
         text-align: center;
     }
+    .breadcrumbs {
+        display: flex;
+        justify-content: center;
+    }
     .breadcrumbs a {
         text-transform: uppercase;
         color: $dark-color;
+    }
+    .breadcrumbs .breadcrumb-active {
+        text-decoration: underline;
     }
     @include bp(md) {
         margin: calc($header-height-mobile + 3rem) 0 3rem;

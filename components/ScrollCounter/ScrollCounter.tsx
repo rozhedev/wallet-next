@@ -18,7 +18,9 @@ export const ScrollCounter: FC<TScrollCounterProps> = ({ curCount }) => {
     });
 
     return (
-        <span className="main-assets__count">
+        <span
+            className="main-assets__count"
+        >
             +
             <span
                 className="main-assets__count-value"

@@ -10,6 +10,7 @@ export const LinkList: FC<TLinkListProps> = ({ linksArr }) => {
                     <Link
                         href={link.href}
                         className={link.className}
+                        scroll={false}
                     >
                         {link.svgIcon}
                         <span>{link.label}</span>

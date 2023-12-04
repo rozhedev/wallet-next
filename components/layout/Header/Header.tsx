@@ -29,6 +29,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                 <Link
                     href="/"
                     className="logo"
+                    scroll={false}
                 >
                     <Image
                         src={logo}
@@ -51,6 +52,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                 <Link
                                     href="/register"
                                     className="navlink"
+                                    scroll={false}
                                 >
                                     <svg
                                         viewBox="0 0 64 64"
@@ -69,6 +71,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                 <Link
                                     href="/signin"
                                     className="navlink"
+                                    scroll={false}
                                 >
                                     <svg
                                         viewBox="0 0 64 64"
