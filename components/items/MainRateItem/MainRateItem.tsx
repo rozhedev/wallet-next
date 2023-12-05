@@ -5,7 +5,7 @@ import type { TApiLinkMask, TMainRateItem } from "./types";
 import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
 import Image from "next/image";
 import { getCurRatePromise } from "./hooks";
-import RateSkeleton from "./RateSkeleton";
+import RateSkeleton from "@/components/RateSkeleton";
 
 export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames, TApiLinkMask>> = ({ id, title, imgPath, imgAlt, apiLink }) => {
     const [rate, setRate] = useState<any>(0);
@@ -62,7 +62,7 @@ export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames, TApi
                     </>
                 ) : (
                     <RateSkeleton
-                        uniqueKey="main-rate-item-skeleton"
+                        uniqueKey={id}
                         speed={1.5}
                         width={160}
                         height={32}

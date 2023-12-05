@@ -2,20 +2,9 @@
 
 import React, { FC } from "react";
 import ContentLoader from "react-content-loader";
+import { TRateSkeletonProps } from "./types";
 
-type TRateSkeletonProps = {
-    uniqueKey: string;
-    speed: number;
-    width: number;
-    height: number;
-    bgColor: `#${string}` | "transparent";
-    foregroundColor: `#${string}`;
-    rectWidth: number;
-    rectHeight: number;
-    borderRadius: number;
-};
-
-const RateSkeleton: FC<TRateSkeletonProps> = ({ uniqueKey, speed, width, height, bgColor, foregroundColor, rectWidth, rectHeight, borderRadius }) => (
+export const RateSkeleton: FC<TRateSkeletonProps> = ({ uniqueKey, speed, width, height, bgColor, foregroundColor, rectWidth, rectHeight, borderRadius }) => (
     <ContentLoader
         uniqueKey={uniqueKey}
         speed={speed}
@@ -35,5 +24,3 @@ const RateSkeleton: FC<TRateSkeletonProps> = ({ uniqueKey, speed, width, height,
         />
     </ContentLoader>
 );
-
-export default RateSkeleton;

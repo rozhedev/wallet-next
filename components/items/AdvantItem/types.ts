@@ -1,4 +1,4 @@
-import React, {FC, SVGProps} from "react";
+import React from "react";
 
 export type TMainAdvantIconPath = "icon-layers" | "icon-tire" | "icon-utxo" | "icon-globe" | "icon-wallet-connect" | "icon-segwit" | "icon-eye-hide";
 
