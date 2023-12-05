@@ -29,7 +29,7 @@ export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames, TApi
             // * Round values
             res > 10 ? setRate(parseFloat(res).toFixed(2)) : setRate(parseFloat(res).toFixed(4));
         });
-    }, [rate, isIncreased]);
+    }, [apiLink, rate, isIncreased]);
 
     return (
         <div

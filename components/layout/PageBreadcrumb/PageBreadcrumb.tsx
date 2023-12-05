@@ -5,7 +5,7 @@ import { TPageBreadcrumbProps } from "./types";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export const PageBreadcrumb: FC<TPageBreadcrumbProps> = ({ homeElement, separator, activeClass, capitalizeLinks, pageTitle }) => {
+export const PageBreadcrumb: FC<TPageBreadcrumbProps> = ({ homeElement, separator, activeClass, pageTitle }) => {
     const paths = usePathname();
     const pathNames = paths.split("/").filter((path) => path);
 
@@ -25,7 +25,6 @@ export const PageBreadcrumb: FC<TPageBreadcrumbProps> = ({ homeElement, separato
                 {pathNames.map((link, index) => {
                     let href = `/${pathNames.slice(0, index + 1).join("/")}`;
                     let itemClasses = paths === href ? `${activeClass}` : "";
-                    let itemLink = capitalizeLinks ? link[0].toUpperCase() + link.slice(1, link.length) : link;
 
                     return (
                         <React.Fragment key={index}>
@@ -37,7 +36,7 @@ export const PageBreadcrumb: FC<TPageBreadcrumbProps> = ({ homeElement, separato
                                     href={href}
                                     scroll={false}
                                 >
-                                    {itemLink}
+                                    {link}
                                     {pathNames.length !== index + 1 && separator}
                                 </Link>
                             </li>

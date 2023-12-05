@@ -11,7 +11,7 @@ export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
     return (
         <>
             <div className="main-assets__header section-title">
-                <ScrollCounter curCount={curPromoCount} />
+                <ScrollCounter start={0} curCount={curPromoCount} />
                 <span className="h4">{promoTitle}</span>
             </div>
             <div className="inner">

@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const path = require('path')
+const path = require("path");
 // const loaderUtils = require('loader-utils')
 
 const nextConfig = {
@@ -8,8 +8,18 @@ const nextConfig = {
         includePaths: [path.join(__dirname, "styles")],
         // reactStrictMode: false,
     },
+    "no-restricted-imports": [
+        "error",
+        {
+            paths: [
+                {
+                    name: "ui/Toggle",
+                    message: "Test linting",
+                },
+            ],
+        },
+    ],
 };
-
 
 // /**
 //  * Generate context-aware class names when developing locally

@@ -2,14 +2,15 @@
 
 import React, { FC, useRef } from "react";
 import type { TScrollCounterProps } from "./types";
-import CountUp, { useCountUp } from "react-countup";
+import { useCountUp } from "react-countup";
 
-export const ScrollCounter: FC<TScrollCounterProps> = ({ curCount }) => {
+export const ScrollCounter: FC<TScrollCounterProps> = ({ start, curCount }) => {
     // * Don't change props values
+    const countUpRef = useRef(null);
     useCountUp({
-        ref: "main-assets-count-value",
+        ref: countUpRef,
         startOnMount: false,
-        start: 0,
+        start: start,
         end: curCount,
         duration: 5,
         enableScrollSpy: true,
@@ -25,13 +26,9 @@ export const ScrollCounter: FC<TScrollCounterProps> = ({ curCount }) => {
             <span
                 className="main-assets__count-value"
                 id="main-assets-count-value"
+                ref={countUpRef}
             >
-                <CountUp
-                    start={0}
-                    end={curCount}
-                    enableScrollSpy={true}
-                    scrollSpyOnce={true}
-                />
+                {start}
             </span>
         </span>
     );

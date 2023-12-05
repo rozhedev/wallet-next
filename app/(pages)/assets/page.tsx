@@ -8,7 +8,6 @@ export default function Assets() {
                  homeElement={'Home'}
                  separator={<> / &nbsp;</>}
                  activeClass='breadcrumb-active'
-                 capitalizeLinks
                  pageTitle="Supported assets"
             />
         </SectionLayout>
