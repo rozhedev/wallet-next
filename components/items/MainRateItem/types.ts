@@ -12,15 +12,3 @@ export type TMainRateItem<TScope extends TAllCurNotesScope, UName extends AllCur
 };
 
 export type TMainRateItemArr = TMainRateItem<TAllCurNotesScope, AllCurNames, TApiLinkMask>[];
-
-export type TRateSkeletonProps = {
-    uniqueKey: string;
-    speed: number;
-    width: number;
-    height: number;
-    bgColor: `#${string}` | "transparent";
-    foregroundColor: `#${string}`;
-    rectWidth: number;
-    rectHeight: number;
-    borderRadius: number;
-};

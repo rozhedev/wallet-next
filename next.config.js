@@ -7,18 +7,7 @@ const nextConfig = {
     sassOptions: {
         includePaths: [path.join(__dirname, "styles")],
         // reactStrictMode: false,
-    },
-    "no-restricted-imports": [
-        "error",
-        {
-            paths: [
-                {
-                    name: "ui/Toggle",
-                    message: "Test linting",
-                },
-            ],
-        },
-    ],
+    }
 };
 
 // /**
