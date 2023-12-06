@@ -27,8 +27,15 @@
     &__mockup {
         display: block;
         margin: 2rem auto 0;
-        img {
+        @include bp(lg) {
             width: 100%;
+        }
+        img {
+            max-width: 100%;
+            @include bp(lg) {
+                width: 100%;
+                height: auto;
+            }
         }
     }
     .h3 {

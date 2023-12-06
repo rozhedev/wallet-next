@@ -21,14 +21,9 @@
         }
         @include bp(xs) {
             flex-direction: column;
+            align-items: center;
             margin-top: 4rem;
-            form {
-                display: flex;
-                justify-content: center;
-                &:not(:first-of-type) {
-                    margin-top: 3rem;
-                }
-            }
+           
         }
         .btn {
             position: relative;
@@ -45,6 +40,11 @@
                 font-size: 1rem;
                 font-weight: 400;
                 color: $dark-color24;
+            }
+            @include bp(xs) {
+                &:not(:first-of-type) {
+                    margin-top: 3rem;
+                }
             }
         }
         .download-column__btn-img {

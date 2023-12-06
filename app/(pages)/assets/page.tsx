@@ -14,7 +14,8 @@ export default function Assets() {
         <SectionLayout id="assets">
             <PageBreadcrumb
                 homeElement={"Home"}
-                separator={<> / &nbsp;</>}
+                // * Don't add space between slash and &nbsp;
+                separator={<span>&nbsp;/&nbsp;</span>}
                 activeClass="breadcrumb-active"
                 pageTitle="Supported assets"
             />

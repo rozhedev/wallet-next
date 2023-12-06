@@ -20,13 +20,17 @@
         li a {
             text-transform: uppercase;
             color: $dark-color24;
-        }
-        li.breadcrumb-active a {
-            text-decoration: underline;
+            transition: $transition;
             &:hover {
-                text-decoration: none;
+                color: $secondary-accent-color;
             }
         }
+        li span {
+            color: $dark-color24;
+        }
+        // * Active class for additional styling
+        // li.breadcrumb-active a {
+        // }
     }
     @include bp(md) {
         margin: calc($header-height-mobile + 3rem) 0 3rem;

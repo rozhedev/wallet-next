@@ -24,6 +24,7 @@ export const MainDownload: FC<TMainDownloadProps> = ({ dataArr }) => {
                 <span className="h2">Flem Wallet on your devices</span>
             </h2>
             <button
+                type="button"
                 className="download__mockup"
                 onClick={() => setIsImgOpen(!isImgOpen)}
             >
