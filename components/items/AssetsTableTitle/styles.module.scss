@@ -1,0 +1,25 @@
+// * Table header title
+.table-header-title {
+    text-align: center;
+    svg {
+        @include icon-size(map-get($icon-size, sm), 0);
+        margin-right: 0.25rem;
+        stroke: $darken-accent;
+        stroke-width: calc(map-get($map: $stroke-width, $key: md) / 2);
+        vertical-align: text-top;
+    }
+    &__content {
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: $dark-color24;
+        cursor: auto;
+    }
+    @include bp(lg) {
+        svg {
+            @include icon-size(map-get($icon-size, xs), 0);
+        }
+        .table-header-title__content {
+            font-size: 1.125rem;
+        }
+    }
+}

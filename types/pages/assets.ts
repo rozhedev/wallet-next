@@ -43,7 +43,7 @@ export type TAssetsTableItem<TScope extends TAllCurNotesScope> = {
     iconPaths: TIconsPathItemPure;
 };
 
-export type AssetsTableItems = TAssetsTableItem<TAllCurNotesScope>[];
+export type TAssetsTableItemArr = TAssetsTableItem<TAllCurNotesScope>[];
 
 //*  USAGE
 
@@ -57,7 +57,7 @@ const iconStatusConfig: TIconsItemConfig = {
     stacking: true,
 };
 
-export const assetsTableItem: TAssetsTableItem<TAllCurNotesScope> = {
+const assetsTableItem: TAssetsTableItem<TAllCurNotesScope> = {
     id: 2,
     order: 2,
     curIcon: "@/public/img/icons/crypto/ethereum-ETH.svg",

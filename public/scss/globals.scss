@@ -20,17 +20,19 @@
 @import "base/btns.module.scss";
 @import "base/inputs.module.scss";
 @import "base/scroll.module.scss";
+@import "@/ui/Dropdown/styles.module.scss";
+@import "@/ui/Table/styles.module.scss";
 
 // * LIBS
 @import "tippy.js/dist/tippy.css"; 
 
-// * UI & COMPONENTS
-@import "@/ui/Dropdown/styles.module.scss";
+// COMPONENTS
 @import "@/components/ScrollBtn/styles.module.scss";
 @import "@/components/items/MainAssetsItem/styles.module.scss";
 @import "@/components/items/MainRateItem/styles.module.scss";
 @import "@/components/items/AdvantItem/styles.module.scss";
 @import "@/components/DownloadColumn/styles.module.scss";
+@import "@/components/items/AssetsTableTitle/styles.module.scss";
 
 // * LAYOUT
 @import "@/components/layout/Header/styles.module.scss";

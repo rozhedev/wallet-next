@@ -1,3 +1,14 @@
 {
-    "extends": "next"
+    "extends": "next",
+    "plugins": [
+        "react",
+        "react-hooks"
+    ],
+    "rules": {
+        "@typescript-eslint/quotes": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/semi": "off",
+        "@typescript-eslint/space-before-function-paren":"off",
+        "@typescript-eslint/comma-dangle":"off"
+    }
 }
