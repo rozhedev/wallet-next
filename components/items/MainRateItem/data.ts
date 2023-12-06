@@ -1,21 +1,22 @@
 import type { TMainRateItemArr } from "./types";
 import { AllCurNames } from "@/types/data/currencies";
 
-import bitcoinBTC from "@/public/img/icons/crypto/bitcoin-BTC.svg";
-import ethereumETH from "@/public/img/icons/crypto/ethereum-ETH.svg";
-import binanceCoinBNB from "@/public/img/icons/crypto/binance-coin-BNB.svg";
-import solanaSOL from "@/public/img/icons/crypto/solana-SOL.svg";
-import cardanoADA from "@/public/img/icons/crypto/cardano-ADA.svg";
-import xrpXRP from "@/public/img/icons/crypto/xrp-XRP.svg";
-import terraLUNA from "@/public/img/icons/crypto/terra-LUNA.svg";
-import polkadotDOT from "@/public/img/icons/crypto/polkadot-DOT.svg";
-import avalancheAVAX from "@/public/img/icons/crypto/avalanche-AVAX.svg";
-import dogecoinDOGE from "@/public/img/icons/crypto/dogecoin-DOGE.svg";
-import chainlinkLINK from "@/public/img/icons/crypto/chainlink-LINK.svg";
-import polygonMATIC from "@/public/img/icons/crypto/polygon-MATIC.svg";
-
-import algorandALGO from "@/public/img/icons/crypto/algorand-ALGO.svg";
-import litecoinLTC from "@/public/img/icons/crypto/litecoin-LTC.svg";
+import {
+    algorandALGO,
+    avalancheAVAX,
+    binanceCoinBNB,
+    bitcoinBTC,
+    cardanoADA,
+    chainlinkLINK,
+    dogecoinDOGE,
+    ethereumETH,
+    litecoinLTC,
+    polkadotDOT,
+    polygonMATIC,
+    solanaSOL,
+    terraLUNA,
+    xrpXRP,
+} from "@/data/pages/currencies-icons";
 
 // * Data
 export const mainRateItemArr: TMainRateItemArr = [

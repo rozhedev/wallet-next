@@ -148,7 +148,7 @@ export type TAllCurNotes = {
 
     [AllCurNames.flow]: AllCurNames.flow | "Flow" | "FLOW" | "Flow (FLOW)" | "flow-FLOW";
 
-    [AllCurNames.ftxToken]: AllCurNames.ftxToken | "Ftx Token" | "FTX" | "ftx" | "FTX Token (FTX)" | "ftx-token-FTX";
+    [AllCurNames.ftxToken]: AllCurNames.ftxToken | "Ftx Token" | "FTT" | "ftt" | "FTX Token (FTT)" | "ftx-token-FTT";
 
     [AllCurNames.gala]: AllCurNames.gala | "Gala" | "GALA" | "Gala (GALA)" | "gala-GALA";
 
