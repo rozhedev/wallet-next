@@ -1,5 +1,5 @@
 // * DEFAULT FONT
-$font-family: 'Titillium Web';
+$font-family: "Titillium Web";
 $font-size: 16px;
 
 // * GRID (MY DEFAULT GRID)
@@ -26,7 +26,7 @@ $grid-breakpoints: (
     // * 1112
     lg: calc(map-get($container-max-widths, lg) + calc($grid-gap * 5.75)),
     // * 1600
-    xl: calc(map-get($container-max-widths, xl) + calc($grid-gap * 9)),
+    xl: calc(map-get($container-max-widths, xl) + calc($grid-gap * 9))
 );
 
 // * COLORS

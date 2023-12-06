@@ -16,13 +16,17 @@
     .breadcrumbs {
         display: flex;
         justify-content: center;
-    }
-    .breadcrumbs a {
-        text-transform: uppercase;
-        color: $dark-color;
-    }
-    .breadcrumbs .breadcrumb-active {
-        text-decoration: underline;
+
+        li a {
+            text-transform: uppercase;
+            color: $dark-color24;
+        }
+        li.breadcrumb-active a {
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
     @include bp(md) {
         margin: calc($header-height-mobile + 3rem) 0 3rem;
@@ -152,7 +156,7 @@
 // * UN- ORDERED LISTS
 
 .ordered-list {
-    $count-list: (1 '1.', 2 '2.', 3 '3.', 4 '4.', 5 '5.', 6 '6.', 7 '7.');
+    $count-list: (1 "1.", 2 "2.", 3 "3.", 4 "4.", 5 "5.", 6 "6.", 7 "7.");
     counter-reset: myCounter;
 
     li {
@@ -181,7 +185,7 @@
         margin: 0.4rem 0;
 
         &::before {
-            content: '';
+            content: "";
             display: inline-block;
             width: 0.4rem;
             height: 0.4rem;
@@ -204,9 +208,9 @@
         cursor: pointer;
         // * Icon for close state
         &::after {
-            content: '';
+            content: "";
             display: block;
-            background: url('../../img/icons/interface/chevron_details.svg') center / cover no-repeat;
+            background: url("../../img/icons/interface/chevron_details.svg") center / cover no-repeat;
         }
         svg,
         svg *,

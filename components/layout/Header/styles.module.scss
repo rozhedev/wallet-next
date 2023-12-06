@@ -117,7 +117,7 @@ body:has(.header .menu._active) {
             }
             &::before,
             &::after {
-                content: '';
+                content: "";
             }
             &::before {
                 top: 0;

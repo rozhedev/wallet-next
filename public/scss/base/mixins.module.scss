@@ -11,14 +11,14 @@
     height: $size;
     border-radius: $bor-radius;
 }
- 
+
 // * Effects
 @mixin navlink-anim {
     color: $primary-accent-color;
     transition: $transition;
     cursor: pointer;
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         bottom: -0.3rem;
@@ -69,12 +69,20 @@
 }
 
 // * Custom symbols
-@mixin custom-plus($dash-size-x, $dash-size-y, $bgColor, $translateVertX, $translateVertY, $translateHorizX, $translateHorizY) {
+@mixin custom-plus(
+    $dash-size-x,
+    $dash-size-y,
+    $bgColor,
+    $translateVertX,
+    $translateVertY,
+    $translateHorizX,
+    $translateHorizY
+) {
     position: relative;
     transition: $transition;
     &::before,
     &::after {
-        content: '';
+        content: "";
         display: block;
         background-color: $bgColor;
         transition: $transition;

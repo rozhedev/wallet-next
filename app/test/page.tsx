@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 
-import Header from '@/components/layout/Header/index';
+import Header from "@/components/layout/Header/index";
 import Btn from "@/ui/Btn/Btn";
 import Inp from "@/ui/Inp/Inp";
 import Select from "@/ui/Select/Select";
@@ -16,7 +16,7 @@ import { testCheckboxList } from "@/data/test/checkboxBtnVariants";
 import { testToggleBtnList } from "@/data/test/toggleBtnVariants";
 import { testSelectData, testSelectLang } from "@/data/test/selectData";
 import { testLinksData } from "@/data/test/linksData";
-import {headerLinks, dropdownLinks, langSelectOptions} from '@/components/layout/Header/data'
+import { headerLinks, dropdownLinks, langSelectOptions } from "@/components/layout/Header/data";
 
 export default function Home() {
     return (
@@ -46,7 +46,12 @@ export default function Home() {
             </Header>
 
             <div className="container">
-                <Link href="/pages/assets" className="link">Assets</Link>
+                <Link
+                    href="/pages/assets"
+                    className="link"
+                >
+                    Assets
+                </Link>
                 <h1 className="h1">h1 Lorem ipsum dolor sit amet...</h1>
                 <h2 className="h2">h2 Lorem ipsum dolor sit amet...</h2>
                 <h3 className="h3">h3 Lorem ipsum dolor sit amet...</h3>

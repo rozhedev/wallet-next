@@ -1,6 +1,6 @@
-import { TAssetsTableTitleArr } from "./types";
+import { T_TableHeaderTitleArr } from "./types";
 
-export const assetsTableTitleArr: TAssetsTableTitleArr = [
+export const assetsTableHeaderTitleArr: T_TableHeaderTitleArr = [
     {
         id: 1,
         svgIcon: "",

@@ -1,9 +1,9 @@
 .download-column {
     $btn-labels: (
-        'mac-appstore': 'Coming soon',
-        'windows': 'Technical works',
-        'google-play': 'Tested for publication',
-        'appstore': 'Tested for publication'
+        "mac-appstore": "Coming soon",
+        "windows": "Technical works",
+        "google-play": "Tested for publication",
+        "appstore": "Tested for publication"
     );
 
     @include bp(md) {

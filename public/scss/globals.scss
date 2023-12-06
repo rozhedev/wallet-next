@@ -24,15 +24,16 @@
 @import "@/ui/Table/styles.module.scss";
 
 // * LIBS
-@import "tippy.js/dist/tippy.css"; 
+@import "tippy.js/dist/tippy.css";
 
-// COMPONENTS
+// * COMPONENTS
 @import "@/components/ScrollBtn/styles.module.scss";
 @import "@/components/items/MainAssetsItem/styles.module.scss";
 @import "@/components/items/MainRateItem/styles.module.scss";
 @import "@/components/items/AdvantItem/styles.module.scss";
 @import "@/components/DownloadColumn/styles.module.scss";
-@import "@/components/items/AssetsTableTitle/styles.module.scss";
+@import "@/components/items/TableHeaderTitle/styles.module.scss";
+@import "@/components/items/AssetsTableItem/styles.module.scss";
 
 // * LAYOUT
 @import "@/components/layout/Header/styles.module.scss";

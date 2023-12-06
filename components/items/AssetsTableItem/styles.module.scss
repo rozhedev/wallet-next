@@ -1,0 +1,78 @@
+// * Asset table item
+.assets-table-item {
+    &:last-of-type {
+        & > td {
+            vertical-align: text-bottom;
+            &:first-of-type {
+                border-radius: 0 0 0 0.25rem;
+            }
+            &:last-of-type {
+                border-radius: 0 0 0.25rem 0;
+            }
+        }
+    }
+    & > td {
+        padding: 1rem 0.4rem;
+        &:first-of-type {
+            padding: 1rem 0.4rem 1rem 2rem;
+        }
+        &:last-of-type {
+            padding: 1rem 2rem 1rem 0.4rem;
+        }
+        @include bp(lg) {
+            &:first-of-type {
+                padding: 1rem 0.75rem 1rem 1.5rem;
+            }
+            &:last-of-type {
+                padding: 1rem 1.5rem 1rem 0.75rem;
+            }
+        }
+    }
+    &:nth-child(2n) {
+        background-color: $white-color;
+    }
+    &:nth-child(2n + 1) {
+        background-color: darken($color: $secondary-lightgray-color, $amount: 1);
+    }
+    &__status {
+        text-align: center;
+    }
+    &__currency,
+    &__counter {
+        text-align: left;
+    }
+    &__currency-name {
+        @include str-trim;
+        max-width: 16rem;
+        display: inline-block;
+        margin-left: 0.5rem;
+        @include bp(sm) {
+            margin-left: 0.375rem;
+        }
+    }
+    &__currency-img {
+        @include icon-size(map-get($icon-size, sm), $sm-border-radius);
+        @include bp(sm) {
+            @include icon-size(map-get($icon-size, xs), $sm-border-radius);
+        }
+    }
+    .icon-checkmark,
+    .icon-unaviable,
+    .icon-none {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .icon-checkmark {
+        stroke: $success-green;
+        stroke-width: 3;
+    }
+    .icon-none > * {
+        fill: $dark-color36;
+    }
+    .icon-unaviable circle {
+        fill: $error-red;
+        &:last-of-type {
+            fill-opacity: 0.24;
+        }
+    }
+}
