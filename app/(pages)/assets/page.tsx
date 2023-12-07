@@ -41,6 +41,7 @@ export default function Assets() {
                                 id={item.id}
                                 order={item.order}
                                 curIcon={item.curIcon}
+                                curAlt={item.curAlt}
                                 curName={item.curName}
                                 iconPaths={item.iconPaths}
                             />

@@ -57,7 +57,7 @@ import kusamaKSM from "@/public/img/icons/crypto/kusama-KSM.svg";
 import litecoinLTC from "@/public/img/icons/crypto/litecoin-LTC.svg";
 
 import makerMKR from "@/public/img/icons/crypto/maker-MKR.svg";
-import moneroXLM from "@/public/img/icons/crypto/monero-XMR.svg";
+import moneroXMR from "@/public/img/icons/crypto/monero-XMR.svg";
 
 import nearNEAR from "@/public/img/icons/crypto/near-NEAR.svg";
 import neoNEO from "@/public/img/icons/crypto/neo-NEO.svg";
@@ -142,7 +142,7 @@ export {
     kusamaKSM,
     litecoinLTC,
     makerMKR,
-    moneroXLM,
+    moneroXMR,
     nearNEAR,
     neoNEO,
     nexoNEXO,

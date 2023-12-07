@@ -31,6 +31,7 @@ export const MainDownload: FC<TMainDownloadProps> = ({ dataArr }) => {
                 <Image
                     src={desctopPhoneMockup}
                     alt="desktop_and_phone_apps"
+                    priority={true}
                 />
                 <FsLightbox
                     toggler={isImgOpen}

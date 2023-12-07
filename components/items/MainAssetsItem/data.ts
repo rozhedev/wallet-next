@@ -26,7 +26,7 @@ import {
     internetComputerICP,
     iotaMIOTA,
     litecoinLTC,
-    moneroXLM,
+    moneroXMR,
     nearNEAR,
     polkadotDOT,
     polygonMATIC,
@@ -294,7 +294,7 @@ export const mainAssetItemArr: TMainAssetsItemArr = [
     {
         id: `${AllCurNames.monero}-tooltip`,
         disabled: true,
-        imgPath: moneroXLM,
+        imgPath: moneroXMR,
         imgAlt: AllCurNames.monero,
         title: "Monero (XMR)",
     },

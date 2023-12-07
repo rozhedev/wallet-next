@@ -4,7 +4,7 @@ import Image from "next/image";
 import type { TAssetsTableItem } from "./types";
 import { TAllCurNotesScope } from "@/types/data/currencies";
 
-export const AssetsTableItem: FC<TAssetsTableItem<TAllCurNotesScope>> = ({ order, curIcon, curName, iconPaths }) => {
+export const AssetsTableItem: FC<TAssetsTableItem<TAllCurNotesScope>> = ({ order, curIcon, curAlt, curName, iconPaths }) => {
     const getAviableIcon = (bool: boolean) => {
         return bool ? (
             <svg
@@ -43,7 +43,7 @@ export const AssetsTableItem: FC<TAssetsTableItem<TAllCurNotesScope>> = ({ order
                 <Image
                     className="assets-table-item__currency-img"
                     src={curIcon}
-                    alt={curName}
+                    alt={curAlt}
                 />
                 <span className="assets-table-item__currency-name">{curName}</span>
             </td>
