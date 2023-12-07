@@ -4,6 +4,7 @@ import PageBreadcrumb from "@/components/layout/PageBreadcrumb";
 import Table from "@/ui/Table/index";
 import TableHeaderTitle, { assetsTableHeaderTitleArr } from "@/components/items/TableHeaderTitle/index";
 import AssetsTableItem, { assetTableItemArr } from "@/components/items/AssetsTableItem";
+import SmallScreenNotice from "@/components/SmallScreenNotice";
 
 import type { T_TableHeaderTitle } from "@/components/items/TableHeaderTitle/index";
 import type { TAssetsTableItem } from "@/components/items/AssetsTableItem/index";
@@ -20,6 +21,7 @@ export default function Assets() {
                 pageTitle="Supported assets"
             />
             <div className="page-inner">
+                <SmallScreenNotice className="small-screen-notice"/>
                 <Table
                     wrapperClass=""
                     tableClass="assets-table"

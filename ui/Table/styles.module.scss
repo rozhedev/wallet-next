@@ -43,6 +43,9 @@
     @include bp(md) {
         overflow: auto;
         width: map-get($map: $container-max-widths, $key: md);
+        .table {
+            border: 2px solid $primary-lightgray-color;
+        }
     }
 }
 
