@@ -1,13 +1,12 @@
 import type { TRoute } from "@/data/routes";
 
-export type TLinkListItem = TRoute & {
-    className: `navlink${"" | " js-modal-open"}`;
+export type TLinkListItem<TScope> = {
+    href: TRoute;
+    label: TScope;
+    className: "navlink" | `navlink ${string}` | "link" | `link ${string}`;
     svgIcon?: React.ReactNode;
 };
 
-// For btns
-// | `btn ${"btn-fill" | "btn-fill-sm" | "btn-fill-xs" | "btn-outline" | "btn-outline-sm" | "btn-outline-xs"}
-
-export type TLinkListProps = {
-    linksArr: TLinkListItem[];
+export type TLinkListProps<TScope> = {
+    linksArr: TLinkListItem<TScope>[];
 };

@@ -51,7 +51,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                             <li>{children}</li>
                             <li className="inline-btn">
                                 <Link
-                                    href={ROUTES.public.register.href}
+                                    href={ROUTES.public.register}
                                     className="navlink"
                                     scroll={false}
                                 >
@@ -65,12 +65,12 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                         <path d="M50.2856 59.4285V41.1428" />
                                         <path d="M41.1428 50.2856H59.4285" />
                                     </svg>
-                                    <span>{ROUTES.public.register.label}</span>
+                                    <span>Register</span>
                                 </Link>
                             </li>
                             <li className="inline-btn">
                                 <Link
-                                    href={ROUTES.public.signin.label}
+                                    href={ROUTES.public.signin}
                                     className="navlink"
                                     scroll={false}
                                 >
@@ -83,7 +83,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                         <path d="M27.4286 41.1429L36.5714 32L27.4286 22.8572" />
                                         <path d="M4.57141 32H36.5714" />
                                     </svg>
-                                    <span>{ROUTES.public.signin.label}</span>
+                                    <span>Sign in</span>
                                 </Link>
                             </li>
                             <li>

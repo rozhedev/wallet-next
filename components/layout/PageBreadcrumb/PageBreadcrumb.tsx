@@ -15,10 +15,10 @@ export const PageBreadcrumb: FC<TPageBreadcrumbProps> = ({ separator, activeClas
             <ul className="h5 breadcrumbs">
                 <li>
                     <Link
-                        href={ROUTES.public.home.href}
+                        href={ROUTES.public.home}
                         scroll={false}
                     >
-                        {ROUTES.public.home.label}
+                        Home
                         {pathNames.length > 0 && separator}
                     </Link>
                 </li>

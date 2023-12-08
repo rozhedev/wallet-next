@@ -1,8 +1,5 @@
-
-export type TRoute = {
-    href: `/${string}`;
-    label: string;
-}
+export type TRoute = `/${string}`;
+export type TRouteLabelScope = "Home" | "Homepage" | "Assets" | "Supported assets" | "Promoactions" | "Popular questions" | "Privacy Policy" | "Terms of Service" | "Terms" | "Register" | "Sign in" | "Dashboard" | "History" | "Settings" | "Survey" | "Sign Out" | "Watchlist" | "WalletConnect";
 
 type TRoutesList = {
     public: {
@@ -21,64 +18,25 @@ type TRoutesList = {
         history: TRoute;
         settings: TRoute;
         watchlist: TRoute;
-    }
-}
+    };
+};
 
 export const ROUTES: TRoutesList = {
     public: {
-        home: {
-            href: "/",
-            label: "Home",
-        },
-        assets: {
-            href: "/assets",
-            label: "Assets",
-        },
-        promoactions: {
-            href: "/promoactions",
-            label: "Promoactions",
-        },
-        faq: {
-            href: "/faq",
-            label: "Popular questions",
-        },
-        privacyPolicy: {
-            href: "/privacy_policy",
-            label: "Privacy Policy",
-        },
-        terms: {
-            href: "/terms",
-            label: "Terms of Service",
-        },
-        register: {
-            href: "/register",
-            label: "Register",
-        },
-        signin: {
-            href: "/signin",
-            label: "Sign in",
-        },
+        home: "/",
+        assets: "/assets",
+        promoactions: "/promoactions",
+        faq: "/faq",
+        privacyPolicy: "/privacy_policy",
+        terms: "/terms",
+        register: "/register",
+        signin: "/signin",
     },
     private: {
-        dashboard: {
-            href: "/dashboard",
-            label: "Dashboard",
-        },
-        assetsCab: {
-            href: "/assets-cab",
-            label: "Assets"
-        },
-        history: {
-            href: "/history",
-            label: "History",
-        },
-        settings: {
-            href: "/settings",
-            label: "Settings",
-        },
-        watchlist: {
-            href: "/watchlist",
-            label: "Watchlist",
-        },
+        dashboard: "/dashboard",
+        assetsCab: "/assets-cab",
+        history: "/history",
+        settings: "/settings",
+        watchlist: "/watchlist",
     },
 };

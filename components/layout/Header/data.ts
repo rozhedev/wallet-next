@@ -1,38 +1,38 @@
 import type { TLinkListItem } from "@/components/LinkList";
-import { ROUTES } from "@/data/routes";
+import { ROUTES, TRouteLabelScope } from "@/data/routes";
 
-export const headerLinks: TLinkListItem[] = [
+export const headerLinks: TLinkListItem<TRouteLabelScope>[] = [
     {
-        href: ROUTES.public.home.href,
-        label: ROUTES.public.home.label,
+        href: ROUTES.public.home,
+        label: "Home",
         className: "navlink",
     },
     {
-        href: ROUTES.public.assets.href,
-        label: ROUTES.public.assets.label,
+        href: ROUTES.public.assets,
+        label: "Assets",
         className: "navlink",
     },
     {
-        href: ROUTES.public.promoactions.href,
-        label: ROUTES.public.promoactions.label,
+        href: ROUTES.public.promoactions,
+        label: "Promoactions",
         className: "navlink",
     },
 ];
 
-export const dropdownLinks: TLinkListItem[] = [
+export const dropdownLinks: TLinkListItem<TRouteLabelScope>[] = [
     {
-        href: ROUTES.public.faq.href,
-        label: ROUTES.public.faq.label,
+        href: ROUTES.public.faq,
+        label: "Popular questions",
         className: "navlink",
     },
     {
-        href: ROUTES.public.privacyPolicy.href,
-        label: ROUTES.public.privacyPolicy.label,
+        href: ROUTES.public.privacyPolicy,
+        label: "Privacy Policy",
         className: "navlink",
     },
     {
-        href: ROUTES.public.terms.href,
-        label: ROUTES.public.terms.label,
+        href: ROUTES.public.terms,
+        label: "Terms of Service",
         className: "navlink",
     },
 ];
