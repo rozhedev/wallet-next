@@ -1,0 +1,250 @@
+.terms,
+.privacy-policy {
+    .ordered-list li::before {
+        color: $dark-color;
+    }
+    .unordered-list li::before {
+        background-color: $dark-color;
+    }
+}
+
+// * PROMOACTIONS
+
+.promoactions {
+    .page-inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-column-gap: 2rem;
+        grid-row-gap: 3rem;
+        grid-auto-flow: row dense;
+
+        margin: 4rem auto 6rem;
+        width: calc(map-get($map: $container-max-widths, $key: xxl) / 12 * 9.95);
+        @include bp(xl) {
+            width: 100%;
+        }
+        @include bp(md) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(12, 1fr);
+            grid-column-gap: 0rem;
+        }
+    }
+}
+
+// * REGISTER
+
+.register-page {
+    background-image: url('../../img/photos/bg/register.svg');
+    background-position: center;
+    background-size: 150%;
+    background-repeat: no-repeat;
+
+    @include bp(xl) {
+        background-size: cover;
+        min-height: 80vh;
+    }
+    @include bp(md) {
+        background-size: 300%;
+        min-height: 60vh;
+    }
+    @include bp(xs) {
+        background-size: 550%;
+    }
+}
+
+.signin-page {
+    background: url('../../img/photos/bg/signin.svg') center / cover no-repeat;
+    .form-step {
+        display: flex;
+    }
+}
+
+.register-page .page-title,
+.signin-page .page-title,
+.register-page .page-title .breadcrumbs a,
+.signin-page .page-title .breadcrumbs a {
+    color: $white-color;
+}
+
+
+// * form content
+.form,
+.form-step {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.register .form-wrapper,
+.signin .form-wrapper {
+    margin: 2rem auto 0;
+    padding: 1.75rem 1.5rem;
+    width: calc(map-get($map: $container-max-widths, $key: xxl) / 12 * 4);
+    box-shadow: $item-shadow;
+    border-radius: calc($sm-border-radius * 2);
+    background-color: $light-color;
+
+    @include bp(sm) {
+        width: 100%;
+        padding: 1.33rem 1rem;
+    }
+    .form-label-legend {
+        display: inline-block;
+        text-align: justify;
+    }
+    .form-step {
+        margin-top: 1.5rem;
+        & > *:not(:first-child) {
+            margin-top: 1.5rem;
+        }
+        .form-conroller,
+        .inp,
+        .btn-group {
+            width: 100%;
+        }
+        .copy-btn {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0.5rem;
+            svg {
+                width: 1.4rem;
+                height: 1.4rem;
+                margin-left: 0.5rem;
+                stroke: $dark-color;
+                stroke-width: map-get($map: $stroke-width, $key: sm);
+            }
+        }
+    }
+    .inp,
+    .checkbox__label::before {
+        background-color: transparent;
+    }
+}
+
+.signin .form-wrapper .form-step {
+    margin-top: 0;
+}
+
+// * Input grid
+.register .form .form-inp-grid,
+.signin .form .form-inp-grid,
+.modal-dialog--connect .form-inp-grid {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    grid-auto-flow: row dense;
+    grid-gap: 1rem;
+
+    @include bp(sm) {
+        grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+    }
+}
+
+.modal-dialog--connect .form-inp-grid {
+    grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+}
+
+.form-user-data .checkbox__label {
+    text-align: justify;
+}
+
+// * Inp components & btn-group
+
+.form-passphrase .inp,
+.form-confirm .inp,
+.form-controller .passphrase-item::before {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+
+.form-passphrase .inp,
+.form-confirm .inp {
+    min-width: 7.25rem;
+    text-align: right;
+    color: $dark-color;
+}
+
+.form-conroller .passphrase-item {
+    position: relative;
+    margin: 0;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0.5rem;
+        margin: 0;
+        width: fit-content;
+        min-width: 1.16rem;
+        color: $dark-color24;
+        transform: translateY(33.33%);
+    }
+    .inp {
+        padding: 0.4rem 0.6rem 0.4rem 1.4rem;
+        &:focus {
+            border-color: $dark-color24;
+            box-shadow: none;
+        }
+    }
+}
+
+.form-conroller .confirm-inp {
+    padding: 0.4rem;
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    text-align: center;
+}
+
+.form .form-step__descr {
+    margin-top: 1rem;
+    p:not(:first-of-type) {
+        margin-top: 0.75rem;
+    }
+}
+
+.btn-group {
+    width: 100%;
+    display: flex;
+    .btn {
+        flex-grow: 1;
+        &:not(:first-of-type) {
+            margin-left: 1.5rem;
+        }
+    }
+    @include bp(sm) {
+        flex-direction: column-reverse;
+        .btn {
+            &:not(:first-of-type) {
+                margin-left: 0;
+            }
+            &:not(:last-of-type) {
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
+
+// *  ACTIVE CLASSES & ANIM
+
+.form-step {
+    display: none;
+    transform-origin: top;
+    animation: form-slide 0.9s;
+}
+.form-step._active {
+    display: flex;
+}
+
+@keyframes form-slide {
+    from {
+        //   transform: scale(1, 0);
+        opacity: 0;
+    }
+    to {
+        //   transition: scale(1, 1);
+        opacity: 1;
+    }
+}
