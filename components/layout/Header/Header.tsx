@@ -8,6 +8,7 @@ import type { THeaderProps } from "./types";
 import Select from "@/ui/Select/Select";
 import LinkList from "@/components/LinkList/index";
 
+import { ROUTES } from "@/data/routes";
 import logo from "@/public/img/logo.svg";
 
 export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr }) => {
@@ -50,7 +51,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                             <li>{children}</li>
                             <li className="inline-btn">
                                 <Link
-                                    href="/register"
+                                    href={ROUTES.public.register.href}
                                     className="navlink"
                                     scroll={false}
                                 >
@@ -64,12 +65,12 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                         <path d="M50.2856 59.4285V41.1428" />
                                         <path d="M41.1428 50.2856H59.4285" />
                                     </svg>
-                                    <span>Register</span>
+                                    <span>{ROUTES.public.register.label}</span>
                                 </Link>
                             </li>
                             <li className="inline-btn">
                                 <Link
-                                    href="/signin"
+                                    href={ROUTES.public.signin.label}
                                     className="navlink"
                                     scroll={false}
                                 >
@@ -82,7 +83,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                         <path d="M27.4286 41.1429L36.5714 32L27.4286 22.8572" />
                                         <path d="M4.57141 32H36.5714" />
                                     </svg>
-                                    <span>Sign in</span>
+                                    <span>{ROUTES.public.signin.label}</span>
                                 </Link>
                             </li>
                             <li>

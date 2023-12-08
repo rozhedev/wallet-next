@@ -1,6 +1,6 @@
-export type TLinkListItem = {
-    href: `/${string}`;
-    label: string;
+import type { TRoute } from "@/data/routes";
+
+export type TLinkListItem = TRoute & {
     className: `navlink${"" | " js-modal-open"}`;
     svgIcon?: React.ReactNode;
 };

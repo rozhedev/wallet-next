@@ -4,8 +4,9 @@ import React, { FC } from "react";
 import { TPageBreadcrumbProps } from "./types";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { ROUTES } from "@/data/routes";
 
-export const PageBreadcrumb: FC<TPageBreadcrumbProps> = ({ homeElement, separator, activeClass, pageTitle }) => {
+export const PageBreadcrumb: FC<TPageBreadcrumbProps> = ({ separator, activeClass, pageTitle }) => {
     const paths = usePathname();
     const pathNames = paths.split("/").filter((path) => path);
 
@@ -14,10 +15,10 @@ export const PageBreadcrumb: FC<TPageBreadcrumbProps> = ({ homeElement, separato
             <ul className="h5 breadcrumbs">
                 <li>
                     <Link
-                        href={"/"}
+                        href={ROUTES.public.home.href}
                         scroll={false}
                     >
-                        {homeElement}
+                        {ROUTES.public.home.label}
                         {pathNames.length > 0 && separator}
                     </Link>
                 </li>
