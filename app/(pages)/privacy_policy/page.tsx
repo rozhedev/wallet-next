@@ -2,7 +2,7 @@ import Link from "next/link";
 import SectionLayout from "@/components/layout/SectionLayout";
 import PageBreadcrumb from "@/components/layout/PageBreadcrumb";
 import { projectNames } from "@/data/pages/common";
-import { privacyPolicyContent } from "@/data/pages/rules";
+import { rulesContent } from "@/data/pages/rules";
 
 export default function PrivacyPolicy() {
     return (
@@ -15,13 +15,14 @@ export default function PrivacyPolicy() {
             />
             <div className="page-inner">
                 <p>
-                    <i>Effective as of {privacyPolicyContent.effectiveAsDate}</i>
+                    <i>Effective as of {rulesContent.effectiveAsDate}</i>
                 </p>
                 <br />
                 <p>
                     This Privacy Policy informs and explains to you how we collect, store, and process any information that directly, indirectly, or in connection with other information — including a
-                    personal identification number — allows for your identification or identifiability (hereinafter the “Personal Data”) at {projectNames.flemWalletLtd} (hereinafter - {projectNames.flem}, “we”, “our”).
-                    Privacy and data protection are core principles on which we have our website {privacyPolicyContent.getProjectLink()} and any of our Windows, MacAppStore, AppStore or Google Play applications “{projectNames.flemWallet}” (hereinafter the “Application”).
+                    personal identification number — allows for your identification or identifiability (hereinafter the “Personal Data”) at {projectNames.flemWalletLtd} (hereinafter - 
+                    {projectNames.flem}, “we”, “our”). Privacy and data protection are core principles on which we have our website {rulesContent.getProjectLink()} and any of our Windows, MacAppStore,
+                    AppStore or Google Play applications “{projectNames.flemWallet}” (hereinafter the “Application”).
                 </p>
                 <br />
                 <p>
@@ -37,19 +38,22 @@ export default function PrivacyPolicy() {
                 <h4 className="h4">Contact details and Questions</h4>
                 <br />
                 <p>
-                    Any questions about this Privacy Policy, the processing of Personal Data or data subject’s requests shall be directed to: <u>{projectNames.flemWallet} (registry code {privacyPolicyContent.registryCode})</u>
+                    Any questions about this Privacy Policy, the processing of Personal Data or data subject’s requests shall be directed to:{" "}
+                    <u>
+                        {projectNames.flemWallet} (registry code {rulesContent.registryCode})
+                    </u>
                 </p>
                 <br />
                 Address:
-                <address>{privacyPolicyContent.address}</address>
+                <address>{rulesContent.address}</address>
                 <br />
                 <p>
                     Email:
                     <Link
-                        href={privacyPolicyContent.mailHref}
+                        href={rulesContent.mailHref}
                         className="link"
                     >
-                        {privacyPolicyContent.mailLabel}
+                        {rulesContent.mailLabel}
                     </Link>
                 </p>
                 <br />
@@ -173,16 +177,16 @@ export default function PrivacyPolicy() {
                 <h4 className="h4">10. Aggregate Usage Statistics</h4>
                 <br />
                 <p>
-                    We may collect {projectNames.flem} services usage information in order to improve function or UI, but will only use this information in an aggregated, anonymized fashion, and never in association
-                    with your name, email, or other personal data.
+                    We may collect {projectNames.flem} services usage information in order to improve function or UI, but will only use this information in an aggregated, anonymized fashion, and never
+                    in association with your name, email, or other personal data.
                 </p>
                 <br />
                 <h4 className="h4">11. Optional Extra Personal Data</h4>
                 <br />
                 <p>
                     You may choose to provide us with the Personal Data in order to participate in certain programs, activate features, or obtain other benefits but you will always be able to use the
-                    basic features of {projectNames.flem} without providing personal data. If you provide us with the Personal Data then, notwithstanding any part of this Privacy Policy, we may use that ihnformation
-                    in order to provide you with services or to improve the functioning or UI of {projectNames.flem}.
+                    basic features of {projectNames.flem} without providing personal data. If you provide us with the Personal Data then, notwithstanding any part of this Privacy Policy, we may use
+                    that ihnformation in order to provide you with services or to improve the functioning or UI of {projectNames.flem}.
                 </p>
                 <br />
                 <h4 className="h4">12. Your Rights as Data Subject</h4>
