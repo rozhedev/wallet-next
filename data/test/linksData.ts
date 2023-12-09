@@ -2,7 +2,7 @@ import { TLinkListItem } from "@/components/LinkList/index";
 
 // * Dropdown links
 
-export const testLinksData: TLinkListItem[] = [
+export const testLinksData: TLinkListItem<string>[] = [
     {
         href: "/",
         label: "Home",

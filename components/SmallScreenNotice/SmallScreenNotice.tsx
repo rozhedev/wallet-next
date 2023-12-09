@@ -9,7 +9,7 @@ export const SmallScreenNotice: FC<TSmallScreenNoticeProps> = ({ className }) =>
 
     useEffect(() => {
         if (typeof document !== "undefined" && document.documentElement.clientWidth < GRID_BREAKPOINTS.md) setIsScreenLittle(!isScreenLittle);
-    }, []);
+    }, [isScreenLittle]);
     return (
         <>
             {isScreenLittle && (

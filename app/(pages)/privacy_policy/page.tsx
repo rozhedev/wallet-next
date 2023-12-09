@@ -1,6 +1,8 @@
 import Link from "next/link";
 import SectionLayout from "@/components/layout/SectionLayout";
 import PageBreadcrumb from "@/components/layout/PageBreadcrumb";
+import { projectNames } from "@/data/pages/common";
+import { privacyPolicyContent } from "@/data/pages/rules";
 
 export default function PrivacyPolicy() {
     return (
@@ -13,14 +15,13 @@ export default function PrivacyPolicy() {
             />
             <div className="page-inner">
                 <p>
-                    <i>Effective as of October 12, 2021</i>
+                    <i>Effective as of {privacyPolicyContent.effectiveAsDate}</i>
                 </p>
                 <br />
                 <p>
                     This Privacy Policy informs and explains to you how we collect, store, and process any information that directly, indirectly, or in connection with other information — including a
-                    personal identification number — allows for your identification or identifiability (hereinafter the “Personal Data”) at Flem Protocol Systems (hereinafter – “Flem”, “we”, “our”).
-                    Privacy and data protection are core principles on which we have our website https://flemwallet.io and any of our Windows, MacAppStore, AppStore or Google Play applications “Flem
-                    Wallet” (hereinafter the “Application”).
+                    personal identification number — allows for your identification or identifiability (hereinafter the “Personal Data”) at {projectNames.flemWalletLtd} (hereinafter - {projectNames.flem}, “we”, “our”).
+                    Privacy and data protection are core principles on which we have our website {privacyPolicyContent.getProjectLink()} and any of our Windows, MacAppStore, AppStore or Google Play applications “{projectNames.flemWallet}” (hereinafter the “Application”).
                 </p>
                 <br />
                 <p>
@@ -36,19 +37,19 @@ export default function PrivacyPolicy() {
                 <h4 className="h4">Contact details and Questions</h4>
                 <br />
                 <p>
-                    Any questions about this Privacy Policy, the processing of Personal Data or data subject’s requests shall be directed to: <u>Flem Wallet LTD (registry code 13696609)</u>
+                    Any questions about this Privacy Policy, the processing of Personal Data or data subject’s requests shall be directed to: <u>{projectNames.flemWallet} (registry code {privacyPolicyContent.registryCode})</u>
                 </p>
                 <br />
                 Address:
-                <address>62 New Cavendish Street, London, England, W1G 8TA</address>
+                <address>{privacyPolicyContent.address}</address>
                 <br />
                 <p>
-                    Email:{" "}
+                    Email:
                     <Link
-                        href="mailto:support@flemwallet.io"
+                        href={privacyPolicyContent.mailHref}
                         className="link"
                     >
-                        support@flemwallet.io
+                        {privacyPolicyContent.mailLabel}
                     </Link>
                 </p>
                 <br />
@@ -172,7 +173,7 @@ export default function PrivacyPolicy() {
                 <h4 className="h4">10. Aggregate Usage Statistics</h4>
                 <br />
                 <p>
-                    We may collect Flem services usage information in order to improve function or UI, but will only use this information in an aggregated, anonymized fashion, and never in association
+                    We may collect {projectNames.flem} services usage information in order to improve function or UI, but will only use this information in an aggregated, anonymized fashion, and never in association
                     with your name, email, or other personal data.
                 </p>
                 <br />
@@ -180,8 +181,8 @@ export default function PrivacyPolicy() {
                 <br />
                 <p>
                     You may choose to provide us with the Personal Data in order to participate in certain programs, activate features, or obtain other benefits but you will always be able to use the
-                    basic features of Flem without providing personal data. If you provide us with the Personal Data then, notwithstanding any part of this Privacy Policy, we may use that ihnformation
-                    in order to provide you with services or to improve the functioning or UI of Flem.
+                    basic features of {projectNames.flem} without providing personal data. If you provide us with the Personal Data then, notwithstanding any part of this Privacy Policy, we may use that ihnformation
+                    in order to provide you with services or to improve the functioning or UI of {projectNames.flem}.
                 </p>
                 <br />
                 <h4 className="h4">12. Your Rights as Data Subject</h4>
@@ -282,7 +283,7 @@ export default function PrivacyPolicy() {
                 <br />
                 <h4 className="h4">15. Changes to the Privacy Policy</h4>
                 <br />
-                <p>Flem reserves the right to change this Privacy Policy at any time. We will inform you about the changes when it is possible.</p>
+                <p>{projectNames.flem} reserves the right to change this Privacy Policy at any time. We will inform you about the changes when it is possible.</p>
                 <br />
             </div>
         </SectionLayout>
