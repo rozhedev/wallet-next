@@ -1,6 +1,6 @@
 import React, { FC, memo, useState, JSX } from "react";
 import type { T_TabsWrapperProps, T_TabsNavProps, T_TabsNavItem } from "./types";
-import { navItemsArr, contentArr } from "./data";
+import { navItemsArr } from "./data";
 import FaqAccordion from "@/components/FaqAccordion";
 import type { TAccordionContent } from "@/components/FaqAccordion";
 
@@ -17,25 +17,8 @@ export const TabsWrapper = ({ contentArr }: T_TabsWrapperProps): JSX.Element => 
                     onClick={handleTabClick}
                 />
                 <div className="tabs__content">
-                    {/* //* Not save accordion content */}
-                    {/* {contentArr.map(
-                        (item: T_TabsBodyItem, i) =>
-                            selectedTabId === navItemsArr[i].id && (
-                                <div
-                                    className="tabs__content-item"
-                                    key={item.tabsBodyId}
-                                >
-                                    <FaqAccordion
-                                        key={item.accordionsArr[i]?.key}
-                                        question={item.accordionsArr[i]?.question}
-                                        answer={item.accordionsArr[i]?.answer}
-                                    />
-                                </div>
-                            )
-                    )} */}
-                    
                     {selectedTabId === navItemsArr[0].id && (
-                        <div className="tabs__content-item">
+                        <div className="tabs__content-item _active">
                             {contentArr[0].map((item: TAccordionContent) => (
                                 <FaqAccordion
                                     key={item.key}
@@ -46,7 +29,7 @@ export const TabsWrapper = ({ contentArr }: T_TabsWrapperProps): JSX.Element => 
                         </div>
                     )}
                     {selectedTabId === navItemsArr[1].id && (
-                        <div className="tabs__content-item">
+                        <div className="tabs__content-item _active">
                             {contentArr[1].map((item: TAccordionContent) => (
                                 <FaqAccordion
                                     key={item.key}
@@ -57,7 +40,7 @@ export const TabsWrapper = ({ contentArr }: T_TabsWrapperProps): JSX.Element => 
                         </div>
                     )}
                     {selectedTabId === navItemsArr[2].id && (
-                        <div className="tabs__content-item">
+                        <div className="tabs__content-item _active">
                             {contentArr[2].map((item: TAccordionContent) => (
                                 <FaqAccordion
                                     key={item.key}

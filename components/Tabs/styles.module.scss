@@ -83,8 +83,7 @@
 
 .tabs__content-item {
     width: 100%;
-    // display: none;
-    display: block;
+    display: none;
 
     // * minmax used for prevent increase height in grid items (on mobile) when someone accordion opened.
     grid-template: repeat(2, minmax(3.5rem, auto)) / repeat(2, 1fr);
