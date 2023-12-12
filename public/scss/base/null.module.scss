@@ -125,22 +125,3 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
-
-b {
-    font-weight: in;
-}
-
-/* Убираем стандартный маркер Chrome */
-// details summary::-webkit-details-marker {
-//     display: none;
-// }
-// /* Убираем стандартный маркер Firefox */
-// details > summary {
-//     list-style: none;
-// }
-//-webkit-overflow-scrolling: touch;
-/*
-&::-webkit-scrollbar {
-	display: none;
-}
-*/

@@ -1,0 +1,101 @@
+.tabs {
+    width: 100%; 
+    transition: $transition;
+
+    &__nav {
+        width: 80%;
+        position: relative;
+        display: flex;
+        margin: 0 auto 2.5rem;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            border-radius: 0 0 8px 8px;
+            background-color: $darken-accent;
+      
+            @include bp(sm) {
+                display: none;
+            }
+        }
+        @include bp(lg) {
+            width: 100%;
+        }
+        @include bp(sm) {
+            flex-direction: column;
+        }
+        &-item {
+            padding: 0.5rem 1.25rem;
+            background-color: $secondary-lightgray-color;
+            color: $dark-color;
+            border: 4px solid $secondary-lightgray-color;
+            border-bottom: none;
+            border-radius: 8px 8px 0px 0px;
+            font-family: inherit;
+            text-transform: uppercase;
+            transition: $transition;
+
+            @include hover {
+                box-shadow: none;
+                border-color: rgba($color: $dark-color36, $alpha: 0.3);
+            }
+            @include bp(sm) {
+                border-bottom: 4px solid $secondary-lightgray-color;
+                justify-content: center;
+            }
+            &:not(:first-of-type) {
+                margin-left: 2rem;
+            }
+            &._active {
+                background-color: $secondary-lightgray-color;
+                border-color: $darken-accent;
+                width: initial;
+                color: initial;
+                &::after {
+                    display: none;
+                }
+            }
+            &._active {
+                cursor: default;
+                @include hover {
+                    border-color: $darken-accent;
+                }
+            }
+            @include bp(md) {
+                padding: 0.5rem;
+                font-size: 1.125rem;
+                &:not(:first-of-type) {
+                    margin-left: 1.25rem;
+                }
+            }
+            @include bp(sm) {
+                &:not(:first-of-type) {
+                    margin-left: 0;
+                    margin-top: 2rem;
+                }
+            }
+        }
+    }
+}
+
+.tabs__content-item {
+    width: 100%;
+    // display: none;
+    display: block;
+
+    // * minmax used for prevent increase height in grid items (on mobile) when someone accordion opened.
+    grid-template: repeat(2, minmax(3.5rem, auto)) / repeat(2, 1fr);
+    grid-auto-rows: minmax(3rem, auto);
+    grid-auto-columns: 1fr;
+    grid-gap: $grid-gap;
+    &._active {
+        display: grid;
+    }
+
+    @include bp(md) {
+        grid-template: repeat(6, minmax(3.5rem, auto)) / 1fr;
+    }
+}

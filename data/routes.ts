@@ -1,5 +1,5 @@
 export type TRoute = `/${string}`;
-export type TRouteLabelScope = "Home" | "Homepage" | "Assets" | "Supported assets" | "Promoactions" | "Popular questions" | "Privacy Policy" | "Terms of Service" | "Terms" | "Register" | "Sign in" | "Dashboard" | "History" | "Settings" | "Survey" | "Sign Out" | "Watchlist" | "WalletConnect";
+export type TRouteLabelScope = "Home" | "Homepage" | "Assets" | "Supported assets" | "Promoactions" | "Popular questions" | "Privacy Policy" | "Terms of Service" | "Terms" | "Register" | "Register wallet" | "Sign in" | "Dashboard" | "History" | "Settings" | "Survey" | "Sign Out" | "Watchlist" | "WalletConnect";
 
 type TRoutesList = {
     public: {

@@ -1,13 +1,24 @@
+"use client"
+
 import SectionLayout from "@/components/layout/SectionLayout";
 import PageBreadcrumb from "@/components/layout/PageBreadcrumb";
-
-import Image from "next/image";
+import TabsWrapper from "@/components/Tabs";
+import { projectNames } from "@/data/pages/common";
+import { rulesContent } from "@/data/pages/rules";
+import { contentArr } from "@/components/Tabs/data";
 
 export default function Faq() {
     return (
-        <SectionLayout id="assets">
-            <br /><br /><br /><br />
-            <h1 className="h1">Supported assets</h1>
+        <SectionLayout id="faq">
+            <PageBreadcrumb
+                // * Don't add space between slash and &nbsp;
+                separator={<span>&nbsp;/&nbsp;</span>}
+                activeClass="breadcrumb-active"
+                pageTitle="Popular questions"
+            />
+            <div className="page-inner">
+                <TabsWrapper contentArr={contentArr} />
+            </div>
         </SectionLayout>
     );
 }

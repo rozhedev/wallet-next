@@ -20,8 +20,7 @@ export default function PrivacyPolicy() {
                 <br />
                 <p>
                     This Privacy Policy informs and explains to you how we collect, store, and process any information that directly, indirectly, or in connection with other information — including a
-                    personal identification number — allows for your identification or identifiability (hereinafter the “Personal Data”) at {projectNames.flemWalletLtd} (hereinafter - 
-                    {projectNames.flem}, “we”, “our”). Privacy and data protection are core principles on which we have our website {rulesContent.getProjectLink()} and any of our Windows, MacAppStore,
+                    personal identification number — allows for your identification or identifiability (hereinafter the “Personal Data”) at {projectNames.flemWalletLtd} (hereinafter - “{projectNames.flem}”, “we”, “our”). Privacy and data protection are core principles on which we have our website {rulesContent.getProjectLink()} and any of our Windows, MacAppStore,
                     AppStore or Google Play applications “{projectNames.flemWallet}” (hereinafter the “Application”).
                 </p>
                 <br />
@@ -40,7 +39,7 @@ export default function PrivacyPolicy() {
                 <p>
                     Any questions about this Privacy Policy, the processing of Personal Data or data subject’s requests shall be directed to:{" "}
                     <u>
-                        {projectNames.flemWallet} (registry code {rulesContent.registryCode})
+                        {projectNames.flemWalletLtd} (registry code {rulesContent.registryCode})
                     </u>
                 </p>
                 <br />
@@ -48,12 +47,12 @@ export default function PrivacyPolicy() {
                 <address>{rulesContent.address}</address>
                 <br />
                 <p>
-                    Email:
+                    Email:&nbsp;
                     <Link
                         href={rulesContent.mailHref}
                         className="link"
                     >
-                        {rulesContent.mailLabel}
+                         {rulesContent.mailLabel}
                     </Link>
                 </p>
                 <br />

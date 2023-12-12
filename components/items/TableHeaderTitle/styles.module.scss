@@ -3,7 +3,7 @@
     text-align: center;
     svg {
         @include icon-size(map-get($icon-size, sm), 0);
-        margin-right: 0.25rem;
+        margin-right: 0.5rem;
         stroke: $darken-accent;
         stroke-width: calc(map-get($map: $stroke-width, $key: md) / 2);
         vertical-align: text-top;

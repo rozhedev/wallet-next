@@ -6,7 +6,7 @@ const tempArr = [...headerLinks].slice(1); // * Remove home link
 export const footerInfoLinks: TLinkListItem<TRouteLabelScope>[] = tempArr.concat([
     {
         href: ROUTES.public.register,
-        label: "Register",
+        label: "Register wallet",
         className: "navlink",
     },
     {

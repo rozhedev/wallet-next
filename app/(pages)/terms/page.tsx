@@ -49,18 +49,18 @@ export default function Terms() {
                 <br />
                 <ol className="ordered-list ordered-list--privacy3">
                     <li>The waiting time for withdrawal does not exceed {rulesContent.withdrawalTime} on all days of the year (including weekends and holidays).</li>
-                    <li>The withdrawal by {rulesContent.projectDomain} is understood as the time of sending the transfer to the user's wallet / account.</li>
+                    <li>The withdrawal by {rulesContent.projectDomain} is understood as the time of sending the transfer to the user&apos;s wallet / account.</li>
                     <li>
                         {projectNames.flemWalletLtd} has no influence on the operation of the blockchain network responsible for the speed of cryptocurrency transfer, as well as on factors from third
                         parties.
                     </li>
                     <li>
-                        {projectNames.flemWalletLtd} is not responsible for withdrawals ordered to the user's account, which is subject to additional verification or the amount does not meet the
+                        {projectNames.flemWalletLtd} is not responsible for withdrawals ordered to the user&apos;s account, which is subject to additional verification or the amount does not meet the
                         credit requirements (e.g. cryptocurrency exchanges with a specified incoming minimum).
                     </li>
                     <li>{projectNames.flemWalletLtd} is also not responsible for an incorrectly entered withdrawal account or cryptocurrency wallet address.</li>
                     <li>
-                        {projectNames.flemWalletLtd} in special circumstances reserves the right to extend the withdrawal time in the event of detected fraud, attempts to take over another user's
+                        {projectNames.flemWalletLtd} in special circumstances reserves the right to extend the withdrawal time in the event of detected fraud, attempts to take over another user&apos;s
                         account or in cases requiring individual contact with the user.
                     </li>
                 </ol>
@@ -69,17 +69,17 @@ export default function Terms() {
                 <h4 className="h4">4. Anti-Spam Terms</h4>
                 <br />
                 <ol className="ordered-list ordered-list--privacy4">
-                    <li>Spam is commercial e-mail or unsolicited bulk e-mail, including "spam/junk mail", which has not been requested by the recipient.</li>
+                    <li>Spam is commercial e-mail or unsolicited bulk e-mail, including &quot;spam/junk mail&quot;, which has not been requested by the recipient.</li>
                     <li>It is intrusive and often irrelevant or offensive, and it wastes valuable resources.</li>
                     <li>Inappropriate newsgroup activities, consisting of excessive posting of the same materials to several newsgroups, are also deemed to be spam.</li>
                     <li>We don’t accept unsolicited e-mails of any kind in connection with the marketing of the services provided by {projectNames.flemWalletLtd}.</li>
                     <li>
                         If any law enforcement agency, internet provider, web hosting provider or other person or entity provide us with notice that you may have engaged in transmission of unsolicited
-                        e-mails or may have engaged in otherwise unlawful conduct or conduct in violation of an internet service provider's terms or any such policies regulations, we will reserve the
+                        e-mails or may have engaged in otherwise unlawful conduct or conduct in violation of an internet service provider&apos;s terms or any such policies regulations, we will reserve the
                         right to cooperate in any investigation relating to your activities including disclosure of your account information.
                     </li>
                     <li>
-                        If you didn't receive messages from {projectNames.flemWalletLtd}, please check your SPAM / JUNK folder because some email providers can mark our email as SPAM at first time. Add email:
+                        If you didn&apos;t receive messages from {projectNames.flemWalletLtd}, please check your SPAM / JUNK folder because some email providers can mark our email as SPAM at first time. Add email:
                         noreply@{rulesContent.projectDomain} to your white-list.
                     </li>
                 </ol>
@@ -89,7 +89,7 @@ export default function Terms() {
                 <br />
                 <ol className="ordered-list ordered-list--privacy5">
                     <li>Each user is responsible for maintaining the security of their account.</li>
-                    <li>The user should not share the username and secret phrase (alternatively named passphrase) combination with anyone or write it down in an easily accessible place.</li>
+                    <li>The user should not share the username and secret phrase combination (alternatively named passphrase) with anyone or write it down in an easily accessible place.</li>
                 </ol>
                 <br />
 
@@ -107,7 +107,7 @@ export default function Terms() {
                 <h4 className="h4">7. Customer Service and Support</h4>
                 <br />
                 <ol className="ordered-list ordered-list--privacy7">
-                    <li>Each user can contact our support 24 hours, 7 days a week via Live Chat or E-Mail.</li>
+                    <li>Each user can contact our support 24 hours, 7 days a week via Live Chat or email messages.</li>
                     <li>The user is obliged to follow the instructions of our support team to solve the possible problem.</li>
                 </ol>
             </div>
