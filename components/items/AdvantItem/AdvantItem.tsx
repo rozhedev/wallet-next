@@ -29,7 +29,7 @@ export const AdvantItem: FC<TMainAdvantItem> = ({ svgIcon, title, descr }) => {
                     <span className="link">Read more</span>
                 </summary>
 
-                <p className="accordion-content">{descr}</p>
+                <div className="accordion-content">{descr}</div>
             </details>
         </div>
     );

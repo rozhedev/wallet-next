@@ -66,7 +66,7 @@ export const contentArr: T_TabsBody = [
                         registration form
                     </Link>
                     . First, you need to enter your username and email. If the data are entered correctly you will proceed to the second step, which will be generated your passphrase to sign in the
-                    wallet. You must write it down and keep it in a safe place because if it gets lost you won't be able to restore it. In the third step you need to enter the passphrase from the
+                    wallet. You must write it down and keep it in a safe place because if it gets lost you won&apos;t be able to restore it. In the third step you need to enter the passphrase from the
                     second step.
                 </>
             ),
@@ -99,7 +99,7 @@ export const contentArr: T_TabsBody = [
             answer: (
                 <>
                     To date, {projectNames.flemWallet} supports storage of seventy four cryptocurrencies. But due to technical reasons of our product and systems of functioning of the cryptocurrencies
-                    we can't provide exchange, sending, receiving to the wallet of some of them. All supported cryptocurrencies and operations with them can be viewed on the{" "}
+                    we can&apos;t provide exchange, sending, receiving to the wallet of some of them. All supported cryptocurrencies and operations with them can be viewed on the{" "}
                     <Link
                         href="/assets"
                         className="link"
@@ -152,7 +152,7 @@ export const contentArr: T_TabsBody = [
             answer: (
                 <>
                     The minimum replenish amount is ${PAY_LIMITS.minReplenishUsdAmount}, amounts less than that will not be able to pass due to limits on the side of the cryptocurrency networks. We do
-                    not set limits on the maximum amount of replenish and their frequency. If you are told about any additional limits on behalf of the administration - it's a scammers,
+                    not set limits on the maximum amount of replenish and their frequency. If you are told about any additional limits on behalf of the administration - it&apos;s a scammers,
                 </>
             ),
         },
@@ -162,7 +162,7 @@ export const contentArr: T_TabsBody = [
             answer: (
                 <>
                     The minimum withdraw amount is ${PAY_LIMITS.minWithdrawUsdAmount}, amounts less than that will not be able to pass due to limits on the side of the cryptocurrency networks. We do
-                    not set limits on the minimum amount of replenish and their frequency. If you are told about any additional limits on behalf of the administration - it's a scammers.
+                    not set limits on the minimum amount of replenish and their frequency. If you are told about any additional limits on behalf of the administration - it&apos;s a scammers.
                 </>
             ),
         },

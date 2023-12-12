@@ -7,9 +7,10 @@ import { GRID_BREAKPOINTS } from "@/data/constants/breakpoints";
 export const SmallScreenNotice: FC<TSmallScreenNoticeProps> = ({ className }) => {
     const [isScreenLittle, setIsScreenLittle] = useState<boolean>(false);
 
+    // * Don't add isScreenLittle into dependencies array
     useEffect(() => {
         if (typeof document !== "undefined" && document.documentElement.clientWidth < GRID_BREAKPOINTS.md) setIsScreenLittle(!isScreenLittle);
-    }, [isScreenLittle]);
+    }, []);
     return (
         <>
             {isScreenLittle && (

@@ -6,19 +6,19 @@ import type { TAccordionContent } from "@/components/FaqAccordion";
 
 export const TabsWrapper = ({ contentArr }: T_TabsWrapperProps): JSX.Element => {
     const [selectedTabId, setSelectedTabId] = useState<number>(navItemsArr[0].id);
+    const tabClickHandler = (id: number) => setSelectedTabId(id);
 
-    const handleTabClick = (id: number) => setSelectedTabId(id);
     return (
         <div className="tabs-wrapper">
             <div className="tabs">
                 <TabsNav
                     selectedTabId={selectedTabId}
                     tabsArr={navItemsArr}
-                    onClick={handleTabClick}
+                    onClick={tabClickHandler}
                 />
                 <div className="tabs__content">
                     {selectedTabId === navItemsArr[0].id && (
-                        <div className="tabs__content-item _active">
+                        <div className="tabs__content-item">
                             {contentArr[0].map((item: TAccordionContent) => (
                                 <FaqAccordion
                                     key={item.key}
@@ -29,7 +29,7 @@ export const TabsWrapper = ({ contentArr }: T_TabsWrapperProps): JSX.Element => 
                         </div>
                     )}
                     {selectedTabId === navItemsArr[1].id && (
-                        <div className="tabs__content-item _active">
+                        <div className="tabs__content-item">
                             {contentArr[1].map((item: TAccordionContent) => (
                                 <FaqAccordion
                                     key={item.key}
@@ -40,7 +40,7 @@ export const TabsWrapper = ({ contentArr }: T_TabsWrapperProps): JSX.Element => 
                         </div>
                     )}
                     {selectedTabId === navItemsArr[2].id && (
-                        <div className="tabs__content-item _active">
+                        <div className="tabs__content-item">
                             {contentArr[2].map((item: TAccordionContent) => (
                                 <FaqAccordion
                                     key={item.key}

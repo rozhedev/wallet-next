@@ -12,7 +12,7 @@ export type T_TabsNavProps = {
 
 export type T_TabsNavItem = {
     id: number;
-    className: "tabs__nav-item navlink" | `tabs__nav-item navlink ${string}`;
+    className: "tabs__nav-item" | `tabs__nav-item ${string}`;
     label: string;
 };
 
