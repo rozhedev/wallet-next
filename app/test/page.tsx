@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 import Header from "@/components/layout/Header/index";
@@ -10,6 +10,7 @@ import Select from "@/ui/Select/Select";
 import Dropdown from "@/ui/Dropdown/index";
 import VariantsList from "@/components/VariantsList/index";
 import LinkList from "@/components/LinkList/index";
+import Modal from "@/ui/Modal/index";
 
 import { testRadioBtnList } from "@/data/test/radioBtnVariants";
 import { testCheckboxList } from "@/data/test/checkboxBtnVariants";
@@ -19,6 +20,22 @@ import { testLinksData } from "@/data/test/linksData";
 import { headerLinks, dropdownLinks, langSelectOptions } from "@/components/layout/Header/data";
 
 export default function Home() {
+    // * Modal handlers
+
+    const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+
+    const handleModalOpen = () => {
+        setIsOpenModal(true);
+    };
+
+    const handleModalClose = () => {
+        setIsOpenModal(false);
+    };
+
+    const handleModalSubmit = () => {
+        setIsOpenModal(false);
+    };
+
     return (
         <section
             className="test assets"
@@ -46,8 +63,52 @@ export default function Home() {
             </Header>
 
             <div className="container">
+                {/* // * Button which opened modal */}
+                <Btn
+                    type="button"
+                    className="btn-fill"
+                    disabled={false}
+                    onClick={handleModalOpen}
+                >
+                    <span>Open modal</span>
+                </Btn>
+                <Modal
+                    modalDialogClassName="modal-dialog modal-dialog--success"
+                    isOpen={isOpenModal}
+                    onCloseModal={handleModalClose}
+                >
+                    <Modal.Header
+                        titleIcon={
+                            <svg
+                                viewBox="0 0 64 64"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path d="M32.0001 59.4287C47.1485 59.4287 59.4287 47.1485 59.4287 32.0001C59.4287 16.8517 47.1485 4.57153 32.0001 4.57153C16.8517 4.57153 4.57153 16.8517 4.57153 32.0001C4.57153 47.1485 16.8517 59.4287 32.0001 59.4287Z" />
+                                <path d="M45.7142 22.8572L27.4285 41.1429L18.2856 32" />
+                            </svg>
+                        }
+                        title="Success modal"
+                        onCloseModal={handleModalClose}
+                    >
+                    </Modal.Header>
+                    <Modal.Content className="modal-dialog__body">
+                        <p>This event is over. Stay tuned so you don't miss any new promotions.</p>
+                    </Modal.Content>
+                    <Modal.Footer className="modal-footer btn-group">
+                        <Btn
+                            type="button"
+                            className="btn btn-fill-sm"
+                            disabled={false}
+                            onClick={handleModalSubmit}
+                        >
+                            <span>Close</span>
+                        </Btn>
+                    </Modal.Footer>
+                </Modal>
+
                 <Link
-                    href="/pages/assets"
+                    href="/assets"
                     className="link"
                 >
                     Assets

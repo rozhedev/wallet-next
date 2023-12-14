@@ -1,0 +1,96 @@
+.promoactions-item {
+    $promo-items-config: (
+        1 "../../../public/img/photos/promoactions/level-two.webp",
+        2 "../../../public/img/photos/promoactions/avalanche.webp",
+        3 "../../../public/img/photos/promoactions/polygon.webp",
+        4 "../../../public/img/photos/promoactions/wallet-banner.webp",
+        5 "../../../public/img/photos/promoactions/stellar.svg",
+        6 "../../../public/img/photos/promoactions/chainlink.webp",
+        7 "../../../public/img/photos/promoactions/wallet-banner.webp",
+        8 "../../../public/img/photos/promoactions/polkadot.svg",
+        9 "../../../public/img/photos/promoactions/algorand-foundation.webp",
+        10 "../../../public/img/photos/promoactions/level-one.svg",
+        11 "../../../public/img/photos/promoactions/terra.webp",
+        12 "../../../public/img/photos/promoactions/neo.svg",
+        13 "../../../public/img/photos/promoactions/compound-coin.svg",
+        14 "../../../public/img/photos/promoactions/tezos.webp",
+        15 "../../../public/img/photos/promoactions/cronos.webp"
+    );
+
+    position: relative;
+    min-height: 27.25rem;
+    border-radius: 8px;
+    outline: 2px solid $secondary-lightgray-color;
+
+    &__content {
+        @include blur-rect;
+        position: absolute;
+        width: 400px;
+        padding: 1.25rem;
+        bottom: 0;
+        right: 0;
+        border-radius: 8px 0 8px 0;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .hashtag-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0.5rem 0 1rem;
+            .hashtag-item {
+                &::after {
+                    content: "|";
+                    display: inline-block;
+                    padding: 0 0.5rem;
+                    color: $dark-color;
+                }
+                &:last-of-type::after {
+                    display: none;
+                }
+            }
+        }
+        & > a.btn {
+            display: inline-block;
+        }
+    }
+    &:first-of-type {
+        grid-area: 1 / span 2; // * first block expand to 2 columns
+    }
+
+    // * BG FOR DIFFERENT ITEMS
+    @each $number, $img-path in $promo-items-config {
+        &:nth-of-type(#{$number}) {
+            background-image: url($img-path);
+        }
+    }
+
+    @include bp(xl) {
+        &:not(:first-of-type) .promoactions-item__content {
+            width: 100%;
+            border-radius: 0 0 8px 8px;
+        }
+    }
+    @include bp(md) {
+        .promoactions-item__content {
+            width: 100%;
+            border-radius: 0 0 8px 8px;
+        }
+        &:nth-of-type(n) {
+            grid-area: auto / auto / auto / auto;
+        }
+    }
+    @include bp(sm) {
+        .btn {
+            width: 100%;
+        }
+        .promoactions-item__content > a.btn {
+            display: flex;
+        }
+    }
+}
+
+.hashtag-item {
+    display: inline-block;
+    color: $secondary-accent-color;
+}

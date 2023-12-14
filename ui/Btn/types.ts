@@ -3,4 +3,5 @@ export type TBtnProps = {
     className: string;
     children: React.ReactNode;
     disabled: boolean;
+    onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 };

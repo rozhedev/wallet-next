@@ -22,6 +22,7 @@ export const navItemsArr: T_TabsNavItemArr = [
 ];
 
 export const contentArr: T_TabsBody = [
+    // * General questions
     [
         {
             key: 1,
@@ -92,6 +93,7 @@ export const contentArr: T_TabsBody = [
             ),
         },
     ],
+    // * Financial questions
     [
         {
             key: 1,
@@ -167,6 +169,7 @@ export const contentArr: T_TabsBody = [
             ),
         },
     ],
+    // * Security questions
     [
         {
             key: 1,

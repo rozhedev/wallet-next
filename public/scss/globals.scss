@@ -23,6 +23,7 @@
 @import "base/pages-layout.module.scss";
 @import "@/ui/Dropdown/styles.module.scss";
 @import "@/ui/Table/styles.module.scss";
+@import "@/ui/Modal/styles.module.scss";
 
 // * LIBS
 @import "tippy.js/dist/tippy.css";
@@ -38,6 +39,8 @@
 @import "@/components/SmallScreenNotice/styles.module.scss";
 @import "@/components/Tabs/styles.module.scss";
 @import "@/components/FaqAccordion/styles.module.scss";
+@import "@/components/items/PromoactionsItem/styles.module.scss";
+
 
 // * LAYOUT
 @import "@/components/layout/Header/styles.module.scss";
