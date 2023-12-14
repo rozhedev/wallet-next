@@ -4,21 +4,9 @@
         "error": #ee6464,
         "info": #8685ef
     );
-    $modal-transition: .4s all;
-
-    visibility: hidden;
-    opacity: 0;
-    z-index: 99;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.9);
-    transition: $modal-transition;
 
     &-dialog,
     &-dialog__body form {
@@ -32,8 +20,6 @@
 
         padding: 0.75rem 0.75rem 1.5rem 0.75rem;
         background-color: $white-color;
-        border-radius: $sm-border-radius;
-        transform: translateY(0px);
         &__body {
             margin-top: 0.75rem;
             flex-grow: 1;
@@ -63,11 +49,6 @@
             stroke: $stroke-color;
         }
     }
-    &._active {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0px);
-    }
 }
 
 // * MODAL HEADER
@@ -86,16 +67,6 @@
     &-content {
         flex-grow: 1;
         font-size: 24px;
-    }
-    &__close {
-        position: absolute;
-        top: -5px;
-        right: 0px;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 1.15rem;
-        line-height: 1;
-        color: $dark-color;
     }
 }
 
@@ -203,26 +174,35 @@
     }
 }
 
-// .react-responsive-modal-root .react-responsive-modal-container {
-//     $modal-transition: 0.4s all;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
+// * Library styles
+.react-responsive-modal-root .react-responsive-modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation-delay: 0.75s;
+}
 
-//     visibility: hidden;
-//     opacity: 0;
-//     z-index: 99;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     // display: flex;
-//     // justify-content: center;
-//     // align-items: center;
-//     // background-color: rgba(0, 0, 0, 0.9);
-//     // transition: $modal-transition;
-// }
+.react-responsive-modal-modal {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border-radius: $sm-border-radius;
+    // * Rewrite default inline styles. 0.75rem - scrollbar width
+    margin-right: 0.75rem !important;
+}
+
+.react-responsive-modal-closeButton {
+    // * Don't change line-height & position
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: $dark-color;
+}
 
 /* ----- Fixed Screen Glitch When Close Modal ----- */
 .react-responsive-modal-overlay,

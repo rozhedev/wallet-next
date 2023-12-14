@@ -5,7 +5,7 @@ import type { TModalProps, TModalHeaderProps, TModalContentProps, TModalFooterPr
 // * Modal container
 export const Modal = ({ modalDialogClassName, isOpen, onCloseModal, children }: TModalProps): JSX.Element => {
     const defaultClassNames = {
-        modal: `modal ${isOpen ? "_active" : ""}`,
+        modal: "modal _active",
         closeButton: "modal-header__close",
     };
     const [styles, setStyles] = useState({});
@@ -14,7 +14,7 @@ export const Modal = ({ modalDialogClassName, isOpen, onCloseModal, children }: 
         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
         if (isOpen && scrollbarWidth) {
             const _styles = {
-                modal: { marginRight: `${scrollbarWidth + 0.75}rem` },
+                modal: { marginRight: `${scrollbarWidth + 12}px`, transition: ".6s all" },
             };
             setStyles(_styles);
             document.body.style.paddingRight = `${scrollbarWidth}px`;
@@ -35,6 +35,7 @@ export const Modal = ({ modalDialogClassName, isOpen, onCloseModal, children }: 
             onClose={onCloseModal}
             open={isOpen}
             styles={styles}
+            closeIcon={<span>&#x2715;</span>}
         >
             <div className={modalDialogClassName}>{children}</div>
         </ReactModal>
@@ -47,12 +48,6 @@ const ModalHeader: FC<TModalHeaderProps> = ({ titleIcon, title, onCloseModal }) 
         <div className="modal-header">
             {titleIcon}
             <h4 className="h4">{title}</h4>
-            <button
-                className="modal-header__close js-modal-close"
-                onClick={onCloseModal}
-            >
-                <span>&#x2715;</span>
-            </button>
         </div>
     );
 };
