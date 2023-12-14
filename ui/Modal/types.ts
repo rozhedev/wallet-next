@@ -1,5 +1,5 @@
 export type TModalProps = {
-    // modalId: `modal-${string | number}`;
+    modalId: `modal-${string | number}`;
     modalDialogClassName: `modal-dialog ${string}` | "modal-dialog";
     isOpen: boolean;
     onCloseModal: () => void;
@@ -9,7 +9,6 @@ export type TModalProps = {
 export type TModalHeaderProps = {
     titleIcon: React.ReactNode | null;
     title: string;
-    onCloseModal: () => void;
 }
 
 export type TModalContentProps = {

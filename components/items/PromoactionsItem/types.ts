@@ -1,11 +1,13 @@
+import { TModalProps } from "@/ui/Modal/index";
+
 export type TPromoactionsItem = {
     id: number;
     title: React.ReactNode;
     tags: Array<`#${string}`>;
     btnLabel: "Get airdrop" | "See changelog";
     isLink: boolean;
-    linkHref: `https://${string}` | "";
-    // modal: TPromoactionsModal;
+    linkHref: `https://${string}` | `/${string}` | "";
+    // modal: TModalProps;
 };
 
 export type TPromoactionsModal = {

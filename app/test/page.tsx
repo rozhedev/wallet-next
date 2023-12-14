@@ -20,21 +20,7 @@ import { testLinksData } from "@/data/test/linksData";
 import { headerLinks, dropdownLinks, langSelectOptions } from "@/components/layout/Header/data";
 
 export default function Home() {
-    // * Modal handlers
-
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
-
-    const handleModalOpen = () => {
-        setIsOpenModal(true);
-    };
-
-    const handleModalClose = () => {
-        setIsOpenModal(false);
-    };
-
-    const handleModalSubmit = () => {
-        setIsOpenModal(false);
-    };
 
     return (
         <section
@@ -68,14 +54,15 @@ export default function Home() {
                     type="button"
                     className="btn-fill"
                     disabled={false}
-                    onClick={handleModalOpen}
+                    onClick={() => setIsOpenModal(true)}
                 >
                     <span>Open modal</span>
                 </Btn>
                 <Modal
+                    modalId="modal-test"
                     modalDialogClassName="modal-dialog modal-dialog--success"
                     isOpen={isOpenModal}
-                    onCloseModal={handleModalClose}
+                    onCloseModal={() => setIsOpenModal(false)}
                 >
                     <Modal.Header
                         titleIcon={
@@ -89,7 +76,6 @@ export default function Home() {
                             </svg>
                         }
                         title="Success modal"
-                        onCloseModal={handleModalClose}
                     >
                     </Modal.Header>
                     <Modal.Content className="modal-dialog__body">
@@ -100,7 +86,7 @@ export default function Home() {
                             type="button"
                             className="btn btn-fill-sm"
                             disabled={false}
-                            onClick={handleModalSubmit}
+                            onClick={() => setIsOpenModal(false)}
                         >
                             <span>Close</span>
                         </Btn>

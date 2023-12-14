@@ -8,8 +8,8 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         ),
         tags: ["#flemwallet", "#flemtwo", "#leveltwo"],
         btnLabel: "Get airdrop",
-        isLink: false,
-        linkHref: "",
+        isLink: true,
+        linkHref: "/register",
     },
     {
         id: 2,

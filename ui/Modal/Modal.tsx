@@ -3,7 +3,7 @@ import { default as ReactModal } from "react-responsive-modal";
 import type { TModalProps, TModalHeaderProps, TModalContentProps, TModalFooterProps } from "./types";
 
 // * Modal container
-export const Modal = ({ modalDialogClassName, isOpen, onCloseModal, children }: TModalProps): JSX.Element => {
+export const Modal = ({ modalId, modalDialogClassName, isOpen, onCloseModal, children }: TModalProps): JSX.Element => {
     const defaultClassNames = {
         modal: "modal _active",
         closeButton: "modal-header__close",
@@ -30,6 +30,7 @@ export const Modal = ({ modalDialogClassName, isOpen, onCloseModal, children }: 
 
     return (
         <ReactModal
+            modalId={modalId}
             center
             classNames={defaultClassNames}
             onClose={onCloseModal}
@@ -43,7 +44,7 @@ export const Modal = ({ modalDialogClassName, isOpen, onCloseModal, children }: 
 };
 
 // * Modal header
-const ModalHeader: FC<TModalHeaderProps> = ({ titleIcon, title, onCloseModal }) => {
+const ModalHeader: FC<TModalHeaderProps> = ({ titleIcon, title }) => {
     return (
         <div className="modal-header">
             {titleIcon}
