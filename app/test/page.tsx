@@ -106,7 +106,7 @@ export default function Home() {
                 <h5 className="h5">h5 Lorem ipsum dolor sit amet...</h5>
                 <h6 className="output">Output Lorem ipsum dolor sit amet...</h6>
                 <Link
-                    href="/pages/assets"
+                    href="/assets"
                     className="navlink"
                 >
                     Assets

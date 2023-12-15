@@ -4,7 +4,6 @@ import React, { FC } from "react";
 import Link from "next/link";
 
 import type { TPromoProps } from "./types";
-import Btn from "@/ui/Btn/Btn";
 import ScrollBtn from "@/components/ScrollBtn";
 
 export const Promo: FC<TPromoProps> = ({ title }) => {
@@ -13,7 +12,7 @@ export const Promo: FC<TPromoProps> = ({ title }) => {
             <h1 className="h1">{title}</h1>
             <div className="promo__btn">
                 <Link
-                    href="/pages/assets"
+                    href="/assets"
                     className="btn btn-outline"
                 >
                     <span>Supported assets</span>
@@ -27,7 +26,7 @@ export const Promo: FC<TPromoProps> = ({ title }) => {
                     </svg>
                 </Link>
                 <Link
-                    href="/pages/register"
+                    href="/register"
                     className="btn btn-fill"
                 >
                     <span>Create account</span>

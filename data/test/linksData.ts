@@ -9,12 +9,12 @@ export const testLinksData: TLinkListItem<string>[] = [
         className: "navlink",
     },
     {
-        href: "/pages/assets",
+        href: "/assets",
         label: "Assets",
         className: "navlink",
     },
     {
-        href: "/pages/faq",
+        href: "/faq",
         label: "FAQ",
         className: "navlink",
     },

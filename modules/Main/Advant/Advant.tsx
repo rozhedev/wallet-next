@@ -21,7 +21,7 @@ export const Advant: FC<TAdvantProps> = ({ dataArr }) => {
             </div>
             <div>
                 <Link
-                    href="/pages/register"
+                    href="/register"
                     className="btn btn-fill"
                 >
                     <span>Register wallet</span>

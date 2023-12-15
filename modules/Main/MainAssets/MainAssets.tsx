@@ -27,7 +27,7 @@ export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
                 ))}
                 <div className="main-assets__btn-overlay">
                     <Link
-                        href="/pages/assets"
+                        href="/assets"
                         className="btn btn-fill"
                     >
                         <span>View full list</span>
