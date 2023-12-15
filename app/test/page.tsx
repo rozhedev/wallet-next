@@ -84,7 +84,7 @@ export default function Home() {
                     <Modal.Footer className="modal-footer btn-group">
                         <Btn
                             type="button"
-                            className="btn btn-fill-sm"
+                            className="btn btn-outline-sm"
                             disabled={false}
                             onClick={() => setIsOpenModal(false)}
                         >
