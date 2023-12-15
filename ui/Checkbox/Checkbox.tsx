@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import type { TCheckboxProps } from "./types";
 
-const Radio: FC<TCheckboxProps> = ({ id, nameAttr, label, disabled = false, defaultChecked = false }) => {
+const Radio: FC<TCheckboxProps> = ({ id, nameAttr, children, disabled = false, defaultChecked = false }) => {
     return (
         <div className="form-conroller checkbox">
             <input
@@ -16,7 +16,7 @@ const Radio: FC<TCheckboxProps> = ({ id, nameAttr, label, disabled = false, defa
                 htmlFor={id}
                 className="checkbox__label"
             >
-                {label}
+                {children}
             </label>
         </div>
     );

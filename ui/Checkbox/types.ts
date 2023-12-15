@@ -1,7 +1,7 @@
 export type TCheckboxProps = {
     id: string;
     nameAttr: string;
-    label: string;
+    children: React.ReactNode;
     disabled?: boolean;
     defaultChecked?: boolean;
 };

@@ -37,7 +37,6 @@ export const PromoactionsItem: FC<TPromoactionsItem> = ({ title, tags, btnLabel,
                     <Btn
                         type="button"
                         className="btn btn-fill-sm"
-                        disabled={false}
                         onClick={() => setIsOpenModal(true)}
                     >
                         <span>{btnLabel}</span>
@@ -113,7 +112,6 @@ export const PromoactionsItem: FC<TPromoactionsItem> = ({ title, tags, btnLabel,
                         <Btn
                             type="button"
                             className="btn btn-outline-sm"
-                            disabled={false}
                             onClick={() => setIsOpenModal(false)}
                         >
                             <span>Close</span>

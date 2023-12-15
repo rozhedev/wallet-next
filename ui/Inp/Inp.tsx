@@ -3,13 +3,13 @@ import type { TInpProps } from "./types";
 
 // { formData, onChange }: TInpProps
 
-const Inp: FC<TInpProps> = ({ className, disabled }) => {
+const Inp: FC<TInpProps> = ({ className, disabled = false, placeholder }) => {
     return (
         <input
             type="text"
             className={className}
             disabled={disabled}
-            placeholder="Enter text"
+            placeholder={placeholder}
         />
     );
 };

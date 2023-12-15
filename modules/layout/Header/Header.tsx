@@ -90,7 +90,6 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                 <Select
                                     id="header-select-lang"
                                     className="select select--header"
-                                    disabled={false}
                                     title="header-select-lang"
                                     svgIcon={
                                         <svg

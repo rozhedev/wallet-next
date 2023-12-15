@@ -53,7 +53,6 @@ export default function Home() {
                 <Btn
                     type="button"
                     className="btn-fill"
-                    disabled={false}
                     onClick={() => setIsOpenModal(true)}
                 >
                     <span>Open modal</span>
@@ -84,7 +83,6 @@ export default function Home() {
                         <Btn
                             type="button"
                             className="btn btn-outline-sm"
-                            disabled={false}
                             onClick={() => setIsOpenModal(false)}
                         >
                             <span>Close</span>
@@ -122,7 +120,6 @@ export default function Home() {
                 <Btn
                     type="button"
                     className="btn-fill"
-                    disabled={false}
                 >
                     <span>Create account</span>
                     <svg
@@ -140,7 +137,6 @@ export default function Home() {
                 <Btn
                     type="button"
                     className="btn-fill-sm"
-                    disabled={false}
                 >
                     <span>Create account</span>
                     <svg
@@ -158,7 +154,6 @@ export default function Home() {
                 <Btn
                     type="button"
                     className="btn-fill-xs"
-                    disabled={false}
                 >
                     <span>Create account</span>
                     <svg
@@ -176,7 +171,6 @@ export default function Home() {
                 <Btn
                     type="button"
                     className="btn-outline"
-                    disabled={false}
                 >
                     <span>Create account</span>
                     <svg
@@ -194,7 +188,6 @@ export default function Home() {
                 <Btn
                     type="button"
                     className="btn-outline-sm"
-                    disabled={false}
                 >
                     <span>Create account</span>
                     <svg
@@ -212,7 +205,6 @@ export default function Home() {
                 <Btn
                     type="button"
                     className="btn-outline-xs"
-                    disabled={false}
                 >
                     <span>Create account</span>
                     <svg
@@ -264,21 +256,23 @@ export default function Home() {
                 </Btn>
                 <br />
                 <Inp
+                    type="text"
                     className="inp"
-                    disabled={false}
+                    placeholder="Enter text"
                 />
                 <br />
                 <br />
                 <Inp
+                    type="text"
                     className="inp"
                     disabled={true}
+                    placeholder="Enter text"
                 />
                 <br />
                 <br />
                 <Select
                     id="test-select"
                     className="select"
-                    disabled={false}
                     options={testSelectData}
                     title="test-select"
                 />
@@ -294,7 +288,6 @@ export default function Home() {
                 <Select
                     id="test-select-header"
                     className="select select--header"
-                    disabled={false}
                     options={testSelectLang}
                     title="test-select-header"
                     svgIcon={
