@@ -37,6 +37,16 @@
     }
 }
 
+.register-page .breadcrumbs,
+.signin-page .breadcrumbs {
+    li span {
+        color: $white-color;
+    }
+    li a:hover {
+        color: $white-color;
+    }
+}
+
 .page-inner {
     margin: 4rem 0 6rem;
     @include bp(md) {

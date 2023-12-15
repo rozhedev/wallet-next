@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import Header from "@/components/layout/Header/index";
+import Header from "@/modules/layout/Header/index";
 import Btn from "@/ui/Btn/Btn";
 import Inp from "@/ui/Inp/Inp";
 import Select from "@/ui/Select/Select";
@@ -17,7 +17,7 @@ import { testCheckboxList } from "@/data/test/checkboxBtnVariants";
 import { testToggleBtnList } from "@/data/test/toggleBtnVariants";
 import { testSelectData, testSelectLang } from "@/data/test/selectData";
 import { testLinksData } from "@/data/test/linksData";
-import { headerLinks, dropdownLinks, langSelectOptions } from "@/components/layout/Header/data";
+import { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header/data";
 
 export default function Home() {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
@@ -76,8 +76,7 @@ export default function Home() {
                             </svg>
                         }
                         title="Success modal"
-                    >
-                    </Modal.Header>
+                    ></Modal.Header>
                     <Modal.Content className="modal-dialog__body">
                         <p>This event is over. Stay tuned so you don't miss any new promotions.</p>
                     </Modal.Content>

@@ -1,5 +1,5 @@
-import SectionLayout from "@/components/layout/SectionLayout";
-import PageBreadcrumb from "@/components/layout/PageBreadcrumb";
+import SectionLayout from "@/modules/layout/SectionLayout";
+import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
 import PromoactionsItem from "@/components/items/PromoactionsItem";
 import type { TPromoactionsItem } from "@/components/items/PromoactionsItem";
 import { promoactionsItemArr } from "@/components/items/PromoactionsItem";

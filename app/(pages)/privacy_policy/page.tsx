@@ -1,6 +1,6 @@
 import Link from "next/link";
-import SectionLayout from "@/components/layout/SectionLayout";
-import PageBreadcrumb from "@/components/layout/PageBreadcrumb";
+import SectionLayout from "@/modules/layout/SectionLayout";
+import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
 import { projectNames } from "@/data/pages/common";
 import { rulesContent } from "@/data/pages/rules";
 
@@ -20,8 +20,9 @@ export default function PrivacyPolicy() {
                 <br />
                 <p>
                     This Privacy Policy informs and explains to you how we collect, store, and process any information that directly, indirectly, or in connection with other information — including a
-                    personal identification number — allows for your identification or identifiability (hereinafter the “Personal Data”) at {projectNames.flemWalletLtd} (hereinafter - “{projectNames.flem}”, “we”, “our”). Privacy and data protection are core principles on which we have our website {rulesContent.getProjectLink()} and any of our Windows, MacAppStore,
-                    AppStore or Google Play applications “{projectNames.flemWallet}” (hereinafter the “Application”).
+                    personal identification number — allows for your identification or identifiability (hereinafter the “Personal Data”) at {projectNames.flemWalletLtd} (hereinafter - “
+                    {projectNames.flem}”, “we”, “our”). Privacy and data protection are core principles on which we have our website {rulesContent.getProjectLink()} and any of our Windows,
+                    MacAppStore, AppStore or Google Play applications “{projectNames.flemWallet}” (hereinafter the “Application”).
                 </p>
                 <br />
                 <p>
@@ -52,7 +53,7 @@ export default function PrivacyPolicy() {
                         href={rulesContent.mailHref}
                         className="link"
                     >
-                         {rulesContent.mailLabel}
+                        {rulesContent.mailLabel}
                     </Link>
                 </p>
                 <br />

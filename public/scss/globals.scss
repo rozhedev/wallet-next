@@ -29,7 +29,6 @@
 @import "tippy.js/dist/tippy.css";
 @import "react-responsive-modal/styles.css";
 
-
 // * COMPONENTS
 @import "@/components/ScrollBtn/styles.module.scss";
 @import "@/components/items/MainAssetsItem/styles.module.scss";
@@ -43,10 +42,9 @@
 @import "@/components/FaqAccordion/styles.module.scss";
 @import "@/components/items/PromoactionsItem/styles.module.scss";
 
-
 // * LAYOUT
-@import "@/components/layout/Header/styles.module.scss";
-@import "@/components/layout/Footer/styles.module.scss";
+@import "@/modules/layout/Header/styles.module.scss";
+@import "@/modules/layout/Footer/styles.module.scss";
 
 // * MAIN SECTION
 @import "@/modules/Main/Promo/styles.module.scss";

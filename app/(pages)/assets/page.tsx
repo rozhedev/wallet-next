@@ -1,5 +1,5 @@
-import SectionLayout from "@/components/layout/SectionLayout";
-import PageBreadcrumb from "@/components/layout/PageBreadcrumb";
+import SectionLayout from "@/modules/layout/SectionLayout";
+import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
 
 import Table from "@/ui/Table/index";
 import TableHeaderTitle, { assetsTableHeaderTitleArr } from "@/components/items/TableHeaderTitle/index";
@@ -20,7 +20,7 @@ export default function Assets() {
                 pageTitle="Supported assets"
             />
             <div className="page-inner">
-                <SmallScreenNotice className="small-screen-notice"/>
+                <SmallScreenNotice className="small-screen-notice" />
                 <Table
                     wrapperClass=""
                     tableClass="assets-table"

@@ -1,5 +1,5 @@
-import SectionLayout from "@/components/layout/SectionLayout";
-import PageBreadcrumb from "@/components/layout/PageBreadcrumb";
+import SectionLayout from "@/modules/layout/SectionLayout";
+import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
 import { projectNames } from "@/data/pages/common";
 import { rulesContent } from "@/data/pages/rules";
 
@@ -75,12 +75,12 @@ export default function Terms() {
                     <li>We don’t accept unsolicited e-mails of any kind in connection with the marketing of the services provided by {projectNames.flemWalletLtd}.</li>
                     <li>
                         If any law enforcement agency, internet provider, web hosting provider or other person or entity provide us with notice that you may have engaged in transmission of unsolicited
-                        e-mails or may have engaged in otherwise unlawful conduct or conduct in violation of an internet service provider&apos;s terms or any such policies regulations, we will reserve the
-                        right to cooperate in any investigation relating to your activities including disclosure of your account information.
+                        e-mails or may have engaged in otherwise unlawful conduct or conduct in violation of an internet service provider&apos;s terms or any such policies regulations, we will reserve
+                        the right to cooperate in any investigation relating to your activities including disclosure of your account information.
                     </li>
                     <li>
-                        If you didn&apos;t receive messages from {projectNames.flemWalletLtd}, please check your SPAM / JUNK folder because some email providers can mark our email as SPAM at first time. Add email:
-                        noreply@{rulesContent.projectDomain} to your white-list.
+                        If you didn&apos;t receive messages from {projectNames.flemWalletLtd}, please check your SPAM / JUNK folder because some email providers can mark our email as SPAM at first
+                        time. Add email: noreply@{rulesContent.projectDomain} to your white-list.
                     </li>
                 </ol>
                 <br />
@@ -98,7 +98,8 @@ export default function Terms() {
                 <ol className="ordered-list ordered-list--privacy6">
                     <li>Administration of {projectNames.flemWalletLtd} reserves the right to make changes to the current document without the consent of users.</li>
                     <li>
-                        Administration of {projectNames.flemWalletLtd} will inform users about changes by publishing notice on the one of company’s social media account (Facebook, Instagram, Telegram, Twitter, YouTube).
+                        Administration of {projectNames.flemWalletLtd} will inform users about changes by publishing notice on the one of company’s social media account (Facebook, Instagram, Telegram,
+                        Twitter, YouTube).
                     </li>
                     <li>Terms and Conditions changes come into force since the date of publishing information on the site / social media.</li>
                 </ol>

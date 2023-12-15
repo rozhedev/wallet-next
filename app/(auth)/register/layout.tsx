@@ -31,7 +31,7 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
                     </Dropdown.Menu>
                 </Dropdown>
             </Header>
-            <div className="page">{children}</div>
+            <div className="page register-page">{children}</div>
             <Footer>
                 <Footer.NavColumn
                     title="Wallet Info"

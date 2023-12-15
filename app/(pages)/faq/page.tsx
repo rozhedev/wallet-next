@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import SectionLayout from "@/components/layout/SectionLayout";
-import PageBreadcrumb from "@/components/layout/PageBreadcrumb";
+import SectionLayout from "@/modules/layout/SectionLayout";
+import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
 import TabsWrapper from "@/components/Tabs";
 import { projectNames } from "@/data/pages/common";
 import { rulesContent } from "@/data/pages/rules";

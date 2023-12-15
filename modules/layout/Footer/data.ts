@@ -1,5 +1,5 @@
 import type { TLinkListItem } from "@/components/LinkList";
-import { headerLinks, dropdownLinks } from "@/components/layout/Header/data";
+import { headerLinks, dropdownLinks } from "@/modules/layout/Header/data";
 import { ROUTES, TRouteLabelScope } from "@/data/routes";
 
 const tempArr = [...headerLinks].slice(1); // * Remove home link

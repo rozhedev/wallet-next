@@ -4,12 +4,12 @@ import React, { lazy } from "react";
 
 import Dropdown from "@/ui/Dropdown";
 import LinkList from "@/components/LinkList";
-import Header from "@/components/layout/Header/index";
-import Footer from "@/components/layout/Footer";
-import SectionLayout from "@/components/layout/SectionLayout";
+import Header from "@/modules/layout/Header/index";
+import Footer from "@/modules/layout/Footer";
+import SectionLayout from "@/modules/layout/SectionLayout";
 
-import { headerLinks, dropdownLinks, langSelectOptions } from "@/components/layout/Header/data";
-import { footerInfoLinks, footerDiscoverLinks } from "@/components/layout/Footer/data";
+import { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header/data";
+import { footerInfoLinks, footerDiscoverLinks } from "@/modules/layout/Footer/data";
 import Promo from "@/modules/Main/Promo";
 import MainAssets from "@/modules/Main/MainAssets";
 import MainRate from "@/modules/Main/MainRate";
