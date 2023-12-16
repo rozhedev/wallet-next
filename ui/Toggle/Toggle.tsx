@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import type { T_ToggleProps } from "./types";
 
-const Toggle: FC<T_ToggleProps> = ({ id, nameAttr, classNameModif, label, disabled = false, defaultChecked = false }) => {
+const Toggle: FC<T_ToggleProps> = ({ id, nameAttr, classNameModif, children, disabled = false, defaultChecked = false }) => {
     return (
         <div className={`form-conroller ${classNameModif}`}>
             <label
@@ -17,7 +17,7 @@ const Toggle: FC<T_ToggleProps> = ({ id, nameAttr, classNameModif, label, disabl
                     defaultChecked={defaultChecked}
                 />
                 <div className="toggle__switch"></div>
-                <span className="toggle__label">{label}</span>
+                <span className="toggle__label">{children}</span>
             </label>
         </div>
     );

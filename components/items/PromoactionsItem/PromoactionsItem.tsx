@@ -65,7 +65,7 @@ export const PromoactionsItem: FC<TPromoactionsItem> = ({ title, tags, btnLabel,
                     ></Modal.Header>
                     <Modal.Content className="modal-dialog__body">
                         <p>
-                            To participate in the airdrop you need to go through the registration procedure. If you are already registered, log into your wallet as always and go to the "Survey"
+                            To participate in the airdrop you need to go through the registration procedure. If you are already registered, log into your wallet as always and go to the &quot;Survey&quot;
                             section.
                         </p>
                     </Modal.Content>
@@ -106,7 +106,7 @@ export const PromoactionsItem: FC<TPromoactionsItem> = ({ title, tags, btnLabel,
                         title="Event expired"
                     ></Modal.Header>
                     <Modal.Content className="modal-dialog__body">
-                        <p>This event is over. Stay tuned so you don't miss any new promotions.</p>
+                        <p>This event is over. Stay tuned so you don&apos;t miss any new promotions.</p>
                     </Modal.Content>
                     <Modal.Footer className="modal-footer btn-group">
                         <Btn

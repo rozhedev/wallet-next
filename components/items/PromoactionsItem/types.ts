@@ -1,4 +1,4 @@
-import { TModalProps } from "@/ui/Modal/index";
+import { TRoute } from "@/data/routes"
 
 export type TPromoactionsItem = {
     id: number;
@@ -6,8 +6,7 @@ export type TPromoactionsItem = {
     tags: Array<`#${string}`>;
     btnLabel: "Get airdrop" | "See changelog";
     isLink: boolean;
-    linkHref: `https://${string}` | `/${string}` | "";
-    // modal: TModalProps;
+    linkHref: `https://${string}` | TRoute | "";
 };
 
 export type TPromoactionsModal = {
@@ -18,21 +17,3 @@ export type TPromoactionsModal = {
 };
 
 export type TPromoactionsItemArr = TPromoactionsItem[];
-
-// * USAGE
-
-const promoArr: TPromoactionsItem = {
-    id: 4,
-    title: "bgbbgbgnh",
-    tags: ["#gvbnbggnhh", "#gbgnjhjnir", "#vjbjb"],
-    btnLabel: "Get airdrop",
-    isLink: true,
-    linkHref: "https://github.com/airgap-it/airgap-wallet",
-
-    // modal: {
-    //     modalType: "modal-error",
-    //     title: "Event expired",
-    //     content: "This event is over. Stay tuned so you don't miss any new promotions.",
-    //     btnLabel: "Close",
-    // },
-};

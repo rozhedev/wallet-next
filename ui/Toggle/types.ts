@@ -4,7 +4,7 @@ export type T_ToggleProps = {
     id: string;
     nameAttr: string;
     classNameModif?: T_ToggleModifClassNames;
-    label: string;
+    children: React.ReactNode;
     disabled?: boolean;
     defaultChecked?: boolean;
 };

@@ -77,7 +77,7 @@ export default function Home() {
                         title="Success modal"
                     ></Modal.Header>
                     <Modal.Content className="modal-dialog__body">
-                        <p>This event is over. Stay tuned so you don't miss any new promotions.</p>
+                        <p>This event is over. Stay tuned so you don&apos;t miss any new promotions.</p>
                     </Modal.Content>
                     <Modal.Footer className="modal-footer btn-group">
                         <Btn

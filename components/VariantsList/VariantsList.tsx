@@ -2,8 +2,8 @@ import React, { FC } from "react";
 import { VariantsListItemProps } from "./types";
 import { checkUnifiedArr, checkToggleArr } from "./helpers";
 
-import Radio from "../../ui/Radio/Radio";
-import Checkbox from "../../ui/Checkbox/Checkbox";
+import Radio from "@/ui/Radio/Radio";
+import Checkbox from "@/ui/Checkbox/Checkbox";
 import Toggle from "@/ui/Toggle/Toggle";
 
 export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
@@ -25,21 +25,23 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
                           key={variant.id}
                           id={variant.answerId}
                           nameAttr={variant.nameAttr}
-                          label={variant.answer}
                           disabled={variant.disabled}
                           classNameModif={variant.classNameModif}
                           defaultChecked={variant.defaultChecked}
-                      />
+                      >
+                          {variant.answer}
+                      </Toggle>
                   ))
                 : dataArr.map((variant) => (
                       <Checkbox
                           key={variant.id}
                           id={variant.answerId}
                           nameAttr={variant.nameAttr}
-                          label={variant.answer}
                           disabled={variant.disabled}
                           defaultChecked={variant.defaultChecked}
-                      />
+                      >
+                          {variant.answer}
+                      </Checkbox>
                   ))}
         </>
     );
