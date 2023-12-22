@@ -45,7 +45,7 @@ export const PromoactionsItem: FC<TPromoactionsItem> = ({ title, tags, btnLabel,
             </div>
             {isLinkRegister ? (
                 <Modal
-                    modalId="modal-test"
+                    modalId="modal-promoaction-success"
                     modalDialogClassName="modal-dialog modal-dialog--success"
                     isOpen={isOpenModal}
                     onCloseModal={() => setIsOpenModal(false)}
@@ -86,7 +86,7 @@ export const PromoactionsItem: FC<TPromoactionsItem> = ({ title, tags, btnLabel,
                 </Modal>
             ) : (
                 <Modal
-                    modalId="modal-test"
+                    modalId="modal-promoaction-error"
                     modalDialogClassName="modal-dialog modal-dialog--error"
                     isOpen={isOpenModal}
                     onCloseModal={() => setIsOpenModal(false)}

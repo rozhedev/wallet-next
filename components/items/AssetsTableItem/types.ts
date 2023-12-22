@@ -1,6 +1,5 @@
-import { TAllCurNotesScope, TCurIconPath } from "@/types/data/currencies";
-
-export type TIconPath = "/icon-checkmark" | "/icon-unaviable";
+import { TAllCurNotesScope } from "@/types/data/currencies";
+import { TCurIconPath } from "@/types/data/shared";
 
 type TIconsConfigItem<TScope extends TAllCurNotesScope> = {
     id: number;
@@ -16,7 +15,6 @@ type TIconsConfigItem<TScope extends TAllCurNotesScope> = {
 };
 
 type TIconsConfigItemPure = Omit<TIconsConfigItem<TAllCurNotesScope>, "id" | "curName">;
-
 
 export type TAssetsTableItem<TScope extends TAllCurNotesScope> = {
     id: number;

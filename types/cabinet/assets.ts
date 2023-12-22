@@ -1,5 +1,6 @@
-import { TAllCurNotesScope, TCurIconPath } from "@/types/data/currencies";
+import { TAllCurNotesScope } from "@/types/data/currencies";
 import { ExtractValFromObj } from "@/types/utils/extractors";
+import { TCurIconPath } from "@/types/data/shared";
 
 export type TCabinetAssetItem<TCurScope extends TAllCurNotesScope> = {
     id: number;

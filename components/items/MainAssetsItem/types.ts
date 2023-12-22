@@ -1,4 +1,5 @@
-import { AllCurNames, TAllCurNotesScope, TCurIconPath } from "@/types/data/currencies";
+import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
+import { TCurIconPath } from "@/types/data/shared";
 
 // * TMainAssetsItem
 export type TMainAssetsItem<TScope extends TAllCurNotesScope, UName extends AllCurNames> = {

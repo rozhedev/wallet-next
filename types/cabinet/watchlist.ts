@@ -1,4 +1,5 @@
-import { TAllCurNotesScope, TCurIconPath } from "@/types/data/currencies";
+import { TAllCurNotesScope } from "@/types/data/currencies";
+import { TCurIconPath } from "@/types/data/shared";
 
 export type TWatchlistItemPage<TScope extends TAllCurNotesScope> = {
     id: TScope;

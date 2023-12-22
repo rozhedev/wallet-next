@@ -1,4 +1,5 @@
-import { AllCurNames, TAllCurNotesScope, TCurIconPath } from "@/types/data/currencies";
+import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
+import { TCurIconPath } from "@/types/data/shared";
 
 export type TApiLinkMask = `wss://stream.binance.com:9443/ws/${string}@trade`;
 

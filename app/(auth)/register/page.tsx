@@ -8,6 +8,7 @@ import Inp from "@/ui/Inp/Inp";
 import Checkbox from "@/ui/Checkbox/Checkbox";
 import Btn from "@/ui/Btn/Btn";
 import FormController from "@/components/FormController";
+import { FormProgressBar } from "@/components/FormProgressBar/FormProgressBar";
 
 export default function Register() {
     return (
@@ -20,6 +21,7 @@ export default function Register() {
             />
             <div className="page-inner">
                 <Card className="form-wrapper">
+                    <FormProgressBar/>
                     <form
                         action="#"
                         className="form"

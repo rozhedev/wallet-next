@@ -4,14 +4,17 @@ import Link from "next/link";
 import type { TMainAssetsProps } from "./types";
 import MainAssetsItem, { TMainAssetsItem } from "@/components/items/MainAssetsItem";
 import ScrollCounter from "@/components/ScrollCounter";
-import { curPromoCount } from "@/data/pages/common";
+import { curPromoCount } from "@/data/pages/initial";
 import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
 
 export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
     return (
         <>
             <div className="main-assets__header section-title">
-                <ScrollCounter start={0} curCount={curPromoCount} />
+                <ScrollCounter
+                    start={0}
+                    curCount={curPromoCount}
+                />
                 <span className="h4">{promoTitle}</span>
             </div>
             <div className="inner">

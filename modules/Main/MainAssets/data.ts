@@ -1,3 +1,3 @@
-import { curPromoCount, projectNames } from "@/data/pages/common";
+import { curPromoCount, projectNames } from "@/data/pages/initial";
 
-export const mainAssetsPromo: string = `${projectNames.flemWallet} supports more than ${curPromoCount} cryptocurrency assets`;
+export const mainAssetsPromo: string = `${projectNames.defWallet} supports more than ${curPromoCount} cryptocurrency assets`;

@@ -1,4 +1,4 @@
-import { TRANSITION_DELAY } from "@/data/constants/transition";
+import { TRANSITION_DELAY } from "@/data/constants/durations";
 
 export class Accordion {
     el: any;

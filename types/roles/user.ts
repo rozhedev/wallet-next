@@ -1,4 +1,5 @@
-import { TRefLink, TUserBalanceConfig } from "@/types/data/currencies";
+import { TUserBalanceConfig } from "@/types/data/user-balances";
+import { TRefLink } from "@/types/data/shared";
 
 export type TUseragent = {
     id: number;

@@ -1,4 +1,6 @@
-import { TAllCurNotesScope, TWalletFormatsScope } from "@/types/data/currencies";
+import { TAllCurNotesScope } from "@/types/data/currencies";
+import { TWalletFormatsScope } from "@/types/data/user-balances";
+
 
 type TRecepientValues = TWalletFormatsScope | `${string} &#10142; ${string}` | "Internal transaction";
 

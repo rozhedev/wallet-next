@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { T_TabsNavItemArr, T_TabsBody } from "./types";
-import { projectNames } from "@/data/pages/common";
+import { projectNames } from "@/data/pages/initial";
 import { PAY_LIMITS, accountLimit } from "@/data/constants/limits";
 
 export const navItemsArr: T_TabsNavItemArr = [
@@ -36,10 +36,10 @@ export const contentArr: T_TabsBody = [
         },
         {
             key: 2,
-            question: `What is ${projectNames.flemWallet}`,
+            question: `What is ${projectNames.defWallet}`,
             answer: (
                 <>
-                    {projectNames.flemWallet} is a universal cryptocurrency wallet developed by {projectNames.flemWalletLtd}, which is based in the United Kingdom. We have been in the cryptocurrency
+                    {projectNames.defWallet} is a universal cryptocurrency wallet developed by {projectNames.defWalletLtd}, which is based in the United Kingdom. We have been in the cryptocurrency
                     storage and exchange business since 2020. Our main goal is to popularize cryptocurrency among ordinary citizens through the products developed by our company.
                 </>
             ),
@@ -49,7 +49,7 @@ export const contentArr: T_TabsBody = [
             question: "Who can register a wallet on your service?",
             answer: (
                 <>
-                    Everyone may be register wallet on {projectNames.flemWallet} Service, regardless of nationality or residence. The only condition is, you must be of mature age (at least 18 years
+                    Everyone may be register wallet on {projectNames.defWallet} Service, regardless of nationality or residence. The only condition is, you must be of mature age (at least 18 years
                     old) to become our client.
                 </>
             ),
@@ -84,7 +84,7 @@ export const contentArr: T_TabsBody = [
         },
         {
             key: 6,
-            question: `What services does ${projectNames.flemWallet} provide?`,
+            question: `What services does ${projectNames.defWallet} provide?`,
             answer: (
                 <>
                     In addition to storing cryptocurrency, our service allows you to exchange cryptocurrencies at the rate of Binance, view the current rate, the history of transactions on your wallet
@@ -97,10 +97,10 @@ export const contentArr: T_TabsBody = [
     [
         {
             key: 1,
-            question: `How many crypto assets does ${projectNames.flemWallet} support?`,
+            question: `How many crypto assets does ${projectNames.defWallet} support?`,
             answer: (
                 <>
-                    To date, {projectNames.flemWallet} supports storage of seventy four cryptocurrencies. But due to technical reasons of our product and systems of functioning of the cryptocurrencies
+                    To date, {projectNames.defWallet} supports storage of seventy four cryptocurrencies. But due to technical reasons of our product and systems of functioning of the cryptocurrencies
                     we can&apos;t provide exchange, sending, receiving to the wallet of some of them. All supported cryptocurrencies and operations with them can be viewed on the{" "}
                     <Link
                         href="/assets"
@@ -113,11 +113,11 @@ export const contentArr: T_TabsBody = [
         },
         {
             key: 2,
-            question: `Does ${projectNames.flem} have transaction fees to send or receive?`,
+            question: `Does ${projectNames.def} have transaction fees to send or receive?`,
             answer: (
                 <>
                     Almost all blockchain transactions incur network or miner fees (with a few exceptions). Other than these transaction fees, 100% of which go to the network,{" "}
-                    {projectNames.flemWallet} does not charge fees for sending. You will never pay transaction fees when receiving in {projectNames.flemWallet}. The commission of the cryptocurrency
+                    {projectNames.defWallet} does not charge fees for sending. You will never pay transaction fees when receiving in {projectNames.defWallet}. The commission of the cryptocurrency
                     network is about 1 - 3 percent of the transaction amount.
                 </>
             ),
@@ -188,7 +188,7 @@ export const contentArr: T_TabsBody = [
                         <li>hide balance when logging into the wallet;</li>
                         <li>allow login to the wallet ONLY if IP address is the same.</li>
                     </ul>
-                    And do not under any circumstances disclose your passphrase to any third party, even if you are asked on behalf of {projectNames.flemWalletLtd}.
+                    And do not under any circumstances disclose your passphrase to any third party, even if you are asked on behalf of {projectNames.defWalletLtd}.
                 </>
             ),
         },

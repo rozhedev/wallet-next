@@ -5,7 +5,7 @@ import { CSSTransition } from "react-transition-group";
 import { useDropdown, useDropdownContext } from "./useDropdown";
 import { DropdownProvider } from "./dropdownContext";
 import type { TDropdownProps, TDropdownBtnProps, TDropdownMenuProps } from "./types";
-import { TRANSITION_DELAY } from "@/data/constants/transition";
+import { TRANSITION_DELAY } from "@/data/constants/durations";
 
 const CLASS_LIST = {
     navlink: "navlink",
