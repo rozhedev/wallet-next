@@ -1,5 +1,5 @@
 // * Initial data for set project name, limits, etc.
-// * def - default
+// * def - default project name
 
 export const projectNames = {
     def: "Flem",

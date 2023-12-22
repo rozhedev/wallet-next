@@ -1,6 +1,6 @@
-type TModalIcons = Record<"success" | "error" | "walletConnect" | "get" | "send" | "survey", React.ReactNode>;
+export type TModalIcons = Record<"success" | "error" | "walletConnect" | "get" | "send" | "survey", React.ReactNode>;
 
-const MODAL_ICONS: TModalIcons = {
+export const MODAL_ICONS: TModalIcons = {
     success: (
         <svg
             viewBox="0 0 64 64"

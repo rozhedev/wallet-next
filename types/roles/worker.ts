@@ -1,6 +1,5 @@
 import { TWalletFormatsScope } from "@/types/data/user-balances";
 import { TRefLink } from "@/types/data/shared";
-
 import { TUserAuthProps, TUseragent } from "./user";
 
 export type TAdminData<T extends TWorkerData<TWalletFormatsScope, TRefLink, TUserAuthProps>, U extends TWalletFormatsScope> = {

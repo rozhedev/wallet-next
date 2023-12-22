@@ -1,24 +1,29 @@
 export type TRoute = `/${string}`;
-export type TRouteLabelScope = "Home" | "Homepage" | "Assets" | "Supported assets" | "Promoactions" | "Popular questions" | "Privacy Policy" | "Terms of Service" | "Terms" | "Register" | "Register wallet" | "Sign in" | "Dashboard" | "History" | "Settings" | "Survey" | "Sign Out" | "Watchlist" | "WalletConnect";
+export type TRouteLabelScope =
+    | "Home"
+    | "Homepage"
+    | "Assets"
+    | "Supported assets"
+    | "Promoactions"
+    | "Popular questions"
+    | "Privacy Policy"
+    | "Terms of Service"
+    | "Terms"
+    | "Register"
+    | "Register wallet"
+    | "Sign in"
+    | "Dashboard"
+    | "History"
+    | "Settings"
+    | "Survey"
+    | "Sign Out"
+    | "Watchlist"
+    | "WalletConnect";
 
 type TRoutesList = {
-    public: {
-        home: TRoute;
-        assets: TRoute;
-        promoactions: TRoute;
-        faq: TRoute;
-        privacyPolicy: TRoute;
-        terms: TRoute;
-        register: TRoute;
-        signin: TRoute;
-    };
-    private: {
-        dashboard: TRoute;
-        assetsCab: TRoute;
-        history: TRoute;
-        settings: TRoute;
-        watchlist: TRoute;
-    };
+    public: Record<"home" | "assets" | "promoactions" | "faq" | "privacyPolicy" | "terms" | "register" | "signin", TRoute>;
+
+    private: Record<"dashboard" | "assetsCab" | "history" | "settings" | "watchlist", TRoute>;
 };
 
 export const ROUTES: TRoutesList = {
