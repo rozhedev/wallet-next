@@ -1,15 +1,15 @@
 import React, { FC, useState, FormEvent } from "react";
-import { useMultistepForm } from "./useMultistepForm";
 import Link from "next/link";
-import Card from "@/ui/Card/Card";
-import Btn from "@/ui/Btn/Btn";
 
-import FormProgressBar from "@/components/FormProgressBar";
 import RegisterDetails from "@/modules/Forms/RegisterDetails";
 import GenPassphrase from "@/modules/Forms/GenPassphrase";
-import EnterPassphrase from "../EnterPassphrase";
-import { FormValues } from "./types";
+import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
+import FormProgressBar from "@/components/FormProgressBar";
+import Card from "@/ui/Card/Card";
+import Btn from "@/ui/Btn/Btn";
 import { ROUTES } from "@/data/routes";
+import { useMultistepForm } from "./useMultistepForm";
+import type { FormValues } from "./types";
 
 const INITIAL_DATA: FormValues = {
     username: "",
@@ -52,12 +52,25 @@ export const Multistep: FC<{}> = ({}) => {
         alert("Success register");
     }
 
+    // * Data for FormProgressBar
+    let isMediumStep = currentStepIndex + 1 === steps.length - 1;
+
+    const stepsClassNames = [`progress-step navlink _active`, `progress-step navlink ${isMediumStep || isLastStep ? "_active" : ""}`, `progress-step navlink ${isLastStep ? "_active" : ""}`];
+
+    const getProgressBarWidth = () => {
+        let index: `${number}%` = "0%";
+        if (isFirstStep) index = "0%";
+        else if (isMediumStep) index = "50%";
+        else if (isLastStep) index = "100%";
+        return index;
+    };
+
     return (
         <Card className="form-wrapper">
-            <FormProgressBar />
-            <div className="counter">
-                {currentStepIndex + 1} / {steps.length}
-            </div>
+            <FormProgressBar
+                progressBarStyle={getProgressBarWidth()}
+                countClassNames={stepsClassNames}
+            />
             <form
                 action="#"
                 className="form"

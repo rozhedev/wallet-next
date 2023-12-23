@@ -12,7 +12,6 @@ export const EnterPassphrase = ({ id, className, updateFields }: TEnterPassphras
         <fieldset
             className={className}
             id={id}
-            data-step="form-register"
         >
             <legend className="form-label-legend">Paste your passphrase from the inputs below to complete registration.</legend>
 

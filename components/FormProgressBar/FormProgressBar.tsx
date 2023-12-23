@@ -1,16 +1,22 @@
 import React, { FC } from "react";
 import type { TFormProgressBarProps } from "./types";
 
-export const FormProgressBar: FC<TFormProgressBarProps> = ({}) => {
+export const FormProgressBar: FC<TFormProgressBarProps> = ({ progressBarStyle, countClassNames }) => {
     return (
         <ul className="progress-bar">
             <li
                 className="progress-line-active"
                 id="progress-line-active"
+                style={{
+                    width: progressBarStyle,
+                }}
             ></li>
-            <li className="progress-step navlink _active"></li>
-            <li className="progress-step navlink"></li>
-            <li className="progress-step navlink"></li>
+            {countClassNames.map((className, index) => (
+                <li
+                    key={index}
+                    className={className}
+                ></li>
+            ))}
         </ul>
     );
 };
