@@ -3,7 +3,7 @@ import type { TRadioBtnProps } from "./types";
 
 const Radio: FC<TRadioBtnProps> = ({ id, nameAttr, label, disabled = false }) => {
     return (
-        <div className="form-conroller radio">
+        <div className="form-controller radio">
             <input
                 type="radio"
                 name={nameAttr}

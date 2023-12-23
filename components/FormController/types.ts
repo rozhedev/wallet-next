@@ -1,5 +1,4 @@
-
 export type TFormControllerProps = {
-    className: "form-conroller" | `form-conroller ${string}`;
+    className: "form-controller" | `form-controller ${string}`;
     children: React.ReactNode;
 };

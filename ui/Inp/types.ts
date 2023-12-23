@@ -1,10 +1,5 @@
-import { HTMLInputTypeAttribute } from "react";
+import { InputHTMLAttributes } from "react";
 
-export type TInpProps = {
-    type: HTMLInputTypeAttribute;
-    className: string;
-    disabled?: boolean;
-    placeholder: string
-    // formData: string;
-    // onChange: React.ChangeEventHandler<HTMLInputElement>;
+export type TInpProps = InputHTMLAttributes<HTMLInputElement> & {
+    readonly key?: string | number;
 };

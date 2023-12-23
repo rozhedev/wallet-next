@@ -3,7 +3,7 @@ import type { TCheckboxProps } from "./types";
 
 const Radio: FC<TCheckboxProps> = ({ id, nameAttr, children, disabled = false, defaultChecked = false }) => {
     return (
-        <div className="form-conroller checkbox">
+        <div className="form-controller checkbox">
             <input
                 type="checkbox"
                 name={nameAttr}

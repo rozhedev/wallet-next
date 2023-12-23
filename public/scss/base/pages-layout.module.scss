@@ -35,7 +35,7 @@
 // * REGISTER
 
 .register-page {
-    background-image: url('../../img/photos/bg/register.svg');
+    background-image: url("../../img/photos/bg/register.svg");
     background-position: center;
     background-size: 150%;
     background-repeat: no-repeat;
@@ -54,7 +54,7 @@
 }
 
 .signin-page {
-    background: url('../../img/photos/bg/signin.svg') center / cover no-repeat;
+    background: url("../../img/photos/bg/signin.svg") center / cover no-repeat;
     .form-step {
         display: flex;
     }
@@ -66,7 +66,6 @@
 .signin-page .page-title .breadcrumbs a {
     color: $white-color;
 }
-
 
 // * form content
 .form,
@@ -98,7 +97,7 @@
         & > *:not(:first-child) {
             margin-top: 1.5rem;
         }
-        .form-conroller,
+        .form-controller,
         .inp,
         .btn-group {
             width: 100%;
@@ -108,6 +107,7 @@
             align-items: center;
             margin: 0;
             padding: 0.5rem;
+            font-family: inherit;
             svg {
                 width: 1.4rem;
                 height: 1.4rem;
@@ -117,10 +117,22 @@
             }
         }
     }
+    .form-backlink {
+        display: flex;
+        justify-content: center;
+    } 
+    .btn-group,
+    .form-backlink {
+        margin-top: 1.5rem;
+    }
     .inp,
     .checkbox__label::before {
         background-color: transparent;
     }
+}
+
+.register .form-wrapper .form-passphrase .copy-btn {
+    margin-top: 1rem;
 }
 
 .signin .form-wrapper .form-step {
@@ -165,7 +177,7 @@
     color: $dark-color;
 }
 
-.form-conroller .passphrase-item {
+.form-controller .passphrase-item {
     position: relative;
     margin: 0;
 
@@ -188,7 +200,7 @@
     }
 }
 
-.form-conroller .confirm-inp {
+.form-controller .confirm-inp {
     padding: 0.4rem;
     border-radius: 0;
     border-top: none;
@@ -230,12 +242,9 @@
 // *  ACTIVE CLASSES & ANIM
 
 .form-step {
-    display: none;
+    display: flex;
     transform-origin: top;
     animation: form-slide 0.9s;
-}
-.form-step._active {
-    display: flex;
 }
 
 @keyframes form-slide {

@@ -335,13 +335,13 @@ option {
 }
 
 // * ERROR MESSAGE UNDER INPUT
-.form-conroller__message {
+.form-controller__message {
     display: block;
     visibility: hidden;
     height: 0;
 }
 
-.form-conroller__message._active {
+.form-controller__message._active {
     visibility: visible;
     height: auto;
 }

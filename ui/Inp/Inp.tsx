@@ -1,15 +1,12 @@
 import React, { FC } from "react";
 import type { TInpProps } from "./types";
 
-// { formData, onChange }: TInpProps
-
-const Inp: FC<TInpProps> = ({ className, disabled = false, placeholder }) => {
+const Inp: FC<TInpProps> = ({ disabled = false, readOnly = false, ...props }) => {
     return (
         <input
-            type="text"
-            className={className}
             disabled={disabled}
-            placeholder={placeholder}
+            readOnly={readOnly}
+            {...props}
         />
     );
 };

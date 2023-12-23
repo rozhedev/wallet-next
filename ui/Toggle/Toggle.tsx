@@ -3,7 +3,7 @@ import type { T_ToggleProps } from "./types";
 
 const Toggle: FC<T_ToggleProps> = ({ id, nameAttr, classNameModif, children, disabled = false, defaultChecked = false }) => {
     return (
-        <div className={`form-conroller ${classNameModif}`}>
+        <div className={`form-controller ${classNameModif}`}>
             <label
                 className="toggle__inner"
                 htmlFor={id}
