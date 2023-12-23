@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import type { T_ToggleProps } from "./types";
 
-const Toggle: FC<T_ToggleProps> = ({ id, nameAttr, classNameModif, children, disabled = false, defaultChecked = false }) => {
+const Toggle: FC<T_ToggleProps> = ({ id, name, classNameModif, children, disabled = false, defaultChecked = false }) => {
     return (
         <div className={`form-controller ${classNameModif}`}>
             <label
@@ -10,7 +10,7 @@ const Toggle: FC<T_ToggleProps> = ({ id, nameAttr, classNameModif, children, dis
             >
                 <input
                     type="checkbox"
-                    name={nameAttr}
+                    name={name}
                     id={id}
                     className="toggle__checkbox"
                     disabled={disabled}

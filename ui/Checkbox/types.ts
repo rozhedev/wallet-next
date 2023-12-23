@@ -1,7 +1,6 @@
-export type TCheckboxProps = {
-    id: string;
-    nameAttr: string;
+import { InputHTMLAttributes } from "react";
+
+export type TCheckboxProps = InputHTMLAttributes<HTMLInputElement> & {
     children: React.ReactNode;
-    disabled?: boolean;
     defaultChecked?: boolean;
 };

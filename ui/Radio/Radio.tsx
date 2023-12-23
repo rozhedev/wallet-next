@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 import type { TRadioBtnProps } from "./types";
 
-const Radio: FC<TRadioBtnProps> = ({ id, nameAttr, label, disabled = false }) => {
+const Radio: FC<TRadioBtnProps> = ({ id, name, label, disabled = false }) => {
     return (
         <div className="form-controller radio">
             <input
                 type="radio"
-                name={nameAttr}
+                name={name}
                 id={id}
                 className="radio__input"
                 disabled={disabled}

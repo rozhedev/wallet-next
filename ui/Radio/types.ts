@@ -1,6 +1,6 @@
-export type TRadioBtnProps = {
-    id: string;
-    nameAttr: string;
+import { InputHTMLAttributes } from "react";
+
+export type TRadioBtnProps = InputHTMLAttributes<HTMLInputElement> & {
     label: string;
-    disabled?: boolean;
+    children?: React.ReactNode;
 };

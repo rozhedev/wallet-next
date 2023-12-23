@@ -5,7 +5,7 @@ export type TVariantsInpAttr = "radio" | "checkbox";
 type TVariantsListItem = {
     id: number;
     type: TVariantsInpAttr;
-    nameAttr: `survey-question${number}`;
+    name: `survey-question${number}`;
     answerId: `survey-answer${number}-${number}`;
     answer: string;
     disabled?: boolean;

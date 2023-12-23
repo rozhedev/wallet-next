@@ -4,7 +4,7 @@ export const testToggleBtnList: TVariantsListItemArr = [
     {
         id: 1,
         type: "checkbox",
-        nameAttr: "survey-question31",
+        name: "survey-question31",
         answerId: "survey-answer3-1",
         answer: "Item 1",
         classNameModif: "toggle",
@@ -13,7 +13,7 @@ export const testToggleBtnList: TVariantsListItemArr = [
     {
         id: 2,
         type: "checkbox",
-        nameAttr: "survey-question32",
+        name: "survey-question32",
         answerId: "survey-answer3-2",
         answer: "Item 2",
         disabled: true,
@@ -22,7 +22,7 @@ export const testToggleBtnList: TVariantsListItemArr = [
     {
         id: 3,
         type: "checkbox",
-        nameAttr: "survey-question33",
+        name: "survey-question33",
         answerId: "survey-answer3-3",
         answer: "Item 3",
         classNameModif: "toggle",
@@ -30,7 +30,7 @@ export const testToggleBtnList: TVariantsListItemArr = [
     {
         id: 4,
         type: "checkbox",
-        nameAttr: "survey-question34",
+        name: "survey-question34",
         answerId: "survey-answer3-4",
         answer: "Item 4",
         disabled: true,

@@ -1,9 +1,7 @@
-import React from "react";
+import { SelectHTMLAttributes } from "react";
 
-export type TSelectProps = {
-    id: string;
+export type TSelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
     className: `select${"" | " select--disabled" | " select--header"}`;
-    disabled?: boolean;
     options: { label: string; value: string }[];
     title: string;
     svgIcon?: React.ReactNode;

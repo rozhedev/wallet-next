@@ -41,7 +41,7 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, user
             <FormController className="form-controller">
                 <Checkbox
                     id="signup-checkbox"
-                    nameAttr="signup-checkbox"
+                    name="signup-checkbox"
                 >
                     I accept{" "}
                     <Link

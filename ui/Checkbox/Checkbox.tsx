@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 import type { TCheckboxProps } from "./types";
 
-const Radio: FC<TCheckboxProps> = ({ id, nameAttr, children, disabled = false, defaultChecked = false }) => {
+const Radio: FC<TCheckboxProps> = ({ id, name, children, disabled = false, defaultChecked = false }) => {
     return (
         <div className="form-controller checkbox">
             <input
                 type="checkbox"
-                name={nameAttr}
+                name={name}
                 id={id}
                 className="checkbox__input"
                 disabled={disabled}

@@ -1,7 +1,6 @@
-export type TBtnProps = {
-    type: "submit" | "button";
+import { ButtonHTMLAttributes } from "react";
+
+export type TBtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     className: string;
     children: React.ReactNode;
-    disabled?: boolean;
-    onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 };
