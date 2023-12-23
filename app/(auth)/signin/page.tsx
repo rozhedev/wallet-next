@@ -1,9 +1,13 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
 import Card from "@/ui/Card/Card";
+import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
+import { ROUTES } from "@/data/routes";
+import BtnGroup from "@/ui/BtnGroup/BtnGroup";
+import Btn from "@/ui/Btn/Btn";
 
 export default function Signin() {
     return (
@@ -16,8 +20,35 @@ export default function Signin() {
             />
             <div className="page-inner">
                 <Card className="form-wrapper">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatibus modi vitae, dolore dolores eaque nisi ullam commodi, a excepturi asperiores officiis perspiciatis illum
-                    maxime labore quaerat quia expedita dignissimos.
+                    <form
+                        action="/dashboard"
+                        className="form form-confirm"
+                        id="signin-form-confirm"
+                    >
+                        <EnterPassphrase
+                            id="register-confirm-form"
+                            className="form-step"
+                            legend="Copy the passphrase you received during registration."
+                            updateFields={() => null}
+                        />
+                        <BtnGroup className="btn-group">
+                            <Btn
+                                type="button"
+                                className="btn btn-fill-sm"
+                            >
+                                <span>Sign in</span>
+                            </Btn>
+                        </BtnGroup>
+                        <span className="form-backlink">
+                            Don&apos;t have wallet?&nbsp;
+                            <Link
+                                href={ROUTES.public.register}
+                                className="link"
+                            >
+                                Register
+                            </Link>
+                        </span>
+                    </form>
                 </Card>
             </div>
         </SectionLayout>

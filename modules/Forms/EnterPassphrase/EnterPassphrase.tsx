@@ -7,13 +7,13 @@ import type { TEnterPassphraseProps } from "./types";
 import { TInpProps } from "@/ui/Inp/types";
 import { currentPassphrase } from "../GenPassphrase";
 
-export const EnterPassphrase = ({ id, className, updateFields }: TEnterPassphraseProps): JSX.Element => {
+export const EnterPassphrase = ({ id, className, legend, updateFields }: TEnterPassphraseProps): JSX.Element => {
     return (
         <fieldset
             className={className}
             id={id}
         >
-            <legend className="form-label-legend">Paste your passphrase from the inputs below to complete registration.</legend>
+            <legend className="form-label-legend">{legend}</legend>
 
             <FormController className="form-controller form-inp-grid">
                 {currentPassphrase.map((value, i) => (

@@ -10,5 +10,5 @@ export type TCurIconPath<TScope extends TAllCurNotesScope> = `@/public/img/icons
 
 export type TAuthFieldsetProps = {
     id: string;
-    className: `form-step ${string}`;
+    className: "form-step" | `form-step ${string}`;
 };

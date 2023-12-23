@@ -6,6 +6,7 @@ import GenPassphrase from "@/modules/Forms/GenPassphrase";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 import FormProgressBar from "@/components/FormProgressBar";
 import Card from "@/ui/Card/Card";
+import BtnGroup from "@/ui/BtnGroup/BtnGroup";
 import Btn from "@/ui/Btn/Btn";
 import { ROUTES } from "@/data/routes";
 import { useMultistepForm } from "./useMultistepForm";
@@ -40,6 +41,7 @@ export const Multistep: FC<{}> = ({}) => {
         <EnterPassphrase
             id="register-confirm-form"
             className="form-step form-confirm"
+            legend="Paste your passphrase from the inputs below to complete registration."
             updateFields={updateFields}
             {...data}
         />,
@@ -72,13 +74,13 @@ export const Multistep: FC<{}> = ({}) => {
                 countClassNames={stepsClassNames}
             />
             <form
-                action="#"
+                action="/dashboard"
                 className="form"
                 onSubmit={onSubmitHandler}
             >
                 {step}
 
-                <div className="btn-group">
+                <BtnGroup className="btn-group">
                     {!isFirstStep && (
                         <Btn
                             type="button"
@@ -95,7 +97,7 @@ export const Multistep: FC<{}> = ({}) => {
                     >
                         <span>{isLastStep ? "Complete" : "Next step"}</span>
                     </Btn>
-                </div>
+                </BtnGroup>
 
                 {isFirstStep && (
                     <span className="form-backlink">
