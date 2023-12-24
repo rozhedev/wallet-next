@@ -1,14 +1,32 @@
 "use client";
 
 import React, { FC } from "react";
+import { useForm } from "react-hook-form";
+import type { FieldValues } from "react-hook-form";
+import Link from "next/link";
+
+import type { TRegisterDetailsProps } from "./types";
 import Inp from "@/ui/Inp/Inp";
 import Checkbox from "@/ui/Checkbox/Checkbox";
 import FormController from "@/components/FormController";
-import Link from "next/link";
-import type { TRegisterDetailsProps } from "./types";
 import { ROUTES } from "@/data/routes";
 
 export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, username, email, updateFields }) => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors, isSubmitting },
+        reset,
+        getValues,
+    } = useForm();
+
+    const onSubmit = async (data: FieldValues) => {
+        // * TODO Submit to server
+
+        await new Promise((resolve: any) => setTimeout(resolve, 2000));
+        reset();
+    };
+
     return (
         <fieldset
             className={className}

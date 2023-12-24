@@ -4,20 +4,18 @@ import React, { lazy } from "react";
 
 import Dropdown from "@/ui/Dropdown";
 import LinkList from "@/components/LinkList";
-import Header from "@/modules/layout/Header/index";
-import Footer from "@/modules/layout/Footer";
-import SectionLayout from "@/modules/layout/SectionLayout";
 
-import { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header/data";
-import { footerInfoLinks, footerDiscoverLinks } from "@/modules/layout/Footer/data";
-import Promo from "@/modules/Main/Promo";
-import MainAssets from "@/modules/Main/MainAssets";
+// * Component - type (prop types etc.) - data
+import Header, { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header";
+import Footer, { footerInfoLinks, footerDiscoverLinks } from "@/modules/layout/Footer";
+import SectionLayout from "@/modules/layout/SectionLayout";
+import Promo, { promoTitle } from "@/modules/Main/Promo";
+import MainAssets, { mainAssetsPromo } from "@/modules/Main/MainAssets";
 import MainRate from "@/modules/Main/MainRate";
 import Advant from "@/modules/Main/Advant";
 import MainDownload from "@/modules/Main/MainDownload";
 
-import { promoTitle } from "@/modules/Main/Promo";
-import { mainAssetsPromo } from "@/modules/Main/MainAssets";
+// * Items data
 import { mainAssetItemArr } from "@/components/items/MainAssetsItem";
 import { mainRateItemArr } from "@/components/items/MainRateItem";
 import { mainAdvantItemArr } from "@/components/items/AdvantItem";

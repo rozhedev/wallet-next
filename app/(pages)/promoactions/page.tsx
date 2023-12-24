@@ -1,8 +1,7 @@
+// * Component - type (prop types etc.) - data
+import PromoactionsItem, { type TPromoactionsItem, promoactionsItemArr } from "@/components/items/PromoactionsItem";
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
-import PromoactionsItem from "@/components/items/PromoactionsItem";
-import type { TPromoactionsItem } from "@/components/items/PromoactionsItem";
-import { promoactionsItemArr } from "@/components/items/PromoactionsItem";
 
 export default function Terms() {
     return (

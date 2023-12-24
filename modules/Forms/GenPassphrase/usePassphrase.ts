@@ -13,8 +13,8 @@ export const usePassphrase = (wordArr: string[]) => {
 
     let passStr = passArr.join(" ");
     let passLength = passArr.length;
-    return {passArr, passStr, passLength};
-}
+    return { passArr, passStr, passLength };
+};
 
 function getRandomIndex(wordArr: string[]) {
     return Math.round(Math.random() * wordArr.length);

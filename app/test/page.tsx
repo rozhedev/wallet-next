@@ -3,21 +3,24 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import Header from "@/modules/layout/Header/index";
+// * ui components
 import Btn from "@/ui/Btn/Btn";
 import Inp from "@/ui/Inp/Inp";
 import Select from "@/ui/Select/Select";
-import Dropdown from "@/ui/Dropdown/index";
-import VariantsList from "@/components/VariantsList/index";
-import LinkList from "@/components/LinkList/index";
-import Modal from "@/ui/Modal/index";
+import Dropdown from "@/ui/Dropdown";
+import Modal from "@/ui/Modal";
 
+// * Components & modules
+import VariantsList from "@/components/VariantsList";
+import LinkList from "@/components/LinkList";
+import Header, { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header";
+
+// * Data
 import { testRadioBtnList } from "@/data/test/radioBtnVariants";
 import { testCheckboxList } from "@/data/test/checkboxBtnVariants";
 import { testToggleBtnList } from "@/data/test/toggleBtnVariants";
 import { testSelectData, testSelectLang } from "@/data/test/selectData";
 import { testLinksData } from "@/data/test/linksData";
-import { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header/data";
 
 export default function Home() {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);

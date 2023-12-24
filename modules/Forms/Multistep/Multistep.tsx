@@ -1,24 +1,23 @@
 import React, { FC, useState, FormEvent } from "react";
 import Link from "next/link";
 
+import Card from "@/ui/Card/Card";
+import BtnGroup from "@/ui/BtnGroup/BtnGroup";
+import Btn from "@/ui/Btn/Btn";
 import RegisterDetails from "@/modules/Forms/RegisterDetails";
 import GenPassphrase from "@/modules/Forms/GenPassphrase";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 import FormProgressBar from "@/components/FormProgressBar";
-import Card from "@/ui/Card/Card";
-import BtnGroup from "@/ui/BtnGroup/BtnGroup";
-import Btn from "@/ui/Btn/Btn";
-import { ROUTES } from "@/data/routes";
-import { useMultistepForm } from "./useMultistepForm";
-import type { FormValues } from "./types";
 
-const INITIAL_DATA: FormValues = {
-    username: "",
-    email: "",
-};
+import { ROUTES } from "@/data/routes";
+import type { FormValues } from "./types";
+import { useMultistepForm } from "./useMultistepForm";
 
 export const Multistep: FC<{}> = ({}) => {
-    const [data, setData] = useState(INITIAL_DATA);
+    const [data, setData] = useState<FormValues>({
+        username: "",
+        email: "",
+    });
 
     function updateFields(fields: Partial<FormValues>) {
         setData((prev) => {

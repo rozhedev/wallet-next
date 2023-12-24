@@ -1,14 +1,15 @@
+import Table from "@/ui/Table";
+
+// * Component - type (prop types etc.) - data
+import TableHeaderTitle, { type T_TableHeaderTitle, assetsTableHeaderTitleArr } from "@/components/items/TableHeaderTitle";
+import AssetsTableItem, { type TAssetsTableItem, assetTableItemArr } from "@/components/items/AssetsTableItem";
+
+import SmallScreenNotice from "@/components/SmallScreenNotice";
+import type { TAllCurNotesScope } from "@/types/data/currencies";
+
+// * Layout
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
-
-import Table from "@/ui/Table/index";
-import TableHeaderTitle, { assetsTableHeaderTitleArr } from "@/components/items/TableHeaderTitle/index";
-import AssetsTableItem, { assetTableItemArr } from "@/components/items/AssetsTableItem";
-import SmallScreenNotice from "@/components/SmallScreenNotice";
-
-import type { T_TableHeaderTitle } from "@/components/items/TableHeaderTitle/index";
-import type { TAssetsTableItem } from "@/components/items/AssetsTableItem/index";
-import { TAllCurNotesScope } from "@/types/data/currencies";
 
 export default function Assets() {
     return (

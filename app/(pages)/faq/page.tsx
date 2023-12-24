@@ -1,9 +1,8 @@
 "use client";
 
+import TabsWrapper, { contentArr } from "@/components/Tabs";
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
-import TabsWrapper from "@/components/Tabs";
-import { contentArr } from "@/components/Tabs/data";
 
 export default function Faq() {
     return (
