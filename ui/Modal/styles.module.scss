@@ -92,7 +92,7 @@
             width: 90%;
             word-break: break-all;
         }
-        img {
+        .copy-btn svg {
             @include icon-size(map-get($icon-size, md), 0);
             stroke: $dark-color;
             stroke-width: calc(map-get($map: $stroke-width, $key: sm) / 2);

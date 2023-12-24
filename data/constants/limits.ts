@@ -3,6 +3,8 @@ export const PAY_LIMITS = {
     minWithdrawUsdAmount: 10,
     minNetworkFeePercent: 1,
     maxNetworkFeePercent: 3,
-}
+};
 
 export const accountLimit: string = "three per person";
+
+export const PASSPHRASE_LENGTH: number = 12;

@@ -6,8 +6,11 @@ import FormController from "@/components/FormController";
 import type { TGenPassphraseProps } from "./types";
 import { TInpProps } from "@/ui/Inp/types";
 import { currentPassphrase } from "./usePassphrase";
+import CopyBtn from "@/components/CopyBtn";
 
 export const GenPassphrase = ({ id, className }: TGenPassphraseProps): JSX.Element => {
+    let passphraseStr = currentPassphrase.join(" ");
+    
     return (
         <fieldset
             className={className}
@@ -27,21 +30,7 @@ export const GenPassphrase = ({ id, className }: TGenPassphraseProps): JSX.Eleme
                     ))}
                 </ol>
             </FormController>
-            <button
-                type="button"
-                className="copy-btn"
-                id="copy-btn-passphrase"
-            >
-                <span>Copy to clipboard</span>
-                <svg
-                    viewBox="0 0 64 64"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path d="M22.8572 41.143H4.57153V4.57153H41.143V22.8572" />
-                    <path d="M59.4286 22.8572H22.8572V59.4286H59.4286V22.8572Z" />
-                </svg>
-            </button>
+            <CopyBtn isRegister={true} value={passphraseStr} />
         </fieldset>
     );
 };

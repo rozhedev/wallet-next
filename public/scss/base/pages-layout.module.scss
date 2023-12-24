@@ -111,9 +111,11 @@
             svg {
                 width: 1.4rem;
                 height: 1.4rem;
-                margin-left: 0.5rem;
                 stroke: $dark-color;
                 stroke-width: map-get($map: $stroke-width, $key: sm);
+            }
+            span {
+                margin-left: 0.5rem;
             }
         }
     }
