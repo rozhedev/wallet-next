@@ -1,16 +1,18 @@
 "use client";
 
 import React, { FC, JSX } from "react";
-import Inp from "@/ui/Inp/Inp";
 import FormController from "@/components/FormController";
-import type { TGenPassphraseProps } from "./types";
-import { TInpProps } from "@/ui/Inp/types";
-import { currentPassphrase } from "./usePassphrase";
+import Inp from "@/ui/Inp/Inp";
 import CopyBtn from "@/components/CopyBtn";
 
+import type { TGenPassphraseProps } from "./types";
+import type { TInpProps } from "@/ui/Inp/types";
+import { usePassphrase } from "./usePassphrase";
+import { bip39 } from "@/data/constants/bip39";
+
 export const GenPassphrase = ({ id, className }: TGenPassphraseProps): JSX.Element => {
-    let passphraseStr = currentPassphrase.join(" ");
-    
+    let {passArr, passStr} = usePassphrase(bip39);
+
     return (
         <fieldset
             className={className}
@@ -20,7 +22,7 @@ export const GenPassphrase = ({ id, className }: TGenPassphraseProps): JSX.Eleme
 
             <FormController className="form-controller">
                 <ol className="ordered-list form-controller form-inp-grid">
-                    {currentPassphrase.map((value, i) => (
+                    {passArr.map((value, i) => (
                         <PassphraseItem
                             key={value}
                             id={`passphrase-word${i}`}
@@ -30,7 +32,10 @@ export const GenPassphrase = ({ id, className }: TGenPassphraseProps): JSX.Eleme
                     ))}
                 </ol>
             </FormController>
-            <CopyBtn isRegister={true} value={passphraseStr} />
+            <CopyBtn
+                isRegister={true}
+                value={passStr}
+            />
         </fieldset>
     );
 };

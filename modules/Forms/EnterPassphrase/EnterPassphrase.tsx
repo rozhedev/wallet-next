@@ -5,9 +5,11 @@ import Inp from "@/ui/Inp/Inp";
 import FormController from "@/components/FormController";
 import type { TEnterPassphraseProps } from "./types";
 import { TInpProps } from "@/ui/Inp/types";
-import { currentPassphrase } from "../GenPassphrase";
+import { usePassphrase } from "../GenPassphrase";
+import { bip39 } from "@/data/constants/bip39";
 
 export const EnterPassphrase = ({ id, className, legend, updateFields }: TEnterPassphraseProps): JSX.Element => {
+    const { passArr } = usePassphrase(bip39);
     return (
         <fieldset
             className={className}
@@ -16,7 +18,7 @@ export const EnterPassphrase = ({ id, className, legend, updateFields }: TEnterP
             <legend className="form-label-legend">{legend}</legend>
 
             <FormController className="form-controller form-inp-grid">
-                {currentPassphrase.map((value, i) => (
+                {passArr.map((value, i) => (
                     <ConfirmInput
                         key={i}
                         name={`confirm-inp${i}`}
