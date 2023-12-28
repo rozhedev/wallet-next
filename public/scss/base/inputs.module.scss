@@ -335,13 +335,16 @@ option {
 }
 
 // * ERROR MESSAGE UNDER INPUT
+
 .form-controller__message {
     display: block;
-    visibility: hidden;
-    height: 0;
-}
-
-.form-controller__message._active {
     visibility: visible;
     height: auto;
+    padding-top: 0.25rem;
+    font-weight: 600;
+    color: $error-red;
+}
+
+.form-controller .checkbox + .form-controller__message {
+    padding-left: 2rem;
 }

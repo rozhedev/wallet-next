@@ -1,15 +1,15 @@
 "use client";
 
-import React, { FC, JSX } from "react";
-import Inp from "@/ui/Inp/Inp";
+import React, { FC } from "react";
+import { useFieldArray } from "react-hook-form";
 import FormController from "@/components/FormController";
 import type { TEnterPassphraseProps } from "./types";
-import { TInpProps } from "@/ui/Inp/types";
-import { usePassphrase } from "../GenPassphrase";
-import { bip39 } from "@/data/constants/bip39";
 
-export const EnterPassphrase = ({ id, className, legend, updateFields }: TEnterPassphraseProps): JSX.Element => {
-    const { passArr } = usePassphrase(bip39);
+export const EnterPassphrase: FC<TEnterPassphraseProps> = ({ id, className, legend, register, control }) => {
+    const { fields } = useFieldArray({
+        control,
+        name: "confirm-inp",
+    });
     return (
         <fieldset
             className={className}
@@ -18,30 +18,26 @@ export const EnterPassphrase = ({ id, className, legend, updateFields }: TEnterP
             <legend className="form-label-legend">{legend}</legend>
 
             <FormController className="form-controller form-inp-grid">
-                {passArr.map((value, i) => (
-                    <ConfirmInput
-                        key={i}
-                        name={`confirm-inp${i}`}
-                        id={`confirm-inp${i}`}
-                        title={`confirm-input ${i}`}
+                {/* 
+                // * Don't add name attribute for prevent rewrite in Inp component 
+                // * Use default input instead Inp for default html5 validation (custom validation message impossible output, because dynamic key is not supported)
+                */}
+                {fields.map((field, i) => (
+                    <input
+                        key={field.id}
+                        type="text"
+                        id={`confirm-inp.${i}.value`}
+                        title={`Confirm input ${i}`}
+                        className="inp confirm-inp"
                         placeholder={`${i + 1}`}
-                        onChange={(e) => updateFields({ [`${value}${i}`]: e.target.value })}
+                        minLength={3}
+                        maxLength={11}
+                        autoComplete="off"
+                        required
+                        {...register(`confirm-inp.${i}.value`, {})}
                     />
                 ))}
             </FormController>
         </fieldset>
-    );
-};
-
-const ConfirmInput: FC<TInpProps> = ({ placeholder, ...props }) => {
-    return (
-        <Inp
-            type="text"
-            className="inp confirm-inp"
-            placeholder={placeholder}
-            maxLength={11}
-            autoComplete="off"
-            {...props}
-        />
     );
 };

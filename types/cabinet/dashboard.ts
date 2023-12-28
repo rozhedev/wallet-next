@@ -1,5 +1,5 @@
 import { TAllCurNotesScope } from "@/types/data/currencies";
-import { ExtractValFromObj } from "@/types/utils/extractors";
+import { ExtractValFromObj } from "@/types/utils/utils";
 import { TUserHistoryItem } from "@/types/cabinet/history";
 import { TIconPath } from "@/types/data/shared";
 

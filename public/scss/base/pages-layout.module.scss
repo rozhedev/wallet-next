@@ -122,7 +122,12 @@
     .form-backlink {
         display: flex;
         justify-content: center;
-    } 
+    }
+    .form > .form-controller__message {
+        display: flex;
+        justify-content: center;
+        margin-top: 0.75rem;
+    }
     .btn-group,
     .form-backlink {
         margin-top: 1.5rem;

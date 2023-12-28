@@ -1,4 +1,4 @@
-import { ExtractValFromObj } from "@/types/utils/extractors";
+import { ExtractValFromObj } from "@/types/utils/utils";
 import { TModalProps } from "@/ui/Modal/index";
 import { MODAL_ICONS, TModalIcons } from "./title-icons";
 

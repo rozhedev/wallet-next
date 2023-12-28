@@ -1,5 +1,8 @@
-import React, { FC, useState, FormEvent } from "react";
+"use client";
+
+import React, { FC, useState } from "react";
 import Link from "next/link";
+import type { FieldValues } from "react-hook-form";
 
 import Card from "@/ui/Card/Card";
 import BtnGroup from "@/ui/BtnGroup/BtnGroup";
@@ -9,49 +12,64 @@ import GenPassphrase from "@/modules/Forms/GenPassphrase";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 import FormProgressBar from "@/components/FormProgressBar";
 
-import { ROUTES } from "@/data/routes";
-import type { FormValues } from "./types";
+import { TMultistep } from "./types";
 import { useMultistepForm } from "./useMultistepForm";
+import { ROUTES } from "@/data/routes";
+import { INP_DATA } from "@/data/pages/inp-data";
+import { log } from "console";
 
-export const Multistep: FC<{}> = ({}) => {
-    const [data, setData] = useState<FormValues>({
-        username: "",
-        email: "",
-    });
-
-    function updateFields(fields: Partial<FormValues>) {
-        setData((prev) => {
-            return { ...prev, ...fields };
-        });
-    }
-
+export const Multistep: FC<TMultistep> = ({ register, control, handleSubmit, errors, isSubmitting, setValue, getValues, reset, passArr, passStr }) => {
     const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } = useMultistepForm([
         <RegisterDetails
             id="register-user-data-form"
             className="form-step form-user-data"
-            updateFields={updateFields}
-            {...data}
+            passArr={passArr}
+            register={register}
+            errors={errors}
         />,
         <GenPassphrase
             id="register-passphrase-form"
             className="form-step form-passphrase"
-            {...data}
+            passArr={passArr}
+            passStr={passStr}
+            register={register}
+            control={control}
+            setValue={setValue}
+            errors={errors}
         />,
         <EnterPassphrase
             id="register-confirm-form"
             className="form-step form-confirm"
             legend="Paste your passphrase from the inputs below to complete registration."
-            updateFields={updateFields}
-            {...data}
+            register={register}
+            control={control}
+            errors={errors}
         />,
     ]);
 
-    function onSubmitHandler(e: FormEvent) {
-        e.preventDefault();
+    // * State for check generated pass & entered
+    const [isPassMatch, setIsPassMatch] = useState<boolean>(true);
+
+    const submitHandler = async (data: FieldValues) => {
         if (!isLastStep) return next();
-        // * Handler for send query and etc.
-        alert("Success register");
-    }
+
+        const confirmInpValuesStr: any = getValues("confirm-inp")
+            .map((inp) => (inp.value = inp.value.trim()))
+            .join(" ");
+
+        const isPassCond: boolean = passStr === confirmInpValuesStr;
+
+        if (isPassCond) {
+            setIsPassMatch(true);
+            console.log(confirmInpValuesStr);
+            reset();
+
+            await new Promise((resolve: any) => setTimeout(resolve, 1000));
+
+            // * TODO Submit to server
+            // * ...
+        } else setIsPassMatch(false);
+    };
 
     // * Data for FormProgressBar
     let isMediumStep = currentStepIndex + 1 === steps.length - 1;
@@ -67,49 +85,53 @@ export const Multistep: FC<{}> = ({}) => {
     };
 
     return (
-        <Card className="form-wrapper">
-            <FormProgressBar
-                progressBarStyle={getProgressBarWidth()}
-                countClassNames={stepsClassNames}
-            />
-            <form
-                action="/dashboard"
-                className="form"
-                onSubmit={onSubmitHandler}
-            >
-                {step}
+        <div className="container">
+            <Card className="form-wrapper">
+                <FormProgressBar
+                    progressBarStyle={getProgressBarWidth()}
+                    countClassNames={stepsClassNames}
+                />
+                <form
+                    action="/dashboard"
+                    className="form"
+                    onSubmit={handleSubmit(submitHandler)}
+                >
+                    {step}
 
-                <BtnGroup className="btn-group">
-                    {!isFirstStep && (
+                    {!isPassMatch && isLastStep && <small className="form-controller__message">{INP_DATA.passMatchErrText}</small>}
+
+                    <BtnGroup className="btn-group">
+                        {!isFirstStep && (
+                            <Btn
+                                type="button"
+                                className="btn btn-fill-sm"
+                                onClick={back}
+                            >
+                                <span>Previous step</span>
+                            </Btn>
+                        )}
                         <Btn
-                            type="button"
+                            type="submit"
                             className="btn btn-fill-sm"
-                            onClick={back}
+                            disabled={isSubmitting}
                         >
-                            <span>Previous step</span>
+                            <span>{isLastStep ? "Complete" : "Next step"}</span>
                         </Btn>
-                    )}
-                    <Btn
-                        type="button"
-                        className="btn btn-fill-sm"
-                        onClick={next}
-                    >
-                        <span>{isLastStep ? "Complete" : "Next step"}</span>
-                    </Btn>
-                </BtnGroup>
+                    </BtnGroup>
 
-                {isFirstStep && (
-                    <span className="form-backlink">
-                        Already have a wallet?&nbsp;
-                        <Link
-                            href={ROUTES.public.signin}
-                            className="link"
-                        >
-                            Sign In
-                        </Link>
-                    </span>
-                )}
-            </form>
-        </Card>
+                    {isFirstStep && (
+                        <span className="form-backlink">
+                            Already have a wallet?&nbsp;
+                            <Link
+                                href={ROUTES.public.signin}
+                                className="link"
+                            >
+                                Sign In
+                            </Link>
+                        </span>
+                    )}
+                </form>
+            </Card>
+        </div>
     );
 };

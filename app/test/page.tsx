@@ -258,7 +258,7 @@ export default function Home() {
                     </svg>
                 </Btn>
                 <br />
-                <Inp
+                {/* <Inp
                     type="text"
                     className="inp"
                     placeholder="Enter text"
@@ -270,7 +270,7 @@ export default function Home() {
                     className="inp"
                     disabled={true}
                     placeholder="Enter text"
-                />
+                /> */}
                 <br />
                 <br />
                 <Select

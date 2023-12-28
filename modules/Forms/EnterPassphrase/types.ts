@@ -1,8 +1,10 @@
+import { UseFormRegister, Control, FieldErrors } from "react-hook-form";
 import { TAuthFieldsetProps } from "@/types/data/shared";
-
-export type TEnterPassphraseData = Record<"username" | "email", string>;
+import { TRegisterForm } from "@/types/data/forms";
 
 export type TEnterPassphraseProps = TAuthFieldsetProps & {
     legend: string;
-    updateFields: (fields: Partial<TEnterPassphraseData>) => void;
+    register: UseFormRegister<TRegisterForm>;
+    control: Control<TRegisterForm, any>;
+    errors: FieldErrors<TRegisterForm>;
 };
