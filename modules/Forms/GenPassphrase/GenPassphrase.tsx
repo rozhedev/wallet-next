@@ -1,7 +1,6 @@
 "use client";
 
 import React, { FC } from "react";
-import { useFieldArray } from "react-hook-form";
 import FormController from "@/components/FormController";
 import Checkbox from "@/ui/Checkbox/Checkbox";
 import CopyBtn from "@/components/CopyBtn";
@@ -9,12 +8,7 @@ import CopyBtn from "@/components/CopyBtn";
 import type { TGenPassphraseProps } from "./types";
 import { INP_DATA } from "@/data/pages/inp-data";
 
-export const GenPassphrase: FC<TGenPassphraseProps> = ({ id, className, passArr, passStr, register, control, setValue, errors }) => {
-    const { fields } = useFieldArray({
-        control,
-        name: "passphrase-inp",
-    });
-
+export const GenPassphrase: FC<TGenPassphraseProps> = ({ id, className, passArr, passStr, register, setValue, errors, passphraseFields }) => {
     return (
         <fieldset
             className={className}
@@ -25,22 +19,16 @@ export const GenPassphrase: FC<TGenPassphraseProps> = ({ id, className, passArr,
             <FormController className="form-controller">
                 <ol
                     className="ordered-list form-controller form-inp-grid"
-                    style={{
-                        display: "grid",
-                        gridTemplate: "repeat(3, 1fr) / repeat(3, 1fr)",
-                        gridAutoFlow: "row dense",
-                        gridGap: "1rem",
-                    }}
                 >
-                    {fields.map((field, i) => (
+                    {passphraseFields.map((field, i) => (
                         <li
                             className="passphrase-item"
                             key={field.id}
                         >
                             <input
                                 type="text"
-                                id={`passphrase-inp.${i}.value`}
-                                title={`Passphrase word ${i}`}
+                                id={`${INP_DATA.fieldArrValues.passphrase.id}.${i}.value`}
+                                title={`${INP_DATA.fieldArrValues.passphrase.title} ${i}`}
                                 className="inp"
                                 readOnly
                                 value={passArr[i]}

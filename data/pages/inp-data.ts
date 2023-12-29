@@ -24,7 +24,24 @@ export const INP_DATA = {
     },
     registerCheckboxErrText: "You must agree with terms",
     passCheckboxErrText: "Confirm saved passphrase",
-    passMatchErrText: "Passphrases not match",
+    passMatchErrText: 'Passphrases not match. Check words and click "Complete" button again',
+    signinErrText: 'Invalid passphrase. Check words and click "Signin" button again',
+    fieldArrValues: {
+        passphrase: {
+            id: "passphrase-inp",
+            title: "Passphrase word",
+        },
+        confirm: {
+            id: "confirm-inp",
+            title: "Confirm input",
+        },
+        signin: {
+            id: "signin-inp",
+            title: "Signin input",
+        },
+        wordMinLenght: 3,
+        wordMaxLenght: 11,
+    },
 };
 
 export const REGISTER_INIT_VALUES = {
@@ -52,3 +69,7 @@ export const REGISTER_INIT_VALUES = {
 export const { passArr, passStr } = usePassphrase(bip39);
 
 REGISTER_INIT_VALUES["passphrase-inp"].map((pass, i) => (pass.value = passArr[i]));
+
+export const SIGNIN_INIT_VALUES = {
+    "signin-inp": [{ value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }],
+};

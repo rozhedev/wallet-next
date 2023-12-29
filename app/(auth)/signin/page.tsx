@@ -1,17 +1,49 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-
-import Card from "@/ui/Card/Card";
-import Btn from "@/ui/Btn/Btn";
-import BtnGroup from "@/ui/BtnGroup/BtnGroup";
+import { useForm, useFieldArray } from "react-hook-form";
+import { FieldValues } from "react-hook-form";
 
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
+import BtnGroup from "@/ui/BtnGroup/BtnGroup";
+import Btn from "@/ui/Btn/Btn";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
+
+import type { TSigninForm } from "@/types/data/forms";
+import { INP_DATA, SIGNIN_INIT_VALUES } from "@/data/pages/inp-data";
+import { getPassphraseStr } from "@/data/utils";
 import { ROUTES } from "@/data/routes";
 
 export default function Signin() {
+    const {
+        register,
+        control,
+        handleSubmit,
+        formState: { isSubmitting },
+        getValues,
+        reset,
+    } = useForm<TSigninForm>({
+        defaultValues: SIGNIN_INIT_VALUES,
+    });
+
+    const { fields: signupFields } = useFieldArray({
+        control,
+        name: "signin-inp",
+    });
+
+    const submitForm = async (data: FieldValues) => {
+        const signinInpValuesStr = getPassphraseStr(getValues, "signin-inp");
+        console.log(signinInpValuesStr);
+
+        await new Promise((resolve: any) => setTimeout(resolve, 2000));
+        reset();
+
+        // * TODO Submit to server
+        // * ...
+    };
+
     return (
         <SectionLayout id="signin">
             <PageBreadcrumb
@@ -21,22 +53,39 @@ export default function Signin() {
                 pageTitle="Sign in"
             />
             <div className="page-inner">
-                <Card className="form-wrapper">
+                <div className="form-wrapper">
                     <form
                         action="/dashboard"
-                        className="form form-confirm"
-                        id="signin-form-confirm"
+                        className="form"
+                        onSubmit={handleSubmit(submitForm)}
                     >
                         <EnterPassphrase
                             id="register-confirm-form"
-                            className="form-step"
-                            legend="Copy the passphrase you received during registration."
-                            updateFields={() => null}
-                        />
+                            className="form-step form-confirm"
+                            legend="Paste your passphrase from the inputs below to complete registration."
+                        >
+                            {signupFields.map((field, i) => (
+                                <input
+                                    key={field.id}
+                                    type="text"
+                                    id={`${INP_DATA.fieldArrValues.signin}.${i}.value`}
+                                    title={`${INP_DATA.fieldArrValues.signin} ${i}`}
+                                    className="inp confirm-inp"
+                                    placeholder={`${i + 1}`}
+                                    minLength={INP_DATA.fieldArrValues.wordMinLenght}
+                                    maxLength={INP_DATA.fieldArrValues.wordMaxLenght}
+                                    autoComplete="off"
+                                    required
+                                    {...register(`signin-inp.${i}.value`, {})}
+                                />
+                            ))}
+                        </EnterPassphrase>
+
                         <BtnGroup className="btn-group">
                             <Btn
-                                type="button"
+                                type="submit"
                                 className="btn btn-fill-sm"
+                                disabled={isSubmitting}
                             >
                                 <span>Sign in</span>
                             </Btn>
@@ -51,7 +100,7 @@ export default function Signin() {
                             </Link>
                         </span>
                     </form>
-                </Card>
+                </div>
             </div>
         </SectionLayout>
     );

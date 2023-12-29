@@ -8,3 +8,7 @@ export type TRegisterForm = {
     "confirm-inp": { value: string }[];
     "passphrase-inp": { value: string }[];
 };
+
+export type TSigninForm = {
+    "signin-inp": { value: string }[];
+}
