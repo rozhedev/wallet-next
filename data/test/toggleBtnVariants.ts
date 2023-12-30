@@ -1,4 +1,4 @@
-import { TVariantsListItemArr } from "../../components/VariantsList/types";
+import { TVariantsListItemArr } from "@/components/VariantsList/types";
 
 export const testToggleBtnList: TVariantsListItemArr = [
     {

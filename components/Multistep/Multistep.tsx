@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 
 import FormProgressBar from "@/components/FormProgressBar";
-import BtnGroup from "@/ui/BtnGroup/BtnGroup";
+import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import Btn from "@/ui/Btn/Btn";
 
 import { TMultistep } from "./types";
@@ -53,7 +53,7 @@ export const Multistep: FC<TMultistep> = ({
 
                 {/* //* Children prop for additional validation */}
                 {children}
-                <BtnGroup className="btn-group">
+                <StyledWrapper className="btn-group">
                     {!isFirstStep && (
                         <Btn
                             type="button"
@@ -70,7 +70,7 @@ export const Multistep: FC<TMultistep> = ({
                     >
                         <span>{isLastStep ? "Complete" : "Next step"}</span>
                     </Btn>
-                </BtnGroup>
+                </StyledWrapper>
 
                 {isFirstStep && isRegister && (
                     <span className="form-backlink">

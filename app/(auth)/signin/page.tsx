@@ -5,10 +5,10 @@ import Link from "next/link";
 import { useForm, useFieldArray } from "react-hook-form";
 import { FieldValues } from "react-hook-form";
 
+import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
+import Btn from "@/ui/Btn/Btn";
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
-import BtnGroup from "@/ui/BtnGroup/BtnGroup";
-import Btn from "@/ui/Btn/Btn";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
 import type { TSigninForm } from "@/types/data/forms";
@@ -81,7 +81,7 @@ export default function Signin() {
                             ))}
                         </EnterPassphrase>
 
-                        <BtnGroup className="btn-group">
+                        <StyledWrapper className="btn-group">
                             <Btn
                                 type="submit"
                                 className="btn btn-fill-sm"
@@ -89,7 +89,7 @@ export default function Signin() {
                             >
                                 <span>Sign in</span>
                             </Btn>
-                        </BtnGroup>
+                        </StyledWrapper>
                         <span className="form-backlink">
                             Don&apos;t have wallet?&nbsp;
                             <Link

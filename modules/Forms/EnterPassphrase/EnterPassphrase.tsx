@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC } from "react";
-import FormController from "@/components/FormController";
+import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import type { TEnterPassphraseProps } from "./types";
 
 export const EnterPassphrase: FC<TEnterPassphraseProps> = ({ id, className, legend, children }) => {
@@ -12,7 +12,7 @@ export const EnterPassphrase: FC<TEnterPassphraseProps> = ({ id, className, lege
         >
             <legend className="form-label-legend">{legend}</legend>
 
-            <FormController className="form-controller form-inp-grid">{children}</FormController>
+            <StyledWrapper className="form-controller form-inp-grid">{children}</StyledWrapper>
         </fieldset>
     );
 };

@@ -1,8 +1,8 @@
 "use client";
 
 import React, { FC } from "react";
-import FormController from "@/components/FormController";
-import Checkbox from "@/ui/Checkbox/Checkbox";
+import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
+import ValidCheckbox from "@/ui/ValidCheckbox/ValidCheckbox";
 import CopyBtn from "@/components/CopyBtn";
 
 import type { TGenPassphraseProps } from "./types";
@@ -16,7 +16,7 @@ export const GenPassphrase: FC<TGenPassphraseProps> = ({ id, className, passArr,
         >
             <legend className="form-label-legend">Write down or copy these words in the correct order and keep them in a safe place.</legend>
 
-            <FormController className="form-controller">
+            <StyledWrapper className="form-controller">
                 <ol
                     className="ordered-list form-controller form-inp-grid"
                 >
@@ -38,13 +38,13 @@ export const GenPassphrase: FC<TGenPassphraseProps> = ({ id, className, passArr,
                         </li>
                     ))}
                 </ol>
-            </FormController>
+            </StyledWrapper>
             <CopyBtn
                 isRegister={true}
                 value={passStr}
             />
-            <FormController className="form-controller">
-                <Checkbox
+            <StyledWrapper className="form-controller">
+                <ValidCheckbox
                     id="pass-checkbox"
                     name="pass-checkbox"
                     register={register}
@@ -54,9 +54,9 @@ export const GenPassphrase: FC<TGenPassphraseProps> = ({ id, className, passArr,
                     }}
                 >
                     I confirm, that the password is saved in a safe place
-                </Checkbox>
+                </ValidCheckbox>
                 <small className="form-controller__message">{errors["pass-checkbox"]?.type === "required" && INP_DATA.passCheckboxErrText}</small>
-            </FormController>
+            </StyledWrapper>
         </fieldset>
     );
 };

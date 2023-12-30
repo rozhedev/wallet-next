@@ -334,15 +334,25 @@ option {
     }
 }
 
-// * ERROR MESSAGE UNDER INPUT
+// * FORM CONTROLLER
 
-.form-controller__message {
-    display: block;
-    visibility: visible;
-    height: auto;
-    padding-top: 0.25rem;
-    font-weight: 600;
-    color: $error-red;
+.form, .form-controller {
+    display: inline-flex;
+    flex-direction: column;
+
+    .form-controller__label {
+        padding-bottom: 0.5rem;
+        font-size: 1.125rem;
+    }
+    
+    .form-controller__message {
+        display: block;
+        visibility: visible;
+        height: auto;
+        padding-top: 0.25rem;
+        font-weight: 600;
+        color: $error-red;
+    }
 }
 
 .form-controller .checkbox + .form-controller__message {

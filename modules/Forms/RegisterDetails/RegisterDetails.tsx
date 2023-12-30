@@ -4,9 +4,9 @@ import React, { FC } from "react";
 import Link from "next/link";
 
 import type { TRegisterDetailsProps } from "./types";
-import Inp from "@/ui/Inp/Inp";
-import Checkbox from "@/ui/Checkbox/Checkbox";
-import FormController from "@/components/FormController";
+import ValidInp from "@/ui/ValidInp/ValidInp";
+import ValidCheckbox from "@/ui/ValidCheckbox/ValidCheckbox";
+import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import { ROUTES } from "@/data/routes";
 import { INP_DATA } from "@/data/pages/inp-data";
 
@@ -16,8 +16,8 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, regi
             className={className}
             id={id}
         >
-            <FormController className="form-controller">
-                <Inp
+            <StyledWrapper className="form-controller">
+                <ValidInp
                     type="text"
                     className="inp"
                     id="register-username"
@@ -33,10 +33,10 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, regi
                     {errors["register-username"]?.type === "required" && INP_DATA.registerUsername.errorsText.required}
                     {errors["register-username"]?.type === "pattern" && INP_DATA.registerUsername.errorsText.pattern}
                 </small>
-            </FormController>
+            </StyledWrapper>
 
-            <FormController className="form-controller">
-                <Inp
+            <StyledWrapper className="form-controller">
+                <ValidInp
                     type="email"
                     className="inp"
                     id="register-email"
@@ -52,10 +52,10 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, regi
                     {errors["register-email"]?.type === "required" && INP_DATA.registerEmail.errorsText.required}
                     {errors["register-email"]?.type === "pattern" && INP_DATA.registerEmail.errorsText.pattern}
                 </small>
-            </FormController>
+            </StyledWrapper>
 
-            <FormController className="form-controller">
-                <Checkbox
+            <StyledWrapper className="form-controller">
+                <ValidCheckbox
                     id="register-checkbox"
                     name="register-checkbox"
                     register={register}
@@ -75,9 +75,9 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, regi
                     >
                         Terms of Service
                     </Link>
-                </Checkbox>
+                </ValidCheckbox>
                 <small className="form-controller__message">{errors["register-checkbox"]?.type === "required" && INP_DATA.registerCheckboxErrText}</small>
-            </FormController>
+            </StyledWrapper>
         </fieldset>
     );
 };

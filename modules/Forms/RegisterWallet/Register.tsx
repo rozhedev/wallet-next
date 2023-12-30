@@ -15,8 +15,6 @@ import { REGISTER_INIT_VALUES, INP_DATA, passArr, passStr } from "@/data/pages/i
 import { getPassphraseStr } from "@/data/utils";
 
 export const RegisterWallet = () => {
-    // * Hook call
-
     const {
         register,
         control,
@@ -100,11 +98,11 @@ export const RegisterWallet = () => {
 
         if (isPassCond) {
             console.log(confirmInpValuesStr);
-            await new Promise((resolve: any) => setTimeout(resolve, 2000));
-
             setIsRegisterPassMatch(true);
+            
+            await new Promise((resolve: any) => setTimeout(resolve, 2000));
             reset();
-
+            
             // * TODO Submit to server
             // * ...
         } else setIsRegisterPassMatch(false);

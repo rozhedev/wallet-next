@@ -1,7 +1,8 @@
 import React, { FC } from "react";
-import type { TCheckboxProps } from "./types";
+import type { TValidCheckboxProps } from "./types";
 
-const Checkbox: FC<TCheckboxProps> = ({ id, name, children, disabled = false, defaultChecked = false, ...props }) => {
+// * Checkbox with applied validation
+const ValidCheckbox: FC<TValidCheckboxProps> = ({ id, register,  name, children, disabled = false, defaultChecked = false, required, ...props }) => {
     return (
         <div className="form-controller checkbox">
             <input
@@ -10,6 +11,7 @@ const Checkbox: FC<TCheckboxProps> = ({ id, name, children, disabled = false, de
                 className="checkbox__input"
                 disabled={disabled}
                 defaultChecked={defaultChecked}
+                {...register(id, { required })}
                 {...props}
             />
             <label
@@ -22,4 +24,4 @@ const Checkbox: FC<TCheckboxProps> = ({ id, name, children, disabled = false, de
     );
 };
 
-export default Checkbox;
+export default ValidCheckbox;

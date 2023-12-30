@@ -21,6 +21,7 @@ import { testCheckboxList } from "@/data/test/checkboxBtnVariants";
 import { testToggleBtnList } from "@/data/test/toggleBtnVariants";
 import { testSelectData, testSelectLang } from "@/data/test/selectData";
 import { testLinksData } from "@/data/test/linksData";
+import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 
 export default function Home() {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
@@ -258,19 +259,27 @@ export default function Home() {
                     </svg>
                 </Btn>
                 <br />
-                {/* <Inp
-                    type="text"
-                    className="inp"
-                    placeholder="Enter text"
-                />
+                <StyledWrapper className="form-controller">
+                    <Inp
+                        type="text"
+                        id="test-inp1"
+                        label="Test input 1"
+                        className="inp"
+                        placeholder="Enter text"
+                    />
+                </StyledWrapper>
                 <br />
                 <br />
-                <Inp
-                    type="text"
-                    className="inp"
-                    disabled={true}
-                    placeholder="Enter text"
-                /> */}
+                <StyledWrapper className="form-controller">
+                    <Inp
+                        type="text"
+                        id="test-inp2"
+                        label="Test input 2"
+                        className="inp"
+                        disabled={true}
+                        placeholder="Enter text"
+                    />
+                </StyledWrapper>
                 <br />
                 <br />
                 <Select
