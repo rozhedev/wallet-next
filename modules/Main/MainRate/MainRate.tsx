@@ -3,8 +3,8 @@
 import React, { FC } from "react";
 
 import type { TMainRateProps } from "./types";
-import MainRateItem, { TMainRateItem, TApiLinkMask } from "@/components/items/MainRateItem";
-import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
+import MainRateItem, { type TMainRateItem, type TApiLinkMask } from "@/components/items/MainRateItem";
+import { AllCurNames, type TAllCurNotesScope } from "@/types/data/currencies";
 
 export const MainRate: FC<TMainRateProps> = ({ dataArr }) => {
     return (

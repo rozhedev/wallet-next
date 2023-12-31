@@ -1,6 +1,7 @@
-import Table from "@/ui/Table";
+// * Libs - Types - Hooks - UI - Component - Modules - Data
 
-// * Component - type (prop types etc.) - data
+import React, { lazy } from "react";
+import Table from "@/ui/Table";
 import TableHeaderTitle, { type T_TableHeaderTitle, assetsTableHeaderTitleArr } from "@/components/items/TableHeaderTitle";
 import AssetsTableItem, { type TAssetsTableItem, assetTableItemArr } from "@/components/items/AssetsTableItem";
 

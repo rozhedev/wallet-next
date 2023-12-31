@@ -3,7 +3,7 @@ import Image from "next/image";
 import FsLightbox from "fslightbox-react";
 
 import type { TMainDownloadProps } from "./types";
-import DownloadColumn, { TDownloadColumnItem } from "@/components/DownloadColumn";
+import DownloadColumn, { type TDownloadColumnItem } from "@/components/DownloadColumn";
 
 import desctopPhoneMockup from "@/public/img/photos/mockups/desktop_and_phone_apps.webp";
 

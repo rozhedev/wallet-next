@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 
 import type { TAdvantProps } from "./types";
-import AdvantItem, { TMainAdvantItem } from "@/components/items/AdvantItem";
+import AdvantItem, { type TMainAdvantItem } from "@/components/items/AdvantItem";
 
 export const Advant: FC<TAdvantProps> = ({ dataArr }) => {
     return (

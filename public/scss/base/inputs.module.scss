@@ -336,7 +336,8 @@ option {
 
 // * FORM CONTROLLER
 
-.form, .form-controller {
+.form,
+.form-controller {
     display: inline-flex;
     flex-direction: column;
 
@@ -344,7 +345,6 @@ option {
         padding-bottom: 0.5rem;
         font-size: 1.125rem;
     }
-    
     .form-controller__message {
         display: block;
         visibility: visible;
@@ -355,6 +355,15 @@ option {
     }
 }
 
+.page-inner > .form-controller__message {
+    text-align: justify;
+    margin-top: 0.75rem;
+}
+
 .form-controller .checkbox + .form-controller__message {
     padding-left: 2rem;
+}
+
+.form-test .form-controller {
+    width: 100%;
 }

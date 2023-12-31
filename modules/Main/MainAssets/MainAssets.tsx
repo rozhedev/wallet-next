@@ -2,10 +2,10 @@ import React, { FC } from "react";
 import Link from "next/link";
 
 import type { TMainAssetsProps } from "./types";
-import MainAssetsItem, { TMainAssetsItem } from "@/components/items/MainAssetsItem";
+import MainAssetsItem, { type TMainAssetsItem } from "@/components/items/MainAssetsItem";
 import ScrollCounter from "@/components/ScrollCounter";
 import { curPromoCount } from "@/data/pages/initial";
-import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
+import { AllCurNames, type TAllCurNotesScope } from "@/types/data/currencies";
 
 export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
     return (

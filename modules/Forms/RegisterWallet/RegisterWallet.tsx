@@ -12,7 +12,7 @@ import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 import { useMultistepForm } from "@/components/Multistep";
 import type { TRegisterForm } from "@/types/data/forms";
 import { REGISTER_INIT_VALUES, INP_DATA, passArr, passStr } from "@/data/pages/inp-data";
-import { getPassphraseStr } from "@/data/utils";
+import { getPassphraseStr } from "@/utils/utils";
 
 export const RegisterWallet = () => {
     const {
@@ -99,10 +99,10 @@ export const RegisterWallet = () => {
         if (isPassCond) {
             console.log(confirmInpValuesStr);
             setIsRegisterPassMatch(true);
-            
+
             await new Promise((resolve: any) => setTimeout(resolve, 2000));
             reset();
-            
+
             // * TODO Submit to server
             // * ...
         } else setIsRegisterPassMatch(false);

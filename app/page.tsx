@@ -1,11 +1,11 @@
 "use client";
 
+// * Libs - Types - Hooks - UI - Component - Modules - Data
 import React, { lazy } from "react";
 
 import Dropdown from "@/ui/Dropdown";
 import LinkList from "@/components/LinkList";
 
-// * Component - type (prop types etc.) - data
 import Header, { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header";
 import Footer, { footerInfoLinks, footerDiscoverLinks } from "@/modules/layout/Footer";
 import SectionLayout from "@/modules/layout/SectionLayout";

@@ -1,4 +1,5 @@
-// * Component - type (prop types etc.) - data
+// * Libs - Types - Hooks - UI - Component - Modules - Data
+
 import PromoactionsItem, { type TPromoactionsItem, promoactionsItemArr } from "@/components/items/PromoactionsItem";
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";

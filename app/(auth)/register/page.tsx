@@ -3,7 +3,7 @@
 import React from 'react'
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
-import { RegisterWallet } from '@/modules/Forms/RegisterWallet/Register';
+import RegisterWallet from '@/modules/Forms/RegisterWallet';
 
 export default function Register() {
     return (

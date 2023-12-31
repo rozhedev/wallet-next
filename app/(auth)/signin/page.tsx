@@ -13,7 +13,7 @@ import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
 import type { TSigninForm } from "@/types/data/forms";
 import { INP_DATA, SIGNIN_INIT_VALUES } from "@/data/pages/inp-data";
-import { getPassphraseStr } from "@/data/utils";
+import { getPassphraseStr } from "@/utils/utils";
 import { ROUTES } from "@/data/routes";
 
 export default function Signin() {
