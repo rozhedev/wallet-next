@@ -1,0 +1,252 @@
+.aside-cab {
+    position: fixed;
+    top: $header-height-mobile;
+    left: 0;
+    height: 100vh;
+    width: $aside-width-open;
+    background: $light-color;
+    z-index: 10;
+    transition: $transition;
+    padding: 0rem 1.25rem;
+    border-right: 2px solid #e0e0e0;
+    box-shadow:
+        42px 42px 24px rgba(0, 0, 0, 0.015),
+        24px 24px 20.25px rgba(0, 0, 0, 0.045),
+        10.5px 10.5px 15px rgba(0, 0, 0, 0.0825),
+        3px 3px 8.25px rgba(0, 0, 0, 0.09),
+        0px 0px 0px rgba(0, 0, 0, 0.0975);
+
+    .logo {
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        img {
+            width: 1.7rem;
+            height: 1.7rem;
+            transition: $transition;
+        }
+        &__text {
+            margin-left: 0.75rem;
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            cursor: text;
+        }
+    }
+}
+
+// * NAVIGATION
+
+.aside-cab .nav {
+    padding: 1.5rem 0;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .aside-nav-item {
+        position: relative;
+        white-space: nowrap;
+        transition: $transition;
+
+        &:not(:first-of-type) {
+            margin-top: 1.25rem;
+        }
+        // * Accent color for survey
+        & span.aside-nav-item__link {
+            svg {
+                stroke: $darken-secondary-accent;
+            }
+            span {
+                @include hover {
+                    color: $darken-secondary-accent;
+                }
+            }
+        }
+        @include hover {
+            svg {
+                stroke: $primary-accent-color;
+            }
+            span {
+                color: $primary-accent-color;
+            }
+        }
+        // * Aside cab dropdown
+        &--dropdown .aside-nav-item__link {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            span {
+                flex-grow: 1;
+            }
+        }
+        svg {
+            @include icon-size(map-get($icon-size, xs), 0);
+            stroke: $dark-color;
+            stroke-width: map-get($map: $stroke-width, $key: xs);
+            cursor: pointer;
+            transition: $transition;
+        }
+
+        // * show submenu class
+        &._show-submenu {
+            svg {
+                stroke: $dark-color;
+            }
+            span.aside-nav-item__text {
+                color: $dark-color;
+            }
+            .aside-nav-item__submenu {
+                display: block;
+                margin-top: 0.8rem;
+                border-top: 2px solid $dark-color;
+            }
+            .menu-arrow {
+                transform: rotate(-180deg);
+            }
+        }
+        &__link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        &__text {
+            margin-left: 0.5rem;
+            font-size: 1.15rem;
+            color: $dark-color;
+            transition: $transition;
+        }
+
+        // * submenu navbar
+        &__submenu {
+            display: none;
+            padding: 0.2rem 0rem 0.8rem;
+            background: $light-color;
+            span {
+                display: none;
+            }
+
+            &-link {
+                display: block;
+                padding: 0.5rem 0;
+                color: $dark-color;
+                white-space: nowrap;
+                transition: $transition;
+                @include hover {
+                    color: $primary-accent-color;
+                }
+            }
+            .aside-nav-item__text {
+                opacity: 1;
+                width: initial;
+            }
+        }
+        &._show-submenu .aside-nav-item__submenu._blank {
+            display: none;
+            opacity: 0;
+            pointer-events: auto;
+            padding: 0.19rem 1.25rem 0.375rem 1rem;
+            pointer-events: none;
+        }
+    }
+}
+
+// * CLOSE STATE
+
+.aside-cab._close {
+    width: $aside-width-close;
+    padding: 0rem 1.25rem;
+
+    .logo {
+        img {
+            width: 2rem;
+            height: 2rem;
+        }
+        &__text {
+            opacity: 0;
+            transition-delay: 0s;
+            pointer-events: none;
+        }
+    }
+    .nav {
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .aside-nav-item svg {
+            @include icon-size(map-get($icon-size, sm), 0);
+        }
+    }
+}
+
+.aside-cab._close .aside-nav-item {
+    &__link {
+        display: block;
+    }
+    .menu-arrow {
+        display: none;
+    }
+    &__text {
+        opacity: 0;
+        width: 0;
+        pointer-events: none;
+    }
+    &__submenu {
+        position: absolute;
+        left: 100%;
+        top: -1rem;
+        margin-top: 0 !important;
+        opacity: 0;
+        display: block;
+        padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+
+        border-radius: 0 0.25rem 0.25rem 0;
+        border-top: 2px solid $primary-lightgray-color !important;
+        border-right: 2px solid $primary-lightgray-color;
+        border-bottom: 2px solid $primary-lightgray-color;
+        pointer-events: none;
+        white-space: nowrap;
+        transition: 0s;
+
+        .aside-nav-item__text {
+            opacity: 1;
+            width: initial;
+        }
+    }
+    @include hover {
+        .aside-nav-item__submenu {
+            span {
+                display: block;
+                color: $dark-color;
+            }
+            top: -0.4rem;
+            opacity: 1;
+            width: initial;
+            pointer-events: auto;
+            transition: $transition;
+        }
+    }
+}
+
+// * MOBILE VERSION
+
+@include bp(lg) {
+    .aside-cab {
+        left: 0;
+    }
+    .aside-cab._close {
+        left: -100%;
+    }
+    .aside-cab._close .aside-nav-item__submenu {
+        display: none;
+    }
+}
+@include bp(xs) {
+    .aside-cab {
+        // * Use shadow as navbar overlay. Position Y = $shadow-width
+        $shadow-width: 200px;
+
+        box-shadow: 0 $shadow-width 0 $shadow-width rgba($color: $dark-color, $alpha: 0.8);
+        top: $header-height-slim;
+    }
+}

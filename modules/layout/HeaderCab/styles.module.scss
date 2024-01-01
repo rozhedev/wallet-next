@@ -1,0 +1,75 @@
+.header-cab {
+    height: $header-height-mobile;
+    padding: 0.75rem 0;
+    .container,
+    .inner {
+        min-height: 100%;
+        width: 100%;
+    }
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__trigger {
+        color: $white-color;
+        text-transform: uppercase;
+        svg {
+            @include icon-size(map-get($icon-size, md), 0);
+            stroke: $white-color;
+            fill: $white-color;
+            stroke-width: map-get($map: $stroke-width, $key: xs);
+            margin: 0 0.4rem 0 0;
+        }
+    }   
+    @include bp(lg) {
+        .header-cab__trigger .navlink,
+        .menu .navlink {
+            font-size: 1.25rem;
+        }
+        // * reset from header.scss
+        .menu__body {
+            position: static;
+            width: initial;
+            height: initial;
+            padding: 0;
+            overflow: visible;
+            background-color: inherit;
+        }
+    }
+    @include bp(xs) {
+        height: $header-height-slim;
+        .header-cab__trigger svg,
+        .dropdown svg {
+            @include icon-size(map-get($icon-size, xs), 0);
+        }
+        .header-cab__trigger span,
+        .dropdown .navlink {
+            font-size: 1.15rem;
+        }
+    }
+}
+
+// * Disable .header-cab dropdown, when aside menu open in mobile device
+@include bp(xs) {
+    .aside-cab ~ .header-cab .dropdown {
+        overflow: hidden;
+        pointer-events: none;
+        & > button.navlink {
+            color: $dark-color36;
+            svg {
+                stroke: $dark-color36;
+            }
+        }
+    }
+    .aside-cab._close ~ .header-cab .dropdown {
+        overflow: visible;
+        pointer-events: all;
+        & > button.navlink {
+            color: $white-color;
+            svg {
+                stroke: $white-color;
+            }
+        }
+    }
+}

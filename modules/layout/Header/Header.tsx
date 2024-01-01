@@ -12,7 +12,7 @@ import { ROUTES } from "@/data/routes";
 import logo from "@/public/img/logo.svg";
 
 export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr }) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const menuOpenHandler = () => setIsMenuOpen(() => !isMenuOpen);
 
     // * Scroll disabling
