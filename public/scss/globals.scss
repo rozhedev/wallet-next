@@ -14,13 +14,17 @@
 // * MIXINS
 @import "base/mixins.module.scss";
 
-// * UI
+// * BASE
 @import "base/ui.module.scss";
 @import "base/preloader.module.scss";
 @import "base/btns.module.scss";
 @import "base/inputs.module.scss";
 @import "base/scroll.module.scss";
-@import "base/pages-layout.module.scss";
+@import "pages/pages-layout.module.scss";
+@import "pages/cabinet.module.scss";
+@import "pages/cabinet-shared.module.scss";
+
+// * UI
 @import "@/ui/Dropdown/styles.module.scss";
 @import "@/ui/Table/styles.module.scss";
 @import "@/ui/Modal/styles.module.scss";
