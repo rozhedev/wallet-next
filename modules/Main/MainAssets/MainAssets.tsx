@@ -32,6 +32,7 @@ export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
                     <Link
                         href="/assets"
                         className="btn btn-fill"
+                        scroll={false}
                     >
                         <span>View full list</span>
                         <svg

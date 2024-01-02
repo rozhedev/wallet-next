@@ -65,6 +65,7 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, regi
                     <Link
                         href={ROUTES.public.privacyPolicy}
                         className="link"
+                        scroll={false}
                     >
                         Privacy policy
                     </Link>{" "}
@@ -72,6 +73,7 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, regi
                     <Link
                         href={ROUTES.public.terms}
                         className="link"
+                        scroll={false}
                     >
                         Terms of Service
                     </Link>

@@ -14,6 +14,7 @@ export const Promo: FC<TPromoProps> = ({ title }) => {
                 <Link
                     href="/assets"
                     className="btn btn-outline"
+                    scroll={false}
                 >
                     <span>Supported assets</span>
                     <svg
@@ -28,6 +29,7 @@ export const Promo: FC<TPromoProps> = ({ title }) => {
                 <Link
                     href="/register"
                     className="btn btn-fill"
+                    scroll={false}
                 >
                     <span>Create account</span>
                     <svg

@@ -97,6 +97,7 @@ export default function Home() {
                 <Link
                     href="/assets"
                     className="link"
+                    scroll={false}
                 >
                     Assets
                 </Link>
@@ -109,6 +110,7 @@ export default function Home() {
                 <Link
                     href="/assets"
                     className="navlink"
+                    scroll={false}
                 >
                     Assets
                 </Link>

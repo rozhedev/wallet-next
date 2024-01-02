@@ -63,6 +63,7 @@ export const contentArr: T_TabsBody = [
                     <Link
                         href="/register"
                         className="link"
+                        scroll={false}
                     >
                         registration form
                     </Link>
@@ -105,6 +106,7 @@ export const contentArr: T_TabsBody = [
                     <Link
                         href="/assets"
                         className="link"
+                        scroll={false}
                     >
                         assets page
                     </Link>
@@ -141,6 +143,7 @@ export const contentArr: T_TabsBody = [
                     <Link
                         href="https://bestchange.com"
                         className="link"
+                        scroll={false}
                     >
                         bestchange.com
                     </Link>
@@ -207,6 +210,7 @@ export const contentArr: T_TabsBody = [
                     <Link
                         href="/privacy_policy"
                         className="link"
+                        scroll={false}
                     >
                         privacy policy
                     </Link>
@@ -224,6 +228,7 @@ export const contentArr: T_TabsBody = [
                     <Link
                         href="privacy-policy.html"
                         className="link"
+                        scroll={false}
                     >
                         privacy policy
                     </Link>

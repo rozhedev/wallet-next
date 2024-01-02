@@ -10,7 +10,7 @@ import Modal from "@/ui/Modal";
 import { promoModalData } from "@/data/modals/data";
 import logo from "@/public/img/logo-badge.svg";
 
-export const AsideCab = ({ isAsideOpen, linksArr }: TAsideCabProps): JSX.Element => {
+export const AsideCab = ({ isAsideOpen, toggleHandler, linksArr }: TAsideCabProps): JSX.Element => {
     return (
         <aside className={`aside-cab ${isAsideOpen ? "_open" : "_close"}`}>
             <div className="logo">
@@ -28,6 +28,7 @@ export const AsideCab = ({ isAsideOpen, linksArr }: TAsideCabProps): JSX.Element
                         linkHref={item.linkHref}
                         itemIcon={item.itemIcon}
                         label={item.label}
+                        toggleHandler={toggleHandler}
                     />
                 ))}
             </ul>
@@ -35,7 +36,7 @@ export const AsideCab = ({ isAsideOpen, linksArr }: TAsideCabProps): JSX.Element
     );
 };
 
-const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label }) => {
+const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, toggleHandler }) => {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
     return (
         <li className="aside-nav-item">
@@ -44,6 +45,7 @@ const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label }) 
                     <Link
                         className="aside-nav-item__link"
                         href={linkHref}
+                        onClick={toggleHandler}
                     >
                         {itemIcon}
                         <span className="aside-nav-item__text navlink">{label}</span>
@@ -64,7 +66,10 @@ const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label }) 
                     {/* // * Modal trigger must contain span tag */}
                     <span
                         className="aside-nav-item__link"
-                        onClick={() => setIsOpenModal(true)}
+                        onClick={() => {
+                            toggleHandler();
+                            setIsOpenModal(true);
+                        }}
                     >
                         {itemIcon}
                         <span className="aside-nav-item__text navlink">{label}</span>

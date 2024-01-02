@@ -23,6 +23,7 @@ export const Advant: FC<TAdvantProps> = ({ dataArr }) => {
                 <Link
                     href="/register"
                     className="btn btn-fill"
+                    scroll={false}
                 >
                     <span>Register wallet</span>
                     <svg

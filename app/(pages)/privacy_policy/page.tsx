@@ -52,6 +52,7 @@ export default function PrivacyPolicy() {
                     <Link
                         href={rulesContent.mailHref}
                         className="link"
+                        scroll={false}
                     >
                         {rulesContent.mailLabel}
                     </Link>

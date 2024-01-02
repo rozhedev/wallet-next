@@ -12,7 +12,7 @@ import { promoModalData } from "@/data/modals/data";
 
 export default function PagesLayout({ children }: { children: React.ReactNode }) {
     const [isAsideOpen, setIsAsideOpen] = useState<boolean>(false);
-    const menuOpenHandler = () => setIsAsideOpen(() => !isAsideOpen);
+    const menuToggleHandler = () => setIsAsideOpen(() => !isAsideOpen);
 
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
@@ -23,10 +23,11 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
             <AsideCab
                 linksArr={asideCabLinks}
                 isAsideOpen={isAsideOpen}
+                toggleHandler={menuToggleHandler}
             />
             <HeaderCab
-                asideTrigger={menuOpenHandler}
                 isAsideOpen={isAsideOpen}
+                toggleHandler={menuToggleHandler}
             >
                 <li>
                     <Dropdown>

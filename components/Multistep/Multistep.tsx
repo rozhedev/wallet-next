@@ -78,6 +78,7 @@ export const Multistep: FC<TMultistep> = ({
                         <Link
                             href={ROUTES.public.signin}
                             className="link"
+                            scroll={false}
                         >
                             Sign In
                         </Link>

@@ -95,6 +95,7 @@ export default function Signin() {
                             <Link
                                 href={ROUTES.public.register}
                                 className="link"
+                                scroll={false}
                             >
                                 Register
                             </Link>

@@ -3,14 +3,14 @@
 import React, { FC } from "react";
 import type { THeaderCabProps } from "./types";
 
-export const HeaderCab: FC<THeaderCabProps> = ({ asideTrigger, isAsideOpen, children }) => {
+export const HeaderCab: FC<THeaderCabProps> = ({ toggleHandler, isAsideOpen, children }) => {
     return (
         <header className="header header-cab">
             <div className="container">
                 <div className="menu inner">
                     <div
                         className="header-cab__trigger navlink"
-                        onClick={asideTrigger}
+                        onClick={toggleHandler}
                     >
                         <svg
                             viewBox="0 0 64 64"

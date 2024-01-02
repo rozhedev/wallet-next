@@ -31,6 +31,7 @@ export const PromoactionsItem: FC<TPromoactionsItem> = ({ title, tags, btnLabel,
                     <Link
                         href={linkHref}
                         className="btn btn-fill-sm"
+                        scroll={false}
                     >
                         {btnLabel}
                     </Link>
@@ -61,12 +62,14 @@ export const PromoactionsItem: FC<TPromoactionsItem> = ({ title, tags, btnLabel,
                         <Link
                             className="btn btn-outline-sm"
                             href={linkHref}
+                            scroll={false}
                         >
                             <span>Register</span>
                         </Link>
                         <Link
                             className="btn btn-outline-sm"
-                            href={"/signin"}
+                            href="/signin"
+                            scroll={false}
                         >
                             <span>Sign in</span>
                         </Link>

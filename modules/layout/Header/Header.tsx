@@ -13,7 +13,7 @@ import logo from "@/public/img/logo.svg";
 
 export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr }) => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-    const menuOpenHandler = () => setIsMenuOpen(() => !isMenuOpen);
+    const menuToggleHandler = () => setIsMenuOpen(() => !isMenuOpen);
 
     // * Scroll disabling
     if (typeof window !== "undefined") {
@@ -40,7 +40,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                 <div className="menu">
                     <div
                         className={`menu__icon ${isMenuOpen ? "_active" : ""}`}
-                        onClick={menuOpenHandler}
+                        onClick={menuToggleHandler}
                     >
                         <span></span>
                     </div>

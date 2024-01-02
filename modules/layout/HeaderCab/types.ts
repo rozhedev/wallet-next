@@ -1,5 +1,5 @@
 export type THeaderCabProps = {
-    asideTrigger: () => void;
     isAsideOpen: boolean;
+    toggleHandler: () => void;
     children: React.ReactNode;
 };
