@@ -1,34 +1,30 @@
-import { TVariantsListItemArr } from "../../components/VariantsList/types";
+import { TVariantsListItemArr } from "@/components/VariantsList/types";
 
 export const testCheckboxList: TVariantsListItemArr = [
     {
-        id: 1,
+        id: "survey-answer2-1",
         type: "checkbox",
         name: "survey-question21",
-        answerId: "survey-answer2-1",
-        answer: "Bitcoin (BTC)",
+        label: "Bitcoin (BTC)",
     },
     {
-        id: 2,
+        id: "survey-answer2-2",
         type: "checkbox",
         name: "survey-question22",
-        answerId: "survey-answer2-2",
-        answer: "Ethereum",
+        label: "Ethereum",
     },
     {
-        id: 3,
+        id: "survey-answer2-3",
         type: "checkbox",
         name: "survey-question23",
-        answerId: "survey-answer2-3",
-        answer: "Tether",
+        label: "Tether",
         disabled: true,
     },
     {
-        id: 4,
+        id: "survey-answer2-4",
         type: "checkbox",
         name: "survey-question24",
-        answerId: "survey-answer2-4",
-        answer: "Binance coin",
+        label: "Binance coin",
         defaultChecked: true,
     },
 ];

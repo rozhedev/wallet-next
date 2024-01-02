@@ -1,34 +1,30 @@
-import { TVariantsListItemArr } from "../../components/VariantsList/types";
+import { TVariantsListItemArr } from "@/components/VariantsList/types";
 
 export const testRadioBtnList: TVariantsListItemArr = [
     {
-        id: 1,
+        id: "survey-answer1-1",
         type: "radio",
         name: "survey-question1",
-        answerId: "survey-answer1-1",
-        answer: "It's my first experience.",
+        label: "It's my first experience.",
         defaultChecked: true,
     },
     {
-        id: 2,
+        id: "survey-answer1-2",
         type: "radio",
         name: "survey-question1",
-        answerId: "survey-answer1-2",
-        answer: "Already used cryptocurrency for personal purposes.",
+        label: "Already used cryptocurrency for personal purposes.",
         disabled: true,
     },
     {
-        id: 3,
+        id: "survey-answer1-3",
         type: "radio",
         name: "survey-question1",
-        answerId: "survey-answer1-3",
-        answer: "Use cryptocurrency on a regular basis.",
+        label: "Use cryptocurrency on a regular basis.",
     },
     {
-        id: 4,
+        id: "survey-answer1-4",
         type: "radio",
         name: "survey-question1",
-        answerId: "survey-answer1-4",
-        answer: "Use cryptocurrency and get profit from it.",
+        label: "Use cryptocurrency and get profit from it.",
     },
 ];

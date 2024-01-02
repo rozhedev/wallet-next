@@ -1,16 +1,17 @@
 "use client";
 
 import React from "react";
-import SectionLayout from "@/modules/layout/SectionLayout";
+import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import LinkList from "@/components/LinkList";
-import { dashboardLinks } from "@/data/pages/dashboard-links-arr";
+import SectionLayout from "@/modules/layout/SectionLayout";
+import { dashboardLinks } from "@/data/cabinet/dashboard";
 
 export default function Dashboard() {
     return (
         <SectionLayout id="page-cab dashboard">
             <div className="inner">
                 {/* NAV */}
-                <div className="cabinet-card dashboard-nav">
+                <StyledWrapper className="cabinet-card dashboard-nav">
                     <div className="modal-header">
                         <h4 className="h4">Navigation on site</h4>
                     </div>
@@ -19,13 +20,16 @@ export default function Dashboard() {
                             <LinkList linksArr={dashboardLinks} />
                         </ul>
                     </nav>
-                </div>
+                </StyledWrapper>
+
                 {/* BALANCE */}
-                <div className="cabinet-card dashboard-balance">BALANCE</div>
+                <StyledWrapper className="cabinet-card dashboard-balance">BALANCE</StyledWrapper>
+
                 {/* STAT */}
-                <div className="cabinet-card dashboard-stat">STAT</div>
+                <StyledWrapper className="cabinet-card dashboard-stat">STAT</StyledWrapper>
+                
                 {/* * SHORT LOGS */}
-                <div className="cabinet-card dashboard-log">SHORT LOGS</div>
+                <StyledWrapper className="cabinet-card dashboard-log">SHORT LOGS</StyledWrapper>
             </div>
         </SectionLayout>
     );

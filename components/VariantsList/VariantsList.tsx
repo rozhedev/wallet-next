@@ -13,9 +13,9 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
                 ? dataArr.map((variant) => (
                       <Radio
                           key={variant.id}
-                          id={variant.answerId}
+                          id={variant.id}
                           name={variant.name}
-                          label={variant.answer}
+                          label={variant.label}
                           disabled={variant.disabled}
                       />
                   ))
@@ -23,24 +23,24 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
                 ? dataArr.map((variant) => (
                       <Toggle
                           key={variant.id}
-                          id={variant.answerId}
+                          id={variant.id}
                           name={variant.name}
                           disabled={variant.disabled}
                           classNameModif={variant.classNameModif}
                           defaultChecked={variant.defaultChecked}
                       >
-                          {variant.answer}
+                          {variant.label}
                       </Toggle>
                   ))
                 : dataArr.map((variant) => (
                       <Checkbox
                           key={variant.id}
-                          id={variant.answerId}
+                          id={variant.id}
                           name={variant.name}
                           disabled={variant.disabled}
                           defaultChecked={variant.defaultChecked}
                       >
-                          {variant.answer}
+                          {variant.label}
                       </Checkbox>
                   ))}
         </>

@@ -3,11 +3,10 @@ import { T_ToggleModifClassNames } from "@/ui/Toggle/types";
 export type TVariantsInpAttr = "radio" | "checkbox";
 
 type TVariantsListItem = {
-    id: number;
+    id: `survey-answer${number}-${number}` | `set-${string}`;
     type: TVariantsInpAttr;
-    name: `survey-question${number}`;
-    answerId: `survey-answer${number}-${number}`;
-    answer: string;
+    name: `survey-question${number}` | `set-${string}`;
+    label: string;
     disabled?: boolean;
     classNameModif?: T_ToggleModifClassNames;
     defaultChecked?: boolean;
