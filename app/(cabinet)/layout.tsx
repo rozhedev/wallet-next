@@ -23,7 +23,7 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
             <AsideCab
                 linksArr={asideCabLinks}
                 isAsideOpen={isAsideOpen}
-                toggleHandler={menuToggleHandler}
+                setIsAsideOpen={setIsAsideOpen}
             />
             <HeaderCab
                 isAsideOpen={isAsideOpen}

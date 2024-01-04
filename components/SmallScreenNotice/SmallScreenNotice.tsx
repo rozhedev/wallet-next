@@ -3,13 +3,14 @@
 import React, { FC, useEffect, useState } from "react";
 import type { TSmallScreenNoticeProps } from "./types";
 import { GRID_BREAKPOINTS } from "@/data/constants/breakpoints";
+import { checkScreenWidth } from "@/utils/utils";
 
 export const SmallScreenNotice: FC<TSmallScreenNoticeProps> = ({ className }) => {
     const [isScreenLittle, setIsScreenLittle] = useState<boolean>(false);
 
     // * Don't add isScreenLittle into dependencies array
     useEffect(() => {
-        if (typeof document !== "undefined" && document.documentElement.clientWidth < GRID_BREAKPOINTS.md) setIsScreenLittle(!isScreenLittle);
+        checkScreenWidth(GRID_BREAKPOINTS.md) && setIsScreenLittle(!isScreenLittle);
     }, []);
     return (
         <>

@@ -9,8 +9,10 @@ import Btn from "@/ui/Btn/Btn";
 import Modal from "@/ui/Modal";
 import { promoModalData } from "@/data/modals/data";
 import logo from "@/public/img/logo-badge.svg";
+import { GRID_BREAKPOINTS } from "@/data/constants/breakpoints";
+import { checkScreenWidth } from "@/utils/utils";
 
-export const AsideCab = ({ isAsideOpen, toggleHandler, linksArr }: TAsideCabProps): JSX.Element => {
+export const AsideCab = ({ isAsideOpen, setIsAsideOpen, linksArr }: TAsideCabProps): JSX.Element => {
     return (
         <aside className={`aside-cab ${isAsideOpen ? "_open" : "_close"}`}>
             <div className="logo">
@@ -28,7 +30,7 @@ export const AsideCab = ({ isAsideOpen, toggleHandler, linksArr }: TAsideCabProp
                         linkHref={item.linkHref}
                         itemIcon={item.itemIcon}
                         label={item.label}
-                        toggleHandler={toggleHandler}
+                        setIsAsideOpen={setIsAsideOpen}
                     />
                 ))}
             </ul>
@@ -36,7 +38,7 @@ export const AsideCab = ({ isAsideOpen, toggleHandler, linksArr }: TAsideCabProp
     );
 };
 
-const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, toggleHandler }) => {
+const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, setIsAsideOpen }) => {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
     return (
         <li className="aside-nav-item">
@@ -45,7 +47,7 @@ const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, to
                     <Link
                         className="aside-nav-item__link"
                         href={linkHref}
-                        onClick={toggleHandler}
+                        onClick={() => checkScreenWidth(GRID_BREAKPOINTS.xs) && setIsAsideOpen(false)}
                     >
                         {itemIcon}
                         <span className="aside-nav-item__text navlink">{label}</span>
@@ -67,7 +69,7 @@ const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, to
                     <span
                         className="aside-nav-item__link"
                         onClick={() => {
-                            toggleHandler();
+                            checkScreenWidth(GRID_BREAKPOINTS.xs) && setIsAsideOpen(false);
                             setIsOpenModal(true);
                         }}
                     >

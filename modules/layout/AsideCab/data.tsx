@@ -1,7 +1,9 @@
 import { ROUTES } from "@/data/routes";
-import { TAsideNavItemArr } from "./types";
+import { TAsideNavItem } from "./types";
 
-export const asideCabLinks: TAsideNavItemArr = [
+type TAsideCabLinks = Omit<TAsideNavItem, "setIsAsideOpen">[];
+
+export const asideCabLinks: TAsideCabLinks = [
     {
         isLink: true,
         linkHref: ROUTES.private.dashboard,

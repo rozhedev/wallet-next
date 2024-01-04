@@ -9,7 +9,7 @@ export const INP_DATA = {
         regex: /^[a-z0-9_-]{4,15}$/,
         errorsText: {
             required: "Username is required",
-            pattern: "Enter a valid username",
+            pattern: "Username can only consist of letters & numbers",
         },
     },
     registerEmail: {
@@ -19,7 +19,7 @@ export const INP_DATA = {
         regex: /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i,
         errorsText: {
             required: "Email is required",
-            pattern: "Enter a valid email",
+            pattern: "Please, enter correct email",
         },
     },
     registerCheckboxErrText: "You must agree with terms",

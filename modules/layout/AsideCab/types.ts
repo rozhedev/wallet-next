@@ -1,9 +1,10 @@
+import React from "react";
 import { TRoute, TRouteLabelScope } from "@/data/routes";
 
 export type TAsideCabProps = {
     isAsideOpen: boolean;
-    linksArr: TAsideNavItemArr;
-    toggleHandler: () => void;
+    linksArr: Omit<TAsideNavItem, "setIsAsideOpen">[];
+    setIsAsideOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type TAsideNavItem = {
@@ -11,7 +12,5 @@ export type TAsideNavItem = {
     linkHref: TRoute | "";
     itemIcon: React.ReactElement;
     label: TRouteLabelScope;
-    toggleHandler: () => void;
+    setIsAsideOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
-
-export type TAsideNavItemArr = TAsideNavItem[]

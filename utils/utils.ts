@@ -4,3 +4,10 @@ export const getPassphraseStr = (getFunc: UseFormGetValues<any>, inpFields: stri
     getFunc(inpFields)
         .map((inp: { value: string }) => (inp.value = inp.value.trim()))
         .join(" ");
+
+export const checkScreenWidth = (bp: number) => {
+    let bool: boolean;
+    if (typeof document !== "undefined" && document.documentElement.clientWidth < bp) bool = true;
+    else bool = false;
+    return bool;
+};

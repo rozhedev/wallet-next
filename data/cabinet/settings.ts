@@ -40,10 +40,8 @@ export const settingsToggleList: TVariantsListItemArr = [
         id: "set-dashboard-remove-btn-delete",
         type: "checkbox",
         name: "set-toggle",
-        label: "Remove \"Delete assets\" assets button from dashboard",
-        classNameModif: "toggle--readonly",
-        defaultChecked: true,
-        disabled: true,
+        label: "Hide \"Site navigation\" widget from dashboard",
+        classNameModif: "toggle",
     },
     {
         id: "set-hide-external-links",

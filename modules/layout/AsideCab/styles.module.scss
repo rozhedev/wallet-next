@@ -244,9 +244,19 @@
 @include bp(xs) {
     .aside-cab {
         // * Use shadow as navbar overlay. Position Y = $shadow-width
-        $shadow-width: 200px;
+        $shadow-width: 300px;
 
         box-shadow: 0 $shadow-width 0 $shadow-width rgba($color: $dark-color, $alpha: 0.8);
         top: $header-height-slim;
+    }
+}
+
+// * For aside-cab only
+@media(max-width: 440px) {
+    .aside-cab {
+        // * Use shadow as navbar overlay. Position Y = $shadow-width
+        $shadow-width: 200px;
+
+        box-shadow: 0 $shadow-width 0 $shadow-width rgba($color: $dark-color, $alpha: 0.8);
     }
 }

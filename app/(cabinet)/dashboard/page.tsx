@@ -13,7 +13,7 @@ export default function Dashboard() {
                 {/* NAV */}
                 <StyledWrapper className="cabinet-card dashboard-nav">
                     <div className="modal-header">
-                        <h4 className="h4">Navigation on site</h4>
+                        <h4 className="h4">Site navigation</h4>
                     </div>
                     <nav>
                         <ul className="dashboard-nav__list">

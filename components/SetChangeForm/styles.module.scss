@@ -1,0 +1,38 @@
+// * For correct inheriting
+.settings .settings-change-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    @include bp(xs) {
+        flex-direction: column;
+    }
+
+    &:not(:first-of-type) {
+        margin-top: 1.25rem;
+        @include bp(xs) {
+            margin-top: 1.5rem;
+        }
+    }
+    .form-controller {
+        display: flex;
+        flex-direction: column;
+        width: inherit; // * 100% from .settings-change-form
+    }
+    .form-controller__label {
+        font-size: 1.125rem;
+    }
+    .inp {
+        min-width: 12rem;
+        width: inherit; // * 100% from .settings-change-form
+    }
+    // * Hard styling for prevent use !important
+    .btn:nth-child(n) {
+        margin: 2rem 0rem 0rem 1rem;
+        min-width: 7.5rem;
+        @include bp(xs) {
+            margin: 1.5rem 0rem 0rem 0rem;
+            width: inherit;
+        }
+    }
+}

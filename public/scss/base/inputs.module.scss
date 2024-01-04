@@ -347,10 +347,11 @@ option {
     }
     .form-controller__message {
         display: block;
-        visibility: visible;
-        height: auto;
         padding-top: 0.25rem;
+        height: auto;
+        visibility: visible;
         font-weight: 600;
+        text-align: justify;
         color: $error-red;
     }
 }
