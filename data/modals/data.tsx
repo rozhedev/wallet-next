@@ -16,7 +16,7 @@ type TModalData = {
     content: React.ReactNode | string | string[];
 };
 
-type TModalDataObj = Record<"success" | "error", TModalData>;
+type TModalDataObj = Partial<Record<"success" | "error", TModalData>>;
 
 // * All modal data
 // * promo - promoactions
@@ -40,6 +40,15 @@ export const promoModalData: TModalDataObj = {
         content: <p>This event is over. Stay tuned so you don&apos;t miss any new promotions.</p>,
     },
 };
+
+export const settingsModalData: TModalData = {
+    id: "modal-change-form-success",
+    modalDialogClassName: "modal-dialog modal-dialog--success",
+    titleIcon: MODAL_ICONS.success,
+    title: "Request sent",
+    content: <p>Your data change request has been sent. The changes will be displayed within 15 minutes</p>,
+};
+
 
 // export type TSurveyModalItem = {
 //     question: string;

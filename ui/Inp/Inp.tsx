@@ -9,6 +9,7 @@ const Inp: FC<TInpProps> = ({ id, label, disabled = false, readOnly = false, req
                 id={id}
                 disabled={disabled}
                 readOnly={readOnly}
+                required={required}
                 {...props}
             />
         </>

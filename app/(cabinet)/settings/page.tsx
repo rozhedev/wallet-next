@@ -20,19 +20,28 @@ export default function Settings() {
                         formId="change-username-form"
                         inpType="text"
                         inpId="set-change-username"
+                        minLength={4}
+                        maxLength={15}
                         label="Change username"
+                        placeholder="John Smith"
                     />
                     <SetChangeForm
                         formId="change-email-form"
                         inpType="email"
                         inpId="set-change-email"
                         label="Change email"
+                        placeholder="john@email.com"
+                        minLength={8}
+                        maxLength={30}
                     />
                     <SetChangeForm
                         formId="change-region-form"
                         inpType="text"
                         inpId="set-change-region"
                         label="Change region"
+                        minLength={6}
+                        maxLength={40}
+                        placeholder="England, UK"
                     />
                 </StyledWrapper>
             </div>
