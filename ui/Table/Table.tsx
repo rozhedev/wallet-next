@@ -3,7 +3,7 @@ import type { T_TableProps, T_TableHeadProps, T_TableBodyProps } from "./types";
 
 export const Table = ({ children, wrapperClass, tableClass }: T_TableProps): JSX.Element => {
     return (
-        <div className={`table-wrapper ${wrapperClass}`}>
+        <div className={wrapperClass}>
             <table className={`table ${tableClass}`}>{children}</table>
         </div>
     );

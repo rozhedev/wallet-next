@@ -152,15 +152,9 @@
             *:nth-child(n + 5) {
                 margin-top: $item-margin;
             }
-            .select {
-                min-width: 18.5rem;
-                &:nth-child(n + 4) {
-                    margin-top: $item-margin;
-                }
-            }
             @include bp(lg) {
-                .select {
-                    min-width: 15rem;
+                *:nth-child(n + 4) {
+                    margin-top: $item-margin;
                 }
             }
             @include bp(md) {

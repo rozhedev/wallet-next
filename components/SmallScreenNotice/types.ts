@@ -1,3 +1,3 @@
 export type TSmallScreenNoticeProps = {
-    className: "small-screen-notice";
+    className: "small-screen-notice" | `small-screen-notice ${string}`;
 };

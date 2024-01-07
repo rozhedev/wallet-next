@@ -16,7 +16,7 @@ type TModalData = {
     content: React.ReactNode | string | string[];
 };
 
-type TModalDataObj = Partial<Record<"success" | "error", TModalData>>;
+type TModalDataObj = Record<"success" | "error", TModalData>;
 
 // * All modal data
 // * promo - promoactions

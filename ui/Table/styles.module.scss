@@ -74,3 +74,27 @@
     text-align: center;
     box-shadow: none;
 }
+
+// * History table
+.history-table {
+    .table__header tr > th {
+        width: fit-content;
+    }
+    .table-header-title {
+        svg {
+            @include icon-size(map-get($icon-size, xs), 0);
+            margin-top: 0.2rem;
+        }
+        &__content {
+            font-size: 1.125rem;
+        }
+    }
+    .history-table-item {
+        font-size: 1rem;
+        &--recipient span {
+            @include str-trim;
+            width: max-content;
+            max-width: 7rem;
+        }
+    }
+}

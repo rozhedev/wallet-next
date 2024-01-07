@@ -190,6 +190,10 @@
     border-radius: $sm-border-radius;
     // * Rewrite default inline styles. 0.75rem - scrollbar width
     margin-right: 0.75rem !important;
+
+    @include bp(md) {
+        margin-right: 0rem !important;
+    }
 }
 
 .react-responsive-modal-closeButton {

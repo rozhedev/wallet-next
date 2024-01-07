@@ -1,6 +1,6 @@
 export type T_TableProps = {
     wrapperClass: "cabinet-card" | "";
-    tableClass: "assets-table" | "history-table" | "watchlist-table" | "";
+    tableClass: "table" | `table ${string}` | "assets-table" | "history-table" | "watchlist-table" | "";
     children: React.ReactNode;
 };
 
