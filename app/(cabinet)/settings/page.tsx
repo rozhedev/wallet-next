@@ -23,7 +23,7 @@ export default function Settings() {
                         minLength={4}
                         maxLength={15}
                         label="Change username"
-                        placeholder="John Smith"
+                        placeholder="john_smith"
                     />
                     <SetChangeForm
                         formId="change-email-form"

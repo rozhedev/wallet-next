@@ -7,13 +7,15 @@ import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 
 import SmallScreenNotice from "@/components/SmallScreenNotice";
 import TableHeaderTitle, { historyTableHeaderTitleArr } from "@/components/items/TableHeaderTitle";
-import HistoryTableItem, { historyTableItemArr } from "@/components/items/HistoryTableItem";
+import HistoryTableItem, { type THistoryTableItem, historyTableItemArr } from "@/components/items/HistoryTableItem";
 import Pagination from "@/components/Pagination";
 
 import SectionLayout from "@/modules/layout/SectionLayout";
 import { typeSelectOptions, currencySelectOptions, statusSelectOptions, dateSelectOptions } from "@/data/cabinet/history";
 
 export default function History() {
+    const isDataArrEmpty = historyTableItemArr.length === 0;
+
     return (
         <SectionLayout id="page-cab history">
             <div className="inner">
@@ -71,24 +73,28 @@ export default function History() {
                                 />
                             ))}
                         </Table.Head>
-                        <Table.Body>
-                            {historyTableItemArr.map((item) => (
-                                <HistoryTableItem
-                                    key={item.id}
-                                    id={item.id}
-                                    order={item.order}
-                                    operType={item.operType}
-                                    curName={item.curName}
-                                    amount={item.amount}
-                                    transactionStatus={item.transactionStatus}
-                                    transactionId={item.transactionId}
-                                    date={item.date}
-                                    recipient={item.recipient}
-                                />
-                            ))}
-                        </Table.Body>
+
+                        {!isDataArrEmpty && (
+                            <Table.Body>
+                                {historyTableItemArr.map((item: THistoryTableItem) => (
+                                    <HistoryTableItem
+                                        key={item.id}
+                                        id={item.id}
+                                        order={item.order}
+                                        operType={item.operType}
+                                        curName={item.curName}
+                                        amount={item.amount}
+                                        transactionStatus={item.transactionStatus}
+                                        transactionId={item.transactionId}
+                                        date={item.date}
+                                        recipient={item.recipient}
+                                    />
+                                ))}
+                            </Table.Body>
+                        )}
                     </Table>
-                    <Pagination/>
+                    {isDataArrEmpty && <span className="history-table--message navlink">No transactions yet</span>}
+                    {!isDataArrEmpty && <Pagination />}
                 </StyledWrapper>
             </div>
         </SectionLayout>

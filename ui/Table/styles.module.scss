@@ -97,4 +97,10 @@
             max-width: 7rem;
         }
     }
+    &--message {
+        width: 100%;
+        display: inline-block;
+        padding: 1.5rem;
+        text-align: center;
+    }
 }

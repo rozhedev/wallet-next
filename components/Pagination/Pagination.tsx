@@ -1,9 +1,10 @@
 import React, { FC, useState } from "react";
-import type { TPaginationProps } from "./types";
+import { btnsArr } from "./types";
 import Btn from "@/ui/Btn/Btn";
 
-export const Pagination: FC<TPaginationProps> = ({}) => {
-    const [isActive, setIsActive] = useState<number>(0);
+export const Pagination: FC<{}> = ({}) => {
+    const [isActiveId, setIsActiveId] = useState<number>(1);
+
     return (
         <nav className="pagination-container">
             <Btn
@@ -12,6 +13,11 @@ export const Pagination: FC<TPaginationProps> = ({}) => {
                 className="pagination-button"
                 aria-label="Previous page"
                 title="Previous page"
+                onClick={() => {
+                    if (isActiveId === btnsArr[0].id) return;
+                    setIsActiveId(isActiveId - 1);
+                }}
+                disabled={isActiveId === btnsArr[0].id && true}
             >
                 <svg
                     viewBox="0 0 64 64"
@@ -25,41 +31,17 @@ export const Pagination: FC<TPaginationProps> = ({}) => {
                 id="pagination-numbers"
                 className="pagination-numbers"
             >
-                <Btn
-                    type="button"
-                    className="pagination-number"
-                    title="Page 1"
-                >
-                    <span>1</span>
-                </Btn>
-                <Btn
-                    type="button"
-                    className="pagination-number"
-                    title="Page 2"
-                >
-                    <span>2</span>
-                </Btn>
-                <Btn
-                    type="button"
-                    className="pagination-number"
-                    title="Page 3"
-                >
-                    <span>3</span>
-                </Btn>
-                <Btn
-                    type="button"
-                    className="pagination-number"
-                    title="Page 4"
-                >
-                    <span>4</span>
-                </Btn>
-                <Btn
-                    type="button"
-                    className="pagination-number"
-                    title="Page 5"
-                >
-                    <span>5</span>
-                </Btn>
+                {btnsArr.map((btn) => (
+                    <Btn
+                        key={btn.id}
+                        type="button"
+                        className={`pagination-number ${isActiveId === btn.id && "_active"}`}
+                        title={btn.title}
+                        onClick={() => setIsActiveId(btn.id)}
+                    >
+                        <span>{btn.id}</span>
+                    </Btn>
+                ))}
             </div>
             <Btn
                 type="button"
@@ -67,6 +49,11 @@ export const Pagination: FC<TPaginationProps> = ({}) => {
                 className="pagination-button"
                 aria-label="Next page"
                 title="Next page"
+                onClick={() => {
+                    if (isActiveId === btnsArr.length) return;
+                    setIsActiveId(isActiveId + 1);
+                }}
+                disabled={isActiveId === btnsArr.length && true}
             >
                 <svg
                     viewBox="0 0 64 64"
