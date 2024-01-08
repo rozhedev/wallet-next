@@ -1,6 +1,5 @@
-import { TAllCurNotesScope } from "@/types/data/currencies";
 import { ExtractValFromObj } from "@/types/utils/utils";
-import { TUserHistoryItem } from "@/types/cabinet/history";
+import { THistoryTableItem } from "@/components/items/HistoryTableItem";
 import { TIconPath } from "@/types/data/shared";
 
 export type TDashboardStatItem = {
@@ -12,16 +11,15 @@ export type TDashboardStatItem = {
 
 export type TDashboardStatItemArr = TDashboardStatItem[];
 
-export type TDashboardHistoryItem<THistoryItem extends TUserHistoryItem<TAllCurNotesScope>> = {
+export type TDashboardHistoryItem<THistoryItem extends THistoryTableItem> = {
     id: number;
     modifClass: "get" | "send" | "wait" | "info";
     imgPath: TIconPath;
-    operationType: ExtractValFromObj<THistoryItem, "operationType">;
+    operationType: ExtractValFromObj<THistoryItem, "operType">;
     date: ExtractValFromObj<THistoryItem, "date">;
-    time: ExtractValFromObj<THistoryItem, "time">;
-    recepient: ExtractValFromObj<THistoryItem, "recepient">;
+    recepient: ExtractValFromObj<THistoryItem, "recipient">;
     amount: ExtractValFromObj<THistoryItem, "amount">;
     curName: ExtractValFromObj<THistoryItem, "curName">;
 };
 
-export type TDashboardHistoryItemArr = TDashboardHistoryItem<TUserHistoryItem<TAllCurNotesScope>>[];
+export type TDashboardHistoryItemArr = TDashboardHistoryItem<THistoryTableItem>[];

@@ -8,7 +8,7 @@ import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import SmallScreenNotice from "@/components/SmallScreenNotice";
 import TableHeaderTitle, { historyTableHeaderTitleArr } from "@/components/items/TableHeaderTitle";
 import HistoryTableItem, { type THistoryTableItem, historyTableItemArr } from "@/components/items/HistoryTableItem";
-import Pagination from "@/components/Pagination";
+import Pagination, { paginationBtnArr } from "@/components/Pagination";
 
 import SectionLayout from "@/modules/layout/SectionLayout";
 import { typeSelectOptions, currencySelectOptions, statusSelectOptions, dateSelectOptions } from "@/data/cabinet/history";
@@ -94,7 +94,7 @@ export default function History() {
                         )}
                     </Table>
                     {isDataArrEmpty && <span className="history-table--message navlink">No transactions yet</span>}
-                    {!isDataArrEmpty && <Pagination />}
+                    {!isDataArrEmpty && <Pagination btnsArr={paginationBtnArr} />}
                 </StyledWrapper>
             </div>
         </SectionLayout>

@@ -39,7 +39,7 @@ export const ROUTES: TRoutesList = {
     },
     private: {
         dashboard: "/dashboard",
-        assetsCab: "/assets-cab",
+        assetsCab: "/assets_cab",
         history: "/history",
         settings: "/settings",
         watchlist: "/watchlist",

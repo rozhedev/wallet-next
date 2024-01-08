@@ -1,6 +1,10 @@
 type TPaginationBtnsArr = { id: number; title: `Page ${number}` }[];
 
-export const btnsArr: TPaginationBtnsArr = [
+export type TPaginationProps = {
+    btnsArr: TPaginationBtnsArr;
+}
+
+export const paginationBtnArr: TPaginationBtnsArr = [
     {
         id: 1,
         title: "Page 1",

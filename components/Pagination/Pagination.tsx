@@ -1,9 +1,11 @@
 import React, { FC, useState } from "react";
-import { btnsArr } from "./types";
+import { TPaginationProps } from "./types";
 import Btn from "@/ui/Btn/Btn";
 
-export const Pagination: FC<{}> = ({}) => {
+export const Pagination: FC<TPaginationProps> = ({ btnsArr }) => {
     const [isActiveId, setIsActiveId] = useState<number>(1);
+    const isFirstBtnActive = isActiveId === btnsArr[0].id;
+    const isLastBtnActive = isActiveId === btnsArr.length;
 
     return (
         <nav className="pagination-container">
@@ -14,10 +16,10 @@ export const Pagination: FC<{}> = ({}) => {
                 aria-label="Previous page"
                 title="Previous page"
                 onClick={() => {
-                    if (isActiveId === btnsArr[0].id) return;
+                    if (isFirstBtnActive) return;
                     setIsActiveId(isActiveId - 1);
                 }}
-                disabled={isActiveId === btnsArr[0].id && true}
+                disabled={isFirstBtnActive && true}
             >
                 <svg
                     viewBox="0 0 64 64"
@@ -50,10 +52,10 @@ export const Pagination: FC<{}> = ({}) => {
                 aria-label="Next page"
                 title="Next page"
                 onClick={() => {
-                    if (isActiveId === btnsArr.length) return;
+                    if (isLastBtnActive) return;
                     setIsActiveId(isActiveId + 1);
                 }}
-                disabled={isActiveId === btnsArr.length && true}
+                disabled={isLastBtnActive && true}
             >
                 <svg
                     viewBox="0 0 64 64"
