@@ -4,6 +4,7 @@ export type TPaginationProps = {
     btnsArr: TPaginationBtnsArr;
 }
 
+// * Mock pagination btns arr
 export const paginationBtnArr: TPaginationBtnsArr = [
     {
         id: 1,

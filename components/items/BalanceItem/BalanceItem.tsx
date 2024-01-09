@@ -1,0 +1,108 @@
+import React, { FC, useState } from "react";
+import Image from "next/image";
+import Modal from "@/ui/Modal";
+import Btn from "@/ui/Btn/Btn";
+import Dropdown from "@/ui/Dropdown";
+import CopyBtn from "@/components/CopyBtn";
+
+import type { TStoreAssetsItem } from "@/components/items/StoreAssetsItem";
+import type { TBalanceItem } from "./types";
+import type { TAllCurNotesScope } from "@/types/data/currencies";
+import { balanceItemIcons } from "./data";
+import { promoModalData } from "@/data/modals/data";
+
+export const BalanceItem: FC<TBalanceItem<TStoreAssetsItem<TAllCurNotesScope>>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, isAssetsCab }) => {
+    const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+
+    return (
+        <div className="balance-item">
+            <div className="balance-item__content">
+                <Image
+                    src={curIconPath}
+                    alt={curIconAlt}
+                    className="balance-item__img"
+                />
+                <span className="navlink">{curName}</span>
+            </div>
+            <div className="balance-item__values">
+                {/* //* Add to fixed for correct output */}
+                <span className="balance-item__cur-amount h5">{usdAmount.toFixed(8)}</span>
+                <span className="balance-item__usd-amount h5">{pureAmount.toFixed(2)}$</span>
+            </div>
+
+            {isAssetsCab && (
+                <>
+                    <nav className="asset-actions">
+                        <ul>
+                            <li>
+                                <span
+                                    className="navlink"
+                                    onClick={() => setIsOpenModal(true)}
+                                >
+                                    {balanceItemIcons.send}
+                                    <span>Send</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span
+                                    className="navlink"
+                                    onClick={() => setIsOpenModal(true)}
+                                >
+                                    {balanceItemIcons.get}
+                                    <span>Get</span>
+                                </span>
+                            </li>
+                            <li>
+                                <Dropdown>
+                                    <Dropdown.Btn>
+                                        {balanceItemIcons.more}
+                                        <span>More</span>
+                                        {balanceItemIcons.chevron}
+                                    </Dropdown.Btn>
+                                    <Dropdown.Menu>
+                                        <li>
+                                            <span className="navlink">
+                                                {balanceItemIcons.remove}
+                                                <span>Remove</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <CopyBtn
+                                                className="copy-btn navlink"
+                                                beforeClickLabel="Copy address"
+                                                afterClickLabel="Address copied"
+                                                value={"address"}
+                                            />
+                                        </li>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </li>
+                        </ul>
+                    </nav>
+                    <Modal
+                        modalId={promoModalData.success.id}
+                        modalDialogClassName={promoModalData.success.modalDialogClassName}
+                        isOpen={isOpenModal}
+                        onCloseModal={() => setIsOpenModal(false)}
+                    >
+                        <Modal.Header
+                            titleIcon={promoModalData.success.titleIcon}
+                            title={promoModalData.success.title}
+                        ></Modal.Header>
+
+                        <Modal.Content className="modal-dialog__body">{promoModalData.success.content}</Modal.Content>
+                        <Modal.Footer className="modal-footer btn-group">
+                            <Btn
+                                type="button"
+                                className="btn btn-outline-sm"
+                                onClick={() => setIsOpenModal(false)}
+                            >
+                                <span>Close</span>
+                            </Btn>
+                        </Modal.Footer>
+                    </Modal>
+                </>
+            )}
+        </div>
+    );
+};

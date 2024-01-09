@@ -17,9 +17,7 @@ export const GenPassphrase: FC<TGenPassphraseProps> = ({ id, className, passArr,
             <legend className="form-label-legend">Write down or copy these words in the correct order and keep them in a safe place.</legend>
 
             <StyledWrapper className="form-controller">
-                <ol
-                    className="ordered-list form-controller form-inp-grid"
-                >
+                <ol className="ordered-list form-controller form-inp-grid">
                     {passphraseFields.map((field, i) => (
                         <li
                             className="passphrase-item"
@@ -40,7 +38,9 @@ export const GenPassphrase: FC<TGenPassphraseProps> = ({ id, className, passArr,
                 </ol>
             </StyledWrapper>
             <CopyBtn
-                isRegister={true}
+                className="copy-btn"
+                beforeClickLabel="Copy to clipboard"
+                afterClickLabel="Passphrase copied"
                 value={passStr}
             />
             <StyledWrapper className="form-controller">

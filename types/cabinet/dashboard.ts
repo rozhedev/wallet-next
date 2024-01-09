@@ -11,15 +11,15 @@ export type TDashboardStatItem = {
 
 export type TDashboardStatItemArr = TDashboardStatItem[];
 
-export type TDashboardHistoryItem<THistoryItem extends THistoryTableItem> = {
+export type TDashboardHistoryItem<TItem extends THistoryTableItem> = {
     id: number;
     modifClass: "get" | "send" | "wait" | "info";
     imgPath: TIconPath;
-    operationType: ExtractValFromObj<THistoryItem, "operType">;
-    date: ExtractValFromObj<THistoryItem, "date">;
-    recepient: ExtractValFromObj<THistoryItem, "recipient">;
-    amount: ExtractValFromObj<THistoryItem, "amount">;
-    curName: ExtractValFromObj<THistoryItem, "curName">;
+    operationType: ExtractValFromObj<TItem, "operType">;
+    date: ExtractValFromObj<TItem, "date">;
+    recepient: ExtractValFromObj<TItem, "recipient">;
+    amount: ExtractValFromObj<TItem, "amount">;
+    curName: ExtractValFromObj<TItem, "curName">;
 };
 
 export type TDashboardHistoryItemArr = TDashboardHistoryItem<THistoryTableItem>[];

@@ -13,7 +13,6 @@ import {
     filecoinFIL,
     flowFLOW,
     ftxTokenFTT,
-    klaytnKLAY,
 } from "@/data/pages/currencies-icons";
 
 // * Data
