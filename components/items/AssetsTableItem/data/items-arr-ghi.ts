@@ -12,7 +12,7 @@ import {
 // * Data
 export const assetTableItemArrGHI: TAssetsTableItemArr = [
     {
-        id: 34,
+        id: "assets-table-item-gala",
         order: 34,
         curIcon: galaGALA,
         curAlt: "gala-GALA",
@@ -28,7 +28,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         },
     },
     {
-        id: 35,
+        id: "assets-table-item-harmony",
         order: 35,
         curIcon: harmonyONE,
         curAlt: "harmony-ONE",
@@ -44,7 +44,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         },
     },
     {
-        id: 36,
+        id: "assets-table-item-hedera",
         order: 36,
         curIcon: hederaHBAR,
         curAlt: "hedera-HBAR",
@@ -60,7 +60,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         },
     },
     {
-        id: 37,
+        id: "assets-table-item-helium",
         order: 37,
         curIcon: heliumHNT,
         curAlt: "helium-HNT",
@@ -76,7 +76,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         },
     },
     {
-        id: 38,
+        id: "assets-table-item-holo",
         order: 38,
         curIcon: holoHOT,
         curAlt: "holo-HOT",
@@ -92,7 +92,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         },
     },
     {
-        id: 39,
+        id: "assets-table-item-internet-computer",
         order: 39,
         curIcon: internetComputerICP,
         curAlt: "internet-computer-ICP",
@@ -108,7 +108,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         },
     },
     {
-        id: 40,
+        id: "assets-table-item-iota",
         order: 40,
         curIcon: iotaMIOTA,
         curAlt: "iota-MIOTA",

@@ -9,7 +9,7 @@ import {
 // * Data
 export const assetTableItemArrWXZ: TAssetsTableItemArr = [
     {
-        id: 71,
+        id: "assets-table-item-waves",
         order: 71,
         curIcon: wavesWAVES,
         curAlt: "waves-WAVES",
@@ -25,7 +25,7 @@ export const assetTableItemArrWXZ: TAssetsTableItemArr = [
         },
     },
     {
-        id: 72,
+        id: "assets-table-item-wrapped-bitcoin",
         order: 72,
         curIcon: wrappedBitcoinWBTC,
         curAlt: "wrapped-bitcoin-WBTC",
@@ -41,7 +41,7 @@ export const assetTableItemArrWXZ: TAssetsTableItemArr = [
         },
     },
     {
-        id: 73,
+        id: "assets-table-item-xrp",
         order: 73,
         curIcon: xrpXRP,
         curAlt: "xrp-XRP",
@@ -57,7 +57,7 @@ export const assetTableItemArrWXZ: TAssetsTableItemArr = [
         },
     },
     {
-        id: 74,
+        id: "assets-table-item-zcash",
         order: 74,
         curIcon: zcashZEC,
         curAlt: "zcash-ZEC",

@@ -12,7 +12,7 @@ import {
 // * Data
 export const assetTableItemArrKLM: TAssetsTableItemArr = [
     {
-        id: 41,
+        id: "assets-table-item-kadena",
         order: 41,
         curIcon: kadenaKDA,
         curName: "Kadena (KDA)",
@@ -28,7 +28,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         },
     },
     {
-        id: 42,
+        id: "assets-table-item-klaytn",
         order: 42,
         curIcon: klaytnKLAY,
         curAlt: "klaytn-KLAY",
@@ -44,7 +44,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         },
     },
     {
-        id: 43,
+        id: "assets-table-item-ku-coin-token",
         order: 43,
         curIcon: kuCoinTokenKCS,
         curAlt: "ku-coin-token-KCS",
@@ -60,7 +60,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         },
     },
     {
-        id: 44,
+        id: "assets-table-item-kusama",
         order: 44,
         curIcon: kusamaKSM,
         curAlt: "kusama-KSM",
@@ -76,7 +76,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         },
     },
     {
-        id: 45,
+        id: "assets-table-item-litecoin",
         order: 45,
         curIcon: litecoinLTC,
         curAlt: "litecoin-LTC",
@@ -92,7 +92,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         },
     },
     {
-        id: 46,
+        id: "assets-table-item-maker",
         order: 46,
         curIcon: makerMKR,
         curAlt: "maker-MKR",
@@ -108,7 +108,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         },
     },
     {
-        id: 47,
+        id: "assets-table-item-monero",
         order: 47,
         curIcon: moneroXMR,
         curAlt: "monero-XMR",

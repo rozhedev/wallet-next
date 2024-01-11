@@ -25,7 +25,7 @@ import {
 // * Data
 export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
-        id: 1,
+        id: "assets-table-item-aave",
         order: 1,
         curIcon: aaveAAVE,
         curAlt: "aave-AAVE",
@@ -41,7 +41,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 2,
+        id: "assets-table-item-algorand",
         order: 2,
         curIcon: algorandALGO,
         curAlt: "algorand-ALGO",
@@ -57,7 +57,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 3,
+        id: "assets-table-item-amp",
         order: 3,
         curIcon: ampAMP,
         curAlt: "amp-AMP",
@@ -73,7 +73,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 4,
+        id: "assets-table-item-anchor-protocol",
         order: 4,
         curIcon: anchorProtocolANC,
         curAlt: "anchor-protocol-ANC",
@@ -89,7 +89,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 5,
+        id: "assets-table-item-avalanche",
         order: 5,
         curIcon: avalancheAVAX,
         curAlt: "avalanche-AVAX",
@@ -105,7 +105,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 6,
+        id: "assets-table-item-axie-infinity",
         order: 6,
         curIcon: axieInfinityAXS,
         curAlt: "axie-infinity-AXS",
@@ -121,7 +121,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 7,
+        id: "assets-table-item-binance-coin",
         order: 7,
         curIcon: binanceCoinBNB,
         curAlt: "binance-coin-BNB",
@@ -137,7 +137,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 8,
+        id: "assets-table-item-binance-coin",
         order: 8,
         curIcon: binanceUsdBUSD,
         curAlt: "binance-usd-BUSD",
@@ -153,7 +153,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 9,
+        id: "assets-table-item-bitcoin",
         order: 9,
         curIcon: bitcoinBTC,
         curAlt: "bitcoin-BTC",
@@ -169,7 +169,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 10,
+        id: "assets-table-item-bitcoin-bep2",
         order: 10,
         curIcon: bitcoinBep2BTCB,
         curAlt: "bitcoin-bep2-BTCB",
@@ -185,7 +185,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 11,
+        id: "assets-table-item-bitcoin-cash",
         order: 11,
         curIcon: bitcoinCashBCH,
         curAlt: "bitcoin-cash-BCH",
@@ -201,7 +201,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 12,
+        id: "assets-table-item-bitcoin-sv",
         order: 12,
         curIcon: bitcoinSvBSV,
         curAlt: "bitcoin-sv-BSV",
@@ -217,7 +217,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 13,
+        id: "assets-table-item-bitTorrent",
         order: 13,
         curIcon: bitTorrentBTT,
         curAlt: "bit-torrent-BTT",
@@ -233,7 +233,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 14,
+        id: "assets-table-item-cardano",
         order: 14,
         curIcon: cardanoADA,
         curAlt: "cardano-ADA",
@@ -249,7 +249,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 15,
+        id: "assets-table-item-celo",
         order: 15,
         curIcon: celoCELO,
         curAlt: "celo-CELO",
@@ -265,7 +265,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 16,
+        id: "assets-table-item-chainlink",
         order: 16,
         curIcon: chainlinkLINK,
         curAlt: "chainlink-LINK",
@@ -281,7 +281,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 17,
+        id: "assets-table-item-chiliz",
         order: 17,
         curIcon: chilizCHZ,
         curAlt: "chiliz-CHZ",
@@ -297,7 +297,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 18,
+        id: "assets-table-item-compound",
         order: 18,
         curIcon: compoundCOMP,
         curAlt: "compound-COMP",
@@ -313,7 +313,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 19,
+        id: "assets-table-item-cosmos",
         order: 19,
         curIcon: cosmosATOM,
         curAlt: "cosmos-ATOM",
@@ -329,7 +329,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         },
     },
     {
-        id: 20,
+        id: "assets-table-item-cronos",
         order: 20,
         curIcon: cronosCRO,
         curAlt: "cronos-CRO",

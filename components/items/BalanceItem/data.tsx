@@ -1,4 +1,3 @@
-import { AllCurNames } from "@/types/data/currencies";
 import type { TBalanceItemArr } from "./types";
 
 import { binanceCoinBNB, bitcoinBTC, cardanoADA, ethereumETH, polkadotDOT, solanaSOL, terraLUNA, tetherUSDT, usdCoinUSDC, xrpXRP } from "@/data/pages/currencies-icons";
@@ -82,7 +81,7 @@ export const balanceItemIcons: Record<"send" | "get" | "more" | "chevron" | "rem
 
 export const balanceItemArr: TBalanceItemArr = [
     {
-        id: AllCurNames.bitcoin,
+        id: "balance-item-bitcoin",
         curIconPath: bitcoinBTC,
         curIconAlt: "bitcoin-BTC",
         curName: "Bitcoin (BTC)",
@@ -90,7 +89,7 @@ export const balanceItemArr: TBalanceItemArr = [
         usdAmount: 0,
     },
     {
-        id: AllCurNames.ethereum,
+        id: "balance-item-ethereum",
         curIconPath: ethereumETH,
         curIconAlt: "ethereum-ETH",
         curName: "Ethereum (ETH)",
@@ -98,7 +97,7 @@ export const balanceItemArr: TBalanceItemArr = [
         usdAmount: 0,
     },
     {
-        id: AllCurNames.tether,
+        id: "balance-item-tether",
         curIconPath: tetherUSDT,
         curIconAlt: "tether-USDT",
         curName: "Tether (USDT)",
@@ -106,7 +105,7 @@ export const balanceItemArr: TBalanceItemArr = [
         usdAmount: 0,
     },
     {
-        id: AllCurNames.binanceCoin,
+        id: "balance-item-binance-coin",
         curIconPath: binanceCoinBNB,
         curIconAlt: "binance-coin-BNB",
         curName: "Binance Coin (BNB)",
@@ -114,7 +113,7 @@ export const balanceItemArr: TBalanceItemArr = [
         usdAmount: 0,
     },
     {
-        id: AllCurNames.usdCoin,
+        id: "balance-item-usd-coin",
         curIconPath: usdCoinUSDC,
         curIconAlt: "usd-coin-USDC",
         curName: "USD Coin (USDC)",
@@ -122,7 +121,7 @@ export const balanceItemArr: TBalanceItemArr = [
         usdAmount: 0,
     },
     {
-        id: AllCurNames.xrp,
+        id: "balance-item-xrp",
         curIconPath: xrpXRP,
         curIconAlt: "xrp-XRP",
         curName: "XRP (XRP)",
@@ -130,7 +129,7 @@ export const balanceItemArr: TBalanceItemArr = [
         usdAmount: 0,
     },
     {
-        id: AllCurNames.terra,
+        id: "balance-item-terra",
         curIconPath: terraLUNA,
         curIconAlt: "terra-LUNA",
         curName: "Terra (LUNA)",
@@ -138,7 +137,7 @@ export const balanceItemArr: TBalanceItemArr = [
         usdAmount: 0,
     },
     {
-        id: AllCurNames.cardano,
+        id: "balance-item-cardano",
         curIconPath: cardanoADA,
         curIconAlt: "cardano-ADA",
         curName: "Cardano (ADA)",
@@ -146,7 +145,7 @@ export const balanceItemArr: TBalanceItemArr = [
         usdAmount: 0,
     },
     {
-        id: AllCurNames.solana,
+        id: "balance-item-solana",
         curIconPath: solanaSOL,
         curIconAlt: "solana-SOL",
         curName: "Solana (SOL)",
@@ -154,7 +153,7 @@ export const balanceItemArr: TBalanceItemArr = [
         usdAmount: 0,
     },
     {
-        id: AllCurNames.polkadot,
+        id: "balance-item-polkadot",
         curIconPath: polkadotDOT,
         curIconAlt: "polkadot-DOT",
         curName: "Polkadot (DOT)",

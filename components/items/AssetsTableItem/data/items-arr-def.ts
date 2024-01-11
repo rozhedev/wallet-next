@@ -18,7 +18,7 @@ import {
 // * Data
 export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
-        id: 21,
+        id: "assets-table-item-dai",
         order: 21,
         curIcon: daiDAI,
         curAlt: "dai-DAI",
@@ -34,7 +34,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 22,
+        id: "assets-table-item-dash",
         order: 22,
         curIcon: dashDASH,
         curAlt: "dash-DASH",
@@ -50,7 +50,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 23,
+        id: "assets-table-item-decentraland",
         order: 23,
         curIcon: decentralandMANA,
         curAlt: "decentraland-MANA",
@@ -66,7 +66,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 24,
+        id: "assets-table-item-dogecoin",
         order: 24,
         curIcon: dogecoinDOGE,
         curAlt: "dogecoin-DOGE",
@@ -82,7 +82,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 25,
+        id: "assets-table-item-elrond",
         order: 25,
         curIcon: elrondEGLD,
         curAlt: "elrond-EGLD",
@@ -98,7 +98,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 26,
+        id: "assets-table-item-enjin-coin",
         order: 26,
         curIcon: enjinCoinENJ,
         curAlt: "enjin-coin-ENJ",
@@ -114,7 +114,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 27,
+        id: "assets-table-item-eos",
         order: 27,
         curIcon: eosEOS,
         curAlt: "eos-EOS",
@@ -130,7 +130,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 28,
+        id: "assets-table-item-ethereum",
         order: 28,
         curIcon: ethereumETH,
         curAlt: "ethereum-ETH",
@@ -146,7 +146,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 29,
+        id: "assets-table-item-ethereum-classic",
         order: 29,
         curIcon: ethereumClassicETC,
         curAlt: "ethereum-classic-ETC",
@@ -162,7 +162,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 30,
+        id: "assets-table-item-fantom",
         order: 30,
         curIcon: fantomFTM,
         curAlt: "fantom-FTM",
@@ -178,7 +178,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 31,
+        id: "assets-table-item-filecoin",
         order: 31,
         curIcon: filecoinFIL,
         curAlt: "filecoin-FIL",
@@ -194,7 +194,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 32,
+        id: "assets-table-item-flow",
         order: 32,
         curIcon: flowFLOW,
         curAlt: "flow-FLOW",
@@ -210,7 +210,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: 33,
+        id: "assets-table-item-ftx-token",
         order: 33,
         curIcon: ftxTokenFTT,
         curAlt: "ftx-token-FTT",

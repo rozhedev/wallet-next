@@ -15,7 +15,7 @@ import {
 // * Data
 export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
-        id: 48,
+        id: "assets-table-item-near-protocol",
         order: 48,
         curIcon: nearNEAR,
         curAlt: "near-protocol-NEAR",
@@ -31,7 +31,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         },
     },
     {
-        id: 49,
+        id: "assets-table-item-neo",
         order: 49,
         curIcon: neoNEO,
         curAlt: "neo-NEO",
@@ -47,7 +47,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         },
     },
     {
-        id: 50,
+        id: "assets-table-item-nexo",
         order: 50,
         curIcon: nexoNEXO,
         curAlt: "nexo-NEXO",
@@ -63,7 +63,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         },
     },
     {
-        id: 51,
+        id: "assets-table-item-polkadot",
         order: 51,
         curIcon: polkadotDOT,
         curAlt: "polkadot-DOT",
@@ -79,7 +79,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         },
     },
     {
-        id: 52,
+        id: "assets-table-item-polygon",
         order: 52,
         curIcon: polygonMATIC,
         curAlt: "polygon-MATIC",
@@ -95,7 +95,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         },
     },
     {
-        id: 53,
+        id: "assets-table-item-secret",
         order: 53,
         curIcon: secretSCRT,
         curAlt: "secret-SCRT",
@@ -111,7 +111,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         },
     },
     {
-        id: 54,
+        id: "assets-table-item-shiba-inu",
         order: 54,
         curIcon: shibainuSHIB,
         curAlt: "shiba-inu-SHIB",
@@ -127,7 +127,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         },
     },
     {
-        id: 55,
+        id: "assets-table-item-solana",
         order: 55,
         curIcon: solanaSOL,
         curAlt: "solana-SOL",
@@ -143,7 +143,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         },
     },
     {
-        id: 56,
+        id: "assets-table-item-stacks",
         order: 56,
         curIcon: stacksSTX,
         curAlt: "stacks-STX",
@@ -159,7 +159,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         },
     },
     {
-        id: 57,
+        id: "assets-table-item-stellar",
         order: 57,
         curIcon: stellarXLM,
         curAlt: "stellar-XLM",

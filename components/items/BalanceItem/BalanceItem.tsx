@@ -9,7 +9,7 @@ import type { TStoreAssetsItem } from "@/components/items/StoreAssetsItem";
 import type { TBalanceItem } from "./types";
 import type { TAllCurNotesScope } from "@/types/data/currencies";
 import { balanceItemIcons } from "./data";
-import { promoModalData } from "@/data/modals/data";
+import { assetsCabModalData } from "@/data/modals/data";
 
 export const BalanceItem: FC<TBalanceItem<TStoreAssetsItem<TAllCurNotesScope>>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, isAssetsCab }) => {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
@@ -80,24 +80,24 @@ export const BalanceItem: FC<TBalanceItem<TStoreAssetsItem<TAllCurNotesScope>>> 
                         </ul>
                     </nav>
                     <Modal
-                        modalId={promoModalData.success.id}
-                        modalDialogClassName={promoModalData.success.modalDialogClassName}
+                        modalId={assetsCabModalData.send.id}
+                        modalDialogClassName={assetsCabModalData.send.modalDialogClassName}
                         isOpen={isOpenModal}
                         onCloseModal={() => setIsOpenModal(false)}
                     >
                         <Modal.Header
-                            titleIcon={promoModalData.success.titleIcon}
-                            title={promoModalData.success.title}
+                            titleIcon={assetsCabModalData.send.titleIcon}
+                            title={assetsCabModalData.send.title}
                         ></Modal.Header>
 
-                        <Modal.Content className="modal-dialog__body">{promoModalData.success.content}</Modal.Content>
+                        <Modal.Content className="modal-dialog__body">{assetsCabModalData.send.content}</Modal.Content>
                         <Modal.Footer className="modal-footer btn-group">
                             <Btn
                                 type="button"
-                                className="btn btn-outline-sm"
+                                className="btn btn-fill-sm"
                                 onClick={() => setIsOpenModal(false)}
                             >
-                                <span>Close</span>
+                                <span>Send</span>
                             </Btn>
                         </Modal.Footer>
                     </Modal>

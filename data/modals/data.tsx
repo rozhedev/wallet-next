@@ -16,11 +16,11 @@ type TModalData = {
     content: React.ReactNode | string | string[];
 };
 
-type TModalDataObj = Record<"success" | "error", TModalData>;
+type TPromoModalData = Record<"success" | "error", TModalData>;
 
 // * All modal data
 // * promo - promoactions
-export const promoModalData: TModalDataObj = {
+export const promoModalData: TPromoModalData = {
     success: {
         id: "modal-promoaction-success",
         modalDialogClassName: "modal-dialog modal-dialog--success",
@@ -49,6 +49,23 @@ export const settingsModalData: TModalData = {
     content: <p>Your data change request has been sent. The changes will be displayed within 15 minutes</p>,
 };
 
+type TAssetsCabModalData = Record<"send" | "get", TModalData>;
+export const assetsCabModalData: TAssetsCabModalData = {
+    send: {
+        id: "modal-send",
+        modalDialogClassName: "modal-dialog modal-dialog--info modal-dialog--send",
+        titleIcon: MODAL_ICONS.send,
+        title: "Send cryptocurrency",
+        content: <p>Send cryptocurrency modal</p>,
+    },
+    get: {
+        id: "modal-get",
+        modalDialogClassName: "modal-dialog modal-dialog--info modal-dialog--get",
+        titleIcon: MODAL_ICONS.get,
+        title: "Get cryptocurrency",
+        content: <p>Get cryptocurrency modal</p>,
+    },
+};
 
 // export type TSurveyModalItem = {
 //     question: string;

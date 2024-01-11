@@ -1,4 +1,4 @@
-import { TAllCurNotesScope } from "@/types/data/currencies";
+import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
 import { TCurIconPath } from "@/types/data/shared";
 
 type TIconsConfigItem<TScope extends TAllCurNotesScope> = {
@@ -17,7 +17,7 @@ type TIconsConfigItem<TScope extends TAllCurNotesScope> = {
 type TIconsConfigItemPure = Omit<TIconsConfigItem<TAllCurNotesScope>, "id" | "curName">;
 
 export type TAssetsTableItem<TScope extends TAllCurNotesScope> = {
-    id: number;
+    id: `assets-table-item-${AllCurNames}`;
     // * Order is additional prop for correct work with backend
     order: number;
     curIcon: TCurIconPath<TAllCurNotesScope>;

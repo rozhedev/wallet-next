@@ -1,12 +1,13 @@
 import React, { FC } from "react";
 import Image from "next/image";
 
+import Btn from "@/ui/Btn/Btn";
 import { TStoreAssetsItem } from "./types";
 import { TAllCurNotesScope } from "@/types/data/currencies";
 
 export const StoreAssetItem: FC<TStoreAssetsItem<TAllCurNotesScope>> = ({ curIconPath, curIconAlt, curName }) => {
     return (
-        <button
+        <Btn
             type="button"
             title={curName}
             className="store-asset-item"
@@ -18,6 +19,6 @@ export const StoreAssetItem: FC<TStoreAssetsItem<TAllCurNotesScope>> = ({ curIco
             />
             <span className="store-asset-item__label navlink">{curName}</span>
             <span className="custom-plus-icon"></span>
-        </button>
+        </Btn>
     );
 };
