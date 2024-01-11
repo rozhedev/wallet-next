@@ -1,24 +1,13 @@
 import type { TAssetsTableItemArr } from "../types";
-import {
-    nearNEAR,
-    neoNEO,
-    nexoNEXO,
-    polkadotDOT,
-    polygonMATIC,
-    secretSCRT,
-    shibainuSHIB,
-    solanaSOL,
-    stacksSTX,
-    stellarXLM,
-} from "@/data/pages/currencies-icons";
+import { nearNEAR, neoNEO, nexoNEXO, polkadotDOT, polygonMATIC, secretSCRT, shibainuSHIB, solanaSOL, stacksSTX, stellarXLM } from "@/data/pages/currencies-icons";
 
 // * Data
 export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
         id: "assets-table-item-near-protocol",
         order: 48,
-        curIcon: nearNEAR,
-        curAlt: "near-protocol-NEAR",
+        curIconPath: nearNEAR,
+        curIconAlt: "near-protocol-NEAR",
         curName: "NEAR Protocol (NEAR)",
         iconPaths: {
             sendPC: true,
@@ -33,8 +22,8 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
         id: "assets-table-item-neo",
         order: 49,
-        curIcon: neoNEO,
-        curAlt: "neo-NEO",
+        curIconPath: neoNEO,
+        curIconAlt: "neo-NEO",
         curName: "Neo (NEO)",
         iconPaths: {
             sendPC: true,
@@ -49,8 +38,8 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
         id: "assets-table-item-nexo",
         order: 50,
-        curIcon: nexoNEXO,
-        curAlt: "nexo-NEXO",
+        curIconPath: nexoNEXO,
+        curIconAlt: "nexo-NEXO",
         curName: "Nexo (NEXO)",
         iconPaths: {
             sendPC: true,
@@ -65,8 +54,8 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
         id: "assets-table-item-polkadot",
         order: 51,
-        curIcon: polkadotDOT,
-        curAlt: "polkadot-DOT",
+        curIconPath: polkadotDOT,
+        curIconAlt: "polkadot-DOT",
         curName: "Polkadot (DOT)",
         iconPaths: {
             sendPC: true,
@@ -81,8 +70,8 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
         id: "assets-table-item-polygon",
         order: 52,
-        curIcon: polygonMATIC,
-        curAlt: "polygon-MATIC",
+        curIconPath: polygonMATIC,
+        curIconAlt: "polygon-MATIC",
         curName: "Polygon (MATIC)",
         iconPaths: {
             sendPC: true,
@@ -97,8 +86,8 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
         id: "assets-table-item-secret",
         order: 53,
-        curIcon: secretSCRT,
-        curAlt: "secret-SCRT",
+        curIconPath: secretSCRT,
+        curIconAlt: "secret-SCRT",
         curName: "Secret (SCRT)",
         iconPaths: {
             sendPC: true,
@@ -113,8 +102,8 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
         id: "assets-table-item-shiba-inu",
         order: 54,
-        curIcon: shibainuSHIB,
-        curAlt: "shiba-inu-SHIB",
+        curIconPath: shibainuSHIB,
+        curIconAlt: "shiba-inu-SHIB",
         curName: "Shiba Inu (SHIB)",
         iconPaths: {
             sendPC: true,
@@ -129,8 +118,8 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
         id: "assets-table-item-solana",
         order: 55,
-        curIcon: solanaSOL,
-        curAlt: "solana-SOL",
+        curIconPath: solanaSOL,
+        curIconAlt: "solana-SOL",
         curName: "Solana (SOL)",
         iconPaths: {
             sendPC: true,
@@ -145,8 +134,8 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
         id: "assets-table-item-stacks",
         order: 56,
-        curIcon: stacksSTX,
-        curAlt: "stacks-STX",
+        curIconPath: stacksSTX,
+        curIconAlt: "stacks-STX",
         curName: "Stacks (STX)",
         iconPaths: {
             sendPC: true,
@@ -161,8 +150,8 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
         id: "assets-table-item-stellar",
         order: 57,
-        curIcon: stellarXLM,
-        curAlt: "stellar-XLM",
+        curIconPath: stellarXLM,
+        curIconAlt: "stellar-XLM",
         curName: "Stellar (XLM)",
         iconPaths: {
             sendPC: true,

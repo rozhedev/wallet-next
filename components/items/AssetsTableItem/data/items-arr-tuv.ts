@@ -20,8 +20,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-terra",
         order: 58,
-        curIcon: terraLUNA,
-        curAlt: "terra-LUNA",
+        curIconPath: terraLUNA,
+        curIconAlt: "terra-LUNA",
         curName: "Terra (LUNA)",
         iconPaths: {
             sendPC: true,
@@ -36,8 +36,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-tether",
         order: 59,
-        curIcon: tetherUSDT,
-        curAlt: "tether-USDT",
+        curIconPath: tetherUSDT,
+        curIconAlt: "tether-USDT",
         curName: "Tether (USDT)",
         iconPaths: {
             sendPC: true,
@@ -52,8 +52,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-tezos",
         order: 60,
-        curIcon: tezosXTZ,
-        curAlt: "tezos-XTZ",
+        curIconPath: tezosXTZ,
+        curIconAlt: "tezos-XTZ",
         curName: "Tezos (XTZ)",
         iconPaths: {
             sendPC: true,
@@ -68,8 +68,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-the-graph",
         order: 61,
-        curIcon: theGraphGRT,
-        curAlt: "the-graph-GRT",
+        curIconPath: theGraphGRT,
+        curIconAlt: "the-graph-GRT",
         curName: "The Graph (GRT)",
         iconPaths: {
             sendPC: true,
@@ -84,8 +84,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-the-sandbox",
         order: 62,
-        curIcon: sandboxSAND,
-        curAlt: "the-sandbox-SAND",
+        curIconPath: sandboxSAND,
+        curIconAlt: "the-sandbox-SAND",
         curName: "The Sandbox (SAND)",
         iconPaths: {
             sendPC: true,
@@ -100,8 +100,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-theta-network",
         order: 63,
-        curIcon: thetaTHETA,
-        curAlt: "theta-network-THETA",
+        curIconPath: thetaTHETA,
+        curIconAlt: "theta-network-THETA",
         curName: "Theta Network (THETA)",
         iconPaths: {
             sendPC: true,
@@ -116,8 +116,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-thor-chain",
         order: 64,
-        curIcon: thorChainRUNE,
-        curAlt: "thor-chain-RUNE",
+        curIconPath: thorChainRUNE,
+        curIconAlt: "thor-chain-RUNE",
         curName: "THORChain (RUNE)",
         iconPaths: {
             sendPC: true,
@@ -132,8 +132,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-tron",
         order: 65,
-        curIcon: tronTRX,
-        curAlt: "tron-TRX",
+        curIconPath: tronTRX,
+        curIconAlt: "tron-TRX",
         curName: "Tron (TRX)",
         iconPaths: {
             sendPC: true,
@@ -148,8 +148,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-uma",
         order: 66,
-        curIcon: umaUMA,
-        curAlt: "uma-UMA",
+        curIconPath: umaUMA,
+        curIconAlt: "uma-UMA",
         curName: "UMA (UMA)",
         iconPaths: {
             sendPC: true,
@@ -164,8 +164,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-uniswap",
         order: 67,
-        curIcon: uniswapUNI,
-        curAlt: "uniswap-UNI",
+        curIconPath: uniswapUNI,
+        curIconAlt: "uniswap-UNI",
         curName: "Uniswap (UNI)",
         iconPaths: {
             sendPC: true,
@@ -180,8 +180,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-unus-sed-leo",
         order: 68,
-        curIcon: unusSedLeoLEO,
-        curAlt: "unus-sed-leo-LEO",
+        curIconPath: unusSedLeoLEO,
+        curIconAlt: "unus-sed-leo-LEO",
         curName: "UNUS SED LEO (LEO)",
         iconPaths: {
             sendPC: true,
@@ -196,8 +196,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-usd-coin",
         order: 69,
-        curIcon: usdCoinUSDC,
-        curAlt: "usd-coin-USDC",
+        curIconPath: usdCoinUSDC,
+        curIconAlt: "usd-coin-USDC",
         curName: "USD Coin (USDC)",
         iconPaths: {
             sendPC: true,
@@ -212,8 +212,8 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-ve-chain",
         order: 70,
-        curIcon: veChainVET,
-        curAlt: "ve-chain-VET",
+        curIconPath: veChainVET,
+        curIconAlt: "ve-chain-VET",
         curName: "Ve Chain (VET)",
         iconPaths: {
             sendPC: true,

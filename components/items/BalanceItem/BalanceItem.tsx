@@ -11,7 +11,7 @@ import type { TAllCurNotesScope } from "@/types/data/currencies";
 import { balanceItemIcons } from "./data";
 import { assetsCabModalData } from "@/data/modals/data";
 
-export const BalanceItem: FC<TBalanceItem<TStoreAssetsItem<TAllCurNotesScope>>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, isAssetsCab }) => {
+export const BalanceItem: FC<TBalanceItem<TStoreAssetsItem<TAllCurNotesScope>>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, walletAddress, isAssetsCab }) => {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
     return (
@@ -71,7 +71,7 @@ export const BalanceItem: FC<TBalanceItem<TStoreAssetsItem<TAllCurNotesScope>>> 
                                                 className="copy-btn navlink"
                                                 beforeClickLabel="Copy address"
                                                 afterClickLabel="Address copied"
-                                                value={"address"}
+                                                value={walletAddress}
                                             />
                                         </li>
                                     </Dropdown.Menu>
@@ -93,9 +93,8 @@ export const BalanceItem: FC<TBalanceItem<TStoreAssetsItem<TAllCurNotesScope>>> 
                         <Modal.Content className="modal-dialog__body">{assetsCabModalData.send.content}</Modal.Content>
                         <Modal.Footer className="modal-footer btn-group">
                             <Btn
-                                type="button"
+                                type="submit"
                                 className="btn btn-fill-sm"
-                                onClick={() => setIsOpenModal(false)}
                             >
                                 <span>Send</span>
                             </Btn>

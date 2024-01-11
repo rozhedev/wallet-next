@@ -1,11 +1,14 @@
 "use client";
 
+// * Libs - Types - Hooks - UI - Component - Modules - Data
 import React from "react";
+
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import VariantsList from "@/components/VariantsList";
-import SectionLayout from "@/modules/layout/SectionLayout";
-import { settingsToggleList } from "@/data/cabinet/settings";
 import SetChangeForm from "@/components/SetChangeForm";
+import SectionLayout from "@/modules/layout/SectionLayout";
+
+import { settingsToggleList } from "@/data/cabinet/settings";
 
 export default function Settings() {
     return (

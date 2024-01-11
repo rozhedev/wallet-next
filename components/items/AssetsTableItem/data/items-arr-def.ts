@@ -20,8 +20,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-dai",
         order: 21,
-        curIcon: daiDAI,
-        curAlt: "dai-DAI",
+        curIconPath: daiDAI,
+        curIconAlt: "dai-DAI",
         curName: "Dai (DAI)",
         iconPaths: {
             sendPC: true,
@@ -36,8 +36,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-dash",
         order: 22,
-        curIcon: dashDASH,
-        curAlt: "dash-DASH",
+        curIconPath: dashDASH,
+        curIconAlt: "dash-DASH",
         curName: "Dash (DASH)",
         iconPaths: {
             sendPC: true,
@@ -52,8 +52,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-decentraland",
         order: 23,
-        curIcon: decentralandMANA,
-        curAlt: "decentraland-MANA",
+        curIconPath: decentralandMANA,
+        curIconAlt: "decentraland-MANA",
         curName: "Decentraland (MANA)",
         iconPaths: {
             sendPC: true,
@@ -68,8 +68,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-dogecoin",
         order: 24,
-        curIcon: dogecoinDOGE,
-        curAlt: "dogecoin-DOGE",
+        curIconPath: dogecoinDOGE,
+        curIconAlt: "dogecoin-DOGE",
         curName: "Dogecoin (DOGE)",
         iconPaths: {
             sendPC: true,
@@ -84,8 +84,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-elrond",
         order: 25,
-        curIcon: elrondEGLD,
-        curAlt: "elrond-EGLD",
+        curIconPath: elrondEGLD,
+        curIconAlt: "elrond-EGLD",
         curName: "Elrond (EGLD)",
         iconPaths: {
             sendPC: true,
@@ -100,8 +100,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-enjin-coin",
         order: 26,
-        curIcon: enjinCoinENJ,
-        curAlt: "enjin-coin-ENJ",
+        curIconPath: enjinCoinENJ,
+        curIconAlt: "enjin-coin-ENJ",
         curName: "Enjin Coin (ENJ)",
         iconPaths: {
             sendPC: true,
@@ -116,8 +116,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-eos",
         order: 27,
-        curIcon: eosEOS,
-        curAlt: "eos-EOS",
+        curIconPath: eosEOS,
+        curIconAlt: "eos-EOS",
         curName: "EOS (EOS)",
         iconPaths: {
             sendPC: true,
@@ -132,8 +132,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-ethereum",
         order: 28,
-        curIcon: ethereumETH,
-        curAlt: "ethereum-ETH",
+        curIconPath: ethereumETH,
+        curIconAlt: "ethereum-ETH",
         curName: "Ethereum (ETH)",
         iconPaths: {
             sendPC: true,
@@ -148,8 +148,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-ethereum-classic",
         order: 29,
-        curIcon: ethereumClassicETC,
-        curAlt: "ethereum-classic-ETC",
+        curIconPath: ethereumClassicETC,
+        curIconAlt: "ethereum-classic-ETC",
         curName: "Ethereum Classic (ETC)",
         iconPaths: {
             sendPC: true,
@@ -164,8 +164,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-fantom",
         order: 30,
-        curIcon: fantomFTM,
-        curAlt: "fantom-FTM",
+        curIconPath: fantomFTM,
+        curIconAlt: "fantom-FTM",
         curName: "Fantom (FTM)",
         iconPaths: {
             sendPC: true,
@@ -180,8 +180,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-filecoin",
         order: 31,
-        curIcon: filecoinFIL,
-        curAlt: "filecoin-FIL",
+        curIconPath: filecoinFIL,
+        curIconAlt: "filecoin-FIL",
         curName: "Filecoin (FIL)",
         iconPaths: {
             sendPC: true,
@@ -196,8 +196,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-flow",
         order: 32,
-        curIcon: flowFLOW,
-        curAlt: "flow-FLOW",
+        curIconPath: flowFLOW,
+        curIconAlt: "flow-FLOW",
         curName: "Flow (FLOW)",
         iconPaths: {
             sendPC: true,
@@ -212,8 +212,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-ftx-token",
         order: 33,
-        curIcon: ftxTokenFTT,
-        curAlt: "ftx-token-FTT",
+        curIconPath: ftxTokenFTT,
+        curIconAlt: "ftx-token-FTT",
         curName: "FTX Token (FTT)",
         iconPaths: {
             sendPC: true,

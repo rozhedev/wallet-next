@@ -1,5 +1,6 @@
 "use client";
 
+// * Libs - Types - Hooks - UI - Component - Modules - Data
 import React from "react";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import LinkList from "@/components/LinkList";

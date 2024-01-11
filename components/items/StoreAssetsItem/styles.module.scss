@@ -4,6 +4,7 @@
     padding: 0.5rem;
     border: 2px solid $primary-lightgray-color;
     border-radius: $sm-border-radius;
+    font-family: inherit;
     transition: $transition;
 
     &__currency-img {

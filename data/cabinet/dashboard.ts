@@ -9,7 +9,7 @@ export const dashboardLinks: TLinkListItem<TRouteLabelScope>[] = [
     },
     {
         href: ROUTES.public.assets,
-        label: "Assets",
+        label: "Supported assets",
         className: "navlink",
     },
     {
@@ -23,13 +23,13 @@ export const dashboardLinks: TLinkListItem<TRouteLabelScope>[] = [
         className: "navlink dashboard-navlink",
     },
     {
-        href: ROUTES.public.privacyPolicy,
-        label: "Privacy Policy",
+        href: ROUTES.public.terms,
+        label: "Terms",
         className: "navlink dashboard-navlink",
     },
     {
-        href: ROUTES.public.terms,
-        label: "Terms",
+        href: ROUTES.public.privacyPolicy,
+        label: "Privacy Policy",
         className: "navlink dashboard-navlink",
     },
 ];

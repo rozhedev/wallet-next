@@ -87,6 +87,8 @@ export const balanceItemArr: TBalanceItemArr = [
         curName: "Bitcoin (BTC)",
         pureAmount: 0,
         usdAmount: 0,
+        walletAddress: "bc1-bitcoin",
+        isAdded: true,
     },
     {
         id: "balance-item-ethereum",
@@ -95,6 +97,8 @@ export const balanceItemArr: TBalanceItemArr = [
         curName: "Ethereum (ETH)",
         pureAmount: 0,
         usdAmount: 0,
+        walletAddress: "0x-ethereum",
+        isAdded: true,
     },
     {
         id: "balance-item-tether",
@@ -103,6 +107,8 @@ export const balanceItemArr: TBalanceItemArr = [
         curName: "Tether (USDT)",
         pureAmount: 0,
         usdAmount: 0,
+        walletAddress: "bc1-bitcoin",
+        isAdded: true,
     },
     {
         id: "balance-item-binance-coin",
@@ -111,6 +117,8 @@ export const balanceItemArr: TBalanceItemArr = [
         curName: "Binance Coin (BNB)",
         pureAmount: 0,
         usdAmount: 0,
+        walletAddress: "0x-ethereum",
+        isAdded: true,
     },
     {
         id: "balance-item-usd-coin",
@@ -119,6 +127,8 @@ export const balanceItemArr: TBalanceItemArr = [
         curName: "USD Coin (USDC)",
         pureAmount: 0,
         usdAmount: 0,
+        walletAddress: "bc1-bitcoin",
+        isAdded: true,
     },
     {
         id: "balance-item-xrp",
@@ -127,6 +137,8 @@ export const balanceItemArr: TBalanceItemArr = [
         curName: "XRP (XRP)",
         pureAmount: 0,
         usdAmount: 0,
+        walletAddress: "0x-ethereum",
+        isAdded: true,
     },
     {
         id: "balance-item-terra",
@@ -135,6 +147,8 @@ export const balanceItemArr: TBalanceItemArr = [
         curName: "Terra (LUNA)",
         pureAmount: 0,
         usdAmount: 0,
+        walletAddress: "bc1-bitcoin",
+        isAdded: true,
     },
     {
         id: "balance-item-cardano",
@@ -143,6 +157,8 @@ export const balanceItemArr: TBalanceItemArr = [
         curName: "Cardano (ADA)",
         pureAmount: 0,
         usdAmount: 0,
+        walletAddress: "0x-ethereum",
+        isAdded: true,
     },
     {
         id: "balance-item-solana",
@@ -151,6 +167,8 @@ export const balanceItemArr: TBalanceItemArr = [
         curName: "Solana (SOL)",
         pureAmount: 0,
         usdAmount: 0,
+        walletAddress: "bc1-bitcoin",
+        isAdded: true,
     },
     {
         id: "balance-item-polkadot",
@@ -159,5 +177,7 @@ export const balanceItemArr: TBalanceItemArr = [
         curName: "Polkadot (DOT)",
         pureAmount: 0,
         usdAmount: 0,
+        walletAddress: "0x-ethereum",
+        isAdded: true,
     },
 ];

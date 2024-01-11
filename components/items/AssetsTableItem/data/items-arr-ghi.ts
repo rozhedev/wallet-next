@@ -1,21 +1,13 @@
 import type { TAssetsTableItemArr } from "../types";
-import {
-    galaGALA,
-    harmonyONE,
-    hederaHBAR,
-    heliumHNT,
-    holoHOT,
-    internetComputerICP,
-    iotaMIOTA,
-} from "@/data/pages/currencies-icons";
+import { galaGALA, harmonyONE, hederaHBAR, heliumHNT, holoHOT, internetComputerICP, iotaMIOTA } from "@/data/pages/currencies-icons";
 
 // * Data
 export const assetTableItemArrGHI: TAssetsTableItemArr = [
     {
         id: "assets-table-item-gala",
         order: 34,
-        curIcon: galaGALA,
-        curAlt: "gala-GALA",
+        curIconPath: galaGALA,
+        curIconAlt: "gala-GALA",
         curName: "Gala (GALA)",
         iconPaths: {
             sendPC: true,
@@ -30,8 +22,8 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
     {
         id: "assets-table-item-harmony",
         order: 35,
-        curIcon: harmonyONE,
-        curAlt: "harmony-ONE",
+        curIconPath: harmonyONE,
+        curIconAlt: "harmony-ONE",
         curName: "Harmony (ONE)",
         iconPaths: {
             sendPC: true,
@@ -46,8 +38,8 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
     {
         id: "assets-table-item-hedera",
         order: 36,
-        curIcon: hederaHBAR,
-        curAlt: "hedera-HBAR",
+        curIconPath: hederaHBAR,
+        curIconAlt: "hedera-HBAR",
         curName: "Hedera (HBAR)",
         iconPaths: {
             sendPC: true,
@@ -62,8 +54,8 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
     {
         id: "assets-table-item-helium",
         order: 37,
-        curIcon: heliumHNT,
-        curAlt: "helium-HNT",
+        curIconPath: heliumHNT,
+        curIconAlt: "helium-HNT",
         curName: "Helium (HNT)",
         iconPaths: {
             sendPC: true,
@@ -78,8 +70,8 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
     {
         id: "assets-table-item-holo",
         order: 38,
-        curIcon: holoHOT,
-        curAlt: "holo-HOT",
+        curIconPath: holoHOT,
+        curIconAlt: "holo-HOT",
         curName: "Holo (HOT)",
         iconPaths: {
             sendPC: true,
@@ -94,8 +86,8 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
     {
         id: "assets-table-item-internet-computer",
         order: 39,
-        curIcon: internetComputerICP,
-        curAlt: "internet-computer-ICP",
+        curIconPath: internetComputerICP,
+        curIconAlt: "internet-computer-ICP",
         curName: "Internet Computer (ICP)",
         iconPaths: {
             sendPC: true,
@@ -110,8 +102,8 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
     {
         id: "assets-table-item-iota",
         order: 40,
-        curIcon: iotaMIOTA,
-        curAlt: "iota-MIOTA",
+        curIconPath: iotaMIOTA,
+        curIconAlt: "iota-MIOTA",
         curName: "IOTA (MIOTA)",
         iconPaths: {
             sendPC: true,

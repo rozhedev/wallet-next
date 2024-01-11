@@ -27,8 +27,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-aave",
         order: 1,
-        curIcon: aaveAAVE,
-        curAlt: "aave-AAVE",
+        curIconPath: aaveAAVE,
+        curIconAlt: "aave-AAVE",
         curName: "Aave (AAVE)",
         iconPaths: {
             sendPC: true,
@@ -43,8 +43,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-algorand",
         order: 2,
-        curIcon: algorandALGO,
-        curAlt: "algorand-ALGO",
+        curIconPath: algorandALGO,
+        curIconAlt: "algorand-ALGO",
         curName: "Algorand (ALGO)",
         iconPaths: {
             sendPC: true,
@@ -59,8 +59,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-amp",
         order: 3,
-        curIcon: ampAMP,
-        curAlt: "amp-AMP",
+        curIconPath: ampAMP,
+        curIconAlt: "amp-AMP",
         curName: "Amp (AMP)",
         iconPaths: {
             sendPC: true,
@@ -75,8 +75,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-anchor-protocol",
         order: 4,
-        curIcon: anchorProtocolANC,
-        curAlt: "anchor-protocol-ANC",
+        curIconPath: anchorProtocolANC,
+        curIconAlt: "anchor-protocol-ANC",
         curName: "Anchor Protocol (ANC)",
         iconPaths: {
             sendPC: true,
@@ -91,8 +91,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-avalanche",
         order: 5,
-        curIcon: avalancheAVAX,
-        curAlt: "avalanche-AVAX",
+        curIconPath: avalancheAVAX,
+        curIconAlt: "avalanche-AVAX",
         curName: "Avalanche (AVAX)",
         iconPaths: {
             sendPC: true,
@@ -107,8 +107,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-axie-infinity",
         order: 6,
-        curIcon: axieInfinityAXS,
-        curAlt: "axie-infinity-AXS",
+        curIconPath: axieInfinityAXS,
+        curIconAlt: "axie-infinity-AXS",
         curName: "Axie Infinity (AXS)",
         iconPaths: {
             sendPC: true,
@@ -123,8 +123,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-binance-coin",
         order: 7,
-        curIcon: binanceCoinBNB,
-        curAlt: "binance-coin-BNB",
+        curIconPath: binanceCoinBNB,
+        curIconAlt: "binance-coin-BNB",
         curName: "Binance Coin (BNB)",
         iconPaths: {
             sendPC: true,
@@ -139,8 +139,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-binance-coin",
         order: 8,
-        curIcon: binanceUsdBUSD,
-        curAlt: "binance-usd-BUSD",
+        curIconPath: binanceUsdBUSD,
+        curIconAlt: "binance-usd-BUSD",
         curName: "Binance USD (BUSD)",
         iconPaths: {
             sendPC: true,
@@ -155,8 +155,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-bitcoin",
         order: 9,
-        curIcon: bitcoinBTC,
-        curAlt: "bitcoin-BTC",
+        curIconPath: bitcoinBTC,
+        curIconAlt: "bitcoin-BTC",
         curName: "Bitcoin (BTC)",
         iconPaths: {
             sendPC: true,
@@ -171,8 +171,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-bitcoin-bep2",
         order: 10,
-        curIcon: bitcoinBep2BTCB,
-        curAlt: "bitcoin-bep2-BTCB",
+        curIconPath: bitcoinBep2BTCB,
+        curIconAlt: "bitcoin-bep2-BTCB",
         curName: "Bitcoin BEP2 (BTCB)",
         iconPaths: {
             sendPC: true,
@@ -187,8 +187,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-bitcoin-cash",
         order: 11,
-        curIcon: bitcoinCashBCH,
-        curAlt: "bitcoin-cash-BCH",
+        curIconPath: bitcoinCashBCH,
+        curIconAlt: "bitcoin-cash-BCH",
         curName: "Bitcoin Cash (BCH)",
         iconPaths: {
             sendPC: true,
@@ -203,8 +203,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-bitcoin-sv",
         order: 12,
-        curIcon: bitcoinSvBSV,
-        curAlt: "bitcoin-sv-BSV",
+        curIconPath: bitcoinSvBSV,
+        curIconAlt: "bitcoin-sv-BSV",
         curName: "Bitcoin SV (BSV)",
         iconPaths: {
             sendPC: true,
@@ -219,8 +219,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-bitTorrent",
         order: 13,
-        curIcon: bitTorrentBTT,
-        curAlt: "bit-torrent-BTT",
+        curIconPath: bitTorrentBTT,
+        curIconAlt: "bit-torrent-BTT",
         curName: "BitTorrent (BTT)",
         iconPaths: {
             sendPC: true,
@@ -235,8 +235,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-cardano",
         order: 14,
-        curIcon: cardanoADA,
-        curAlt: "cardano-ADA",
+        curIconPath: cardanoADA,
+        curIconAlt: "cardano-ADA",
         curName: "Cardano (ADA)",
         iconPaths: {
             sendPC: true,
@@ -251,8 +251,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-celo",
         order: 15,
-        curIcon: celoCELO,
-        curAlt: "celo-CELO",
+        curIconPath: celoCELO,
+        curIconAlt: "celo-CELO",
         curName: "Celo (CELO)",
         iconPaths: {
             sendPC: true,
@@ -267,8 +267,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-chainlink",
         order: 16,
-        curIcon: chainlinkLINK,
-        curAlt: "chainlink-LINK",
+        curIconPath: chainlinkLINK,
+        curIconAlt: "chainlink-LINK",
         curName: "Chainlink (LINK)",
         iconPaths: {
             sendPC: true,
@@ -283,8 +283,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-chiliz",
         order: 17,
-        curIcon: chilizCHZ,
-        curAlt: "chiliz-CHZ",
+        curIconPath: chilizCHZ,
+        curIconAlt: "chiliz-CHZ",
         curName: "Chiliz (CHZ)",
         iconPaths: {
             sendPC: true,
@@ -299,8 +299,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-compound",
         order: 18,
-        curIcon: compoundCOMP,
-        curAlt: "compound-COMP",
+        curIconPath: compoundCOMP,
+        curIconAlt: "compound-COMP",
         curName: "Compound (COMP)",
         iconPaths: {
             sendPC: true,
@@ -315,8 +315,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-cosmos",
         order: 19,
-        curIcon: cosmosATOM,
-        curAlt: "cosmos-ATOM",
+        curIconPath: cosmosATOM,
+        curIconAlt: "cosmos-ATOM",
         curName: "Cosmos (ATOM)",
         iconPaths: {
             sendPC: true,
@@ -331,8 +331,8 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
     {
         id: "assets-table-item-cronos",
         order: 20,
-        curIcon: cronosCRO,
-        curAlt: "cronos-CRO",
+        curIconPath: cronosCRO,
+        curIconAlt: "cronos-CRO",
         curName: "Cronos (CRO)",
         iconPaths: {
             sendPC: true,

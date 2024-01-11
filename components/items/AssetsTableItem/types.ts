@@ -20,9 +20,9 @@ export type TAssetsTableItem<TScope extends TAllCurNotesScope> = {
     id: `assets-table-item-${AllCurNames}`;
     // * Order is additional prop for correct work with backend
     order: number;
-    curIcon: TCurIconPath<TAllCurNotesScope>;
+    curIconPath: TCurIconPath<TAllCurNotesScope>;
+    curIconAlt: TScope;
     curName: TScope;
-    curAlt: TScope;
     iconPaths: TIconsConfigItemPure;
 };
 

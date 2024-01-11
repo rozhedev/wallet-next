@@ -1,22 +1,14 @@
 import type { TAssetsTableItemArr } from "../types";
-import {
-    kadenaKDA,
-    klaytnKLAY,
-    kuCoinTokenKCS,
-    kusamaKSM,
-    litecoinLTC,
-    makerMKR,
-    moneroXMR,
-} from "@/data/pages/currencies-icons";
+import { kadenaKDA, klaytnKLAY, kuCoinTokenKCS, kusamaKSM, litecoinLTC, makerMKR, moneroXMR } from "@/data/pages/currencies-icons";
 
 // * Data
 export const assetTableItemArrKLM: TAssetsTableItemArr = [
     {
         id: "assets-table-item-kadena",
         order: 41,
-        curIcon: kadenaKDA,
+        curIconPath: kadenaKDA,
         curName: "Kadena (KDA)",
-        curAlt: "ethereum-ETH",
+        curIconAlt: "ethereum-ETH",
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -30,8 +22,8 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
     {
         id: "assets-table-item-klaytn",
         order: 42,
-        curIcon: klaytnKLAY,
-        curAlt: "klaytn-KLAY",
+        curIconPath: klaytnKLAY,
+        curIconAlt: "klaytn-KLAY",
         curName: "Klaytn (KLAY)",
         iconPaths: {
             sendPC: true,
@@ -46,8 +38,8 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
     {
         id: "assets-table-item-ku-coin-token",
         order: 43,
-        curIcon: kuCoinTokenKCS,
-        curAlt: "ku-coin-token-KCS",
+        curIconPath: kuCoinTokenKCS,
+        curIconAlt: "ku-coin-token-KCS",
         curName: "KuCoin Token (KCS)",
         iconPaths: {
             sendPC: true,
@@ -62,8 +54,8 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
     {
         id: "assets-table-item-kusama",
         order: 44,
-        curIcon: kusamaKSM,
-        curAlt: "kusama-KSM",
+        curIconPath: kusamaKSM,
+        curIconAlt: "kusama-KSM",
         curName: "Kusama (KSM)",
         iconPaths: {
             sendPC: true,
@@ -78,8 +70,8 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
     {
         id: "assets-table-item-litecoin",
         order: 45,
-        curIcon: litecoinLTC,
-        curAlt: "litecoin-LTC",
+        curIconPath: litecoinLTC,
+        curIconAlt: "litecoin-LTC",
         curName: "Litecoin (LTC)",
         iconPaths: {
             sendPC: true,
@@ -94,8 +86,8 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
     {
         id: "assets-table-item-maker",
         order: 46,
-        curIcon: makerMKR,
-        curAlt: "maker-MKR",
+        curIconPath: makerMKR,
+        curIconAlt: "maker-MKR",
         curName: "Maker (MKR)",
         iconPaths: {
             sendPC: true,
@@ -110,8 +102,8 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
     {
         id: "assets-table-item-monero",
         order: 47,
-        curIcon: moneroXMR,
-        curAlt: "monero-XMR",
+        curIconPath: moneroXMR,
+        curIconAlt: "monero-XMR",
         curName: "Monero (XMR)",
         iconPaths: {
             sendPC: true,
