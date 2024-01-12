@@ -25,6 +25,10 @@
     }
 }
 
+.textarea {
+    resize: none;
+}
+
 .radio__input,
 .checkbox__input {
     -webkit-appearance: none;

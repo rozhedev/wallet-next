@@ -22,6 +22,7 @@ import { testToggleBtnList } from "@/data/test/toggleBtnVariants";
 import { testSelectData, testSelectLang } from "@/data/test/selectData";
 import { testLinksData } from "@/data/test/linksData";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
+import Textarea from "@/ui/Textarea/Textarea";
 
 export default function Home() {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
@@ -280,6 +281,17 @@ export default function Home() {
                         className="inp"
                         disabled={true}
                         placeholder="Enter text"
+                    />
+                </StyledWrapper>
+                <br />
+                <br />
+                <StyledWrapper className="form-controller">
+                    <Textarea
+                        id="test-textarea1"
+                        label="Textarea"
+                        rows={2}
+                        className="textarea inp"
+                        placeholder="Enter in textarea"
                     />
                 </StyledWrapper>
                 <br />
