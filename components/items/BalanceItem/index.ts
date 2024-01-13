@@ -1,3 +1,3 @@
 export { BalanceItem as default } from "./BalanceItem";
-export type { TBalanceItem } from "./types";
-export { balanceItemArr } from "./data/concat-data";
+export type { TBalanceItem, TBalanceItemArr } from "./types";
+export { balanceItems } from "./data/concat-data";

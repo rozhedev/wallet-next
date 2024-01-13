@@ -7,4 +7,4 @@ import { balanceItemArrNPS } from "./items-arr-nps";
 import { balanceItemArrTUV } from "./items-arr-tuv";
 import { balanceItemArrWXZ } from "./items-arr-wxz";
 
-export const balanceItemArr: TBalanceItemArr = balanceItemArrABC.concat(balanceItemArrDEF, balanceItemArrGHI, balanceItemArrKLM, balanceItemArrNPS, balanceItemArrTUV, balanceItemArrWXZ);
+export const balanceItems: TBalanceItemArr = balanceItemArrABC.concat(balanceItemArrDEF, balanceItemArrGHI, balanceItemArrKLM, balanceItemArrNPS, balanceItemArrTUV, balanceItemArrWXZ);

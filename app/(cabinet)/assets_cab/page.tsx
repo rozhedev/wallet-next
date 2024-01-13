@@ -1,15 +1,36 @@
 "use client";
 
 // * Libs - Types - Hooks - UI - Component - Modules - Data
-import React from "react";
+import React, { useState } from "react";
 import type { TAllCurNotesScope } from "@/types/data/currencies";
 
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import Inp from "@/ui/Inp/Inp";
-import BalanceItem, { type TBalanceItem, balanceItemArr } from "@/components/items/BalanceItem";
+import BalanceItem, { type TBalanceItem, type TBalanceItemArr, balanceItems } from "@/components/items/BalanceItem";
 import SectionLayout from "@/modules/layout/SectionLayout";
 
 export default function AssetsCab() {
+    const [balanceItemArr, setBalanceItemArr] = useState<TBalanceItemArr>(balanceItems);
+
+    const toggleItemHandler = (item: TBalanceItem<TAllCurNotesScope>, id: any) => {
+        if (item.id === id) {
+            const temp = balanceItemArr.filter((item) => item.id !== id);
+            setBalanceItemArr([
+                ...temp,
+                {
+                    id: item.id,
+                    curIconPath: item.curIconPath,
+                    curIconAlt: item.curIconAlt,
+                    curName: item.curName,
+                    walletAddress: item.walletAddress,
+                    pureAmount: item.pureAmount,
+                    usdAmount: item.usdAmount,
+                    isAdded: !item.isAdded,
+                },
+            ]);
+        }
+    };
+
     return (
         <SectionLayout id="page-cab assets-cab">
             <div className="inner">
@@ -33,6 +54,7 @@ export default function AssetsCab() {
                                         walletAddress={item.walletAddress}
                                         isAdded={item.isAdded}
                                         isAssetsCab={true}
+                                        toggleItemHandler={() => toggleItemHandler(item, item.id)}
                                     />
                                 );
                         })}
@@ -67,6 +89,7 @@ export default function AssetsCab() {
                                         walletAddress={item.walletAddress}
                                         isAdded={item.isAdded}
                                         isAssetsCab={true}
+                                        toggleItemHandler={() => toggleItemHandler(item, item.id)}
                                     />
                                 );
                         })}

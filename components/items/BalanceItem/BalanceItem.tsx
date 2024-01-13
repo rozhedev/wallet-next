@@ -10,7 +10,7 @@ import type { TAllCurNotesScope } from "@/types/data/currencies";
 import { balanceItemIcons } from "./data/icons";
 import { assetsCabModalData } from "@/data/modals/data";
 
-export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, walletAddress, isAdded, isAssetsCab }) => {
+export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, walletAddress, isAdded, isAssetsCab, toggleItemHandler }) => {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
     return (
@@ -62,7 +62,8 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                             </Dropdown.Btn>
                                             <Dropdown.Menu>
                                                 <li>
-                                                    <span className="navlink">
+                                                    <span className="navlink"
+                                                    onClick={toggleItemHandler}>
                                                         {balanceItemIcons.remove}
                                                         <span>Remove</span>
                                                     </span>
@@ -116,7 +117,7 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                         alt={curIconAlt}
                     />
                     <span className="store-asset-item__label navlink">{curName}</span>
-                    <span className="custom-plus-icon"></span>
+                    <span className="custom-plus-icon" onClick={toggleItemHandler}></span>
                 </Btn>
             )}
         </>

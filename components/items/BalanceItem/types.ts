@@ -12,6 +12,7 @@ export type TBalanceItem<TCurScope extends TAllCurNotesScope> = {
     usdAmount: number;
     isAdded: boolean;
     isAssetsCab?: boolean;
+    toggleItemHandler?: () => void;
 };
 
 export type TBalanceItemArr = TBalanceItem<TAllCurNotesScope>[];
