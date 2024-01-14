@@ -1,17 +1,17 @@
-import { ExtractValFromObj } from "@/types/utils/utils";
+import { RequiredPick } from "@/types/utils/utils";
 import { TModalProps } from "@/ui/Modal/index";
 import { MODAL_ICONS, TModalIcons } from "./title-icons";
 
 type TModalData = {
-    id: ExtractValFromObj<TModalProps, "modalId">;
-    modalDialogClassName: ExtractValFromObj<TModalProps, "modalDialogClassName">;
+    id: RequiredPick<TModalProps, "modalId">;
+    modalDialogClassName: RequiredPick<TModalProps, "modalDialogClassName">;
     titleIcon:
-        | ExtractValFromObj<TModalIcons, "success">
-        | ExtractValFromObj<TModalIcons, "error">
-        | ExtractValFromObj<TModalIcons, "walletConnect">
-        | ExtractValFromObj<TModalIcons, "get">
-        | ExtractValFromObj<TModalIcons, "send">
-        | ExtractValFromObj<TModalIcons, "survey">;
+        | RequiredPick<TModalIcons, "success">
+        | RequiredPick<TModalIcons, "error">
+        | RequiredPick<TModalIcons, "walletConnect">
+        | RequiredPick<TModalIcons, "get">
+        | RequiredPick<TModalIcons, "send">
+        | RequiredPick<TModalIcons, "survey">;
     title: string;
     content: React.ReactNode | string | string[];
 };

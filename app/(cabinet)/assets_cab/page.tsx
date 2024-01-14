@@ -1,8 +1,9 @@
 "use client";
 
 // * Libs - Types - Hooks - UI - Component - Modules - Data
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import type { TAllCurNotesScope } from "@/types/data/currencies";
+import { RequiredPick } from "@/types/utils/utils";
 
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import Inp from "@/ui/Inp/Inp";
@@ -11,25 +12,30 @@ import SectionLayout from "@/modules/layout/SectionLayout";
 
 export default function AssetsCab() {
     const [balanceItemArr, setBalanceItemArr] = useState<TBalanceItemArr>(balanceItems);
+    const [searchQuery, setSearchQuery] = useState<string>("");
 
-    const toggleItemHandler = (item: TBalanceItem<TAllCurNotesScope>, id: any) => {
-        if (item.id === id) {
-            const temp = balanceItemArr.filter((item) => item.id !== id);
-            setBalanceItemArr([
-                ...temp,
-                {
-                    id: item.id,
-                    curIconPath: item.curIconPath,
-                    curIconAlt: item.curIconAlt,
-                    curName: item.curName,
-                    walletAddress: item.walletAddress,
-                    pureAmount: item.pureAmount,
-                    usdAmount: item.usdAmount,
-                    isAdded: !item.isAdded,
-                },
-            ]);
-        }
+    const toggleItemHandler = (item: TBalanceItem<TAllCurNotesScope>, id: RequiredPick<TBalanceItem<TAllCurNotesScope>, "id">) => {
+        const temp = balanceItemArr.filter((item) => item.id !== id);
+        setBalanceItemArr([
+            ...temp,
+            {
+                id: item.id,
+                curIconPath: item.curIconPath,
+                curIconAlt: item.curIconAlt,
+                curName: item.curName,
+                walletAddress: item.walletAddress,
+                pureAmount: item.pureAmount,
+                usdAmount: item.usdAmount,
+                isAdded: !item.isAdded,
+            },
+        ]);
     };
+
+    const searchedItems = useMemo(() => {
+        return balanceItemArr.filter((item: TBalanceItem<TAllCurNotesScope>) => {
+            return item.curName.toLowerCase().includes(searchQuery.toLowerCase());
+        });
+    }, [balanceItemArr, searchQuery]);
 
     return (
         <SectionLayout id="page-cab assets-cab">
@@ -40,7 +46,7 @@ export default function AssetsCab() {
                         <h4 className="h4">Added assets</h4>
                     </div>
                     <div className="added-assets">
-                        {balanceItemArr.map((item: TBalanceItem<TAllCurNotesScope>) => {
+                        {searchedItems.map((item: TBalanceItem<TAllCurNotesScope>) => {
                             if (item.isAdded)
                                 return (
                                     <BalanceItem
@@ -66,16 +72,19 @@ export default function AssetsCab() {
                     <div className="modal-header">
                         <h4 className="h4">Supported assets</h4>
                         <Inp
-                            type="text"
+                            type="search"
                             name="assets-cab-search"
                             title="assets-cab-search"
                             id="assets-cab-search"
                             className="inp"
                             placeholder="🔎 Search"
+                            maxLength={20}
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
                         />
                     </div>
                     <div className="assets-cab-store__content">
-                        {balanceItemArr.map((item: TBalanceItem<TAllCurNotesScope>) => {
+                        {searchedItems.map((item: TBalanceItem<TAllCurNotesScope>) => {
                             if (!item.isAdded)
                                 return (
                                     <BalanceItem
