@@ -14,6 +14,7 @@ export default function AssetsCab() {
     const [balanceItemArr, setBalanceItemArr] = useState<TBalanceItemArr>(balanceItems);
     const [searchQuery, setSearchQuery] = useState<string>("");
 
+    // * Handlers
     const toggleItemHandler = (item: TBalanceItem<TAllCurNotesScope>, id: RequiredPick<TBalanceItem<TAllCurNotesScope>, "id">) => {
         const temp = balanceItemArr.filter((item) => item.id !== id);
         setBalanceItemArr([
@@ -46,7 +47,9 @@ export default function AssetsCab() {
                         <h4 className="h4">Added assets</h4>
                     </div>
                     <div className="added-assets">
-                        {searchedItems.map((item: TBalanceItem<TAllCurNotesScope>) => {
+                        {/* //* Use balanceItemArr instead searchItems, for prevent array filtration in Added assets card */}
+
+                        {balanceItemArr.map((item: TBalanceItem<TAllCurNotesScope>) => {
                             if (item.isAdded)
                                 return (
                                     <BalanceItem
