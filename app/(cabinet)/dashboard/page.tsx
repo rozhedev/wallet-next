@@ -6,8 +6,9 @@ import React from "react";
 import type { TAllCurNotesScope } from "@/types/data/currencies";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import BalanceItem, { type TBalanceItem, balanceItems } from "@/components/items/BalanceItem";
-
+import DashboardStatItem, { type TDashboardStatItem, dashboardStatItemArr } from "@/components/items/DashboardStatItem";
 import LinkList from "@/components/LinkList";
+
 import SectionLayout from "@/modules/layout/SectionLayout";
 import { dashboardLinks } from "@/data/cabinet/dashboard";
 
@@ -33,7 +34,7 @@ export default function Dashboard() {
                         <h4 className="h4">Assets preview</h4>
                     </div>
                     {/* Not sync with assets */}
-                    {/* {balanceItems.map((item: TBalanceItem<TAllCurNotesScope>) => {
+                    {balanceItems.map((item: TBalanceItem<TAllCurNotesScope>) => {
                         if (item.isAdded)
                             return (
                                 <BalanceItem
@@ -45,15 +46,27 @@ export default function Dashboard() {
                                     pureAmount={item.pureAmount}
                                     usdAmount={item.usdAmount}
                                     walletAddress={item.walletAddress}
+                                    qrCodeImg={item.qrCodeImg}
                                     isAdded={item.isAdded}
                                     isAssetsCab={false}
                                 />
                             );
-                    })} */}
+                    })}
                 </StyledWrapper>
 
                 {/* STAT */}
-                <StyledWrapper className="cabinet-card dashboard-stat">STAT</StyledWrapper>
+                <StyledWrapper className="cabinet-card dashboard-stat">
+                    {dashboardStatItemArr.map((item: TDashboardStatItem) => (
+                        <DashboardStatItem
+                            key={item.id}
+                            id={item.id}
+                            svgIcon={item.svgIcon}
+                            title={item.title}
+                            idOutput={item.idOutput}
+                            value={item.value}
+                        />
+                    ))}
+                </StyledWrapper>
 
                 {/* * SHORT LOGS */}
                 <StyledWrapper className="cabinet-card dashboard-log">SHORT LOGS</StyledWrapper>

@@ -1,0 +1,32 @@
+.dashboard-stat-item {
+    display: flex;
+    width: fit-content;
+    color: $dark-color;
+    &__icon {
+        @include centering;
+    }
+    &__icon svg {
+        @include icon-size(map-get($icon-size, xl), 0);
+        stroke: $dark-color;
+        stroke-width: calc(map-get($map: $stroke-width, $key: xs) / 2);
+        @include bp(xl) {
+            @include icon-size(map-get($icon-size, lg), 0);
+        }
+    }
+    &__content {
+        margin-left: 0.5rem;
+    }
+    &__title {
+        font-size: 1.25rem;
+        @include bp(xl) {
+            font-size: 1rem;
+        }
+    }
+    .output {
+        font-size: 1.625rem;
+        @include bp(xl) {
+            font-size: 1.33rem;
+        }
+    }
+
+}
