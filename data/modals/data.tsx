@@ -1,6 +1,7 @@
 import { RequiredPick } from "@/types/utils/utils";
-import { TModalProps } from "@/ui/Modal/index";
-import { MODAL_ICONS, TModalIcons } from "./title-icons";
+import { MODAL_ICONS, type TModalIcons } from "./title-icons";
+
+import type { TModalProps } from "@/ui/Modal/index";
 
 type TModalData = {
     id: RequiredPick<TModalProps, "modalId">;
@@ -49,21 +50,17 @@ export const settingsModalData: TModalData = {
     content: <p>Your data change request has been sent. The changes will be displayed within 15 minutes</p>,
 };
 
-type TAssetsCabModalData = Record<"send" | "get", TModalData>;
+type TAssetsCabModalData = Record<"send" | "get", Omit<TModalData, "id" | "content">>;
 export const assetsCabModalData: TAssetsCabModalData = {
     send: {
-        id: "modal-send",
         modalDialogClassName: "modal-dialog modal-dialog--info modal-dialog--send",
         titleIcon: MODAL_ICONS.send,
         title: "Send cryptocurrency",
-        content: <p>Send cryptocurrency modal</p>,
     },
     get: {
-        id: "modal-get",
         modalDialogClassName: "modal-dialog modal-dialog--info modal-dialog--get",
         titleIcon: MODAL_ICONS.get,
         title: "Get cryptocurrency",
-        content: <p>Get cryptocurrency modal</p>,
     },
 };
 

@@ -3,9 +3,9 @@
 // * Libs - Types - Hooks - UI - Component - Modules - Data
 import React from "react";
 
+import type { TAllCurNotesScope } from "@/types/data/currencies";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import BalanceItem, { type TBalanceItem, balanceItems } from "@/components/items/BalanceItem";
-import type { TAllCurNotesScope } from "@/types/data/currencies";
 
 import LinkList from "@/components/LinkList";
 import SectionLayout from "@/modules/layout/SectionLayout";
@@ -33,7 +33,7 @@ export default function Dashboard() {
                         <h4 className="h4">Assets preview</h4>
                     </div>
                     {/* Not sync with assets */}
-                    {balanceItems.map((item: TBalanceItem<TAllCurNotesScope>) => {
+                    {/* {balanceItems.map((item: TBalanceItem<TAllCurNotesScope>) => {
                         if (item.isAdded)
                             return (
                                 <BalanceItem
@@ -49,7 +49,7 @@ export default function Dashboard() {
                                     isAssetsCab={false}
                                 />
                             );
-                    })}
+                    })} */}
                 </StyledWrapper>
 
                 {/* STAT */}

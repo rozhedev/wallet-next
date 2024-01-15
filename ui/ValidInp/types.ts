@@ -1,6 +1,6 @@
 import { InputHTMLAttributes } from "react";
-import { Path, UseFormRegister } from "react-hook-form";
-import { TRegisterForm } from "@/types/data/forms";
+// import { Path, UseFormRegister } from "react-hook-form";
+// import { TRegisterForm } from "@/types/data/forms";
 
 export type TValidInpProps = InputHTMLAttributes<HTMLInputElement> & {
     readonly key?: string | number;
@@ -9,9 +9,14 @@ export type TValidInpProps = InputHTMLAttributes<HTMLInputElement> & {
     // id: Path<TRegisterForm> | `confirm-inp.${number}.value`;
     // * ^ this type is not assignable to computed union type from TRegisterForm
 
-    id: Path<TRegisterForm> | `confirm-inp.${number}.value`;
+    // * Analogously with register
+    // register: UseFormRegister<TRegisterForm> | `confirm-inp.${number}.value`;
+    // * insted set ↓
+    // register: any 
+
+    id: any;
     label?: string;
-    register: UseFormRegister<TRegisterForm>;
+    register: any;
     required: boolean;
     regex: RegExp;
     regexErrMessage: string;

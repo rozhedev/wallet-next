@@ -7,9 +7,10 @@ import Inp from "@/ui/Inp/Inp";
 import Btn from "@/ui/Btn/Btn";
 import Modal from "@/ui/Modal";
 import { settingsModalData } from "@/data/modals/data";
+import { ROUTES } from "@/data/routes";
 
 export const SetChangeForm: FC<TSetChangeFormProps> = ({ formId, inpType, inpId, minLength, maxLength, placeholder, label  }) => {
-    const submitFormHandler: (e: SyntheticEvent) => Promise<any> = async (e) => {
+    const submitHandler: (e: SyntheticEvent) => Promise<any> = async (e) => {
         e.preventDefault();
         setIsOpenModal(true);
         await new Promise((resolve: any) => setTimeout(resolve, 1000));
@@ -18,11 +19,11 @@ export const SetChangeForm: FC<TSetChangeFormProps> = ({ formId, inpType, inpId,
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
     return (
         <form
-            action="/settings"
+            action={ROUTES.private.settings}
             method="post"
             id={formId}
             className="form settings-change-form"
-            onSubmit={submitFormHandler}
+            onSubmit={submitHandler}
         >
             <StyledWrapper className="form-controller">
                 <Inp

@@ -1,17 +1,21 @@
 import React, { FC, useState } from "react";
 import Image from "next/image";
-import Modal from "@/ui/Modal";
-import Btn from "@/ui/Btn/Btn";
-import Dropdown from "@/ui/Dropdown";
-import CopyBtn from "@/components/CopyBtn";
 
 import type { TBalanceItem } from "./types";
 import type { TAllCurNotesScope } from "@/types/data/currencies";
+
+import Btn from "@/ui/Btn/Btn";
+import Dropdown from "@/ui/Dropdown";
+import CopyBtn from "@/components/CopyBtn";
+import SendCur from "@/modules/Forms/SendCur";
+import GetCurModal from "@/modules/Forms/GetCurModal";
 import { balanceItemIcons } from "./data/icons";
-import { assetsCabModalData } from "@/data/modals/data";
 
 export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, walletAddress, isAdded, isAssetsCab, toggleItemHandler }) => {
-    const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+    const [isOpenModal, setIsOpenModal] = useState<{ send: boolean; get: boolean }>({
+        send: false,
+        get: false,
+    });
 
     return (
         <>
@@ -38,7 +42,7 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                     <li>
                                         <span
                                             className="navlink"
-                                            onClick={() => setIsOpenModal(true)}
+                                            onClick={() => setIsOpenModal({ ...isOpenModal, send: true })}
                                         >
                                             {balanceItemIcons.send}
                                             <span>Send</span>
@@ -47,7 +51,7 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                     <li>
                                         <span
                                             className="navlink"
-                                            onClick={() => setIsOpenModal(true)}
+                                            onClick={() => setIsOpenModal({ ...isOpenModal, get: true })}
                                         >
                                             {balanceItemIcons.get}
                                             <span>Get</span>
@@ -62,8 +66,10 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                             </Dropdown.Btn>
                                             <Dropdown.Menu>
                                                 <li>
-                                                    <span className="navlink"
-                                                    onClick={toggleItemHandler}>
+                                                    <span
+                                                        className="navlink"
+                                                        onClick={toggleItemHandler}
+                                                    >
                                                         {balanceItemIcons.remove}
                                                         <span>Remove</span>
                                                     </span>
@@ -81,27 +87,18 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                     </li>
                                 </ul>
                             </nav>
-                            <Modal
-                                modalId={assetsCabModalData.send.id}
-                                modalDialogClassName={assetsCabModalData.send.modalDialogClassName}
-                                isOpen={isOpenModal}
-                                onCloseModal={() => setIsOpenModal(false)}
-                            >
-                                <Modal.Header
-                                    titleIcon={assetsCabModalData.send.titleIcon}
-                                    title={assetsCabModalData.send.title}
-                                ></Modal.Header>
 
-                                <Modal.Content className="modal-dialog__body">{assetsCabModalData.send.content}</Modal.Content>
-                                <Modal.Footer className="modal-footer btn-group">
-                                    <Btn
-                                        type="submit"
-                                        className="btn btn-fill-sm"
-                                    >
-                                        <span>Send</span>
-                                    </Btn>
-                                </Modal.Footer>
-                            </Modal>
+                            <SendCur
+                                modalId={`modal-send-${curIconAlt}`}
+                                formId={`send-${curIconAlt}-form`}
+                                isOpen={isOpenModal.send}
+                                onCloseModal={() => setIsOpenModal({ ...isOpenModal, send: false })}
+                            />
+                            <GetCurModal
+                                modalId={`modal-get-${curIconAlt}`}
+                                isOpen={isOpenModal.get}
+                                onCloseModal={() => setIsOpenModal({ ...isOpenModal, get: false })}
+                            />
                         </>
                     )}
                 </div>
@@ -117,7 +114,10 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                         alt={curIconAlt}
                     />
                     <span className="store-asset-item__label navlink">{curName}</span>
-                    <span className="custom-plus-icon" onClick={toggleItemHandler}></span>
+                    <span
+                        className="custom-plus-icon"
+                        onClick={toggleItemHandler}
+                    ></span>
                 </Btn>
             )}
         </>

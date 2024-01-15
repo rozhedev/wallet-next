@@ -13,6 +13,9 @@
         display: flex;
         flex-direction: column;
     }
+    &-dialog__body .form .form-controller {
+        width: 100%;
+    }
     &-dialog {
         width: calc(map-get($map: $container-max-widths, $key: xxl) / 12 * 4);
         min-height: calc($maxScreenHeight / 5);
