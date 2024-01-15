@@ -1,6 +1,8 @@
 import type { TBalanceItemArr } from "../types";
 import { wavesWAVES, wrappedBitcoinWBTC, xrpXRP, zcashZEC } from "@/data/pages/currencies-icons";
 
+import { qrCodeBitcoinBTC } from "./icons";
+
 // * Data
 export const balanceItemArrWXZ: TBalanceItemArr = [
     {
@@ -11,6 +13,7 @@ export const balanceItemArrWXZ: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -21,6 +24,7 @@ export const balanceItemArrWXZ: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -31,6 +35,7 @@ export const balanceItemArrWXZ: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -41,6 +46,7 @@ export const balanceItemArrWXZ: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
 ];

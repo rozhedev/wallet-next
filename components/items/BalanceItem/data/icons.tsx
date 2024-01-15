@@ -74,3 +74,10 @@ export const balanceItemIcons: Record<"send" | "get" | "more" | "chevron" | "rem
         </svg>
     ),
 };
+
+// * QR Code images
+import qrCodeBitcoinBTC from "@/public/img/creditails/bitcoin-BTC.webp";
+
+export {
+    qrCodeBitcoinBTC
+}

@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { AllCurNames, type TAllCurNotesScope } from "@/types/data/currencies";
 import type { TCurIconPath } from "@/types/data/shared";
 import type { TWalletFormatsScope } from "@/types/data/user-balances";
@@ -10,6 +11,7 @@ export type TBalanceItem<TCurScope extends TAllCurNotesScope> = {
     walletAddress: TWalletFormatsScope;
     pureAmount: number;
     usdAmount: number;
+    qrCodeImg: StaticImageData;
     isAdded: boolean;
     isAssetsCab?: boolean;
     toggleItemHandler?: () => void;

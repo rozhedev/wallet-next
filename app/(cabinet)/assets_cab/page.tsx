@@ -27,6 +27,7 @@ export default function AssetsCab() {
                 walletAddress: item.walletAddress,
                 pureAmount: item.pureAmount,
                 usdAmount: item.usdAmount,
+                qrCodeImg: item.qrCodeImg,
                 isAdded: !item.isAdded,
             },
         ]);
@@ -61,6 +62,7 @@ export default function AssetsCab() {
                                         pureAmount={item.pureAmount}
                                         usdAmount={item.usdAmount}
                                         walletAddress={item.walletAddress}
+                                        qrCodeImg={item.qrCodeImg}
                                         isAdded={item.isAdded}
                                         isAssetsCab={true}
                                         toggleItemHandler={() => toggleItemHandler(item, item.id)}
@@ -87,24 +89,29 @@ export default function AssetsCab() {
                         />
                     </div>
                     <div className="assets-cab-store__content">
-                        {searchedItems.map((item: TBalanceItem<TAllCurNotesScope>) => {
-                            if (!item.isAdded)
-                                return (
-                                    <BalanceItem
-                                        key={item.id}
-                                        id={item.id}
-                                        curIconPath={item.curIconPath}
-                                        curIconAlt={item.curIconAlt}
-                                        curName={item.curName}
-                                        pureAmount={item.pureAmount}
-                                        usdAmount={item.usdAmount}
-                                        walletAddress={item.walletAddress}
-                                        isAdded={item.isAdded}
-                                        isAssetsCab={true}
-                                        toggleItemHandler={() => toggleItemHandler(item, item.id)}
-                                    />
-                                );
-                        })}
+                        {searchedItems.length > 0 ? (
+                            searchedItems.map((item: TBalanceItem<TAllCurNotesScope>) => {
+                                if (!item.isAdded)
+                                    return (
+                                        <BalanceItem
+                                            key={item.id}
+                                            id={item.id}
+                                            curIconPath={item.curIconPath}
+                                            curIconAlt={item.curIconAlt}
+                                            curName={item.curName}
+                                            pureAmount={item.pureAmount}
+                                            usdAmount={item.usdAmount}
+                                            walletAddress={item.walletAddress}
+                                            qrCodeImg={item.qrCodeImg}
+                                            isAdded={item.isAdded}
+                                            isAssetsCab={true}
+                                            toggleItemHandler={() => toggleItemHandler(item, item.id)}
+                                        />
+                                    );
+                            })
+                        ) : (
+                            <span className="navlink assets-cab-store__content-message">Nothing found</span>
+                        )}
                     </div>
                 </StyledWrapper>
             </div>

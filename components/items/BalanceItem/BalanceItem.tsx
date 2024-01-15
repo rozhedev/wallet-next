@@ -11,7 +11,7 @@ import SendCur from "@/modules/Forms/SendCur";
 import GetCurModal from "@/modules/Forms/GetCurModal";
 import { balanceItemIcons } from "./data/icons";
 
-export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, walletAddress, isAdded, isAssetsCab, toggleItemHandler }) => {
+export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, walletAddress, qrCodeImg, isAdded, isAssetsCab, toggleItemHandler }) => {
     const [isOpenModal, setIsOpenModal] = useState<{ send: boolean; get: boolean }>({
         send: false,
         get: false,
@@ -96,6 +96,9 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                             />
                             <GetCurModal
                                 modalId={`modal-get-${curIconAlt}`}
+                                walletAddress={walletAddress}
+                                curName={curName}
+                                qrCodeImg={qrCodeImg}
                                 isOpen={isOpenModal.get}
                                 onCloseModal={() => setIsOpenModal({ ...isOpenModal, get: false })}
                             />

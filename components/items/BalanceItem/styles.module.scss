@@ -195,7 +195,6 @@
         max-width: 16rem;
         margin: 0 0.75rem 0 0.375rem;
         font-weight: 400;
-
     }
     .custom-plus-icon {
         @include custom-plus(20px, 0.1rem, $dark-color24, 500%, 0%, -5%, -650%);
@@ -210,7 +209,8 @@
     }
     @include hover {
         border-color: $primary-accent-color;
-        .custom-plus-icon::before, .custom-plus-icon::after {
+        .custom-plus-icon::before,
+        .custom-plus-icon::after {
             background-color: $primary-accent-color;
         }
     }
@@ -244,4 +244,8 @@
             }
         }
     }
+}
+
+.assets-cab-store__content-message {
+    font-weight: 400;
 }

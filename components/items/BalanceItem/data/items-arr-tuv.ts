@@ -15,6 +15,8 @@ import {
     veChainVET,
 } from "@/data/pages/currencies-icons";
 
+import { qrCodeBitcoinBTC } from "./icons";
+
 // * Data
 export const balanceItemArrTUV: TBalanceItemArr = [
     {
@@ -25,6 +27,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -35,6 +38,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: true,
     },
     {
@@ -45,6 +49,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -55,6 +60,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -65,6 +71,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -75,6 +82,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -85,6 +93,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -95,6 +104,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -105,6 +115,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -115,6 +126,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -125,6 +137,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -135,6 +148,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -145,6 +159,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
 ];

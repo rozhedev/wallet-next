@@ -1,6 +1,8 @@
 import type { TBalanceItemArr } from "../types";
 import { nearNEAR, neoNEO, nexoNEXO, polkadotDOT, polygonMATIC, secretSCRT, shibainuSHIB, solanaSOL, stacksSTX, stellarXLM } from "@/data/pages/currencies-icons";
 
+import { qrCodeBitcoinBTC } from "./icons";
+
 // * Data
 export const balanceItemArrNPS: TBalanceItemArr = [
     {
@@ -11,6 +13,7 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -21,6 +24,7 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -31,6 +35,7 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -41,6 +46,7 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -51,6 +57,7 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -61,6 +68,7 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -71,6 +79,7 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -81,6 +90,7 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -91,6 +101,7 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
     {
@@ -101,6 +112,7 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         pureAmount: 0,
         usdAmount: 0,
         walletAddress: "bc1-bitcoin",
+        qrCodeImg: qrCodeBitcoinBTC,
         isAdded: false,
     },
 ];
