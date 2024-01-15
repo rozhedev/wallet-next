@@ -97,7 +97,6 @@ export const RegisterWallet = () => {
         const isPassCond: boolean = passStr === confirmInpValuesStr;
 
         if (isPassCond) {
-            console.log(confirmInpValuesStr);
             setIsRegisterPassMatch(true);
 
             await new Promise((resolve: any) => setTimeout(resolve, 2000));

@@ -8,7 +8,7 @@ import Btn from "@/ui/Btn/Btn";
 import Dropdown from "@/ui/Dropdown";
 import CopyBtn from "@/components/CopyBtn";
 import SendCur from "@/modules/Forms/SendCur";
-import GetCurModal from "@/modules/Forms/GetCurModal";
+import GetCur from "@/modules/Forms/GetCur";
 import { balanceItemIcons } from "./data/icons";
 
 export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, walletAddress, qrCodeImg, isAdded, isAssetsCab, toggleItemHandler }) => {
@@ -94,7 +94,7 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                 isOpen={isOpenModal.send}
                                 onCloseModal={() => setIsOpenModal({ ...isOpenModal, send: false })}
                             />
-                            <GetCurModal
+                            <GetCur
                                 modalId={`modal-get-${curIconAlt}`}
                                 walletAddress={walletAddress}
                                 curName={curName}

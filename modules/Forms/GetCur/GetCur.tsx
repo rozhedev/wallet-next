@@ -3,13 +3,13 @@
 import React, { FC } from "react";
 import Image from "next/image";
 
-import type { TGetCurModalProps } from "./types";
+import type { TGetCurProps } from "./types";
 import Modal from "@/ui/Modal";
 import Btn from "@/ui/Btn/Btn";
 import CopyBtn from "@/components/CopyBtn";
 import { assetsCabModalData } from "@/data/modals/data";
 
-export const GetCurModal: FC<TGetCurModalProps> = ({ modalId, walletAddress, curName, qrCodeImg, isOpen, onCloseModal }) => {
+export const GetCur: FC<TGetCurProps> = ({ modalId, walletAddress, curName, qrCodeImg, isOpen, onCloseModal }) => {
     return (
         <Modal
             modalId={modalId}

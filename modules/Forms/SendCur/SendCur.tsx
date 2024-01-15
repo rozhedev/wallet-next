@@ -12,20 +12,44 @@ import { assetsCabModalData } from "@/data/modals/data";
 import { ROUTES } from "@/data/routes";
 
 export const SendCur: FC<TSendCurProps> = ({ modalId, formId, isOpen, onCloseModal }) => {
-    const [amount, setAmount] = useState<string>("");
-    const [networkFee, setNetworkFee] = useState<string>("");
+    const [formData, setFormData] = useState<Record<"walletAddress" | "amount" | "networkFee", string>>({
+        walletAddress: "",
+        amount: "",
+        networkFee: "",
+    });
+    const [isDataSend, setIsDataSend] = useState<boolean>(false);
+
+    const getNetworkFeeHandler = (e: any) => {
+        let value = e.target.value;
+        setFormData({ ...formData, amount: value });
+        let networkFeeValue: string = (+value * 0.05).toFixed(6);
+
+        setFormData({
+            ...formData,
+            amount: value,
+            networkFee: networkFeeValue,
+        });
+    };
 
     const submitHandler: (e: SyntheticEvent) => Promise<any> = async (e) => {
         e.preventDefault();
-        await new Promise((resolve: any) => setTimeout(resolve, 1000));
-    };
+        setFormData({
+            walletAddress: "",
+            amount: "",
+            networkFee: "",
+        });
 
-    const getNetworkFeeHandler = (e: any) => {
-        let inpValue = e.target.value
-        setAmount(inpValue);
-
-        let networkFee: string = (inpValue * 0.05).toFixed(6);
-        setNetworkFee(networkFee);        
+        // * Mock request
+        await new Promise((resolve: any) => {
+            setIsDataSend(true);
+            setTimeout(resolve, 1500);
+        });
+        await new Promise((resolve: any) => {
+            setIsDataSend(false);
+            setTimeout(resolve, 2000);
+        });
+        // * TODO Submit to server
+        // * ...
     };
 
     return (
@@ -58,6 +82,10 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, isOpen, onCloseMod
                                 required
                                 minLength={3}
                                 maxLength={42}
+                                value={formData.walletAddress}
+                                onChange={(e) => {
+                                    setFormData({ ...formData, walletAddress: e.target.value });
+                                }}
                             />
                         </StyledWrapper>
                         <StyledWrapper className="form-controller">
@@ -73,20 +101,20 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, isOpen, onCloseMod
                                 min={0.00000001}
                                 step={0.00000001}
                                 max={999999}
-                                value={amount}
-                                onChange={getNetworkFeeHandler}
+                                value={formData.amount}
+                                onChange={(e) => getNetworkFeeHandler(e)}
                             />
                         </StyledWrapper>
                         <StyledWrapper className="form-controller">
                             <Inp
                                 type="text"
-                                id="send-cur-fee"
-                                name="send-cur-fee"
+                                id="send-cur-network-fee"
+                                name="send-cur-network-fee"
                                 className="inp"
                                 title="Network fee"
                                 placeholder="Network fee"
                                 disabled
-                                value={networkFee}
+                                value={formData.networkFee}
                             />
                         </StyledWrapper>
                         <p className="modal-info">Funds will be credited after 3 confirmations in cryptocurrency network (approximately 30-50 min.)</p>
@@ -96,8 +124,9 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, isOpen, onCloseMod
                     <Btn
                         type="submit"
                         className="btn btn-fill-sm"
+                        disabled={isDataSend}
                     >
-                        <span>Send</span>
+                        <span>{isDataSend ? "Sending..." : "Send"}</span>
                     </Btn>
                 </Modal.Footer>
             </form>
