@@ -12,6 +12,7 @@ export const HeaderCab: FC<THeaderCabProps> = ({ toggleHandler, isAsideOpen, chi
                         className="header-cab__trigger navlink"
                         onClick={toggleHandler}
                     >
+                        {/* //* Don't change icon */}
                         <svg
                             viewBox="0 0 64 64"
                             fill="none"

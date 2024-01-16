@@ -15,6 +15,8 @@ import HistoryTableItem, { type THistoryTableItem, historyTableItemArr } from "@
 import SectionLayout from "@/modules/layout/SectionLayout";
 import { dashboardLinks } from "@/data/cabinet/dashboard";
 import { ROUTES } from "@/data/routes";
+import { layersIcon } from "@/data/pages/web3-icons";
+import { eyeShowIcon } from "@/data/pages/ui-icons";
 
 export default function Dashboard() {
     return (
@@ -59,14 +61,7 @@ export default function Dashboard() {
                             className="btn btn-outline-xs"
                         >
                             <span>Edit on Assets</span>
-                            <svg
-                                viewBox="0 0 64 64"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M59.4287 22.8571L32.0001 36.5714L4.57153 22.8571L32.0001 9.14282L59.4287 22.8571Z" />
-                                <path d="M41.143 32L59.4287 41.1429L32.0001 54.8571L4.57153 41.1429L22.8572 32" />
-                            </svg>
+                            {layersIcon}
                         </Link>
                     </StyledWrapper>
                 </StyledWrapper>
@@ -113,18 +108,7 @@ export default function Dashboard() {
                             className="btn btn-outline-xs"
                         >
                             <span>View all</span>
-                            <svg
-                                viewBox="0 0 64 64"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M59.4287 32.0001C59.4287 32.0001 50.2858 50.2858 32.0001 50.2858C13.7144 50.2858 4.57153 32.0001 4.57153 32.0001C4.57153 32.0001 13.7144 13.7144 32.0001 13.7144C50.2858 13.7144 59.4287 32.0001 59.4287 32.0001Z" />
-                                <circle
-                                    cx="32"
-                                    cy="32"
-                                    r="8.14286"
-                                />
-                            </svg>
+                            {eyeShowIcon}
                         </Link>
                     </StyledWrapper>
                 </StyledWrapper>

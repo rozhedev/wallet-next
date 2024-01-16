@@ -6,6 +6,7 @@ import { TAllCurNotesScope } from "@/types/data/currencies";
 
 export const AssetsTableItem: FC<TAssetsTableItem<TAllCurNotesScope>> = ({ order, curIconPath, curIconAlt, curName, iconPaths }) => {
     const getAviableIcon = (bool: boolean) => {
+        // * Don't change icon
         return bool ? (
             <svg
                 className="icon-checkmark"

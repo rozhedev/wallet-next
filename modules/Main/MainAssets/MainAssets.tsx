@@ -6,6 +6,7 @@ import MainAssetsItem, { type TMainAssetsItem } from "@/components/items/MainAss
 import ScrollCounter from "@/components/ScrollCounter";
 import { curPromoCount } from "@/data/pages/initial";
 import { AllCurNames, type TAllCurNotesScope } from "@/types/data/currencies";
+import { externalLinkIcon } from "@/data/pages/ui-icons";
 
 export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
     return (
@@ -35,15 +36,7 @@ export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
                         scroll={false}
                     >
                         <span>View full list</span>
-                        <svg
-                            viewBox="0 0 64 64"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M54.8571 32V59.4285H4.57141V9.14282H32" />
-                            <path d="M59.4285 22.8572V4.57153H41.1428" />
-                            <path d="M36.5714 27.4287L59.4286 4.57153" />
-                        </svg>
+                        {externalLinkIcon}
                     </Link>
                 </div>
             </div>

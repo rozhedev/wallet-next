@@ -6,6 +6,7 @@ import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
 import Image from "next/image";
 import { getCurRatePromise } from "./hooks";
 import RateSkeleton from "@/components/RateSkeleton";
+import { arrowTopRightIcon } from "@/data/pages/ui-icons";
 
 export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames, TApiLinkMask>> = ({ id, title, imgPath, imgAlt, apiLink }) => {
     const [rate, setRate] = useState<any>(0);
@@ -50,14 +51,7 @@ export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames, TApi
                     <>
                         <span className="output">${rate}</span>
                         <div className="main-rate-item__dir-icon">
-                            <svg
-                                viewBox="0 0 64 64"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M53.3334 26.6667V10.6667L37.3334 10.6667" />
-                                <path d="M53.3334 10.6666L10.6667 53.3333" />
-                            </svg>
+                            {arrowTopRightIcon}
                         </div>
                     </>
                 ) : (

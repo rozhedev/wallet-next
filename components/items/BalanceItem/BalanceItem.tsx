@@ -9,7 +9,7 @@ import Dropdown from "@/ui/Dropdown";
 import CopyBtn from "@/components/CopyBtn";
 import SendCur from "@/modules/Forms/SendCur";
 import GetCur from "@/modules/Forms/GetCur";
-import { balanceItemIcons } from "./data/icons";
+import { chevronBottomIcon, exportIcon, importIcon, menuDotsVerticalIcon, trashIcon } from "@/data/pages/ui-icons";
 
 export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, walletAddress, qrCodeImg, isAdded, isAssetsCab, toggleItemHandler }) => {
     const [isOpenModal, setIsOpenModal] = useState<{ send: boolean; get: boolean }>({
@@ -44,7 +44,7 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                             className="navlink"
                                             onClick={() => setIsOpenModal({ ...isOpenModal, send: true })}
                                         >
-                                            {balanceItemIcons.send}
+                                            {exportIcon}
                                             <span>Send</span>
                                         </span>
                                     </li>
@@ -53,16 +53,16 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                             className="navlink"
                                             onClick={() => setIsOpenModal({ ...isOpenModal, get: true })}
                                         >
-                                            {balanceItemIcons.get}
+                                            {importIcon}
                                             <span>Get</span>
                                         </span>
                                     </li>
                                     <li>
                                         <Dropdown>
                                             <Dropdown.Btn>
-                                                {balanceItemIcons.more}
+                                                {menuDotsVerticalIcon}
                                                 <span>More</span>
-                                                {balanceItemIcons.chevron}
+                                                {chevronBottomIcon}
                                             </Dropdown.Btn>
                                             <Dropdown.Menu>
                                                 <li>
@@ -70,7 +70,7 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                                         className="navlink"
                                                         onClick={toggleItemHandler}
                                                     >
-                                                        {balanceItemIcons.remove}
+                                                        {trashIcon}
                                                         <span>Remove</span>
                                                     </span>
                                                 </li>

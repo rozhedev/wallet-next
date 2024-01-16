@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import { TPaginationProps } from "./types";
 import Btn from "@/ui/Btn/Btn";
+import { chevronBottomIcon } from "@/data/pages/ui-icons";
 
 export const Pagination: FC<TPaginationProps> = ({ btnsArr }) => {
     const [isActiveId, setIsActiveId] = useState<number>(1);
@@ -21,13 +22,7 @@ export const Pagination: FC<TPaginationProps> = ({ btnsArr }) => {
                 }}
                 disabled={isFirstBtnActive && true}
             >
-                <svg
-                    viewBox="0 0 64 64"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path d="M52.48 21.76L32 42.24L11.52 21.76" />
-                </svg>
+                {chevronBottomIcon}
             </Btn>
             <div
                 id="pagination-numbers"
@@ -57,13 +52,7 @@ export const Pagination: FC<TPaginationProps> = ({ btnsArr }) => {
                 }}
                 disabled={isLastBtnActive && true}
             >
-                <svg
-                    viewBox="0 0 64 64"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path d="M52.48 21.76L32 42.24L11.52 21.76" />
-                </svg>
+                {chevronBottomIcon}
             </Btn>
         </nav>
     );

@@ -23,6 +23,7 @@ import { testSelectData, testSelectLang } from "@/data/test/selectData";
 import { testLinksData } from "@/data/test/linksData";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import Textarea from "@/ui/Textarea/Textarea";
+import { checkedRoundedIcon, chevronBottomIcon, globeIcon, userIcon } from "@/data/pages/ui-icons";
 
 export default function Home() {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
@@ -39,13 +40,7 @@ export default function Home() {
                 <Dropdown>
                     <Dropdown.Btn>
                         <span>Discover</span>
-                        <svg
-                            viewBox="0 0 64 64"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M52.48 21.76L32 42.24L11.52 21.76" />
-                        </svg>
+                        {chevronBottomIcon}
                     </Dropdown.Btn>
                     <Dropdown.Menu>
                         <LinkList linksArr={dropdownLinks} />
@@ -69,16 +64,7 @@ export default function Home() {
                     onCloseModal={() => setIsOpenModal(false)}
                 >
                     <Modal.Header
-                        titleIcon={
-                            <svg
-                                viewBox="0 0 64 64"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M32.0001 59.4287C47.1485 59.4287 59.4287 47.1485 59.4287 32.0001C59.4287 16.8517 47.1485 4.57153 32.0001 4.57153C16.8517 4.57153 4.57153 16.8517 4.57153 32.0001C4.57153 47.1485 16.8517 59.4287 32.0001 59.4287Z" />
-                                <path d="M45.7142 22.8572L27.4285 41.1429L18.2856 32" />
-                            </svg>
-                        }
+                        titleIcon={checkedRoundedIcon}
                         title="Success modal"
                     ></Modal.Header>
                     <Modal.Content className="modal-dialog__body">
@@ -129,16 +115,7 @@ export default function Home() {
                     className="btn-fill"
                 >
                     <span>Create account</span>
-                    <svg
-                        viewBox="0 0 64 64"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M31.9999 41.143C39.5741 41.143 45.7142 32.9562 45.7142 22.8572C45.7142 12.7583 39.5741 4.57153 31.9999 4.57153C24.4257 4.57153 18.2856 12.7583 18.2856 22.8572C18.2856 32.9562 24.4257 41.143 31.9999 41.143Z" />
-                        <path d="M20.5715 33.6687C20.5715 33.6687 9.04005 36.7316 6.8572 42.8116C4.85758 48.1088 4.07635 53.7883 4.57148 59.4287H32.0001" />
-                        <path d="M50.2856 59.4285V41.1428" />
-                        <path d="M41.1428 50.2856H59.4285" />
-                    </svg>
+                    {userIcon}
                 </Btn>
                 <br />
                 <Btn
@@ -146,16 +123,7 @@ export default function Home() {
                     className="btn-fill-sm"
                 >
                     <span>Create account</span>
-                    <svg
-                        viewBox="0 0 64 64"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M31.9999 41.143C39.5741 41.143 45.7142 32.9562 45.7142 22.8572C45.7142 12.7583 39.5741 4.57153 31.9999 4.57153C24.4257 4.57153 18.2856 12.7583 18.2856 22.8572C18.2856 32.9562 24.4257 41.143 31.9999 41.143Z" />
-                        <path d="M20.5715 33.6687C20.5715 33.6687 9.04005 36.7316 6.8572 42.8116C4.85758 48.1088 4.07635 53.7883 4.57148 59.4287H32.0001" />
-                        <path d="M50.2856 59.4285V41.1428" />
-                        <path d="M41.1428 50.2856H59.4285" />
-                    </svg>
+                    {userIcon}
                 </Btn>
                 <br />
                 <Btn
@@ -163,16 +131,7 @@ export default function Home() {
                     className="btn-fill-xs"
                 >
                     <span>Create account</span>
-                    <svg
-                        viewBox="0 0 64 64"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M31.9999 41.143C39.5741 41.143 45.7142 32.9562 45.7142 22.8572C45.7142 12.7583 39.5741 4.57153 31.9999 4.57153C24.4257 4.57153 18.2856 12.7583 18.2856 22.8572C18.2856 32.9562 24.4257 41.143 31.9999 41.143Z" />
-                        <path d="M20.5715 33.6687C20.5715 33.6687 9.04005 36.7316 6.8572 42.8116C4.85758 48.1088 4.07635 53.7883 4.57148 59.4287H32.0001" />
-                        <path d="M50.2856 59.4285V41.1428" />
-                        <path d="M41.1428 50.2856H59.4285" />
-                    </svg>
+                    {userIcon}
                 </Btn>
                 <br />
                 <Btn
@@ -180,16 +139,7 @@ export default function Home() {
                     className="btn-outline"
                 >
                     <span>Create account</span>
-                    <svg
-                        viewBox="0 0 64 64"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M31.9999 41.143C39.5741 41.143 45.7142 32.9562 45.7142 22.8572C45.7142 12.7583 39.5741 4.57153 31.9999 4.57153C24.4257 4.57153 18.2856 12.7583 18.2856 22.8572C18.2856 32.9562 24.4257 41.143 31.9999 41.143Z" />
-                        <path d="M20.5715 33.6687C20.5715 33.6687 9.04005 36.7316 6.8572 42.8116C4.85758 48.1088 4.07635 53.7883 4.57148 59.4287H32.0001" />
-                        <path d="M50.2856 59.4285V41.1428" />
-                        <path d="M41.1428 50.2856H59.4285" />
-                    </svg>
+                    {userIcon}
                 </Btn>
                 <br />
                 <Btn
@@ -197,16 +147,7 @@ export default function Home() {
                     className="btn-outline-sm"
                 >
                     <span>Create account</span>
-                    <svg
-                        viewBox="0 0 64 64"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M31.9999 41.143C39.5741 41.143 45.7142 32.9562 45.7142 22.8572C45.7142 12.7583 39.5741 4.57153 31.9999 4.57153C24.4257 4.57153 18.2856 12.7583 18.2856 22.8572C18.2856 32.9562 24.4257 41.143 31.9999 41.143Z" />
-                        <path d="M20.5715 33.6687C20.5715 33.6687 9.04005 36.7316 6.8572 42.8116C4.85758 48.1088 4.07635 53.7883 4.57148 59.4287H32.0001" />
-                        <path d="M50.2856 59.4285V41.1428" />
-                        <path d="M41.1428 50.2856H59.4285" />
-                    </svg>
+                    {userIcon}
                 </Btn>
                 <br />
                 <Btn
@@ -214,16 +155,7 @@ export default function Home() {
                     className="btn-outline-xs"
                 >
                     <span>Create account</span>
-                    <svg
-                        viewBox="0 0 64 64"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M31.9999 41.143C39.5741 41.143 45.7142 32.9562 45.7142 22.8572C45.7142 12.7583 39.5741 4.57153 31.9999 4.57153C24.4257 4.57153 18.2856 12.7583 18.2856 22.8572C18.2856 32.9562 24.4257 41.143 31.9999 41.143Z" />
-                        <path d="M20.5715 33.6687C20.5715 33.6687 9.04005 36.7316 6.8572 42.8116C4.85758 48.1088 4.07635 53.7883 4.57148 59.4287H32.0001" />
-                        <path d="M50.2856 59.4285V41.1428" />
-                        <path d="M41.1428 50.2856H59.4285" />
-                    </svg>
+                    {userIcon}
                 </Btn>
                 <br />
                 <Btn
@@ -232,16 +164,7 @@ export default function Home() {
                     disabled={true}
                 >
                     <span>Create account</span>
-                    <svg
-                        viewBox="0 0 64 64"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M31.9999 41.143C39.5741 41.143 45.7142 32.9562 45.7142 22.8572C45.7142 12.7583 39.5741 4.57153 31.9999 4.57153C24.4257 4.57153 18.2856 12.7583 18.2856 22.8572C18.2856 32.9562 24.4257 41.143 31.9999 41.143Z" />
-                        <path d="M20.5715 33.6687C20.5715 33.6687 9.04005 36.7316 6.8572 42.8116C4.85758 48.1088 4.07635 53.7883 4.57148 59.4287H32.0001" />
-                        <path d="M50.2856 59.4285V41.1428" />
-                        <path d="M41.1428 50.2856H59.4285" />
-                    </svg>
+                    {userIcon}
                 </Btn>
                 <br />
                 <Btn
@@ -250,16 +173,7 @@ export default function Home() {
                     disabled={true}
                 >
                     <span>Create account</span>
-                    <svg
-                        viewBox="0 0 64 64"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M31.9999 41.143C39.5741 41.143 45.7142 32.9562 45.7142 22.8572C45.7142 12.7583 39.5741 4.57153 31.9999 4.57153C24.4257 4.57153 18.2856 12.7583 18.2856 22.8572C18.2856 32.9562 24.4257 41.143 31.9999 41.143Z" />
-                        <path d="M20.5715 33.6687C20.5715 33.6687 9.04005 36.7316 6.8572 42.8116C4.85758 48.1088 4.07635 53.7883 4.57148 59.4287H32.0001" />
-                        <path d="M50.2856 59.4285V41.1428" />
-                        <path d="M41.1428 50.2856H59.4285" />
-                    </svg>
+                    {userIcon}
                 </Btn>
                 <br />
                 <StyledWrapper className="form-controller">
@@ -316,32 +230,14 @@ export default function Home() {
                     className="select select--header"
                     options={testSelectLang}
                     title="test-select-header"
-                    svgIcon={
-                        <svg
-                            viewBox="0 0 64 64"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M54.8571 17.3372C47.9088 21.3484 40.023 23.45 32 23.4286C23.977 23.45 16.0911 21.3484 9.14282 17.3372" />
-                            <path d="M9.14282 46.72C16.0814 42.7247 23.9476 40.6218 31.9542 40.6218C39.9609 40.6218 47.8271 42.7247 54.7657 46.72" />
-                            <path d="M28.5713 59.4287C22.6366 51.5157 19.4285 41.8913 19.4285 32.0001C19.4285 22.1089 22.6366 12.4845 28.5713 4.57153" />
-                            <path d="M35.4285 4.57153C41.3632 12.4845 44.5713 22.1089 44.5713 32.0001C44.5713 41.8913 41.3632 51.5157 35.4285 59.4287" />
-                            <path d="M32.0001 59.4287C47.1485 59.4287 59.4287 47.1485 59.4287 32.0001C59.4287 16.8517 47.1485 4.57153 32.0001 4.57153C16.8517 4.57153 4.57153 16.8517 4.57153 32.0001C4.57153 47.1485 16.8517 59.4287 32.0001 59.4287Z" />
-                        </svg>
-                    }
+                    svgIcon={globeIcon}
                 />
                 <br />
                 <br />
                 <Dropdown>
                     <Dropdown.Btn>
                         <span>Smartphones</span>
-                        <svg
-                            viewBox="0 0 64 64"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M52.48 21.76L32 42.24L11.52 21.76" />
-                        </svg>
+                        {chevronBottomIcon}
                     </Dropdown.Btn>
                     <Dropdown.Menu>
                         <LinkList linksArr={testLinksData} />

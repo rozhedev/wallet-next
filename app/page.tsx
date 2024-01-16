@@ -20,6 +20,7 @@ import { mainAssetItemArr } from "@/components/items/MainAssetsItem";
 import { mainRateItemArr } from "@/components/items/MainRateItem";
 import { mainAdvantItemArr } from "@/components/items/AdvantItem";
 import { downloadColumnArr } from "@/components/DownloadColumn";
+import { chevronBottomIcon } from "@/data/pages/ui-icons";
 
 export default function Home() {
     return (
@@ -39,13 +40,7 @@ export default function Home() {
                         <Dropdown>
                             <Dropdown.Btn>
                                 <span>Discover</span>
-                                <svg
-                                    viewBox="0 0 64 64"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path d="M52.48 21.76L32 42.24L11.52 21.76" />
-                                </svg>
+                                {chevronBottomIcon}
                             </Dropdown.Btn>
                             <Dropdown.Menu>
                                 <LinkList linksArr={dropdownLinks} />
