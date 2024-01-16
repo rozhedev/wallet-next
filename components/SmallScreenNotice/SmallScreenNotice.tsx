@@ -18,8 +18,6 @@ export const SmallScreenNotice: FC<TSmallScreenNoticeProps> = ({ className }) =>
                 <div className={className}>
                     <svg
                         className="small-screen-notice__img"
-                        width="56"
-                        height="56"
                         viewBox="0 0 56 56"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
