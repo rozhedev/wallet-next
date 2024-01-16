@@ -37,8 +37,8 @@
         text-align: justify;
         font-size: 1rem;
     }
-    &__icon .advant-item__svg,
-    .advant-item__svg * {
+    .advant-item__icon > svg,
+    .advant-item__icon > svg * {
         @include icon-size(96px, 0);
         stroke: $dark-color;
         stroke-width: calc(map-get($map: $stroke-width, $key: sm) / 3) ;
@@ -48,28 +48,28 @@
     }
 
     // * COLORING ICONS
-    &:nth-of-type(1) .advant-item__svg *,
-    &:nth-of-type(8) .advant-item__svg *,
-    &:nth-of-type(9) .advant-item__svg *,
-    &:nth-of-type(16) .advant-item__svg * {
+    &:nth-of-type(1) .advant-item__icon > svg *,
+    &:nth-of-type(8) .advant-item__icon > svg *,
+    &:nth-of-type(9) .advant-item__icon > svg *,
+    &:nth-of-type(16) .advant-item__icon > svg * {
         stroke: $dark-color;
     }
-    &:nth-of-type(2) .advant-item__svg *,
-    &:nth-of-type(7) .advant-item__svg *,
-    &:nth-of-type(10) .advant-item__svg *,
-    &:nth-of-type(15) .advant-item__svg * {
+    &:nth-of-type(2) .advant-item__icon > svg *,
+    &:nth-of-type(7) .advant-item__icon > svg *,
+    &:nth-of-type(10) .advant-item__icon > svg *,
+    &:nth-of-type(15) .advant-item__icon > svg * {
         stroke: $success-green;
     }
-    &:nth-of-type(3) .advant-item__svg *,
-    &:nth-of-type(6) .advant-item__svg *,
-    &:nth-of-type(10) .advant-item__svg *,
-    &:nth-of-type(15) .advant-item__svg * {
+    &:nth-of-type(3) .advant-item__icon > svg *,
+    &:nth-of-type(6) .advant-item__icon > svg *,
+    &:nth-of-type(10) .advant-item__icon > svg *,
+    &:nth-of-type(15) .advant-item__icon > svg * {
         stroke: $error-red;
     }
-    &:nth-of-type(4) .advant-item__svg *,
-    &:nth-of-type(5) .advant-item__svg *,
-    &:nth-of-type(12) .advant-item__svg *,
-    &:nth-of-type(13) .advant-item__svg * {
+    &:nth-of-type(4) .advant-item__icon > svg *,
+    &:nth-of-type(5) .advant-item__icon > svg *,
+    &:nth-of-type(12) .advant-item__icon > svg *,
+    &:nth-of-type(13) .advant-item__icon > svg * {
         stroke: $primary-accent-color;
     }
 }

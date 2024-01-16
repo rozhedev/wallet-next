@@ -12,14 +12,14 @@ export const settingsToggleList: TVariantsListItemArr = [
         id: "set-send-confirm",
         type: "checkbox",
         name: "set-toggle",
-        label: "Сonfirmation before sending cryptocurrency",
+        label: "Confirmation before sending cryptocurrency",
         classNameModif: "toggle",
     },
     {
         id: "set-exchange-confirm",
         type: "checkbox",
         name: "set-toggle",
-        label: "Сonfirmation before exchanging cryptocurrency",
+        label: "Confirmation before exchanging cryptocurrency",
         classNameModif: "toggle",
     },
     {

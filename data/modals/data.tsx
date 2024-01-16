@@ -1,18 +1,12 @@
 import { RequiredPick } from "@/types/utils/utils";
-import { MODAL_ICONS, type TModalIcons } from "./title-icons";
 
 import type { TModalProps } from "@/ui/Modal/index";
+import { checkedRoundedIcon, closeRoundedIcon, exportIcon, importIcon } from "../pages/ui-icons";
 
 type TModalData = {
     id: RequiredPick<TModalProps, "modalId">;
     modalDialogClassName: RequiredPick<TModalProps, "modalDialogClassName">;
-    titleIcon:
-        | RequiredPick<TModalIcons, "success">
-        | RequiredPick<TModalIcons, "error">
-        | RequiredPick<TModalIcons, "walletConnect">
-        | RequiredPick<TModalIcons, "get">
-        | RequiredPick<TModalIcons, "send">
-        | RequiredPick<TModalIcons, "survey">;
+    titleIcon: React.ReactNode;
     title: string;
     content: React.ReactNode | string | string[];
 };
@@ -25,7 +19,7 @@ export const promoModalData: TPromoModalData = {
     success: {
         id: "modal-promoaction-success",
         modalDialogClassName: "modal-dialog modal-dialog--success",
-        titleIcon: MODAL_ICONS.success,
+        titleIcon: checkedRoundedIcon,
         title: "Signed to airdrop",
         content: (
             <p>
@@ -36,7 +30,7 @@ export const promoModalData: TPromoModalData = {
     error: {
         id: "modal-promoaction-error",
         modalDialogClassName: "modal-dialog modal-dialog--error",
-        titleIcon: MODAL_ICONS.error,
+        titleIcon: closeRoundedIcon,
         title: "Event expired",
         content: <p>This event is over. Stay tuned so you don&apos;t miss any new promotions.</p>,
     },
@@ -45,7 +39,7 @@ export const promoModalData: TPromoModalData = {
 export const settingsModalData: TModalData = {
     id: "modal-change-form-success",
     modalDialogClassName: "modal-dialog modal-dialog--success",
-    titleIcon: MODAL_ICONS.success,
+    titleIcon: checkedRoundedIcon,
     title: "Request sent",
     content: <p>Your data change request has been sent. The changes will be displayed within 15 minutes</p>,
 };
@@ -54,12 +48,12 @@ type TAssetsCabModalData = Record<"send" | "get", Omit<TModalData, "id" | "conte
 export const assetsCabModalData: TAssetsCabModalData = {
     send: {
         modalDialogClassName: "modal-dialog modal-dialog--info modal-dialog--send",
-        titleIcon: MODAL_ICONS.send,
+        titleIcon: exportIcon,
         title: "Send cryptocurrency",
     },
     get: {
         modalDialogClassName: "modal-dialog modal-dialog--info modal-dialog--get",
-        titleIcon: MODAL_ICONS.get,
+        titleIcon: importIcon,
         title: "Get cryptocurrency",
     },
 };

@@ -1,7 +1,7 @@
 // * Add "Icon" to icon name, because use destructuring syntax for more convenient usage
 
 const WEB3_ICONS = {
-    borrowMoney: (
+    borrowMoneyIcon: (
         <svg
             viewBox="0 0 64 64"
             fill="none"
@@ -67,6 +67,20 @@ const WEB3_ICONS = {
             <path d="M24.3772 38.8569L31.9962 42.6665L39.6153 38.8569" />
             <path d="M31.9963 27.4285V50.2856" />
         </svg>
+    ),
+    lendEthereumIcon: (
+        <svg
+                viewBox="0 0 64 64"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M59.4287 22.8572H4.57153V54.8572H59.4287V22.8572Z" />
+                <path d="M9.14282 16H54.8571" />
+                <path d="M13.7144 9.14282H50.2858" />
+                <path d="M31.9962 50.2856L24.3772 38.857L31.9962 27.4285L39.6153 38.857L31.9962 50.2856Z" />
+                <path d="M24.3772 38.8569L31.9962 42.6665L39.6153 38.8569" />
+                <path d="M31.9963 27.4285V50.2856" />
+            </svg>
     ),
     portfolioIcon: (
         <svg
@@ -162,11 +176,13 @@ const WEB3_ICONS = {
 };
 
 export const {
-    borrowMoney,
+    borrowMoneyIcon,
     interestIcon,
     layersIcon,
     ledgerIcon,
     lendArchiveIcon,
+    lendEthereumIcon,
+    portfolioIcon,
     segwitIcon,
     smartContractIcon,
     swapHorizontalIcon,
