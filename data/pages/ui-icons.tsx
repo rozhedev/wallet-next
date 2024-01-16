@@ -709,8 +709,6 @@ const UI_ICONS = {
                 width="54"
                 height="54"
                 rx="3"
-                stroke="#111111"
-                stroke-width="2"
             />
         </svg>
     ),
