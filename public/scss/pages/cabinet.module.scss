@@ -81,13 +81,24 @@
             justify-items: stretch;
         }
     }
-    .dashboard-balance {
-        padding: 0rem;
-    }
-    .btn {
-        margin: 1rem auto 0;
-        @include bp(sm) {
-            width: 100%;
+    .cabinet-card {
+        // * Rewrite padding for correct list displaying
+        & .btn-group {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0 0 0;
+            .btn {
+                flex-grow: 0;
+                @include bp(sm) {
+                    width: 100%;
+                }
+            }
+        }
+        &.dashboard-balance {
+            padding: 0rem;
+            .btn-group {
+                padding: 1rem;
+            }
         }
     }
 }

@@ -81,14 +81,17 @@ export default function History() {
                                     <HistoryTableItem
                                         key={item.id}
                                         id={item.id}
-                                        order={item.order}
                                         operType={item.operType}
                                         curName={item.curName}
+                                        curSign={item.curSign}
                                         amount={item.amount}
                                         transactionStatus={item.transactionStatus}
                                         transactionId={item.transactionId}
                                         date={item.date}
                                         recipient={item.recipient}
+                                        svgIcon={item.svgIcon}
+                                        modifClass={item.modifClass}
+                                        isHistory={true}
                                     />
                                 ))}
                             </Table.Body>
