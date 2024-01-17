@@ -10,7 +10,7 @@
     border-radius: $sm-border-radius;
     box-shadow: $item-shadow;
 
-    &__img {
+    & > svg {
         fill: $dark-color;
         min-width: 3.5rem;
         min-height: 3.5rem;

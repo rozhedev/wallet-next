@@ -17,8 +17,11 @@ import { dashboardLinks } from "@/data/cabinet/dashboard";
 import { ROUTES } from "@/data/routes";
 import { layersIcon } from "@/data/pages/web3-icons";
 import { eyeShowIcon } from "@/data/pages/ui-icons";
+import { historyEmptyTableLabel } from "@/data/cabinet/history";
 
 export default function Dashboard() {
+    const isDataArrEmpty = historyTableItemArr.length === 0;
+
     return (
         <SectionLayout id="page-cab dashboard">
             <div className="inner">
@@ -85,23 +88,27 @@ export default function Dashboard() {
                     <div className="modal-header">
                         <h4 className="h4">Recent actions</h4>
                     </div>
-                    {historyTableItemArr.map((item: THistoryTableItem) => (
-                        <HistoryTableItem
-                            key={item.id}
-                            id={item.id}
-                            operType={item.operType}
-                            curName={item.curName}
-                            curSign={item.curSign}
-                            amount={item.amount}
-                            transactionStatus={item.transactionStatus}
-                            transactionId={item.transactionId}
-                            date={item.date}
-                            recipient={item.recipient}
-                            svgIcon={item.svgIcon}
-                            modifClass={item.modifClass}
-                            isHistory={false}
-                        />
-                    ))}
+                    {!isDataArrEmpty ? (
+                        historyTableItemArr.map((item: THistoryTableItem) => (
+                            <HistoryTableItem
+                                key={item.id}
+                                id={item.id}
+                                operType={item.operType}
+                                curName={item.curName}
+                                curSign={item.curSign}
+                                amount={item.amount}
+                                transactionStatus={item.transactionStatus}
+                                transactionId={item.transactionId}
+                                date={item.date}
+                                recipient={item.recipient}
+                                svgIcon={item.svgIcon}
+                                modifClass={item.modifClass}
+                                isHistory={false}
+                            />
+                        ))
+                    ) : (
+                        <span className="history-table--message navlink">{historyEmptyTableLabel}</span>
+                    )}  
                     <StyledWrapper className="btn-group">
                         <Link
                             href={ROUTES.private.history}

@@ -66,4 +66,6 @@ export const dateSelectOptions: TOptionGroup = [
         label: "From old to new",
         value: "status-old-new",
     },
-]
+];
+
+export const historyEmptyTableLabel = "No transactions yet";

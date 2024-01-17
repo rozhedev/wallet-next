@@ -12,7 +12,7 @@ import HistoryTableItem, { type THistoryTableItem, historyTableItemArr } from "@
 import Pagination, { paginationBtnArr } from "@/components/Pagination";
 import SectionLayout from "@/modules/layout/SectionLayout";
 
-import { typeSelectOptions, currencySelectOptions, statusSelectOptions, dateSelectOptions } from "@/data/cabinet/history";
+import { typeSelectOptions, currencySelectOptions, statusSelectOptions, dateSelectOptions, historyEmptyTableLabel } from "@/data/cabinet/history";
 
 export default function History() {
     const isDataArrEmpty = historyTableItemArr.length === 0;
@@ -97,7 +97,9 @@ export default function History() {
                             </Table.Body>
                         )}
                     </Table>
-                    {isDataArrEmpty && <span className="history-table--message navlink">No transactions yet</span>}
+                    
+                    {isDataArrEmpty && <span className="history-table--message navlink">{historyEmptyTableLabel}</span>}
+
                     {!isDataArrEmpty && <Pagination btnsArr={paginationBtnArr} />}
                 </StyledWrapper>
             </div>

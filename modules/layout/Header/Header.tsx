@@ -17,6 +17,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
     const menuToggleHandler = () => setIsMenuOpen(() => !isMenuOpen);
 
     // * Scroll disabling
+    // * Not work for pages where header not added (dashboard, history)
     if (typeof window !== "undefined") {
         const bodyTag = document.body;
         isMenuOpen ? bodyTag.classList.add("_lock") : bodyTag.classList.remove("_lock");
