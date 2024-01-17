@@ -1,7 +1,7 @@
 "use client";
 
 // * Libs - Types - Hooks - UI - Component - Modules - Data
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import type { TAllCurNotesScope } from "@/types/data/currencies";
 import { RequiredPick } from "@/types/utils/utils";
 
@@ -16,9 +16,9 @@ export default function AssetsCab() {
 
     // * Handlers
     const toggleItemHandler = (item: TBalanceItem<TAllCurNotesScope>, id: RequiredPick<TBalanceItem<TAllCurNotesScope>, "id">) => {
-        const temp = balanceItemArr.filter((item) => item.id !== id);
-        setBalanceItemArr([
-            ...temp,
+        const notChangedItems = balanceItemArr.filter((item) => item.id !== id);
+        const newArr = [
+            ...notChangedItems,
             {
                 id: item.id,
                 curIconPath: item.curIconPath,
@@ -30,7 +30,9 @@ export default function AssetsCab() {
                 qrCodeImg: item.qrCodeImg,
                 isAdded: !item.isAdded,
             },
-        ]);
+        ]
+        setBalanceItemArr(newArr);
+        localStorage.setItem("balances", JSON.stringify(newArr));
     };
 
     const searchedItems = useMemo(() => {
@@ -38,6 +40,12 @@ export default function AssetsCab() {
             return item.curName.toLowerCase().includes(searchQuery.toLowerCase());
         });
     }, [balanceItemArr, searchQuery]);
+
+    // * Load from localStorage
+    useEffect(() => {
+        const balances: any = localStorage.getItem("balances");
+        setBalanceItemArr(JSON.parse(balances));
+    }, []);
 
     return (
         <SectionLayout id="page-cab assets-cab">
