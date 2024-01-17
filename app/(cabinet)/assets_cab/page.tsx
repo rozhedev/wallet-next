@@ -30,7 +30,7 @@ export default function AssetsCab() {
                 qrCodeImg: item.qrCodeImg,
                 isAdded: !item.isAdded,
             },
-        ]
+        ];
         setBalanceItemArr(newArr);
         localStorage.setItem("balances", JSON.stringify(newArr));
     };

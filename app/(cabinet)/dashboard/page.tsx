@@ -1,14 +1,14 @@
 "use client";
 
 // * Libs - Types - Hooks - UI - Component - Modules - Data
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 import type { TAllCurNotesScope } from "@/types/data/currencies";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 
 import LinkList from "@/components/LinkList";
-import BalanceItem, { type TBalanceItem, balanceItems } from "@/components/items/BalanceItem";
+import BalanceItem, { type TBalanceItem, type TBalanceItemArr } from "@/components/items/BalanceItem";
 import DashboardStatItem, { type TDashboardStatItem, dashboardStatItemArr } from "@/components/items/DashboardStatItem";
 import HistoryTableItem, { type THistoryTableItem, historyTableItemArr } from "@/components/items/HistoryTableItem";
 
@@ -21,7 +21,14 @@ import { historyEmptyTableLabel } from "@/data/cabinet/history";
 
 export default function Dashboard() {
     const isDataArrEmpty = historyTableItemArr.length === 0;
+    const [balancesArr, setBalancesArr] = useState<TBalanceItemArr | []>([]);
 
+    useEffect(() => {
+        // * Use "any" to prevent type mismatches: string | null & string
+        let temp: any = localStorage.getItem("balances");
+        setBalancesArr(JSON.parse(temp));
+    }, []);
+        
     return (
         <SectionLayout id="page-cab dashboard">
             <div className="inner">
@@ -39,8 +46,7 @@ export default function Dashboard() {
 
                 {/* BALANCE */}
                 <StyledWrapper className="cabinet-card dashboard-balance">
-                    {/* Not sync with assets */}
-                    {balanceItems.map((item: TBalanceItem<TAllCurNotesScope>) => {
+                    {balancesArr.map((item: TBalanceItem<TAllCurNotesScope>) => {
                         if (item.isAdded)
                             return (
                                 <BalanceItem
@@ -108,7 +114,7 @@ export default function Dashboard() {
                         ))
                     ) : (
                         <span className="history-table--message navlink">{historyEmptyTableLabel}</span>
-                    )}  
+                    )}
                     <StyledWrapper className="btn-group">
                         <Link
                             href={ROUTES.private.history}
