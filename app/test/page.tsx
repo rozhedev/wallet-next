@@ -28,6 +28,9 @@ import { checkedRoundedIcon, chevronBottomIcon, globeIcon, userIcon } from "@/da
 export default function Home() {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
+    // * Remove _lock class, added in Header.tsx
+    typeof window !== "undefined" && document.body.classList.remove("_lock");
+
     return (
         <section
             className="test assets"

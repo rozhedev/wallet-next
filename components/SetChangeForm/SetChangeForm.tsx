@@ -9,14 +9,30 @@ import Modal from "@/ui/Modal";
 import { settingsModalData } from "@/data/modals/data";
 import { ROUTES } from "@/data/routes";
 
-export const SetChangeForm: FC<TSetChangeFormProps> = ({ formId, inpType, inpId, minLength, maxLength, placeholder, label  }) => {
+export const SetChangeForm: FC<TSetChangeFormProps> = ({ formId, inpType, inpId, minLength, maxLength, placeholder, label }) => {
+    const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+    const [isDataSend, setIsDataSend] = useState<boolean>(false);
+    const [value, setValue] = useState<string>("");
+
     const submitHandler: (e: SyntheticEvent) => Promise<any> = async (e) => {
         e.preventDefault();
-        setIsOpenModal(true);
-        await new Promise((resolve: any) => setTimeout(resolve, 1000));
+        
+        // * Mock request
+        await new Promise((resolve: any) => {
+            setIsDataSend(true);
+            setTimeout(resolve, 1500);
+        });
+        await new Promise((resolve: any) => {
+            setIsDataSend(false);
+            setTimeout(resolve, 2000);
+            setIsOpenModal(true);
+            setValue("");
+        });
+
+        // * TODO Submit to server
+        // * ...
     };
 
-    const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
     return (
         <form
             action={ROUTES.private.settings}
@@ -36,14 +52,17 @@ export const SetChangeForm: FC<TSetChangeFormProps> = ({ formId, inpType, inpId,
                     maxLength={maxLength}
                     className="inp"
                     placeholder={placeholder}
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
                 />
                 <small className="form-controller__error"></small>
             </StyledWrapper>
             <Btn
                 type="submit"
                 className="btn btn-fill-sm"
+                disabled={isDataSend}
             >
-                <span>Change</span>
+                <span>{isDataSend ? "Sending..." : "Change"}</span>
             </Btn>
             <Modal
                 modalId={settingsModalData.id}

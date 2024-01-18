@@ -18,6 +18,9 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
 
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
+    // * Remove _lock class, added in Header.tsx
+    typeof window !== "undefined" && document.body.classList.remove("_lock");
+
     return (
         <div className="page">
             {/* //* Don't change component position for prevent layout errors */}
@@ -37,7 +40,7 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
                             {userIcon}
 
                             <span>Username</span>
-                            
+
                             {chevronBottomIcon}
                         </Dropdown.Btn>
                         <Dropdown.Menu>
