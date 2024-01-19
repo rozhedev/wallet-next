@@ -94,7 +94,7 @@ const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, se
                     title="Airdop survey"
                 />
                 <Modal.Content className="modal-dialog__body form-wrapper">
-                    <SurveyForm/>
+                    <SurveyForm setIsOpenModal={setIsOpenModal}/>
                 </Modal.Content>
             </Modal>
         </li>

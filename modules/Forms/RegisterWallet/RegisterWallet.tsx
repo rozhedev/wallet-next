@@ -125,7 +125,7 @@ export const RegisterWallet = () => {
                         isLastStep={isLastStep}
                         back={back}
                         formAction="/dashboard"
-                        btnClassNames="btn btn-fill-sm"
+                        btnClassNames={["btn btn-outline-sm", "btn btn-fill-sm"]}
                         isRegister={true}
                         haveProgressbar={true}
                     >

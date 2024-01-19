@@ -54,7 +54,7 @@ export const Multistep: FC<TMultistep> = ({
                     {!isFirstStep && (
                         <Btn
                             type="button"
-                            className={btnClassNames}
+                            className={btnClassNames[0]}
                             onClick={back}
                         >
                             <span>{btnLabels.prevStep}</span>
@@ -62,7 +62,7 @@ export const Multistep: FC<TMultistep> = ({
                     )}
                     <Btn
                         type="submit"
-                        className={btnClassNames}
+                        className={btnClassNames[1]}
                         disabled={isSubmitting}
                     >
                         <span>{isLastStep ? (isSubmitting ? btnLabels.submit : btnLabels.lastStep) : btnLabels.step}</span>

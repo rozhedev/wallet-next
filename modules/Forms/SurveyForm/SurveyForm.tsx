@@ -3,15 +3,17 @@
 import React, { FC, JSX } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
-import type { TSurveyFieldsetProps, TSurveyFormProps } from "./types";
+import type { TSurveyFieldsetProps, TSurveyFinishStepProps, TSurveyFormProps } from "./types";
 import { TRegisterForm } from "@/types/data/forms";
 
 import Multistep, { useMultistepForm } from "@/components/Multistep";
 import VariantsList from "@/components/VariantsList";
 import { REGISTER_INIT_VALUES } from "@/data/pages/inp-data";
 import { surveyAnswersArr } from "./data";
+import { ROUTES } from "@/data/routes";
+import { borrowMoneyIcon } from "@/data/pages/web3-icons";
 
-export const SurveyForm = ({}: TSurveyFormProps): JSX.Element => {
+export const SurveyForm = ({setIsOpenModal}: TSurveyFormProps): JSX.Element => {
     const {
         register,
         control,
@@ -31,6 +33,51 @@ export const SurveyForm = ({}: TSurveyFormProps): JSX.Element => {
             question="How long have you been using cryptocurrencies?"
             dataArr={surveyAnswersArr.form1}
         />,
+        <SurveyFieldset
+            id="survey-question2"
+            question="What cryptocurrencies have you used?"
+            dataArr={surveyAnswersArr.form2}
+        />,
+        <SurveyFieldset
+            id="survey-question3"
+            question="For what purposes did you use cryptocurrency?"
+            dataArr={surveyAnswersArr.form3}
+        />,
+        <SurveyFieldset
+            id="survey-question4"
+            question="Do you use crypto exchanges to store your personal funds?"
+            dataArr={surveyAnswersArr.form4}
+        />,
+        <SurveyFieldset
+            id="survey-question5"
+            question="What wallets have you used before?"
+            dataArr={surveyAnswersArr.form5}
+        />,
+        <SurveyFieldset
+            id="survey-question6"
+            question="How did you find out about Flem Wallet?"
+            dataArr={surveyAnswersArr.form6}
+        />,
+        <SurveyFieldset
+            id="survey-question7"
+            question="Do you have NFT tokens?"
+            dataArr={surveyAnswersArr.form7}
+        />,
+        <SurveyFieldset
+            id="survey-question8"
+            question="Would you like to participate in the Flem Wallet Preview Program?"
+            dataArr={surveyAnswersArr.form8}
+        />,
+        <SurveyFieldset
+            id="survey-question9"
+            question="Select the currency in which you want to receive the airdrop:"
+            dataArr={surveyAnswersArr.form9}
+        />,
+        <SurveyFinish
+            amount={0.067986}
+            curName="Ethereum (ETH)"
+            minutesCount={15}
+        />,
     ];
 
     const { currentStepIndex, step, isFirstStep, isLastStep, back, next } = useMultistepForm(surveyFormSteps);
@@ -40,6 +87,8 @@ export const SurveyForm = ({}: TSurveyFormProps): JSX.Element => {
 
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
         reset();
+        setIsOpenModal && setIsOpenModal(false);
+        
         // * TODO Submit to server
         // * ...
     };
@@ -55,8 +104,8 @@ export const SurveyForm = ({}: TSurveyFormProps): JSX.Element => {
             isFirstStep={isFirstStep}
             isLastStep={isLastStep}
             back={back}
-            formAction=""
-            btnClassNames="btn btn-fill-sm"
+            formAction={ROUTES.private.dashboard}
+            btnClassNames={["btn btn-outline-sm", "btn btn-fill-sm"]}
             isRegister={false}
             haveProgressbar={false}
         ></Multistep>
@@ -90,5 +139,27 @@ const SurveyFieldset: FC<TSurveyFieldsetProps> = ({ id, question, dataArr }) => 
                 <small className="form-controller__message"></small>
             </div>
         </fieldset>
+    );
+};
+
+const SurveyFinish: FC<TSurveyFinishStepProps> = ({ amount, curName, minutesCount }) => {
+    return (
+        <div
+            className="form-step form-survey-finish"
+            id="form-survey-finish"
+        >
+            {borrowMoneyIcon}
+            <div className="form-survey-finish__info">
+                <h6 className="navlink">
+                    Airdrop amount: <span id="survey-airdrop-amount">{amount}</span>
+                </h6>
+                <h6 className="navlink">
+                    Airdrop currency: <span id="survey-airdrop-currency">{curName}</span>
+                </h6>
+            </div>
+            <div className="form-step__descr">
+                <p>Survey done! Airdrop will be credited within {minutesCount} minutes. If you have any problems please contact technical support.</p>
+            </div>
+        </div>
     );
 };

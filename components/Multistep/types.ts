@@ -12,7 +12,7 @@ export type TMultistep = {
     back: () => void;
     formAction: string | ((formData: FormData) => void) | undefined;
     children?: React.ReactNode | React.ReactNode[];
-    btnClassNames: `btn ${string}`;
+    btnClassNames: [`btn ${string}`, `btn ${string}`];
     isRegister: boolean;
     haveProgressbar: boolean;
 };

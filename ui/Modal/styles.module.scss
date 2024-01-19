@@ -126,6 +126,10 @@
     }
 }
 
+.modal-dialog--survey legend.form-controller__label {
+    padding-bottom: 0;
+}
+
 .form-survey-finish {
     text-align: center;
     svg {

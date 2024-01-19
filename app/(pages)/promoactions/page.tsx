@@ -4,7 +4,7 @@ import PromoactionsItem, { type TPromoactionsItem, promoactionsItemArr } from "@
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
 
-export default function Terms() {
+export default function Promoactions() {
     return (
         <SectionLayout id="promoactions">
             <PageBreadcrumb
