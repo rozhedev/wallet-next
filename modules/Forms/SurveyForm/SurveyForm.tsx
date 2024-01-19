@@ -9,7 +9,7 @@ import { TRegisterForm } from "@/types/data/forms";
 import Multistep, { useMultistepForm } from "@/components/Multistep";
 import VariantsList from "@/components/VariantsList";
 import { REGISTER_INIT_VALUES } from "@/data/pages/inp-data";
-import { surveyAnswersArr } from "./data";
+import { surveyAnswersArr, surveyQuestionsArr } from "./data";
 import { ROUTES } from "@/data/routes";
 import { borrowMoneyIcon } from "@/data/pages/web3-icons";
 
@@ -30,47 +30,47 @@ export const SurveyForm = ({setIsOpenModal}: TSurveyFormProps): JSX.Element => {
         <SurveyInfo />,
         <SurveyFieldset
             id="survey-question1"
-            question="How long have you been using cryptocurrencies?"
+            question={surveyQuestionsArr.form1}
             dataArr={surveyAnswersArr.form1}
         />,
         <SurveyFieldset
             id="survey-question2"
-            question="What cryptocurrencies have you used?"
+            question={surveyQuestionsArr.form2}
             dataArr={surveyAnswersArr.form2}
         />,
         <SurveyFieldset
             id="survey-question3"
-            question="For what purposes did you use cryptocurrency?"
+            question={surveyQuestionsArr.form3}
             dataArr={surveyAnswersArr.form3}
         />,
         <SurveyFieldset
             id="survey-question4"
-            question="Do you use crypto exchanges to store your personal funds?"
+            question={surveyQuestionsArr.form4}
             dataArr={surveyAnswersArr.form4}
         />,
         <SurveyFieldset
             id="survey-question5"
-            question="What wallets have you used before?"
+            question={surveyQuestionsArr.form5}
             dataArr={surveyAnswersArr.form5}
         />,
         <SurveyFieldset
             id="survey-question6"
-            question="How did you find out about Flem Wallet?"
+            question={surveyQuestionsArr.form6}
             dataArr={surveyAnswersArr.form6}
         />,
         <SurveyFieldset
             id="survey-question7"
-            question="Do you have NFT tokens?"
+            question={surveyQuestionsArr.form7}
             dataArr={surveyAnswersArr.form7}
         />,
         <SurveyFieldset
             id="survey-question8"
-            question="Would you like to participate in the Flem Wallet Preview Program?"
+            question={surveyQuestionsArr.form8}
             dataArr={surveyAnswersArr.form8}
         />,
         <SurveyFieldset
             id="survey-question9"
-            question="Select the currency in which you want to receive the airdrop:"
+            question={surveyQuestionsArr.form9}
             dataArr={surveyAnswersArr.form9}
         />,
         <SurveyFinish
@@ -88,7 +88,7 @@ export const SurveyForm = ({setIsOpenModal}: TSurveyFormProps): JSX.Element => {
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
         reset();
         setIsOpenModal && setIsOpenModal(false);
-        
+
         // * TODO Submit to server
         // * ...
     };

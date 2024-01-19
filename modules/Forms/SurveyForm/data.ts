@@ -1,5 +1,17 @@
 import { TVariantsListItemArr } from "@/components/VariantsList/types";
 
+export const surveyQuestionsArr: Record<"form1" | "form2" | "form3" | "form4" | "form5" | "form6" | "form7" | "form8" | "form9", string> = {
+    form1: "How long have you been using cryptocurrencies?",
+    form2: "What cryptocurrencies have you used?",
+    form3: "For what purposes did you use cryptocurrency?",
+    form4: "Do you use crypto exchanges to store your personal funds?",
+    form5: "What wallets have you used before?",
+    form6: "How did you find out about Flem Wallet?",
+    form7: "Do you have NFT tokens?",
+    form8: "Would you like to participate in the Flem Wallet Preview Program?",
+    form9: "Select the currency in which you want to receive the airdrop:",
+};
+
 export const surveyAnswersArr: Record<"form1" | "form2" | "form3" | "form4" | "form5" | "form6" | "form7" | "form8" | "form9", TVariantsListItemArr> = {
     form1: [
         {

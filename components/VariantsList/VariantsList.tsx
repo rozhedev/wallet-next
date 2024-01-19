@@ -15,7 +15,8 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
                           key={variant.id}
                           id={variant.id}
                           name={variant.name}
-                          label={variant.label}
+                          label={variant.id}
+                          value={variant.label}
                           disabled={variant.disabled}
                       />
                   ))
@@ -25,6 +26,7 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
                           key={variant.id}
                           id={variant.id}
                           name={variant.name}
+                          value={variant.id}
                           disabled={variant.disabled}
                           classNameModif={variant.classNameModif}
                           defaultChecked={variant.defaultChecked}
@@ -37,6 +39,7 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
                           key={variant.id}
                           id={variant.id}
                           name={variant.name}
+                          value={variant.id}
                           disabled={variant.disabled}
                           defaultChecked={variant.defaultChecked}
                       >

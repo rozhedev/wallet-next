@@ -57,10 +57,3 @@ export const assetsCabModalData: TAssetsCabModalData = {
         title: "Get cryptocurrency",
     },
 };
-
-// export type TSurveyModalItem = {
-//     question: string;
-//     answers: string[];
-// }
-
-// export type TSurveyModalItemArr = TSurveyModalItem[];
