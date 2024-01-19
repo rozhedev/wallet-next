@@ -127,6 +127,7 @@ export const RegisterWallet = () => {
                         formAction="/dashboard"
                         btnClassNames="btn btn-fill-sm"
                         isRegister={true}
+                        haveProgressbar={true}
                     >
                         {!isRegisterPassMatch && isLastStep && (
                             <small

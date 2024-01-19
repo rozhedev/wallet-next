@@ -21,7 +21,6 @@ export const GetCur: FC<TGetCurProps> = ({ modalId, walletAddress, curName, qrCo
                 titleIcon={assetsCabModalData.get.titleIcon}
                 title={assetsCabModalData.get.title}
             />
-
             <Modal.Content className="modal-dialog__body">
                 <h5 className="h5">Your address & QR code:</h5>
                 <div className="modal-dialog__body-content">

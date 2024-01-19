@@ -3,7 +3,7 @@
 import React, { FC } from "react";
 import Link from "next/link";
 
-import FormProgressBar from "@/components/FormProgressBar";
+import FormProgressBar, { getProgressBarWidth, getRegisterWalletClassNames } from "@/components/FormProgressBar";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import Btn from "@/ui/Btn/Btn";
 
@@ -19,31 +19,28 @@ export const Multistep: FC<TMultistep> = ({
     isFirstStep,
     currentStepIndex,
     isLastStep,
-    isRegister,
     back,
     formAction,
     btnClassNames,
     children,
+    isRegister,
+    haveProgressbar,
 }) => {
-    // * Data for FormProgressBar
-    let isMediumStep = currentStepIndex + 1 === steps.length - 1;
-
-    const stepsClassNames = [`progress-step navlink _active`, `progress-step navlink ${isMediumStep || isLastStep ? "_active" : ""}`, `progress-step navlink ${isLastStep ? "_active" : ""}`];
-
-    const getProgressBarWidth = () => {
-        let index: `${number}%` = "0%";
-        if (isFirstStep) index = "0%";
-        else if (isMediumStep) index = "50%";
-        else if (isLastStep) index = "100%";
-        return index;
+    const btnLabels = {
+        step: "Next step",
+        prevStep: "Previous step",
+        lastStep: "Complete",
+        submit: "Sending...",
     };
 
     return (
         <div className="form-wrapper">
-            <FormProgressBar
-                progressBarStyle={getProgressBarWidth()}
-                countClassNames={stepsClassNames}
-            />
+            {haveProgressbar && (
+                <FormProgressBar
+                    progressBarStyle={getProgressBarWidth(isFirstStep, isLastStep, currentStepIndex, steps.length)}
+                    countClassNames={getRegisterWalletClassNames(isLastStep, currentStepIndex, steps.length)}
+                />
+            )}
             <form
                 action={formAction}
                 className="form"
@@ -60,7 +57,7 @@ export const Multistep: FC<TMultistep> = ({
                             className={btnClassNames}
                             onClick={back}
                         >
-                            <span>Previous step</span>
+                            <span>{btnLabels.prevStep}</span>
                         </Btn>
                     )}
                     <Btn
@@ -68,7 +65,7 @@ export const Multistep: FC<TMultistep> = ({
                         className={btnClassNames}
                         disabled={isSubmitting}
                     >
-                        <span>{isLastStep ? "Complete" : "Next step"}</span>
+                        <span>{isLastStep ? (isSubmitting ? btnLabels.submit : btnLabels.lastStep) : btnLabels.step}</span>
                     </Btn>
                 </StyledWrapper>
 

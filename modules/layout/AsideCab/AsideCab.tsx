@@ -3,13 +3,13 @@
 import React, { FC, JSX, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import logo from "@/public/img/logo-badge.svg";
 
 import type { TAsideCabProps, TAsideNavItem } from "./types";
-import Btn from "@/ui/Btn/Btn";
 import Modal from "@/ui/Modal";
-import { promoModalData } from "@/data/modals/data";
-import logo from "@/public/img/logo-badge.svg";
+import SurveyForm from "@/modules/Forms/SurveyForm";
 import { GRID_BREAKPOINTS } from "@/data/constants/breakpoints";
+import { dropIcon } from "@/data/pages/ui-icons";
 import { checkScreenWidth } from "@/utils/utils";
 
 export const AsideCab = ({ isAsideOpen, setIsAsideOpen, linksArr }: TAsideCabProps): JSX.Element => {
@@ -84,26 +84,18 @@ const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, se
                 </>
             )}
             <Modal
-                modalId={promoModalData.success.id}
-                modalDialogClassName={promoModalData.success.modalDialogClassName}
+                modalId="modal-survey"
+                modalDialogClassName="modal-dialog modal-dialog--info modal-dialog--survey"
                 isOpen={isOpenModal}
                 onCloseModal={() => setIsOpenModal(false)}
             >
                 <Modal.Header
-                    titleIcon={promoModalData.success.titleIcon}
-                    title={promoModalData.success.title}
-                ></Modal.Header>
-
-                <Modal.Content className="modal-dialog__body">{promoModalData.success.content}</Modal.Content>
-                <Modal.Footer className="modal-footer btn-group">
-                    <Btn
-                        type="button"
-                        className="btn btn-outline-sm"
-                        onClick={() => setIsOpenModal(false)}
-                    >
-                        <span>Close</span>
-                    </Btn>
-                </Modal.Footer>
+                    titleIcon={dropIcon}
+                    title="Airdop survey"
+                />
+                <Modal.Content className="modal-dialog__body form-wrapper">
+                    <SurveyForm/>
+                </Modal.Content>
             </Modal>
         </li>
     );

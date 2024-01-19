@@ -55,8 +55,7 @@ export const PromoactionsItem: FC<TPromoactionsItem> = ({ title, tags, btnLabel,
                     <Modal.Header
                         titleIcon={promoModalData.success.titleIcon}
                         title={promoModalData.success.title}
-                    ></Modal.Header>
-
+                    />
                     <Modal.Content className="modal-dialog__body">{promoModalData.success.content}</Modal.Content>
                     <Modal.Footer className="modal-footer btn-group">
                         <Link
@@ -67,7 +66,7 @@ export const PromoactionsItem: FC<TPromoactionsItem> = ({ title, tags, btnLabel,
                             <span>Register</span>
                         </Link>
                         <Link
-                            className="btn btn-outline-sm"
+                            className="btn btn-fill-sm"
                             href="/signin"
                             scroll={false}
                         >
@@ -85,13 +84,13 @@ export const PromoactionsItem: FC<TPromoactionsItem> = ({ title, tags, btnLabel,
                     <Modal.Header
                         titleIcon={promoModalData.error.titleIcon}
                         title={promoModalData.error.title}
-                    ></Modal.Header>
+                    />
                     <Modal.Content className="modal-dialog__body">{promoModalData.error.content}</Modal.Content>
 
                     <Modal.Footer className="modal-footer btn-group">
                         <Btn
                             type="button"
-                            className="btn btn-outline-sm"
+                            className="btn btn-fill-sm"
                             onClick={() => setIsOpenModal(false)}
                         >
                             <span>Close</span>

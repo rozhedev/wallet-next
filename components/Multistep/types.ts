@@ -14,4 +14,5 @@ export type TMultistep = {
     children?: React.ReactNode | React.ReactNode[];
     btnClassNames: `btn ${string}`;
     isRegister: boolean;
+    haveProgressbar: boolean;
 };

@@ -73,12 +73,11 @@ export const SetChangeForm: FC<TSetChangeFormProps> = ({ formId, inpType, inpId,
                 <Modal.Header
                     titleIcon={settingsModalData.titleIcon}
                     title={settingsModalData.title}
-                ></Modal.Header>
-
+                />
                 <Modal.Content className="modal-dialog__body">{settingsModalData.content}</Modal.Content>
                 <Modal.Footer className="modal-footer btn-group">
                     <Link
-                        className="btn btn-outline-sm"
+                        className="btn btn-fill-sm"
                         href="/settings"
                         scroll={false}
                         onClick={() => setIsOpenModal(false)}

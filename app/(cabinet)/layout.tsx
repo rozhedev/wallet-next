@@ -66,13 +66,12 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
                     <Modal.Header
                         titleIcon={promoModalData.success.titleIcon}
                         title={promoModalData.success.title}
-                    ></Modal.Header>
-
+                    />
                     <Modal.Content className="modal-dialog__body">{promoModalData.success.content}</Modal.Content>
                     <Modal.Footer className="modal-footer btn-group">
                         <Btn
                             type="button"
-                            className="btn btn-outline-sm"
+                            className="btn btn-fill-sm"
                             onClick={() => setIsOpenModal(false)}
                         >
                             <span>Close</span>

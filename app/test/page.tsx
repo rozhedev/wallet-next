@@ -25,7 +25,7 @@ import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import Textarea from "@/ui/Textarea/Textarea";
 import { checkedRoundedIcon, chevronBottomIcon, globeIcon, userIcon } from "@/data/pages/ui-icons";
 
-export default function Home() {
+export default function Test() {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
     // * Remove _lock class, added in Header.tsx
@@ -69,14 +69,14 @@ export default function Home() {
                     <Modal.Header
                         titleIcon={checkedRoundedIcon}
                         title="Success modal"
-                    ></Modal.Header>
+                    />
                     <Modal.Content className="modal-dialog__body">
                         <p>This event is over. Stay tuned so you don&apos;t miss any new promotions.</p>
                     </Modal.Content>
                     <Modal.Footer className="modal-footer btn-group">
                         <Btn
                             type="button"
-                            className="btn btn-outline-sm"
+                            className="btn btn-fill-sm"
                             onClick={() => setIsOpenModal(false)}
                         >
                             <span>Close</span>
