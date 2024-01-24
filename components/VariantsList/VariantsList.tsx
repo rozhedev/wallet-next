@@ -6,7 +6,7 @@ import Radio from "@/ui/Radio/Radio";
 import Checkbox from "@/ui/Checkbox/Checkbox";
 import Toggle from "@/ui/Toggle/Toggle";
 
-export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
+export const VariantsList: FC<VariantsListItemProps> = ({ dataArr, initState, changeHandler }) => {
     return (
         <>
             {checkUnifiedArr(dataArr, "radio")
@@ -15,9 +15,11 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
                           key={variant.id}
                           id={variant.id}
                           name={variant.name}
-                          label={variant.id}
+                          label={variant.label}
                           value={variant.label}
                           disabled={variant.disabled}
+                          checked={initState === variant.label}
+                          onChange={changeHandler}
                       />
                   ))
                 : checkUnifiedArr(dataArr, "checkbox") && checkToggleArr(dataArr, "classNameModif")
@@ -26,10 +28,11 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
                           key={variant.id}
                           id={variant.id}
                           name={variant.name}
-                          value={variant.id}
+                          value={variant.label}
                           disabled={variant.disabled}
+                        //   checked={initState}
+                        //   onChange={() => changeHandler(variant.name)}
                           classNameModif={variant.classNameModif}
-                          defaultChecked={variant.defaultChecked}
                       >
                           {variant.label}
                       </Toggle>
@@ -39,13 +42,17 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
                           key={variant.id}
                           id={variant.id}
                           name={variant.name}
-                          value={variant.id}
+                          value={variant.label}
+                        //   checked={initState}
+                        //   onChange={() => changeHandler(variant.name)}
                           disabled={variant.disabled}
-                          defaultChecked={variant.defaultChecked}
                       >
                           {variant.label}
                       </Checkbox>
                   ))}
+            {/* Temp state output */}
+            <br />
+            <p><i>Selected option:</i> {initState}</p>
         </>
     );
 };

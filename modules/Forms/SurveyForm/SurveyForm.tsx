@@ -1,19 +1,20 @@
 "use client";
 
-import React, { FC, JSX } from "react";
+import React, { JSX, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
-import type { TSurveyFieldsetProps, TSurveyFinishStepProps, TSurveyFormProps } from "./types";
+import type { TSurveyFormProps } from "./types";
 import { TRegisterForm } from "@/types/data/forms";
 
 import Multistep, { useMultistepForm } from "@/components/Multistep";
-import VariantsList from "@/components/VariantsList";
+import SurveyFieldset from "@/modules/Forms/SurveyFieldset";
+import SurveyFinish from "@/modules/Forms/SurveyFinish";
+import SurveyInfo from "@/modules/Forms/SurveyInfo";
 import { REGISTER_INIT_VALUES } from "@/data/pages/inp-data";
-import { surveyAnswersArr, surveyQuestionsArr } from "./data";
+import { surveyForms, surveyFormData } from "./data";
 import { ROUTES } from "@/data/routes";
-import { borrowMoneyIcon } from "@/data/pages/web3-icons";
 
-export const SurveyForm = ({setIsOpenModal}: TSurveyFormProps): JSX.Element => {
+export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element => {
     const {
         register,
         control,
@@ -26,52 +27,151 @@ export const SurveyForm = ({setIsOpenModal}: TSurveyFormProps): JSX.Element => {
         defaultValues: REGISTER_INIT_VALUES,
     });
 
+    const [answerForm1, setAnswerForm1] = useState<string | null>(null);
+    const form1Handler = (e: any) => {
+        setAnswerForm1(e.target.value);
+    };
+
+    // * Radio inp state
+    type TSurveyRadioForm = Record<"form1" | "form4" | "form6" | "form7" | "form8" | "form9", string | null>;
+
+    const [answerRadioForm, setAnswerRadioForm] = useState<TSurveyRadioForm>({
+        form1: null,
+        form4: null,
+        form6: null,
+        form7: null,
+        form8: null,
+        form9: null,
+    });
+
+    const radioInpChange = (name: any, inpValue: string) => {
+        name === surveyForms.form1[0].name &&
+            setAnswerRadioForm((prev: TSurveyRadioForm) => {
+                // * Assigned prev state for avoid lagging current state
+                // * Don't change this and next setStateActions
+                const currentState = { ...prev, form1: inpValue };
+                return currentState;
+            });
+        name === surveyForms.form4[0].name &&
+            setAnswerRadioForm((prev: TSurveyRadioForm) => {
+                const currentState = { ...prev, form4: inpValue };
+                return currentState;
+            });
+        name === surveyForms.form6[0].name &&
+            setAnswerRadioForm((prev: TSurveyRadioForm) => {
+                const currentState = { ...prev, form6: inpValue };
+                return currentState;
+            });
+        name === surveyForms.form7[0].name &&
+            setAnswerRadioForm((prev: TSurveyRadioForm) => {
+                const currentState = { ...prev, form7: inpValue };
+                return currentState;
+            });
+        name === surveyForms.form8[0].name &&
+            setAnswerRadioForm((prev: TSurveyRadioForm) => {
+                const currentState = { ...prev, form8: inpValue };
+                return currentState;
+            });
+        name === surveyForms.form9[0].name &&
+            setAnswerRadioForm((prev: TSurveyRadioForm) => {
+                const currentState = { ...prev, form9: inpValue };
+                return currentState;
+            });
+    };
+
+    // * Checkbox inp state
+    // type TCheckboxState = {
+    //     [key: string]: boolean;
+    // };
+    // type TSurveyCheckboxForm = Record<"form2" | "form3" | "form5", TCheckboxState>;
+
+    // const [answersCheckboxForm, setAnswersCheckboxForm] = useState<TCheckboxState>({
+    //     "survey-answern2-1": false,
+    //     "survey-answer2-2": false,
+    //     "survey-answer2-3": false,
+    //     "survey-answer2-4": false,
+    //     "survey-answer2-5": false,
+    //     "survey-answer2-6": false,
+    //     "survey-answer2-7": false,
+    //     "survey-answer2-8": false,
+    //     "survey-answer2-9": false,
+    //     "survey-answer2-10": false,
+    // });
+
+    // const checkboxChangeHandler = (name: string) => {
+    //     setAnswersCheckboxForm((prev: TCheckboxState) => {
+    //         const currentState = { ...prev, [name]: !answersCheckboxForm[name] };
+    //         console.log(currentState);
+    //         return currentState;
+    //     });
+    // };
+
     const surveyFormSteps: React.ReactElement[] = [
         <SurveyInfo />,
         <SurveyFieldset
-            id="survey-question1"
-            question={surveyQuestionsArr.form1}
-            dataArr={surveyAnswersArr.form1}
+            id={surveyFormData.form1.id}
+            question={surveyFormData.form1.question}
+            dataArr={surveyForms.form1}
+            initState={answerRadioForm.form1}
+            changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
         />,
         <SurveyFieldset
-            id="survey-question2"
-            question={surveyQuestionsArr.form2}
-            dataArr={surveyAnswersArr.form2}
+            id={surveyFormData.form2.id}
+            question={surveyFormData.form2.question}
+            dataArr={surveyForms.form2}
+            initState={answerForm1}
+            changeHandler={form1Handler}
+            // initState={answersCheckboxForm.form2}
+            // changeHandler={(e: any) => checkboxChangeHandler(e.target.name)}
         />,
         <SurveyFieldset
-            id="survey-question3"
-            question={surveyQuestionsArr.form3}
-            dataArr={surveyAnswersArr.form3}
+            id={surveyFormData.form3.id}
+            question={surveyFormData.form3.question}
+            dataArr={surveyForms.form3}
+            initState={answerForm1}
+            changeHandler={form1Handler}
         />,
         <SurveyFieldset
-            id="survey-question4"
-            question={surveyQuestionsArr.form4}
-            dataArr={surveyAnswersArr.form4}
+            id={surveyFormData.form4.id}
+            question={surveyFormData.form4.question}
+            dataArr={surveyForms.form4}
+            initState={answerRadioForm.form4}
+            changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
         />,
         <SurveyFieldset
-            id="survey-question5"
-            question={surveyQuestionsArr.form5}
-            dataArr={surveyAnswersArr.form5}
+            id={surveyFormData.form5.id}
+            question={surveyFormData.form5.question}
+            dataArr={surveyForms.form5}
+            initState={answerForm1}
+            changeHandler={form1Handler}
         />,
         <SurveyFieldset
-            id="survey-question6"
-            question={surveyQuestionsArr.form6}
-            dataArr={surveyAnswersArr.form6}
+            id={surveyFormData.form6.id}
+            question={surveyFormData.form6.question}
+            dataArr={surveyForms.form6}
+            initState={answerRadioForm.form6}
+            changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
         />,
         <SurveyFieldset
-            id="survey-question7"
-            question={surveyQuestionsArr.form7}
-            dataArr={surveyAnswersArr.form7}
+            id={surveyFormData.form7.id}
+            question={surveyFormData.form7.question}
+            dataArr={surveyForms.form7}
+            initState={answerRadioForm.form7}
+            changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
         />,
         <SurveyFieldset
-            id="survey-question8"
-            question={surveyQuestionsArr.form8}
-            dataArr={surveyAnswersArr.form8}
+            id={surveyFormData.form8.id}
+            question={surveyFormData.form8.question}
+            dataArr={surveyForms.form8}
+            initState={answerRadioForm.form8}
+            changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
         />,
         <SurveyFieldset
-            id="survey-question9"
-            question={surveyQuestionsArr.form9}
-            dataArr={surveyAnswersArr.form9}
+            id={surveyFormData.form9.id}
+            question={surveyFormData.form9.question}
+            dataArr={surveyForms.form9}
+            initState={answerRadioForm.form9}
+            changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
         />,
         <SurveyFinish
             amount={0.067986}
@@ -83,6 +183,16 @@ export const SurveyForm = ({setIsOpenModal}: TSurveyFormProps): JSX.Element => {
     const { currentStepIndex, step, isFirstStep, isLastStep, back, next } = useMultistepForm(surveyFormSteps);
 
     const submitForm = async (data: FieldValues) => {
+        const radioFormData: TSurveyRadioForm = {
+            form1: answerRadioForm.form1,
+            form4: answerRadioForm.form4,
+            form6: answerRadioForm.form6,
+            form7: answerRadioForm.form7,
+            form8: answerRadioForm.form8,
+            form9: answerRadioForm.form9,
+        };
+        console.log(radioFormData);
+
         if (!isLastStep) return next();
 
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
@@ -109,57 +219,5 @@ export const SurveyForm = ({setIsOpenModal}: TSurveyFormProps): JSX.Element => {
             isRegister={false}
             haveProgressbar={false}
         ></Multistep>
-    );
-};
-
-const SurveyInfo: FC<{}> = ({}) => {
-    return (
-        <div
-            className="form-step form-survey-info"
-            id="form-survey-info"
-        >
-            <ul className="unordered-list">
-                <li>Two years in the market is a good reason for more understanding our clients and find best way to improve our product.</li>
-                <li>It’s short survey created to collect common, but important data. As a final, you get airdrop in currency, which you choose at the end of survey.</li>
-                <li>We don’t collect confidential data as phone number, card number, residence address and etc.</li>
-            </ul>
-        </div>
-    );
-};
-
-const SurveyFieldset: FC<TSurveyFieldsetProps> = ({ id, question, dataArr }) => {
-    return (
-        <fieldset
-            className="form-step"
-            id={id}
-        >
-            <div className="form-controller radio-group">
-                <legend className="form-controller__label navlink">{question}</legend>
-                <VariantsList dataArr={dataArr} />
-                <small className="form-controller__message"></small>
-            </div>
-        </fieldset>
-    );
-};
-
-const SurveyFinish: FC<TSurveyFinishStepProps> = ({ amount, curName, minutesCount }) => {
-    return (
-        <div
-            className="form-step form-survey-finish"
-            id="form-survey-finish"
-        >
-            {borrowMoneyIcon}
-            <div className="form-survey-finish__info">
-                <h6 className="navlink">
-                    Airdrop amount: <span id="survey-airdrop-amount">{amount}</span>
-                </h6>
-                <h6 className="navlink">
-                    Airdrop currency: <span id="survey-airdrop-currency">{curName}</span>
-                </h6>
-            </div>
-            <div className="form-step__descr">
-                <p>Survey done! Airdrop will be credited within {minutesCount} minutes. If you have any problems please contact technical support.</p>
-            </div>
-        </div>
     );
 };

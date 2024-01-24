@@ -1,7 +1,7 @@
 "use client";
 
 // * Libs - Types - Hooks - UI - Component - Modules - Data
-import React from "react";
+import React, { useState } from "react";
 
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import VariantsList from "@/components/VariantsList";
@@ -11,11 +11,21 @@ import SectionLayout from "@/modules/layout/SectionLayout";
 import { settingsToggleList } from "@/data/cabinet/settings";
 
 export default function Settings() {
+    const [toggle, setToggle] = useState<string | null>(null);
+
+    const toggleChangeHandler = (e: any) => {
+        setToggle(e.target.value)
+    };
+
     return (
         <SectionLayout id="page-cab settings">
             <div className="inner">
                 <StyledWrapper className="cabinet-card settings-list">
-                    <VariantsList dataArr={settingsToggleList} />
+                    <VariantsList
+                        dataArr={settingsToggleList}
+                        initState={toggle}
+                        changeHandler={toggleChangeHandler}
+                    />
                 </StyledWrapper>
 
                 <StyledWrapper className="cabinet-card personal-data-edit">

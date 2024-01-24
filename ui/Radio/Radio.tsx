@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import type { TRadioBtnProps } from "./types";
 
-const Radio: FC<TRadioBtnProps> = ({ id, name, label, disabled = false }) => {
+const Radio: FC<TRadioBtnProps> = ({ id, name, label, disabled = false, ...props }) => {
     return (
         <div className="form-controller radio">
             <input
@@ -10,6 +10,7 @@ const Radio: FC<TRadioBtnProps> = ({ id, name, label, disabled = false }) => {
                 id={id}
                 className="radio__input"
                 disabled={disabled}
+                {...props}
             />
             <label
                 htmlFor={id}

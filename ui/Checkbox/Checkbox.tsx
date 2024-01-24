@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import type { TCheckboxProps } from "./types";
 
-const Checkbox: FC<TCheckboxProps> = ({ id, name, children, disabled = false, defaultChecked = false, ...props }) => {
+const Checkbox: FC<TCheckboxProps> = ({ id, name, children, disabled = false, ...props }) => {
     return (
         <div className="form-controller checkbox">
             <input
@@ -9,7 +9,6 @@ const Checkbox: FC<TCheckboxProps> = ({ id, name, children, disabled = false, de
                 id={id}
                 className="checkbox__input"
                 disabled={disabled}
-                defaultChecked={defaultChecked}
                 {...props}
             />
             <label

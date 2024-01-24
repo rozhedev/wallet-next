@@ -14,6 +14,9 @@ import Modal from "@/ui/Modal";
 import VariantsList from "@/components/VariantsList";
 import LinkList from "@/components/LinkList";
 import Header, { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header";
+import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
+import Textarea from "@/ui/Textarea/Textarea";
+import Radio from "@/ui/Radio/Radio";
 
 // * Data
 import { testRadioBtnList } from "@/data/test/radioBtnVariants";
@@ -21,15 +24,60 @@ import { testCheckboxList } from "@/data/test/checkboxBtnVariants";
 import { testToggleBtnList } from "@/data/test/toggleBtnVariants";
 import { testSelectData, testSelectLang } from "@/data/test/selectData";
 import { testLinksData } from "@/data/test/linksData";
-import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
-import Textarea from "@/ui/Textarea/Textarea";
 import { checkedRoundedIcon, chevronBottomIcon, globeIcon, userIcon } from "@/data/pages/ui-icons";
+import { TVariantsListItemArr } from "@/components/VariantsList/types";
+import Checkbox from "@/ui/Checkbox/Checkbox";
 
 export default function Test() {
-    const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
-
     // * Remove _lock class, added in Header.tsx
     typeof window !== "undefined" && document.body.classList.remove("_lock");
+
+    const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+
+    const testArr: TVariantsListItemArr = [
+        {
+            id: "survey-answer1-1",
+            type: "checkbox",
+            name: "survey-answer1-1",
+            label: "Radio 1",
+        },
+        {
+            id: "survey-answer1-2",
+            type: "checkbox",
+            name: "survey-answer1-2",
+            label: "Radio 2",
+        },
+        {
+            id: "survey-answer1-3",
+            type: "checkbox",
+            name: "survey-answer1-3",
+            label: "Radio 3",
+        },
+        {
+            id: "survey-answer1-4",
+            type: "checkbox",
+            name: "survey-answer1-4",
+            label: "Radio 4",
+        },
+    ];
+
+    type TCheckboxState = {
+        [key: string]: boolean;
+    };
+    const [testForm, setTestForm] = useState<TCheckboxState>({
+        "survey-answer1-1": false,
+        "survey-answer1-2": false,
+        "survey-answer1-3": false,
+        "survey-answer1-4": false,
+    });
+
+    const checkboxTestChangeHandler = (name: string) => {
+        setTestForm((prev: TCheckboxState) => {
+            const currentState = { ...prev, [name]: !testForm[name] };
+            console.log(currentState);
+            return currentState;
+        });
+    };
 
     return (
         <section
@@ -52,6 +100,24 @@ export default function Test() {
             </Header>
 
             <div className="container">
+                <StyledWrapper className="form-controller">
+                    {testArr.map((item: any) => (
+                        <Checkbox
+                            key={item.id}
+                            id={item.id}
+                            name={item.name}
+                            value={item.label}
+                            checked={testForm[item.name]}
+                            onChange={() => checkboxTestChangeHandler(item.name)}
+                            disabled={item.disabled}
+                        >
+                            {item.label}
+                        </Checkbox>
+                    ))}
+                </StyledWrapper>
+                <br />
+                <br />
+
                 {/* // * Button which opened modal */}
                 <Btn
                     type="button"
@@ -254,10 +320,22 @@ export default function Test() {
                         id="signup-form"
                         className="form form-test"
                     >
-                        <VariantsList dataArr={testRadioBtnList} />
-                        <VariantsList dataArr={testCheckboxList} />
+                        {/* <VariantsList
+                            dataArr={testRadioBtnList}
+                            initState={answers}
+                            changeHandler={radioChangeHandler}
+                        />
+                        <VariantsList
+                            dataArr={testCheckboxList}
+                            initState={answers}
+                            changeHandler={radioChangeHandler}
+                        />
                         <br />
-                        <VariantsList dataArr={testToggleBtnList} />
+                        <VariantsList
+                            dataArr={testToggleBtnList}
+                            initState={answers}
+                            changeHandler={radioChangeHandler}
+                        /> */}
                         <br />
                     </form>
                 </div>

@@ -44,7 +44,7 @@ export default function AssetsCab() {
     // * Load from localStorage
     useEffect(() => {
         const balances: any = localStorage.getItem("balances");
-        setBalanceItemArr(JSON.parse(balances));
+        balanceItems !== null && setBalanceItemArr(JSON.parse(balances));
     }, []);
 
     return (

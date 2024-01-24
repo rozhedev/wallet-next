@@ -8,7 +8,7 @@ import type { TAllCurNotesScope } from "@/types/data/currencies";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 
 import LinkList from "@/components/LinkList";
-import BalanceItem, { type TBalanceItem, type TBalanceItemArr } from "@/components/items/BalanceItem";
+import BalanceItem, { type TBalanceItem, type TBalanceItemArr, balanceItems } from "@/components/items/BalanceItem";
 import DashboardStatItem, { type TDashboardStatItem, dashboardStatItemArr } from "@/components/items/DashboardStatItem";
 import HistoryTableItem, { type THistoryTableItem, historyTableItemArr } from "@/components/items/HistoryTableItem";
 
@@ -25,10 +25,13 @@ export default function Dashboard() {
 
     useEffect(() => {
         // * Use "any" to prevent type mismatches: string | null & string
-        let temp: any = localStorage.getItem("balances");
-        setBalancesArr(JSON.parse(temp));
+        const temp: any = localStorage.getItem("balances");
+        const parsedTemp = JSON.parse(temp);
+        console.log(parsedTemp);
+
+        parsedTemp !== null ? setBalancesArr(parsedTemp) : setBalancesArr(balanceItems);
     }, []);
-        
+
     return (
         <SectionLayout id="page-cab dashboard">
             <div className="inner">
