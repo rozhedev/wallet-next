@@ -75,7 +75,7 @@ export default function Test() {
             "survey-answer1-3": false,
             "survey-answer1-4": false,
         },
-    });    
+    });
 
     const checkboxTestChangeHandler = (name: string) => {
         setTestForm((prev: TCheckboxState) => {
@@ -329,22 +329,10 @@ export default function Test() {
                         id="signup-form"
                         className="form form-test"
                     >
-                        <VariantsList
-                            dataArr={testRadioBtnList}
-                            initState={null}
-                            changeHandler={() => {}}
-                        />
-                        <VariantsList
-                            dataArr={testCheckboxList}
-                            initState={null}
-                            changeHandler={() => {}}
-                        />
+                        <VariantsList dataArr={testRadioBtnList} />
+                        <VariantsList dataArr={testCheckboxList} />
                         <br />
-                        <VariantsList
-                            dataArr={testToggleBtnList}
-                            initState={null}
-                            changeHandler={() => {}}
-                        />
+                        <VariantsList dataArr={testToggleBtnList} />
                         <br />
                     </form>
                 </div>

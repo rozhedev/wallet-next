@@ -1,12 +1,13 @@
 import React, { FC } from "react";
 import { VariantsListItemProps } from "./types";
-import { checkUnifiedArr, checkToggleArr } from "./helpers";
+import { checkUnifiedArr, checkToggleArr } from "@/components/CheckboxList";
 
 import Radio from "@/ui/Radio/Radio";
 import Checkbox from "@/ui/Checkbox/Checkbox";
 import Toggle from "@/ui/Toggle/Toggle";
 
-export const VariantsList: FC<VariantsListItemProps> = ({ dataArr, initState, changeHandler }) => {
+// * Test component. Only use it in test page.
+export const VariantsList: FC<VariantsListItemProps> = ({ dataArr }) => {
     return (
         <>
             {checkUnifiedArr(dataArr, "radio")
@@ -18,8 +19,6 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr, initState, ch
                           label={variant.label}
                           value={variant.label}
                           disabled={variant.disabled}
-                          checked={initState === variant.label}
-                          onChange={changeHandler}
                       />
                   ))
                 : checkUnifiedArr(dataArr, "checkbox") && checkToggleArr(dataArr, "classNameModif")

@@ -7,7 +7,7 @@ import type { TSurveyFormProps } from "./types";
 import { TRegisterForm } from "@/types/data/forms";
 
 import Checkbox from "@/ui/Checkbox/Checkbox";
-import VariantsList from "@/components/VariantsList";
+import CheckboxList from "@/components/CheckboxList";
 import Multistep, { useMultistepForm } from "@/components/Multistep";
 import SurveyFieldset from "@/modules/Forms/SurveyFieldset";
 import SurveyFinish from "@/modules/Forms/SurveyFinish";
@@ -107,7 +107,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form1.id}
             question={surveyFormData.form1.question}
         >
-            <VariantsList
+            <CheckboxList
                 dataArr={surveyForms.form1}
                 initState={answerRadioForm.form1}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
@@ -153,7 +153,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form4.id}
             question={surveyFormData.form4.question}
         >
-            <VariantsList
+            <CheckboxList
                 dataArr={surveyForms.form4}
                 initState={answerRadioForm.form4}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
@@ -181,7 +181,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form6.id}
             question={surveyFormData.form6.question}
         >
-            <VariantsList
+            <CheckboxList
                 dataArr={surveyForms.form6}
                 initState={answerRadioForm.form6}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
@@ -191,7 +191,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form7.id}
             question={surveyFormData.form7.question}
         >
-            <VariantsList
+            <CheckboxList
                 dataArr={surveyForms.form7}
                 initState={answerRadioForm.form7}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
@@ -201,7 +201,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form8.id}
             question={surveyFormData.form8.question}
         >
-            <VariantsList
+            <CheckboxList
                 dataArr={surveyForms.form8}
                 initState={answerRadioForm.form8}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
@@ -211,7 +211,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form9.id}
             question={surveyFormData.form9.question}
         >
-            <VariantsList
+            <CheckboxList
                 dataArr={surveyForms.form9}
                 initState={answerRadioForm.form9}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
