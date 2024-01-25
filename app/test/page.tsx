@@ -320,22 +320,22 @@ export default function Test() {
                         id="signup-form"
                         className="form form-test"
                     >
-                        {/* <VariantsList
+                        <VariantsList
                             dataArr={testRadioBtnList}
-                            initState={answers}
-                            changeHandler={radioChangeHandler}
+                            initState={null}
+                            changeHandler={() => {}}
                         />
                         <VariantsList
                             dataArr={testCheckboxList}
-                            initState={answers}
-                            changeHandler={radioChangeHandler}
+                            initState={null}
+                            changeHandler={() => {}}
                         />
                         <br />
                         <VariantsList
                             dataArr={testToggleBtnList}
-                            initState={answers}
-                            changeHandler={radioChangeHandler}
-                        /> */}
+                            initState={null}
+                            changeHandler={() => {}}
+                        />
                         <br />
                     </form>
                 </div>

@@ -27,8 +27,7 @@ export default function Dashboard() {
         // * Use "any" to prevent type mismatches: string | null & string
         const temp: any = localStorage.getItem("balances");
         const parsedTemp = JSON.parse(temp);
-        console.log(parsedTemp);
-
+        
         parsedTemp !== null ? setBalancesArr(parsedTemp) : setBalancesArr(balanceItems);
     }, []);
 

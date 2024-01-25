@@ -4,28 +4,53 @@
 import React, { useState } from "react";
 
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
-import VariantsList from "@/components/VariantsList";
+import Toggle from "@/ui/Toggle/Toggle";
 import SetChangeForm from "@/components/SetChangeForm";
 import SectionLayout from "@/modules/layout/SectionLayout";
 
 import { settingsToggleList } from "@/data/cabinet/settings";
 
 export default function Settings() {
-    const [toggle, setToggle] = useState<string | null>(null);
+    type T_ToggleState = {
+        [key: string]: boolean;
+    };
+    const [settingsToggles, setSettingsToggles] = useState<T_ToggleState>({
+        "set-hide-balance-signin": false,
+        "set-send-confirm": false,
+        "set-exchange-confirm": false,
+        "set-signin-same-ip": false,
+        "set-signature-username": false,
+        "set-hide-site-navigation": false,
+        "set-hide-external-links": false,
+        "set-dark-mode": false,
+    });
 
-    const toggleChangeHandler = (e: any) => {
-        setToggle(e.target.value)
+    const checkboxTestChangeHandler = (name: string) => {
+        setSettingsToggles((prev: T_ToggleState) => {
+            const currentState = { ...prev, [name]: !settingsToggles[name] };
+            return currentState;
+        });
     };
 
     return (
         <SectionLayout id="page-cab settings">
             <div className="inner">
                 <StyledWrapper className="cabinet-card settings-list">
-                    <VariantsList
-                        dataArr={settingsToggleList}
-                        initState={toggle}
-                        changeHandler={toggleChangeHandler}
-                    />
+                    {settingsToggleList.map((item) => (
+                        <Toggle
+                            key={item.id}
+                            id={item.id}
+                            type={item.type}
+                            classNameModif={item.classNameModif}
+                            name={item.name}
+                            value={item.label}
+                            checked={settingsToggles[item.name]}
+                            disabled={item.disabled}
+                            onChange={() => checkboxTestChangeHandler(item.name)}
+                        >
+                            {item.label}
+                        </Toggle>
+                    ))}
                 </StyledWrapper>
 
                 <StyledWrapper className="cabinet-card personal-data-edit">
