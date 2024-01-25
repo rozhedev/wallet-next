@@ -34,46 +34,55 @@ export default function Test() {
 
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
-    const testArr: TVariantsListItemArr = [
-        {
-            id: "survey-answer1-1",
-            type: "checkbox",
-            name: "survey-answer1-1",
-            label: "Radio 1",
-        },
-        {
-            id: "survey-answer1-2",
-            type: "checkbox",
-            name: "survey-answer1-2",
-            label: "Radio 2",
-        },
-        {
-            id: "survey-answer1-3",
-            type: "checkbox",
-            name: "survey-answer1-3",
-            label: "Radio 3",
-        },
-        {
-            id: "survey-answer1-4",
-            type: "checkbox",
-            name: "survey-answer1-4",
-            label: "Radio 4",
-        },
-    ];
+    const testArr: Record<"form2", TVariantsListItemArr> = {
+        form2: [
+            {
+                id: "survey-answer1-1",
+                type: "checkbox",
+                name: "survey-answer1-1",
+                label: "Radio 1",
+            },
+            {
+                id: "survey-answer1-2",
+                type: "checkbox",
+                name: "survey-answer1-2",
+                label: "Radio 2",
+            },
+            {
+                id: "survey-answer1-3",
+                type: "checkbox",
+                name: "survey-answer1-3",
+                label: "Radio 3",
+            },
+            {
+                id: "survey-answer1-4",
+                type: "checkbox",
+                name: "survey-answer1-4",
+                label: "Radio 4",
+            },
+        ],
+    };
 
     type TCheckboxState = {
-        [key: string]: boolean;
+        form2: {
+            [key: string]: boolean;
+        };
     };
     const [testForm, setTestForm] = useState<TCheckboxState>({
-        "survey-answer1-1": false,
-        "survey-answer1-2": false,
-        "survey-answer1-3": false,
-        "survey-answer1-4": false,
-    });
+        form2: {
+            "survey-answer1-1": false,
+            "survey-answer1-2": false,
+            "survey-answer1-3": false,
+            "survey-answer1-4": false,
+        },
+    });    
 
     const checkboxTestChangeHandler = (name: string) => {
         setTestForm((prev: TCheckboxState) => {
-            const currentState = { ...prev, [name]: !testForm[name] };
+            const currentState = {
+                ...prev,
+                form2: { ...prev.form2, [name]: !testForm.form2[name] },
+            };
             console.log(currentState);
             return currentState;
         });
@@ -101,13 +110,13 @@ export default function Test() {
 
             <div className="container">
                 <StyledWrapper className="form-controller">
-                    {testArr.map((item: any) => (
+                    {testArr.form2.map((item: any) => (
                         <Checkbox
                             key={item.id}
                             id={item.id}
                             name={item.name}
                             value={item.label}
-                            checked={testForm[item.name]}
+                            checked={testForm.form2[item.name]}
                             onChange={() => checkboxTestChangeHandler(item.name)}
                             disabled={item.disabled}
                         >

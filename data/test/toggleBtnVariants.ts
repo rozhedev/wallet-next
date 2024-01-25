@@ -7,7 +7,6 @@ export const testToggleBtnList: TVariantsListItemArr = [
         name: "survey-answer3-1",
         label: "Item 1",
         classNameModif: "toggle",
-        defaultChecked: true,
     },
     {
         id: "survey-answer3-2",
@@ -31,6 +30,5 @@ export const testToggleBtnList: TVariantsListItemArr = [
         label: "Item 4",
         disabled: true,
         classNameModif: "toggle--readonly",
-        defaultChecked: true,
     },
 ];

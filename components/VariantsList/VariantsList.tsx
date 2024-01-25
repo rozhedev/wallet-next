@@ -30,8 +30,6 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr, initState, ch
                           name={variant.name}
                           value={variant.label}
                           disabled={variant.disabled}
-                        //   checked={initState}
-                        //   onChange={() => changeHandler(variant.name)}
                           classNameModif={variant.classNameModif}
                       >
                           {variant.label}
@@ -43,16 +41,11 @@ export const VariantsList: FC<VariantsListItemProps> = ({ dataArr, initState, ch
                           id={variant.id}
                           name={variant.name}
                           value={variant.label}
-                        //   checked={initState}
-                        //   onChange={() => changeHandler(variant.name)}
                           disabled={variant.disabled}
                       >
                           {variant.label}
                       </Checkbox>
                   ))}
-            {/* Temp state output */}
-            <br />
-            <p><i>Selected option:</i> {initState}</p>
         </>
     );
 };
