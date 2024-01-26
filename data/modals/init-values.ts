@@ -1,19 +1,8 @@
 import { surveyForms } from "@/modules/Forms/SurveyForm/data";
+import { type TAnswerCheckboxForm, type TAnswerRadioForm } from "@/types/data/forms";
 
 // * Checkbox form init values
-export type TAnswerCheckboxForm = {
-    form2: {
-        [key: string]: boolean;
-    };
-    form3: {
-        [key: string]: boolean;
-    };
-    form5: {
-        [key: string]: boolean;
-    };
-};
-
-export const answerCheckboxFormInit = {
+export const answerCheckboxFormInit: TAnswerCheckboxForm = {
     form2: {
         [surveyForms.form2[0].id]: false,
         [surveyForms.form2[1].id]: false,
@@ -47,9 +36,7 @@ export const answerCheckboxFormInit = {
 };
 
 // * Radio form init values
-export type TAnswerRadioForm = Record<"form1" | "form4" | "form6" | "form7" | "form8" | "form9", string | null>;
-
-export const answerRadioFormInit = {
+export const answerRadioFormInit: TAnswerRadioForm = {
     form1: null,
     form4: null,
     form6: null,

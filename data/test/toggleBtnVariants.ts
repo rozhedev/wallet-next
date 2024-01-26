@@ -1,6 +1,6 @@
-import { TVariantsListItemArr } from "@/components/VariantsList/types";
+import { TInputListItemArr } from "@/types/data/shared";
 
-export const testToggleBtnList: TVariantsListItemArr = [
+export const testToggleBtnList: TInputListItemArr = [
     {
         id: "survey-answer3-1",
         type: "checkbox",

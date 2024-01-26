@@ -1,6 +1,6 @@
-import { TVariantsListItemArr } from "@/components/VariantsList/types";
+import { type TInputListItemArr } from "@/types/data/shared";
 
-export const settingsToggleList: TVariantsListItemArr = [
+export const settingsToggleList: TInputListItemArr = [
     {
         id: "set-hide-balance-signin",
         type: "checkbox",
@@ -40,14 +40,14 @@ export const settingsToggleList: TVariantsListItemArr = [
         id: "set-hide-site-navigation",
         type: "checkbox",
         name: "set-hide-site-navigation",
-        label: "Hide \"Site navigation\" widget from dashboard",
+        label: 'Hide "Site navigation" widget from dashboard',
         classNameModif: "toggle",
     },
     {
         id: "set-hide-external-links",
         type: "checkbox",
         name: "set-hide-external-links",
-        label: "Hide \"External Links\" widget",
+        label: 'Hide "External Links" widget',
         classNameModif: "toggle",
     },
     {

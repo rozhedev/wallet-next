@@ -1,4 +1,4 @@
-import { TVariantsListItemArr } from "@/components/VariantsList/types";
+import { TInputListItemArr } from "@/types/data/shared";
 
 export const surveyFormData: Record<"form1" | "form2" | "form3" | "form4" | "form5" | "form6" | "form7" | "form8" | "form9", { id: `survey-form${number}`; question: string }> = {
     form1: {
@@ -15,7 +15,7 @@ export const surveyFormData: Record<"form1" | "form2" | "form3" | "form4" | "for
     },
     form4: {
         id: "survey-form4",
-        question: "Do you use crypto exchanges to store your personal funds?"
+        question: "Do you use crypto exchanges to store your personal funds?",
     },
     form5: {
         id: "survey-form5",
@@ -39,7 +39,7 @@ export const surveyFormData: Record<"form1" | "form2" | "form3" | "form4" | "for
     },
 };
 
-export const surveyForms: Record<"form1" | "form2" | "form3" | "form4" | "form5" | "form6" | "form7" | "form8" | "form9", TVariantsListItemArr> = {
+export const surveyForms: Record<"form1" | "form2" | "form3" | "form4" | "form5" | "form6" | "form7" | "form8" | "form9", TInputListItemArr> = {
     form1: [
         {
             id: "survey-answer1-1",

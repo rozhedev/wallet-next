@@ -25,7 +25,7 @@ import { testToggleBtnList } from "@/data/test/toggleBtnVariants";
 import { testSelectData, testSelectLang } from "@/data/test/selectData";
 import { testLinksData } from "@/data/test/linksData";
 import { checkedRoundedIcon, chevronBottomIcon, globeIcon, userIcon } from "@/data/pages/ui-icons";
-import { TVariantsListItemArr } from "@/components/VariantsList/types";
+import { type TInputListItemArr } from "@/types/data/shared";
 import Checkbox from "@/ui/Checkbox/Checkbox";
 
 export default function Test() {
@@ -34,7 +34,7 @@ export default function Test() {
 
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
-    const testArr: Record<"form2", TVariantsListItemArr> = {
+    const testArr: Record<"form2", TInputListItemArr> = {
         form2: [
             {
                 id: "survey-answer1-1",

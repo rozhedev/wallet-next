@@ -15,7 +15,8 @@ import SurveyInfo from "@/modules/Forms/SurveyInfo";
 import { REGISTER_INIT_VALUES } from "@/data/pages/inp-data";
 import { surveyForms, surveyFormData } from "./data";
 import { ROUTES } from "@/data/routes";
-import { type TAnswerRadioForm, answerRadioFormInit, type TAnswerCheckboxForm, answerCheckboxFormInit } from "@/data/modals/init-values";
+import { type TAnswerRadioForm, type TAnswerCheckboxForm } from "@/types/data/forms";
+import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
 
 export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element => {
     const {

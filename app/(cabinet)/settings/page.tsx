@@ -9,20 +9,21 @@ import SetChangeForm from "@/components/SetChangeForm";
 import SectionLayout from "@/modules/layout/SectionLayout";
 
 import { settingsToggleList } from "@/data/cabinet/settings";
+import { type TInputListItem } from "@/types/data/shared";
 
 export default function Settings() {
     type T_ToggleState = {
         [key: string]: boolean;
     };
     const [settingsToggles, setSettingsToggles] = useState<T_ToggleState>({
-        "set-hide-balance-signin": false,
-        "set-send-confirm": false,
-        "set-exchange-confirm": false,
-        "set-signin-same-ip": false,
-        "set-signature-username": false,
-        "set-hide-site-navigation": false,
-        "set-hide-external-links": false,
-        "set-dark-mode": false,
+        [settingsToggleList[0].id]: false,
+        [settingsToggleList[1].id]: false,
+        [settingsToggleList[2].id]: false,
+        [settingsToggleList[3].id]: false,
+        [settingsToggleList[4].id]: false,
+        [settingsToggleList[5].id]: false,
+        [settingsToggleList[6].id]: false,
+        [settingsToggleList[7].id]: false,
     });
 
     const checkboxTestChangeHandler = (name: string) => {
@@ -36,7 +37,7 @@ export default function Settings() {
         <SectionLayout id="page-cab settings">
             <div className="inner">
                 <StyledWrapper className="cabinet-card settings-list">
-                    {settingsToggleList.map((item) => (
+                    {settingsToggleList.map((item: TInputListItem) => (
                         <Toggle
                             key={item.id}
                             id={item.id}

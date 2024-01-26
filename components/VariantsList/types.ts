@@ -1,18 +1,5 @@
-import { T_ToggleModifClassNames } from "@/ui/Toggle/types";
-import { HTMLInputTypeAttribute } from "react";
-
-type TVariantsListItem = {
-    id: `survey-${string}` | `set-${string}`;
-    type: HTMLInputTypeAttribute;
-    name: `survey-answer${number}` | `survey-answer${number}-${number}` | `set-${string}`;
-    label: string;
-    disabled?: boolean;
-    classNameModif?: T_ToggleModifClassNames;
-    defaultChecked?: boolean;
-};
-
-export type TVariantsListItemArr = TVariantsListItem[];
+import { type TInputListItemArr } from "@/types/data/shared";
 
 export type VariantsListItemProps = {
-    dataArr: TVariantsListItemArr;
+    dataArr: TInputListItemArr;
 };

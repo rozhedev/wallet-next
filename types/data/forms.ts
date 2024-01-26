@@ -12,3 +12,17 @@ export type TRegisterForm = {
 export type TSigninForm = {
     "signin-inp": { value: string }[];
 }
+
+export type TAnswerCheckboxForm = {
+    form2: {
+        [key: string]: boolean;
+    };
+    form3: {
+        [key: string]: boolean;
+    };
+    form5: {
+        [key: string]: boolean;
+    };
+};
+
+export type TAnswerRadioForm = Record<"form1" | "form4" | "form6" | "form7" | "form8" | "form9", string | null>;
