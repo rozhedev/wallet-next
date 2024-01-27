@@ -20,7 +20,7 @@ import Radio from "@/ui/Radio/Radio";
 
 // * Data
 import { testRadioBtnList } from "@/data/test/radioBtnVariants";
-import { testCheckboxList } from "@/data/test/checkboxBtnVariants";
+import { testRadioList } from "@/data/test/checkboxBtnVariants";
 import { testToggleBtnList } from "@/data/test/toggleBtnVariants";
 import { testSelectData, testSelectLang } from "@/data/test/selectData";
 import { testLinksData } from "@/data/test/linksData";
@@ -330,7 +330,7 @@ export default function Test() {
                         className="form form-test"
                     >
                         <VariantsList dataArr={testRadioBtnList} />
-                        <VariantsList dataArr={testCheckboxList} />
+                        <VariantsList dataArr={testRadioList} />
                         <br />
                         <VariantsList dataArr={testToggleBtnList} />
                         <br />

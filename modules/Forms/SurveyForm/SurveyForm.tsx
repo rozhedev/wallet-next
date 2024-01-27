@@ -4,35 +4,29 @@ import React, { JSX, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
 import type { TSurveyFormProps } from "./types";
-import { TRegisterForm } from "@/types/data/forms";
+import { type TAnswerRadioForm, type TAnswerCheckboxForm } from "@/types/data/forms";
 
 import Checkbox from "@/ui/Checkbox/Checkbox";
-import CheckboxList from "@/components/CheckboxList";
+import RadioList from "@/components/RadioList";
 import Multistep, { useMultistepForm } from "@/components/Multistep";
 import SurveyFieldset from "@/modules/Forms/SurveyFieldset";
 import SurveyFinish from "@/modules/Forms/SurveyFinish";
 import SurveyInfo from "@/modules/Forms/SurveyInfo";
-import { REGISTER_INIT_VALUES } from "@/data/pages/inp-data";
 import { surveyForms, surveyFormData } from "./data";
 import { ROUTES } from "@/data/routes";
-import { type TAnswerRadioForm, type TAnswerCheckboxForm } from "@/types/data/forms";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
+import { checkSurveyRadioFieldset, checkSurveyCheckboxFieldset } from "@/utils/utils";
 
 export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element => {
     const {
-        register,
-        control,
         handleSubmit,
-        formState: { errors, isSubmitting },
-        getValues,
-        setValue,
+        formState: { isSubmitting },
         reset,
-    } = useForm<TRegisterForm>({
-        defaultValues: REGISTER_INIT_VALUES,
+    } = useForm<TAnswerRadioForm>({
+        defaultValues: answerRadioFormInit,
     });
 
     // * Radio inp state
-
     const [answerRadioForm, setAnswerRadioForm] = useState<TAnswerRadioForm>(answerRadioFormInit);
 
     const radioInpChange = (name: any, inpValue: string) => {
@@ -108,7 +102,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form1.id}
             question={surveyFormData.form1.question}
         >
-            <CheckboxList
+            <RadioList
                 dataArr={surveyForms.form1}
                 initState={answerRadioForm.form1}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
@@ -126,7 +120,6 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
                     value={item.label}
                     checked={answerCheckboxForm.form2[item.name]}
                     onChange={(e: any) => checkboxTestChangeHandler(e.target.name)}
-                    disabled={item.disabled}
                 >
                     {item.label}
                 </Checkbox>
@@ -144,7 +137,6 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
                     value={item.label}
                     checked={answerCheckboxForm.form3[item.name]}
                     onChange={(e: any) => checkboxTestChangeHandler(e.target.name)}
-                    disabled={item.disabled}
                 >
                     {item.label}
                 </Checkbox>
@@ -154,7 +146,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form4.id}
             question={surveyFormData.form4.question}
         >
-            <CheckboxList
+            <RadioList
                 dataArr={surveyForms.form4}
                 initState={answerRadioForm.form4}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
@@ -172,7 +164,6 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
                     value={item.label}
                     checked={answerCheckboxForm.form3[item.name]}
                     onChange={(e: any) => checkboxTestChangeHandler(e.target.name)}
-                    disabled={item.disabled}
                 >
                     {item.label}
                 </Checkbox>
@@ -182,7 +173,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form6.id}
             question={surveyFormData.form6.question}
         >
-            <CheckboxList
+            <RadioList
                 dataArr={surveyForms.form6}
                 initState={answerRadioForm.form6}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
@@ -192,7 +183,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form7.id}
             question={surveyFormData.form7.question}
         >
-            <CheckboxList
+            <RadioList
                 dataArr={surveyForms.form7}
                 initState={answerRadioForm.form7}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
@@ -202,7 +193,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form8.id}
             question={surveyFormData.form8.question}
         >
-            <CheckboxList
+            <RadioList
                 dataArr={surveyForms.form8}
                 initState={answerRadioForm.form8}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
@@ -212,7 +203,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             id={surveyFormData.form9.id}
             question={surveyFormData.form9.question}
         >
-            <CheckboxList
+            <RadioList
                 dataArr={surveyForms.form9}
                 initState={answerRadioForm.form9}
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
@@ -240,6 +231,15 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             form9: answerRadioForm.form9,
         };
         console.log(formData);
+
+        const radioFormsValidCond = checkSurveyRadioFieldset(answerRadioForm, null);
+        console.log(radioFormsValidCond);
+
+        const checkboxFormsValidCond =
+            checkSurveyCheckboxFieldset(answerCheckboxForm.form2, false) ||
+            checkSurveyCheckboxFieldset(answerCheckboxForm.form3, false) ||
+            checkSurveyCheckboxFieldset(answerCheckboxForm.form5, false);
+        console.log(checkboxFormsValidCond);
 
         if (!isLastStep) return next();
 

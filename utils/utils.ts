@@ -11,3 +11,17 @@ export const checkScreenWidth = (bp: number) => {
     else bool = false;
     return bool;
 };
+
+export const checkSurveyRadioFieldset = (obj: Object, condValue: boolean | null) => {
+    let bool: boolean;
+    if (Object.values(obj).every((prop) => prop !== condValue)) bool = true;
+    else bool = false;
+    return bool;
+};
+
+export const checkSurveyCheckboxFieldset = (obj: Object, condValue: boolean | null) => {
+    let bool: boolean;
+    if (Object.values(obj).some((prop) => prop !== condValue)) bool = true;
+    else bool = false;
+    return bool;
+};

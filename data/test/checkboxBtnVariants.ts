@@ -1,6 +1,6 @@
 import { TInputListItemArr } from "@/types/data/shared";
 
-export const testCheckboxList: TInputListItemArr = [
+export const testRadioList: TInputListItemArr = [
     {
         id: "survey-answer2-1",
         type: "checkbox",

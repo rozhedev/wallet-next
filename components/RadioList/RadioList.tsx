@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import { TCheckboxListProps } from "./types";
+import { TRadioListProps } from "./types";
 import { checkUnifiedArr } from "./helpers";
 
 import Radio from "@/ui/Radio/Radio";
 
-export const CheckboxList: FC<TCheckboxListProps> = ({ dataArr, initState, changeHandler }) => {
+export const RadioList: FC<TRadioListProps> = ({ dataArr, initState, changeHandler }) => {
     return (
         <>
             {checkUnifiedArr(dataArr, "radio") &&
@@ -18,6 +18,7 @@ export const CheckboxList: FC<TCheckboxListProps> = ({ dataArr, initState, chang
                         disabled={variant.disabled}
                         checked={initState === variant.label}
                         onChange={changeHandler}
+                        required={true}
                     />
                 ))}
         </>

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { VariantsListItemProps } from "./types";
-import { checkUnifiedArr, checkToggleArr } from "@/components/CheckboxList";
+import { checkUnifiedArr, checkToggleArr } from "@/components/RadioList";
 
 import Radio from "@/ui/Radio/Radio";
 import Checkbox from "@/ui/Checkbox/Checkbox";
