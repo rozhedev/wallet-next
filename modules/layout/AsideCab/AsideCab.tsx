@@ -39,7 +39,8 @@ export const AsideCab = ({ isAsideOpen, setIsAsideOpen, linksArr }: TAsideCabPro
 };
 
 const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, setIsAsideOpen }) => {
-    const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+    const [isSurveyOpen, setIsSurveyOpen] = useState<boolean>(false);
+
     return (
         <li className="aside-nav-item">
             {isLink ? (
@@ -70,7 +71,7 @@ const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, se
                         className="aside-nav-item__link"
                         onClick={() => {
                             checkScreenWidth(GRID_BREAKPOINTS.xs) && setIsAsideOpen(false);
-                            setIsOpenModal(true);
+                            setIsSurveyOpen(true);
                         }}
                     >
                         {itemIcon}
@@ -83,18 +84,20 @@ const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, se
                     </ul>
                 </>
             )}
+
+            {/* //* Survey form */}
             <Modal
                 modalId="modal-survey"
                 modalDialogClassName="modal-dialog modal-dialog--info modal-dialog--survey"
-                isOpen={isOpenModal}
-                onCloseModal={() => setIsOpenModal(false)}
+                isOpen={isSurveyOpen}
+                onCloseModal={() => setIsSurveyOpen(false)}
             >
                 <Modal.Header
                     titleIcon={dropIcon}
                     title="Airdop survey"
                 />
                 <Modal.Content className="modal-dialog__body form-wrapper">
-                    <SurveyForm setIsOpenModal={setIsOpenModal}/>
+                    <SurveyForm setIsOpenModal={setIsSurveyOpen} />
                 </Modal.Content>
             </Modal>
         </li>

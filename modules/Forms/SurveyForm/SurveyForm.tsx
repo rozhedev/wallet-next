@@ -15,7 +15,6 @@ import SurveyInfo from "@/modules/Forms/SurveyInfo";
 import { surveyForms, surveyFormData } from "./data";
 import { ROUTES } from "@/data/routes";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
-import { checkSurveyRadioFieldset, checkSurveyCheckboxFieldset } from "@/utils/utils";
 
 export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element => {
     const {
@@ -231,15 +230,6 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             form9: answerRadioForm.form9,
         };
         console.log(formData);
-
-        const radioFormsValidCond = checkSurveyRadioFieldset(answerRadioForm, null);
-        console.log(radioFormsValidCond);
-
-        const checkboxFormsValidCond =
-            checkSurveyCheckboxFieldset(answerCheckboxForm.form2, false) ||
-            checkSurveyCheckboxFieldset(answerCheckboxForm.form3, false) ||
-            checkSurveyCheckboxFieldset(answerCheckboxForm.form5, false);
-        console.log(checkboxFormsValidCond);
 
         if (!isLastStep) return next();
 

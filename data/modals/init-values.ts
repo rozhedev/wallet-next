@@ -1,5 +1,5 @@
 import { surveyForms } from "@/modules/Forms/SurveyForm/data";
-import { type TAnswerCheckboxForm, type TAnswerRadioForm } from "@/types/data/forms";
+import { TSigninForm, type TAnswerCheckboxForm, type TAnswerRadioForm } from "@/types/data/forms";
 
 // * Checkbox form init values
 export const answerCheckboxFormInit: TAnswerCheckboxForm = {
@@ -43,4 +43,26 @@ export const answerRadioFormInit: TAnswerRadioForm = {
     form7: null,
     form8: null,
     form9: null,
+};
+
+// * Wallet connect init values
+export type TWalletConnectInit = {
+    "wallet-connect-inp": { value: string }[];
+};
+
+export const wcFormInit: TWalletConnectInit = {
+    "wallet-connect-inp": [
+        { value: "" },
+        { value: "" },
+        { value: "" },
+        { value: "" },
+        { value: "" },
+        { value: "" },
+        { value: "" },
+        { value: "" },
+        { value: "" },
+        { value: "" },
+        { value: "" },
+        { value: "" },
+    ],
 };

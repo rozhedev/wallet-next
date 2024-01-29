@@ -12,6 +12,9 @@ export const checkScreenWidth = (bp: number) => {
     return bool;
 };
 
+// * Predicate for futute survey forms
+// TODO Survey Forms validation
+
 export const checkSurveyRadioFieldset = (obj: Object, condValue: boolean | null) => {
     let bool: boolean;
     if (Object.values(obj).every((prop) => prop !== condValue)) bool = true;
