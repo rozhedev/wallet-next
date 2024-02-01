@@ -4,12 +4,12 @@ import React, { FC } from "react";
 
 import type { TMainRateProps } from "./types";
 import MainRateItem, { type TMainRateItem, type TApiLinkMask } from "@/components/items/MainRateItem";
-import { AllCurNames, type TAllCurNotesScope } from "@/types/data/currencies";
+import { AllCurShortNames, type TAllCurNotesScope } from "@/types/data/currencies";
 
 export const MainRate: FC<TMainRateProps> = ({ dataArr }) => {
     return (
         <div className="inner">
-            {dataArr.map((item: TMainRateItem<TAllCurNotesScope, AllCurNames, TApiLinkMask>) => (
+            {dataArr.map((item: TMainRateItem<TAllCurNotesScope, AllCurShortNames, TApiLinkMask>) => (
                 <MainRateItem
                     key={item.id}
                     id={item.id}

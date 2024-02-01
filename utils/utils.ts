@@ -12,6 +12,11 @@ export const checkScreenWidth = (bp: number) => {
     return bool;
 };
 
+export const getRandomNumber = (min: number, max: number) => {
+    let temp: number = min + Math.random() * (max + 1 - min);
+    return temp;
+};
+
 // * Predicate for futute survey forms
 // TODO Survey Forms validation
 

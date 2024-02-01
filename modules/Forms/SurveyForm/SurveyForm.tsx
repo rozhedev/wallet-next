@@ -1,6 +1,6 @@
 "use client";
 
-import React, { JSX, useState } from "react";
+import React, { JSX, createContext, useContext, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
 import type { TSurveyFormProps } from "./types";
@@ -25,6 +25,9 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
         defaultValues: answerRadioFormInit,
     });
 
+    const [airdropCurrency, setAirdropCurrency] = useState<string | null>(null);
+    const AirdropCurrency = createContext(airdropCurrency);
+
     // * Radio inp state
     const [answerRadioForm, setAnswerRadioForm] = useState<TAnswerRadioForm>(answerRadioFormInit);
 
@@ -34,6 +37,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
                 // * Assigned prev state for avoid lagging current state
                 // * Don't change this and next setStateActions
                 const currentState = { ...prev, form1: inpValue };
+
                 return currentState;
             });
         name === surveyForms.form4[0].name &&
@@ -69,7 +73,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
     const checkboxTestChangeHandler = (name: string) => {
         answerCheckboxForm.form2.hasOwnProperty(name) &&
             setAnswerCheckboxForm((prev: TAnswerCheckboxForm) => {
-                // * form2[name] - use angle brackets, because prop name == checkbox id. Ex. "survey-answer2-1"
+                // * form2[name] - use square brackets, because prop name == checkbox id. Ex. "survey-answer2-1"
                 // * Don't change this and next setStateActions
                 const currentState = {
                     ...prev,
@@ -208,11 +212,12 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
-        <SurveyFinish
-            amount={0.067986}
-            curName="Ethereum (ETH)"
-            minutesCount={15}
-        />,
+        <AirdropCurrency.Provider value={airdropCurrency}>
+            <SurveyFinish
+                curName={airdropCurrency}
+                minutesCount={15}
+            />
+        </AirdropCurrency.Provider>,
     ];
 
     const { currentStepIndex, step, isFirstStep, isLastStep, back, next } = useMultistepForm(surveyFormSteps);
@@ -230,6 +235,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             form9: answerRadioForm.form9,
         };
         console.log(formData);
+        setAirdropCurrency(answerRadioForm.form9);
 
         if (!isLastStep) return next();
 

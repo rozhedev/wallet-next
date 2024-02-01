@@ -2,13 +2,13 @@
 
 import React, { FC, useEffect, useState, useRef } from "react";
 import type { TApiLinkMask, TMainRateItem } from "./types";
-import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
+import { AllCurShortNames, TAllCurNotesScope } from "@/types/data/currencies";
 import Image from "next/image";
 import { getCurRatePromise } from "./hooks";
 import RateSkeleton from "@/components/RateSkeleton";
 import { arrowTopRightIcon } from "@/data/pages/ui-icons";
 
-export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames, TApiLinkMask>> = ({ id, title, imgPath, imgAlt, apiLink }) => {
+export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurShortNames, TApiLinkMask>> = ({ id, title, imgPath, imgAlt, apiLink }) => {
     const [rate, setRate] = useState<any>(0);
     const [isIncreased, setIsIncreased] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -50,9 +50,7 @@ export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurNames, TApi
                 {isLoading ? (
                     <>
                         <span className="output">${rate}</span>
-                        <div className="main-rate-item__dir-icon">
-                            {arrowTopRightIcon}
-                        </div>
+                        <div className="main-rate-item__dir-icon">{arrowTopRightIcon}</div>
                     </>
                 ) : (
                     <RateSkeleton

@@ -1,3 +1,4 @@
+// * For site content only. 
 export const PAY_LIMITS = {
     minReplenishUsdAmount: 40,
     minWithdrawUsdAmount: 10,

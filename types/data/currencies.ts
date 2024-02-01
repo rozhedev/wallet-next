@@ -1,7 +1,7 @@
 import { RequiredPick } from "../utils/utils";
 
 // * Currency data union
-export enum AllCurNames {
+export enum AllCurShortNames {
     aave = "aave",
     algorand = "algorand",
     amp = "amp",
@@ -78,234 +78,311 @@ export enum AllCurNames {
     zcash = "zcash",
 }
 
-// export type AllCurNamesScope = {
-//     [key in keyof typeof AllCurNames]: (typeof AllCurNames)[key];
+export enum AllCurFullNames {
+    aave = "Aave (AAVE)",
+    algorand = "Algorand (ALGO)",
+    amp = "Amp (AMP)",
+    anchorProtocol = "Anchor Protocol (ANC)",
+    avalanche = "Avalanche (AVAX)",
+    axieInfinity = "Axie Infinity (AXS)",
+    binanceCoin = "Binance Coin (BNB)",
+    binanceUsd = "Binance USD (BUSD)",
+    bitcoin = "Bitcoin (BTC)",
+    bitcoinBep2 = "Bitcoin BEP2 (BTCB)",
+    bitcoinCash = "Bitcoin Cash (BCH)",
+    bitcoinSv = "Bitcoin SV (BSV)",
+    bitTorrent = "BitTorrent (BTT)",
+    cardano = "Cardano (ADA)",
+    celo = "Celo (CELO)",
+    chainlink = "Chainlink (LINK)",
+    chiliz = "Chiliz (CHZ)",
+    compound = "Compound (COMP)",
+    cosmos = "Cosmos (ATOM)",
+    cronos = "Cronos (CRO)",
+    dai = "Dai (DAI)",
+    dash = "Dash (DASH)",
+    decentraland = "Decentraland (MANA)",
+    dogecoin = "Dogecoin (DOGE)",
+    elrond = "Elrond (EGLD)",
+    enjinCoin = "Enjin Coin (ENJ)",
+    eos = "EOS (EOS)",
+    ethereum = "Ethereum (ETH)",
+    ethereumClassic = "Ethereum Classic (ETC)",
+    fantom = "Fantom (FTM)",
+    filecoin = "Filecoin (FIL)",
+    flow = "Flow (FLOW)",
+    ftxToken = "FTX Token (FTT)",
+    gala = "Gala (GALA)",
+    harmony = "Harmony (ONE)",
+    hedera = "Hedera (HBAR)",
+    helium = "Helium (HNT)",
+    holo = "Holo (HOT)",
+    internetComputer = "Internet Computer (ICP)",
+    iota = "IOTA (MIOTA)",
+    kadena = "Kadena (KDA)",
+    klaytn = "Klaytn (KLAY)",
+    kuCoinToken = "KuCoin Token (KCS)",
+    kusama = "Kusama (KSM)",
+    litecoin = "Litecoin (LTC)",
+    maker = "Maker (MKR)",
+    monero = "Monero (XMR)",
+    nearProtocol = "NEAR Protocol (NEAR)",
+    neo = "Neo (NEO)",
+    nexo = "Nexo (NEXO)",
+    polkadot = "Polkadot (DOT)",
+    polygon = "Polygon (MATIC)",
+    secret = "Secret (SCRT)",
+    shibainu = "Shiba Inu (SHIB)",
+    solana = "Solana (SOL)",
+    stacks = "Stacks (STX)",
+    stellar = "Stellar (XLM)",
+    terra = "Terra (LUNA)",
+    tether = "Tether (USDT)",
+    tezos = "Tezos (XTZ)",
+    theGraph = "The Graph (GRT)",
+    theSandbox = "The Sandbox (SAND)",
+    thetaNetwork = "Theta Network (THETA)",
+    thorChain = "THORChain (RUNE)",
+    tron = "Tron (TRX)",
+    uma = "UMA (UMA)",
+    uniswap = "Uniswap (UNI)",
+    unusSedLeo = "UNUS SED LEO (LEO)",
+    usdCoin = "USD Coin (USDC)",
+    veChain = "Ve Chain (VET)",
+    waves = "Waves (WAVES)",
+    wrappedBitcoin = "Wrapped Bitcoin (WBTC)",
+    xrp = "XRP (XRP)",
+    zcash = "Zcash (ZEC)",
+}
+
+// export type AllCurShortNamesScope = {
+//     [key in keyof typeof AllCurShortNames]: (typeof AllCurShortNames)[key];
 // };
 
 // * Currencies notations scope
 export type TAllCurNotes = {
-    [AllCurNames.aave]: AllCurNames.aave | "Aave" | "AAVE" | "Aave (AAVE)" | "aave-AAVE";
+    [AllCurShortNames.aave]: AllCurShortNames.aave | "Aave" | "AAVE" | AllCurFullNames.aave | "aave-AAVE";
 
-    [AllCurNames.algorand]: AllCurNames.algorand | "Algorand" | "ALGO" | "algo" | "Algorand (ALGO)" | "algorand-ALGO";
+    [AllCurShortNames.algorand]: AllCurShortNames.algorand | "Algorand" | "ALGO" | "algo" | AllCurFullNames.algorand | "algorand-ALGO";
 
-    [AllCurNames.amp]: AllCurNames.amp | "Amp" | "AMP" | "Amp (AMP)" | "amp-AMP";
+    [AllCurShortNames.amp]: AllCurShortNames.amp | "Amp" | "AMP" | AllCurFullNames.amp | "amp-AMP";
 
-    [AllCurNames.anchorProtocol]: AllCurNames.anchorProtocol | "Anchor Protocol" | "ANC" | "anc" | "Anchor Protocol (ANC)" | "anchor-protocol-ANC";
+    [AllCurShortNames.anchorProtocol]: AllCurShortNames.anchorProtocol | "Anchor Protocol" | "ANC" | "anc" | AllCurFullNames.anchorProtocol | "anchor-protocol-ANC";
 
-    [AllCurNames.avalanche]: AllCurNames.avalanche | "Avalanche" | "AVAX" | "avax" | "Avalanche (AVAX)" | "avalanche-AVAX";
+    [AllCurShortNames.avalanche]: AllCurShortNames.avalanche | "Avalanche" | "AVAX" | "avax" | AllCurFullNames.avalanche | "avalanche-AVAX";
 
-    [AllCurNames.axieInfinity]: AllCurNames.axieInfinity | "Axie Infinity" | "AXS" | "axs" | "Axie Infinity (AXS)" | "axie-infinity-AXS";
+    [AllCurShortNames.axieInfinity]: AllCurShortNames.axieInfinity | "Axie Infinity" | "AXS" | "axs" | AllCurFullNames.axieInfinity | "axie-infinity-AXS";
 
-    [AllCurNames.binanceCoin]: AllCurNames.binanceCoin | "Binance Coin" | "BNB" | "bnb" | "Binance Coin (BNB)" | "binance-coin-BNB";
+    [AllCurShortNames.binanceCoin]: AllCurShortNames.binanceCoin | "Binance Coin" | "BNB" | "bnb" | AllCurFullNames.binanceCoin | "binance-coin-BNB";
 
-    [AllCurNames.binanceUsd]: AllCurNames.binanceUsd | "Binance USD" | "BUSD" | "busd" | "Binance USD (BUSD)" | "binance-usd-BUSD";
+    [AllCurShortNames.binanceUsd]: AllCurShortNames.binanceUsd | "Binance USD" | "BUSD" | "busd" | AllCurFullNames.binanceUsd | "binance-usd-BUSD";
 
-    [AllCurNames.bitcoin]: AllCurNames.bitcoin | "Bitcoin" | "BTC" | "btc" | "Bitcoin (BTC)" | "bitcoin-BTC";
+    [AllCurShortNames.bitcoin]: AllCurShortNames.bitcoin | "Bitcoin" | "BTC" | "btc" | AllCurFullNames.bitcoin | "bitcoin-BTC";
 
-    [AllCurNames.bitcoinBep2]: AllCurNames.bitcoinBep2 | "Bitcoin BEP2" | "BTCB" | "btcb" | "Bitcoin BEP2 (BTCB)" | "bitcoin-bep2-BTCB";
+    [AllCurShortNames.bitcoinBep2]: AllCurShortNames.bitcoinBep2 | "Bitcoin BEP2" | "BTCB" | "btcb" | AllCurFullNames.bitcoinBep2 | "bitcoin-bep2-BTCB";
 
-    [AllCurNames.bitcoinCash]: AllCurNames.bitcoinCash | "Bitcoin Cash" | "BCH" | "bch" | "Bitcoin Cash (BCH)" | "bitcoin-cash-BCH";
+    [AllCurShortNames.bitcoinCash]: AllCurShortNames.bitcoinCash | "Bitcoin Cash" | "BCH" | "bch" | AllCurFullNames.bitcoinCash | "bitcoin-cash-BCH";
 
-    [AllCurNames.bitcoinSv]: AllCurNames.bitcoinSv | "Bitcoin SV" | "BSV" | "bsv" | "Bitcoin SV (BSV)" | "bitcoin-sv-BSV";
+    [AllCurShortNames.bitcoinSv]: AllCurShortNames.bitcoinSv | "Bitcoin SV" | "BSV" | "bsv" | AllCurFullNames.bitcoinSv | "bitcoin-sv-BSV";
 
-    [AllCurNames.bitTorrent]: AllCurNames.bitTorrent | "BitTorrent" | "BTT" | "btt" | "BitTorrent (BTT)" | "bit-torrent-BTT";
+    [AllCurShortNames.bitTorrent]: AllCurShortNames.bitTorrent | "BitTorrent" | "BTT" | "btt" | AllCurFullNames.bitTorrent | "bit-torrent-BTT";
 
-    [AllCurNames.cardano]: AllCurNames.cardano | "Cardano" | "ADA" | "ada" | "Cardano (ADA)" | "cardano-ADA";
+    [AllCurShortNames.cardano]: AllCurShortNames.cardano | "Cardano" | "ADA" | "ada" | AllCurFullNames.cardano | "cardano-ADA";
 
-    [AllCurNames.celo]: AllCurNames.celo | "Celo" | "CELO" | "Celo (CELO)" | "celo-CELO";
+    [AllCurShortNames.celo]: AllCurShortNames.celo | "Celo" | "CELO" | AllCurFullNames.celo | "celo-CELO";
 
-    [AllCurNames.chainlink]: AllCurNames.chainlink | "Chainlink" | "LINK" | "link" | "Chainlink (LINK)" | "chainlink-LINK";
+    [AllCurShortNames.chainlink]: AllCurShortNames.chainlink | "Chainlink" | "LINK" | "link" | AllCurFullNames.chainlink | "chainlink-LINK";
 
-    [AllCurNames.chiliz]: AllCurNames.chiliz | "Chiliz" | "CHZ" | "chz" | "Chiliz (CHZ)" | "chiliz-CHZ";
+    [AllCurShortNames.chiliz]: AllCurShortNames.chiliz | "Chiliz" | "CHZ" | "chz" | AllCurFullNames.chiliz | "chiliz-CHZ";
 
-    [AllCurNames.compound]: AllCurNames.compound | "Compound" | "COMP" | "comp" | "Compound (COMP)" | "compound-COMP";
+    [AllCurShortNames.compound]: AllCurShortNames.compound | "Compound" | "COMP" | "comp" | AllCurFullNames.compound | "compound-COMP";
 
-    [AllCurNames.cosmos]: AllCurNames.cosmos | "Cosmos" | "ATOM" | "atom" | "Cosmos (ATOM)" | "cosmos-ATOM";
+    [AllCurShortNames.cosmos]: AllCurShortNames.cosmos | "Cosmos" | "ATOM" | "atom" | AllCurFullNames.cosmos | "cosmos-ATOM";
 
-    [AllCurNames.cronos]: AllCurNames.cronos | "Cronos" | "CRO" | "cro" | "Cronos (CRO)" | "cronos-CRO";
+    [AllCurShortNames.cronos]: AllCurShortNames.cronos | "Cronos" | "CRO" | "cro" | AllCurFullNames.cronos | "cronos-CRO";
 
-    [AllCurNames.dai]: AllCurNames.dai | "Dai" | "DAI" | "Dai (DAI)" | "dai-DAI";
+    [AllCurShortNames.dai]: AllCurShortNames.dai | "Dai" | "DAI" | AllCurFullNames.dai | "dai-DAI";
 
-    [AllCurNames.dash]: AllCurNames.dash | "Dash" | "DASH" | "Dash (DASH)" | "dash-DASH";
+    [AllCurShortNames.dash]: AllCurShortNames.dash | "Dash" | "DASH" | AllCurFullNames.dash | "dash-DASH";
 
-    [AllCurNames.decentraland]: AllCurNames.decentraland | "Decentraland" | "MANA" | "mana" | "Decentraland (MANA)" | "decentraland-MANA";
+    [AllCurShortNames.decentraland]: AllCurShortNames.decentraland | "Decentraland" | "MANA" | "mana" | AllCurFullNames.decentraland | "decentraland-MANA";
 
-    [AllCurNames.dogecoin]: AllCurNames.dogecoin | "Dogecoin" | "DOGE" | "doge" | "Dogecoin (DOGE)" | "dogecoin-DOGE";
+    [AllCurShortNames.dogecoin]: AllCurShortNames.dogecoin | "Dogecoin" | "DOGE" | "doge" | AllCurFullNames.dogecoin | "dogecoin-DOGE";
 
-    [AllCurNames.elrond]: AllCurNames.elrond | "Elrond" | "EGLD" | "egld" | "Elrond (EGLD)" | "elrond-EGLD";
+    [AllCurShortNames.elrond]: AllCurShortNames.elrond | "Elrond" | "EGLD" | "egld" | AllCurFullNames.elrond | "elrond-EGLD";
 
-    [AllCurNames.enjinCoin]: AllCurNames.enjinCoin | "Enjin Coin" | "ENJ" | "enj" | "Enjin Coin (ENJ)" | "enjin-coin-ENJ";
+    [AllCurShortNames.enjinCoin]: AllCurShortNames.enjinCoin | "Enjin Coin" | "ENJ" | "enj" | AllCurFullNames.enjinCoin | "enjin-coin-ENJ";
 
-    [AllCurNames.eos]: AllCurNames.eos | "EOS" | "EOS (EOS)" | "eos-EOS";
+    [AllCurShortNames.eos]: AllCurShortNames.eos | "EOS" | AllCurFullNames.eos | "eos-EOS";
 
-    [AllCurNames.ethereum]: AllCurNames.ethereum | "Ethereum" | "ETH" | "eth" | "Ethereum (ETH)" | "ethereum-ETH";
+    [AllCurShortNames.ethereum]: AllCurShortNames.ethereum | "Ethereum" | "ETH" | "eth" | AllCurFullNames.ethereum | "ethereum-ETH";
 
-    [AllCurNames.ethereumClassic]: AllCurNames.ethereumClassic | "Ethereum Classic" | "ETC" | "etc" | "Ethereum Classic (ETC)" | "ethereum-classic-ETC";
+    [AllCurShortNames.ethereumClassic]: AllCurShortNames.ethereumClassic | "Ethereum Classic" | "ETC" | "etc" | AllCurFullNames.ethereumClassic | "ethereum-classic-ETC";
 
-    [AllCurNames.fantom]: AllCurNames.fantom | "Fantom" | "FTM" | "ftm" | "Fantom (FTM)" | "fantom-FTM";
+    [AllCurShortNames.fantom]: AllCurShortNames.fantom | "Fantom" | "FTM" | "ftm" | AllCurFullNames.fantom | "fantom-FTM";
 
-    [AllCurNames.filecoin]: AllCurNames.filecoin | "Filecoin" | "FIL" | "fil" | "Filecoin (FIL)" | "filecoin-FIL";
+    [AllCurShortNames.filecoin]: AllCurShortNames.filecoin | "Filecoin" | "FIL" | "fil" | AllCurFullNames.filecoin | "filecoin-FIL";
 
-    [AllCurNames.flow]: AllCurNames.flow | "Flow" | "FLOW" | "Flow (FLOW)" | "flow-FLOW";
+    [AllCurShortNames.flow]: AllCurShortNames.flow | "Flow" | "FLOW" | AllCurFullNames.flow | "flow-FLOW";
 
-    [AllCurNames.ftxToken]: AllCurNames.ftxToken | "Ftx Token" | "FTT" | "ftt" | "FTX Token (FTT)" | "ftx-token-FTT";
+    [AllCurShortNames.ftxToken]: AllCurShortNames.ftxToken | "Ftx Token" | "FTT" | "ftt" | AllCurFullNames.ftxToken | "ftx-token-FTT";
 
-    [AllCurNames.gala]: AllCurNames.gala | "Gala" | "GALA" | "Gala (GALA)" | "gala-GALA";
+    [AllCurShortNames.gala]: AllCurShortNames.gala | "Gala" | "GALA" | AllCurFullNames.gala | "gala-GALA";
 
-    [AllCurNames.harmony]: AllCurNames.harmony | "Harmony" | "ONE" | "one" | "Harmony (ONE)" | "harmony-ONE";
+    [AllCurShortNames.harmony]: AllCurShortNames.harmony | "Harmony" | "ONE" | "one" | AllCurFullNames.harmony | "harmony-ONE";
 
-    [AllCurNames.hedera]: AllCurNames.hedera | "Hedera" | "HBAR" | "hbar" | "Hedera (HBAR)" | "hedera-HBAR";
+    [AllCurShortNames.hedera]: AllCurShortNames.hedera | "Hedera" | "HBAR" | "hbar" | AllCurFullNames.hedera | "hedera-HBAR";
 
-    [AllCurNames.helium]: AllCurNames.helium | "Helium" | "HNT" | "hnt" | "Helium (HNT)" | "helium-HNT";
+    [AllCurShortNames.helium]: AllCurShortNames.helium | "Helium" | "HNT" | "hnt" | AllCurFullNames.helium | "helium-HNT";
 
-    [AllCurNames.holo]: AllCurNames.holo | "Holo" | "HOT" | "hot" | "Holo (HOT)" | "holo-HOT";
+    [AllCurShortNames.holo]: AllCurShortNames.holo | "Holo" | "HOT" | "hot" | AllCurFullNames.holo | "holo-HOT";
 
-    [AllCurNames.internetComputer]: AllCurNames.internetComputer | "Internet Computer" | "ICP" | "icp" | "Internet Computer (ICP)" | "internet-computer-ICP";
+    [AllCurShortNames.internetComputer]: AllCurShortNames.internetComputer | "Internet Computer" | "ICP" | "icp" | AllCurFullNames.internetComputer | "internet-computer-ICP";
 
-    [AllCurNames.iota]: AllCurNames.iota | "IOTA" | "MIOTA" | "miota" | "IOTA (MIOTA)" | "iota-MIOTA";
+    [AllCurShortNames.iota]: AllCurShortNames.iota | "IOTA" | "MIOTA" | "miota" | AllCurFullNames.iota | "iota-MIOTA";
 
-    [AllCurNames.kadena]: AllCurNames.kadena | "Kadena" | "KDA" | "kda" | "Kadena (KDA)" | "kadena-KDA";
+    [AllCurShortNames.kadena]: AllCurShortNames.kadena | "Kadena" | "KDA" | "kda" | AllCurFullNames.kadena | "kadena-KDA";
 
-    [AllCurNames.klaytn]: AllCurNames.klaytn | "Klaytn" | "KLAY" | "klay" | "Klaytn (KLAY)" | "klaytn-KLAY";
+    [AllCurShortNames.klaytn]: AllCurShortNames.klaytn | "Klaytn" | "KLAY" | "klay" | AllCurFullNames.klaytn | "klaytn-KLAY";
 
-    [AllCurNames.kuCoinToken]: AllCurNames.kuCoinToken | "KuCoin Token" | "KCS" | "kcs" | "KuCoin Token (KCS)" | "ku-coin-token-KCS";
+    [AllCurShortNames.kuCoinToken]: AllCurShortNames.kuCoinToken | "KuCoin Token" | "KCS" | "kcs" | AllCurFullNames.kuCoinToken | "ku-coin-token-KCS";
 
-    [AllCurNames.kusama]: AllCurNames.kusama | "Kusama" | "KSM" | "ksm" | "Kusama (KSM)" | "kusama-KSM";
+    [AllCurShortNames.kusama]: AllCurShortNames.kusama | "Kusama" | "KSM" | "ksm" | AllCurFullNames.kusama | "kusama-KSM";
 
-    [AllCurNames.litecoin]: AllCurNames.litecoin | "Litecoin" | "LTC" | "ltc" | "Litecoin (LTC)" | "litecoin-LTC";
+    [AllCurShortNames.litecoin]: AllCurShortNames.litecoin | "Litecoin" | "LTC" | "ltc" | AllCurFullNames.litecoin | "litecoin-LTC";
 
-    [AllCurNames.maker]: AllCurNames.maker | "Maker" | "MKR" | "mkr" | "Maker (MKR)" | "maker-MKR";
+    [AllCurShortNames.maker]: AllCurShortNames.maker | "Maker" | "MKR" | "mkr" | AllCurFullNames.maker | "maker-MKR";
 
-    [AllCurNames.monero]: AllCurNames.monero | "Monero" | "XMR" | "xmr" | "Monero (XMR)" | "monero-XMR";
+    [AllCurShortNames.monero]: AllCurShortNames.monero | "Monero" | "XMR" | "xmr" | AllCurFullNames.monero | "monero-XMR";
 
-    [AllCurNames.nearProtocol]: AllCurNames.nearProtocol | "NEAR Protocol" | "NEAR" | "near" | "NEAR Protocol (NEAR)" | "Near (NEAR)" | "near-protocol-NEAR";
+    [AllCurShortNames.nearProtocol]: AllCurShortNames.nearProtocol | "NEAR Protocol" | "NEAR" | "near" | AllCurFullNames.nearProtocol | "Near (NEAR)" | "near-protocol-NEAR";
 
-    [AllCurNames.neo]: AllCurNames.neo | "Neo" | "NEO" | "Neo (NEO)" | "neo-NEO";
+    [AllCurShortNames.neo]: AllCurShortNames.neo | "Neo" | "NEO" | AllCurFullNames.neo | "neo-NEO";
 
-    [AllCurNames.nexo]: AllCurNames.nexo | "Nexo" | "NEXO" | "Nexo (NEXO)" | "nexo-NEXO";
+    [AllCurShortNames.nexo]: AllCurShortNames.nexo | "Nexo" | "NEXO" | AllCurFullNames.nexo | "nexo-NEXO";
 
-    [AllCurNames.polkadot]: AllCurNames.polkadot | "Polkadot" | "DOT" | "dot" | "Polkadot (DOT)" | "polkadot-DOT";
+    [AllCurShortNames.polkadot]: AllCurShortNames.polkadot | "Polkadot" | "DOT" | "dot" | AllCurFullNames.polkadot | "polkadot-DOT";
 
-    [AllCurNames.polygon]: AllCurNames.polygon | "Polygon" | "MATIC" | "matic" | "Polygon (MATIC)" | "polygon-MATIC";
+    [AllCurShortNames.polygon]: AllCurShortNames.polygon | "Polygon" | "MATIC" | "matic" | AllCurFullNames.polygon | "polygon-MATIC";
 
-    [AllCurNames.secret]: AllCurNames.secret | "Secret" | "SCRT" | "scrt" | "Secret (SCRT)" | "secret-SCRT";
+    [AllCurShortNames.secret]: AllCurShortNames.secret | "Secret" | "SCRT" | "scrt" | AllCurFullNames.secret | "secret-SCRT";
 
-    [AllCurNames.shibainu]: AllCurNames.shibainu | "Shiba Inu" | "SHIB" | "shib" | "Shiba Inu (SHIB)" | "shiba-inu-SHIB";
+    [AllCurShortNames.shibainu]: AllCurShortNames.shibainu | "Shiba Inu" | "SHIB" | "shib" | AllCurFullNames.shibainu | "shiba-inu-SHIB";
 
-    [AllCurNames.solana]: AllCurNames.solana | "Solana" | "SOL" | "sol" | "Solana (SOL)" | "solana-SOL";
+    [AllCurShortNames.solana]: AllCurShortNames.solana | "Solana" | "SOL" | "sol" | AllCurFullNames.solana | "solana-SOL";
 
-    [AllCurNames.stacks]: AllCurNames.stacks | "Stacks" | "STX" | "stx" | "Stacks (STX)" | "stacks-STX";
+    [AllCurShortNames.stacks]: AllCurShortNames.stacks | "Stacks" | "STX" | "stx" | AllCurFullNames.stacks | "stacks-STX";
 
-    [AllCurNames.stellar]: AllCurNames.stellar | "Stellar" | "XLM" | "xlm" | "Stellar (XLM)" | "stellar-XLM";
+    [AllCurShortNames.stellar]: AllCurShortNames.stellar | "Stellar" | "XLM" | "xlm" | AllCurFullNames.stellar | "stellar-XLM";
 
-    [AllCurNames.terra]: AllCurNames.terra | "Terra" | "LUNA" | "luna" | "Terra (LUNA)" | "terra-LUNA";
+    [AllCurShortNames.terra]: AllCurShortNames.terra | "Terra" | "LUNA" | "luna" | AllCurFullNames.terra | "terra-LUNA";
 
-    [AllCurNames.tether]: AllCurNames.tether | "Tether" | "USDT" | "usdt" | "Tether (USDT)" | "tether-USDT";
+    [AllCurShortNames.tether]: AllCurShortNames.tether | "Tether" | "USDT" | "usdt" | AllCurFullNames.tether | "tether-USDT";
 
-    [AllCurNames.tezos]: AllCurNames.tezos | "Tezos" | "XTZ" | "xtz" | "Tezos (XTZ)" | "tezos-XTZ";
+    [AllCurShortNames.tezos]: AllCurShortNames.tezos | "Tezos" | "XTZ" | "xtz" | AllCurFullNames.tezos | "tezos-XTZ";
 
-    [AllCurNames.theGraph]: AllCurNames.theGraph | "The Graph" | "GRT" | "grt" | "The Graph (GRT)" | "the-graph-GRT";
+    [AllCurShortNames.theGraph]: AllCurShortNames.theGraph | "The Graph" | "GRT" | "grt" | AllCurFullNames.theGraph | "the-graph-GRT";
 
-    [AllCurNames.theSandbox]: AllCurNames.theSandbox | "The Sandbox" | "SAND" | "sand" | "The Sandbox (SAND)" | "the-sandbox-SAND";
+    [AllCurShortNames.theSandbox]: AllCurShortNames.theSandbox | "The Sandbox" | "SAND" | "sand" | AllCurFullNames.theSandbox | "the-sandbox-SAND";
 
-    [AllCurNames.thetaNetwork]: AllCurNames.thetaNetwork | "Theta Network" | "THETA" | "theta" | "Theta Network (THETA)" | "theta-network-THETA";
+    [AllCurShortNames.thetaNetwork]: AllCurShortNames.thetaNetwork | "Theta Network" | "THETA" | "theta" | AllCurFullNames.thetaNetwork | "theta-network-THETA";
 
-    [AllCurNames.thorChain]: AllCurNames.thorChain | "THORChain" | "RUNE" | "rune" | "THORChain (RUNE)" | "thor-chain-RUNE";
+    [AllCurShortNames.thorChain]: AllCurShortNames.thorChain | "THORChain" | "RUNE" | "rune" | AllCurFullNames.thorChain | "thor-chain-RUNE";
 
-    [AllCurNames.tron]: AllCurNames.tron | "Tron" | "TRX" | "trx" | "Tron (TRX)" | "tron-TRX";
+    [AllCurShortNames.tron]: AllCurShortNames.tron | "Tron" | "TRX" | "trx" | AllCurFullNames.tron | "tron-TRX";
 
-    [AllCurNames.uma]: AllCurNames.uma | "UMA" | "UMA (UMA)" | "uma-UMA";
+    [AllCurShortNames.uma]: AllCurShortNames.uma | "UMA" | AllCurFullNames.uma | "uma-UMA";
 
-    [AllCurNames.uniswap]: AllCurNames.uniswap | "Uniswap" | "UNI" | "uni" | "Uniswap (UNI)" | "uniswap-UNI";
+    [AllCurShortNames.uniswap]: AllCurShortNames.uniswap | "Uniswap" | "UNI" | "uni" | AllCurFullNames.uniswap | "uniswap-UNI";
 
-    [AllCurNames.unusSedLeo]: AllCurNames.unusSedLeo | "UNUS SED LEO" | "LEO" | "leo" | "UNUS SED LEO (LEO)" | "unus-sed-leo-LEO";
+    [AllCurShortNames.unusSedLeo]: AllCurShortNames.unusSedLeo | "UNUS SED LEO" | "LEO" | "leo" | AllCurFullNames.unusSedLeo | "unus-sed-leo-LEO";
 
-    [AllCurNames.usdCoin]: AllCurNames.usdCoin | "USDC USD Coin" | "USDC" | "usdc" | "USD Coin (USDC)" | "usd-coin-USDC";
+    [AllCurShortNames.usdCoin]: AllCurShortNames.usdCoin | "USDC USD Coin" | "USDC" | "usdc" | AllCurFullNames.usdCoin | "usd-coin-USDC";
 
-    [AllCurNames.veChain]: AllCurNames.veChain | "Ve Chain" | "VET" | "vet" | "Ve Chain (VET)" | "ve-chain-VET";
+    [AllCurShortNames.veChain]: AllCurShortNames.veChain | "Ve Chain" | "VET" | "vet" | AllCurFullNames.veChain | "ve-chain-VET";
 
-    [AllCurNames.waves]: AllCurNames.waves | "WAVES" | "Waves (WAVES)" | "waves-WAVES";
+    [AllCurShortNames.waves]: AllCurShortNames.waves | "WAVES" | AllCurFullNames.waves | "waves-WAVES";
 
-    [AllCurNames.wrappedBitcoin]: AllCurNames.wrappedBitcoin | "Wrapped Bitcoin" | "WBTC" | "wbtc" | "Wrapped Bitcoin (WBTC)" | "wrapped-bitcoin-WBTC";
+    [AllCurShortNames.wrappedBitcoin]: AllCurShortNames.wrappedBitcoin | "Wrapped Bitcoin" | "WBTC" | "wbtc" | AllCurFullNames.wrappedBitcoin | "wrapped-bitcoin-WBTC";
 
-    [AllCurNames.xrp]: AllCurNames.xrp | "XRP" | "XRP (XRP)" | "xrp-XRP";
+    [AllCurShortNames.xrp]: AllCurShortNames.xrp | "XRP" | AllCurFullNames.xrp | "xrp-XRP";
 
-    [AllCurNames.zcash]: AllCurNames.zcash | "Zcash" | "ZEC" | "zec" | "Zcash (ZEC)" | "zcash-ZEC";
+    [AllCurShortNames.zcash]: AllCurShortNames.zcash | "Zcash" | "ZEC" | "zec" | AllCurFullNames.zcash | "zcash-ZEC";
 };
 
 // * Currency data scope
 export type TAllCurNotesScope =
-    | RequiredPick<TAllCurNotes, AllCurNames.aave>
-    | RequiredPick<TAllCurNotes, AllCurNames.algorand>
-    | RequiredPick<TAllCurNotes, AllCurNames.amp>
-    | RequiredPick<TAllCurNotes, AllCurNames.anchorProtocol>
-    | RequiredPick<TAllCurNotes, AllCurNames.avalanche>
-    | RequiredPick<TAllCurNotes, AllCurNames.axieInfinity>
-    | RequiredPick<TAllCurNotes, AllCurNames.binanceCoin>
-    | RequiredPick<TAllCurNotes, AllCurNames.binanceUsd>
-    | RequiredPick<TAllCurNotes, AllCurNames.bitcoin>
-    | RequiredPick<TAllCurNotes, AllCurNames.bitcoinBep2>
-    | RequiredPick<TAllCurNotes, AllCurNames.bitcoinCash>
-    | RequiredPick<TAllCurNotes, AllCurNames.bitcoinSv>
-    | RequiredPick<TAllCurNotes, AllCurNames.bitTorrent>
-    | RequiredPick<TAllCurNotes, AllCurNames.cardano>
-    | RequiredPick<TAllCurNotes, AllCurNames.celo>
-    | RequiredPick<TAllCurNotes, AllCurNames.chainlink>
-    | RequiredPick<TAllCurNotes, AllCurNames.chiliz>
-    | RequiredPick<TAllCurNotes, AllCurNames.compound>
-    | RequiredPick<TAllCurNotes, AllCurNames.cosmos>
-    | RequiredPick<TAllCurNotes, AllCurNames.cronos>
-    | RequiredPick<TAllCurNotes, AllCurNames.dai>
-    | RequiredPick<TAllCurNotes, AllCurNames.dash>
-    | RequiredPick<TAllCurNotes, AllCurNames.decentraland>
-    | RequiredPick<TAllCurNotes, AllCurNames.dogecoin>
-    | RequiredPick<TAllCurNotes, AllCurNames.elrond>
-    | RequiredPick<TAllCurNotes, AllCurNames.enjinCoin>
-    | RequiredPick<TAllCurNotes, AllCurNames.eos>
-    | RequiredPick<TAllCurNotes, AllCurNames.ethereum>
-    | RequiredPick<TAllCurNotes, AllCurNames.ethereumClassic>
-    | RequiredPick<TAllCurNotes, AllCurNames.fantom>
-    | RequiredPick<TAllCurNotes, AllCurNames.filecoin>
-    | RequiredPick<TAllCurNotes, AllCurNames.flow>
-    | RequiredPick<TAllCurNotes, AllCurNames.ftxToken>
-    | RequiredPick<TAllCurNotes, AllCurNames.gala>
-    | RequiredPick<TAllCurNotes, AllCurNames.harmony>
-    | RequiredPick<TAllCurNotes, AllCurNames.hedera>
-    | RequiredPick<TAllCurNotes, AllCurNames.helium>
-    | RequiredPick<TAllCurNotes, AllCurNames.holo>
-    | RequiredPick<TAllCurNotes, AllCurNames.internetComputer>
-    | RequiredPick<TAllCurNotes, AllCurNames.iota>
-    | RequiredPick<TAllCurNotes, AllCurNames.kadena>
-    | RequiredPick<TAllCurNotes, AllCurNames.klaytn>
-    | RequiredPick<TAllCurNotes, AllCurNames.kuCoinToken>
-    | RequiredPick<TAllCurNotes, AllCurNames.kusama>
-    | RequiredPick<TAllCurNotes, AllCurNames.litecoin>
-    | RequiredPick<TAllCurNotes, AllCurNames.maker>
-    | RequiredPick<TAllCurNotes, AllCurNames.monero>
-    | RequiredPick<TAllCurNotes, AllCurNames.nearProtocol>
-    | RequiredPick<TAllCurNotes, AllCurNames.neo>
-    | RequiredPick<TAllCurNotes, AllCurNames.nexo>
-    | RequiredPick<TAllCurNotes, AllCurNames.polkadot>
-    | RequiredPick<TAllCurNotes, AllCurNames.polygon>
-    | RequiredPick<TAllCurNotes, AllCurNames.secret>
-    | RequiredPick<TAllCurNotes, AllCurNames.shibainu>
-    | RequiredPick<TAllCurNotes, AllCurNames.solana>
-    | RequiredPick<TAllCurNotes, AllCurNames.stacks>
-    | RequiredPick<TAllCurNotes, AllCurNames.stellar>
-    | RequiredPick<TAllCurNotes, AllCurNames.terra>
-    | RequiredPick<TAllCurNotes, AllCurNames.tether>
-    | RequiredPick<TAllCurNotes, AllCurNames.tezos>
-    | RequiredPick<TAllCurNotes, AllCurNames.theGraph>
-    | RequiredPick<TAllCurNotes, AllCurNames.theSandbox>
-    | RequiredPick<TAllCurNotes, AllCurNames.thetaNetwork>
-    | RequiredPick<TAllCurNotes, AllCurNames.thorChain>
-    | RequiredPick<TAllCurNotes, AllCurNames.tron>
-    | RequiredPick<TAllCurNotes, AllCurNames.uma>
-    | RequiredPick<TAllCurNotes, AllCurNames.uniswap>
-    | RequiredPick<TAllCurNotes, AllCurNames.unusSedLeo>
-    | RequiredPick<TAllCurNotes, AllCurNames.usdCoin>
-    | RequiredPick<TAllCurNotes, AllCurNames.veChain>
-    | RequiredPick<TAllCurNotes, AllCurNames.waves>
-    | RequiredPick<TAllCurNotes, AllCurNames.wrappedBitcoin>
-    | RequiredPick<TAllCurNotes, AllCurNames.xrp>
-    | RequiredPick<TAllCurNotes, AllCurNames.zcash>;
+    | RequiredPick<TAllCurNotes, AllCurShortNames.aave>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.algorand>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.amp>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.anchorProtocol>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.avalanche>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.axieInfinity>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.binanceCoin>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.binanceUsd>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.bitcoin>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.bitcoinBep2>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.bitcoinCash>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.bitcoinSv>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.bitTorrent>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.cardano>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.celo>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.chainlink>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.chiliz>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.compound>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.cosmos>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.cronos>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.dai>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.dash>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.decentraland>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.dogecoin>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.elrond>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.enjinCoin>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.eos>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.ethereum>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.ethereumClassic>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.fantom>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.filecoin>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.flow>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.ftxToken>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.gala>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.harmony>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.hedera>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.helium>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.holo>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.internetComputer>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.iota>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.kadena>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.klaytn>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.kuCoinToken>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.kusama>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.litecoin>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.maker>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.monero>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.nearProtocol>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.neo>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.nexo>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.polkadot>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.polygon>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.secret>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.shibainu>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.solana>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.stacks>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.stellar>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.terra>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.tether>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.tezos>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.theGraph>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.theSandbox>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.thetaNetwork>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.thorChain>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.tron>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.uma>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.uniswap>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.unusSedLeo>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.usdCoin>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.veChain>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.waves>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.wrappedBitcoin>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.xrp>
+    | RequiredPick<TAllCurNotes, AllCurShortNames.zcash>;

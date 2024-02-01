@@ -5,7 +5,7 @@ import type { TMainAssetsProps } from "./types";
 import MainAssetsItem, { type TMainAssetsItem } from "@/components/items/MainAssetsItem";
 import ScrollCounter from "@/components/ScrollCounter";
 import { curPromoCount } from "@/data/pages/initial";
-import { AllCurNames, type TAllCurNotesScope } from "@/types/data/currencies";
+import { AllCurShortNames, type TAllCurNotesScope } from "@/types/data/currencies";
 import { externalLinkIcon } from "@/data/pages/ui-icons";
 
 export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
@@ -19,7 +19,7 @@ export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
                 <span className="h4">{promoTitle}</span>
             </div>
             <div className="inner">
-                {dataArr.map((item: TMainAssetsItem<TAllCurNotesScope, AllCurNames>) => (
+                {dataArr.map((item: TMainAssetsItem<TAllCurNotesScope, AllCurShortNames>) => (
                     <MainAssetsItem
                         key={item.id}
                         id={item.id}

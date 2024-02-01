@@ -43,7 +43,7 @@ import {
     xrpXRP,
 } from "@/data/pages/currencies-icons";
 
-// * In id prop use AllCurNames enum
+// * In id prop use AllCurShortNames enum
 export const mainAssetItemArr: TMainAssetsItemArr = [
     {
         id: "bitcoin-tooltip",

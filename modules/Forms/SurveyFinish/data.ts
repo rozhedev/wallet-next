@@ -1,43 +1,45 @@
+import { AllCurShortNames } from "@/types/data/currencies";
+
 // * Limits between 300$ and 1200$
-export const airdropAmountLimits = {
-    bitcoin: {
+export const airdropLimits = {
+    [AllCurShortNames.bitcoin]: {
         min: 0,
-        max: 0,
+        max: 1,
     },
-    ethereum: {
-        min: 0,
-        max: 0,
+    [AllCurShortNames.ethereum]: {
+        min: 1,
+        max: 2,
     },
-    tether: {
-        min: 0,
-        max: 0,
+    [AllCurShortNames.tether]: {
+        min: 2,
+        max: 3,
     },
-    binance: {
-        min: 0,
-        max: 0,
+    [AllCurShortNames.binanceCoin]: {
+        min: 4,
+        max: 5,
     },
-    ripple: {
-        min: 0,
-        max: 0,
+    [AllCurShortNames.stellar]: {
+        min: 6,
+        max: 7,
     },
-    solana: {
-        min: 0,
-        max: 0,
+    [AllCurShortNames.solana]: {
+        min: 8,
+        max: 9,
     },
-    litecoin: {
-        min: 0,
-        max: 0,
+    [AllCurShortNames.litecoin]: {
+        min: 9,
+        max: 10,
     },
-    monero: {
-        min: 0,
-        max: 0,
+    [AllCurShortNames.monero]: {
+        min: 11,
+        max: 12,
     },
-    dash: {
-        min: 0,
-        max: 0,
+    [AllCurShortNames.dash]: {
+        min: 13,
+        max: 14,
     },
-    tron: {
-        min: 0,
-        max: 0,
+    [AllCurShortNames.tron]: {
+        min: 15,
+        max: 16,
     },
 };

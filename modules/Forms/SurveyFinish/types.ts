@@ -1,7 +1,4 @@
-import { TAllCurNotesScope } from "@/types/data/currencies";
-
 export type TSurveyFinishProps = {
-    amount: number;
-    curName: TAllCurNotesScope;
+    curName: string | null;
     minutesCount: number;
 };

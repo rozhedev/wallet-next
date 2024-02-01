@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import type { TMainAssetsItem } from "./types";
-import { AllCurNames, TAllCurNotesScope } from "@/types/data/currencies";
+import { AllCurShortNames, TAllCurNotesScope } from "@/types/data/currencies";
 import Image from "next/image";
 
 import Tippy from "@tippyjs/react";
 
-export const MainAssetsItem: FC<TMainAssetsItem<TAllCurNotesScope, AllCurNames>> = ({ id, disabled, imgPath, imgAlt, title }) => {
+export const MainAssetsItem: FC<TMainAssetsItem<TAllCurNotesScope, AllCurShortNames>> = ({ id, disabled, imgPath, imgAlt, title }) => {
     return (
         <Tippy
             content={title}
