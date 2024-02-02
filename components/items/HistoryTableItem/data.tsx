@@ -1,3 +1,4 @@
+import { AllCurFullNames } from "@/types/data/currencies";
 import { clockIcon, dropIcon, exportIcon, importIcon } from "@/data/pages/ui-icons";
 import { THistoryTableItemArr } from "./types";
 import { swapHorizontalIcon } from "@/data/pages/web3-icons";
@@ -6,7 +7,7 @@ export const historyTableItemArr: THistoryTableItemArr = [
     // {
     //     id: 1,
     //     operType: "Replenish",
-    //     curName: "Binance Coin (BNB)",
+    //     curName: AllCurFullNames.binanceCoin,
     //     curSign: "BNB",
     //     amount: 0.12345678,
     //     transactionStatus: "Complete",
@@ -19,7 +20,7 @@ export const historyTableItemArr: THistoryTableItemArr = [
     // {
     //     id: 2,
     //     operType: "Withdraw",
-    //     curName: "Tether (USDT)",
+    //     curName: AllCurFullNames.tether,
     //     curSign: "USDT",
     //     amount: 5.25,
     //     transactionStatus: "Complete",
@@ -32,7 +33,7 @@ export const historyTableItemArr: THistoryTableItemArr = [
     // {
     //     id: 3,
     //     operType: "Exchange",
-    //     curName: "Bitcoin (BTC)",
+    //     curName: AllCurFullNames.bitcoin,
     //     curSign: "BTC",
     //     amount: 0.12345678,
     //     transactionStatus: "Complete",
@@ -45,7 +46,7 @@ export const historyTableItemArr: THistoryTableItemArr = [
     // {
     //     id: 4,
     //     operType: "Airdrop",
-    //     curName: "Tether (USDT)",
+    //     curName: AllCurFullNames.tether,
     //     curSign: "USDT",
     //     amount: 5.25,
     //     transactionStatus: "Pending",
@@ -58,7 +59,7 @@ export const historyTableItemArr: THistoryTableItemArr = [
     // {
     //     id: 5,
     //     operType: "Replenish",
-    //     curName: "Bitcoin (BTC)",
+    //     curName: AllCurFullNames.bitcoin,
     //     curSign: "BTC",
     //     amount: 0.12345678,
     //     transactionStatus: "Complete",
@@ -71,7 +72,7 @@ export const historyTableItemArr: THistoryTableItemArr = [
     // {
     //     id: 6,
     //     operType: "Withdraw",
-    //     curName: "Tether (USDT)",
+    //     curName: AllCurFullNames.tether,
     //     curSign: "USDT",
     //     amount: 5.25,
     //     transactionStatus: "Complete",

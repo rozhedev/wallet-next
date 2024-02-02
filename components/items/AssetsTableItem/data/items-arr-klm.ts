@@ -1,3 +1,4 @@
+import { AllCurFullNames } from "@/types/data/currencies";
 import type { TAssetsTableItemArr } from "../types";
 import { kadenaKDA, klaytnKLAY, kuCoinTokenKCS, kusamaKSM, litecoinLTC, makerMKR, moneroXMR } from "@/data/pages/currencies-icons";
 
@@ -7,8 +8,8 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         id: "assets-table-item-kadena",
         order: 41,
         curIconPath: kadenaKDA,
-        curName: "Kadena (KDA)",
-        curIconAlt: "ethereum-ETH",
+        curName: AllCurFullNames.kadena,
+        curIconAlt: "kadena-KDA",
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -24,7 +25,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         order: 42,
         curIconPath: klaytnKLAY,
         curIconAlt: "klaytn-KLAY",
-        curName: "Klaytn (KLAY)",
+        curName: AllCurFullNames.klaytn,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -40,7 +41,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         order: 43,
         curIconPath: kuCoinTokenKCS,
         curIconAlt: "ku-coin-token-KCS",
-        curName: "KuCoin Token (KCS)",
+        curName: AllCurFullNames.kuCoinToken,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -56,7 +57,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         order: 44,
         curIconPath: kusamaKSM,
         curIconAlt: "kusama-KSM",
-        curName: "Kusama (KSM)",
+        curName: AllCurFullNames.kusama,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -72,7 +73,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         order: 45,
         curIconPath: litecoinLTC,
         curIconAlt: "litecoin-LTC",
-        curName: "Litecoin (LTC)",
+        curName: AllCurFullNames.litecoin,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -88,7 +89,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         order: 46,
         curIconPath: makerMKR,
         curIconAlt: "maker-MKR",
-        curName: "Maker (MKR)",
+        curName: AllCurFullNames.maker,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -104,7 +105,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
         order: 47,
         curIconPath: moneroXMR,
         curIconAlt: "monero-XMR",
-        curName: "Monero (XMR)",
+        curName: AllCurFullNames.monero,
         iconPaths: {
             sendPC: true,
             receivePC: false,

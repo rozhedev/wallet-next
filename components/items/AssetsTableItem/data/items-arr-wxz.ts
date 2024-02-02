@@ -1,3 +1,4 @@
+import { AllCurFullNames } from "@/types/data/currencies";
 import type { TAssetsTableItemArr } from "../types";
 import { wavesWAVES, wrappedBitcoinWBTC, xrpXRP, zcashZEC } from "@/data/pages/currencies-icons";
 
@@ -8,7 +9,7 @@ export const assetTableItemArrWXZ: TAssetsTableItemArr = [
         order: 71,
         curIconPath: wavesWAVES,
         curIconAlt: "waves-WAVES",
-        curName: "Waves (WAVES)",
+        curName: AllCurFullNames.waves,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -24,7 +25,7 @@ export const assetTableItemArrWXZ: TAssetsTableItemArr = [
         order: 72,
         curIconPath: wrappedBitcoinWBTC,
         curIconAlt: "wrapped-bitcoin-WBTC",
-        curName: "Wrapped Bitcoin (WBTC)",
+        curName: AllCurFullNames.wrappedBitcoin,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -40,7 +41,7 @@ export const assetTableItemArrWXZ: TAssetsTableItemArr = [
         order: 73,
         curIconPath: xrpXRP,
         curIconAlt: "xrp-XRP",
-        curName: "XRP (XRP)",
+        curName: AllCurFullNames.xrp,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -56,7 +57,7 @@ export const assetTableItemArrWXZ: TAssetsTableItemArr = [
         order: 74,
         curIconPath: zcashZEC,
         curIconAlt: "zcash-ZEC",
-        curName: "Zcash (ZEC)",
+        curName: AllCurFullNames.zcash,
         iconPaths: {
             sendPC: true,
             receivePC: false,

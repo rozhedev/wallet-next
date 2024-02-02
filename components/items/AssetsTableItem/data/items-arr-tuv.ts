@@ -1,3 +1,4 @@
+import { AllCurFullNames } from "@/types/data/currencies";
 import type { TAssetsTableItemArr } from "../types";
 import {
     terraLUNA,
@@ -22,7 +23,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 58,
         curIconPath: terraLUNA,
         curIconAlt: "terra-LUNA",
-        curName: "Terra (LUNA)",
+        curName: AllCurFullNames.terra,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -38,7 +39,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 59,
         curIconPath: tetherUSDT,
         curIconAlt: "tether-USDT",
-        curName: "Tether (USDT)",
+        curName: AllCurFullNames.tether,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -54,7 +55,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 60,
         curIconPath: tezosXTZ,
         curIconAlt: "tezos-XTZ",
-        curName: "Tezos (XTZ)",
+        curName: AllCurFullNames.tezos,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -70,7 +71,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 61,
         curIconPath: theGraphGRT,
         curIconAlt: "the-graph-GRT",
-        curName: "The Graph (GRT)",
+        curName: AllCurFullNames.theGraph,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -86,7 +87,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 62,
         curIconPath: sandboxSAND,
         curIconAlt: "the-sandbox-SAND",
-        curName: "The Sandbox (SAND)",
+        curName: AllCurFullNames.theSandbox,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -102,7 +103,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 63,
         curIconPath: thetaTHETA,
         curIconAlt: "theta-network-THETA",
-        curName: "Theta Network (THETA)",
+        curName: AllCurFullNames.thetaNetwork,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -118,7 +119,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 64,
         curIconPath: thorChainRUNE,
         curIconAlt: "thor-chain-RUNE",
-        curName: "THORChain (RUNE)",
+        curName: AllCurFullNames.thorChain,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -134,7 +135,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 65,
         curIconPath: tronTRX,
         curIconAlt: "tron-TRX",
-        curName: "Tron (TRX)",
+        curName: AllCurFullNames.tron,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -150,7 +151,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 66,
         curIconPath: umaUMA,
         curIconAlt: "uma-UMA",
-        curName: "UMA (UMA)",
+        curName: AllCurFullNames.uma,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -166,7 +167,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 67,
         curIconPath: uniswapUNI,
         curIconAlt: "uniswap-UNI",
-        curName: "Uniswap (UNI)",
+        curName: AllCurFullNames.uniswap,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -182,7 +183,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 68,
         curIconPath: unusSedLeoLEO,
         curIconAlt: "unus-sed-leo-LEO",
-        curName: "UNUS SED LEO (LEO)",
+        curName: AllCurFullNames.unusSedLeo,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -198,7 +199,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 69,
         curIconPath: usdCoinUSDC,
         curIconAlt: "usd-coin-USDC",
-        curName: "USD Coin (USDC)",
+        curName: AllCurFullNames.usdCoin,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -214,7 +215,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         order: 70,
         curIconPath: veChainVET,
         curIconAlt: "ve-chain-VET",
-        curName: "Ve Chain (VET)",
+        curName: AllCurFullNames.veChain,
         iconPaths: {
             sendPC: true,
             receivePC: false,

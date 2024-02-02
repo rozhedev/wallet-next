@@ -1,3 +1,4 @@
+import { AllCurFullNames } from "@/types/data/currencies";
 import type { TAssetsTableItemArr } from "../types";
 import {
     daiDAI,
@@ -22,7 +23,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 21,
         curIconPath: daiDAI,
         curIconAlt: "dai-DAI",
-        curName: "Dai (DAI)",
+        curName: AllCurFullNames.dai,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -38,7 +39,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 22,
         curIconPath: dashDASH,
         curIconAlt: "dash-DASH",
-        curName: "Dash (DASH)",
+        curName: AllCurFullNames.dash,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -54,7 +55,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 23,
         curIconPath: decentralandMANA,
         curIconAlt: "decentraland-MANA",
-        curName: "Decentraland (MANA)",
+        curName: AllCurFullNames.decentraland,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -70,7 +71,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 24,
         curIconPath: dogecoinDOGE,
         curIconAlt: "dogecoin-DOGE",
-        curName: "Dogecoin (DOGE)",
+        curName: AllCurFullNames.dogecoin,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -86,7 +87,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 25,
         curIconPath: elrondEGLD,
         curIconAlt: "elrond-EGLD",
-        curName: "Elrond (EGLD)",
+        curName: AllCurFullNames.elrond,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -102,7 +103,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 26,
         curIconPath: enjinCoinENJ,
         curIconAlt: "enjin-coin-ENJ",
-        curName: "Enjin Coin (ENJ)",
+        curName: AllCurFullNames.enjinCoin,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -118,7 +119,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 27,
         curIconPath: eosEOS,
         curIconAlt: "eos-EOS",
-        curName: "EOS (EOS)",
+        curName: AllCurFullNames.eos,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -134,7 +135,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 28,
         curIconPath: ethereumETH,
         curIconAlt: "ethereum-ETH",
-        curName: "Ethereum (ETH)",
+        curName: AllCurFullNames.ethereum,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -150,7 +151,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 29,
         curIconPath: ethereumClassicETC,
         curIconAlt: "ethereum-classic-ETC",
-        curName: "Ethereum Classic (ETC)",
+        curName: AllCurFullNames.ethereumClassic,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -166,7 +167,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 30,
         curIconPath: fantomFTM,
         curIconAlt: "fantom-FTM",
-        curName: "Fantom (FTM)",
+        curName: AllCurFullNames.fantom,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -182,7 +183,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 31,
         curIconPath: filecoinFIL,
         curIconAlt: "filecoin-FIL",
-        curName: "Filecoin (FIL)",
+        curName: AllCurFullNames.filecoin,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -198,7 +199,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 32,
         curIconPath: flowFLOW,
         curIconAlt: "flow-FLOW",
-        curName: "Flow (FLOW)",
+        curName: AllCurFullNames.flow,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -214,7 +215,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         order: 33,
         curIconPath: ftxTokenFTT,
         curIconAlt: "ftx-token-FTT",
-        curName: "FTX Token (FTT)",
+        curName: AllCurFullNames.ftxToken,
         iconPaths: {
             sendPC: true,
             receivePC: false,

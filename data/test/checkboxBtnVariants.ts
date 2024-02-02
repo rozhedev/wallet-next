@@ -1,3 +1,4 @@
+import { AllCurFullNames } from "@/types/data/currencies";
 import { TInputListItemArr } from "@/types/data/shared";
 
 export const testRadioList: TInputListItemArr = [
@@ -5,26 +6,26 @@ export const testRadioList: TInputListItemArr = [
         id: "survey-answer2-1",
         type: "checkbox",
         name: "survey-answer2-1",
-        label: "Bitcoin (BTC)",
+        label: AllCurFullNames.bitcoin,
     },
     {
         id: "survey-answer2-2",
         type: "checkbox",
         name: "survey-answer2-2",
-        label: "Ethereum",
+        label: AllCurFullNames.ethereum,
     },
     {
         id: "survey-answer2-3",
         type: "checkbox",
         name: "survey-answer2-3",
-        label: "Tether",
+        label: AllCurFullNames.tether,
         disabled: true,
     },
     {
         id: "survey-answer2-4",
         type: "checkbox",
         name: "survey-answer2-4",
-        label: "Binance coin",
+        label: AllCurFullNames.binanceCoin,
         defaultChecked: true,
     },
 ];

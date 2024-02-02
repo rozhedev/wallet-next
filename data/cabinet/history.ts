@@ -1,3 +1,4 @@
+import { AllCurFullNames } from "@/types/data/currencies";
 import { TOptionGroup } from "@/ui/Select/types";
 
 export const typeSelectOptions: TOptionGroup = [
@@ -25,19 +26,19 @@ export const typeSelectOptions: TOptionGroup = [
 
 export const currencySelectOptions: TOptionGroup = [
     {
-        label: "Bitcoin (BTC)",
+        label: AllCurFullNames.bitcoin,
         value: "cur-sort-bitcoin-BTC",
     },
     {
-        label: "Ethereum (ETH)",
+        label: AllCurFullNames.ethereum,
         value: "cur-sort-ethereum-ETH",
     },
     {
-        label: "Tether (USDT)",
+        label: AllCurFullNames.tether,
         value: "cur-sort-tether-USDT",
     },
     {
-        label: "Binance Coin (BNB)",
+        label: AllCurFullNames.binanceCoin,
         value: "cur-sort-binance-coin-BNB",
     },
 ];

@@ -1,3 +1,4 @@
+import { AllCurFullNames } from "@/types/data/currencies";
 import type { TAssetsTableItemArr } from "../types";
 import { galaGALA, harmonyONE, hederaHBAR, heliumHNT, holoHOT, internetComputerICP, iotaMIOTA } from "@/data/pages/currencies-icons";
 
@@ -8,7 +9,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         order: 34,
         curIconPath: galaGALA,
         curIconAlt: "gala-GALA",
-        curName: "Gala (GALA)",
+        curName: AllCurFullNames.gala,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -24,7 +25,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         order: 35,
         curIconPath: harmonyONE,
         curIconAlt: "harmony-ONE",
-        curName: "Harmony (ONE)",
+        curName: AllCurFullNames.harmony,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -40,7 +41,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         order: 36,
         curIconPath: hederaHBAR,
         curIconAlt: "hedera-HBAR",
-        curName: "Hedera (HBAR)",
+        curName: AllCurFullNames.hedera,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -56,7 +57,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         order: 37,
         curIconPath: heliumHNT,
         curIconAlt: "helium-HNT",
-        curName: "Helium (HNT)",
+        curName: AllCurFullNames.helium,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -72,7 +73,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         order: 38,
         curIconPath: holoHOT,
         curIconAlt: "holo-HOT",
-        curName: "Holo (HOT)",
+        curName: AllCurFullNames.holo,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -88,7 +89,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         order: 39,
         curIconPath: internetComputerICP,
         curIconAlt: "internet-computer-ICP",
-        curName: "Internet Computer (ICP)",
+        curName: AllCurFullNames.internetComputer,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -104,7 +105,7 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         order: 40,
         curIconPath: iotaMIOTA,
         curIconAlt: "iota-MIOTA",
-        curName: "IOTA (MIOTA)",
+        curName: AllCurFullNames.iota,
         iconPaths: {
             sendPC: true,
             receivePC: false,

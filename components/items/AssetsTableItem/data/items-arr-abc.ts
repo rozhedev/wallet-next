@@ -1,3 +1,4 @@
+import { AllCurFullNames } from "@/types/data/currencies";
 import type { TAssetsTableItemArr } from "../types";
 import {
     aaveAAVE,
@@ -29,7 +30,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 1,
         curIconPath: aaveAAVE,
         curIconAlt: "aave-AAVE",
-        curName: "Aave (AAVE)",
+        curName: AllCurFullNames.aave,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -45,7 +46,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 2,
         curIconPath: algorandALGO,
         curIconAlt: "algorand-ALGO",
-        curName: "Algorand (ALGO)",
+        curName: AllCurFullNames.algorand,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -61,7 +62,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 3,
         curIconPath: ampAMP,
         curIconAlt: "amp-AMP",
-        curName: "Amp (AMP)",
+        curName: AllCurFullNames.amp,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -77,7 +78,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 4,
         curIconPath: anchorProtocolANC,
         curIconAlt: "anchor-protocol-ANC",
-        curName: "Anchor Protocol (ANC)",
+        curName: AllCurFullNames.anchorProtocol,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -93,7 +94,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 5,
         curIconPath: avalancheAVAX,
         curIconAlt: "avalanche-AVAX",
-        curName: "Avalanche (AVAX)",
+        curName: AllCurFullNames.avalanche,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -109,7 +110,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 6,
         curIconPath: axieInfinityAXS,
         curIconAlt: "axie-infinity-AXS",
-        curName: "Axie Infinity (AXS)",
+        curName: AllCurFullNames.axieInfinity,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -125,7 +126,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 7,
         curIconPath: binanceCoinBNB,
         curIconAlt: "binance-coin-BNB",
-        curName: "Binance Coin (BNB)",
+        curName: AllCurFullNames.binanceCoin,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -141,7 +142,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 8,
         curIconPath: binanceUsdBUSD,
         curIconAlt: "binance-usd-BUSD",
-        curName: "Binance USD (BUSD)",
+        curName: AllCurFullNames.binanceUsd,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -157,7 +158,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 9,
         curIconPath: bitcoinBTC,
         curIconAlt: "bitcoin-BTC",
-        curName: "Bitcoin (BTC)",
+        curName: AllCurFullNames.bitcoin,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -173,7 +174,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 10,
         curIconPath: bitcoinBep2BTCB,
         curIconAlt: "bitcoin-bep2-BTCB",
-        curName: "Bitcoin BEP2 (BTCB)",
+        curName: AllCurFullNames.bitcoinBep2,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -189,7 +190,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 11,
         curIconPath: bitcoinCashBCH,
         curIconAlt: "bitcoin-cash-BCH",
-        curName: "Bitcoin Cash (BCH)",
+        curName: AllCurFullNames.bitcoinCash,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -205,7 +206,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 12,
         curIconPath: bitcoinSvBSV,
         curIconAlt: "bitcoin-sv-BSV",
-        curName: "Bitcoin SV (BSV)",
+        curName: AllCurFullNames.bitcoinSv,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -221,7 +222,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 13,
         curIconPath: bitTorrentBTT,
         curIconAlt: "bit-torrent-BTT",
-        curName: "BitTorrent (BTT)",
+        curName: AllCurFullNames.bitTorrent,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -237,7 +238,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 14,
         curIconPath: cardanoADA,
         curIconAlt: "cardano-ADA",
-        curName: "Cardano (ADA)",
+        curName: AllCurFullNames.cardano,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -253,7 +254,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 15,
         curIconPath: celoCELO,
         curIconAlt: "celo-CELO",
-        curName: "Celo (CELO)",
+        curName: AllCurFullNames.celo,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -269,7 +270,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 16,
         curIconPath: chainlinkLINK,
         curIconAlt: "chainlink-LINK",
-        curName: "Chainlink (LINK)",
+        curName: AllCurFullNames.chainlink,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -285,7 +286,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 17,
         curIconPath: chilizCHZ,
         curIconAlt: "chiliz-CHZ",
-        curName: "Chiliz (CHZ)",
+        curName: AllCurFullNames.chiliz,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -301,7 +302,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 18,
         curIconPath: compoundCOMP,
         curIconAlt: "compound-COMP",
-        curName: "Compound (COMP)",
+        curName: AllCurFullNames.compound,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -317,7 +318,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 19,
         curIconPath: cosmosATOM,
         curIconAlt: "cosmos-ATOM",
-        curName: "Cosmos (ATOM)",
+        curName: AllCurFullNames.cosmos,
         iconPaths: {
             sendPC: true,
             receivePC: false,
@@ -333,7 +334,7 @@ export const assetTableItemArrABC: TAssetsTableItemArr = [
         order: 20,
         curIconPath: cronosCRO,
         curIconAlt: "cronos-CRO",
-        curName: "Cronos (CRO)",
+        curName: AllCurFullNames.cronos,
         iconPaths: {
             sendPC: true,
             receivePC: false,
