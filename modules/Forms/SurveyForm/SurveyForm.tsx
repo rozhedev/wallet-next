@@ -165,7 +165,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
                     id={item.id}
                     name={item.name}
                     value={item.label}
-                    checked={answerCheckboxForm.form3[item.name]}
+                    checked={answerCheckboxForm.form5[item.name]}
                     onChange={(e: any) => checkboxTestChangeHandler(e.target.name)}
                 >
                     {item.label}

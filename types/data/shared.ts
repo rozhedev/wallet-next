@@ -15,14 +15,16 @@ export type TAuthFieldsetProps = {
     className: "form-step" | `form-step ${string}`;
 };
 
-export type TInputListItem = {
-    id: `survey-${string}` | `set-${string}`;
+export type TInputIdMask = `survey-${string}` | `set-${string}`
+
+export type TInputListItem<TMask extends TInputIdMask> = {
+    id: TMask;
     type: HTMLInputTypeAttribute;
-    name: `survey-answer${number}` | `survey-answer${number}-${number}` | `set-${string}`;
+    name: TMask;
     label: string;
     disabled?: boolean;
     classNameModif?: T_ToggleModifClassNames;
     defaultChecked?: boolean;
 };
 
-export type TInputListItemArr = TInputListItem[];
+export type TInputListItemArr = TInputListItem<TInputIdMask>[];

@@ -9,7 +9,7 @@ import SetChangeForm from "@/components/SetChangeForm";
 import SectionLayout from "@/modules/layout/SectionLayout";
 
 import { settingsToggleList } from "@/data/cabinet/settings";
-import { type TInputListItem } from "@/types/data/shared";
+import { type TInputListItem, type TInputIdMask } from "@/types/data/shared";
 
 export default function Settings() {
     type T_ToggleState = {
@@ -37,7 +37,7 @@ export default function Settings() {
         <SectionLayout id="page-cab settings">
             <div className="inner">
                 <StyledWrapper className="cabinet-card settings-list">
-                    {settingsToggleList.map((item: TInputListItem) => (
+                    {settingsToggleList.map((item: TInputListItem<TInputIdMask>) => (
                         <Toggle
                             key={item.id}
                             id={item.id}

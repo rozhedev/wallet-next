@@ -1,7 +1,8 @@
+import { type TAnswerCheckboxForm, type TAnswerRadioForm } from "@/types/data/forms";
 import { surveyForms } from "@/modules/Forms/SurveyForm/data";
-import { TSigninForm, type TAnswerCheckboxForm, type TAnswerRadioForm } from "@/types/data/forms";
 
 // * Checkbox form init values
+// * Use key name from id prop from modules/Forms/SurveyForm/data.ts
 export const answerCheckboxFormInit: TAnswerCheckboxForm = {
     form2: {
         [surveyForms.form2[0].id]: false,

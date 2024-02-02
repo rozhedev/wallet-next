@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC } from "react";
+import React, { FC, memo, useState } from "react";
 import type { TSurveyFinishProps } from "./types";
 import { AllCurFullNames } from "@/types/data/currencies";
 import { borrowMoneyIcon } from "@/data/pages/web3-icons";
@@ -8,18 +8,23 @@ import { airdropLimits } from "./data";
 import { getRandomNumber } from "@/utils/utils";
 
 export const SurveyFinish: FC<TSurveyFinishProps> = ({ curName, minutesCount }) => {
-    let airdropAmount: number = 0;
+    const [airdropAmount, setAirdropAmount] = useState<number>(0);
 
-    if (AllCurFullNames.bitcoin === curName) airdropAmount = +getRandomNumber(airdropLimits.bitcoin.min, airdropLimits.bitcoin.max).toFixed(8);
-    else if (AllCurFullNames.ethereum === curName) airdropAmount = +getRandomNumber(airdropLimits.ethereum.min, airdropLimits.ethereum.max).toFixed(8);
-    else if (AllCurFullNames.tether === curName) airdropAmount = +getRandomNumber(airdropLimits.tether.min, airdropLimits.tether.max).toFixed(2);
-    else if (AllCurFullNames.binanceCoin === curName) airdropAmount = +getRandomNumber(airdropLimits["binance-coin"].min, airdropLimits["binance-coin"].max).toFixed(8);
-    else if (AllCurFullNames.stellar === curName) airdropAmount = +getRandomNumber(airdropLimits.stellar.min, airdropLimits.stellar.max).toFixed(8);
-    else if (AllCurFullNames.solana === curName) airdropAmount = +getRandomNumber(airdropLimits.solana.min, airdropLimits.solana.max).toFixed(8);
-    else if (AllCurFullNames.litecoin === curName) airdropAmount = +getRandomNumber(airdropLimits.litecoin.min, airdropLimits.litecoin.max).toFixed(8);
-    else if (AllCurFullNames.monero === curName) airdropAmount = +getRandomNumber(airdropLimits.monero.min, airdropLimits.monero.max).toFixed(8);
-    else if (AllCurFullNames.dash === curName) airdropAmount = +getRandomNumber(airdropLimits.dash.min, airdropLimits.dash.max).toFixed(8);
-    else if (AllCurFullNames.tron === curName) airdropAmount = +getRandomNumber(airdropLimits.tron.min, airdropLimits.tron.max).toFixed(8);
+    // * Many rerenders error
+    // AllCurFullNames.bitcoin === curName && setAirdropAmount(2);
+
+    // const calcAirdropAmount = () => {
+    //     if (AllCurFullNames.bitcoin === curName) return temp = +getRandomNumber(airdropLimits.bitcoin.min, airdropLimits.bitcoin.max).toFixed(8);
+    //     if (AllCurFullNames.ethereum === curName) return temp = +getRandomNumber(airdropLimits.ethereum.min, airdropLimits.ethereum.max).toFixed(8);
+    //     if (AllCurFullNames.tether === curName) return temp = +getRandomNumber(airdropLimits.tether.min, airdropLimits.tether.max).toFixed(2);
+    //     if (AllCurFullNames.binanceCoin === curName) return temp = +getRandomNumber(airdropLimits["binance-coin"].min, airdropLimits["binance-coin"].max).toFixed(8);
+    //     if (AllCurFullNames.stellar === curName) return temp = +getRandomNumber(airdropLimits.stellar.min, airdropLimits.stellar.max).toFixed(8);
+    //     if (AllCurFullNames.solana === curName) return temp = +getRandomNumber(airdropLimits.solana.min, airdropLimits.solana.max).toFixed(8);
+    //     if (AllCurFullNames.litecoin === curName) return temp = +getRandomNumber(airdropLimits.litecoin.min, airdropLimits.litecoin.max).toFixed(8);
+    //     if (AllCurFullNames.monero === curName) return temp = +getRandomNumber(airdropLimits.monero.min, airdropLimits.monero.max).toFixed(8);
+    //     if (AllCurFullNames.dash === curName) return temp = +getRandomNumber(airdropLimits.dash.min, airdropLimits.dash.max).toFixed(8);
+    //     if (AllCurFullNames.tron === curName) return temp = +getRandomNumber(airdropLimits.tron.min, airdropLimits.tron.max).toFixed(8);
+    // };
 
     return (
         <div

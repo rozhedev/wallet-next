@@ -7,11 +7,11 @@ export const airdropLimits = {
         max: 1,
     },
     [AllCurShortNames.ethereum]: {
-        min: 1,
+        min: 1.01,
         max: 2,
     },
     [AllCurShortNames.tether]: {
-        min: 2,
+        min: 2.01,
         max: 3,
     },
     [AllCurShortNames.binanceCoin]: {
