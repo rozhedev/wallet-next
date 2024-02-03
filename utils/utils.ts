@@ -13,7 +13,7 @@ export const checkScreenWidth = (bp: number) => {
 };
 
 export const getRandomNumber = (min: number, max: number) => {
-    let temp: number = min + Math.random() * (max + 1 - min);
+    let temp: number = min + Math.random() * (max - min);
     return temp;
 };
 

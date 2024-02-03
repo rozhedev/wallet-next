@@ -1,5 +1,6 @@
-import { AllCurFullNames } from "@/types/data/currencies";
 import type { TMainRateItemArr } from "./types";
+import { AllCurFullNames } from "@/types/data/currencies";
+import { WS_RATE_API } from "@/data/pages/api-links";
 
 import {
     algorandALGO,
@@ -18,105 +19,104 @@ import {
     xrpXRP,
 } from "@/data/pages/currencies-icons";
 
-// * Data
+// * Data. Don't change order
 export const mainRateItemArr: TMainRateItemArr = [
     {
         id: "main-bitcoin-rate",
         imgPath: bitcoinBTC,
         imgAlt: "bitcoin-BTC",
         title: AllCurFullNames.bitcoin,
-        apiLink: "wss://stream.binance.com:9443/ws/btcusdt@trade",
+        apiLink: WS_RATE_API.bitcoin,
     },
     {
         id: "main-ethereum-rate",
         imgPath: ethereumETH,
         imgAlt: "ethereum-ETH",
         title: AllCurFullNames.ethereum,
-        apiLink: "wss://stream.binance.com:9443/ws/ethusdt@trade",
+        apiLink: WS_RATE_API.ethereum,
     },
     {
         id: "main-binance-coin-rate",
         imgPath: binanceCoinBNB,
         imgAlt: "binance-coin-BNB",
         title: AllCurFullNames.binanceCoin,
-        apiLink: "wss://stream.binance.com:9443/ws/bnbusdt@trade",
+        apiLink: WS_RATE_API["binance-coin"],
     },
     {
         id: "main-solana-rate",
         imgPath: solanaSOL,
         imgAlt: "solana-SOL",
         title: AllCurFullNames.solana,
-        apiLink: "wss://stream.binance.com:9443/ws/solusdt@trade",
+        apiLink: WS_RATE_API.solana,
     },
     {
         id: "main-cardano-rate",
         imgPath: cardanoADA,
         imgAlt: "cardano-ADA",
         title: AllCurFullNames.cardano,
-        apiLink: "wss://stream.binance.com:9443/ws/adausdt@trade",
+        apiLink: WS_RATE_API.cardano,
     },
     {
         id: "main-xrp-rate",
         imgPath: xrpXRP,
         imgAlt: "xrp-XRP",
         title: AllCurFullNames.xrp,
-        apiLink: "wss://stream.binance.com:9443/ws/xrpusdt@trade",
+        apiLink: WS_RATE_API.xrp,
     },
     {
         id: "main-terra-rate",
         imgPath: terraLUNA,
         imgAlt: "terra-LUNA",
         title: AllCurFullNames.terra,
-        apiLink: "wss://stream.binance.com:9443/ws/lunausdt@trade",
+        apiLink: WS_RATE_API.terra,
     },
     {
         id: "main-polkadot-rate",
         imgPath: polkadotDOT,
         imgAlt: "polkadot-DOT",
         title: AllCurFullNames.polkadot,
-        apiLink: "wss://stream.binance.com:9443/ws/dotusdt@trade",
+        apiLink: WS_RATE_API.polkadot,
     },
     {
         id: "main-avalanche-rate",
         imgPath: avalancheAVAX,
         imgAlt: "avalanche-AVAX",
         title: AllCurFullNames.avalanche,
-        apiLink: "wss://stream.binance.com:9443/ws/avaxusdt@trade",
+        apiLink: WS_RATE_API.avalanche,
     },
     {
         id: "main-dogecoin-rate",
         imgPath: dogecoinDOGE,
         imgAlt: "dogecoin-DOGE",
         title: AllCurFullNames.dogecoin,
-        apiLink: "wss://stream.binance.com:9443/ws/dogeusdt@trade",
+        apiLink: WS_RATE_API.dogecoin,
     },
     {
         id: "main-polygon-rate",
         imgPath: polygonMATIC,
         imgAlt: "polygon-MATIC",
         title: AllCurFullNames.polygon,
-        apiLink: "wss://stream.binance.com:9443/ws/maticusdt@trade",
+        apiLink: WS_RATE_API.polygon,
     },
     {
         id: "main-chainlink-rate",
         imgPath: chainlinkLINK,
         imgAlt: "chainlink-LINK",
         title: AllCurFullNames.chainlink,
-        apiLink: "wss://stream.binance.com:9443/ws/linkusdt@trade",
-
+        apiLink: WS_RATE_API.chainlink,
     },
     {
         id: "main-algorand-rate",
         imgPath: algorandALGO,
         imgAlt: "algorand-ALGO",
         title: AllCurFullNames.algorand,
-        apiLink: "wss://stream.binance.com:9443/ws/algousdt@trade",
+        apiLink: WS_RATE_API.algorand,
     },
     {
         id: "main-litecoin-rate",
         imgPath: litecoinLTC,
         imgAlt: "litecoin-LTC",
         title: AllCurFullNames.litecoin,
-        apiLink: "wss://stream.binance.com:9443/ws/ltcusdt@trade",
+        apiLink: WS_RATE_API.litecoin,
     },
 ];

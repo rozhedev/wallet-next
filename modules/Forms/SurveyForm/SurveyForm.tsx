@@ -15,7 +15,8 @@ import SurveyFinish from "@/modules/Forms/SurveyFinish";
 import SurveyInfo from "@/modules/Forms/SurveyInfo";
 import AirdropProvider, { AirdropContext } from "@/providers/AirdropProvider";
 
-import { surveyForms, surveyFormData, airdropLimits } from "./data";
+import { surveyForms, surveyFormData } from "./data";
+import { airdropLimits } from "./limits";
 import { ROUTES } from "@/data/routes";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
 import { airdropWaitingMinutes } from "@/data/pages/initial";
