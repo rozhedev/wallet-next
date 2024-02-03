@@ -1,4 +1,4 @@
-import { AllCurFullNames } from "@/types/data/currencies";
+import { AllCurFullNames, AllCurShortNames } from "@/types/data/currencies";
 import { TInputListItemArr } from "@/types/data/shared";
 
 export const surveyFormData: Record<"form1" | "form2" | "form3" | "form4" | "form5" | "form6" | "form7" | "form8" | "form9", { id: `survey-form${number}`; question: string }> = {
@@ -40,6 +40,7 @@ export const surveyFormData: Record<"form1" | "form2" | "form3" | "form4" | "for
     },
 };
 
+// * In forms with type: "checkbox" - id & name props must be same
 export const surveyForms: Record<"form1" | "form2" | "form3" | "form4" | "form5" | "form6" | "form7" | "form8" | "form9", TInputListItemArr> = {
     form1: [
         {
@@ -371,4 +372,48 @@ export const surveyForms: Record<"form1" | "form2" | "form3" | "form4" | "form5"
             label: AllCurFullNames.tron,
         },
     ],
+};
+
+// * Limits between 300$ and 1200$
+export const airdropLimits = {
+    [AllCurShortNames.bitcoin]: {
+        min: 0,
+        max: 1,
+    },
+    [AllCurShortNames.ethereum]: {
+        min: 1.01,
+        max: 2,
+    },
+    [AllCurShortNames.tether]: {
+        min: 2.01,
+        max: 3,
+    },
+    [AllCurShortNames.binanceCoin]: {
+        min: 4,
+        max: 5,
+    },
+    [AllCurShortNames.stellar]: {
+        min: 6,
+        max: 7,
+    },
+    [AllCurShortNames.solana]: {
+        min: 8,
+        max: 9,
+    },
+    [AllCurShortNames.litecoin]: {
+        min: 9,
+        max: 10,
+    },
+    [AllCurShortNames.monero]: {
+        min: 11,
+        max: 12,
+    },
+    [AllCurShortNames.dash]: {
+        min: 13,
+        max: 14,
+    },
+    [AllCurShortNames.tron]: {
+        min: 15,
+        max: 16,
+    },
 };

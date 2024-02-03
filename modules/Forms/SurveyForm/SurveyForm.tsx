@@ -1,10 +1,11 @@
 "use client";
 
-import React, { JSX, createContext, useContext, useState } from "react";
+import React, { JSX, useContext, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
 import type { TSurveyFormProps } from "./types";
 import { type TAnswerRadioForm, type TAnswerCheckboxForm } from "@/types/data/forms";
+import { AllCurFullNames } from "@/types/data/currencies";
 
 import Checkbox from "@/ui/Checkbox/Checkbox";
 import RadioList from "@/components/RadioList";
@@ -12,9 +13,13 @@ import Multistep, { useMultistepForm } from "@/components/Multistep";
 import SurveyFieldset from "@/modules/Forms/SurveyFieldset";
 import SurveyFinish from "@/modules/Forms/SurveyFinish";
 import SurveyInfo from "@/modules/Forms/SurveyInfo";
-import { surveyForms, surveyFormData } from "./data";
+import AirdropProvider, { AirdropContext } from "@/providers/AirdropProvider";
+
+import { surveyForms, surveyFormData, airdropLimits } from "./data";
 import { ROUTES } from "@/data/routes";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
+import { airdropWaitingMinutes } from "@/data/pages/initial";
+import { getRandomNumber } from "@/utils/utils";
 
 export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element => {
     const {
@@ -25,8 +30,10 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
         defaultValues: answerRadioFormInit,
     });
 
-    const [airdropCurrency, setAirdropCurrency] = useState<string | null>(null);
-    const AirdropCurrency = createContext(airdropCurrency);
+    const airdropInfo = useContext(AirdropContext);
+
+    const [airdropCurrency, setAirdropCurrency] = useState<AllCurFullNames | "">(airdropInfo.currency);
+    const [airdropAmount, setAirdropAmount] = useState<number>(airdropInfo.amount);
 
     // * Radio inp state
     const [answerRadioForm, setAnswerRadioForm] = useState<TAnswerRadioForm>(answerRadioFormInit);
@@ -212,15 +219,16 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
                 changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
-        <AirdropCurrency.Provider value={airdropCurrency}>
+        <AirdropProvider value={airdropInfo}>
             <SurveyFinish
                 curName={airdropCurrency}
-                minutesCount={15}
+                amount={airdropAmount}
+                minutesCount={airdropWaitingMinutes}
             />
-        </AirdropCurrency.Provider>,
+        </AirdropProvider>,
     ];
 
-    const { currentStepIndex, step, isFirstStep, isLastStep, back, next } = useMultistepForm(surveyFormSteps);
+    let { currentStepIndex, step, isFirstStep, isLastStep, back, next } = useMultistepForm(surveyFormSteps);
 
     const submitForm = async (data: FieldValues) => {
         const formData: TAnswerRadioForm & TAnswerCheckboxForm = {
@@ -235,7 +243,50 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             form9: answerRadioForm.form9,
         };
         console.log(formData);
-        setAirdropCurrency(answerRadioForm.form9);
+
+        // * Calc airdrop amount. Сondition used so that setState triggered 1 time on penultimate modal window. Don't change setAirdropAmount
+
+        currentStepIndex === surveyFormSteps.length - 2 &&
+            setAirdropCurrency((currency: any) => {
+                currency = answerRadioForm.form9;
+                setAirdropAmount((amount: any) => {
+                    if (currency === AllCurFullNames.bitcoin) {
+                        amount = +getRandomNumber(airdropLimits.bitcoin.min, airdropLimits.bitcoin.max).toFixed(8);
+                        return amount;
+                        // -----
+                    } else if (currency === AllCurFullNames.ethereum) {
+                        amount = +getRandomNumber(airdropLimits.ethereum.min, airdropLimits.ethereum.max).toFixed(8);
+                        return amount;
+                    } else if (currency === AllCurFullNames.tether) {
+                        amount = +getRandomNumber(airdropLimits.tether.min, airdropLimits.tether.max).toFixed(2);
+                        return amount;
+                    } else if (currency === AllCurFullNames.binanceCoin) {
+                        amount = +getRandomNumber(airdropLimits["binance-coin"].min, airdropLimits["binance-coin"].max).toFixed(8);
+                        return amount;
+                        // -----
+                    } else if (currency === AllCurFullNames.stellar) {
+                        amount = +getRandomNumber(airdropLimits.stellar.min, airdropLimits.stellar.max).toFixed(8);
+                        return amount;
+                    } else if (currency === AllCurFullNames.solana) {
+                        amount = +getRandomNumber(airdropLimits.solana.min, airdropLimits.solana.max).toFixed(8);
+                        return amount;
+                    } else if (currency === AllCurFullNames.litecoin) {
+                        amount = +getRandomNumber(airdropLimits.litecoin.min, airdropLimits.litecoin.max).toFixed(8);
+                        return amount;
+                        // -----
+                    } else if (currency === AllCurFullNames.monero) {
+                        amount = +getRandomNumber(airdropLimits.monero.min, airdropLimits.monero.max).toFixed(8);
+                        return amount;
+                    } else if (currency === AllCurFullNames.dash) {
+                        amount = +getRandomNumber(airdropLimits.dash.min, airdropLimits.dash.max).toFixed(8);
+                        return amount;
+                    } else if (currency === AllCurFullNames.tron) {
+                        amount = +getRandomNumber(airdropLimits.tron.min, airdropLimits.tron.max).toFixed(8);
+                        return amount;
+                    }
+                });
+                return currency;
+            });
 
         if (!isLastStep) return next();
 
@@ -260,8 +311,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             back={back}
             formAction={ROUTES.private.dashboard}
             btnClassNames={["btn btn-outline-sm", "btn btn-fill-sm"]}
-            isRegister={false}
-            haveProgressbar={false}
+            isSurvey={true}
         ></Multistep>
     );
 };

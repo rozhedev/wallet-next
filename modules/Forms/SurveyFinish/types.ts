@@ -1,4 +1,7 @@
+import { AllCurFullNames } from "@/types/data/currencies";
+
 export type TSurveyFinishProps = {
-    curName: string | null;
+    curName: AllCurFullNames | "";
+    amount: number;
     minutesCount: number;
 };
