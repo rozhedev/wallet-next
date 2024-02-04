@@ -47,6 +47,8 @@ export const rateObjInit: TRateObj = {
     [AllCurShortNames.solana]: 0,
     [AllCurShortNames.stellar]: 0,
     // ---
+    // * tether always == 1
+    [AllCurShortNames.tether]: 1,
     [AllCurShortNames.terra]: 0,
     [AllCurShortNames.tron]: 0,
     [AllCurShortNames.xrp]: 0,
@@ -72,6 +74,8 @@ export const offlineRate: Required<TRateObj> = {
     [AllCurShortNames.solana]: 97.94,
     [AllCurShortNames.stellar]: 0.1116,
     // ---
+    // * tether always == 1
+    [AllCurShortNames.tether]: 1,
     [AllCurShortNames.terra]: 0,
     [AllCurShortNames.tron]: 0.117,
     [AllCurShortNames.xrp]: 0,

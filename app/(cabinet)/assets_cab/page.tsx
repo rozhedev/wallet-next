@@ -41,10 +41,14 @@ export default function AssetsCab() {
         });
     }, [balanceItemArr, searchQuery]);
 
-    // * Load from localStorage
+    // * Load from localStorage if it has data
     useEffect(() => {
+        // * Error when cookie deleted
         const balances: any = localStorage.getItem("balances");
-        balanceItems !== null && setBalanceItemArr(JSON.parse(balances));
+        if (balances !== null) {
+            const temp: any = JSON.parse(balances);
+            setBalanceItemArr(temp);
+        }
     }, []);
 
     return (

@@ -11,8 +11,6 @@ export const RateContext = createContext<TRateObj>(rateObjInit);
 export const RateProvider: FC<TRateObjProps> = ({ rates, children }) => {
     const [rateObj, setRateObj] = useState<TRateObj>(rates);
     useRateObj(rateObj, setRateObj);
-
-    console.log(rateObj);
-
+    
     return <RateContext.Provider value={rateObj}>{children}</RateContext.Provider>;
 };

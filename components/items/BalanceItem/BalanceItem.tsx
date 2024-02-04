@@ -30,9 +30,9 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                         <span className="navlink">{curName}</span>
                     </div>
                     <div className="balance-item__values">
-                        {/* //* Add to fixed for correct output */}
-                        <span className="balance-item__cur-amount h5">{usdAmount.toFixed(8)}</span>
-                        <span className="balance-item__usd-amount h5">{pureAmount.toFixed(2)}$</span>
+                        {/* Add to fixed for correct output */}
+                        <span className="balance-item__cur-amount h5">{pureAmount.toFixed(8)}</span>
+                        <span className="balance-item__usd-amount h5">{usdAmount.toFixed(2)}$</span>
                     </div>
 
                     {isAssetsCab && (

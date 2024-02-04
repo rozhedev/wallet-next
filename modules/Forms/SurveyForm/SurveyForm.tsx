@@ -10,16 +10,18 @@ import { AllCurFullNames } from "@/types/data/currencies";
 import Checkbox from "@/ui/Checkbox/Checkbox";
 import RadioList from "@/components/RadioList";
 import Multistep, { useMultistepForm } from "@/components/Multistep";
+import { balanceItems } from "@/components/items/BalanceItem";
 import SurveyFieldset from "@/modules/Forms/SurveyFieldset";
 import SurveyFinish from "@/modules/Forms/SurveyFinish";
 import SurveyInfo from "@/modules/Forms/SurveyInfo";
-import AirdropProvider, { AirdropContext } from "@/providers/AirdropProvider";
 
+import AirdropProvider, { AirdropContext } from "@/providers/AirdropProvider";
 import { surveyForms, surveyFormData } from "./data";
-import { airdropLimits } from "@/data/api/rate-api";
+import { airdropLimits, offlineRate } from "@/data/api/rate-api";
 import { ROUTES } from "@/data/routes";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
 import { airdropWaitingMinutes } from "@/data/pages/initial";
+import { saveAirdropAmount } from "./utils";
 import { getRandomNumber } from "@/utils/utils";
 
 export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element => {
@@ -35,19 +37,16 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
 
     const [airdropCurrency, setAirdropCurrency] = useState<AllCurFullNames | "">(airdropInfo.currency);
     const [airdropAmount, setAirdropAmount] = useState<number>(airdropInfo.amount);
-    // * Airdrop Limits
-    const [limits, setLimits] = useState(airdropLimits);
 
     // * Radio inp state
     const [answerRadioForm, setAnswerRadioForm] = useState<TAnswerRadioForm>(answerRadioFormInit);
 
-    const radioInpChange = (name: any, inpValue: string) => {
+    const radioChangeHandler = (name: any, inpValue: string) => {
         name === surveyForms.form1[0].name &&
             setAnswerRadioForm((prev: TAnswerRadioForm) => {
                 // * Assigned prev state for avoid lagging current state
                 // * Don't change this and next setStateActions
                 const currentState = { ...prev, form1: inpValue };
-
                 return currentState;
             });
         name === surveyForms.form4[0].name &&
@@ -80,7 +79,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
     // * Checkbox inp state
     const [answerCheckboxForm, setAnswerCheckboxForm] = useState<TAnswerCheckboxForm>(answerCheckboxFormInit);
 
-    const checkboxTestChangeHandler = (name: string) => {
+    const checkboxChangeHandler = (name: string) => {
         answerCheckboxForm.form2.hasOwnProperty(name) &&
             setAnswerCheckboxForm((prev: TAnswerCheckboxForm) => {
                 // * form2[name] - use square brackets, because prop name == checkbox id. Ex. "survey-answer2-1"
@@ -118,7 +117,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             <RadioList
                 dataArr={surveyForms.form1}
                 initState={answerRadioForm.form1}
-                changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
+                changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
         <SurveyFieldset
@@ -132,7 +131,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
                     name={item.name}
                     value={item.label}
                     checked={answerCheckboxForm.form2[item.name]}
-                    onChange={(e: any) => checkboxTestChangeHandler(e.target.name)}
+                    onChange={(e: any) => checkboxChangeHandler(e.target.name)}
                 >
                     {item.label}
                 </Checkbox>
@@ -149,7 +148,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
                     name={item.name}
                     value={item.label}
                     checked={answerCheckboxForm.form3[item.name]}
-                    onChange={(e: any) => checkboxTestChangeHandler(e.target.name)}
+                    onChange={(e: any) => checkboxChangeHandler(e.target.name)}
                 >
                     {item.label}
                 </Checkbox>
@@ -162,7 +161,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             <RadioList
                 dataArr={surveyForms.form4}
                 initState={answerRadioForm.form4}
-                changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
+                changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
         <SurveyFieldset
@@ -176,7 +175,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
                     name={item.name}
                     value={item.label}
                     checked={answerCheckboxForm.form5[item.name]}
-                    onChange={(e: any) => checkboxTestChangeHandler(e.target.name)}
+                    onChange={(e: any) => checkboxChangeHandler(e.target.name)}
                 >
                     {item.label}
                 </Checkbox>
@@ -189,7 +188,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             <RadioList
                 dataArr={surveyForms.form6}
                 initState={answerRadioForm.form6}
-                changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
+                changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
         <SurveyFieldset
@@ -199,7 +198,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             <RadioList
                 dataArr={surveyForms.form7}
                 initState={answerRadioForm.form7}
-                changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
+                changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
         <SurveyFieldset
@@ -209,7 +208,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             <RadioList
                 dataArr={surveyForms.form8}
                 initState={answerRadioForm.form8}
-                changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
+                changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
         <SurveyFieldset
@@ -219,7 +218,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
             <RadioList
                 dataArr={surveyForms.form9}
                 initState={answerRadioForm.form9}
-                changeHandler={(e: any) => radioInpChange(e.target.name, e.target.value)}
+                changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
         <AirdropProvider value={airdropInfo}>
@@ -252,39 +251,53 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
         currentStepIndex === surveyFormSteps.length - 2 &&
             setAirdropCurrency((currency: any) => {
                 currency = answerRadioForm.form9;
+                airdropInfo.currency = currency;
+                const temp: any = localStorage.getItem("balances");
+                const parsedTemp = JSON.parse(temp);
+
                 setAirdropAmount((amount: any) => {
                     if (currency === AllCurFullNames.bitcoin) {
                         amount = +getRandomNumber(airdropLimits.bitcoin.min, airdropLimits.bitcoin.max).toFixed(8);
+                        saveAirdropAmount(airdropInfo.amount, amount,  balanceItems, parsedTemp, currency, offlineRate["bitcoin"]);
                         return amount;
                         // -----
                     } else if (currency === AllCurFullNames.ethereum) {
                         amount = +getRandomNumber(airdropLimits.ethereum.min, airdropLimits.ethereum.max).toFixed(8);
+                        saveAirdropAmount(airdropInfo.amount, amount, balanceItems, parsedTemp, currency, offlineRate["ethereum"]);
                         return amount;
                     } else if (currency === AllCurFullNames.tether) {
                         amount = +getRandomNumber(airdropLimits.tether.min, airdropLimits.tether.max).toFixed(2);
+                        saveAirdropAmount(airdropInfo.amount, amount, balanceItems, parsedTemp, currency, 1);
                         return amount;
                     } else if (currency === AllCurFullNames.binanceCoin) {
                         amount = +getRandomNumber(airdropLimits["binance-coin"].min, airdropLimits["binance-coin"].max).toFixed(8);
+                        saveAirdropAmount(airdropInfo.amount, amount, balanceItems, parsedTemp, currency, offlineRate["binance-coin"]);
                         return amount;
                         // -----
                     } else if (currency === AllCurFullNames.stellar) {
                         amount = +getRandomNumber(airdropLimits.stellar.min, airdropLimits.stellar.max).toFixed(8);
+                        saveAirdropAmount(airdropInfo.amount, amount, balanceItems, parsedTemp, currency, offlineRate["stellar"]);
                         return amount;
                     } else if (currency === AllCurFullNames.solana) {
                         amount = +getRandomNumber(airdropLimits.solana.min, airdropLimits.solana.max).toFixed(8);
+                        saveAirdropAmount(airdropInfo.amount, amount, balanceItems, parsedTemp, currency, offlineRate["solana"]);
                         return amount;
                     } else if (currency === AllCurFullNames.litecoin) {
                         amount = +getRandomNumber(airdropLimits.litecoin.min, airdropLimits.litecoin.max).toFixed(8);
+                        saveAirdropAmount(airdropInfo.amount, amount, balanceItems, parsedTemp, currency, offlineRate["litecoin"]);
                         return amount;
                         // -----
                     } else if (currency === AllCurFullNames.monero) {
                         amount = +getRandomNumber(airdropLimits.monero.min, airdropLimits.monero.max).toFixed(8);
+                        saveAirdropAmount(airdropInfo.amount, amount, balanceItems, parsedTemp, currency, offlineRate["monero"]);
                         return amount;
                     } else if (currency === AllCurFullNames.dash) {
                         amount = +getRandomNumber(airdropLimits.dash.min, airdropLimits.dash.max).toFixed(8);
+                        saveAirdropAmount(airdropInfo.amount, amount, balanceItems, parsedTemp, currency, offlineRate["dash"]);
                         return amount;
                     } else if (currency === AllCurFullNames.tron) {
                         amount = +getRandomNumber(airdropLimits.tron.min, airdropLimits.tron.max).toFixed(8);
+                        saveAirdropAmount(airdropInfo.amount, amount, balanceItems, parsedTemp, currency, offlineRate["tron"]);
                         return amount;
                     }
                 });

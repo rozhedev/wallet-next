@@ -84,7 +84,6 @@ export default function Test() {
                 ...prev,
                 form2: { ...prev.form2, [name]: !testForm.form2[name] },
             };
-            console.log(currentState);
             return currentState;
         });
     };

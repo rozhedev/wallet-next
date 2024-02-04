@@ -43,6 +43,7 @@ export type TRateObj = Record<
     | AllCurShortNames.solana
     | AllCurShortNames.stellar
     | AllCurShortNames.terra
+    | AllCurShortNames.tether
     | AllCurShortNames.tron
     | AllCurShortNames.xrp,
     number
@@ -67,7 +68,6 @@ export type TAirdropLimits = Record<
     | AllCurShortNames.solana
     | AllCurShortNames.stellar
     | AllCurShortNames.terra
-    // * tether always == 1
     | AllCurShortNames.tether
     | AllCurShortNames.tron
     | AllCurShortNames.xrp,
