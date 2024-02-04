@@ -16,7 +16,6 @@ import LinkList from "@/components/LinkList";
 import Header, { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import Textarea from "@/ui/Textarea/Textarea";
-import Radio from "@/ui/Radio/Radio";
 
 // * Data
 import { testRadioBtnList } from "@/data/test/radioBtnVariants";
@@ -27,6 +26,8 @@ import { testLinksData } from "@/data/test/linksData";
 import { checkedRoundedIcon, chevronBottomIcon, globeIcon, userIcon } from "@/data/pages/ui-icons";
 import { type TInputListItemArr } from "@/types/data/shared";
 import Checkbox from "@/ui/Checkbox/Checkbox";
+import RateProvider from "@/providers/RateProvider";
+import { rateObjInit } from "@/data/pages/rate-api";
 
 export default function Test() {
     // * Remove _lock class, added in Header.tsx
@@ -109,6 +110,12 @@ export default function Test() {
             </Header>
 
             <div className="container">
+                <RateProvider rates={rateObjInit}>
+                    <span>Load rate</span>
+                </RateProvider>
+                <br />
+                <br />
+
                 <StyledWrapper className="form-controller">
                     {testArr.form2.map((item: any) => (
                         <Checkbox

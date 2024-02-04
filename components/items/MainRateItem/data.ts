@@ -1,6 +1,6 @@
 import type { TMainRateItemArr } from "./types";
 import { AllCurFullNames } from "@/types/data/currencies";
-import { WS_RATE_API } from "@/data/pages/api-links";
+import { WS_RATE_API } from "@/data/pages/rate-api";
 
 import {
     algorandALGO,

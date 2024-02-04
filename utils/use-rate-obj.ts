@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
-import { TRateObj } from "@/types/data/user-balances";
-import { WS_RATE_API } from "@/data/pages/api-links";
+import type { TRateObj } from "@/types/data/rate-api";
+import { WS_RATE_API } from "@/data/pages/rate-api";
 import { getCurRatePromise } from "@/utils/get-cur-rate-promise";
 
 export const useRateObj = async (rateObj: TRateObj, setRateObj: React.Dispatch<React.SetStateAction<TRateObj>>) => {
     useEffect(() => {
         getCurRatePromise(WS_RATE_API.bitcoin).then((res: any) => {
-            if (!rateObj["bitcoin"]) {
-                res = +res;
-                setRateObj((prev: any) => {
-                    const currentState = { ...prev, bitcoin: res };
-                    return currentState;
-                });
-            }
+            res = +res;
+            setRateObj((prev: any) => {
+                const currentState = { ...prev, bitcoin: res };
+                return currentState;
+            });
         });
         getCurRatePromise(WS_RATE_API.ethereum).then((res: any) => {
             res = +res;
