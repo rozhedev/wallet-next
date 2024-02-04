@@ -9,4 +9,5 @@ export type TAirdropProviderProps = {
 export type TAirdropInfo = {
     currency: AllCurFullNames | "",
     amount: number,
+    // limits: TAirdropLimits
 }

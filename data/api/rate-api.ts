@@ -1,5 +1,5 @@
 import { AllCurShortNames } from "@/types/data/currencies";
-import type { TWebSocketAPILinks, TRateObj } from "@/types/data/rate-api";
+import type { TWebSocketAPILinks, TRateObj, TAirdropLimits } from "@/types/api/rate-api";
 
 // * WS - Web Socket
 export const WS_RATE_API: TWebSocketAPILinks = {

@@ -2,8 +2,8 @@
 
 import React, { FC, useState, createContext } from "react";
 import type { TRateObjProps } from "./types";
-import type { TRateObj } from "@/types/data/rate-api";
-import { rateObjInit } from "@/data/pages/rate-api";
+import type { TRateObj } from "@/types/api/rate-api";
+import { rateObjInit } from "@/data/api/rate-api";
 import { useRateObj } from "@/utils/use-rate-obj";
 
 export const RateContext = createContext<TRateObj>(rateObjInit);

@@ -16,7 +16,7 @@ import SurveyInfo from "@/modules/Forms/SurveyInfo";
 import AirdropProvider, { AirdropContext } from "@/providers/AirdropProvider";
 
 import { surveyForms, surveyFormData } from "./data";
-import { airdropLimits } from "@/data/pages/rate-api";
+import { airdropLimits } from "@/data/api/rate-api";
 import { ROUTES } from "@/data/routes";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
 import { airdropWaitingMinutes } from "@/data/pages/initial";
@@ -35,6 +35,8 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
 
     const [airdropCurrency, setAirdropCurrency] = useState<AllCurFullNames | "">(airdropInfo.currency);
     const [airdropAmount, setAirdropAmount] = useState<number>(airdropInfo.amount);
+    // * Airdrop Limits
+    const [limits, setLimits] = useState(airdropLimits);
 
     // * Radio inp state
     const [answerRadioForm, setAnswerRadioForm] = useState<TAnswerRadioForm>(answerRadioFormInit);

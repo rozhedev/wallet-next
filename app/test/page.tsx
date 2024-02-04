@@ -27,7 +27,7 @@ import { checkedRoundedIcon, chevronBottomIcon, globeIcon, userIcon } from "@/da
 import { type TInputListItemArr } from "@/types/data/shared";
 import Checkbox from "@/ui/Checkbox/Checkbox";
 import RateProvider from "@/providers/RateProvider";
-import { rateObjInit } from "@/data/pages/rate-api";
+import { rateObjInit } from "@/data/api/rate-api";
 
 export default function Test() {
     // * Remove _lock class, added in Header.tsx

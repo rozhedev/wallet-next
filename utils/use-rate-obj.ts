@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import type { TRateObj } from "@/types/data/rate-api";
-import { WS_RATE_API } from "@/data/pages/rate-api";
+import type { TRateObj } from "@/types/api/rate-api";
+import { WS_RATE_API } from "@/data/api/rate-api";
 import { getCurRatePromise } from "@/utils/get-cur-rate-promise";
 
 export const useRateObj = async (rateObj: TRateObj, setRateObj: React.Dispatch<React.SetStateAction<TRateObj>>) => {
