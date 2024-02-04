@@ -52,8 +52,8 @@ export const Multistep: FC<TMultistep> = ({
                 {/* //* Children prop for additional validation */}
                 {children}
                 <StyledWrapper className="btn-group">
-                    {((!isFirstStep && !isSurvey) || (!isLastStep && isSurvey)) && (
-                        <Btn    
+                    {((!isFirstStep && !isSurvey) || (!isFirstStep && !isLastStep && isSurvey)) && (
+                        <Btn
                             type="button"
                             className={btnClassNames[0]}
                             onClick={back}

@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-import type { TAllCurNotesScope } from "@/types/data/currencies";
+import { type TAllCurNotesScope } from "@/types/data/currencies";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 
 import LinkList from "@/components/LinkList";
@@ -27,7 +27,7 @@ export default function Dashboard() {
         // * Use "any" to prevent type mismatches: string | null & string
         const temp: any = localStorage.getItem("balances");
         const parsedTemp = JSON.parse(temp);
-        
+
         parsedTemp !== null ? setBalancesArr(parsedTemp) : setBalancesArr(balanceItems);
     }, []);
 

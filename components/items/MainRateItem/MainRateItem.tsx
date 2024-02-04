@@ -4,7 +4,7 @@ import React, { FC, useEffect, useState, useRef } from "react";
 import type { TApiLinkMask, TMainRateItem } from "./types";
 import { AllCurShortNames, TAllCurNotesScope } from "@/types/data/currencies";
 import Image from "next/image";
-import { getCurRatePromise } from "./hooks";
+import { getCurRatePromise } from "@/utils/get-cur-rate-promise";
 import RateSkeleton from "@/components/RateSkeleton";
 import { arrowTopRightIcon } from "@/data/pages/ui-icons";
 

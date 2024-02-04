@@ -101,3 +101,19 @@ export type TUserBalanceConfig = Record<
     | AllCurShortNames.zcash,
     TUserBalance
 >;
+
+// * Object for get currency rate via WebSocket 
+export type TRateObj = Partial<
+    Record<
+        | AllCurShortNames.binanceCoin
+        | AllCurShortNames.bitcoin
+        | AllCurShortNames.dash
+        | AllCurShortNames.ethereum
+        | AllCurShortNames.litecoin
+        | AllCurShortNames.monero
+        | AllCurShortNames.stellar
+        | AllCurShortNames.solana
+        | AllCurShortNames.tron,
+        number
+    >
+>;
