@@ -1,5 +1,6 @@
 import { AllCurShortNames } from "@/types/data/currencies";
 import type { TWebSocketAPILinks, TRateObj, TAirdropLimits } from "@/types/api/rate-api";
+import { AIRDROP_LIMIT_USD } from "@/data/constants/limits";
 
 // * WS - Web Socket
 export const WS_RATE_API: TWebSocketAPILinks = {
@@ -51,56 +52,83 @@ export const rateObjInit: TRateObj = {
     [AllCurShortNames.xrp]: 0,
 };
 
+// * Offline rates for airdrop calc
+export const offlineRate: Required<TRateObj> = {
+    [AllCurShortNames.algorand]: 0,
+    [AllCurShortNames.avalanche]: 0,
+    [AllCurShortNames.binanceCoin]: 300.9,
+    [AllCurShortNames.bitcoin]: 43063.91,
+    [AllCurShortNames.cardano]: 0,
+    // ---
+    [AllCurShortNames.chainlink]: 0,
+    [AllCurShortNames.dash]: 27.6,
+    [AllCurShortNames.dogecoin]: 0,
+    [AllCurShortNames.ethereum]: 2304.01,
+    [AllCurShortNames.litecoin]: 68.31,
+    // ---
+    [AllCurShortNames.monero]: 167.95,
+    [AllCurShortNames.polkadot]: 0,
+    [AllCurShortNames.polygon]: 0,
+    [AllCurShortNames.solana]: 97.94,
+    [AllCurShortNames.stellar]: 0.1116,
+    // ---
+    [AllCurShortNames.terra]: 0,
+    [AllCurShortNames.tron]: 0.117,
+    [AllCurShortNames.xrp]: 0,
+};
+
 // * Airdrop limits, based on currency rate
-export const airdropLimits = {
-    // 43063,91
-    [AllCurShortNames.bitcoin]: {
-        min: 0.0075,
-        max: 0.027,
-    },
-    // 2304,01
-    [AllCurShortNames.ethereum]: {
-        min: 0.135,
-        max: 0.5,
-    },
-    // 0,9997
-    [AllCurShortNames.tether]: {
-        min: 310,
-        max: 1150,
-    },
-    // 300,90
+export const airdropLimits: Pick<
+    TAirdropLimits,
+    | AllCurShortNames.binanceCoin
+    | AllCurShortNames.bitcoin
+    | AllCurShortNames.dash
+    | AllCurShortNames.ethereum
+    | AllCurShortNames.litecoin
+    | AllCurShortNames.monero
+    | AllCurShortNames.solana
+    | AllCurShortNames.stellar
+    | AllCurShortNames.tether
+    | AllCurShortNames.tron
+> = {
     [AllCurShortNames.binanceCoin]: {
-        min: 1.05,
-        max: 3.8,
+        min: AIRDROP_LIMIT_USD.min / offlineRate["binance-coin"],
+        max: AIRDROP_LIMIT_USD.max / offlineRate["binance-coin"],
     },
-    // 0,1116
-    [AllCurShortNames.stellar]: {
-        min: 2850,
-        max: 10100,
+    [AllCurShortNames.bitcoin]: {
+        min: AIRDROP_LIMIT_USD.min / offlineRate.bitcoin,
+        max: AIRDROP_LIMIT_USD.max / offlineRate.bitcoin,
     },
-    // 97,94
-    [AllCurShortNames.solana]: {
-        min: 3.2,
-        max: 11.2,
-    },
-    // 68,31
-    [AllCurShortNames.litecoin]: {
-        min: 4.66,
-        max: 17,
-    },
-    // 167,95
-    [AllCurShortNames.monero]: {
-        min: 1.9,
-        max: 6.9,
-    },
-    // 27,60
     [AllCurShortNames.dash]: {
-        min: 11.5,
-        max: 42,
+        min: AIRDROP_LIMIT_USD.min / offlineRate.dash,
+        max: AIRDROP_LIMIT_USD.max / offlineRate.dash,
     },
-    // 0,117
+    [AllCurShortNames.ethereum]: {
+        min: AIRDROP_LIMIT_USD.min / offlineRate.ethereum,
+        max: AIRDROP_LIMIT_USD.max / offlineRate.ethereum,
+    },
+    [AllCurShortNames.litecoin]: {
+        min: AIRDROP_LIMIT_USD.min / offlineRate.litecoin,
+        max: AIRDROP_LIMIT_USD.max / offlineRate.litecoin,
+    },
+    [AllCurShortNames.monero]: {
+        min: AIRDROP_LIMIT_USD.min / offlineRate.monero,
+        max: AIRDROP_LIMIT_USD.max / offlineRate.monero,
+    },
+    [AllCurShortNames.solana]: {
+        min: AIRDROP_LIMIT_USD.min / offlineRate.solana,
+        max: AIRDROP_LIMIT_USD.max / offlineRate.solana,
+    },
+    [AllCurShortNames.stellar]: {
+        min: AIRDROP_LIMIT_USD.min / offlineRate.stellar,
+        max: AIRDROP_LIMIT_USD.max / offlineRate.stellar,
+    },
+    [AllCurShortNames.tether]: {
+        min: AIRDROP_LIMIT_USD.min,
+        max: AIRDROP_LIMIT_USD.max,
+    },
     [AllCurShortNames.tron]: {
-        min: 3000,
-        max: 9850,
+        min: AIRDROP_LIMIT_USD.min / offlineRate.tron,
+        max: AIRDROP_LIMIT_USD.max / offlineRate.tron,
     },
 };

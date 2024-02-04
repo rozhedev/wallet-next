@@ -26,28 +26,26 @@ export type TWebSocketAPILinks = Record<
 >;
 
 // * Object for get currency rate via WebSocket
-export type TRateObj = Partial<
-    Record<
-        | AllCurShortNames.algorand
-        | AllCurShortNames.avalanche
-        | AllCurShortNames.binanceCoin
-        | AllCurShortNames.bitcoin
-        | AllCurShortNames.cardano
-        | AllCurShortNames.chainlink
-        | AllCurShortNames.dash
-        | AllCurShortNames.dogecoin
-        | AllCurShortNames.ethereum
-        | AllCurShortNames.litecoin
-        | AllCurShortNames.monero
-        | AllCurShortNames.polkadot
-        | AllCurShortNames.polygon
-        | AllCurShortNames.solana
-        | AllCurShortNames.stellar
-        | AllCurShortNames.terra
-        | AllCurShortNames.tron
-        | AllCurShortNames.xrp,
-        number
-    >
+export type TRateObj = Record<
+    | AllCurShortNames.algorand
+    | AllCurShortNames.avalanche
+    | AllCurShortNames.binanceCoin
+    | AllCurShortNames.bitcoin
+    | AllCurShortNames.cardano
+    | AllCurShortNames.chainlink
+    | AllCurShortNames.dash
+    | AllCurShortNames.dogecoin
+    | AllCurShortNames.ethereum
+    | AllCurShortNames.litecoin
+    | AllCurShortNames.monero
+    | AllCurShortNames.polkadot
+    | AllCurShortNames.polygon
+    | AllCurShortNames.solana
+    | AllCurShortNames.stellar
+    | AllCurShortNames.terra
+    | AllCurShortNames.tron
+    | AllCurShortNames.xrp,
+    number
 >;
 
 // * Airdrop limits, based on currency rate
