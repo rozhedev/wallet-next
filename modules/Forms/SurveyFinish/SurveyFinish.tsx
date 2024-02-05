@@ -21,6 +21,7 @@ export const SurveyFinish: FC<TSurveyFinishProps> = ({ curName, amount, minutesC
             </div>
             <div className="form-step__descr">
                 <p>Survey done! Airdrop will be credited within {minutesCount} minutes. If you have any problems please contact technical support.</p>
+                <p>Please, click "Complete" and reload this page, for view changes.</p>
             </div>
         </div>
     );

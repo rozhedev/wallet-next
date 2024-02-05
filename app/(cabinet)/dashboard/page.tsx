@@ -24,6 +24,16 @@ export default function Dashboard() {
     const isDataArrEmpty = historyTableItemArr.length === 0;
     const [balancesArr, setBalancesArr] = useState<TBalanceItemArr | []>([]);
 
+    const addedItems: TBalanceItemArr = balancesArr.filter((item) => item.isAdded);
+
+    // * Date & time
+    const date = new Date();
+    const checkDateNum = (condNum: number, num: number) => (condNum > 9 ? num : "0" + num);
+
+    const currentDate: string = `${date.getUTCFullYear()}.${checkDateNum(date.getUTCMonth(), date.getUTCMonth() + 1)}.${checkDateNum(date.getUTCDate(), date.getUTCDate())}`;
+    
+    const currentTime: string = `${checkDateNum(date.getUTCHours(), date.getUTCHours())}:${checkDateNum(date.getUTCMinutes(), date.getUTCMinutes())}`;
+
     // * Load from localStorage if it has data
     useEffect(() => {
         setLocalStorageArr("balances", balanceItems, setBalancesArr, setBalancesArr);
@@ -77,16 +87,51 @@ export default function Dashboard() {
 
                 {/* STAT */}
                 <StyledWrapper className="cabinet-card dashboard-stat">
-                    {dashboardStatItemArr.map((item: TDashboardStatItem) => (
-                        <DashboardStatItem
-                            key={item.id}
-                            id={item.id}
-                            svgIcon={item.svgIcon}
-                            title={item.title}
-                            idOutput={item.idOutput}
-                            value={item.value}
-                        />
-                    ))}
+                    {dashboardStatItemArr.map((item: TDashboardStatItem) => {
+                        if (item.idOutput === "stat-added-assets")
+                            return (
+                                <DashboardStatItem
+                                    key={item.id}
+                                    id={item.id}
+                                    svgIcon={item.svgIcon}
+                                    title={item.title}
+                                    idOutput={item.idOutput}
+                                    value={addedItems.length}
+                                />
+                            );
+                        if (item.idOutput === "stat-server-date")
+                            return (
+                                <DashboardStatItem
+                                    key={item.id}
+                                    id={item.id}
+                                    svgIcon={item.svgIcon}
+                                    title={item.title}
+                                    idOutput={item.idOutput}
+                                    value={currentDate}
+                                />
+                            );
+                        if (item.idOutput === "stat-server-time")
+                            return (
+                                <DashboardStatItem
+                                    key={item.id}
+                                    id={item.id}
+                                    svgIcon={item.svgIcon}
+                                    title={item.title}
+                                    idOutput={item.idOutput}
+                                    value={currentTime}
+                                />
+                            );
+                        return (
+                            <DashboardStatItem
+                                key={item.id}
+                                id={item.id}
+                                svgIcon={item.svgIcon}
+                                title={item.title}
+                                idOutput={item.idOutput}
+                                value={item.value}
+                            />
+                        );
+                    })}
                 </StyledWrapper>
 
                 {/* * SHORT LOGS */}
