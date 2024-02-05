@@ -24,7 +24,7 @@ import { airdropWaitingMinutes } from "@/data/pages/initial";
 import { saveAirdropAmount } from "./utils";
 import { getRandomNumber } from "@/utils/utils";
 
-export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element => {
+export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps): JSX.Element => {
     const {
         handleSubmit,
         formState: { isSubmitting },
@@ -308,6 +308,7 @@ export const SurveyForm = ({ setIsOpenModal }: TSurveyFormProps): JSX.Element =>
 
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
         reset();
+        setIsCompleted && setIsCompleted(true);
         setIsOpenModal && setIsOpenModal(false);
 
         // * TODO Submit to server

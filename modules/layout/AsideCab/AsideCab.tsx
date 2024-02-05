@@ -9,8 +9,9 @@ import type { TAsideCabProps, TAsideNavItem } from "./types";
 import Modal from "@/ui/Modal";
 import SurveyForm from "@/modules/Forms/SurveyForm";
 import { GRID_BREAKPOINTS } from "@/data/constants/breakpoints";
-import { dropIcon } from "@/data/pages/ui-icons";
+import { checkedRoundedIcon, dropIcon } from "@/data/pages/ui-icons";
 import { checkScreenWidth } from "@/utils/utils";
+import Btn from "@/ui/Btn/Btn";
 
 export const AsideCab = ({ isAsideOpen, setIsAsideOpen, linksArr }: TAsideCabProps): JSX.Element => {
     return (
@@ -40,6 +41,9 @@ export const AsideCab = ({ isAsideOpen, setIsAsideOpen, linksArr }: TAsideCabPro
 
 const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, setIsAsideOpen }) => {
     const [isSurveyOpen, setIsSurveyOpen] = useState<boolean>(false);
+
+    // * Add this flag to DB in future versions
+    const [isCompleted, setIsCompleted] = useState<boolean>(false);
 
     return (
         <li className="aside-nav-item">
@@ -88,17 +92,43 @@ const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, se
             {/* //* Survey form */}
             <Modal
                 modalId="modal-survey"
-                modalDialogClassName="modal-dialog modal-dialog--info modal-dialog--survey"
+                modalDialogClassName={`modal-dialog modal-dialog--survey ${isCompleted ? "modal-dialog--info " : "modal-dialog--success"}`}
                 isOpen={isSurveyOpen}
                 onCloseModal={() => setIsSurveyOpen(false)}
             >
-                <Modal.Header
-                    titleIcon={dropIcon}
-                    title="Airdop survey"
-                />
-                <Modal.Content className="modal-dialog__body form-wrapper">
-                    <SurveyForm setIsOpenModal={setIsSurveyOpen} />
-                </Modal.Content>
+                {isCompleted ? (
+                    <>
+                        <Modal.Header
+                            titleIcon={dropIcon}
+                            title="Airdop survey"
+                        />
+                        <Modal.Content className="modal-dialog__body form-wrapper">
+                            <SurveyForm
+                                setIsOpenModal={setIsSurveyOpen}
+                                setIsCompleted={setIsCompleted}
+                            />
+                        </Modal.Content>
+                    </>
+                ) : (
+                    <>
+                        <Modal.Header
+                            titleIcon={checkedRoundedIcon}
+                            title={"Survey completed"}
+                        />
+                        <Modal.Content className="modal-dialog__body">
+                            <p>You completed this survey. Stay tuned for don't miss new promotions. If you have any problems please contact technical support.</p>
+                        </Modal.Content>
+                        <Modal.Footer className="modal-footer btn-group">
+                            <Btn
+                                type="button"
+                                className="btn btn-fill-sm"
+                                onClick={() => setIsSurveyOpen(false)}
+                            >
+                                <span>Close</span>
+                            </Btn>
+                        </Modal.Footer>
+                    </>
+                )}
             </Modal>
         </li>
     );

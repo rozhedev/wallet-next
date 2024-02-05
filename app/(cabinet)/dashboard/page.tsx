@@ -24,6 +24,12 @@ export default function Dashboard() {
     const isDataArrEmpty = historyTableItemArr.length === 0;
     const [balancesArr, setBalancesArr] = useState<TBalanceItemArr | []>([]);
 
+    let totalBalance: number | string = balancesArr.reduce((prev: number, item: TBalanceItem<TAllCurNotesScope>) => {
+        if (item.usdAmount === 0) return prev;
+        return +prev.toFixed(2) + +item.usdAmount.toFixed(2);
+    }, 0);
+    totalBalance === 0 ? (totalBalance = "0.00") : totalBalance;
+
     const addedItems: TBalanceItemArr = balancesArr.filter((item) => item.isAdded);
 
     // * Date & time
@@ -31,7 +37,7 @@ export default function Dashboard() {
     const checkDateNum = (condNum: number, num: number) => (condNum > 9 ? num : "0" + num);
 
     const currentDate: string = `${date.getUTCFullYear()}.${checkDateNum(date.getUTCMonth(), date.getUTCMonth() + 1)}.${checkDateNum(date.getUTCDate(), date.getUTCDate())}`;
-    
+
     const currentTime: string = `${checkDateNum(date.getUTCHours(), date.getUTCHours())}:${checkDateNum(date.getUTCMinutes(), date.getUTCMinutes())}`;
 
     // * Load from localStorage if it has data
@@ -88,6 +94,17 @@ export default function Dashboard() {
                 {/* STAT */}
                 <StyledWrapper className="cabinet-card dashboard-stat">
                     {dashboardStatItemArr.map((item: TDashboardStatItem) => {
+                        if (item.idOutput === "stat-total-balance")
+                            return (
+                                <DashboardStatItem
+                                    key={item.id}
+                                    id={item.id}
+                                    svgIcon={item.svgIcon}
+                                    title={item.title}
+                                    idOutput={item.idOutput}
+                                    value={`${totalBalance}$`}
+                                />
+                            );
                         if (item.idOutput === "stat-added-assets")
                             return (
                                 <DashboardStatItem
