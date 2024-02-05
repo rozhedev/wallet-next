@@ -17,9 +17,22 @@ export const getRandomNumber = (min: number, max: number) => {
     return temp;
 };
 
+// * Set optional localStorage array with different setStateActions
+export const setLocalStorageArr = (
+    storageKey: string,
+    offlineData: any[],
+    nulluableAction: React.Dispatch<React.SetStateAction<any>>,
+    unnulluableAction: React.Dispatch<React.SetStateAction<any>>
+) => {
+    const balances: any = localStorage.getItem(storageKey);
+    const temp: any = JSON.parse(balances);
+
+    if (balances === null) nulluableAction(offlineData);
+    else unnulluableAction(temp);
+};
+
 // * Predicate for futute survey forms
 // TODO Survey Forms validation
-
 export const checkSurveyRadioFieldset = (obj: Object, condValue: boolean | null) => {
     let bool: boolean;
     if (Object.values(obj).every((prop) => prop !== condValue)) bool = true;

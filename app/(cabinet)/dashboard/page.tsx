@@ -18,17 +18,15 @@ import { ROUTES } from "@/data/routes";
 import { layersIcon } from "@/data/pages/web3-icons";
 import { eyeShowIcon } from "@/data/pages/ui-icons";
 import { historyEmptyTableLabel } from "@/data/cabinet/history";
+import { setLocalStorageArr } from "@/utils/utils";
 
 export default function Dashboard() {
     const isDataArrEmpty = historyTableItemArr.length === 0;
     const [balancesArr, setBalancesArr] = useState<TBalanceItemArr | []>([]);
 
+    // * Load from localStorage if it has data
     useEffect(() => {
-        // * Use "any" to prevent type mismatches: string | null & string
-        const temp: any = localStorage.getItem("balances");
-        const parsedTemp = JSON.parse(temp);
-
-        parsedTemp !== null ? setBalancesArr(parsedTemp) : setBalancesArr(balanceItems);
+        setLocalStorageArr("balances", balanceItems, setBalancesArr, setBalancesArr);
     }, []);
 
     return (

@@ -9,10 +9,16 @@ import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import Inp from "@/ui/Inp/Inp";
 import BalanceItem, { type TBalanceItem, type TBalanceItemArr, balanceItems } from "@/components/items/BalanceItem";
 import SectionLayout from "@/modules/layout/SectionLayout";
+import { setLocalStorageArr } from "@/utils/utils";
 
 export default function AssetsCab() {
-    const [balanceItemArr, setBalanceItemArr] = useState<TBalanceItemArr>(balanceItems);
+    const [balanceItemArr, setBalanceItemArr] = useState<TBalanceItemArr | []>([]);
     const [searchQuery, setSearchQuery] = useState<string>("");
+
+    // * Load from localStorage if it has data
+    useEffect(() => {
+        setLocalStorageArr("balances", balanceItems, setBalanceItemArr, setBalanceItemArr);
+    }, []);
 
     // * Handlers
     const toggleItemHandler = (item: TBalanceItem<TAllCurNotesScope>, id: RequiredPick<TBalanceItem<TAllCurNotesScope>, "id">) => {
@@ -40,16 +46,6 @@ export default function AssetsCab() {
             return item.curName.toLowerCase().includes(searchQuery.toLowerCase());
         });
     }, [balanceItemArr, searchQuery]);
-
-    // * Load from localStorage if it has data
-    useEffect(() => {
-        // * Error when cookie deleted
-        const balances: any = localStorage.getItem("balances");
-        if (balances !== null) {
-            const temp: any = JSON.parse(balances);
-            setBalanceItemArr(temp);
-        }
-    }, []);
 
     return (
         <SectionLayout id="page-cab assets-cab">
