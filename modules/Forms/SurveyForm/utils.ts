@@ -3,7 +3,7 @@ import type { TBalanceItem, TBalanceItemArr } from "@/components/items/BalanceIt
 
 export const saveAirdropAmount = (contextStorage: number, amount: number, staticArr: TBalanceItemArr, parsedArr: TBalanceItemArr, currency: AllCurFullNames, rate: number) => {
     contextStorage = amount;
-    let finalArr = parsedArr !== null ? parsedArr : staticArr;
+    let finalArr = parsedArr === null ? staticArr : parsedArr;
 
     finalArr.forEach((item: TBalanceItem<TAllCurNotesScope>) => {
         if (item.curName !== currency) return;

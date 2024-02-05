@@ -24,7 +24,8 @@ export default function Dashboard() {
     const isDataArrEmpty = historyTableItemArr.length === 0;
     const [balancesArr, setBalancesArr] = useState<TBalanceItemArr | []>([]);
 
-    let totalBalance: number | string = balancesArr.reduce((prev: number, item: TBalanceItem<TAllCurNotesScope>) => {
+    // * Calc total balance & added items arr
+    let totalBalance: number | "0.00" = balancesArr.reduce((prev: number, item: TBalanceItem<TAllCurNotesScope>) => {
         if (item.usdAmount === 0) return prev;
         return +prev.toFixed(2) + +item.usdAmount.toFixed(2);
     }, 0);
