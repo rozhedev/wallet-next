@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, JSX, useState } from "react";
+import React, { FC, JSX, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/img/logo-badge.svg";
@@ -10,10 +10,21 @@ import Modal from "@/ui/Modal";
 import SurveyForm from "@/modules/Forms/SurveyForm";
 import { GRID_BREAKPOINTS } from "@/data/constants/breakpoints";
 import { checkedRoundedIcon, dropIcon } from "@/data/pages/ui-icons";
-import { checkScreenWidth } from "@/utils/utils";
+import { checkScreenWidth, isWindowUndefined } from "@/utils/utils";
 import Btn from "@/ui/Btn/Btn";
 
 export const AsideCab = ({ isAsideOpen, setIsAsideOpen, linksArr }: TAsideCabProps): JSX.Element => {
+    // * Add this flag to DB in future versions
+
+    const [isCompleted, setIsCompleted] = useState<boolean>(false);
+    useEffect(() => {
+        const storageBool = localStorage.getItem("isSurveyCompleted");
+        if (storageBool === null) localStorage.setItem("isSurveyCompleted", isCompleted.toString());
+        else {
+            storageBool === "false" ? setIsCompleted(false) : setIsCompleted(true);
+        }
+    }, [isCompleted]);
+
     return (
         <aside className={`aside-cab ${isAsideOpen ? "_open" : "_close"}`}>
             <div className="logo">
@@ -32,6 +43,8 @@ export const AsideCab = ({ isAsideOpen, setIsAsideOpen, linksArr }: TAsideCabPro
                         itemIcon={item.itemIcon}
                         label={item.label}
                         setIsAsideOpen={setIsAsideOpen}
+                        isCompleted={isCompleted}
+                        setIsCompleted={setIsCompleted}
                     />
                 ))}
             </ul>
@@ -39,13 +52,8 @@ export const AsideCab = ({ isAsideOpen, setIsAsideOpen, linksArr }: TAsideCabPro
     );
 };
 
-const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, setIsAsideOpen }) => {
+const AsideNavItem: FC<TAsideNavItem> = ({ isLink, linkHref, itemIcon, label, setIsAsideOpen, isCompleted, setIsCompleted }) => {
     const [isSurveyOpen, setIsSurveyOpen] = useState<boolean>(false);
-
-    // * Add this flag to DB in future versions
-    // * Load to localStorage
-    // let isCompletedInit: boolean = false;
-    const [isCompleted, setIsCompleted] = useState<boolean>(false);
 
     return (
         <li className="aside-nav-item">

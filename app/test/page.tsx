@@ -28,10 +28,11 @@ import { type TInputListItemArr } from "@/types/data/shared";
 import Checkbox from "@/ui/Checkbox/Checkbox";
 import RateProvider from "@/providers/RateProvider";
 import { rateObjInit } from "@/data/api/rate-api";
+import { isWindowUndefined } from "@/utils/utils";
 
 export default function Test() {
     // * Remove _lock class, added in Header.tsx
-    typeof window !== "undefined" && document.body.classList.remove("_lock");
+    isWindowUndefined() && document.body.classList.remove("_lock");
 
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 

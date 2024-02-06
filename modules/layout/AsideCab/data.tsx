@@ -1,9 +1,7 @@
 import { ROUTES } from "@/data/routes";
-import { TAsideNavItem } from "./types";
+import type { TAsideCabLinks } from "./types";
 import { appsIcon, clockIcon, settingsIcon, starIcon } from "@/data/pages/ui-icons";
 import { layersIcon } from "@/data/pages/web3-icons";
-
-type TAsideCabLinks = Omit<TAsideNavItem, "setIsAsideOpen">[];
 
 export const asideCabLinks: TAsideCabLinks = [
     {

@@ -22,7 +22,7 @@ import { ROUTES } from "@/data/routes";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
 import { airdropWaitingMinutes } from "@/data/pages/initial";
 import { saveAirdropAmount } from "./utils";
-import { getRandomNumber } from "@/utils/utils";
+import { getRandomNumber, isWindowUndefined } from "@/utils/utils";
 
 export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps): JSX.Element => {
     const {
@@ -258,7 +258,7 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
                 setAirdropAmount((amount: any) => {
                     if (currency === AllCurFullNames.bitcoin) {
                         amount = +getRandomNumber(airdropLimits.bitcoin.min, airdropLimits.bitcoin.max).toFixed(8);
-                        saveAirdropAmount(airdropInfo.amount, amount,  balanceItems, parsedTemp, currency, offlineRate["bitcoin"]);
+                        saveAirdropAmount(airdropInfo.amount, amount, balanceItems, parsedTemp, currency, offlineRate["bitcoin"]);
                         return amount;
                         // -----
                     } else if (currency === AllCurFullNames.ethereum) {
@@ -308,7 +308,11 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
 
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
         reset();
-        setIsCompleted && setIsCompleted(true);
+        
+        if (setIsCompleted) {
+            setIsCompleted(true);
+            isWindowUndefined() && localStorage.setItem("isSurveyCompleted", "true");
+        }
         setIsOpenModal && setIsOpenModal(false);
 
         // * TODO Submit to server

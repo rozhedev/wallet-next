@@ -46,3 +46,9 @@ export const checkSurveyCheckboxFieldset = (obj: Object, condValue: boolean | nu
     else bool = false;
     return bool;
 };
+
+export const isWindowUndefined = () => {
+    let bool: boolean;
+    typeof window !== "undefined" ? (bool = true) : (bool = false);
+    return bool;
+};

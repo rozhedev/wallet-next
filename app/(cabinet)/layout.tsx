@@ -10,6 +10,7 @@ import AsideCab, { asideCabLinks } from "@/modules/layout/AsideCab";
 import WalletConnect from "@/modules/Forms/WalletConnect";
 import { chevronBottomIcon, userIcon } from "@/data/pages/ui-icons";
 import { walletConnectIcon } from "@/data/pages/web3-icons";
+import { isWindowUndefined } from "@/utils/utils";
 
 export default function PagesLayout({ children }: { children: React.ReactNode }) {
     const [isAsideOpen, setIsAsideOpen] = useState<boolean>(false);
@@ -19,7 +20,7 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
     const [isWCOpen, setIsWCOpen] = useState<boolean>(false);
 
     // * Remove _lock class, added in Header.tsx
-    typeof window !== "undefined" && document.body.classList.remove("_lock");
+    isWindowUndefined() && document.body.classList.remove("_lock");
 
     return (
         <div className="page">
