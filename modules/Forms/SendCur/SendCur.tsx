@@ -11,13 +11,15 @@ import Btn from "@/ui/Btn/Btn";
 import { assetsCabModalData } from "@/data/modals/data";
 import { ROUTES } from "@/data/routes";
 
-export const SendCur: FC<TSendCurProps> = ({ modalId, formId, isOpen, onCloseModal }) => {
+export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen, setIsOpenModal }) => {
     const [formData, setFormData] = useState<Record<"walletAddress" | "amount" | "networkFee", string>>({
         walletAddress: "",
         amount: "",
         networkFee: "",
     });
     const [isDataSend, setIsDataSend] = useState<boolean>(false);
+
+    // pureAmount > 0 && console.log(pureAmount);
 
     const getNetworkFeeHandler = (e: any) => {
         let value = e.target.value;
@@ -33,21 +35,22 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, isOpen, onCloseMod
 
     const submitHandler: (e: SyntheticEvent) => Promise<any> = async (e) => {
         e.preventDefault();
-        setFormData({
-            walletAddress: "",
-            amount: "",
-            networkFee: "",
-        });
 
         // * Mock request
         await new Promise((resolve: any) => {
             setIsDataSend(true);
-            setTimeout(resolve, 1500);
+            setTimeout(resolve, 2000);
         });
         await new Promise((resolve: any) => {
             setIsDataSend(false);
-            setTimeout(resolve, 2000);
+            setFormData({
+                walletAddress: "",
+                amount: "",
+                networkFee: "",
+            });
+            setIsOpenModal({ ...isOpen, send: false });
         });
+
         // * TODO Submit to server
         // * ...
     };
@@ -56,8 +59,8 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, isOpen, onCloseMod
         <Modal
             modalId={modalId}
             modalDialogClassName={assetsCabModalData.send.modalDialogClassName}
-            isOpen={isOpen}
-            onCloseModal={onCloseModal}
+            isOpen={isOpen.send}
+            onCloseModal={() => setIsOpenModal({ ...isOpen, send: false })}
         >
             <Modal.Header
                 titleIcon={assetsCabModalData.send.titleIcon}
@@ -98,9 +101,9 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, isOpen, onCloseMod
                                 placeholder="Amount"
                                 autoComplete="off"
                                 required
-                                min={0.00000001}
+                                min={0}
                                 step={0.00000001}
-                                max={999999}
+                                max={pureAmount}
                                 value={formData.amount}
                                 onChange={(e) => getNetworkFeeHandler(e)}
                             />

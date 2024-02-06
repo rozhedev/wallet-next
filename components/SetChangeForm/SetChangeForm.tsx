@@ -20,13 +20,12 @@ export const SetChangeForm: FC<TSetChangeFormProps> = ({ formId, inpType, inpId,
         // * Mock request
         await new Promise((resolve: any) => {
             setIsDataSend(true);
-            setTimeout(resolve, 1500);
+            setTimeout(resolve, 2000);
         });
         await new Promise((resolve: any) => {
             setIsDataSend(false);
-            setTimeout(resolve, 2000);
-            setIsOpenModal(true);
             setValue("");
+            setIsOpenModal(true);
         });
 
         // * TODO Submit to server

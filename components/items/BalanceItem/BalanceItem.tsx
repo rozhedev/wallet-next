@@ -91,8 +91,9 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                             <SendCur
                                 modalId={`modal-send-${curIconAlt}`}
                                 formId={`send-${curIconAlt}-form`}
-                                isOpen={isOpenModal.send}
-                                onCloseModal={() => setIsOpenModal({ ...isOpenModal, send: false })}
+                                pureAmount={pureAmount}
+                                isOpen={isOpenModal}
+                                setIsOpenModal={setIsOpenModal}
                             />
                             <GetCur
                                 modalId={`modal-get-${curIconAlt}`}
