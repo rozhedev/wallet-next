@@ -11,6 +11,9 @@ import Btn from "@/ui/Btn/Btn";
 import { assetsCabModalData } from "@/data/modals/data";
 import { ROUTES } from "@/data/routes";
 import { SEND_CUR_INIT_VALUES, SEND_CUR_INP_DATA } from "@/data/pages/inp-data";
+import { PAY_LIMITS } from "@/data/constants/limits";
+import Toast from "@/ui/Toast";
+import { walletConnectIcon } from "@/data/pages/web3-icons";
 
 export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen, setIsOpenModal }) => {
     const [formData, setFormData] = useState<Record<"walletAddress" | "amount" | "networkFee", string>>(SEND_CUR_INIT_VALUES);
@@ -21,7 +24,7 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
     const getNetworkFeeHandler = (e: any) => {
         let value = e.target.value;
         setFormData({ ...formData, amount: value });
-        let networkFeeValue: string = (+value * 0.05).toFixed(6);
+        let networkFeeValue: string = (+value * PAY_LIMITS.networkFeePercent).toFixed(6);
 
         setFormData({
             ...formData,
@@ -67,12 +70,19 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
             >
                 <Modal.Content className="modal-dialog__body">
                     <div className="form">
+                        <Toast
+                            id="send-cur-toast"
+                            wrapperModif="toast--info"
+                            icon={walletConnectIcon}
+                            content="For correct sending transaction to recepient wallet you must connected external wallet via WalletConnect."
+                        />
+
                         <StyledWrapper className="form-controller">
                             <Inp
                                 type="text"
                                 id={SEND_CUR_INP_DATA.walletAddress.id}
                                 name={SEND_CUR_INP_DATA.walletAddress.id}
-                                className="inp"
+                                className="inp wallet-inp"
                                 title={SEND_CUR_INP_DATA.walletAddress.title}
                                 placeholder={SEND_CUR_INP_DATA.walletAddress.placeholder}
                                 autoComplete="off"
@@ -119,7 +129,7 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
                                 value={formData.networkFee}
                             />
                         </StyledWrapper>
-                        <p className="modal-info">Funds will be credited after 3 confirmations in cryptocurrency network (approximately 30-50 min.)</p>
+                        <p className="modal-info"> Funds will be credited after 3 confirmations in cryptocurrency network (approximately 20-40 min.)</p>
                     </div>
                 </Modal.Content>
                 <Modal.Footer className="modal-footer btn-group">

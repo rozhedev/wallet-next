@@ -1,0 +1,36 @@
+.toast {
+    display: inline-flex;
+    min-width: 300px;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: $sm-border-radius;
+    border: 2px solid $primary-lightgray-color;
+    svg {
+        @include icon-size(map-get($icon-size, md), 0);
+        stroke-width: 2;
+    }
+    .toast__content {
+        margin-left: 0.5rem;
+        max-width: calc(100% - map-get($icon-size, md) - 0.5rem);
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+    &--info {
+        background: rgba($primary-accent-color, 0.08);
+        svg {
+            stroke: $secondary-accent-color;
+        }
+    }
+    &--error {
+        background: rgba($error-red, 0.08);
+        svg {
+            stroke: $error-red;
+        }
+    }
+    &--success {
+        background: rgba($success-green, 0.08);
+        svg {
+            stroke: $success-green;
+        }
+    }
+}

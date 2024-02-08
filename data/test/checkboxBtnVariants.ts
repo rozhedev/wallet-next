@@ -1,7 +1,7 @@
 import { AllCurFullNames } from "@/types/data/currencies";
 import { TInputListItemArr } from "@/types/data/shared";
 
-export const testRadioList: TInputListItemArr = [
+export const testCheckboxList: TInputListItemArr = [
     {
         id: "survey-answer2-1",
         type: "checkbox",

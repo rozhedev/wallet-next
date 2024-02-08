@@ -38,7 +38,12 @@
         .modal-info {
             margin-top: 1.25rem;
             text-decoration: underline;
+            // 0.94rem = 15px as like error output in small tag
+            font-size: 0.94rem;
             text-align: justify;
+            @include bp(sm) {
+                font-size: smaller;
+            }
         }
         @include bp(sm) {
             // * 0.75rem - padding from both sides. Width = 336px

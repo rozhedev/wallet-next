@@ -1,9 +1,8 @@
 // * For site content only.
 export const PAY_LIMITS = {
-    minReplenishUsdAmount: 40,
-    minWithdrawUsdAmount: 10,
-    minNetworkFeePercent: 1,
-    maxNetworkFeePercent: 3,
+    minReplenishUsdAmount: 50,
+    minWithdrawUsdAmount: 5,
+    networkFeePercent: 0.04,
 };
 
 export const accountLimit: string = "three per person";

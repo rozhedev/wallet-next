@@ -11,7 +11,6 @@ import Dropdown from "@/ui/Dropdown";
 import Modal from "@/ui/Modal";
 
 // * Components & modules
-import VariantsList from "@/components/VariantsList";
 import LinkList from "@/components/LinkList";
 import Header, { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
@@ -19,7 +18,7 @@ import Textarea from "@/ui/Textarea/Textarea";
 
 // * Data
 import { testRadioBtnList } from "@/data/test/radioBtnVariants";
-import { testRadioList } from "@/data/test/checkboxBtnVariants";
+import { testCheckboxList } from "@/data/test/checkboxBtnVariants";
 import { testToggleBtnList } from "@/data/test/toggleBtnVariants";
 import { testSelectData, testSelectLang } from "@/data/test/selectData";
 import { testLinksData } from "@/data/test/linksData";
@@ -29,6 +28,8 @@ import Checkbox from "@/ui/Checkbox/Checkbox";
 import RateProvider from "@/providers/RateProvider";
 import { rateObjInit } from "@/data/api/rate-api";
 import { isWindowUndefined } from "@/utils/utils";
+import Toggle from "@/ui/Toggle/Toggle";
+import Radio from "@/ui/Radio/Radio";
 
 export default function Test() {
     // * Remove _lock class, added in Header.tsx
@@ -336,11 +337,41 @@ export default function Test() {
                         id="signup-form"
                         className="form form-test"
                     >
-                        <VariantsList dataArr={testRadioBtnList} />
-                        <VariantsList dataArr={testRadioList} />
+                        {testRadioBtnList.map((item) => (
+                            <Radio
+                                key={item.id}
+                                id={item.id}
+                                name={item.name}
+                                label={item.label}
+                                value={item.label}
+                                disabled={item.disabled}
+                            />
+                        ))}
                         <br />
-                        <VariantsList dataArr={testToggleBtnList} />
+                        {testCheckboxList.map((item) => (
+                            <Checkbox
+                                key={item.id}
+                                id={item.id}
+                                name={item.name}
+                                value={item.label}
+                                disabled={item.disabled}
+                            >
+                                {item.label}
+                            </Checkbox>
+                        ))}
                         <br />
+                        {testToggleBtnList.map((item) => (
+                            <Toggle
+                                key={item.id}
+                                id={item.id}
+                                name={item.name}
+                                value={item.label}
+                                disabled={item.disabled}
+                                classNameModif={item.classNameModif}
+                            >
+                                {item.label}
+                            </Toggle>
+                        ))}
                     </form>
                 </div>
             </div>

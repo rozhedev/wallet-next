@@ -1,1 +1,0 @@
-export { VariantsList as default } from "./VariantsList";
