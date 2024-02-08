@@ -49,7 +49,7 @@ export const SEND_CUR_INP_DATA = {
         id: "send-cur-wallet-address",
         title: "Wallet address",
         placeholder: "Wallet address",
-        min: 3,
+        min: 42,
         max: 42,
     },
     amount: {
@@ -57,7 +57,9 @@ export const SEND_CUR_INP_DATA = {
         title: "Amount",
         placeholder: "Amount",
         min: 0,
-        max: 9999999,
+        max: 999999999999,
+        balanceErr: "Not enough funds on the balance",
+        zeroErr: "Amount cannot equal zero",
     },
     networkFee: {
         id: "send-cur-network-fee",
@@ -95,4 +97,10 @@ REGISTER_INIT_VALUES["passphrase-inp"].map((pass, i) => (pass.value = passArr[i]
 
 export const SIGNIN_INIT_VALUES = {
     "signin-inp": [{ value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }],
+};
+
+export const SEND_CUR_INIT_VALUES = {
+    walletAddress: "",
+    amount: "",
+    networkFee: "",
 };

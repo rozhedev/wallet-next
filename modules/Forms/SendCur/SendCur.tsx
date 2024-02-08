@@ -10,18 +10,14 @@ import Btn from "@/ui/Btn/Btn";
 
 import { assetsCabModalData } from "@/data/modals/data";
 import { ROUTES } from "@/data/routes";
-import { SEND_CUR_INP_DATA } from "@/data/pages/inp-data";
+import { SEND_CUR_INIT_VALUES, SEND_CUR_INP_DATA } from "@/data/pages/inp-data";
 
 export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen, setIsOpenModal }) => {
-    const [formData, setFormData] = useState<Record<"walletAddress" | "amount" | "networkFee", string>>({
-        walletAddress: "",
-        amount: "",
-        networkFee: "",
-    });
+    const [formData, setFormData] = useState<Record<"walletAddress" | "amount" | "networkFee", string>>(SEND_CUR_INIT_VALUES);
     const [isDataSend, setIsDataSend] = useState<boolean>(false);
+    const [isLackBalance, setIsLackBalance] = useState<boolean>(true);
 
-    // pureAmount > 0 && console.log(pureAmount);
-
+    // * Network fee calc & validation
     const getNetworkFeeHandler = (e: any) => {
         let value = e.target.value;
         setFormData({ ...formData, amount: value });
@@ -32,11 +28,12 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
             amount: value,
             networkFee: networkFeeValue,
         });
+        +value > pureAmount || +value === 0 ? setIsLackBalance(false) : setIsLackBalance(true);
     };
 
     const submitHandler: (e: SyntheticEvent) => Promise<any> = async (e) => {
         e.preventDefault();
-
+        if (!isLackBalance) return;
         // * Mock request
         await new Promise((resolve: any) => {
             setIsDataSend(true);
@@ -44,11 +41,7 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
         });
         await new Promise((resolve: any) => {
             setIsDataSend(false);
-            setFormData({
-                walletAddress: "",
-                amount: "",
-                networkFee: "",
-            });
+            setFormData(SEND_CUR_INIT_VALUES);
             setIsOpenModal({ ...isOpen, send: false });
         });
 
@@ -108,6 +101,11 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
                                 value={formData.amount}
                                 onChange={(e) => getNetworkFeeHandler(e)}
                             />
+                            <small className="form-controller__message">
+                                {+formData.amount > pureAmount ? SEND_CUR_INP_DATA.amount.balanceErr : ""}
+
+                                {+formData.amount === 0 && formData.amount !== "" ? SEND_CUR_INP_DATA.amount.zeroErr : ""}
+                            </small>
                         </StyledWrapper>
                         <StyledWrapper className="form-controller">
                             <Inp
