@@ -12,7 +12,7 @@ import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
 import type { TSigninForm } from "@/types/data/forms";
-import { INP_DATA, SIGNIN_INIT_VALUES } from "@/data/pages/inp-data";
+import { AUTH_INP_DATA, SIGNIN_INIT_VALUES } from "@/data/pages/inp-data";
 import { getPassphraseStr } from "@/utils/utils";
 import { ROUTES } from "@/data/routes";
 
@@ -68,12 +68,12 @@ export default function Signin() {
                                 <input
                                     key={field.id}
                                     type="text"
-                                    id={`${INP_DATA.fieldArrValues.signin}.${i}.value`}
-                                    title={`${INP_DATA.fieldArrValues.signin} ${i}`}
+                                    id={`${AUTH_INP_DATA.fieldArrValues.signin}.${i}.value`}
+                                    title={`${AUTH_INP_DATA.fieldArrValues.signin} ${i}`}
                                     className="inp confirm-inp"
                                     placeholder={`${i + 1}`}
-                                    minLength={INP_DATA.fieldArrValues.wordMinLenght}
-                                    maxLength={INP_DATA.fieldArrValues.wordMaxLenght}
+                                    minLength={AUTH_INP_DATA.fieldArrValues.wordMinLenght}
+                                    maxLength={AUTH_INP_DATA.fieldArrValues.wordMaxLenght}
                                     autoComplete="off"
                                     required
                                     {...register(`signin-inp.${i}.value`, {})}

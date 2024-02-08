@@ -8,7 +8,7 @@ import ValidInp from "@/ui/ValidInp/ValidInp";
 import ValidCheckbox from "@/ui/ValidCheckbox/ValidCheckbox";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import { ROUTES } from "@/data/routes";
-import { INP_DATA } from "@/data/pages/inp-data";
+import { AUTH_INP_DATA } from "@/data/pages/inp-data";
 
 export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, register, errors }) => {
     return (
@@ -22,16 +22,16 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, regi
                     className="inp"
                     id="register-username"
                     name="register-username"
-                    title={INP_DATA.registerUsername.title}
-                    placeholder={INP_DATA.registerUsername.placeholder}
+                    title={AUTH_INP_DATA.registerUsername.title}
+                    placeholder={AUTH_INP_DATA.registerUsername.placeholder}
                     register={register}
                     required
-                    regex={INP_DATA.registerUsername.regex}
-                    regexErrMessage={INP_DATA.registerUsername.errorsText.pattern}
+                    regex={AUTH_INP_DATA.registerUsername.regex}
+                    regexErrMessage={AUTH_INP_DATA.registerUsername.errorsText.pattern}
                 />
                 <small className="form-controller__message">
-                    {errors["register-username"]?.type === "required" && INP_DATA.registerUsername.errorsText.required}
-                    {errors["register-username"]?.type === "pattern" && INP_DATA.registerUsername.errorsText.pattern}
+                    {errors["register-username"]?.type === "required" && AUTH_INP_DATA.registerUsername.errorsText.required}
+                    {errors["register-username"]?.type === "pattern" && AUTH_INP_DATA.registerUsername.errorsText.pattern}
                 </small>
             </StyledWrapper>
 
@@ -41,16 +41,16 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, regi
                     className="inp"
                     id="register-email"
                     name="register-email"
-                    title={INP_DATA.registerEmail.title}
-                    placeholder={INP_DATA.registerEmail.placeholder}
+                    title={AUTH_INP_DATA.registerEmail.title}
+                    placeholder={AUTH_INP_DATA.registerEmail.placeholder}
                     register={register}
                     required
-                    regex={INP_DATA.registerEmail.regex}
-                    regexErrMessage={INP_DATA.registerEmail.errorsText.pattern}
+                    regex={AUTH_INP_DATA.registerEmail.regex}
+                    regexErrMessage={AUTH_INP_DATA.registerEmail.errorsText.pattern}
                 />
                 <small className="form-controller__message">
-                    {errors["register-email"]?.type === "required" && INP_DATA.registerEmail.errorsText.required}
-                    {errors["register-email"]?.type === "pattern" && INP_DATA.registerEmail.errorsText.pattern}
+                    {errors["register-email"]?.type === "required" && AUTH_INP_DATA.registerEmail.errorsText.required}
+                    {errors["register-email"]?.type === "pattern" && AUTH_INP_DATA.registerEmail.errorsText.pattern}
                 </small>
             </StyledWrapper>
 
@@ -78,7 +78,7 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, regi
                         Terms of Service
                     </Link>
                 </ValidCheckbox>
-                <small className="form-controller__message">{errors["register-checkbox"]?.type === "required" && INP_DATA.registerCheckboxErrText}</small>
+                <small className="form-controller__message">{errors["register-checkbox"]?.type === "required" && AUTH_INP_DATA.registerCheckboxErrText}</small>
             </StyledWrapper>
         </fieldset>
     );

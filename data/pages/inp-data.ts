@@ -1,7 +1,7 @@
 import { usePassphrase } from "@/modules/Forms/GenPassphrase";
 import { bip39 } from "@/data/constants/bip39";
 
-export const INP_DATA = {
+export const AUTH_INP_DATA = {
     registerUsername: {
         // * Title value maybe used as label
         title: "Username",
@@ -44,6 +44,29 @@ export const INP_DATA = {
     },
 };
 
+export const SEND_CUR_INP_DATA = {
+    walletAddress: {
+        id: "send-cur-wallet-address",
+        title: "Wallet address",
+        placeholder: "Wallet address",
+        min: 3,
+        max: 42,
+    },
+    amount: {
+        id: "send-cur-amount",
+        title: "Amount",
+        placeholder: "Amount",
+        min: 0,
+        max: 9999999,
+    },
+    networkFee: {
+        id: "send-cur-network-fee",
+        title: "Network fee",
+        placeholder: "Network fee",
+    },
+};
+
+// * Initial form values
 export const REGISTER_INIT_VALUES = {
     "register-username": "",
     "register-email": "",

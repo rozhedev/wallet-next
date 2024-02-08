@@ -11,7 +11,7 @@ import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
 import { useMultistepForm } from "@/components/Multistep";
 import type { TRegisterForm } from "@/types/data/forms";
-import { REGISTER_INIT_VALUES, INP_DATA, passArr, passStr } from "@/data/pages/inp-data";
+import { REGISTER_INIT_VALUES, AUTH_INP_DATA, passArr, passStr } from "@/data/pages/inp-data";
 import { getPassphraseStr } from "@/utils/utils";
 
 export const RegisterWallet = () => {
@@ -69,12 +69,12 @@ export const RegisterWallet = () => {
                 <input
                     key={field.id}
                     type="text"
-                    id={`${INP_DATA.fieldArrValues.confirm}.${i}.value`}
-                    title={`${INP_DATA.fieldArrValues.confirm} ${i}`}
+                    id={`${AUTH_INP_DATA.fieldArrValues.confirm}.${i}.value`}
+                    title={`${AUTH_INP_DATA.fieldArrValues.confirm} ${i}`}
                     className="inp confirm-inp"
                     placeholder={`${i + 1}`}
-                    minLength={INP_DATA.fieldArrValues.wordMinLenght}
-                    maxLength={INP_DATA.fieldArrValues.wordMaxLenght}
+                    minLength={AUTH_INP_DATA.fieldArrValues.wordMinLenght}
+                    maxLength={AUTH_INP_DATA.fieldArrValues.wordMaxLenght}
                     autoComplete="off"
                     required
                     {...register(`confirm-inp.${i}.value`, {})}
@@ -137,7 +137,7 @@ export const RegisterWallet = () => {
                                     marginTop: "0.75rem",
                                 }}
                             >
-                                {INP_DATA.passMatchErrText}
+                                {AUTH_INP_DATA.passMatchErrText}
                             </small>
                         )}
                     </Multistep>

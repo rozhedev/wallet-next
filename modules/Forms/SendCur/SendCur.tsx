@@ -10,6 +10,7 @@ import Btn from "@/ui/Btn/Btn";
 
 import { assetsCabModalData } from "@/data/modals/data";
 import { ROUTES } from "@/data/routes";
+import { SEND_CUR_INP_DATA } from "@/data/pages/inp-data";
 
 export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen, setIsOpenModal }) => {
     const [formData, setFormData] = useState<Record<"walletAddress" | "amount" | "networkFee", string>>({
@@ -76,15 +77,15 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
                         <StyledWrapper className="form-controller">
                             <Inp
                                 type="text"
-                                id="send-cur-wallet-address"
-                                name="send-cur-wallet-address"
+                                id={SEND_CUR_INP_DATA.walletAddress.id}
+                                name={SEND_CUR_INP_DATA.walletAddress.id}
                                 className="inp"
-                                title="Wallet address"
-                                placeholder="Wallet address"
+                                title={SEND_CUR_INP_DATA.walletAddress.title}
+                                placeholder={SEND_CUR_INP_DATA.walletAddress.placeholder}
                                 autoComplete="off"
                                 required
-                                minLength={3}
-                                maxLength={42}
+                                minLength={SEND_CUR_INP_DATA.walletAddress.min}
+                                maxLength={SEND_CUR_INP_DATA.walletAddress.max}
                                 value={formData.walletAddress}
                                 onChange={(e) => {
                                     setFormData({ ...formData, walletAddress: e.target.value });
@@ -94,16 +95,16 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
                         <StyledWrapper className="form-controller">
                             <Inp
                                 type="number"
-                                id="send-cur-amount"
-                                name="send-cur-amount"
+                                id={SEND_CUR_INP_DATA.amount.id}
+                                name={SEND_CUR_INP_DATA.amount.id}
                                 className="inp"
-                                title="Amount"
-                                placeholder="Amount"
+                                title={SEND_CUR_INP_DATA.amount.title}
+                                placeholder={SEND_CUR_INP_DATA.amount.title}
                                 autoComplete="off"
                                 required
-                                min={0}
+                                min={SEND_CUR_INP_DATA.amount.min}
                                 step={0.00000001}
-                                max={pureAmount}
+                                max={SEND_CUR_INP_DATA.amount.max}
                                 value={formData.amount}
                                 onChange={(e) => getNetworkFeeHandler(e)}
                             />
@@ -111,11 +112,11 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
                         <StyledWrapper className="form-controller">
                             <Inp
                                 type="text"
-                                id="send-cur-network-fee"
-                                name="send-cur-network-fee"
+                                id={SEND_CUR_INP_DATA.networkFee.id}
+                                name={SEND_CUR_INP_DATA.networkFee.id}
                                 className="inp"
-                                title="Network fee"
-                                placeholder="Network fee"
+                                title={SEND_CUR_INP_DATA.networkFee.title}
+                                placeholder={SEND_CUR_INP_DATA.networkFee.placeholder}
                                 disabled
                                 value={formData.networkFee}
                             />

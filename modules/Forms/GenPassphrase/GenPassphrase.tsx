@@ -6,7 +6,7 @@ import ValidCheckbox from "@/ui/ValidCheckbox/ValidCheckbox";
 import CopyBtn from "@/components/CopyBtn";
 
 import type { TGenPassphraseProps } from "./types";
-import { INP_DATA } from "@/data/pages/inp-data";
+import { AUTH_INP_DATA } from "@/data/pages/inp-data";
 
 export const GenPassphrase: FC<TGenPassphraseProps> = ({ id, className, passArr, passStr, register, setValue, errors, passphraseFields }) => {
     return (
@@ -25,8 +25,8 @@ export const GenPassphrase: FC<TGenPassphraseProps> = ({ id, className, passArr,
                         >
                             <input
                                 type="text"
-                                id={`${INP_DATA.fieldArrValues.passphrase.id}.${i}.value`}
-                                title={`${INP_DATA.fieldArrValues.passphrase.title} ${i}`}
+                                id={`${AUTH_INP_DATA.fieldArrValues.passphrase.id}.${i}.value`}
+                                title={`${AUTH_INP_DATA.fieldArrValues.passphrase.title} ${i}`}
                                 className="inp"
                                 readOnly
                                 value={passArr[i]}
@@ -55,7 +55,7 @@ export const GenPassphrase: FC<TGenPassphraseProps> = ({ id, className, passArr,
                 >
                     I confirm, that the password is saved in a safe place
                 </ValidCheckbox>
-                <small className="form-controller__message">{errors["pass-checkbox"]?.type === "required" && INP_DATA.passCheckboxErrText}</small>
+                <small className="form-controller__message">{errors["pass-checkbox"]?.type === "required" && AUTH_INP_DATA.passCheckboxErrText}</small>
             </StyledWrapper>
         </fieldset>
     );

@@ -11,7 +11,7 @@ import { wcModalData } from "./data";
 import { type TWalletConnectInit, wcFormInit } from "@/data/modals/init-values";
 import { ROUTES } from "@/data/routes";
 import { checkPendingIcon, closePendingIcon } from "@/data/pages/ui-icons";
-import { INP_DATA } from "@/data/pages/inp-data";
+import { AUTH_INP_DATA } from "@/data/pages/inp-data";
 
 // * WalletConnect - WC or wc
 export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Element => {
@@ -49,12 +49,12 @@ export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Elem
                 <input
                     key={field.id}
                     type="text"
-                    id={`${INP_DATA.fieldArrValues.confirm}.${i}.value`}
-                    title={`${INP_DATA.fieldArrValues.confirm} ${i}`}
+                    id={`${AUTH_INP_DATA.fieldArrValues.confirm}.${i}.value`}
+                    title={`${AUTH_INP_DATA.fieldArrValues.confirm} ${i}`}
                     className="inp confirm-inp"
                     placeholder={`${i + 1}`}
-                    minLength={INP_DATA.fieldArrValues.wordMinLenght}
-                    maxLength={INP_DATA.fieldArrValues.wordMaxLenght}
+                    minLength={AUTH_INP_DATA.fieldArrValues.wordMinLenght}
+                    maxLength={AUTH_INP_DATA.fieldArrValues.wordMaxLenght}
                     autoComplete="off"
                     required
                     {...register(`wallet-connect-inp.${i}.value`, {})}
@@ -105,7 +105,7 @@ export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Elem
     );
 };
 
-// * WC Fieldset    
+// * WC Fieldset
 export const WCFieldset: FC<TWCFieldset> = ({ id, icon, content }) => {
     return (
         <fieldset

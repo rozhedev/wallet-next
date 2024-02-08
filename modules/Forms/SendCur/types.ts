@@ -1,3 +1,4 @@
+import React from 'react';
 import { TAllCurNotesScope } from "@/types/data/currencies";
 
 type TModalStates = {
