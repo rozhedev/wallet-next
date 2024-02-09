@@ -5,4 +5,7 @@ export type TValidTextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & 
     id: string;
     label?: string;
     required?: boolean;
+    register: any;
+    regex: RegExp;
+    regexErrMessage: string;
 };

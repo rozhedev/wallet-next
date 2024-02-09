@@ -1,7 +1,7 @@
 "use client";
 
-import React, { JSX, FC, useState } from "react";
-import { FieldValues, useFieldArray, useForm } from "react-hook-form";
+import React, { JSX, FC } from "react";
+import { FieldValues, useForm } from "react-hook-form";
 
 import type { TWCFieldset, TWalletConnectProps } from "./types";
 import Multistep, { useMultistepForm } from "@/components/Multistep";
@@ -11,23 +11,18 @@ import { wcModalData } from "./data";
 import { type TWalletConnectInit, wcFormInit } from "@/data/modals/init-values";
 import { ROUTES } from "@/data/routes";
 import { checkPendingIcon, closePendingIcon } from "@/data/pages/ui-icons";
-import { AUTH_INP_DATA } from "@/data/pages/inp-data";
+import { PASSPHRASE_DATA } from "@/data/pages/inp-data";
+import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 
 // * WalletConnect - WC or wc
 export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Element => {
     const {
         register,
-        control,
         handleSubmit,
-        formState: { isSubmitting },
+        formState: { isSubmitting, errors },
         reset,
     } = useForm<TWalletConnectInit>({
         defaultValues: wcFormInit,
-    });
-
-    const { fields: confirmFields } = useFieldArray({
-        control,
-        name: "wallet-connect-inp",
     });
 
     const wcFormSteps: React.ReactElement[] = [
@@ -41,25 +36,20 @@ export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Elem
             className="form-step"
             legend="Connect external wallet"
         >
-            {/* 
-                // * Don't add name attribute for prevent rewrite in Inp component 
-                // * Use default input instead Inp for default html5 validation (custom validation message impossible output, because dynamic key is not supported)
-            */}
-            {confirmFields.map((field, i) => (
-                <input
-                    key={field.id}
-                    type="text"
-                    id={`${AUTH_INP_DATA.fieldArrValues.confirm}.${i}.value`}
-                    title={`${AUTH_INP_DATA.fieldArrValues.confirm} ${i}`}
-                    className="inp confirm-inp"
-                    placeholder={`${i + 1}`}
-                    minLength={AUTH_INP_DATA.fieldArrValues.wordMinLenght}
-                    maxLength={AUTH_INP_DATA.fieldArrValues.wordMaxLenght}
-                    autoComplete="off"
-                    required
-                    {...register(`wallet-connect-inp.${i}.value`, {})}
-                />
-            ))}
+            <ValidTextarea
+                id="wallet-connect-textarea"
+                className="textarea inp"
+                title={PASSPHRASE_DATA.title}
+                placeholder={PASSPHRASE_DATA.placeholder}
+                register={register}
+                rows={PASSPHRASE_DATA.rowsCount}
+                regex={PASSPHRASE_DATA.regex}
+                regexErrMessage={PASSPHRASE_DATA.regexErrMessage}
+            />
+            <small className="form-controller__message">
+                {errors["wallet-connect-textarea"]?.type === "required" && PASSPHRASE_DATA.requiredErrMessage}
+                {errors["wallet-connect-textarea"]?.type === "pattern" && PASSPHRASE_DATA.regexErrMessage}
+            </small>
         </EnterPassphrase>,
         <WCFieldset
             id={wcModalData.success.id}

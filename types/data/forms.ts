@@ -3,10 +3,10 @@ export type TRegisterForm = {
     "register-email": string;
     "register-checkbox": boolean;
     "pass-checkbox": boolean;
-    // * ["confirm-inp"].lenght & ["passphrase-inp"].lenght  = 12
+    // * ["passphrase-inp"].lenght  = 12
     // * Usage HomogeneousTuple сauses an error on register function
-    "confirm-inp": { value: string }[];
     "passphrase-inp": { value: string }[];
+    "confirm-inp": string;
 };
 
 export type TSigninForm = {

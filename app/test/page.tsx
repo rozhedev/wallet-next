@@ -286,13 +286,14 @@ export default function Test() {
                 <br />
                 <br />
                 <StyledWrapper className="form-controller">
-                    <ValidTextarea
+                    1
+                    {/* <ValidTextarea
                         id="test-textarea1"
                         label="ValidTextarea"
                         rows={2}
                         className="textarea inp"
                         placeholder="Enter in textarea"
-                    />
+                    /> */}
                 </StyledWrapper>
                 <br />
                 <br />

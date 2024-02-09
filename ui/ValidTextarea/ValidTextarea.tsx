@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import type { TValidTextareaProps } from "./types";
 
-const ValidTextarea: FC<TValidTextareaProps> = ({ id, label, disabled = false, readOnly = false, required = false, ...props }) => {
+const ValidTextarea: FC<TValidTextareaProps> = ({ id, label, disabled = false, readOnly = false, required = false, register, regex = /[a-zA-Z0-9 ,.:"'!?№@#$%^&*()_=+-/\\|]/g, regexErrMessage = "", ...props }) => {
     return (
         <>
             {label && (
@@ -16,7 +16,10 @@ const ValidTextarea: FC<TValidTextareaProps> = ({ id, label, disabled = false, r
                 id={id}
                 disabled={disabled}
                 readOnly={readOnly}
-                required={required}
+                {...register(id, { required, pattern: {
+                    value: regex,
+                    message: regexErrMessage,
+                }, })}
                 {...props}
             />
         </>

@@ -1,5 +1,6 @@
 import { usePassphrase } from "@/modules/Forms/GenPassphrase";
 import { bip39 } from "@/data/constants/bip39";
+import { PASSPHRASE_LENGTH } from "../constants/limits";
 
 export const AUTH_INP_DATA = {
     registerUsername: {
@@ -68,6 +69,16 @@ export const SEND_CUR_INP_DATA = {
     },
 };
 
+export const PASSPHRASE_DATA = {
+    title: "Enter passphrase",
+    // * PASSPHRASE_LENGTH = 12
+    placeholder: "word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12",
+    regex: /^\s*([a-z]{3,11}\s*){12}$/g,
+    requiredErrMessage: "This field is required",
+    regexErrMessage: `Invalid passphrase. Pass lenght = ${PASSPHRASE_LENGTH}`,
+    rowsCount: 3,
+};
+
 // * Initial form values
 export const REGISTER_INIT_VALUES = {
     "register-username": "",
@@ -88,7 +99,7 @@ export const REGISTER_INIT_VALUES = {
         { value: "" },
         { value: "" },
     ],
-    "confirm-inp": [{ value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }],
+    "confirm-inp": "",
 };
 
 export const { passArr, passStr } = usePassphrase(bip39);

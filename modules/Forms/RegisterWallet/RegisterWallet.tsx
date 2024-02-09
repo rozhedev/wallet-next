@@ -11,8 +11,8 @@ import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
 import { useMultistepForm } from "@/components/Multistep";
 import type { TRegisterForm } from "@/types/data/forms";
-import { REGISTER_INIT_VALUES, AUTH_INP_DATA, passArr, passStr } from "@/data/pages/inp-data";
-import { getPassphraseStr } from "@/utils/utils";
+import { REGISTER_INIT_VALUES, AUTH_INP_DATA, PASSPHRASE_DATA, passArr, passStr } from "@/data/pages/inp-data";
+import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 
 export const RegisterWallet = () => {
     const {
@@ -30,10 +30,6 @@ export const RegisterWallet = () => {
     const { fields: passphraseFields } = useFieldArray({
         control,
         name: "passphrase-inp",
-    });
-    const { fields: confirmFields } = useFieldArray({
-        control,
-        name: "confirm-inp",
     });
 
     // * Multistep steps
@@ -61,25 +57,20 @@ export const RegisterWallet = () => {
             className="form-step form-confirm"
             legend="Paste your passphrase from the inputs below to complete registration."
         >
-            {/* 
-                // * Don't add name attribute for prevent rewrite in Inp component 
-                // * Use default input instead Inp for default html5 validation (custom validation message impossible output, because dynamic key is not supported)
-            */}
-            {confirmFields.map((field, i) => (
-                <input
-                    key={field.id}
-                    type="text"
-                    id={`${AUTH_INP_DATA.fieldArrValues.confirm}.${i}.value`}
-                    title={`${AUTH_INP_DATA.fieldArrValues.confirm} ${i}`}
-                    className="inp confirm-inp"
-                    placeholder={`${i + 1}`}
-                    minLength={AUTH_INP_DATA.fieldArrValues.wordMinLenght}
-                    maxLength={AUTH_INP_DATA.fieldArrValues.wordMaxLenght}
-                    autoComplete="off"
-                    required
-                    {...register(`confirm-inp.${i}.value`, {})}
-                />
-            ))}
+            <ValidTextarea
+                id="confirm-inp"
+                className="textarea inp"
+                title={PASSPHRASE_DATA.title}
+                placeholder={PASSPHRASE_DATA.placeholder}
+                register={register}
+                rows={PASSPHRASE_DATA.rowsCount}
+                regex={PASSPHRASE_DATA.regex}
+                regexErrMessage={PASSPHRASE_DATA.regexErrMessage}
+            />
+            <small className="form-controller__message">
+                {errors["confirm-inp"]?.type === "required" && PASSPHRASE_DATA.requiredErrMessage}
+                {errors["confirm-inp"]?.type === "pattern" && PASSPHRASE_DATA.regexErrMessage}
+            </small>
         </EnterPassphrase>,
     ];
 
@@ -92,7 +83,8 @@ export const RegisterWallet = () => {
     const submitForm = async (data: FieldValues) => {
         if (!isLastStep) return next();
 
-        const confirmInpValuesStr = getPassphraseStr(getValues, "confirm-inp");
+        // * Clearing extra spaces
+        const confirmInpValuesStr = getValues("confirm-inp").trim().split(/\s+/).join(" ");
 
         const isPassCond: boolean = passStr === confirmInpValuesStr;
 
