@@ -4,15 +4,15 @@ import React, { JSX, FC } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
 import type { TWCFieldset, TWalletConnectProps } from "./types";
+import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 import Multistep, { useMultistepForm } from "@/components/Multistep";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
 import { wcModalData } from "./data";
 import { type TWalletConnectInit, wcFormInit } from "@/data/modals/init-values";
 import { ROUTES } from "@/data/routes";
-import { checkPendingIcon, closePendingIcon } from "@/data/pages/ui-icons";
+import { checkPendingIcon } from "@/data/pages/ui-icons";
 import { PASSPHRASE_DATA } from "@/data/pages/inp-data";
-import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 
 // * WalletConnect - WC or wc
 export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Element => {
@@ -41,6 +41,7 @@ export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Elem
                 className="textarea inp"
                 title={PASSPHRASE_DATA.title}
                 placeholder={PASSPHRASE_DATA.placeholder}
+                required
                 register={register}
                 rows={PASSPHRASE_DATA.rowsCount}
                 regex={PASSPHRASE_DATA.regex}
@@ -56,16 +57,12 @@ export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Elem
             icon={checkPendingIcon}
             content={wcModalData.success.content}
         />,
-        <WCFieldset
-            id={wcModalData.error.id}
-            icon={closePendingIcon}
-            content={wcModalData.error.content}
-        />,
     ];
 
     const { currentStepIndex, step, isFirstStep, isLastStep, back, next } = useMultistepForm(wcFormSteps);
 
     const submitForm = async (data: FieldValues) => {
+        if (currentStepIndex === 1 && Object.keys(errors).length !== 0) return;
         if (!isLastStep) return next();
 
         await new Promise((resolve: any) => setTimeout(resolve, 2000));

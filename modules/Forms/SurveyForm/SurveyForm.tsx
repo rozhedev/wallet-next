@@ -20,7 +20,7 @@ import { surveyForms, surveyFormData } from "./data";
 import { airdropLimits, offlineRate } from "@/data/api/rate-api";
 import { ROUTES } from "@/data/routes";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
-import { airdropWaitingMinutes } from "@/data/pages/initial";
+import { airdropWaitingMinutes } from "@/data/constants/limits";
 import { saveAirdropAmount } from "./utils";
 import { getRandomNumber, isWindowUndefined } from "@/utils/utils";
 

@@ -9,5 +9,3 @@ export const projectNames = {
     defWalletLtd: "Flem Wallet LTD",
 };
 export const curPromoCount: number = 70;
-
-export const airdropWaitingMinutes: number = 15;

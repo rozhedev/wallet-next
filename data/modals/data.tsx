@@ -1,7 +1,7 @@
 import { RequiredPick } from "@/types/utils/utils";
 
 import type { TModalProps } from "@/ui/Modal/index";
-import { checkedRoundedIcon, closeRoundedIcon, exportIcon, importIcon } from "../pages/ui-icons";
+import { checkedRoundedIcon, closeRoundedIcon, exportIcon, importIcon } from "@/data/pages/ui-icons";
 
 type TModalData = {
     id: RequiredPick<TModalProps, "modalId">;

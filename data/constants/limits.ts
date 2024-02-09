@@ -1,3 +1,5 @@
+export const TRANSITION_DELAY = 500;
+
 // * For site content only.
 export const PAY_LIMITS = {
     minReplenishUsdAmount: 50,
@@ -13,3 +15,12 @@ export const AIRDROP_LIMIT_USD = {
     min: 500,
     max: 1150,
 };
+
+export const airdropWaitingMinutes: number = 15;
+
+export const WC_VALUES = {
+    minWaitingTime: 20,
+    maxWaitingTime: 40,
+    minBalancePercent: 25,
+    maxBalancePercent: 35,
+}
