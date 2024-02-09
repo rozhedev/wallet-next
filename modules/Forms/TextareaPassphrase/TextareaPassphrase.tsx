@@ -3,7 +3,7 @@
 import React, { FC } from "react";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import type { T_TextareaPassphraseProps } from "./types";
-import Textarea from "@/ui/Textarea/Textarea";
+import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 
 export const TextareaPassphrase: FC<T_TextareaPassphraseProps> = ({ id, className, legend, textareaId }) => {
     return (
@@ -13,7 +13,7 @@ export const TextareaPassphrase: FC<T_TextareaPassphraseProps> = ({ id, classNam
         >
             <legend className="form-label-legend">{legend}</legend>
             <StyledWrapper className="form-controller form-inp-grid">
-                <Textarea id={textareaId} />
+                <ValidTextarea id={textareaId} />
             </StyledWrapper>
         </fieldset>
     );

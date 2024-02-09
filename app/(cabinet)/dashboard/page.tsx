@@ -63,24 +63,21 @@ export default function Dashboard() {
 
                 {/* BALANCE */}
                 <StyledWrapper className="cabinet-card dashboard-balance">
-                    {balancesArr.map((item: TBalanceItem<TAllCurNotesScope>) => {
-                        if (item.isAdded)
-                            return (
-                                <BalanceItem
-                                    key={item.id}
-                                    id={item.id}
-                                    curIconPath={item.curIconPath}
-                                    curIconAlt={item.curIconAlt}
-                                    curName={item.curName}
-                                    pureAmount={item.pureAmount}
-                                    usdAmount={item.usdAmount}
-                                    walletAddress={item.walletAddress}
-                                    qrCodeImg={item.qrCodeImg}
-                                    isAdded={item.isAdded}
-                                    isAssetsCab={false}
-                                />
-                            );
-                    })}
+                    {addedItems.map((item: TBalanceItem<TAllCurNotesScope>) => (
+                        <BalanceItem
+                            key={item.id}
+                            id={item.id}
+                            curIconPath={item.curIconPath}
+                            curIconAlt={item.curIconAlt}
+                            curName={item.curName}
+                            pureAmount={item.pureAmount}
+                            usdAmount={item.usdAmount}
+                            walletAddress={item.walletAddress}
+                            qrCodeImg={item.qrCodeImg}
+                            isAdded={item.isAdded}
+                            isAssetsCab={false}
+                        />
+                    ))}
                     <StyledWrapper className="btn-group">
                         <Link
                             href={ROUTES.private.assetsCab}

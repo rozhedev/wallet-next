@@ -57,7 +57,10 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
             modalId={modalId}
             modalDialogClassName={assetsCabModalData.send.modalDialogClassName}
             isOpen={isOpen.send}
-            onCloseModal={() => setIsOpenModal({ ...isOpen, send: false })}
+            onCloseModal={() => {
+                setFormData(SEND_CUR_INIT_VALUES);
+                setIsOpenModal({ ...isOpen, send: false });
+            }}
         >
             <Modal.Header
                 titleIcon={assetsCabModalData.send.titleIcon}

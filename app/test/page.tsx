@@ -14,7 +14,7 @@ import Modal from "@/ui/Modal";
 import LinkList from "@/components/LinkList";
 import Header, { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
-import Textarea from "@/ui/Textarea/Textarea";
+import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 
 // * Data
 import { testRadioBtnList } from "@/data/test/radioBtnVariants";
@@ -286,9 +286,9 @@ export default function Test() {
                 <br />
                 <br />
                 <StyledWrapper className="form-controller">
-                    <Textarea
+                    <ValidTextarea
                         id="test-textarea1"
-                        label="Textarea"
+                        label="ValidTextarea"
                         rows={2}
                         className="textarea inp"
                         placeholder="Enter in textarea"
