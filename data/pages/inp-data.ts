@@ -32,14 +32,6 @@ export const AUTH_INP_DATA = {
             id: "passphrase-inp",
             title: "Passphrase word",
         },
-        confirm: {
-            id: "confirm-inp",
-            title: "Confirm input",
-        },
-        signin: {
-            id: "signin-inp",
-            title: "Signin input",
-        },
         wordMinLenght: 3,
         wordMaxLenght: 11,
     },
@@ -107,7 +99,7 @@ export const { passArr, passStr } = usePassphrase(bip39);
 REGISTER_INIT_VALUES["passphrase-inp"].map((pass, i) => (pass.value = passArr[i]));
 
 export const SIGNIN_INIT_VALUES = {
-    "signin-inp": [{ value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }, { value: "" }],
+    "signin-inp": "",
 };
 
 export const SEND_CUR_INIT_VALUES = {

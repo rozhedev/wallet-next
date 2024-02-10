@@ -10,7 +10,7 @@ export type TRegisterForm = {
 };
 
 export type TSigninForm = {
-    "signin-inp": { value: string }[];
+    "signin-inp": string;
 }
 
 export type TAnswerCheckboxForm = {

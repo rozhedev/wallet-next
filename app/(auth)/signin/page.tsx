@@ -2,39 +2,34 @@
 
 import React from "react";
 import Link from "next/link";
-import { useForm, useFieldArray } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { FieldValues } from "react-hook-form";
 
+import type { TSigninForm } from "@/types/data/forms";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import Btn from "@/ui/Btn/Btn";
+import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
-import type { TSigninForm } from "@/types/data/forms";
-import { AUTH_INP_DATA, SIGNIN_INIT_VALUES } from "@/data/pages/inp-data";
-import { getPassphraseStr } from "@/utils/utils";
+import { PASSPHRASE_DATA, SIGNIN_INIT_VALUES } from "@/data/pages/inp-data";
 import { ROUTES } from "@/data/routes";
 
 export default function Signin() {
     const {
         register,
-        control,
         handleSubmit,
-        formState: { isSubmitting },
+        formState: { isSubmitting, errors },
         getValues,
         reset,
     } = useForm<TSigninForm>({
         defaultValues: SIGNIN_INIT_VALUES,
     });
 
-    const { fields: signupFields } = useFieldArray({
-        control,
-        name: "signin-inp",
-    });
-
     const submitForm = async (data: FieldValues) => {
-        const signinInpValuesStr = getPassphraseStr(getValues, "signin-inp");
+        // * Clearing extra spaces
+        const signinInpValuesStr = getValues("signin-inp").trim().split(/\s+/).join(" ");
         console.log(signinInpValuesStr);
 
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
@@ -60,25 +55,25 @@ export default function Signin() {
                         onSubmit={handleSubmit(submitForm)}
                     >
                         <EnterPassphrase
-                            id="register-confirm-form"
+                            id="signin-form"
                             className="form-step form-confirm"
                             legend="Paste your passphrase from the inputs below to complete registration."
                         >
-                            {signupFields.map((field, i) => (
-                                <input
-                                    key={field.id}
-                                    type="text"
-                                    id={`${AUTH_INP_DATA.fieldArrValues.signin}.${i}.value`}
-                                    title={`${AUTH_INP_DATA.fieldArrValues.signin} ${i}`}
-                                    className="inp confirm-inp"
-                                    placeholder={`${i + 1}`}
-                                    minLength={AUTH_INP_DATA.fieldArrValues.wordMinLenght}
-                                    maxLength={AUTH_INP_DATA.fieldArrValues.wordMaxLenght}
-                                    autoComplete="off"
-                                    required
-                                    {...register(`signin-inp.${i}.value`, {})}
-                                />
-                            ))}
+                            <ValidTextarea
+                                id="signin-inp"
+                                className="textarea inp"
+                                title={PASSPHRASE_DATA.title}
+                                placeholder={PASSPHRASE_DATA.placeholder}
+                                required
+                                register={register}
+                                rows={PASSPHRASE_DATA.rowsCount}
+                                regex={PASSPHRASE_DATA.regex}
+                                regexErrMessage={PASSPHRASE_DATA.regexErrMessage}
+                            />
+                            <small className="form-controller__message">
+                                {errors["signin-inp"]?.type === "required" && PASSPHRASE_DATA.requiredErrMessage}
+                                {errors["signin-inp"]?.type === "pattern" && PASSPHRASE_DATA.regexErrMessage}
+                            </small>
                         </EnterPassphrase>
 
                         <StyledWrapper className="btn-group">
@@ -87,7 +82,7 @@ export default function Signin() {
                                 className="btn btn-fill-sm"
                                 disabled={isSubmitting}
                             >
-                                <span>Sign in</span>
+                                <span>{isSubmitting ? "Sending..." : "Sign in"}</span>
                             </Btn>
                         </StyledWrapper>
                         <span className="form-backlink">
