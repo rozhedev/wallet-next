@@ -52,7 +52,7 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
                                     onClick={() => setIsWCOpen((prevState) => !prevState)}
                                 >
                                     {walletConnectIcon}
-                                    <span>Wallet connect</span>
+                                    <span>WalletConnect</span>
                                 </span>
                             </li>
                         </Dropdown.Menu>
@@ -70,7 +70,7 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
                         title="WalletConnect"
                     />
                     <Modal.Content className="modal-dialog__body form-wrapper">
-                        <WalletConnect setIsOpenModal={setIsWCOpen}/>
+                        <WalletConnect setIsOpenModal={setIsWCOpen} />
                     </Modal.Content>
                 </Modal>
             </HeaderCab>

@@ -9,10 +9,10 @@ export const dropdownLinksCab: TLinkListItem<TRouteLabelScope>[] = [
         label: "Sign Out",
         className: "navlink",
     },
-    {
-        href: ROUTES.private.watchlist,
-        svgIcon: listIcon,
-        label: "Watchlist",
-        className: "navlink",
-    },
+    // {
+    //     href: ROUTES.private.watchlist,
+    //     svgIcon: listIcon,
+    //     label: "Watchlist",
+    //     className: "navlink",
+    // },
 ];
