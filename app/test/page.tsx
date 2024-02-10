@@ -14,7 +14,6 @@ import Modal from "@/ui/Modal";
 import LinkList from "@/components/LinkList";
 import Header, { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
-import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 
 // * Data
 import { testRadioBtnList } from "@/data/test/radioBtnVariants";
@@ -40,27 +39,27 @@ export default function Test() {
     const testArr: Record<"form2", TInputListItemArr> = {
         form2: [
             {
-                id: "survey-answer1-1",
+                id: "survey-answer-test1-1",
                 type: "checkbox",
-                name: "survey-answer1-1",
+                name: "survey-answer-test1-1",
                 label: "Radio 1",
             },
             {
-                id: "survey-answer1-2",
+                id: "survey-answer-test1-2",
                 type: "checkbox",
-                name: "survey-answer1-2",
+                name: "survey-answer-test1-2",
                 label: "Radio 2",
             },
             {
-                id: "survey-answer1-3",
+                id: "survey-answer-test1-3",
                 type: "checkbox",
-                name: "survey-answer1-3",
+                name: "survey-answer-test1-3",
                 label: "Radio 3",
             },
             {
-                id: "survey-answer1-4",
+                id: "survey-answer-test1-4",
                 type: "checkbox",
-                name: "survey-answer1-4",
+                name: "survey-answer-test1-4",
                 label: "Radio 4",
             },
         ],
@@ -73,10 +72,10 @@ export default function Test() {
     };
     const [testForm, setTestForm] = useState<TCheckboxState>({
         form2: {
-            "survey-answer1-1": false,
-            "survey-answer1-2": false,
-            "survey-answer1-3": false,
-            "survey-answer1-4": false,
+            "survey-answer-test1-1": false,
+            "survey-answer-test1-2": false,
+            "survey-answer-test1-3": false,
+            "survey-answer-test1-4": false,
         },
     });
 
@@ -285,18 +284,6 @@ export default function Test() {
                 </StyledWrapper>
                 <br />
                 <br />
-                <StyledWrapper className="form-controller">
-                    1
-                    {/* <ValidTextarea
-                        id="test-textarea1"
-                        label="ValidTextarea"
-                        rows={2}
-                        className="textarea inp"
-                        placeholder="Enter in textarea"
-                    /> */}
-                </StyledWrapper>
-                <br />
-                <br />
                 <Select
                     id="test-select"
                     className="select"
@@ -361,17 +348,32 @@ export default function Test() {
                             </Checkbox>
                         ))}
                         <br />
-                        {testToggleBtnList.map((item) => (
-                            <Toggle
-                                key={item.id}
-                                id={item.id}
-                                name={item.name}
-                                value={item.label}
-                                disabled={item.disabled}
-                                classNameModif={item.classNameModif}
-                            >
-                                {item.label}
-                            </Toggle>
+                        {testToggleBtnList.map((item, i) => (
+                            <>
+                                {i === testToggleBtnList.length - 1 && (
+                                    <Toggle
+                                        key={item.id}
+                                        id={item.id}
+                                        name={item.name}
+                                        value={item.label}
+                                        disabled={item.disabled}
+                                        classNameModif={item.classNameModif}
+                                        checked={true}
+                                    >
+                                        {item.label}
+                                    </Toggle>
+                                )}
+                                <Toggle
+                                    key={item.id}
+                                    id={item.id}
+                                    name={item.name}
+                                    value={item.label}
+                                    disabled={item.disabled}
+                                    classNameModif={item.classNameModif}
+                                >
+                                    {item.label}
+                                </Toggle>
+                            </>
                         ))}
                     </form>
                 </div>

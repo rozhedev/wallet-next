@@ -63,6 +63,8 @@ export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Elem
 
     const submitForm = async (data: FieldValues) => {
         if (currentStepIndex === 1 && Object.keys(errors).length !== 0) return;
+        // * Add logger condition here
+
         if (!isLastStep) return next();
 
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
