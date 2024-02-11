@@ -27,7 +27,8 @@ export default function Dashboard() {
     // * Calc total balance & added items arr
     let totalBalance: number | "0.00" = balancesArr.reduce((prev: number, item: TBalanceItem<TAllCurNotesScope>) => {
         if (item.usdAmount === 0) return prev;
-        return +prev.toFixed(2) + +item.usdAmount.toFixed(2);
+        // * Additional fixed for more than 2 values after comma in some cases
+        return +(+prev.toFixed(2) + +item.usdAmount.toFixed(2)).toFixed(2);
     }, 0);
     totalBalance === 0 ? (totalBalance = "0.00") : totalBalance;
 

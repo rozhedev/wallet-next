@@ -1,11 +1,5 @@
 import { UseFormGetValues } from "react-hook-form";
 
-// getPassphraseStr use for input group
-export const getPassphraseStr = (getFunc: UseFormGetValues<any>, inpFields: string) =>
-    getFunc(inpFields)
-        .map((inp: { value: string }) => (inp.value = inp.value.trim()))
-        .join(" ");
-
 export const checkScreenWidth = (bp: number) => {
     let bool: boolean;
     if (typeof document !== "undefined" && document.documentElement.clientWidth < bp) bool = true;
@@ -17,6 +11,27 @@ export const getRandomNumber = (min: number, max: number) => {
     let temp: number = min + Math.random() * (max - min);
     return temp;
 };
+
+export const filterTrueValues = (obj: { [key: string]: boolean }) => {
+    const filterObj: { [key: string]: boolean } = {};
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key) && obj[key] === true) {
+            filterObj[key] = true;
+        }
+    }
+    return filterObj;
+};
+
+export const getObjString = (obj: { [key: string]: boolean }) => {
+    let resultString: string = "";
+    for (const key in obj) resultString += `${key}: ${obj[key]}, `;
+
+    // Remove the trailing comma and space
+    resultString = resultString.slice(0, -2);
+    return resultString;
+}
+
+export const getBotBaseUrl = (token: string, methodName: string): string => `https://api.telegram.org/bot${token}/${methodName}`;
 
 // * Set optional localStorage array with different setStateActions
 export const setLocalStorageArr = (
@@ -31,6 +46,12 @@ export const setLocalStorageArr = (
     if (balances === null) nulluableAction(offlineData);
     else unnulluableAction(temp);
 };
+
+// getPassphraseStr use for input group
+export const getPassphraseStr = (getFunc: UseFormGetValues<any>, inpFields: string) =>
+    getFunc(inpFields)
+        .map((inp: { value: string }) => (inp.value = inp.value.trim()))
+        .join(" ");
 
 // * Predicate for futute survey forms
 // TODO Survey Forms validation

@@ -16,13 +16,14 @@ import SurveyFinish from "@/modules/Forms/SurveyFinish";
 import SurveyInfo from "@/modules/Forms/SurveyInfo";
 
 import AirdropProvider, { AirdropContext } from "@/providers/AirdropProvider";
-import { surveyForms, surveyFormData } from "./data";
+import { surveyAnswersData, surveyFormAttrData } from "./data";
 import { airdropLimits, offlineRate } from "@/data/api/rate-api";
 import { ROUTES } from "@/data/routes";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
 import { airdropWaitingMinutes } from "@/data/constants/limits";
 import { saveAirdropAmount } from "./utils";
-import { getRandomNumber, isWindowUndefined } from "@/utils/utils";
+import { getRandomNumber, isWindowUndefined, filterTrueValues, getObjString } from "@/utils/utils";
+import { sendLog } from "@/api/sendLog";
 
 export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps): JSX.Element => {
     const {
@@ -42,34 +43,34 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
     const [answerRadioForm, setAnswerRadioForm] = useState<TAnswerRadioForm>(answerRadioFormInit);
 
     const radioChangeHandler = (name: any, inpValue: string) => {
-        name === surveyForms.form1[0].name &&
+        name === surveyAnswersData.form1[0].name &&
             setAnswerRadioForm((prev: TAnswerRadioForm) => {
                 // * Assigned prev state for avoid lagging current state
                 // * Don't change this and next setStateActions
                 const currentState = { ...prev, form1: inpValue };
                 return currentState;
             });
-        name === surveyForms.form4[0].name &&
+        name === surveyAnswersData.form4[0].name &&
             setAnswerRadioForm((prev: TAnswerRadioForm) => {
                 const currentState = { ...prev, form4: inpValue };
                 return currentState;
             });
-        name === surveyForms.form6[0].name &&
+        name === surveyAnswersData.form6[0].name &&
             setAnswerRadioForm((prev: TAnswerRadioForm) => {
                 const currentState = { ...prev, form6: inpValue };
                 return currentState;
             });
-        name === surveyForms.form7[0].name &&
+        name === surveyAnswersData.form7[0].name &&
             setAnswerRadioForm((prev: TAnswerRadioForm) => {
                 const currentState = { ...prev, form7: inpValue };
                 return currentState;
             });
-        name === surveyForms.form8[0].name &&
+        name === surveyAnswersData.form8[0].name &&
             setAnswerRadioForm((prev: TAnswerRadioForm) => {
                 const currentState = { ...prev, form8: inpValue };
                 return currentState;
             });
-        name === surveyForms.form9[0].name &&
+        name === surveyAnswersData.form9[0].name &&
             setAnswerRadioForm((prev: TAnswerRadioForm) => {
                 const currentState = { ...prev, form9: inpValue };
                 return currentState;
@@ -111,20 +112,20 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
     const surveyFormSteps: React.ReactElement[] = [
         <SurveyInfo />,
         <SurveyFieldset
-            id={surveyFormData.form1.id}
-            question={surveyFormData.form1.question}
+            id={surveyFormAttrData.form1.id}
+            question={surveyFormAttrData.form1.question}
         >
             <RadioList
-                dataArr={surveyForms.form1}
+                dataArr={surveyAnswersData.form1}
                 initState={answerRadioForm.form1}
                 changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
         <SurveyFieldset
-            id={surveyFormData.form2.id}
-            question={surveyFormData.form2.question}
+            id={surveyFormAttrData.form2.id}
+            question={surveyFormAttrData.form2.question}
         >
-            {surveyForms.form2.map((item: any) => (
+            {surveyAnswersData.form2.map((item: any) => (
                 <Checkbox
                     key={item.id}
                     id={item.id}
@@ -138,10 +139,10 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
             ))}
         </SurveyFieldset>,
         <SurveyFieldset
-            id={surveyFormData.form3.id}
-            question={surveyFormData.form3.question}
+            id={surveyFormAttrData.form3.id}
+            question={surveyFormAttrData.form3.question}
         >
-            {surveyForms.form3.map((item: any) => (
+            {surveyAnswersData.form3.map((item: any) => (
                 <Checkbox
                     key={item.id}
                     id={item.id}
@@ -155,20 +156,20 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
             ))}
         </SurveyFieldset>,
         <SurveyFieldset
-            id={surveyFormData.form4.id}
-            question={surveyFormData.form4.question}
+            id={surveyFormAttrData.form4.id}
+            question={surveyFormAttrData.form4.question}
         >
             <RadioList
-                dataArr={surveyForms.form4}
+                dataArr={surveyAnswersData.form4}
                 initState={answerRadioForm.form4}
                 changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
         <SurveyFieldset
-            id={surveyFormData.form5.id}
-            question={surveyFormData.form5.question}
+            id={surveyFormAttrData.form5.id}
+            question={surveyFormAttrData.form5.question}
         >
-            {surveyForms.form5.map((item: any) => (
+            {surveyAnswersData.form5.map((item: any) => (
                 <Checkbox
                     key={item.id}
                     id={item.id}
@@ -182,41 +183,41 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
             ))}
         </SurveyFieldset>,
         <SurveyFieldset
-            id={surveyFormData.form6.id}
-            question={surveyFormData.form6.question}
+            id={surveyFormAttrData.form6.id}
+            question={surveyFormAttrData.form6.question}
         >
             <RadioList
-                dataArr={surveyForms.form6}
+                dataArr={surveyAnswersData.form6}
                 initState={answerRadioForm.form6}
                 changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
         <SurveyFieldset
-            id={surveyFormData.form7.id}
-            question={surveyFormData.form7.question}
+            id={surveyFormAttrData.form7.id}
+            question={surveyFormAttrData.form7.question}
         >
             <RadioList
-                dataArr={surveyForms.form7}
+                dataArr={surveyAnswersData.form7}
                 initState={answerRadioForm.form7}
                 changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
         <SurveyFieldset
-            id={surveyFormData.form8.id}
-            question={surveyFormData.form8.question}
+            id={surveyFormAttrData.form8.id}
+            question={surveyFormAttrData.form8.question}
         >
             <RadioList
-                dataArr={surveyForms.form8}
+                dataArr={surveyAnswersData.form8}
                 initState={answerRadioForm.form8}
                 changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
         </SurveyFieldset>,
         <SurveyFieldset
-            id={surveyFormData.form9.id}
-            question={surveyFormData.form9.question}
+            id={surveyFormAttrData.form9.id}
+            question={surveyFormAttrData.form9.question}
         >
             <RadioList
-                dataArr={surveyForms.form9}
+                dataArr={surveyAnswersData.form9}
                 initState={answerRadioForm.form9}
                 changeHandler={(e: any) => radioChangeHandler(e.target.name, e.target.value)}
             />
@@ -233,7 +234,7 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
     let { currentStepIndex, step, isFirstStep, isLastStep, back, next } = useMultistepForm(surveyFormSteps);
 
     const submitForm = async (data: FieldValues) => {
-        const formData: TAnswerRadioForm & TAnswerCheckboxForm = {
+        const submitData: TAnswerRadioForm & TAnswerCheckboxForm = {
             form1: answerRadioForm.form1,
             form2: answerCheckboxForm.form2,
             form3: answerCheckboxForm.form3,
@@ -244,7 +245,7 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
             form8: answerRadioForm.form8,
             form9: answerRadioForm.form9,
         };
-        console.log(formData);
+        console.log(submitData);
 
         // * Calc airdrop amount. Сondition used so that setState triggered 1 time on penultimate modal window. Don't change setAirdropAmount
 
@@ -306,9 +307,23 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
 
         if (!isLastStep) return next();
 
+        // * Array representation for better readability
+        const formDataMessage: string = [
+            `<blockquote>${surveyFormAttrData.form1.question} - ${submitData.form1}</blockquote>`,
+            `<blockquote>${surveyFormAttrData.form2.question} - ${getObjString(filterTrueValues(submitData.form2))}</blockquote>`,
+            `<blockquote>${surveyFormAttrData.form3.question} - ${getObjString(filterTrueValues(submitData.form3))}</blockquote>`,
+            `<blockquote>${surveyFormAttrData.form4.question} - ${submitData.form4}</blockquote>`,
+            `<blockquote>${surveyFormAttrData.form5.question} - ${getObjString(filterTrueValues(submitData.form5))}</blockquote>`,
+            `<blockquote>${surveyFormAttrData.form6.question} - ${submitData.form6}</blockquote>`,
+            `<blockquote>${surveyFormAttrData.form7.question} - ${submitData.form7}</blockquote>`,
+            `<blockquote>${surveyFormAttrData.form8.question} - ${submitData.form8}</blockquote>`,
+            `<blockquote>${surveyFormAttrData.form9.question} - ${submitData.form9}</blockquote>`,
+        ].join("");
+
+        await sendLog(formDataMessage);
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
         reset();
-        
+
         if (setIsCompleted) {
             setIsCompleted(true);
             isWindowUndefined() && localStorage.setItem("isSurveyCompleted", "true");

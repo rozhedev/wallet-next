@@ -1,7 +1,7 @@
-import { AllCurFullNames, AllCurShortNames } from "@/types/data/currencies";
+import { AllCurFullNames } from "@/types/data/currencies";
 import { TInputListItemArr } from "@/types/data/shared";
 
-export const surveyFormData: Record<"form1" | "form2" | "form3" | "form4" | "form5" | "form6" | "form7" | "form8" | "form9", { id: `survey-form${number}`; question: string }> = {
+export const surveyFormAttrData: Record<"form1" | "form2" | "form3" | "form4" | "form5" | "form6" | "form7" | "form8" | "form9", { id: `survey-form${number}`; question: string }> = {
     form1: {
         id: "survey-form1",
         question: "How long have you been using cryptocurrencies?",
@@ -41,7 +41,7 @@ export const surveyFormData: Record<"form1" | "form2" | "form3" | "form4" | "for
 };
 
 // * In forms with type: "checkbox" - id & name props must be same
-export const surveyForms: Record<"form1" | "form2" | "form3" | "form4" | "form5" | "form6" | "form7" | "form8" | "form9", TInputListItemArr> = {
+export const surveyAnswersData: Record<"form1" | "form2" | "form3" | "form4" | "form5" | "form6" | "form7" | "form8" | "form9", TInputListItemArr> = {
     form1: [
         {
             id: "survey-answer1-1",

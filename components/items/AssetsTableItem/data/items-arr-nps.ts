@@ -13,7 +13,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         iconPaths: {
             sendPC: true,
             receivePC: true,
-            sendPhone: false,
+            sendPhone: true,
             receivePhone: true,
             exchange: true,
             buy: true,
@@ -144,7 +144,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
             sendPhone: true,
             receivePhone: true,
             exchange: false,
-            buy: false,
+            buy: true,
             stacking: true,
         },
     },

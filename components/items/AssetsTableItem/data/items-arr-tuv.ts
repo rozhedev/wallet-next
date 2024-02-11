@@ -185,7 +185,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
         curIconAlt: "unus-sed-leo-LEO",
         curName: AllCurFullNames.unusSedLeo,
         iconPaths: {
-            sendPC: false,
+            sendPC: true,
             receivePC: false,
             sendPhone: true,
             receivePhone: true,

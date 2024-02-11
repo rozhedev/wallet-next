@@ -64,7 +64,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
             sendPhone: true,
             receivePhone: true,
             exchange: true,
-            buy: false,
+            buy: true,
             stacking: true,
         },
     },
