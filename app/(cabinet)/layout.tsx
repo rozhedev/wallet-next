@@ -10,7 +10,7 @@ import AsideCab, { asideCabLinks } from "@/modules/layout/AsideCab";
 import WalletConnect from "@/modules/Forms/WalletConnect";
 import { chevronBottomIcon, userIcon } from "@/data/pages/ui-icons";
 import { walletConnectIcon } from "@/data/pages/web3-icons";
-import { isWindowUndefined } from "@/utils/utils";
+import { isWindowUndefined } from "@/utils/predicates";
 
 export default function PagesLayout({ children }: { children: React.ReactNode }) {
     const [isAsideOpen, setIsAsideOpen] = useState<boolean>(false);

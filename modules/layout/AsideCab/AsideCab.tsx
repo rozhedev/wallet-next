@@ -10,7 +10,7 @@ import Modal from "@/ui/Modal";
 import SurveyForm from "@/modules/Forms/SurveyForm";
 import { GRID_BREAKPOINTS } from "@/data/constants/breakpoints";
 import { checkedRoundedIcon, dropIcon } from "@/data/pages/ui-icons";
-import { checkScreenWidth } from "@/utils/utils";
+import { checkScreenWidth } from "@/utils/predicates";
 import Btn from "@/ui/Btn/Btn";
 
 export const AsideCab = ({ isAsideOpen, setIsAsideOpen, linksArr }: TAsideCabProps): JSX.Element => {

@@ -26,7 +26,7 @@ import { type TInputListItemArr } from "@/types/data/shared";
 import Checkbox from "@/ui/Checkbox/Checkbox";
 import RateProvider from "@/providers/RateProvider";
 import { rateObjInit } from "@/data/api/rate-api";
-import { isWindowUndefined } from "@/utils/utils";
+import { isWindowUndefined } from "@/utils/predicates";
 import Toggle from "@/ui/Toggle/Toggle";
 import Radio from "@/ui/Radio/Radio";
 

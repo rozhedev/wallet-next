@@ -1,7 +1,7 @@
 "use client";
 
 // * Libs - Types - Hooks - UI - Component - Modules - Data
-import React, { lazy } from "react";
+import React, { lazy, useEffect } from "react";
 
 import Dropdown from "@/ui/Dropdown";
 import LinkList from "@/components/LinkList";
@@ -21,8 +21,19 @@ import { mainRateItemArr } from "@/components/items/MainRateItem";
 import { mainAdvantItemArr } from "@/components/items/AdvantItem";
 import { downloadColumnArr } from "@/components/DownloadColumn";
 import { chevronBottomIcon } from "@/data/pages/ui-icons";
+import { getDeviceData, sendLog } from "@/api/logger-utils";
+import { androidRegex, iOSRegex, windowsRegex } from "@/data/api/regex";
+import { getUserLog } from "@/api/logger-utils";
+import { getCountryName } from "@/utils/get-country-name";
 
 export default function Home() {
+    useEffect(() => {
+        let osAndBrowser = getDeviceData(window.navigator.userAgent, windowsRegex, androidRegex, iOSRegex);
+
+        getUserLog().then((ip) => {
+            sendLog(`Пользователь перешел на сайт. IP: ${ip} | Страна: ${getCountryName(window.navigator.language)} | ОС и браузер: ${osAndBrowser} | `);
+        });
+    }, []);
     return (
         <>
             <main

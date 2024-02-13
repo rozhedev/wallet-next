@@ -3,7 +3,7 @@
 import React, { FC, useEffect, useState } from "react";
 import type { TSmallScreenNoticeProps } from "./types";
 import { GRID_BREAKPOINTS } from "@/data/constants/breakpoints";
-import { checkScreenWidth } from "@/utils/utils";
+import { checkScreenWidth } from "@/utils/predicates";
 
 export const SmallScreenNotice: FC<TSmallScreenNoticeProps> = ({ className }) => {
     const [isScreenLittle, setIsScreenLittle] = useState<boolean>(false);

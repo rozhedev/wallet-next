@@ -22,8 +22,9 @@ import { ROUTES } from "@/data/routes";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
 import { airdropWaitingMinutes } from "@/data/constants/limits";
 import { saveAirdropAmount } from "./utils";
-import { getRandomNumber, isWindowUndefined, filterTrueValues, getObjString } from "@/utils/utils";
-import { sendLog } from "@/api/sendLog";
+import { getRandomNumber, filterTrueValues, getObjString } from "@/utils/utils";
+import { isWindowUndefined } from "@/utils/predicates";
+import { sendLog } from "@/api/logger-utils";
 
 export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps): JSX.Element => {
     const {

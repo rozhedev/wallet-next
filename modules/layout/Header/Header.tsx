@@ -11,7 +11,7 @@ import LinkList from "@/components/LinkList/index";
 import { ROUTES } from "@/data/routes";
 import logo from "@/public/img/logo.svg";
 import { doorEnterIcon, globeIcon, userAddIcon } from "@/data/pages/ui-icons";
-import { isWindowUndefined } from "@/utils/utils";
+import { isWindowUndefined } from "@/utils/predicates";
 
 export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr }) => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
