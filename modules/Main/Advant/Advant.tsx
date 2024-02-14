@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { TAdvantProps } from "./types";
 import AdvantItem, { type TMainAdvantItem } from "@/components/items/AdvantItem";
 import { userAddIcon } from "@/data/pages/ui-icons";
+import { ROUTES } from "@/data/routes";
 
 export const Advant: FC<TAdvantProps> = ({ dataArr }) => {
     return (
@@ -22,7 +23,7 @@ export const Advant: FC<TAdvantProps> = ({ dataArr }) => {
             </div>
             <div>
                 <Link
-                    href="/register"
+                    href={ROUTES.public.register}
                     className="btn btn-fill"
                     scroll={false}
                 >

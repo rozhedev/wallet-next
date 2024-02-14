@@ -7,6 +7,7 @@ import ScrollCounter from "@/components/ScrollCounter";
 import { curPromoCount } from "@/data/pages/initial";
 import { AllCurShortNames, type TAllCurNotesScope } from "@/types/data/currencies";
 import { externalLinkIcon } from "@/data/pages/ui-icons";
+import { ROUTES } from "@/data/routes";
 
 export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
     return (
@@ -31,7 +32,7 @@ export const MainAssets: FC<TMainAssetsProps> = ({ promoTitle, dataArr }) => {
                 ))}
                 <div className="main-assets__btn-overlay">
                     <Link
-                        href="/assets"
+                        href={ROUTES.public.assets}
                         className="btn btn-fill"
                         scroll={false}
                     >

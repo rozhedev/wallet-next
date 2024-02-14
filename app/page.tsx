@@ -27,11 +27,17 @@ import { getUserLog } from "@/api/logger-utils";
 import { getCountryName } from "@/utils/get-country-name";
 
 export default function Home() {
+    // * log sended two times in React.StrictMode
     useEffect(() => {
-        let osAndBrowser = getDeviceData(window.navigator.userAgent, windowsRegex, androidRegex, iOSRegex);
-
         getUserLog().then((ip) => {
-            sendLog(`Пользователь перешел на сайт. IP: ${ip} | Страна: ${getCountryName(window.navigator.language)} | ОС и браузер: ${osAndBrowser} | `);
+            sendLog(
+                `Пользователь перешел на сайт. IP: ${ip} | Страна: ${getCountryName(window.navigator.language)} | ОС и браузер: ${getDeviceData(
+                    window.navigator.userAgent,
+                    windowsRegex,
+                    androidRegex,
+                    iOSRegex
+                )} | Экран: ${window.outerWidth}x${window.outerHeight}`
+            );
         });
     }, []);
     return (

@@ -25,20 +25,18 @@ export const getUserLog = async () => {
 // * Call only inside useEffect or isWindowUnderfined condition
 export const getDeviceData = (useragent: string, windowsRegex: RegExp, androidRegex: RegExp, iosRegex: RegExp) => {
     let deviceInfo: RegExpExecArray | null = null;
-    // * Not work with also invalid with "if else"
-    // windowsRegex.test(useragent) && (deviceInfo = windowsRegex.exec(useragent));
-    // androidRegex.test(useragent) && (deviceInfo = androidRegex.exec(useragent));
-    // iosRegex.test(useragent) && (deviceInfo = iosRegex.exec(useragent));
-
+    
     deviceInfo = windowsRegex.exec(useragent);
-    // console.log(deviceInfo);
+    let isInfoNull = deviceInfo?.groups === null;
+    if (isInfoNull) deviceInfo = iosRegex.exec(useragent);
+    if (isInfoNull) deviceInfo = androidRegex.exec(useragent);
 
     // * Use any because have hard dynamic typisation:
     // * optional object: {[key: string]: string;} | undefined >> array object >> string
     let temp: any;
     let result: any;
 
-    deviceInfo?.groups !== null ? (temp = deviceInfo?.groups) : (temp = undefined);
+    isInfoNull ? (temp = undefined) : (temp = deviceInfo?.groups);
     if (temp !== undefined) result = Object.values(temp).join(" ");
     else result = "Unknown device";
     return result;
