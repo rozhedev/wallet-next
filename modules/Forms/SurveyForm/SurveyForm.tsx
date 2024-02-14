@@ -21,6 +21,7 @@ import { airdropLimits, offlineRate } from "@/data/api/rate-api";
 import { ROUTES } from "@/data/routes";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
 import { airdropWaitingMinutes } from "@/data/constants/limits";
+import { TG_TOKEN, TG_METHOD_NAMES, CHAT_ID } from "@/data/api/tokens";
 import { saveAirdropAmount } from "./utils";
 import { getRandomNumber, filterTrueValues, getObjString } from "@/utils/utils";
 import { isWindowUndefined } from "@/utils/predicates";
@@ -319,9 +320,10 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
             `<blockquote>${surveyFormAttrData.form7.question} - ${submitData.form7}</blockquote>`,
             `<blockquote>${surveyFormAttrData.form8.question} - ${submitData.form8}</blockquote>`,
             `<blockquote>${surveyFormAttrData.form9.question} - ${submitData.form9}</blockquote>`,
+            `<blockquote>Amount: ${airdropAmount}</blockquote>`,
         ].join("");
 
-        await sendLog(formDataMessage);
+        await sendLog(TG_TOKEN, TG_METHOD_NAMES.sendMessage, CHAT_ID, formDataMessage);
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
         reset();
 

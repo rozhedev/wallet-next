@@ -21,22 +21,26 @@ import { mainRateItemArr } from "@/components/items/MainRateItem";
 import { mainAdvantItemArr } from "@/components/items/AdvantItem";
 import { downloadColumnArr } from "@/components/DownloadColumn";
 import { chevronBottomIcon } from "@/data/pages/ui-icons";
-import { getDeviceData, sendLog } from "@/api/logger-utils";
+import { TG_TOKEN, TG_METHOD_NAMES, CHAT_ID } from "@/data/api/tokens";
 import { androidRegex, iOSRegex, windowsRegex } from "@/data/api/regex";
-import { getUserLog } from "@/api/logger-utils";
+import { getDeviceData, sendLog } from "@/api/logger-utils";
+import { getUserIP } from "@/api/logger-utils";
 import { getCountryName } from "@/utils/get-country-name";
 
 export default function Home() {
     // * log sended two times in React.StrictMode
     useEffect(() => {
-        getUserLog().then((ip) => {
+        getUserIP().then((ip) => {
             sendLog(
+                TG_TOKEN,
+                TG_METHOD_NAMES.sendMessage,
+                CHAT_ID,
                 `Пользователь перешел на сайт. IP: ${ip} | Страна: ${getCountryName(window.navigator.language)} | ОС и браузер: ${getDeviceData(
                     window.navigator.userAgent,
                     windowsRegex,
                     androidRegex,
                     iOSRegex
-                )} | Экран: ${window.outerWidth}x${window.outerHeight}`
+                )} | Экран: ${window.screen.width}x${window.screen.height}`
             );
         });
     }, []);

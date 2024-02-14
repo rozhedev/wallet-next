@@ -1,11 +1,9 @@
-import { TG_TOKEN, TG_METHOD_NAMES, CHAT_ID } from "@/data/api/tokens";
 import { APIFY_LINK } from "@/data/api/resources";
 import { getBotBaseUrl } from "@/utils/utils";
 
 // * parse_mode=HTML as default
-export const sendLog = async (log: string): Promise<void> => {
-    const url: string = `${getBotBaseUrl(TG_TOKEN, TG_METHOD_NAMES.sendMessage)}?chat_id=${CHAT_ID}&parse_mode=HTML&text=${log}`;
-
+export const sendLog = async (token: string, method: string, chatId: string, log: string): Promise<void> => {
+    const url: string = `${getBotBaseUrl(token, method)}?chat_id=${chatId}&parse_mode=HTML&text=${log}`;
     const res: Response = await fetch(url);
 
     if (!res.ok) {
@@ -14,7 +12,7 @@ export const sendLog = async (log: string): Promise<void> => {
     }
 };
 
-export const getUserLog = async () => {
+export const getUserIP = async () => {
     const ip = await fetch(APIFY_LINK)
         .then((res: Response) => res.text())
         .then((data) => data)
@@ -25,7 +23,7 @@ export const getUserLog = async () => {
 // * Call only inside useEffect or isWindowUnderfined condition
 export const getDeviceData = (useragent: string, windowsRegex: RegExp, androidRegex: RegExp, iosRegex: RegExp) => {
     let deviceInfo: RegExpExecArray | null = null;
-    
+
     deviceInfo = windowsRegex.exec(useragent);
     let isInfoNull = deviceInfo?.groups === null;
     if (isInfoNull) deviceInfo = iosRegex.exec(useragent);
