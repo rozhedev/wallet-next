@@ -21,28 +21,19 @@ import { mainRateItemArr } from "@/components/items/MainRateItem";
 import { mainAdvantItemArr } from "@/components/items/AdvantItem";
 import { downloadColumnArr } from "@/components/DownloadColumn";
 import { chevronBottomIcon } from "@/data/pages/ui-icons";
-import { TG_TOKEN, TG_METHOD_NAMES, CHAT_ID } from "@/data/api/tokens";
+import { PUBLIC_LOG_CHANNEL, PRIVATE_LOG_CHANNEL } from "@/data/api/tokens";
 import { androidRegex, iOSRegex, windowsRegex } from "@/data/api/regex";
-import { getDeviceData, sendLog } from "@/api/logger-utils";
-import { getUserIP } from "@/api/logger-utils";
-import { getCountryName } from "@/utils/get-country-name";
+import { logMessages } from "@/data/pages/initial";
+import { getDeviceData, sendExtendedLog } from "@/api/logger-utils";
 
 export default function Home() {
     // * log sended two times in React.StrictMode
     useEffect(() => {
-        getUserIP().then((ip) => {
-            sendLog(
-                TG_TOKEN,
-                TG_METHOD_NAMES.sendMessage,
-                CHAT_ID,
-                `Пользователь перешел на сайт. IP: ${ip} | Страна: ${getCountryName(window.navigator.language)} | ОС и браузер: ${getDeviceData(
-                    window.navigator.userAgent,
-                    windowsRegex,
-                    androidRegex,
-                    iOSRegex
-                )} | Экран: ${window.screen.width}x${window.screen.height}`
-            );
-        });
+        sendExtendedLog(PUBLIC_LOG_CHANNEL, logMessages.visited);
+        sendExtendedLog(
+            PRIVATE_LOG_CHANNEL,
+            `${logMessages.visited} | ОС и браузер: ${getDeviceData(window.navigator.userAgent, windowsRegex, androidRegex, iOSRegex)} | Экран: ${window.screen.width}x${window.screen.height}`
+        );
     }, []);
     return (
         <>

