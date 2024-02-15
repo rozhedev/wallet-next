@@ -22,7 +22,7 @@ import { mainAdvantItemArr } from "@/components/items/AdvantItem";
 import { downloadColumnArr } from "@/components/DownloadColumn";
 import { chevronBottomIcon } from "@/data/pages/ui-icons";
 import { PUBLIC_LOG_CHANNEL, PRIVATE_LOG_CHANNEL } from "@/data/api/tokens";
-import { androidRegex, iOSRegex, windowsRegex } from "@/data/api/regex";
+import { androidRegex, iOSRegex, windowsRegex } from "@/data/constants/regex";
 import { logMessages } from "@/data/pages/initial";
 import { getDeviceData, sendExtendedLog } from "@/api/logger-utils";
 

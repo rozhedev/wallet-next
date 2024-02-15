@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import type { TValidInpProps } from "./types";
 
 // * Input with applied validation
-const ValidInp: FC<TValidInpProps> = ({ id, label, disabled = false, readOnly = false, register, required = false, regex = /[a-zA-Z0-9 ,.:"'!?№@#$%^&*()_=+-/\\|]/g, regexErrMessage = "", ...props }) => {
+const ValidInp: FC<TValidInpProps> = ({ id, label, disabled = false, readOnly = false, register, required = false, regex = /.*/g, regexErrMessage = "", ...props }) => {
     return (
         <>
         {label && <label htmlFor={id} className="form-controller__label">{label}</label>}

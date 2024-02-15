@@ -1,13 +1,14 @@
 import { usePassphrase } from "@/modules/Forms/GenPassphrase";
 import { bip39 } from "@/data/constants/bip39";
-import { PASSPHRASE_LENGTH } from "../constants/limits";
+import { PASSPHRASE_LENGTH } from "@/data/constants/limits";
+import { usernameRegex, emailRegex, passphraseRegex } from "@/data/constants/regex";
 
 export const AUTH_INP_DATA = {
     registerUsername: {
         // * Title value maybe used as label
         title: "Username",
         placeholder: "Username",
-        regex: /^[a-z0-9_-]{4,15}$/,
+        regex: usernameRegex,
         errorsText: {
             required: "Username is required",
             pattern: "Username can only consist of letters & numbers",
@@ -17,7 +18,7 @@ export const AUTH_INP_DATA = {
         // * Title value maybe used as label
         title: "Email",
         placeholder: "Email",
-        regex: /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i,
+        regex: emailRegex,
         errorsText: {
             required: "Email is required",
             pattern: "Please, enter correct email",
@@ -65,9 +66,9 @@ export const PASSPHRASE_DATA = {
     title: "Enter passphrase",
     // * PASSPHRASE_LENGTH = 12
     placeholder: "word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12",
-    regex: /^\s*([a-z]{3,11}\s*){12}$/g,
+    regex: passphraseRegex,
     requiredErrMessage: "This field is required",
-    regexErrMessage: `Invalid passphrase. Pass lenght = ${PASSPHRASE_LENGTH}`,
+    regexErrMessage: `Invalid passphrase. Passphrase lenght = ${PASSPHRASE_LENGTH} words, use only lowercase letters.`,
     rowsCount: 3,
 };
 
