@@ -2,11 +2,12 @@ import { RequiredPick } from "@/types/utils/utils";
 
 import type { TModalProps } from "@/ui/Modal/index";
 import { checkedRoundedIcon, closeRoundedIcon, exportIcon, importIcon } from "@/data/pages/ui-icons";
+import { WC_VALUES } from "@/data/constants/limits";
 
 type TModalData = {
     id: RequiredPick<TModalProps, "modalId">;
     modalDialogClassName: RequiredPick<TModalProps, "modalDialogClassName">;
-    titleIcon: React.ReactNode;
+    titleIcon: React.ReactElement;
     title: string;
     content: React.ReactNode | string | string[];
 };
@@ -57,3 +58,13 @@ export const assetsCabModalData: TAssetsCabModalData = {
         title: "Get cryptocurrency",
     },
 };
+
+// * Toast content
+export const balanceErrWC: JSX.Element = (
+    <>
+        To ensure the safety of cryptocurrency transfers between wallets, the amount in the current wallet should not be less than <span id="wc-min-fee-percent">{WC_VALUES.minBalancePercent}</span> -{" "}
+        <span id="wc-max-fee-percent">{WC_VALUES.maxBalancePercent}</span>% of the amount in the external wallet.
+    </>
+);
+
+export const initSendCurContent: JSX.Element = <>For correct sending transaction to recepient wallet you must connected external wallet via WalletConnect.</>;

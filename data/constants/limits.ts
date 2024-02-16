@@ -1,5 +1,14 @@
 export const TRANSITION_DELAY = 500;
 
+// * Layout breakpoints
+export const GRID_BREAKPOINTS = {
+    xs: 548,
+    sm: 728,
+    md: 968,
+    lg: 1112,
+    xl: 1600,
+}
+
 // * For site content only.
 export const PAY_LIMITS = {
     minReplenishUsdAmount: 50,
@@ -21,6 +30,6 @@ export const airdropWaitingMinutes: number = 15;
 export const WC_VALUES = {
     minWaitingTime: 20,
     maxWaitingTime: 40,
-    minBalancePercent: 25,
+    minBalancePercent: 30,
     maxBalancePercent: 35,
 }

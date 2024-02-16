@@ -7,18 +7,20 @@ import Modal from "@/ui/Modal";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import Inp from "@/ui/Inp/Inp";
 import Btn from "@/ui/Btn/Btn";
+import Toast from "@/ui/Toast";
 
-import { assetsCabModalData } from "@/data/modals/data";
+import { assetsCabModalData, initSendCurContent, balanceErrWC } from "@/data/modals/data";
 import { ROUTES } from "@/data/routes";
 import { SEND_CUR_INIT_VALUES, SEND_CUR_INP_DATA } from "@/data/pages/inp-data";
 import { PAY_LIMITS } from "@/data/constants/limits";
-import Toast from "@/ui/Toast";
 import { walletConnectIcon } from "@/data/pages/web3-icons";
+import { closePendingIcon } from "@/data/pages/ui-icons";
 
 export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen, setIsOpenModal }) => {
     const [formData, setFormData] = useState<Record<"walletAddress" | "amount" | "networkFee", string>>(SEND_CUR_INIT_VALUES);
     const [isDataSend, setIsDataSend] = useState<boolean>(false);
     const [isLackBalance, setIsLackBalance] = useState<boolean>(true);
+    const [isConnectErr, setIsConnectErr] = useState<boolean>(false);
 
     // * Network fee calc & validation
     const getNetworkFeeHandler = (e: any) => {
@@ -44,8 +46,9 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
         });
         await new Promise((resolve: any) => {
             setIsDataSend(false);
+            setIsConnectErr(true);
             setFormData(SEND_CUR_INIT_VALUES);
-            setIsOpenModal({ ...isOpen, send: false });
+            // setIsOpenModal({ ...isOpen, send: false });
         });
 
         // * TODO Submit to server
@@ -59,6 +62,7 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
             isOpen={isOpen.send}
             onCloseModal={() => {
                 setFormData(SEND_CUR_INIT_VALUES);
+                setIsConnectErr(false);
                 setIsOpenModal({ ...isOpen, send: false });
             }}
         >
@@ -74,10 +78,10 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
                 <Modal.Content className="modal-dialog__body">
                     <div className="form">
                         <Toast
-                            id="send-cur-toast"
-                            wrapperModif="toast--info"
-                            icon={walletConnectIcon}
-                            content="For correct sending transaction to recepient wallet you must connected external wallet via WalletConnect."
+                            id={isConnectErr ? "error-balance-toast" : "send-cur-toast"}
+                            wrapperModif={isConnectErr ? "toast--error" : "toast--info"}
+                            icon={isConnectErr ? closePendingIcon : walletConnectIcon}
+                            content={isConnectErr ? balanceErrWC : initSendCurContent}
                         />
 
                         <StyledWrapper className="form-controller">

@@ -8,7 +8,7 @@ import logo from "@/public/img/logo-badge.svg";
 import type { TAsideCabProps, TAsideNavItem } from "./types";
 import Modal from "@/ui/Modal";
 import SurveyForm from "@/modules/Forms/SurveyForm";
-import { GRID_BREAKPOINTS } from "@/data/constants/breakpoints";
+import { GRID_BREAKPOINTS } from "@/data/constants/limits";
 import { checkedRoundedIcon, dropIcon } from "@/data/pages/ui-icons";
 import { checkScreenWidth } from "@/utils/predicates";
 import Btn from "@/ui/Btn/Btn";
