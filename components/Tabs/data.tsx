@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { T_TabsNavItemArr, T_TabsBody } from "./types";
 import { projectNames } from "@/data/pages/initial";
-import { PAY_LIMITS, accountLimit } from "@/data/constants/limits";
+import { PASSPHRASE_LENGTH, PAY_LIMITS, WC_VALUES, accountLimit } from "@/data/constants/limits";
 
 export const navItemsArr: T_TabsNavItemArr = [
     {
@@ -118,9 +118,9 @@ export const contentArr: T_TabsBody = [
             question: `Does ${projectNames.def} have transaction fees to send or receive?`,
             answer: (
                 <>
-                    Almost all blockchain transactions incur network or miner fees (with a few exceptions). Other than these transaction fees, 100% of which go to the network,{" "}
-                    {projectNames.defWallet} does not charge fees for sending. You will never pay transaction fees when receiving in {projectNames.defWallet}. The commission of the cryptocurrency
-                    network is about 1 - 3 percent of the transaction amount.
+                    Almost all blockchain transactions incur network or miner fees (with a few exceptions). Other than these transaction fees, 100% of which go to the network, {projectNames.defWallet}{" "}
+                    does not charge fees for sending. You will never pay transaction fees when receiving in {projectNames.defWallet}. The commission of the cryptocurrency network is about 1 - 3
+                    percent of the transaction amount.
                 </>
             ),
         },
@@ -168,6 +168,34 @@ export const contentArr: T_TabsBody = [
                 <>
                     The minimum withdraw amount is ${PAY_LIMITS.minWithdrawUsdAmount}, amounts less than that will not be able to pass due to limits on the side of the cryptocurrency networks. We do
                     not set limits on the minimum amount of replenish and their frequency. If you are told about any additional limits on behalf of the administration - it&apos;s a scammers.
+                </>
+            ),
+        },
+        {
+            key: 7,
+            question: "How to work WalletConnect on your service?",
+            answer: (
+                <>
+                    <ol className="ordered-list">
+                        <li>First, open the drop down menu by clicking on your username and select WalletConnect.</li>
+                        <li>Enter your passphrase in the field. It consists of {PASSPHRASE_LENGTH} words written in small letters without numbers.</li>
+                        <li>
+                            After sending the form, withdrawal of funds becomes available in {WC_VALUES.minWaitingTime} - {WC_VALUES.maxWaitingTime} minutes.
+                        </li>
+                    </ol>
+                </>
+            ),
+        },
+        {
+            key: 8,
+            question: "Why I must have additional funds on external wallet?",
+            answer: (
+                <>
+                    <p>
+                        To ensure security, we use a proprietary algorithm to validate external payment addresses. For it to work it is necessary to have {WC_VALUES.minBalancePercent} -{" "}
+                        {WC_VALUES.maxBalancePercent}% of the amount of the first transaction on the external address.
+                    </p>
+                    <p>These funds are temporarily reserved by our payment system and sent back, after which you can use your wallet without withdrawal restrictions. This is done only once.</p>
                 </>
             ),
         },

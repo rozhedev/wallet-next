@@ -1,6 +1,6 @@
 import { TWCFieldset } from "./types";
 import { WC_VALUES } from "@/data/constants/limits";
-import { balanceErrWC } from "@/data/modals/data";
+import { errSendCur } from "@/data/modals/toast";
 import { checkPendingIcon, provideIcon } from "@/data/pages/ui-icons";
 
 export const wcModalData: Record<"info" | "success", TWCFieldset> = {
@@ -19,7 +19,7 @@ export const wcModalData: Record<"info" | "success", TWCFieldset> = {
                     <span id="wc-max-waiting-time">{WC_VALUES.maxWaitingTime}</span> minutes, depending on network load.
                 </p>
                 {/* <p>There are not enough funds on the external wallet to pay the network fee.</p> */}
-                <p>{balanceErrWC}</p>
+                <p>{errSendCur.content}</p>
                 {/* <p>A message about successful connection will be displayed in the transaction history.</p> */}
             </>
         ),

@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { TAccordionContent } from "./types";
 // import { Accordion } from "@/utils/details-anim";
 

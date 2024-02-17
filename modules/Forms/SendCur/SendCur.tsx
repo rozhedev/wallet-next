@@ -9,12 +9,11 @@ import Inp from "@/ui/Inp/Inp";
 import Btn from "@/ui/Btn/Btn";
 import Toast from "@/ui/Toast";
 
-import { assetsCabModalData, initSendCurContent, balanceErrWC } from "@/data/modals/data";
+import { assetsCabModalData } from "@/data/modals/data";
+import { defaultSendCur, errSendCur } from "@/data/modals/toast";
 import { ROUTES } from "@/data/routes";
 import { SEND_CUR_INIT_VALUES, SEND_CUR_INP_DATA } from "@/data/pages/inp-data";
 import { PAY_LIMITS } from "@/data/constants/limits";
-import { walletConnectIcon } from "@/data/pages/web3-icons";
-import { closePendingIcon } from "@/data/pages/ui-icons";
 
 export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen, setIsOpenModal }) => {
     const [formData, setFormData] = useState<Record<"walletAddress" | "amount" | "networkFee", string>>(SEND_CUR_INIT_VALUES);
@@ -78,10 +77,10 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
                 <Modal.Content className="modal-dialog__body">
                     <div className="form">
                         <Toast
-                            id={isConnectErr ? "error-balance-toast" : "send-cur-toast"}
-                            wrapperModif={isConnectErr ? "toast--error" : "toast--info"}
-                            icon={isConnectErr ? closePendingIcon : walletConnectIcon}
-                            content={isConnectErr ? balanceErrWC : initSendCurContent}
+                            id={isConnectErr ? errSendCur.id : defaultSendCur.id}
+                            wrapperModif={isConnectErr ? errSendCur.wrapperModif : defaultSendCur.wrapperModif}
+                            icon={isConnectErr ? errSendCur.icon : defaultSendCur.icon}
+                            content={isConnectErr ? errSendCur.content : defaultSendCur.content}
                         />
 
                         <StyledWrapper className="form-controller">
