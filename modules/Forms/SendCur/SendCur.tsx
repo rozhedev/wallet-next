@@ -13,7 +13,7 @@ import { assetsCabModalData } from "@/data/modals/data";
 import { defaultSendCur, errSendCur } from "@/data/modals/toast";
 import { ROUTES } from "@/data/routes";
 import { SEND_CUR_INIT_VALUES, SEND_CUR_INP_DATA } from "@/data/pages/inp-data";
-import { PAY_LIMITS } from "@/data/constants/limits";
+import { PAY_LIMITS, SEND_CUR_DURATION } from "@/data/constants/limits";
 
 export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen, setIsOpenModal }) => {
     const [formData, setFormData] = useState<Record<"walletAddress" | "amount" | "networkFee", string>>(SEND_CUR_INIT_VALUES);
@@ -135,7 +135,9 @@ export const SendCur: FC<TSendCurProps> = ({ modalId, formId, pureAmount, isOpen
                                 value={formData.networkFee}
                             />
                         </StyledWrapper>
-                        <p className="modal-info"> Funds will be credited after 3 confirmations in cryptocurrency network (approximately 20-40 min.)</p>
+                        <p className="modal-info">
+                            Funds will be credited after 3 confirmations in cryptocurrency network (approximately {SEND_CUR_DURATION.min} - {SEND_CUR_DURATION.max} min.)
+                        </p>
                     </div>
                 </Modal.Content>
                 <Modal.Footer className="modal-footer btn-group">

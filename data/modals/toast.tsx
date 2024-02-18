@@ -9,10 +9,8 @@ export const defaultSendCur: T_ToastProps = {
     id: "send-cur-toast",
     wrapperModif: "toast--info",
     icon: walletConnectIcon,
-    content: (
-        <>For correct sending transaction to recepient wallet you must connected external wallet via WalletConnect.</>
-    ),
-}
+    content: <>For correct sending transaction to recepient wallet you must connected external wallet via WalletConnect.</>,
+};
 
 export const errSendCur: T_ToastProps = {
     id: "error-balance-toast",
@@ -20,8 +18,8 @@ export const errSendCur: T_ToastProps = {
     icon: closePendingIcon,
     content: (
         <>
-            To ensure the safety of cryptocurrency transfers between wallets, the amount in the current wallet should not be less than{" "}
-            <span id="wc-min-fee-percent">{WC_VALUES.minBalancePercent}</span> - <span id="wc-max-fee-percent">{WC_VALUES.maxBalancePercent}</span>% of the amount in the external wallet.
+            To ensure the safety of cryptocurrency transfers, the amount in the current wallet should not be less than <span id="wc-min-fee-percent">{WC_VALUES.minBalancePercent}</span>&nbsp;-&nbsp;
+            <span id="wc-max-fee-percent">{WC_VALUES.maxBalancePercent}</span>%&nbsp; of the amount in the external wallet.
         </>
     ),
 };

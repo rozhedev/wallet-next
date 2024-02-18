@@ -33,3 +33,8 @@ export const WC_VALUES = {
     minBalancePercent: 30,
     maxBalancePercent: 35,
 }
+
+export const SEND_CUR_DURATION = {
+    min: 10,
+    max: 15,
+}
