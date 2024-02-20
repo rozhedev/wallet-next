@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { TMainAssetsProps } from "./types";
 import MainAssetsItem, { type TMainAssetsItem } from "@/components/items/MainAssetsItem";
 import ScrollCounter from "@/components/ScrollCounter";
-import { curPromoCount } from "@/data/pages/initial";
+import { curPromoCount } from "@/data/initial";
 import { AllCurShortNames, type TAllCurNotesScope } from "@/types/data/currencies";
 import { externalLinkIcon } from "@/data/pages/ui-icons";
 import { ROUTES } from "@/data/routes";

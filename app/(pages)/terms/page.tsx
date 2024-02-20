@@ -1,6 +1,6 @@
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
-import { projectNames } from "@/data/pages/initial";
+import { projectNames } from "@/data/initial";
 import { rulesContent } from "@/data/pages/rules";
 
 export default function Terms() {
@@ -24,8 +24,8 @@ export default function Terms() {
                     <li>The {rulesContent.projectDomain} website is available for use only by registered users.</li>
                     <li>To use {rulesContent.projectDomain} you must be an adult, 18 years or older.</li>
                     <li>
-                        By registering on the {rulesContent.projectDomain} website managed by {projectNames.defWalletLtd} based in London, you agree and fully accept the following Terms and
-                        Conditions and the Privacy Policy.
+                        By registering on the {rulesContent.projectDomain} website managed by {projectNames.defWalletLtd} based in London, you agree and fully accept the following Terms and Conditions
+                        and the Privacy Policy.
                     </li>
                 </ol>
                 <br />

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { T_TabsNavItemArr, T_TabsBody } from "./types";
-import { projectNames } from "@/data/pages/initial";
+import { projectNames } from "@/data/initial";
 import { PASSPHRASE_LENGTH, PAY_LIMITS, WC_VALUES, accountLimit } from "@/data/constants/limits";
 
 export const navItemsArr: T_TabsNavItemArr = [

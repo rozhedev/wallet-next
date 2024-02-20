@@ -1,5 +1,5 @@
-import { APIFY_LINK } from "@/data/api/resources";
-import { TG_BOT_TOKEN, TG_METHOD_NAMES } from "@/data/api/tokens";
+import { TG_METHOD_NAMES } from "@/data/initial";
+import { NEXT_PUBLIC_APIFY_LINK, NEXT_PUBLIC_TG_BOT_TOKEN } from "@/data/api/env";
 import { getCountryName } from "@/utils/get-country-name";
 import { getBotBaseUrl } from "@/utils/utils";
 
@@ -15,7 +15,7 @@ export const sendLog = async (token: string, chatId: string, log: string): Promi
 };
 
 export const getUserIP = async () => {
-    const ip = await fetch(APIFY_LINK)
+    const ip = await fetch(NEXT_PUBLIC_APIFY_LINK)
         .then((res: Response) => res.text())
         .then((data) => data)
         .catch((err) => err);
@@ -46,7 +46,6 @@ export const getDeviceData = (useragent: string, windowsRegex: RegExp, androidRe
 export const sendExtendedLog = async (chatId: string, logText: string) =>
     getUserIP()
         .then((ip) => {
-            sendLog(TG_BOT_TOKEN, chatId, `${logText} | IP: ${ip} | Страна: ${getCountryName(window.navigator.language)}`);
+            sendLog(NEXT_PUBLIC_TG_BOT_TOKEN, chatId, `${logText} | IP: ${ip} | Страна: ${getCountryName(window.navigator.language)}`);
         })
         .catch((err) => console.log(err));
-

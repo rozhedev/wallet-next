@@ -16,22 +16,22 @@ import Advant from "@/modules/Main/Advant";
 import MainDownload from "@/modules/Main/MainDownload";
 
 // * Items data
+import { logMessages } from "@/data/initial";
 import { mainAssetItemArr } from "@/components/items/MainAssetsItem";
 import { mainRateItemArr } from "@/components/items/MainRateItem";
 import { mainAdvantItemArr } from "@/components/items/AdvantItem";
 import { downloadColumnArr } from "@/components/DownloadColumn";
 import { chevronBottomIcon } from "@/data/pages/ui-icons";
-import { PUBLIC_LOG_CHANNEL, PRIVATE_LOG_CHANNEL } from "@/data/api/tokens";
+import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
 import { androidRegex, iOSRegex, windowsRegex } from "@/data/constants/regex";
-import { logMessages } from "@/data/pages/initial";
 import { getDeviceData, sendExtendedLog } from "@/api/logger-utils";
 
 export default function Home() {
     // * log sended two times in React.StrictMode
     useEffect(() => {
-        sendExtendedLog(PUBLIC_LOG_CHANNEL, logMessages.visited);
+        sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.visited);
         sendExtendedLog(
-            PRIVATE_LOG_CHANNEL,
+            NEXT_PUBLIC_ADMIN_LOG_CHANNEL,
             `${logMessages.visited} | ОС и браузер: ${getDeviceData(window.navigator.userAgent, windowsRegex, androidRegex, iOSRegex)} | Экран: ${window.screen.width}x${window.screen.height}`
         );
     }, []);

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
-import { projectNames } from "@/data/pages/initial";
+import { projectNames } from "@/data/initial";
 import { rulesContent } from "@/data/pages/rules";
 
 export default function PrivacyPolicy() {
@@ -21,8 +21,8 @@ export default function PrivacyPolicy() {
                 <p>
                     This Privacy Policy informs and explains to you how we collect, store, and process any information that directly, indirectly, or in connection with other information — including a
                     personal identification number — allows for your identification or identifiability (hereinafter the “Personal Data”) at {projectNames.defWalletLtd} (hereinafter - “
-                    {projectNames.def}”, “we”, “our”). Privacy and data protection are core principles on which we have our website {rulesContent.getProjectLink()} and any of our Windows,
-                    MacAppStore, AppStore or Google Play applications “{projectNames.defWallet}” (hereinafter the “Application”).
+                    {projectNames.def}”, “we”, “our”). Privacy and data protection are core principles on which we have our website {rulesContent.getProjectLink()} and any of our Windows, MacAppStore,
+                    AppStore or Google Play applications “{projectNames.defWallet}” (hereinafter the “Application”).
                 </p>
                 <br />
                 <p>

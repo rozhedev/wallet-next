@@ -17,12 +17,13 @@ import SurveyInfo from "@/modules/Forms/SurveyInfo";
 
 import AirdropProvider, { AirdropContext } from "@/providers/AirdropProvider";
 import { surveyAnswersData, surveyFormAttrData } from "./data";
+import { logMessages } from "@/data/initial";
 import { airdropLimits, offlineRate } from "@/data/api/rate-api";
 import { ROUTES } from "@/data/routes";
 import { answerRadioFormInit, answerCheckboxFormInit } from "@/data/modals/init-values";
 import { airdropWaitingMinutes } from "@/data/constants/limits";
-import { PUBLIC_LOG_CHANNEL, PRIVATE_LOG_CHANNEL } from "@/data/api/tokens";
-import { logMessages } from "@/data/pages/initial";
+import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
+
 import { saveAirdropAmount } from "./utils";
 import { getRandomNumber, filterTrueValues, getObjString } from "@/utils/utils";
 import { isWindowUndefined } from "@/utils/predicates";
@@ -324,8 +325,8 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
             `<blockquote>Amount: ${airdropAmount}</blockquote>`,
         ].join("");
 
-        sendExtendedLog(PUBLIC_LOG_CHANNEL, logMessages.survey);
-        sendExtendedLog(PRIVATE_LOG_CHANNEL, formDataMessage);
+        sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.survey);
+        sendExtendedLog(NEXT_PUBLIC_ADMIN_LOG_CHANNEL, formDataMessage);
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
         reset();
 

