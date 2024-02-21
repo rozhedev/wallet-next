@@ -1,0 +1,8 @@
+* 10 number & 35 letters
+NEXT_PUBLIC_TG_BOT_TOKEN='0000000000:AaBcDexxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
+* 13 numbers. May contain a minus
+NEXT_PUBLIC_TEAM_LOG_CHANNEL='0000000000000'
+NEXT_PUBLIC_ADMIN_LOG_CHANNEL='0000000000000'
+
+NEXT_PUBLIC_APIFY_LINK='https://hostname.com'
