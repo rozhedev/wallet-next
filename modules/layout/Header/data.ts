@@ -35,11 +35,6 @@ export const dropdownLinks: TLinkListItem<TRouteLabelScope>[] = [
         label: "Terms of Service",
         className: "navlink",
     },
-    {
-        href: ROUTES.private.dashboard,
-        label: "Dashboard",
-        className: "navlink",
-    },
 ];
 
 export const langSelectOptions: { label: string; value: string }[] = [

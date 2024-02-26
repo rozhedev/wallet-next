@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { useForm, useFieldArray } from "react-hook-form";
-import { FieldValues } from "react-hook-form";
+import { useForm, useFieldArray, FieldValues } from "react-hook-form";
 import { useRouter } from "next/navigation";
 
+import type { TRegisterForm } from "@/types/data/forms";
 import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 import Multistep from "@/components/Multistep";
 import RegisterDetails from "@/modules/Forms/RegisterDetails";
@@ -12,7 +12,6 @@ import GenPassphrase from "@/modules/Forms/GenPassphrase";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
 import { useMultistepForm } from "@/components/Multistep";
-import type { TRegisterForm } from "@/types/data/forms";
 import { logMessages } from "@/data/initial";
 import { REGISTER_INIT_VALUES, AUTH_INP_DATA, PASSPHRASE_DATA, passArr, passStr } from "@/data/pages/inp-data";
 import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
@@ -38,7 +37,6 @@ export const RegisterWallet = () => {
     const router = useRouter();
 
     // * Multistep steps
-
     const registerFormSteps: React.ReactElement[] = [
         <RegisterDetails
             id="register-user-data-form"
@@ -100,7 +98,7 @@ export const RegisterWallet = () => {
             sendExtendedLog(NEXT_PUBLIC_ADMIN_LOG_CHANNEL, logMessages.registered);
 
             try {
-                const formData = { name: getValues("register-username"), email: getValues("register-email"), password: getValues("register-username") };
+                const formData = { name: getValues("register-username"), email: getValues("register-email"), password: getValues("confirm-inp") };
 
                 // * Register responce
                 const registerRes = await fetch("api/register", {
@@ -112,7 +110,6 @@ export const RegisterWallet = () => {
                 });
 
                 const { existUser } = await registerRes.json();
-                console.log(existUser);
 
                 // * Check exist user
                 if (existUser) {
@@ -127,9 +124,6 @@ export const RegisterWallet = () => {
             } catch (error) {
                 console.error("Error during registration: ", error);
             }
-
-            // * TODO Submit to server
-            // * ...
         } else setUserError(AUTH_INP_DATA.passMatchErrText);
     };
 

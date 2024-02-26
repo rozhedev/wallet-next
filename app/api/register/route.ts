@@ -2,6 +2,7 @@ import { connectDB } from "@/server/lib/mongodb";
 import User from "@/server/models/user";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
+import { PASS_SALT } from "@/data/api/env";
 
 export async function POST(req: Request, res: Response) {
     try {
@@ -11,7 +12,7 @@ export async function POST(req: Request, res: Response) {
 
         if (existUser) return NextResponse.json({ existUser });
 
-        const hashedPass = await bcrypt.hash(password, 16);
+        const hashedPass = await bcrypt.hash(password, PASS_SALT);
         await User.create({ name, email, password: hashedPass });
 
         return NextResponse.json({ message: "User registered" }, { status: 201 });

@@ -9,8 +9,8 @@ import RegisterWallet from "@/modules/Forms/RegisterWallet";
 
 export default async function Register() {
     const session = await getServerSession(authOptions);
-
     if (session) redirect("/dashboard");
+
     return (
         <SectionLayout id="register">
             <PageBreadcrumb

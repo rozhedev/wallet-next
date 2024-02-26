@@ -19,6 +19,9 @@ export const DB_NAME = process.env.DB_NAME as string;
 
 export const DB_URI = process.env.DB_URI as string;
 
+let salt: any = process.env.PASS_SALT;
+export const PASS_SALT: number = +salt; 
+
 export const NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET as string;
 
 export const NEXTAUTH_URL = process.env.NEXTAUTH_URL as string;
