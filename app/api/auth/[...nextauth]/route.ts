@@ -2,8 +2,8 @@ import NextAuth from "next-auth/next";
 import { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
-import { connectDB } from "@/lib/mongodb";
-import User from "@/models/user";
+import { connectDB } from "@/server/lib/mongodb";
+import User from "@/server/models/user";
 import { NEXTAUTH_SECRET } from "@/data/api/env";
 
 export const authOptions: AuthOptions = {

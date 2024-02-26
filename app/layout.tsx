@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "@/public/scss/globals.scss";
 import localFont from "next/font/local";
 import { projectNames } from "@/data/initial";
-import { AuthProvider } from "@/providers/AuthProvider/AuthProvider";
+import AuthProvider from "@/server/providers/AuthProvider";
 
 const titilliumWeb = localFont({
     src: [

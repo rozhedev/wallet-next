@@ -4,15 +4,14 @@ import React, { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import Dropdown from "@/ui/Dropdown";
 import Modal from "@/ui/Modal";
+import Btn from "@/ui/Btn/Btn";
 
-import LinkList from "@/components/LinkList";
-import HeaderCab, { dropdownLinksCab } from "@/modules/layout/HeaderCab";
+import HeaderCab from "@/modules/layout/HeaderCab";
 import AsideCab, { asideCabLinks } from "@/modules/layout/AsideCab";
 import WalletConnect from "@/modules/Forms/WalletConnect";
 import { chevronBottomIcon, doorExitIcon, userIcon } from "@/data/pages/ui-icons";
 import { walletConnectIcon } from "@/data/pages/web3-icons";
 import { isWindowUndefined } from "@/utils/predicates";
-import Btn from "@/ui/Btn/Btn";
 
 export default function PagesLayout({ children }: { children: React.ReactNode }) {
     const [isAsideOpen, setIsAsideOpen] = useState<boolean>(false);
@@ -48,7 +47,6 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
                             {chevronBottomIcon}
                         </Dropdown.Btn>
                         <Dropdown.Menu>
-                            {/* <LinkList linksArr={dropdownLinksCab} /> */}
                             <li>
                                 <Btn
                                     className="navlink"

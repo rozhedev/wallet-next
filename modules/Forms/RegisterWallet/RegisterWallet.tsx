@@ -122,7 +122,7 @@ export const RegisterWallet = () => {
                 if (registerRes.ok || !existUser) router.push("/signin");
                 else console.log("User registartion failed.");
 
-                await new Promise((resolve: any) => setTimeout(resolve, 2000));
+                await new Promise((resolve: any) => setTimeout(resolve, 1000));
                 reset();
             } catch (error) {
                 console.error("Error during registration: ", error);

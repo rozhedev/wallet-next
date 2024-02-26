@@ -1,5 +1,5 @@
-import { connectDB } from "@/lib/mongodb";
-import User from "@/models/user";
+import { connectDB } from "@/server/lib/mongodb";
+import User from "@/server/models/user";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 
