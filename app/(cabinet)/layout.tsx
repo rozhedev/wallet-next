@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { signOut, useSession } from "next-auth/react";
 import Dropdown from "@/ui/Dropdown";
 import Modal from "@/ui/Modal";
 
@@ -8,13 +9,15 @@ import LinkList from "@/components/LinkList";
 import HeaderCab, { dropdownLinksCab } from "@/modules/layout/HeaderCab";
 import AsideCab, { asideCabLinks } from "@/modules/layout/AsideCab";
 import WalletConnect from "@/modules/Forms/WalletConnect";
-import { chevronBottomIcon, userIcon } from "@/data/pages/ui-icons";
+import { chevronBottomIcon, doorExitIcon, userIcon } from "@/data/pages/ui-icons";
 import { walletConnectIcon } from "@/data/pages/web3-icons";
 import { isWindowUndefined } from "@/utils/predicates";
+import Btn from "@/ui/Btn/Btn";
 
 export default function PagesLayout({ children }: { children: React.ReactNode }) {
     const [isAsideOpen, setIsAsideOpen] = useState<boolean>(false);
     const menuToggleHandler = () => setIsAsideOpen((prevState) => !prevState);
+    const { data: session } = useSession();
 
     // * WC - Wallet Connect
     const [isWCOpen, setIsWCOpen] = useState<boolean>(false);
@@ -40,12 +43,21 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
                         <Dropdown.Btn>
                             {userIcon}
 
-                            <span>Username</span>
+                            <span>{session?.user?.name}</span>
 
                             {chevronBottomIcon}
                         </Dropdown.Btn>
                         <Dropdown.Menu>
-                            <LinkList linksArr={dropdownLinksCab} />
+                            {/* <LinkList linksArr={dropdownLinksCab} /> */}
+                            <li>
+                                <Btn
+                                    className="navlink"
+                                    onClick={() => signOut()}
+                                >
+                                    {doorExitIcon}
+                                    <span>Sign Out</span>
+                                </Btn>
+                            </li>
                             <li>
                                 <span
                                     className="navlink"

@@ -1,11 +1,16 @@
-"use client"
+import React from "react";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-import React from 'react'
 import SectionLayout from "@/modules/layout/SectionLayout";
 import PageBreadcrumb from "@/modules/layout/PageBreadcrumb";
-import RegisterWallet from '@/modules/Forms/RegisterWallet';
+import RegisterWallet from "@/modules/Forms/RegisterWallet";
 
-export default function Register() {
+export default async function Register() {
+    const session = await getServerSession(authOptions);
+
+    if (session) redirect("/dashboard");
     return (
         <SectionLayout id="register">
             <PageBreadcrumb
@@ -15,7 +20,7 @@ export default function Register() {
                 pageTitle="Register"
             />
             <div className="page-inner">
-                <RegisterWallet/>
+                <RegisterWallet />
             </div>
         </SectionLayout>
     );

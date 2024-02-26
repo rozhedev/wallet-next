@@ -27,7 +27,7 @@ import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/d
 import { saveAirdropAmount } from "./utils";
 import { getRandomNumber, filterTrueValues, getObjString } from "@/utils/utils";
 import { isWindowUndefined } from "@/utils/predicates";
-import { sendExtendedLog } from "@/api/logger-utils";
+import { sendExtendedLog } from "@/utils/logger";
 
 export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps): JSX.Element => {
     const {

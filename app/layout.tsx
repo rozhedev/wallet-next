@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "@/public/scss/globals.scss";
 import localFont from "next/font/local";
 import { projectNames } from "@/data/initial";
+import { AuthProvider } from "@/providers/AuthProvider/AuthProvider";
 
 const titilliumWeb = localFont({
     src: [
@@ -39,7 +40,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className={titilliumWeb.className}>
-                <div className="wrapper">{children}</div>
+                <div className="wrapper">
+                    <AuthProvider>{children}</AuthProvider>
+                </div>
             </body>
         </html>
     );

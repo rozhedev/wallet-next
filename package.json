@@ -11,8 +11,11 @@
     },
     "dependencies": {
         "@tippyjs/react": "^4.2.6",
+        "bcryptjs": "^2.4.3",
         "fslightbox-react": "^1.7.6",
+        "mongoose": "^7.6.8",
         "next": "13.5.4",
+        "next-auth": "^4.24.6",
         "react": "^18",
         "react-content-loader": "^6.2.1",
         "react-countup": "^6.5.0",
@@ -25,6 +28,7 @@
     },
     "devDependencies": {
         "@hookform/devtools": "^4.3.1",
+        "@types/bcryptjs": "^2.4.6",
         "@types/fslightbox-react": "^1.7.6",
         "@types/node": "^20.11.19",
         "@types/react": "^18",

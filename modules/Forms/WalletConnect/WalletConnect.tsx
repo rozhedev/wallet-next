@@ -14,7 +14,7 @@ import { ROUTES } from "@/data/routes";
 import { checkPendingIcon } from "@/data/pages/ui-icons";
 import { PASSPHRASE_DATA } from "@/data/pages/inp-data";
 import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
-import { sendExtendedLog } from "@/api/logger-utils";
+import { sendExtendedLog } from "@/utils/logger";
 import { logMessages } from "@/data/initial";
 
 // * WalletConnect - WC or wc

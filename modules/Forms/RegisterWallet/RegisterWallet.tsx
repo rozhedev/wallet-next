@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { FieldValues } from "react-hook-form";
+import { useRouter } from "next/navigation";
 
 import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 import Multistep from "@/components/Multistep";
@@ -15,7 +16,7 @@ import type { TRegisterForm } from "@/types/data/forms";
 import { logMessages } from "@/data/initial";
 import { REGISTER_INIT_VALUES, AUTH_INP_DATA, PASSPHRASE_DATA, passArr, passStr } from "@/data/pages/inp-data";
 import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
-import { sendExtendedLog } from "@/api/logger-utils";
+import { sendExtendedLog } from "@/utils/logger";
 
 export const RegisterWallet = () => {
     const {
@@ -34,6 +35,7 @@ export const RegisterWallet = () => {
         control,
         name: "passphrase-inp",
     });
+    const router = useRouter();
 
     // * Multistep steps
 
@@ -80,8 +82,7 @@ export const RegisterWallet = () => {
     const { currentStepIndex, step, isFirstStep, isLastStep, back, next } = useMultistepForm(registerFormSteps);
 
     // * State for additional validation
-
-    const [isRegisterPassMatch, setIsRegisterPassMatch] = useState<boolean>(true);
+    const [userError, setUserError] = useState<string>("");
 
     const submitForm = async (data: FieldValues) => {
         if (currentStepIndex === 0) sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.startRegister);
@@ -93,17 +94,43 @@ export const RegisterWallet = () => {
         const isPassCond: boolean = passStr === confirmInpValuesStr;
 
         if (isPassCond) {
-            setIsRegisterPassMatch(true);
+            setUserError("");
 
             sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.registered);
             sendExtendedLog(NEXT_PUBLIC_ADMIN_LOG_CHANNEL, logMessages.registered);
 
-            await new Promise((resolve: any) => setTimeout(resolve, 2000));
-            reset();
+            try {
+                const formData = { name: getValues("register-username"), email: getValues("register-email"), password: getValues("register-username") };
+
+                // * Register responce
+                const registerRes = await fetch("api/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                const { existUser } = await registerRes.json();
+                console.log(existUser);
+
+                // * Check exist user
+                if (existUser) {
+                    setUserError(AUTH_INP_DATA.userExistErr);
+                    return;
+                }
+                if (registerRes.ok || !existUser) router.push("/signin");
+                else console.log("User registartion failed.");
+
+                await new Promise((resolve: any) => setTimeout(resolve, 2000));
+                reset();
+            } catch (error) {
+                console.error("Error during registration: ", error);
+            }
 
             // * TODO Submit to server
             // * ...
-        } else setIsRegisterPassMatch(false);
+        } else setUserError(AUTH_INP_DATA.passMatchErrText);
     };
 
     return (
@@ -128,7 +155,7 @@ export const RegisterWallet = () => {
                         isRegister={true}
                         haveProgressbar={true}
                     >
-                        {!isRegisterPassMatch && isLastStep && (
+                        {userError && isLastStep && (
                             <small
                                 className="form-controller__message"
                                 style={{
@@ -136,7 +163,7 @@ export const RegisterWallet = () => {
                                     marginTop: "0.75rem",
                                 }}
                             >
-                                {AUTH_INP_DATA.passMatchErrText}
+                                {userError}
                             </small>
                         )}
                     </Multistep>

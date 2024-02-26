@@ -4,6 +4,9 @@ import React from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { FieldValues } from "react-hook-form";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 import type { TSigninForm } from "@/types/data/forms";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
@@ -17,6 +20,9 @@ import { PASSPHRASE_DATA, SIGNIN_INIT_VALUES } from "@/data/pages/inp-data";
 import { ROUTES } from "@/data/routes";
 
 export default function Signin() {
+    // const session = await getServerSession(authOptions);
+
+    // if (session) redirect("/dashboard");
     const {
         register,
         handleSubmit,

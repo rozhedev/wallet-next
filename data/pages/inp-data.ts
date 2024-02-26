@@ -28,6 +28,7 @@ export const AUTH_INP_DATA = {
     passCheckboxErrText: "Confirm saved passphrase",
     passMatchErrText: 'Passphrases not match. Check words and click "Complete" button again',
     signinErrText: 'Invalid passphrase. Check words and click "Signin" button again',
+    userExistErr: "User already exist",
     fieldArrValues: {
         passphrase: {
             id: "passphrase-inp",

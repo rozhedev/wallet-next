@@ -6,3 +6,10 @@ NEXT_PUBLIC_TEAM_LOG_CHANNEL='0000000000000'
 NEXT_PUBLIC_ADMIN_LOG_CHANNEL='0000000000000'
 
 NEXT_PUBLIC_APIFY_LINK='https://hostname.com'
+
+DB_USER="username"
+DB_PASS="password"
+DB_NAME="database-name"
+DB_URI="mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.test.mongodb.net/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0"
+NEXTAUTH_SECRET="some-string"
+NEXTAUTH_URL="https://hostname.com"
