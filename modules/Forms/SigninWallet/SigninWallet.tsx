@@ -12,6 +12,7 @@ import Btn from "@/ui/Btn/Btn";
 import ValidInp from "@/ui/ValidInp/ValidInp";
 import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
+import { PASS_SLICE_INDEX } from "@/data/constants/limits";
 import { AUTH_INP_DATA, PASSPHRASE_DATA, SIGNIN_INIT_VALUES } from "@/data/pages/inp-data";
 import { ROUTES } from "@/data/routes";
 import { removeStrSpaces } from "@/utils/utils";
@@ -32,8 +33,8 @@ export const SigninWallet = () => {
         const email = data["signin-email"];
         const pass = data["signin-pass"];
 
-        // * Repeat spaces & slice for correct work bcrypt.compare()
-        const password = removeStrSpaces(pass, "").slice(-18);
+        // * String slice for optimize work bcrypt.compare()
+        const password = removeStrSpaces(pass, "").slice(-PASS_SLICE_INDEX);
 
         try {
             const res = await signIn("credentials", {

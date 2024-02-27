@@ -13,6 +13,7 @@ import GenPassphrase from "@/modules/Forms/GenPassphrase";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
 import { logMessages } from "@/data/initial";
+import { PASS_SLICE_INDEX } from "@/data/constants/limits";
 import { ROUTES } from "@/data/routes";
 import { REGISTER_INIT_VALUES, AUTH_INP_DATA, PASSPHRASE_DATA, passArr, passStr } from "@/data/pages/inp-data";
 import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
@@ -95,8 +96,8 @@ export const RegisterWallet = () => {
         if (!isPassCond) return setUserError(AUTH_INP_DATA.passMatchErrText);
         setUserError("");
 
-        // * Repeat spaces removing & slice for correct work bcrypt.compare()
-        const password = removeStrSpaces(confirmInpValue, "").slice(-18);
+        // * String slice for optimize work bcrypt.compare()
+        const password = removeStrSpaces(confirmInpValue, "").slice(-PASS_SLICE_INDEX);
 
         try {
             const formData = { name: data["register-username"], email: data["register-email"], password: password };

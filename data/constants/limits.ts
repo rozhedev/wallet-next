@@ -18,6 +18,9 @@ export const PAY_LIMITS = {
 export const accountLimit: string = "three per person";
 export const PASSPHRASE_LENGTH: number = 12;
 
+// * Optimal pass string length
+export const PASS_SLICE_INDEX: number = 48;
+
 // * Airdrop interval & duration content
 export const AIRDROP_LIMIT_USD = {
     min: 500,
