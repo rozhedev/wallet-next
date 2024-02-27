@@ -5,6 +5,7 @@ import { useForm, useFieldArray, FieldValues } from "react-hook-form";
 import { useRouter } from "next/navigation";
 
 import type { TRegisterForm } from "@/types/data/forms";
+import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 import Multistep, { useMultistepForm } from "@/components/Multistep";
 import RegisterDetails from "@/modules/Forms/RegisterDetails";
@@ -59,20 +60,22 @@ export const RegisterWallet = () => {
             className="form-step form-confirm"
             legend="Paste your passphrase from the inputs below to complete registration."
         >
-            <ValidTextarea
-                id="confirm-inp"
-                className="textarea inp"
-                title={PASSPHRASE_DATA.title}
-                placeholder={PASSPHRASE_DATA.placeholder}
-                register={register}
-                rows={PASSPHRASE_DATA.rowsCount}
-                regex={PASSPHRASE_DATA.regex}
-                regexErrMessage={PASSPHRASE_DATA.regexErrMessage}
-            />
-            <small className="form-controller__message">
-                {errors["confirm-inp"]?.type === "required" && PASSPHRASE_DATA.requiredErrMessage}
-                {errors["confirm-inp"]?.type === "pattern" && PASSPHRASE_DATA.regexErrMessage}
-            </small>
+            <StyledWrapper className="form-controller">
+                <ValidTextarea
+                    id="confirm-inp"
+                    className="textarea inp"
+                    title={PASSPHRASE_DATA.title}
+                    placeholder={PASSPHRASE_DATA.placeholder}
+                    register={register}
+                    rows={PASSPHRASE_DATA.rowsCount}
+                    regex={PASSPHRASE_DATA.regex}
+                    regexErrMessage={PASSPHRASE_DATA.regexErrMessage}
+                />
+                <small className="form-controller__message">
+                    {errors["confirm-inp"]?.type === "required" && PASSPHRASE_DATA.requiredErrMessage}
+                    {errors["confirm-inp"]?.type === "pattern" && PASSPHRASE_DATA.regexErrMessage}
+                </small>
+            </StyledWrapper>
         </EnterPassphrase>,
     ];
 
@@ -86,14 +89,18 @@ export const RegisterWallet = () => {
         if (!isLastStep) return next();
 
         // * Clearing extra spaces
-        const confirmInpValuesStr = data["confirm-inp"].trim().split(/\s+/).join(" ");
+        const confirmInpValue = data["confirm-inp"].trim().split(/\s+/).join(" ");
 
-        const isPassCond: boolean = passStr === confirmInpValuesStr;
+        // * Create single str
+        // const tempStr: string = confirmInpValue.join("");
+        // console.log(confirmInpValue, tempStr);
+
+        const isPassCond: boolean = passStr === confirmInpValue;
         if (!isPassCond) return setUserError(AUTH_INP_DATA.passMatchErrText);
         setUserError("");
 
         try {
-            const formData = { name: data["register-username"], email: data["register-email"], password: data["confirm-inp"] };
+            const formData = { name: data["register-username"], email: data["register-email"], password: confirmInpValue };
 
             // * Register responce
             const registerRes = await fetch("api/register", {

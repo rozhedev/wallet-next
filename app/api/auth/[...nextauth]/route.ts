@@ -20,6 +20,7 @@ export const authOptions: AuthOptions = {
                     const user = await User.findOne({ email });
                     if (!user) return null;
 
+                    // * compare f(x) don't check last word in passphrase
                     const isDehashedPassMatch = await bcrypt.compare(password, user.password);
                     if (!isDehashedPassMatch) return null;
 

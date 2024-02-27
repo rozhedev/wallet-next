@@ -54,8 +54,9 @@ export const SigninWallet = () => {
     return (
         <div className="form-wrapper">
             <form
-                className="form"
+                action=""
                 onSubmit={handleSubmit(submitForm)}
+                className="form"
             >
                 <EnterPassphrase
                     id="signin-form"

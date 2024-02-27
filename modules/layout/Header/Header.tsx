@@ -3,6 +3,7 @@
 import React, { FC, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 import type { THeaderProps } from "./types";
 import Select from "@/ui/Select/Select";
@@ -15,6 +16,8 @@ import { isWindowUndefined } from "@/utils/predicates";
 
 export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr }) => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+    const { data: session } = useSession();
+
     const menuToggleHandler = () => setIsMenuOpen(() => !isMenuOpen);
 
     // * Scroll disabling
@@ -50,27 +53,44 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                         <ul className="menu__list">
                             <LinkList linksArr={linksArr} />
 
+                            {/* //* Additional children for adding dropdown, links, etc. */}
                             <li>{children}</li>
-                            <li className="inline-btn">
-                                <Link
-                                    href={ROUTES.public.register}
-                                    className="navlink"
-                                    scroll={false}
-                                >
-                                    {userAddIcon}
-                                    <span>Register</span>
-                                </Link>
-                            </li>
-                            <li className="inline-btn">
-                                <Link
-                                    href={ROUTES.public.signin}
-                                    className="navlink"
-                                    scroll={false}
-                                >
-                                    {doorEnterIcon}
-                                    <span>Sign in</span>
-                                </Link>
-                            </li>
+                            
+                            {session?.user?.name ? (
+                                <li className="inline-btn">
+                                    <Link
+                                        href={ROUTES.private.dashboard}
+                                        className="navlink"
+                                        scroll={false}
+                                    >
+                                        {doorEnterIcon}
+                                        <span>{session?.user?.name}</span>
+                                    </Link>
+                                </li>
+                            ) : (
+                                <>
+                                    <li className="inline-btn">
+                                        <Link
+                                            href={ROUTES.public.register}
+                                            className="navlink"
+                                            scroll={false}
+                                        >
+                                            {userAddIcon}
+                                            <span>Register</span>
+                                        </Link>
+                                    </li>
+                                    <li className="inline-btn">
+                                        <Link
+                                            href={ROUTES.public.signin}
+                                            className="navlink"
+                                            scroll={false}
+                                        >
+                                            {doorEnterIcon}
+                                            <span>Sign in</span>
+                                        </Link>
+                                    </li>
+                                </>
+                            )}
                             <li>
                                 <Select
                                     id="header-select-lang"
