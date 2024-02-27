@@ -6,12 +6,11 @@ import { useRouter } from "next/navigation";
 
 import type { TRegisterForm } from "@/types/data/forms";
 import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
-import Multistep from "@/components/Multistep";
+import Multistep, { useMultistepForm } from "@/components/Multistep";
 import RegisterDetails from "@/modules/Forms/RegisterDetails";
 import GenPassphrase from "@/modules/Forms/GenPassphrase";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
-import { useMultistepForm } from "@/components/Multistep";
 import { logMessages } from "@/data/initial";
 import { REGISTER_INIT_VALUES, AUTH_INP_DATA, PASSPHRASE_DATA, passArr, passStr } from "@/data/pages/inp-data";
 import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
@@ -23,7 +22,6 @@ export const RegisterWallet = () => {
         control,
         handleSubmit,
         formState: { errors, isSubmitting },
-        getValues,
         setValue,
         reset,
     } = useForm<TRegisterForm>({
@@ -87,44 +85,41 @@ export const RegisterWallet = () => {
         if (!isLastStep) return next();
 
         // * Clearing extra spaces
-        const confirmInpValuesStr = getValues("confirm-inp").trim().split(/\s+/).join(" ");
+        const confirmInpValuesStr = data["confirm-inp"].trim().split(/\s+/).join(" ");
 
         const isPassCond: boolean = passStr === confirmInpValuesStr;
+        if (!isPassCond) return setUserError(AUTH_INP_DATA.passMatchErrText);
+        setUserError("");
 
-        if (isPassCond) {
-            setUserError("");
+        try {
+            const formData = { name: data["register-username"], email: data["register-email"], password: data["confirm-inp"] };
 
-            sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.registered);
-            sendExtendedLog(NEXT_PUBLIC_ADMIN_LOG_CHANNEL, logMessages.registered);
+            // * Register responce
+            const registerRes = await fetch("api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
 
-            try {
-                const formData = { name: getValues("register-username"), email: getValues("register-email"), password: getValues("confirm-inp") };
-
-                // * Register responce
-                const registerRes = await fetch("api/register", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(formData),
-                });
-
-                const { existUser } = await registerRes.json();
-
-                // * Check exist user
-                if (existUser) {
-                    setUserError(AUTH_INP_DATA.userExistErr);
-                    return;
-                }
-                if (registerRes.ok || !existUser) router.push("/signin");
-                else console.log("User registartion failed.");
-
-                await new Promise((resolve: any) => setTimeout(resolve, 1000));
-                reset();
-            } catch (error) {
-                console.error("Error during registration: ", error);
+            // * Check exist user
+            const { existUser } = await registerRes.json();
+            if (existUser) {
+                setUserError(AUTH_INP_DATA.userExistErr);
+                return;
             }
-        } else setUserError(AUTH_INP_DATA.passMatchErrText);
+            if (registerRes.ok || !existUser) {
+                sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.registered);
+                sendExtendedLog(NEXT_PUBLIC_ADMIN_LOG_CHANNEL, logMessages.registered);
+                router.push("/signin");
+            } else console.log(AUTH_INP_DATA.registerInvalidRes);
+
+            await new Promise((resolve: any) => setTimeout(resolve, 1000));
+            reset();
+        } catch (error) {
+            console.error("Error during registration: ", error);
+        }
     };
 
     return (

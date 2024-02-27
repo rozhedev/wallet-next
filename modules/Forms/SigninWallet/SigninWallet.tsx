@@ -45,8 +45,7 @@ export const SigninWallet = () => {
         } catch (error) {
             console.log(error);
         }
-
-        await new Promise((resolve: any) => setTimeout(resolve, 1000));
+        
         reset();
     };
 
