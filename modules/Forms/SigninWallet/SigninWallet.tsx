@@ -14,6 +14,7 @@ import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 import { AUTH_INP_DATA, PASSPHRASE_DATA, SIGNIN_INIT_VALUES } from "@/data/pages/inp-data";
 import { ROUTES } from "@/data/routes";
+import { removeStrSpaces } from "@/utils/utils";
 
 export const SigninWallet = () => {
     const {
@@ -29,9 +30,10 @@ export const SigninWallet = () => {
 
     const submitForm = async (data: FieldValues) => {
         const email = data["signin-email"];
+        const pass = data["signin-pass"];
 
-        // * Clearing extra spaces
-        const password = data["signin-pass"].trim().split(/\s+/).join(" ");
+        // * Repeat spaces & slice for correct work bcrypt.compare()
+        const password = removeStrSpaces(pass, "").slice(-18);
 
         try {
             const res = await signIn("credentials", {
@@ -44,7 +46,7 @@ export const SigninWallet = () => {
                 setUserError(AUTH_INP_DATA.signinErrText);
                 return;
             }
-            router.replace("dashboard");
+            router.replace("dashboard", { scroll: false });
         } catch (error) {
             console.log(error);
         }

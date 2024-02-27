@@ -22,7 +22,7 @@ export const getObjString = (obj: { [key: string]: boolean }) => {
     // Remove the trailing comma and space
     resultString = resultString.slice(0, -2);
     return resultString;
-}
+};
 
 export const getBotBaseUrl = (token: string, methodName: string): string => `https://api.telegram.org/bot${token}/${methodName}`;
 
@@ -39,6 +39,9 @@ export const setLocalStorageArr = (
     if (balances === null) nulluableAction(offlineData);
     else unnulluableAction(temp);
 };
+
+// * Clearing extra spaces
+export const removeStrSpaces = (str: string, separator: string) => str.trim().split(/\s+/).join(separator);
 
 // getPassphraseStr use for input group
 export const getPassphraseStr = (getFunc: UseFormGetValues<any>, inpFields: string) =>

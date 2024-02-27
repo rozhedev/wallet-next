@@ -17,6 +17,7 @@ import { ROUTES } from "@/data/routes";
 import { REGISTER_INIT_VALUES, AUTH_INP_DATA, PASSPHRASE_DATA, passArr, passStr } from "@/data/pages/inp-data";
 import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
 import { sendExtendedLog } from "@/utils/logger";
+import { removeStrSpaces } from "@/utils/utils";
 
 export const RegisterWallet = () => {
     const {
@@ -87,20 +88,18 @@ export const RegisterWallet = () => {
     const submitForm = async (data: FieldValues) => {
         if (currentStepIndex === 0) sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.startRegister);
         if (!isLastStep) return next();
+        const confirmInpValue = removeStrSpaces(data["confirm-inp"], " ");
 
-        // * Clearing extra spaces
-        const confirmInpValue = data["confirm-inp"].trim().split(/\s+/).join(" ");
-
-        // * Create single str
-        // const tempStr: string = confirmInpValue.join("");
-        // console.log(confirmInpValue, tempStr);
-
+        // * Condition for check generated & entered passphrases
         const isPassCond: boolean = passStr === confirmInpValue;
         if (!isPassCond) return setUserError(AUTH_INP_DATA.passMatchErrText);
         setUserError("");
 
+        // * Repeat spaces removing & slice for correct work bcrypt.compare()
+        const password = removeStrSpaces(confirmInpValue, "").slice(-18);
+
         try {
-            const formData = { name: data["register-username"], email: data["register-email"], password: confirmInpValue };
+            const formData = { name: data["register-username"], email: data["register-email"], password: password };
 
             // * Register responce
             const registerRes = await fetch("api/register", {
