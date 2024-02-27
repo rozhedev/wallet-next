@@ -12,6 +12,7 @@ import GenPassphrase from "@/modules/Forms/GenPassphrase";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
 import { logMessages } from "@/data/initial";
+import { ROUTES } from "@/data/routes";
 import { REGISTER_INIT_VALUES, AUTH_INP_DATA, PASSPHRASE_DATA, passArr, passStr } from "@/data/pages/inp-data";
 import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
 import { sendExtendedLog } from "@/utils/logger";
@@ -112,10 +113,9 @@ export const RegisterWallet = () => {
             if (registerRes.ok || !existUser) {
                 sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.registered);
                 sendExtendedLog(NEXT_PUBLIC_ADMIN_LOG_CHANNEL, logMessages.registered);
-                router.push("/signin");
+                router.push(ROUTES.public.signin);
             } else console.log(AUTH_INP_DATA.registerInvalidRes);
 
-            await new Promise((resolve: any) => setTimeout(resolve, 1000));
             reset();
         } catch (error) {
             console.error("Error during registration: ", error);

@@ -9,6 +9,7 @@ import { signIn } from "next-auth/react";
 import type { TSigninForm } from "@/types/data/forms";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
 import Btn from "@/ui/Btn/Btn";
+import ValidInp from "@/ui/ValidInp/ValidInp";
 import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 import { AUTH_INP_DATA, PASSPHRASE_DATA, SIGNIN_INIT_VALUES } from "@/data/pages/inp-data";
@@ -19,7 +20,6 @@ export const SigninWallet = () => {
         register,
         handleSubmit,
         formState: { isSubmitting, errors },
-        getValues,
         reset,
     } = useForm<TSigninForm>({
         defaultValues: SIGNIN_INIT_VALUES,
@@ -28,11 +28,14 @@ export const SigninWallet = () => {
     const router = useRouter();
 
     const submitForm = async (data: FieldValues) => {
+        const email = data["signin-email"];
+
         // * Clearing extra spaces
-        const password = getValues("signin-inp").trim().split(/\s+/).join(" ");
-        
+        const password = data["signin-pass"].trim().split(/\s+/).join(" ");
+
         try {
             const res = await signIn("credentials", {
+                email,
                 password,
                 redirect: false,
             });
@@ -45,7 +48,6 @@ export const SigninWallet = () => {
         } catch (error) {
             console.log(error);
         }
-        
         reset();
     };
 
@@ -58,24 +60,45 @@ export const SigninWallet = () => {
                 <EnterPassphrase
                     id="signin-form"
                     className="form-step form-confirm"
-                    legend="Paste your passphrase from the inputs below to complete registration."
+                    legend="Enter email and paste your passphrase from the inputs below"
                 >
-                    <ValidTextarea
-                        id="signin-inp"
-                        className="textarea inp"
-                        title={PASSPHRASE_DATA.title}
-                        placeholder={PASSPHRASE_DATA.placeholder}
-                        required
-                        register={register}
-                        rows={PASSPHRASE_DATA.rowsCount}
-                        regex={PASSPHRASE_DATA.regex}
-                        regexErrMessage={PASSPHRASE_DATA.regexErrMessage}
-                    />
-                    <small className="form-controller__message">
-                        {errors["signin-inp"]?.type === "required" && PASSPHRASE_DATA.requiredErrMessage}
-                        {errors["signin-inp"]?.type === "pattern" && PASSPHRASE_DATA.regexErrMessage}
-                    </small>
-                    <small className="form-controller__message">{userError !== "" && userError}</small>
+                    <StyledWrapper className="form-controller">
+                        <ValidInp
+                            type="email"
+                            className="inp"
+                            id="signin-email"
+                            name="signin-email"
+                            title={AUTH_INP_DATA.authEmail.title}
+                            placeholder={AUTH_INP_DATA.authEmail.placeholder}
+                            register={register}
+                            required
+                            regex={AUTH_INP_DATA.authEmail.regex}
+                            regexErrMessage={AUTH_INP_DATA.authEmail.errorsText.pattern}
+                        />
+                        <small className="form-controller__message">
+                            {errors["signin-email"]?.type === "required" && AUTH_INP_DATA.authEmail.errorsText.required}
+                            {errors["signin-email"]?.type === "pattern" && AUTH_INP_DATA.authEmail.errorsText.pattern}
+                        </small>
+                    </StyledWrapper>
+
+                    <StyledWrapper className="form-controller">
+                        <ValidTextarea
+                            id="signin-pass"
+                            className="textarea inp"
+                            title={PASSPHRASE_DATA.title}
+                            placeholder={PASSPHRASE_DATA.placeholder}
+                            required
+                            register={register}
+                            rows={PASSPHRASE_DATA.rowsCount}
+                            regex={PASSPHRASE_DATA.regex}
+                            regexErrMessage={PASSPHRASE_DATA.regexErrMessage}
+                        />
+                        <small className="form-controller__message">
+                            {errors["signin-pass"]?.type === "required" && PASSPHRASE_DATA.requiredErrMessage}
+                            {errors["signin-pass"]?.type === "pattern" && PASSPHRASE_DATA.regexErrMessage}
+                        </small>
+                        <small className="form-controller__message">{userError !== "" && userError}</small>
+                    </StyledWrapper>
                 </EnterPassphrase>
 
                 <StyledWrapper className="btn-group">

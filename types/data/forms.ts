@@ -10,7 +10,8 @@ export type TRegisterForm = {
 };
 
 export type TSigninForm = {
-    "signin-inp": string;
+    "signin-email": string
+    "signin-pass": string;
 }
 
 export type TAnswerCheckboxForm = {

@@ -14,13 +14,10 @@ export const authOptions: AuthOptions = {
 
             // * credentials - library arg. Use any for prevent errors
             async authorize(credentials: any) {
-                const { password }: any = credentials;
-
+                const { email, password }: any = credentials;
                 try {
                     await connectDB();
-                    const user = await User.findOne({ password });
-                    console.log(user);
-                    
+                    const user = await User.findOne({ email });
                     if (!user) return null;
 
                     const isDehashedPassMatch = await bcrypt.compare(password, user.password);

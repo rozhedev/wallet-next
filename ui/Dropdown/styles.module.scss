@@ -103,6 +103,7 @@
     .navlink {
         font-size: 1.15rem;
         color: $dark-color;
+        font-family: inherit;
         &::after {
             display: none;
         }

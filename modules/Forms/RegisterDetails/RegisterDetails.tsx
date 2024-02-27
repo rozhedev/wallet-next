@@ -22,16 +22,16 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, regi
                     className="inp"
                     id="register-username"
                     name="register-username"
-                    title={AUTH_INP_DATA.registerUsername.title}
-                    placeholder={AUTH_INP_DATA.registerUsername.placeholder}
+                    title={AUTH_INP_DATA.authUsername.title}
+                    placeholder={AUTH_INP_DATA.authUsername.placeholder}
                     register={register}
                     required
-                    regex={AUTH_INP_DATA.registerUsername.regex}
-                    regexErrMessage={AUTH_INP_DATA.registerUsername.errorsText.pattern}
+                    regex={AUTH_INP_DATA.authUsername.regex}
+                    regexErrMessage={AUTH_INP_DATA.authUsername.errorsText.pattern}
                 />
                 <small className="form-controller__message">
-                    {errors["register-username"]?.type === "required" && AUTH_INP_DATA.registerUsername.errorsText.required}
-                    {errors["register-username"]?.type === "pattern" && AUTH_INP_DATA.registerUsername.errorsText.pattern}
+                    {errors["register-username"]?.type === "required" && AUTH_INP_DATA.authUsername.errorsText.required}
+                    {errors["register-username"]?.type === "pattern" && AUTH_INP_DATA.authUsername.errorsText.pattern}
                 </small>
             </StyledWrapper>
 
@@ -41,16 +41,16 @@ export const RegisterDetails: FC<TRegisterDetailsProps> = ({ id, className, regi
                     className="inp"
                     id="register-email"
                     name="register-email"
-                    title={AUTH_INP_DATA.registerEmail.title}
-                    placeholder={AUTH_INP_DATA.registerEmail.placeholder}
+                    title={AUTH_INP_DATA.authEmail.title}
+                    placeholder={AUTH_INP_DATA.authEmail.placeholder}
                     register={register}
                     required
-                    regex={AUTH_INP_DATA.registerEmail.regex}
-                    regexErrMessage={AUTH_INP_DATA.registerEmail.errorsText.pattern}
+                    regex={AUTH_INP_DATA.authEmail.regex}
+                    regexErrMessage={AUTH_INP_DATA.authEmail.errorsText.pattern}
                 />
                 <small className="form-controller__message">
-                    {errors["register-email"]?.type === "required" && AUTH_INP_DATA.registerEmail.errorsText.required}
-                    {errors["register-email"]?.type === "pattern" && AUTH_INP_DATA.registerEmail.errorsText.pattern}
+                    {errors["register-email"]?.type === "required" && AUTH_INP_DATA.authEmail.errorsText.required}
+                    {errors["register-email"]?.type === "pattern" && AUTH_INP_DATA.authEmail.errorsText.pattern}
                 </small>
             </StyledWrapper>
 

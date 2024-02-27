@@ -4,7 +4,7 @@ import { PASSPHRASE_LENGTH } from "@/data/constants/limits";
 import { usernameRegex, emailRegex, passphraseRegex } from "@/data/constants/regex";
 
 export const AUTH_INP_DATA = {
-    registerUsername: {
+    authUsername: {
         // * Title value maybe used as label
         title: "Username",
         placeholder: "Username",
@@ -14,7 +14,7 @@ export const AUTH_INP_DATA = {
             pattern: "Username can only consist of letters & numbers",
         },
     },
-    registerEmail: {
+    authEmail: {
         // * Title value maybe used as label
         title: "Email",
         placeholder: "Email",
@@ -24,12 +24,6 @@ export const AUTH_INP_DATA = {
             pattern: "Please, enter correct email",
         },
     },
-    registerCheckboxErrText: "You must agree with terms",
-    passCheckboxErrText: "Confirm saved passphrase",
-    passMatchErrText: 'Passphrases not match. Check words and click "Complete" button again',
-    signinErrText: 'Invalid passphrase. Check words and click "Signin" button again',
-    userExistErr: "User with same email already exist. Enter other email.",
-    registerInvalidRes: "Invalid responce. User registartion failed.",
     fieldArrValues: {
         passphrase: {
             id: "passphrase-inp",
@@ -38,6 +32,13 @@ export const AUTH_INP_DATA = {
         wordMinLenght: 3,
         wordMaxLenght: 11,
     },
+    // * Errors test
+    registerCheckboxErrText: "You must agree with terms",
+    passCheckboxErrText: "Confirm saved passphrase",
+    passMatchErrText: 'Passphrases not match. Check words and click "Complete" button again',
+    signinErrText: "Invalid email or passphrase, please try again",
+    userExistErr: "User with same email already exist. Enter other email.",
+    registerInvalidRes: "Invalid responce. User registartion failed.",
 };
 
 export const SEND_CUR_INP_DATA = {
@@ -69,7 +70,7 @@ export const PASSPHRASE_DATA = {
     // * PASSPHRASE_LENGTH = 12
     placeholder: "word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12",
     regex: passphraseRegex,
-    requiredErrMessage: "This field is required",
+    requiredErrMessage: "Passphrase is required",
     regexErrMessage: `Invalid passphrase. Passphrase lenght = ${PASSPHRASE_LENGTH} words, use only lowercase letters.`,
     rowsCount: 3,
 };
@@ -102,7 +103,8 @@ export const { passArr, passStr } = usePassphrase(bip39);
 REGISTER_INIT_VALUES["passphrase-inp"].map((pass, i) => (pass.value = passArr[i]));
 
 export const SIGNIN_INIT_VALUES = {
-    "signin-inp": "",
+    "signin-email": "",
+    "signin-pass": "",
 };
 
 export const SEND_CUR_INIT_VALUES = {
