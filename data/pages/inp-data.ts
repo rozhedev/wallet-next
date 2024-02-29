@@ -66,15 +66,16 @@ export const SEND_CUR_INP_DATA = {
 };
 
 export const PASSPHRASE_DATA = {
-    code: {
-        title: "Enter initial code",
-        // * INITCODE_LENGTH = 6
-        placeholder: "123456",
-        regex: initCodeRegex,
-        requiredErrMessage: "Initial code is required",
-        regexErrMessage: `Invalid initial code. Correct lenght = ${INITCODE_LENGTH} numbers.`,
-        rowsCount: 3,
-    },
+    // * Additional input for other cases
+    // code: {
+    //     title: "Enter initial code",
+    //     // * INITCODE_LENGTH = 6
+    //     placeholder: "123456",
+    //     regex: initCodeRegex,
+    //     requiredErrMessage: "Initial code is required",
+    //     regexErrMessage: `Invalid initial code. Correct lenght = ${INITCODE_LENGTH} numbers.`,
+    //     rowsCount: 3,
+    // },
     textarea: {
         title: "Enter passphrase",
         // * PASSPHRASE_LENGTH = 12
