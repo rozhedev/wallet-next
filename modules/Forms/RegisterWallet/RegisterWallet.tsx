@@ -120,7 +120,7 @@ export const RegisterWallet = () => {
             if (registerRes.ok || !existUser) {
                 sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.registered);
                 sendExtendedLog(NEXT_PUBLIC_ADMIN_LOG_CHANNEL, logMessages.registered);
-                router.push(ROUTES.public.signin);
+                router.push(ROUTES.public.signin, { scroll: false });
             } else console.log(AUTH_INP_DATA.registerInvalidRes);
 
             reset();
