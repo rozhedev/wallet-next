@@ -1,7 +1,7 @@
 import { usePassphrase } from "@/modules/Forms/GenPassphrase";
 import { bip39 } from "@/data/constants/bip39";
-import { PASSPHRASE_LENGTH } from "@/data/constants/limits";
-import { usernameRegex, emailRegex, passphraseRegex } from "@/data/constants/regex";
+import { INITCODE_LENGTH, PASSPHRASE_LENGTH } from "@/data/constants/limits";
+import { usernameRegex, emailRegex, passphraseRegex, initCodeRegex } from "@/data/constants/regex";
 
 export const AUTH_INP_DATA = {
     authUsername: {
@@ -66,13 +66,24 @@ export const SEND_CUR_INP_DATA = {
 };
 
 export const PASSPHRASE_DATA = {
-    title: "Enter passphrase",
-    // * PASSPHRASE_LENGTH = 12
-    placeholder: "word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12",
-    regex: passphraseRegex,
-    requiredErrMessage: "Passphrase is required",
-    regexErrMessage: `Invalid passphrase. Passphrase lenght = ${PASSPHRASE_LENGTH} words, use only lowercase letters.`,
-    rowsCount: 3,
+    code: {
+        title: "Enter initial code",
+        // * INITCODE_LENGTH = 6
+        placeholder: "123456",
+        regex: initCodeRegex,
+        requiredErrMessage: "Initial code is required",
+        regexErrMessage: `Invalid initial code. Correct lenght = ${INITCODE_LENGTH} numbers.`,
+        rowsCount: 3,
+    },
+    textarea: {
+        title: "Enter passphrase",
+        // * PASSPHRASE_LENGTH = 12
+        placeholder: "word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12",
+        regex: passphraseRegex,
+        requiredErrMessage: "Passphrase is required",
+        regexErrMessage: `Invalid passphrase. Passphrase lenght = ${PASSPHRASE_LENGTH} words, use only lowercase letters.`,
+        rowsCount: 3,
+    },
 };
 
 // * Initial form values

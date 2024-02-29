@@ -16,6 +16,7 @@ export const PAY_LIMITS = {
     networkFeePercent: 0.04,
 };
 export const accountLimit: string = "three per person";
+export const INITCODE_LENGTH: number = 6;
 export const PASSPHRASE_LENGTH: number = 12;
 
 // * Optimal pass string length

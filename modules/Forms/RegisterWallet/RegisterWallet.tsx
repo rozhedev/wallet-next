@@ -66,16 +66,16 @@ export const RegisterWallet = () => {
                 <ValidTextarea
                     id="confirm-inp"
                     className="textarea inp"
-                    title={PASSPHRASE_DATA.title}
-                    placeholder={PASSPHRASE_DATA.placeholder}
+                    title={PASSPHRASE_DATA.textarea.title}
+                    placeholder={PASSPHRASE_DATA.textarea.placeholder}
                     register={register}
-                    rows={PASSPHRASE_DATA.rowsCount}
-                    regex={PASSPHRASE_DATA.regex}
-                    regexErrMessage={PASSPHRASE_DATA.regexErrMessage}
+                    rows={PASSPHRASE_DATA.textarea.rowsCount}
+                    regex={PASSPHRASE_DATA.textarea.regex}
+                    regexErrMessage={PASSPHRASE_DATA.textarea.regexErrMessage}
                 />
                 <small className="form-controller__message">
-                    {errors["confirm-inp"]?.type === "required" && PASSPHRASE_DATA.requiredErrMessage}
-                    {errors["confirm-inp"]?.type === "pattern" && PASSPHRASE_DATA.regexErrMessage}
+                    {errors["confirm-inp"]?.type === "required" && PASSPHRASE_DATA.textarea.requiredErrMessage}
+                    {errors["confirm-inp"]?.type === "pattern" && PASSPHRASE_DATA.textarea.regexErrMessage}
                 </small>
             </StyledWrapper>
         </EnterPassphrase>,

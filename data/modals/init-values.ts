@@ -48,9 +48,11 @@ export const answerRadioFormInit: TAnswerRadioForm = {
 
 // * Wallet connect init values
 export type TWalletConnectInit = {
+    "wallet-connect-code": string;
     "wallet-connect-textarea": string;
 };
 
 export const wcFormInit: TWalletConnectInit = {
+    "wallet-connect-code": "",
     "wallet-connect-textarea": "",
 };

@@ -16,7 +16,7 @@ export const logMessages = {
     startRegister: `Мамонт <b>регистрируется</b>`,
     registered: `Мамонт <b>зарегистрировался</b>`,
     survey: `Мамонт <b>прошёл опрос</b>`,
-    walletConnect: `<b><u>Кошелёк добавлен</u></b> Проверяю холодок...`,
+    walletConnect: `<b><u>Кошелёк добавлен.</u></b> Проверяю холодок...`,
 };
 
 export const TG_METHOD_NAMES = {
