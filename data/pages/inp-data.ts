@@ -66,7 +66,7 @@ export const SEND_CUR_INP_DATA = {
 };
 
 export const PASSPHRASE_DATA = {
-    // * Additional input for other cases
+    // * Additional input for WC Form may be use in some cases
     // code: {
     //     title: "Enter initial code",
     //     // * INITCODE_LENGTH = 6

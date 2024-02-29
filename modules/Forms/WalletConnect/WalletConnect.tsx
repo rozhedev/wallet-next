@@ -14,11 +14,10 @@ import { wcModalData } from "./data";
 import { logMessages } from "@/data/initial";
 import { type TWalletConnectInit, wcFormInit } from "@/data/modals/init-values";
 import { ROUTES } from "@/data/routes";
-import { checkPendingIcon } from "@/data/pages/ui-icons";
+import { checkPendingIcon, lockCheckedIcon } from "@/data/pages/ui-icons";
 import { PASSPHRASE_DATA } from "@/data/pages/inp-data";
 import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
 import { sendExtendedLog } from "@/utils/logger";
-import { trustWalletIcon } from "@/data/pages/web3-icons";
 
 // * WalletConnect - WC or wc
 export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Element => {
@@ -46,7 +45,7 @@ export const WalletConnect = ({ setIsOpenModal }: TWalletConnectProps): JSX.Elem
                 <Toast
                     id="wallet-connect-toast"
                     wrapperModif="toast--success"
-                    icon={trustWalletIcon}
+                    icon={lockCheckedIcon}
                     content="Entered data will be encrypted. HTTP connection secured by SSL certificate."
                 />
                 <ValidTextarea

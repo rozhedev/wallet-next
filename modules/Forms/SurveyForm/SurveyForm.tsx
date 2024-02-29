@@ -335,9 +335,6 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
             isWindowUndefined() && localStorage.setItem("isSurveyCompleted", "true");
         }
         setIsOpenModal && setIsOpenModal(false);
-
-        // * TODO Submit to server
-        // * ...
     };
 
     return (
