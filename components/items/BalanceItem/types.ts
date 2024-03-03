@@ -1,14 +1,14 @@
 import { StaticImageData } from "next/image";
 import { AllCurShortNames, type TAllCurNotesScope } from "@/types/data/currencies";
 import type { TCurIconPath } from "@/types/data/shared";
-import type { TWalletFormatsScope } from "@/types/data/user-balances";
+// import type { TWalletFormatsScope } from "@/types/data/user-balances";
 
 export type TBalanceItem<TCurScope extends TAllCurNotesScope> = {
     id: `balance-item-${AllCurShortNames}`;
     curIconPath: TCurIconPath<TCurScope>;
     curIconAlt: TCurScope;
     curName: TCurScope;
-    walletAddress: TWalletFormatsScope;
+    walletAddress: string;
     pureAmount: number;
     usdAmount: number;
     qrCodeImg: StaticImageData;

@@ -16,7 +16,8 @@ import {
     ftxTokenFTT,
 } from "@/data/pages/currencies-icons";
 
-import { qrCodeBitcoinBTC } from "./icons";
+import { dashAddr, dogeAddr, ethAddr } from "@/data/api/env";
+import { qrCodeDashDASH, qrCodeDogecoinDOGE, qrCodeEthereumETH } from "./icons";
 
 // * Data
 export const balanceItemArrDEF: TBalanceItemArr = [
@@ -27,8 +28,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.dai,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -38,8 +39,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.dash,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: dashAddr,
+        qrCodeImg: qrCodeDashDASH,
         isAdded: true,
     },
     {
@@ -49,8 +50,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.dogecoin,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: dogeAddr,
+        qrCodeImg: qrCodeDogecoinDOGE,
         isAdded: false,
     },
     {
@@ -60,8 +61,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.decentraland,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -71,8 +72,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.elrond,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -82,8 +83,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.enjinCoin,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -93,8 +94,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.eos,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -104,8 +105,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.ethereum,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: true,
     },
     {
@@ -115,8 +116,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.ethereumClassic,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -126,8 +127,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.fantom,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -137,8 +138,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.filecoin,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -148,8 +149,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.flow,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -159,8 +160,8 @@ export const balanceItemArrDEF: TBalanceItemArr = [
         curName: AllCurFullNames.ftxToken,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
 ];

@@ -137,7 +137,7 @@ export enum AllCurFullNames {
     stacks = "Stacks (STX)",
     stellar = "Stellar (XLM)",
     terra = "Terra (LUNA)",
-    tether = "Tether (USDT)",
+    tether = "Tether ERC20 (USDT)",
     tezos = "Tezos (XTZ)",
     theGraph = "The Graph (GRT)",
     theSandbox = "The Sandbox (SAND)",
@@ -151,7 +151,7 @@ export enum AllCurFullNames {
     veChain = "Ve Chain (VET)",
     waves = "Waves (WAVES)",
     wrappedBitcoin = "Wrapped Bitcoin (WBTC)",
-    xrp = "XRP (XRP)",
+    xrp = "Ripple (XRP)",
     zcash = "Zcash (ZEC)",
 }
 
@@ -305,7 +305,7 @@ export type TAllCurNotes = {
 
     [AllCurShortNames.wrappedBitcoin]: AllCurShortNames.wrappedBitcoin | "Wrapped Bitcoin" | "WBTC" | "wbtc" | AllCurFullNames.wrappedBitcoin | "wrapped-bitcoin-WBTC";
 
-    [AllCurShortNames.xrp]: AllCurShortNames.xrp | "XRP" | AllCurFullNames.xrp | "xrp-XRP";
+    [AllCurShortNames.xrp]: AllCurShortNames.xrp | "XRP" | AllCurFullNames.xrp | "ripple-XRP";
 
     [AllCurShortNames.zcash]: AllCurShortNames.zcash | "Zcash" | "ZEC" | "zec" | AllCurFullNames.zcash | "zcash-ZEC";
 };

@@ -46,8 +46,8 @@ export const SEND_CUR_INP_DATA = {
         id: "send-cur-wallet-address",
         title: "Wallet address",
         placeholder: "Wallet address",
-        min: 42,
-        max: 42,
+        min: 34,
+        max: 95,
     },
     amount: {
         id: "send-cur-amount",

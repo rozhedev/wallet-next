@@ -2,7 +2,8 @@ import { AllCurFullNames } from "@/types/data/currencies";
 import type { TBalanceItemArr } from "../types";
 import { nearNEAR, neoNEO, nexoNEXO, polkadotDOT, polygonMATIC, secretSCRT, shibainuSHIB, solanaSOL, stacksSTX, stellarXLM } from "@/data/pages/currencies-icons";
 
-import { qrCodeBitcoinBTC } from "./icons";
+import { dotAddr, ethAddr, nearAddr, neoAddr, solAddr, xlmAddr } from "@/data/api/env";
+import { qrCodeEthereumETH, qrCodeNearNEAR, qrCodeNeoNEO, qrCodePolkadotDOT, qrCodeSolanaSOL, qrCodeStellarXLM } from "./icons";
 
 // * Data
 export const balanceItemArrNPS: TBalanceItemArr = [
@@ -13,8 +14,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.nearProtocol,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: nearAddr,
+        qrCodeImg: qrCodeNearNEAR,
         isAdded: false,
     },
     {
@@ -24,8 +25,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.neo,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: neoAddr,
+        qrCodeImg: qrCodeNeoNEO,
         isAdded: false,
     },
     {
@@ -35,8 +36,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.nexo,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -46,8 +47,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.polkadot,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: dotAddr,
+        qrCodeImg: qrCodePolkadotDOT,
         isAdded: false,
     },
     {
@@ -57,8 +58,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.polygon,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -68,8 +69,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.secret,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -79,8 +80,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.shibainu,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -90,8 +91,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.solana,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: solAddr,
+        qrCodeImg: qrCodeSolanaSOL,
         isAdded: false,
     },
     {
@@ -101,8 +102,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.stacks,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -112,8 +113,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.stellar,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: xlmAddr,
+        qrCodeImg: qrCodeStellarXLM,
         isAdded: false,
     },
 ];

@@ -2,7 +2,8 @@ import { AllCurFullNames } from "@/types/data/currencies";
 import type { TBalanceItemArr } from "../types";
 import { wavesWAVES, wrappedBitcoinWBTC, xrpXRP, zcashZEC } from "@/data/pages/currencies-icons";
 
-import { qrCodeBitcoinBTC } from "./icons";
+import { ethAddr, wavesAddr, xrpAddr, zecAddr } from "@/data/api/env";
+import { qrCodeEthereumETH, qrCodeRippleXRP, qrCodeWavesWAVES, qrCodeZcashZEC } from "./icons";
 
 // * Data
 export const balanceItemArrWXZ: TBalanceItemArr = [
@@ -13,8 +14,8 @@ export const balanceItemArrWXZ: TBalanceItemArr = [
         curName: AllCurFullNames.waves,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: wavesAddr,
+        qrCodeImg: qrCodeWavesWAVES,
         isAdded: false,
     },
     {
@@ -24,19 +25,19 @@ export const balanceItemArrWXZ: TBalanceItemArr = [
         curName: AllCurFullNames.wrappedBitcoin,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ethAddr,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
         id: "balance-item-xrp",
         curIconPath: xrpXRP,
-        curIconAlt: "xrp-XRP",
+        curIconAlt: "ripple-XRP",
         curName: AllCurFullNames.xrp,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: xrpAddr,
+        qrCodeImg: qrCodeRippleXRP,
         isAdded: false,
     },
     {
@@ -46,8 +47,8 @@ export const balanceItemArrWXZ: TBalanceItemArr = [
         curName: AllCurFullNames.zcash,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: zecAddr,
+        qrCodeImg: qrCodeZcashZEC,
         isAdded: false,
     },
 ];
