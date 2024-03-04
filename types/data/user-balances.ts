@@ -1,27 +1,10 @@
 import { AllCurShortNames } from "./currencies";
 
-// * Wallet addr & balance
-export type TWalletFormatsScope =
-    | `bc${string}`
-    | `0x${string}`
-    | `q${string}`
-    | `addr${string}`
-    | `cosmos${string}`
-    | `X${string}`
-    | `D${string}`
-    | `ltc1${string}`
-    | `N${string}`
-    | `r${string}`
-    | `G${string}`
-    | `tz${string}`
-    | `3P${string}`
-    | `t1${string}`;
-
 // * User balances for dashboard
 type TUserBalance = {
     isAdded: boolean;
     balance: number;
-    wallet: TWalletFormatsScope;
+    wallet: string;
 };
 
 export type TUserBalanceConfig = Record<

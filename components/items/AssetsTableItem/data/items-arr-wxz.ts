@@ -40,7 +40,7 @@ export const assetTableItemArrWXZ: TAssetsTableItemArr = [
         id: "assets-table-item-xrp",
         order: 73,
         curIconPath: xrpXRP,
-        curIconAlt: "xrp-XRP",
+        curIconAlt: "ripple-XRP",
         curName: AllCurFullNames.xrp,
         iconPaths: {
             sendPC: true,

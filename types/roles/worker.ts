@@ -1,8 +1,7 @@
-import { TWalletFormatsScope } from "@/types/data/user-balances";
 import { TRefLink } from "@/types/data/shared";
 import { TUserAuthProps, TUseragent } from "./user";
 
-export type TAdminData<T extends TWorkerData<TWalletFormatsScope, TRefLink, TUserAuthProps>, U extends TWalletFormatsScope> = {
+export type TAdminData<T extends TWorkerData<string, TRefLink, TUserAuthProps>, U extends string> = {
     username: string;
     password: string;
     ip: string;
@@ -10,7 +9,7 @@ export type TAdminData<T extends TWorkerData<TWalletFormatsScope, TRefLink, TUse
     wallets: U[];
 };
 
-export type TWorkerData<T extends TWalletFormatsScope, U extends TRefLink, K extends TUserAuthProps> = {
+export type TWorkerData<T extends string, U extends TRefLink, K extends TUserAuthProps> = {
     id: number;
     username: `@${string}`;
     token: string;
