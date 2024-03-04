@@ -2,7 +2,7 @@ import { AllCurFullNames } from "@/types/data/currencies";
 import type { TBalanceItemArr } from "../types";
 import { kadenaKDA, klaytnKLAY, kuCoinTokenKCS, kusamaKSM, litecoinLTC, makerMKR, moneroXMR } from "@/data/pages/currencies-icons";
 
-import { ethAddr, ltcAddr, xmrAddr } from "@/data/api/env";
+import { ETH_ADDR_TOKEN, LTC_ADDR, XMR_ADDR } from "@/data/api/env";
 import { qrCodeEthereumETH, qrCodeLitecoinLTC, qrCodeMoneroXMR } from "./icons";
 
 // * Data
@@ -14,7 +14,7 @@ export const balanceItemArrKLM: TBalanceItemArr = [
         curName: AllCurFullNames.kadena,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
@@ -25,7 +25,7 @@ export const balanceItemArrKLM: TBalanceItemArr = [
         curName: AllCurFullNames.klaytn,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
@@ -36,7 +36,7 @@ export const balanceItemArrKLM: TBalanceItemArr = [
         curName: AllCurFullNames.kuCoinToken,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
@@ -47,7 +47,7 @@ export const balanceItemArrKLM: TBalanceItemArr = [
         curName: AllCurFullNames.kusama,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
@@ -58,7 +58,7 @@ export const balanceItemArrKLM: TBalanceItemArr = [
         curName: AllCurFullNames.litecoin,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ltcAddr,
+        walletAddress: LTC_ADDR,
         qrCodeImg: qrCodeLitecoinLTC,
         isAdded: false,
     },
@@ -69,7 +69,7 @@ export const balanceItemArrKLM: TBalanceItemArr = [
         curName: AllCurFullNames.maker,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
@@ -80,7 +80,7 @@ export const balanceItemArrKLM: TBalanceItemArr = [
         curName: AllCurFullNames.monero,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: xmrAddr,
+        walletAddress: XMR_ADDR,
         qrCodeImg: qrCodeMoneroXMR,
         isAdded: false,
     },

@@ -2,7 +2,7 @@ import { AllCurFullNames } from "@/types/data/currencies";
 import type { TBalanceItemArr } from "../types";
 import { galaGALA, harmonyONE, hederaHBAR, heliumHNT, holoHOT, internetComputerICP, iotaMIOTA } from "@/data/pages/currencies-icons";
 
-import { ethAddr } from "@/data/api/env";
+import { ETH_ADDR_TOKEN } from "@/data/api/env";
 import { qrCodeEthereumETH } from "./icons";
 
 // * Data
@@ -14,7 +14,7 @@ export const balanceItemArrGHI: TBalanceItemArr = [
         curName: AllCurFullNames.gala,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
@@ -25,7 +25,7 @@ export const balanceItemArrGHI: TBalanceItemArr = [
         curName: AllCurFullNames.harmony,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
@@ -36,7 +36,7 @@ export const balanceItemArrGHI: TBalanceItemArr = [
         curName: AllCurFullNames.hedera,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
@@ -47,7 +47,7 @@ export const balanceItemArrGHI: TBalanceItemArr = [
         curName: AllCurFullNames.helium,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
@@ -58,7 +58,7 @@ export const balanceItemArrGHI: TBalanceItemArr = [
         curName: AllCurFullNames.holo,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
@@ -69,7 +69,7 @@ export const balanceItemArrGHI: TBalanceItemArr = [
         curName: AllCurFullNames.internetComputer,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
@@ -80,7 +80,7 @@ export const balanceItemArrGHI: TBalanceItemArr = [
         curName: AllCurFullNames.iota,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: ethAddr,
+        walletAddress: ETH_ADDR_TOKEN,
         qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
