@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 
 import type { THeaderProps } from "./types";
-import Select from "@/ui/Select/Select";
+// import Select from "@/ui/Select/Select";
 import LinkList from "@/components/LinkList/index";
 
 import { ROUTES } from "@/data/routes";
@@ -91,7 +91,8 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                     </li>
                                 </>
                             )}
-                            <li>
+                            {/* //* Uncomment, when create multilang versions */}
+                            {/* <li>
                                 <Select
                                     id="header-select-lang"
                                     className="select select--header"
@@ -99,7 +100,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                     svgIcon={globeIcon}
                                     options={langOptionsArr}
                                 ></Select>
-                            </li>
+                            </li> */}
                         </ul>
                     </nav>
                 </div>

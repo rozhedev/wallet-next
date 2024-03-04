@@ -54,7 +54,7 @@ export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurShortNames,
                 ) : (
                     <span
                         className="output"
-                        style={{ fontSize: "1.4rem", color: "#111" }}
+                        style={{ fontSize: "1.4rem", color: "#676767" }}
                     >
                         Loading...
                     </span>

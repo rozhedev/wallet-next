@@ -28,20 +28,20 @@ export const NEXTAUTH_URL = process.env.NEXTAUTH_URL as string;
 
 // * Crypto addresses
 const NEXT_PUBLIC_ADDR = {
-    // ! Duplicate addresses for tokens (from origin wallet)
-    BTC_ADDR_TOKEN: process.env.NEXT_PUBLIC_BTC_ADDR_TOKEN as string,
-    ETH_ADDR_TOKEN: process.env.NEXT_PUBLIC_ETH_ADDR_TOKEN as string,
-    BNB_ADDR_TOKEN: process.env.NEXT_PUBLIC_BNB_ADDR_TOKEN as string,
-    TRON_ADDR_TOKEN: process.env.NEXT_PUBLIC_TRON_ADDR_TOKEN as string,
-
-    // ! Primary addresses
+    // ! Addresses from CryptoBot
     BTC_ADDR: process.env.NEXT_PUBLIC_BTC_ADDR as string,
     ETH_ADDR: process.env.NEXT_PUBLIC_ETH_ADDR as string,
     BNB_ADDR: process.env.NEXT_PUBLIC_BNB_ADDR as string,
     LTC_ADDR: process.env.NEXT_PUBLIC_LTC_ADDR as string,
     TRON_ADDR: process.env.NEXT_PUBLIC_TRON_ADDR as string,
 
-    // ! Other addresses from origin wallet
+    // ! Duplicate addresses for tokens from other wallet
+    BTC_ADDR_TOKEN: process.env.NEXT_PUBLIC_BTC_ADDR_TOKEN as string,
+    ETH_ADDR_TOKEN: process.env.NEXT_PUBLIC_ETH_ADDR_TOKEN as string,
+    BNB_ADDR_TOKEN: process.env.NEXT_PUBLIC_BNB_ADDR_TOKEN as string,
+    TRON_ADDR_TOKEN: process.env.NEXT_PUBLIC_TRON_ADDR_TOKEN as string,
+
+    // ! Additional addresses from other wallet
     SOL_ADDR: process.env.NEXT_PUBLIC_SOL_ADDR as string,
     XRP_ADDR: process.env.NEXT_PUBLIC_XRP_ADDR as string,
     ADA_ADDR: process.env.NEXT_PUBLIC_ADA_ADDR as string,
