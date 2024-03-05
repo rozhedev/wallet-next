@@ -8,7 +8,7 @@ export const projectNames = {
     defCapsWallet: "FLEM Wallet",
     defWalletLtd: "Flem Wallet LTD",
 };
-export const curPromoCount: number = 70;
+export const curPromoCount: number = 60;
 
 // * Data for TG logger
 export const logMessages = {

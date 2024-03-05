@@ -225,11 +225,6 @@
     &:nth-of-type(n + 5) {
         margin-top: 0.75rem;
     }
-    @include bp(lg) {
-        &:nth-of-type(n + 4) {
-            margin-top: 0.75rem;
-        }
-    }
     @include bp(sm) {
         &:nth-of-type(n + 3) {
             margin-top: 0.75rem;

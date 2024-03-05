@@ -15,7 +15,6 @@ import qrCodeNearNEAR from "@/public/img/creditails/near-NEAR.webp";
 import qrCodeNeoNEO from "@/public/img/creditails/neo-NEO.webp";
 import qrCodePolkadotDOT from "@/public/img/creditails/polkadot-DOT.webp";
 import qrCodeRippleXRP from "@/public/img/creditails/ripple-XRP.webp";
-import qrCodeThorChainRUNE from "@/public/img/creditails/rune-RUNE-B1A.webp";
 import qrCodeSolanaSOL from "@/public/img/creditails/solana-SOL.webp";
 import qrCodeStellarXLM from "@/public/img/creditails/stellar-XLM.webp";
 import qrCodeTerraLUNA from "@/public/img/creditails/terra-LUNA.webp";
@@ -25,6 +24,7 @@ import qrCodeTronTRX from "@/public/img/creditails/tron-TRX.webp";
 import qrCodeVeChainVET from "@/public/img/creditails/ve-chain-VET.webp";
 import qrCodeWavesWAVES from "@/public/img/creditails/waves-WAVES.webp";
 import qrCodeZcashZEC from "@/public/img/creditails/zcash-ZEC.webp";
+import qrCodeHederaHBAR from "@/public/img/creditails/hedera-HBAR.webp";
 
 export {
     qrCodeAlgorandALGO,
@@ -43,7 +43,6 @@ export {
     qrCodeNeoNEO,
     qrCodePolkadotDOT,
     qrCodeRippleXRP,
-    qrCodeThorChainRUNE,
     qrCodeSolanaSOL,
     qrCodeStellarXLM,
     qrCodeTerraLUNA,
@@ -53,4 +52,5 @@ export {
     qrCodeVeChainVET,
     qrCodeWavesWAVES,
     qrCodeZcashZEC,
+    qrCodeHederaHBAR,
 };

@@ -5,13 +5,11 @@ export enum AllCurShortNames {
     aave = "aave",
     algorand = "algorand",
     amp = "amp",
-    anchorProtocol = "anchor-protocol",
     avalanche = "avalanche",
     axieInfinity = "axie-infinity",
     binanceCoin = "binance-coin",
     binanceUsd = "binance-usd",
     bitcoin = "bitcoin",
-    bitcoinBep2 = "bitcoin-bep2",
     bitcoinCash = "bitcoin-cash",
     bitcoinSv = "bitcoin-sv",
     bitTorrent = "bitTorrent",
@@ -33,19 +31,13 @@ export enum AllCurShortNames {
     ethereumClassic = "ethereum-classic",
     fantom = "fantom",
     filecoin = "filecoin",
-    flow = "flow",
     ftxToken = "ftx-token",
     gala = "gala",
-    harmony = "harmony",
     hedera = "hedera",
     helium = "helium",
     holo = "holo",
     internetComputer = "internet-computer",
     iota = "iota",
-    kadena = "kadena",
-    klaytn = "klaytn",
-    kuCoinToken = "ku-coin-token",
-    kusama = "kusama",
     litecoin = "litecoin",
     maker = "maker",
     monero = "monero",
@@ -54,10 +46,8 @@ export enum AllCurShortNames {
     nexo = "nexo",
     polkadot = "polkadot",
     polygon = "polygon",
-    secret = "secret",
     shibainu = "shiba-inu",
     solana = "solana",
-    stacks = "stacks",
     stellar = "stellar",
     terra = "terra",
     tether = "tether",
@@ -88,7 +78,6 @@ export enum AllCurFullNames {
     binanceCoin = "Binance Coin (BNB)",
     binanceUsd = "Binance USD (BUSD)",
     bitcoin = "Bitcoin (BTC)",
-    bitcoinBep2 = "Bitcoin BEP2 (BTCB)",
     bitcoinCash = "Bitcoin Cash (BCH)",
     bitcoinSv = "Bitcoin SV (BSV)",
     bitTorrent = "BitTorrent (BTT)",
@@ -105,24 +94,18 @@ export enum AllCurFullNames {
     dogecoin = "Dogecoin (DOGE)",
     elrond = "Elrond (EGLD)",
     enjinCoin = "Enjin Coin (ENJ)",
-    eos = "EOS (EOS)",
     ethereum = "Ethereum (ETH)",
     ethereumClassic = "Ethereum Classic (ETC)",
     fantom = "Fantom (FTM)",
     filecoin = "Filecoin (FIL)",
-    flow = "Flow (FLOW)",
     ftxToken = "FTX Token (FTT)",
     gala = "Gala (GALA)",
-    harmony = "Harmony (ONE)",
     hedera = "Hedera (HBAR)",
     helium = "Helium (HNT)",
     holo = "Holo (HOT)",
     internetComputer = "Internet Computer (ICP)",
     iota = "IOTA (MIOTA)",
-    kadena = "Kadena (KDA)",
-    klaytn = "Klaytn (KLAY)",
     kuCoinToken = "KuCoin Token (KCS)",
-    kusama = "Kusama (KSM)",
     litecoin = "Litecoin (LTC)",
     maker = "Maker (MKR)",
     monero = "Monero (XMR)",
@@ -131,10 +114,8 @@ export enum AllCurFullNames {
     nexo = "Nexo (NEXO)",
     polkadot = "Polkadot (DOT)",
     polygon = "Polygon (MATIC)",
-    secret = "Secret (SCRT)",
     shibainu = "Shiba Inu (SHIB)",
     solana = "Solana (SOL)",
-    stacks = "Stacks (STX)",
     stellar = "Stellar (XLM)",
     terra = "Terra (LUNA)",
     tether = "Tether ERC20 (USDT)",
@@ -167,8 +148,6 @@ export type TAllCurNotes = {
 
     [AllCurShortNames.amp]: AllCurShortNames.amp | "Amp" | "AMP" | AllCurFullNames.amp | "amp-AMP";
 
-    [AllCurShortNames.anchorProtocol]: AllCurShortNames.anchorProtocol | "Anchor Protocol" | "ANC" | "anc" | AllCurFullNames.anchorProtocol | "anchor-protocol-ANC";
-
     [AllCurShortNames.avalanche]: AllCurShortNames.avalanche | "Avalanche" | "AVAX" | "avax" | AllCurFullNames.avalanche | "avalanche-AVAX";
 
     [AllCurShortNames.axieInfinity]: AllCurShortNames.axieInfinity | "Axie Infinity" | "AXS" | "axs" | AllCurFullNames.axieInfinity | "axie-infinity-AXS";
@@ -178,8 +157,6 @@ export type TAllCurNotes = {
     [AllCurShortNames.binanceUsd]: AllCurShortNames.binanceUsd | "Binance USD" | "BUSD" | "busd" | AllCurFullNames.binanceUsd | "binance-usd-BUSD";
 
     [AllCurShortNames.bitcoin]: AllCurShortNames.bitcoin | "Bitcoin" | "BTC" | "btc" | AllCurFullNames.bitcoin | "bitcoin-BTC";
-
-    [AllCurShortNames.bitcoinBep2]: AllCurShortNames.bitcoinBep2 | "Bitcoin BEP2" | "BTCB" | "btcb" | AllCurFullNames.bitcoinBep2 | "bitcoin-bep2-BTCB";
 
     [AllCurShortNames.bitcoinCash]: AllCurShortNames.bitcoinCash | "Bitcoin Cash" | "BCH" | "bch" | AllCurFullNames.bitcoinCash | "bitcoin-cash-BCH";
 
@@ -213,8 +190,6 @@ export type TAllCurNotes = {
 
     [AllCurShortNames.enjinCoin]: AllCurShortNames.enjinCoin | "Enjin Coin" | "ENJ" | "enj" | AllCurFullNames.enjinCoin | "enjin-coin-ENJ";
 
-    [AllCurShortNames.eos]: AllCurShortNames.eos | "EOS" | AllCurFullNames.eos | "eos-EOS";
-
     [AllCurShortNames.ethereum]: AllCurShortNames.ethereum | "Ethereum" | "ETH" | "eth" | AllCurFullNames.ethereum | "ethereum-ETH";
 
     [AllCurShortNames.ethereumClassic]: AllCurShortNames.ethereumClassic | "Ethereum Classic" | "ETC" | "etc" | AllCurFullNames.ethereumClassic | "ethereum-classic-ETC";
@@ -223,31 +198,21 @@ export type TAllCurNotes = {
 
     [AllCurShortNames.filecoin]: AllCurShortNames.filecoin | "Filecoin" | "FIL" | "fil" | AllCurFullNames.filecoin | "filecoin-FIL";
 
-    [AllCurShortNames.flow]: AllCurShortNames.flow | "Flow" | "FLOW" | AllCurFullNames.flow | "flow-FLOW";
-
     [AllCurShortNames.ftxToken]: AllCurShortNames.ftxToken | "Ftx Token" | "FTT" | "ftt" | AllCurFullNames.ftxToken | "ftx-token-FTT";
 
     [AllCurShortNames.gala]: AllCurShortNames.gala | "Gala" | "GALA" | AllCurFullNames.gala | "gala-GALA";
 
-    [AllCurShortNames.harmony]: AllCurShortNames.harmony | "Harmony" | "ONE" | "one" | AllCurFullNames.harmony | "harmony-ONE";
-
     [AllCurShortNames.hedera]: AllCurShortNames.hedera | "Hedera" | "HBAR" | "hbar" | AllCurFullNames.hedera | "hedera-HBAR";
 
+    // * Not have address & balance
     [AllCurShortNames.helium]: AllCurShortNames.helium | "Helium" | "HNT" | "hnt" | AllCurFullNames.helium | "helium-HNT";
 
     [AllCurShortNames.holo]: AllCurShortNames.holo | "Holo" | "HOT" | "hot" | AllCurFullNames.holo | "holo-HOT";
 
+    // * Not have address & balance
     [AllCurShortNames.internetComputer]: AllCurShortNames.internetComputer | "Internet Computer" | "ICP" | "icp" | AllCurFullNames.internetComputer | "internet-computer-ICP";
 
     [AllCurShortNames.iota]: AllCurShortNames.iota | "IOTA" | "MIOTA" | "miota" | AllCurFullNames.iota | "iota-MIOTA";
-
-    [AllCurShortNames.kadena]: AllCurShortNames.kadena | "Kadena" | "KDA" | "kda" | AllCurFullNames.kadena | "kadena-KDA";
-
-    [AllCurShortNames.klaytn]: AllCurShortNames.klaytn | "Klaytn" | "KLAY" | "klay" | AllCurFullNames.klaytn | "klaytn-KLAY";
-
-    [AllCurShortNames.kuCoinToken]: AllCurShortNames.kuCoinToken | "KuCoin Token" | "KCS" | "kcs" | AllCurFullNames.kuCoinToken | "ku-coin-token-KCS";
-
-    [AllCurShortNames.kusama]: AllCurShortNames.kusama | "Kusama" | "KSM" | "ksm" | AllCurFullNames.kusama | "kusama-KSM";
 
     [AllCurShortNames.litecoin]: AllCurShortNames.litecoin | "Litecoin" | "LTC" | "ltc" | AllCurFullNames.litecoin | "litecoin-LTC";
 
@@ -265,13 +230,9 @@ export type TAllCurNotes = {
 
     [AllCurShortNames.polygon]: AllCurShortNames.polygon | "Polygon" | "MATIC" | "matic" | AllCurFullNames.polygon | "polygon-MATIC";
 
-    [AllCurShortNames.secret]: AllCurShortNames.secret | "Secret" | "SCRT" | "scrt" | AllCurFullNames.secret | "secret-SCRT";
-
     [AllCurShortNames.shibainu]: AllCurShortNames.shibainu | "Shiba Inu" | "SHIB" | "shib" | AllCurFullNames.shibainu | "shiba-inu-SHIB";
 
     [AllCurShortNames.solana]: AllCurShortNames.solana | "Solana" | "SOL" | "sol" | AllCurFullNames.solana | "solana-SOL";
-
-    [AllCurShortNames.stacks]: AllCurShortNames.stacks | "Stacks" | "STX" | "stx" | AllCurFullNames.stacks | "stacks-STX";
 
     [AllCurShortNames.stellar]: AllCurShortNames.stellar | "Stellar" | "XLM" | "xlm" | AllCurFullNames.stellar | "stellar-XLM";
 
@@ -315,13 +276,11 @@ export type TAllCurNotesScope =
     | RequiredPick<TAllCurNotes, AllCurShortNames.aave>
     | RequiredPick<TAllCurNotes, AllCurShortNames.algorand>
     | RequiredPick<TAllCurNotes, AllCurShortNames.amp>
-    | RequiredPick<TAllCurNotes, AllCurShortNames.anchorProtocol>
     | RequiredPick<TAllCurNotes, AllCurShortNames.avalanche>
     | RequiredPick<TAllCurNotes, AllCurShortNames.axieInfinity>
     | RequiredPick<TAllCurNotes, AllCurShortNames.binanceCoin>
     | RequiredPick<TAllCurNotes, AllCurShortNames.binanceUsd>
     | RequiredPick<TAllCurNotes, AllCurShortNames.bitcoin>
-    | RequiredPick<TAllCurNotes, AllCurShortNames.bitcoinBep2>
     | RequiredPick<TAllCurNotes, AllCurShortNames.bitcoinCash>
     | RequiredPick<TAllCurNotes, AllCurShortNames.bitcoinSv>
     | RequiredPick<TAllCurNotes, AllCurShortNames.bitTorrent>
@@ -338,24 +297,17 @@ export type TAllCurNotesScope =
     | RequiredPick<TAllCurNotes, AllCurShortNames.dogecoin>
     | RequiredPick<TAllCurNotes, AllCurShortNames.elrond>
     | RequiredPick<TAllCurNotes, AllCurShortNames.enjinCoin>
-    | RequiredPick<TAllCurNotes, AllCurShortNames.eos>
     | RequiredPick<TAllCurNotes, AllCurShortNames.ethereum>
     | RequiredPick<TAllCurNotes, AllCurShortNames.ethereumClassic>
     | RequiredPick<TAllCurNotes, AllCurShortNames.fantom>
     | RequiredPick<TAllCurNotes, AllCurShortNames.filecoin>
-    | RequiredPick<TAllCurNotes, AllCurShortNames.flow>
     | RequiredPick<TAllCurNotes, AllCurShortNames.ftxToken>
     | RequiredPick<TAllCurNotes, AllCurShortNames.gala>
-    | RequiredPick<TAllCurNotes, AllCurShortNames.harmony>
     | RequiredPick<TAllCurNotes, AllCurShortNames.hedera>
     | RequiredPick<TAllCurNotes, AllCurShortNames.helium>
     | RequiredPick<TAllCurNotes, AllCurShortNames.holo>
     | RequiredPick<TAllCurNotes, AllCurShortNames.internetComputer>
     | RequiredPick<TAllCurNotes, AllCurShortNames.iota>
-    | RequiredPick<TAllCurNotes, AllCurShortNames.kadena>
-    | RequiredPick<TAllCurNotes, AllCurShortNames.klaytn>
-    | RequiredPick<TAllCurNotes, AllCurShortNames.kuCoinToken>
-    | RequiredPick<TAllCurNotes, AllCurShortNames.kusama>
     | RequiredPick<TAllCurNotes, AllCurShortNames.litecoin>
     | RequiredPick<TAllCurNotes, AllCurShortNames.maker>
     | RequiredPick<TAllCurNotes, AllCurShortNames.monero>
@@ -364,10 +316,8 @@ export type TAllCurNotesScope =
     | RequiredPick<TAllCurNotes, AllCurShortNames.nexo>
     | RequiredPick<TAllCurNotes, AllCurShortNames.polkadot>
     | RequiredPick<TAllCurNotes, AllCurShortNames.polygon>
-    | RequiredPick<TAllCurNotes, AllCurShortNames.secret>
     | RequiredPick<TAllCurNotes, AllCurShortNames.shibainu>
     | RequiredPick<TAllCurNotes, AllCurShortNames.solana>
-    | RequiredPick<TAllCurNotes, AllCurShortNames.stacks>
     | RequiredPick<TAllCurNotes, AllCurShortNames.stellar>
     | RequiredPick<TAllCurNotes, AllCurShortNames.terra>
     | RequiredPick<TAllCurNotes, AllCurShortNames.tether>

@@ -1,6 +1,6 @@
 import { AllCurFullNames } from "@/types/data/currencies";
 import type { TBalanceItemArr } from "../types";
-import { nearNEAR, neoNEO, nexoNEXO, polkadotDOT, polygonMATIC, secretSCRT, shibainuSHIB, solanaSOL, stacksSTX, stellarXLM } from "@/data/pages/currencies-icons";
+import { nearNEAR, neoNEO, nexoNEXO, polkadotDOT, polygonMATIC, shibainuSHIB, solanaSOL, stellarXLM } from "@/data/pages/currencies-icons";
 
 import { DOT_ADDR, ETH_ADDR_TOKEN, NEAR_ADDR, NEO_ADDR, SOL_ADDR, XLM_ADDR } from "@/data/api/env";
 import { qrCodeEthereumETH, qrCodeNearNEAR, qrCodeNeoNEO, qrCodePolkadotDOT, qrCodeSolanaSOL, qrCodeStellarXLM } from "./icons";
@@ -63,17 +63,6 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         isAdded: false,
     },
     {
-        id: "balance-item-secret",
-        curIconPath: secretSCRT,
-        curIconAlt: "secret-SCRT",
-        curName: AllCurFullNames.secret,
-        pureAmount: 0,
-        usdAmount: 0,
-        walletAddress: ETH_ADDR_TOKEN,
-        qrCodeImg: qrCodeEthereumETH,
-        isAdded: false,
-    },
-    {
         id: "balance-item-shiba-inu",
         curIconPath: shibainuSHIB,
         curIconAlt: "shiba-inu-SHIB",
@@ -93,17 +82,6 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         usdAmount: 0,
         walletAddress: SOL_ADDR,
         qrCodeImg: qrCodeSolanaSOL,
-        isAdded: false,
-    },
-    {
-        id: "balance-item-stacks",
-        curIconPath: stacksSTX,
-        curIconAlt: "stacks-STX",
-        curName: AllCurFullNames.stacks,
-        pureAmount: 0,
-        usdAmount: 0,
-        walletAddress: ETH_ADDR_TOKEN,
-        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {

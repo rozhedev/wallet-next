@@ -16,8 +16,8 @@ import {
     veChainVET,
 } from "@/data/pages/currencies-icons";
 
-import { ETH_ADDR, ETH_ADDR_TOKEN, LUNA_ADDR, RUNE_ADDR, THETA_ADDR, TRON_ADDR, VET_ADDR, XTZ_ADDR } from "@/data/api/env";
-import { qrCodeEthereumETH, qrCodeTerraLUNA, qrCodeTezosXTZ, qrCodeThetaTHETA, qrCodeThorChainRUNE, qrCodeTronTRX, qrCodeVeChainVET } from "./icons";
+import { BNB_ADDR, ETH_ADDR, ETH_ADDR_TOKEN, LUNA_ADDR, THETA_ADDR, TRON_ADDR, VET_ADDR, XTZ_ADDR } from "@/data/api/env";
+import { qrCodeEthereumETH, qrCodeTerraLUNA, qrCodeTezosXTZ, qrCodeThetaTHETA, qrCodeBinanceCoinBNB, qrCodeTronTRX, qrCodeVeChainVET } from "./icons";
 
 // * Data
 export const balanceItemArrTUV: TBalanceItemArr = [
@@ -97,8 +97,8 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.thorChain,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: RUNE_ADDR,
-        qrCodeImg: qrCodeThorChainRUNE,
+        walletAddress: BNB_ADDR,
+        qrCodeImg: qrCodeBinanceCoinBNB,
         isAdded: false,
     },
     {

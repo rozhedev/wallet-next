@@ -1,12 +1,12 @@
 import { AllCurFullNames } from "@/types/data/currencies";
 import type { TAssetsTableItemArr } from "../types";
-import { nearNEAR, neoNEO, nexoNEXO, polkadotDOT, polygonMATIC, secretSCRT, shibainuSHIB, solanaSOL, stacksSTX, stellarXLM } from "@/data/pages/currencies-icons";
+import { nearNEAR, neoNEO, nexoNEXO, polkadotDOT, polygonMATIC, shibainuSHIB, solanaSOL, stellarXLM } from "@/data/pages/currencies-icons";
 
 // * Data
 export const assetTableItemArrNPS: TAssetsTableItemArr = [
     {
         id: "assets-table-item-near-protocol",
-        order: 48,
+        order: 37,
         curIconPath: nearNEAR,
         curIconAlt: "near-protocol-NEAR",
         curName: AllCurFullNames.nearProtocol,
@@ -22,7 +22,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-neo",
-        order: 49,
+        order: 38,
         curIconPath: neoNEO,
         curIconAlt: "neo-NEO",
         curName: AllCurFullNames.neo,
@@ -38,7 +38,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-nexo",
-        order: 50,
+        order: 39,
         curIconPath: nexoNEXO,
         curIconAlt: "nexo-NEXO",
         curName: AllCurFullNames.nexo,
@@ -54,7 +54,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-polkadot",
-        order: 51,
+        order: 40,
         curIconPath: polkadotDOT,
         curIconAlt: "polkadot-DOT",
         curName: AllCurFullNames.polkadot,
@@ -70,7 +70,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-polygon",
-        order: 52,
+        order: 41,
         curIconPath: polygonMATIC,
         curIconAlt: "polygon-MATIC",
         curName: AllCurFullNames.polygon,
@@ -85,24 +85,8 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         },
     },
     {
-        id: "assets-table-item-secret",
-        order: 53,
-        curIconPath: secretSCRT,
-        curIconAlt: "secret-SCRT",
-        curName: AllCurFullNames.secret,
-        iconPaths: {
-            sendPC: true,
-            receivePC: true,
-            sendPhone: true,
-            receivePhone: true,
-            exchange: true,
-            buy: false,
-            stacking: true,
-        },
-    },
-    {
         id: "assets-table-item-shiba-inu",
-        order: 54,
+        order: 42,
         curIconPath: shibainuSHIB,
         curIconAlt: "shiba-inu-SHIB",
         curName: AllCurFullNames.shibainu,
@@ -118,7 +102,7 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-solana",
-        order: 55,
+        order: 43,
         curIconPath: solanaSOL,
         curIconAlt: "solana-SOL",
         curName: AllCurFullNames.solana,
@@ -133,24 +117,8 @@ export const assetTableItemArrNPS: TAssetsTableItemArr = [
         },
     },
     {
-        id: "assets-table-item-stacks",
-        order: 56,
-        curIconPath: stacksSTX,
-        curIconAlt: "stacks-STX",
-        curName: AllCurFullNames.stacks,
-        iconPaths: {
-            sendPC: true,
-            receivePC: true,
-            sendPhone: true,
-            receivePhone: true,
-            exchange: false,
-            buy: true,
-            stacking: true,
-        },
-    },
-    {
         id: "assets-table-item-stellar",
-        order: 57,
+        order: 44,
         curIconPath: stellarXLM,
         curIconAlt: "stellar-XLM",
         curName: AllCurFullNames.stellar,

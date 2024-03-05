@@ -7,12 +7,10 @@ import {
     decentralandMANA,
     elrondEGLD,
     enjinCoinENJ,
-    eosEOS,
     ethereumETH,
     ethereumClassicETC,
     fantomFTM,
     filecoinFIL,
-    flowFLOW,
     ftxTokenFTT,
 } from "@/data/pages/currencies-icons";
 
@@ -20,7 +18,7 @@ import {
 export const assetTableItemArrDEF: TAssetsTableItemArr = [
     {
         id: "assets-table-item-dai",
-        order: 21,
+        order: 19,
         curIconPath: daiDAI,
         curIconAlt: "dai-DAI",
         curName: AllCurFullNames.dai,
@@ -36,7 +34,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-dash",
-        order: 22,
+        order: 20,
         curIconPath: dashDASH,
         curIconAlt: "dash-DASH",
         curName: AllCurFullNames.dash,
@@ -52,7 +50,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-decentraland",
-        order: 23,
+        order: 21,
         curIconPath: decentralandMANA,
         curIconAlt: "decentraland-MANA",
         curName: AllCurFullNames.decentraland,
@@ -68,7 +66,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-dogecoin",
-        order: 24,
+        order: 22,
         curIconPath: dogecoinDOGE,
         curIconAlt: "dogecoin-DOGE",
         curName: AllCurFullNames.dogecoin,
@@ -84,7 +82,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-elrond",
-        order: 25,
+        order: 23,
         curIconPath: elrondEGLD,
         curIconAlt: "elrond-EGLD",
         curName: AllCurFullNames.elrond,
@@ -100,7 +98,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-enjin-coin",
-        order: 26,
+        order: 24,
         curIconPath: enjinCoinENJ,
         curIconAlt: "enjin-coin-ENJ",
         curName: AllCurFullNames.enjinCoin,
@@ -115,24 +113,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: "assets-table-item-eos",
-        order: 27,
-        curIconPath: eosEOS,
-        curIconAlt: "eos-EOS",
-        curName: AllCurFullNames.eos,
-        iconPaths: {
-            sendPC: true,
-            receivePC: true,
-            sendPhone: true,
-            receivePhone: true,
-            exchange: true,
-            buy: true,
-            stacking: true,
-        },
-    },
-    {
         id: "assets-table-item-ethereum",
-        order: 28,
+        order: 25,
         curIconPath: ethereumETH,
         curIconAlt: "ethereum-ETH",
         curName: AllCurFullNames.ethereum,
@@ -148,7 +130,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-ethereum-classic",
-        order: 29,
+        order: 26,
         curIconPath: ethereumClassicETC,
         curIconAlt: "ethereum-classic-ETC",
         curName: AllCurFullNames.ethereumClassic,
@@ -164,7 +146,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-fantom",
-        order: 30,
+        order: 27,
         curIconPath: fantomFTM,
         curIconAlt: "fantom-FTM",
         curName: AllCurFullNames.fantom,
@@ -180,7 +162,7 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-filecoin",
-        order: 31,
+        order: 28,
         curIconPath: filecoinFIL,
         curIconAlt: "filecoin-FIL",
         curName: AllCurFullNames.filecoin,
@@ -195,24 +177,8 @@ export const assetTableItemArrDEF: TAssetsTableItemArr = [
         },
     },
     {
-        id: "assets-table-item-flow",
-        order: 32,
-        curIconPath: flowFLOW,
-        curIconAlt: "flow-FLOW",
-        curName: AllCurFullNames.flow,
-        iconPaths: {
-            sendPC: true,
-            receivePC: true,
-            sendPhone: true,
-            receivePhone: true,
-            exchange: true,
-            buy: true,
-            stacking: true,
-        },
-    },
-    {
         id: "assets-table-item-ftx-token",
-        order: 33,
+        order: 29,
         curIconPath: ftxTokenFTT,
         curIconAlt: "ftx-token-FTT",
         curName: AllCurFullNames.ftxToken,

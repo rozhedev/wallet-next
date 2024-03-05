@@ -56,13 +56,13 @@ const NEXT_PUBLIC_ADDR = {
     XMR_ADDR: process.env.NEXT_PUBLIC_XMR_ADDR as string,
     THETA_ADDR: process.env.NEXT_PUBLIC_THETA_ADDR as string,
     ALGO_ADDR: process.env.NEXT_PUBLIC_ALGO_ADDR as string,
-    RUNE_ADDR: process.env.NEXT_PUBLIC_RUNE_ADDR as string,
     XTZ_ADDR: process.env.NEXT_PUBLIC_XTZ_ADDR as string,
     NEO_ADDR: process.env.NEXT_PUBLIC_NEO_ADDR as string,
     LUNA_ADDR: process.env.NEXT_PUBLIC_LUNA_ADDR as string,
     ZEC_ADDR: process.env.NEXT_PUBLIC_ZEC_ADDR as string,
     DASH_ADDR: process.env.NEXT_PUBLIC_DASH_ADDR as string,
     WAVES_ADDR: process.env.NEXT_PUBLIC_WAVES_ADDR as string,
+    HBAR_ADDR: process.env.NEXT_PUBLIC_HBAR_ADDR as string,
 };
 
 export const {
@@ -89,11 +89,11 @@ export const {
     XMR_ADDR,
     THETA_ADDR,
     ALGO_ADDR,
-    RUNE_ADDR,
     XTZ_ADDR,
     NEO_ADDR,
     LUNA_ADDR,
     ZEC_ADDR,
     DASH_ADDR,
     WAVES_ADDR,
+    HBAR_ADDR,
 } = NEXT_PUBLIC_ADDR;
