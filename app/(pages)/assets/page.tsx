@@ -24,7 +24,7 @@ export default function Assets() {
             <div className="page-inner">
                 <SmallScreenNotice className="small-screen-notice" />
                 <Table
-                    wrapperClass=""
+                    wrapperClass="table-wrapper"
                     tableClass="assets-table"
                 >
                     <Table.Head>

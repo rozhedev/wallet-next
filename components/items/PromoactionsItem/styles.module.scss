@@ -80,6 +80,9 @@
     }
     @include bp(md) {
         background-size: auto;
+        // * Don't remove or change this ↓ prop
+        background-repeat: repeat-x;
+
         .promoactions-item__content {
             width: 100%;
             border-radius: 0 0 8px 8px;

@@ -51,7 +51,7 @@
     .inner {
         margin-top: 3rem;
         column-count: 2;
-        column-width: 50%;
+        column-width: auto;
         column-gap: 9rem;
         text-align: center;
         @include bp(lg) {
