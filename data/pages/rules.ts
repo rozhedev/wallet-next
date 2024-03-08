@@ -1,10 +1,10 @@
 export const rulesContent = {
-    effectiveAsDate: "October 12, 2021",
+    effectiveAsDate: "October 12, 2022",
     address: "62 New Cavendish Street, London, England, W1G 8TA",
     registryCode: "13696609",
-    mailHref: "mailto:support@flemwallet.io",
-    mailLabel: "support@flemwallet.io",
-    projectDomain: "flemwallet.io",
+    projectDomain: "flennovation.pro",
+    mailHref: "mailto:support@flennovation.pro",
+    mailLabel: "support@flennovation.pro",
     getProjectLink() {
         return `https://${this.projectDomain}`;
     },

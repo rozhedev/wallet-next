@@ -7,7 +7,7 @@ export const wcModalData: Record<"info" | "success", TWCFieldset> = {
     info: {
         id: "modal-form-connect-promo",
         icon: provideIcon,
-        content: <p>Already have a cryptocurrency wallet? Connect it via WalletConnect to the Flem ecosystem, for easier and clearer use.</p>,
+        content: <p>Already have a cryptocurrency wallet? Connect it via WalletConnect to the Flenn ecosystem, for easier and clearer use.</p>,
     },
     success: {
         id: "modal-form-connect-success",

@@ -32,7 +32,7 @@ export const AsideCab = ({ isAsideOpen, setIsAsideOpen, linksArr }: TAsideCabPro
                     src={logo}
                     alt="logo-badge"
                 />
-                <span className="logo__text navlink">Flem</span>
+                <span className="logo__text navlink">Flenn</span>
             </div>
             <ul className="nav">
                 {linksArr.map((item, i) => (

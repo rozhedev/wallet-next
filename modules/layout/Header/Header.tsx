@@ -39,7 +39,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                 >
                     <Image
                         src={logo}
-                        alt="Flem Wallet"
+                        alt="Flenn Wallet"
                     />
                 </Link>
                 <div className="menu">

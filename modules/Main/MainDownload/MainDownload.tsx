@@ -14,7 +14,7 @@ export const MainDownload: FC<TMainDownloadProps> = ({ dataArr }) => {
         <>
             <h2 className="download__header section-title">
                 {walletIcon}
-                <span className="h2">Flem Wallet on your devices</span>
+                <span className="h2">Flenn Wallet on your devices</span>
             </h2>
             <button
                 type="button"

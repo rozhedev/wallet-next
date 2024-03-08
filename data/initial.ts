@@ -2,11 +2,11 @@
 // * def - default project name
 
 export const projectNames = {
-    def: "Flem",
-    defCaps: "FLEM",
-    defWallet: "Flem Wallet",
-    defCapsWallet: "FLEM Wallet",
-    defWalletLtd: "Flem Wallet LTD",
+    def: "Flenn",
+    defCaps: "FLENN",
+    defWallet: "Flenn Wallet",
+    defCapsWallet: "FLENN Wallet",
+    defWalletLtd: "Flenn Wallet LTD",
 };
 export const curPromoCount: number = 60;
 

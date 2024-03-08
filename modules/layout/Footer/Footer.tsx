@@ -21,10 +21,10 @@ export const Footer = ({ children }: TFooterProps): JSX.Element => {
                     >
                         <Image
                             src={logo}
-                            alt="Flem Wallet"
+                            alt="Flenn Wallet"
                         />
                     </Link>
-                    <div className="footer__copyright navlink">&copy; 2021-2023 Flem Wallet LTD. All rights reserved.</div>
+                    <div className="footer__copyright navlink">&copy; 2022-2024 Flenn Wallet LTD. All rights reserved.</div>
                 </div>
                 {children}
             </div>
