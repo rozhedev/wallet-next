@@ -2,7 +2,7 @@ import React from "react";
 import { TAllCurNotesScope } from "@/types/data/currencies";
 import { TBalanceModalStates } from "@/components/items/BalanceItem";
 
-export type TSendCurProps = {
+export type TSendToCardProps = {
     modalId: `modal-send-${TAllCurNotesScope}`;
     formId: `send-${TAllCurNotesScope}-form`;
     pureAmount: number;

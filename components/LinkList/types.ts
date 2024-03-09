@@ -9,4 +9,6 @@ export type TLinkListItem<TScope> = {
 
 export type TLinkListProps<TScope> = {
     linksArr: TLinkListItem<TScope>[];
+    // * Uses in header for close menu when link clicked
+    handler?: () => void;
 };

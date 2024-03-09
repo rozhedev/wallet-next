@@ -15,3 +15,5 @@ export const assetTableItemArr: TAssetsTableItemArr = assetTableItemArrABC.conca
     assetTableItemArrTUV,
     assetTableItemArrWXZ
 );
+
+export const assetTableItemLength: number = assetTableItemArr.length;

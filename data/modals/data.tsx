@@ -1,7 +1,7 @@
 import { RequiredPick } from "@/types/utils/utils";
 
 import type { TModalProps } from "@/ui/Modal/index";
-import { checkedRoundedIcon, closeRoundedIcon, exportIcon, importIcon } from "@/data/pages/ui-icons";
+import { checkedRoundedIcon, closeRoundedIcon, creditCard, exportIcon, importIcon } from "@/data/pages/ui-icons";
 
 type TModalData = {
     id: RequiredPick<TModalProps, "modalId">;
@@ -44,8 +44,13 @@ export const settingsModalData: TModalData = {
     content: <p>Your data change request has been sent. The changes will be displayed within 15 minutes</p>,
 };
 
-type TAssetsCabModalData = Record<"send" | "get", Omit<TModalData, "id" | "content">>;
+type TAssetsCabModalData = Record<"sendCard" | "send" | "get", Omit<TModalData, "id" | "content">>;
 export const assetsCabModalData: TAssetsCabModalData = {
+    sendCard: {
+        modalDialogClassName: "modal-dialog modal-dialog--info modal-dialog--send",
+        titleIcon: creditCard,
+        title: "Send to card",
+    },
     send: {
         modalDialogClassName: "modal-dialog modal-dialog--info modal-dialog--send",
         titleIcon: exportIcon,

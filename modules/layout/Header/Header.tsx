@@ -7,12 +7,14 @@ import { useSession } from "next-auth/react";
 
 import type { THeaderProps } from "./types";
 // import Select from "@/ui/Select/Select";
+import Dropdown from "@/ui/Dropdown";
 import LinkList from "@/components/LinkList/index";
 
 import { ROUTES } from "@/data/routes";
 import logo from "@/public/img/logo.svg";
-import { doorEnterIcon, globeIcon, userAddIcon } from "@/data/pages/ui-icons";
+import { chevronBottomIcon, doorEnterIcon, globeIcon, userAddIcon } from "@/data/pages/ui-icons";
 import { isWindowUndefined } from "@/utils/predicates";
+import { dropdownLinks } from "./data";
 
 export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr }) => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -51,17 +53,35 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                     </div>
                     <nav className={`menu__body ${isMenuOpen ? "_active" : ""}`}>
                         <ul className="menu__list">
-                            <LinkList linksArr={linksArr} />
-
                             {/* //* Additional children for adding dropdown, links, etc. */}
                             <li>{children}</li>
-                            
+
+                            <LinkList
+                                linksArr={linksArr}
+                                handler={menuToggleHandler}
+                            />
+                            <li>
+                                <Dropdown>
+                                    <Dropdown.Btn>
+                                        <span>Discover</span>
+                                        {chevronBottomIcon}
+                                    </Dropdown.Btn>
+                                    <Dropdown.Menu>
+                                        <LinkList
+                                            linksArr={dropdownLinks}
+                                            handler={menuToggleHandler}
+                                        />
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </li>
+
                             {session?.user?.name ? (
                                 <li className="inline-btn">
                                     <Link
                                         href={ROUTES.private.dashboard}
                                         className="navlink"
                                         scroll={false}
+                                        onClick={menuToggleHandler}
                                     >
                                         {doorEnterIcon}
                                         <span>{session?.user?.name}</span>
@@ -74,6 +94,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                             href={ROUTES.public.register}
                                             className="navlink"
                                             scroll={false}
+                                            onClick={menuToggleHandler}
                                         >
                                             {userAddIcon}
                                             <span>Register</span>
@@ -84,6 +105,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                             href={ROUTES.public.signin}
                                             className="navlink"
                                             scroll={false}
+                                            onClick={menuToggleHandler}
                                         >
                                             {doorEnterIcon}
                                             <span>Sign in</span>

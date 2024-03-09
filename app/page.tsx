@@ -3,10 +3,7 @@
 // * Libs - Types - Hooks - UI - Component - Modules - Data
 import React, { lazy, useEffect } from "react";
 
-import Dropdown from "@/ui/Dropdown";
-import LinkList from "@/components/LinkList";
-
-import Header, { headerLinks, dropdownLinks, langSelectOptions } from "@/modules/layout/Header";
+import Header, { headerLinks, langSelectOptions } from "@/modules/layout/Header";
 import Footer, { footerInfoLinks, footerDiscoverLinks } from "@/modules/layout/Footer";
 import SectionLayout from "@/modules/layout/SectionLayout";
 import Promo, { promoTitle } from "@/modules/Main/Promo";
@@ -21,7 +18,6 @@ import { mainAssetItemArr } from "@/components/items/MainAssetsItem";
 import { mainRateItemArr } from "@/components/items/MainRateItem";
 import { mainAdvantItemArr } from "@/components/items/AdvantItem";
 import { downloadColumnArr } from "@/components/DownloadColumn";
-import { chevronBottomIcon } from "@/data/pages/ui-icons";
 import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
 import { androidRegex, iOSRegex, windowsRegex } from "@/data/constants/regex";
 import { getDeviceData, sendExtendedLog } from "@/utils/logger";
@@ -48,17 +44,7 @@ export default function Home() {
                     <Header
                         linksArr={headerLinks}
                         langOptionsArr={langSelectOptions}
-                    >
-                        <Dropdown>
-                            <Dropdown.Btn>
-                                <span>Discover</span>
-                                {chevronBottomIcon}
-                            </Dropdown.Btn>
-                            <Dropdown.Menu>
-                                <LinkList linksArr={dropdownLinks} />
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </Header>
+                    ></Header>
                     <div className="container">
                         <Promo title={promoTitle} />
                     </div>

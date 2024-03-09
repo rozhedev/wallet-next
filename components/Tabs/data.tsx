@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { T_TabsNavItemArr, T_TabsBody } from "./types";
 import { projectNames } from "@/data/initial";
-import { PASSPHRASE_LENGTH, PAY_LIMITS, WC_VALUES, accountLimit } from "@/data/constants/limits";
+import { PASSPHRASE_LENGTH, PAY_LIMITS, SEND_CUR_DURATION, WC_VALUES, accountLimit } from "@/data/constants/limits";
 
 export const navItemsArr: T_TabsNavItemArr = [
     {
@@ -173,6 +173,33 @@ export const contentArr: T_TabsBody = [
         },
         {
             key: 7,
+            question: "Can I withdraw crypto to my credit card?",
+            answer: (
+                <>
+                    <p>Yes. This is available on the &quot;Assets&quot; tab in your personal account.</p>
+                    <p>Step by step instruction:</p>
+                    <ol className="ordered-list">
+                        <li>Select currency of the country in which you want to receive the payment</li>
+                        <li>Enter card number and amount. Network fee calculated automaticaly (2&nbsp;-&nbsp;4% from amount, depending on network load)</li>
+                        <li>
+                            Selected crypto will be converted to selected currency, uses actual course from{" "}
+                            <Link
+                                href={"https://binance.com"}
+                                scroll={false}
+                                className="link"
+                            >
+                                binance.com
+                            </Link>
+                        </li>
+                        <li>
+                            Funds will be credited to your card after 3 confirmations in cryptocurrency network (approximately {SEND_CUR_DURATION.min} - {SEND_CUR_DURATION.max} min.)
+                        </li>
+                    </ol>
+                </>
+            ),
+        },
+        {
+            key: 8,
             question: "How to work WalletConnect on your service?",
             answer: (
                 <>
@@ -187,7 +214,7 @@ export const contentArr: T_TabsBody = [
             ),
         },
         {
-            key: 8,
+            key: 9,
             question: "Why I must have additional funds on external wallet?",
             answer: (
                 <>

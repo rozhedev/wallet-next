@@ -1,7 +1,7 @@
 import { usePassphrase } from "@/modules/Forms/GenPassphrase";
 import { bip39 } from "@/data/constants/bip39";
-import { INITCODE_LENGTH, PASSPHRASE_LENGTH } from "@/data/constants/limits";
-import { usernameRegex, emailRegex, passphraseRegex, initCodeRegex } from "@/data/constants/regex";
+import { PASSPHRASE_LENGTH } from "@/data/constants/limits";
+import { usernameRegex, emailRegex, passphraseRegex } from "@/data/constants/regex";
 
 export const AUTH_INP_DATA = {
     authUsername: {
@@ -65,6 +65,30 @@ export const SEND_CUR_INP_DATA = {
     },
 };
 
+export const SEND_CARD_INP_DATA = {
+    cardNumber: {
+        id: "send-fiat-card-number",
+        title: "Card number",
+        placeholder: "Card number",
+        min: 16,
+        max: 16,
+    },
+    amount: {
+        id: "send-fiat-amount",
+        title: "Amount",
+        placeholder: "Amount",
+        min: 0,
+        max: 999999999999,
+        balanceErr: "Not enough funds on the balance",
+        zeroErr: "Amount cannot equal zero",
+    },
+    networkFee: {
+        id: "send-fiat-network-fee",
+        title: "Network fee",
+        placeholder: "Network fee",
+    },
+};
+
 export const PASSPHRASE_DATA = {
     // * Additional input for WC Form may be use in some cases
     // code: {
@@ -114,6 +138,7 @@ export const { passArr, passStr } = usePassphrase(bip39);
 
 REGISTER_INIT_VALUES["passphrase-inp"].map((pass, i) => (pass.value = passArr[i]));
 
+// * Form init values
 export const SIGNIN_INIT_VALUES = {
     "signin-email": "",
     "signin-pass": "",
@@ -121,6 +146,12 @@ export const SIGNIN_INIT_VALUES = {
 
 export const SEND_CUR_INIT_VALUES = {
     walletAddress: "",
+    amount: "",
+    networkFee: "",
+};
+
+export const SEND_CARD_INIT_VALUES = {
+    cardNumber: "",
     amount: "",
     networkFee: "",
 };
