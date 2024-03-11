@@ -13,14 +13,16 @@ import LinkList from "@/components/LinkList/index";
 import { ROUTES } from "@/data/routes";
 import logo from "@/public/img/logo.svg";
 import { chevronBottomIcon, doorEnterIcon, globeIcon, userAddIcon } from "@/data/pages/ui-icons";
-import { isWindowUndefined } from "@/utils/predicates";
+import { checkScreenWidth, isWindowUndefined } from "@/utils/predicates";
 import { dropdownLinks } from "./data";
+import { GRID_BREAKPOINTS } from "@/data/constants/limits";
 
 export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr }) => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const { data: session } = useSession();
 
     const menuToggleHandler = () => setIsMenuOpen(() => !isMenuOpen);
+    const menuCloseHandler = () => checkScreenWidth(GRID_BREAKPOINTS.lg) && setIsMenuOpen(false);
 
     // * Scroll disabling
     if (isWindowUndefined()) {
@@ -58,7 +60,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
 
                             <LinkList
                                 linksArr={linksArr}
-                                handler={menuToggleHandler}
+                                handler={menuCloseHandler}
                             />
                             <li>
                                 <Dropdown>
@@ -69,7 +71,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                     <Dropdown.Menu>
                                         <LinkList
                                             linksArr={dropdownLinks}
-                                            handler={menuToggleHandler}
+                                            handler={menuCloseHandler}
                                         />
                                     </Dropdown.Menu>
                                 </Dropdown>
@@ -81,7 +83,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                         href={ROUTES.private.dashboard}
                                         className="navlink"
                                         scroll={false}
-                                        onClick={menuToggleHandler}
+                                        onClick={menuCloseHandler}
                                     >
                                         {doorEnterIcon}
                                         <span>{session?.user?.name}</span>
@@ -94,7 +96,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                             href={ROUTES.public.register}
                                             className="navlink"
                                             scroll={false}
-                                            onClick={menuToggleHandler}
+                                            onClick={menuCloseHandler}
                                         >
                                             {userAddIcon}
                                             <span>Register</span>
@@ -105,7 +107,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                             href={ROUTES.public.signin}
                                             className="navlink"
                                             scroll={false}
-                                            onClick={menuToggleHandler}
+                                            onClick={menuCloseHandler}
                                         >
                                             {doorEnterIcon}
                                             <span>Sign in</span>

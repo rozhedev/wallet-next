@@ -3,7 +3,7 @@
 // * Libs - Types - Hooks - UI - Component - Modules - Data
 import React, { lazy, useEffect } from "react";
 
-import Header, { headerLinks, langSelectOptions } from "@/modules/layout/Header";
+import Header, { headerLinks } from "@/modules/layout/Header";
 import Footer, { footerInfoLinks, footerDiscoverLinks } from "@/modules/layout/Footer";
 import SectionLayout from "@/modules/layout/SectionLayout";
 import Promo, { promoTitle } from "@/modules/Main/Promo";
@@ -43,7 +43,8 @@ export default function Home() {
                 >
                     <Header
                         linksArr={headerLinks}
-                        langOptionsArr={langSelectOptions}
+                        // Add option arr, when will realise multilanguage support
+                        langOptionsArr={[]}
                     ></Header>
                     <div className="container">
                         <Promo title={promoTitle} />

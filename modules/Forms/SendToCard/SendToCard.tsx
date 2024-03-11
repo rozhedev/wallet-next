@@ -112,9 +112,9 @@ export const SendToCard: FC<TSendToCardProps> = ({ modalId, formId, pureAmount, 
                                 placeholder={SEND_CARD_INP_DATA.cardNumber.placeholder}
                                 autoComplete="off"
                                 required
-                                minLength={SEND_CARD_INP_DATA.cardNumber.min}
                                 step={1}
-                                maxLength={SEND_CARD_INP_DATA.cardNumber.max}
+                                min={SEND_CARD_INP_DATA.cardNumber.min}
+                                max={SEND_CARD_INP_DATA.cardNumber.max}
                                 value={formData.cardNumber}
                                 onChange={(e) => {
                                     setFormData({ ...formData, cardNumber: e.target.value });

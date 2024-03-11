@@ -1,19 +1,22 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import type { TCopyBtnProps } from "./types";
+import { useCopyToClipboard } from "./useCopyToClipboard";
 import { copyToClipboardIcon, copyToClipboardSuccessIcon } from "@/data/pages/ui-icons";
 
 export const CopyBtn: FC<TCopyBtnProps> = ({ className, beforeClickLabel, afterClickLabel, value }) => {
-    const [isCopied, setIsCopied] = useState<boolean>(false);
+    const [copiedText, copy] = useCopyToClipboard();
+
     return (
         <button
             type="button"
             className={className}
             onClick={() => {
-                navigator.clipboard.writeText(value);
-                setIsCopied(true);
+                copy(value).catch((error) => {
+                    console.error("Failed to copy!", error);
+                });
             }}
         >
-            {isCopied ? (
+            {copiedText ? (
                 <>
                     {copyToClipboardSuccessIcon}
                     <span>{afterClickLabel}</span>

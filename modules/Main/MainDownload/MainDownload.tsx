@@ -5,7 +5,7 @@ import FsLightbox from "fslightbox-react";
 import type { TMainDownloadProps } from "./types";
 import DownloadColumn, { type TDownloadColumnItem } from "@/components/DownloadColumn";
 
-import desctopPhoneMockup from "@/public/img/photos/mockups/desktop_and_phone_apps.webp";
+import desktopPhoneMockup from "@/public/img/photos/mockups/desktop_and_phone_apps.png";
 import { walletIcon } from "@/data/pages/web3-icons";
 
 export const MainDownload: FC<TMainDownloadProps> = ({ dataArr }) => {
@@ -22,7 +22,7 @@ export const MainDownload: FC<TMainDownloadProps> = ({ dataArr }) => {
                 onClick={() => setIsImgOpen(!isImgOpen)}
             >
                 <Image
-                    src={desctopPhoneMockup}
+                    src={desktopPhoneMockup}
                     alt="desktop_and_phone_apps"
                     priority={true}
                 />
@@ -31,7 +31,7 @@ export const MainDownload: FC<TMainDownloadProps> = ({ dataArr }) => {
                     type="image"
                     sources={[
                         <Image
-                            src={desctopPhoneMockup}
+                            src={desktopPhoneMockup}
                             alt="desktop_and_phone_apps"
                         />,
                     ]}

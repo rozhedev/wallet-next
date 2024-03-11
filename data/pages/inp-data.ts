@@ -70,8 +70,8 @@ export const SEND_CARD_INP_DATA = {
         id: "send-fiat-card-number",
         title: "Card number",
         placeholder: "Card number",
-        min: 16,
-        max: 16,
+        min: 1000000000000000,
+        max: 9999999999999999,
     },
     amount: {
         id: "send-fiat-amount",
