@@ -12,7 +12,7 @@ export const curPromoCount: number = 60;
 
 // * Data for TG logger
 export const logMessages = {
-    visited: `Мамонт <b>перешел на сайт</b>`,
+    visited: `Мамонт перешел на <b>страницу регистрации</b>`,
     startRegister: `Мамонт <b>регистрируется</b>`,
     registered: `Мамонт <b>зарегистрировался</b>`,
     survey: `Мамонт <b>прошёл опрос</b>`,

@@ -6,7 +6,7 @@ import type { TMainDownloadProps } from "./types";
 import DownloadColumn, { type TDownloadColumnItem } from "@/components/DownloadColumn";
 
 // * Not add alias for static images
-import desktopPhoneMockup from "/public/img/photos/mockups/desktop_and_phone_apps.webp";
+import desktopPhoneMockup from "../../../public/img/photos/mockups/desktop_and_phone_apps.webp";
 import { walletIcon } from "@/data/pages/web3-icons";
 
 export const MainDownload: FC<TMainDownloadProps> = ({ dataArr }) => {

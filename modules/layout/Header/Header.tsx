@@ -11,7 +11,7 @@ import Dropdown from "@/ui/Dropdown";
 import LinkList from "@/components/LinkList/index";
 
 import { ROUTES } from "@/data/routes";
-import logo from "@/public/img/logo.svg";
+import logo from "../../../public/img/logo.svg";
 import { chevronBottomIcon, doorEnterIcon, globeIcon, userAddIcon } from "@/data/pages/ui-icons";
 import { checkScreenWidth, isWindowUndefined } from "@/utils/predicates";
 import { dropdownLinks } from "./data";

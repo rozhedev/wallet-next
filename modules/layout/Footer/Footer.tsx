@@ -7,7 +7,7 @@ import Link from "next/link";
 import type { TFooterProps, TFooterNavColumnProps } from "./types";
 import LinkList from "@/components/LinkList/index";
 
-import logo from "@/public/img/logo.svg";
+import logo from "../../../public/img/logo.svg";
 
 export const Footer = ({ children }: TFooterProps): JSX.Element => {
     return (

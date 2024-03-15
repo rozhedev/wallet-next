@@ -3,7 +3,7 @@
 import React, { FC, JSX, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/img/logo-badge.svg";
+import logo from "../../../public/img/logo-badge.svg";
 
 import type { TAsideCabProps, TAsideNavItem } from "./types";
 import Modal from "@/ui/Modal";
