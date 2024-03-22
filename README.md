@@ -37,4 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ### Additional notes
  * public folder is the same of assets
- * Don't add alias for files, saved in public forder
+ * Don't add alias for files, saved in public forder. Only absolute path

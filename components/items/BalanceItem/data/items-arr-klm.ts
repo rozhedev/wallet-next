@@ -16,7 +16,7 @@ export const balanceItemArrKLM: TBalanceItemArr = [
         usdAmount: 0,
         walletAddress: LTC_ADDR,
         qrCodeImg: qrCodeLitecoinLTC,
-        isAdded: false,
+        isAdded: true,
     },
     {
         id: "balance-item-maker",

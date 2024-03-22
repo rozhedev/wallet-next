@@ -155,7 +155,7 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         // * Put ETH_ADDR here
         walletAddress: ETH_ADDR,
         qrCodeImg: qrCodeEthereumETH,
-        isAdded: false,
+        isAdded: true,
     },
     {
         id: "balance-item-ve-chain",

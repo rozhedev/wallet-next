@@ -145,7 +145,7 @@ export const balanceItemArrABC: TBalanceItemArr = [
         usdAmount: 0,
         walletAddress: TRON_ADDR_TOKEN,
         qrCodeImg: qrCodeTronTRX,
-        isAdded: false,
+        isAdded: true,
     },
     {
         id: "balance-item-cardano",
