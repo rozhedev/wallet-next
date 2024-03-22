@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 
 const path = require("path");
-// const loaderUtils = require('loader-utils')
 
 const nextConfig = {
     sassOptions: {
@@ -14,7 +13,7 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "**",
                 port: "",
-                pathname: "**/img",
+                pathname: "**",
             },
         ],
     },
