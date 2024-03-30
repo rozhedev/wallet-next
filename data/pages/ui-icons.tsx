@@ -259,6 +259,20 @@ const UI_ICONS = {
             <path d="M59.4286 22.8572H22.8572V59.4286H59.4286V22.8572Z" />
         </svg>
     ),
+    creditCard: (
+        <svg
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path d="M7 20.5714L7 43.4286C7 45.9533 8.86548 48 11.1667 48L52.8333 48C55.1345 48 57 45.9533 57 43.4286V20.5714C57 18.0467 55.1345 16 52.8333 16L11.1667 16C8.86548 16 7 18.0467 7 20.5714Z" />
+            <path d="M7 26L57 26" />
+            <path
+                d="M37 40H49"
+                strokeLinecap="round"
+            />
+        </svg>
+    ),
     dayIcon: (
         <svg
             viewBox="0 0 64 64"
@@ -879,6 +893,7 @@ export const {
     closeIcon,
     copyToClipboardSuccessIcon,
     copyToClipboardIcon,
+    creditCard,
     dayIcon,
     desktopIcon,
     diagramColumnsIcon,

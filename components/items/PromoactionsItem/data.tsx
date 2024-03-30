@@ -4,9 +4,9 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
     {
         id: 1,
         title: (
-            <>2 year with Flem Wallet. <br/> Level two for wallet, dApps, and our services.</>
+            <>2 year with Flenn Wallet. <br/> Level two for wallet, dApps, and our services.</>
         ),
-        tags: ["#flemwallet", "#flemtwo", "#leveltwo"],
+        tags: ["#flennwallet", "#flenntwo", "#leveltwo"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "/register",
@@ -16,7 +16,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>Avalanche (AVAX) available now. <br/> Native ecosystem support. Get 0.01 AVAX airdrop.</>
         ),
-        tags: ["#flemwallet", "#avalanche", "#avax"],
+        tags: ["#flennwallet", "#avalanche", "#avax"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",
@@ -26,7 +26,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>Polygon (MATIC) available now. <br/> Native ecosystem support. Get 5 MATIC airdrop.</>
         ),
-        tags: ["#flemwallet", "#polygon", "#matic"],
+        tags: ["#flennwallet", "#polygon", "#matic"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",
@@ -36,7 +36,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>New version our app. <br/> Optimisation and new features. Added UTXO’s control.</>
         ),
-        tags: ["#flemwallet", "#update", "#utxo"],
+        tags: ["#flennwallet", "#update", "#utxo"],
         btnLabel: "See changelog",
         isLink: true,
         linkHref: "https://github.com/airgap-it/airgap-wallet",
@@ -46,7 +46,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>Stellar (XLM) available now. <br/> Native ecosystem support. Get 100 XLM airdrop.</>
         ),
-        tags: ["#flemwallet", "#stellar", "#xlm"],
+        tags: ["#flennwallet", "#stellar", "#xlm"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",
@@ -56,7 +56,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>Chainlink (LINK) available now. <br/> Native ecosystem support. Get 50 LINK airdrop.</>
         ),
-        tags: ["#flemwallet", "#chainlink", "#link"],
+        tags: ["#flennwallet", "#chainlink", "#link"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",
@@ -66,7 +66,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>Update cryptocurrency API for the faster access to actual course.</>
         ),
-        tags: ["#flemwallet", "#update", "#API"],
+        tags: ["#flennwallet", "#update", "#API"],
         btnLabel: "See changelog",
         isLink: true,
         linkHref: "https://github.com/airgap-it/airgap-wallet",
@@ -76,7 +76,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>Polkadot (DOT) available now. <br/> Native ecosystem support. Get 10 DOT airdrop.</>
         ),
-        tags: ["#flemwallet", "#polkadot", "#dot"],
+        tags: ["#flennwallet", "#polkadot", "#dot"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",
@@ -86,7 +86,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>Algorand (ALGO) available now. <br/> Native ecosystem support. Get 200 ALGO airdrop.</>
         ),
-        tags: ["#flemwallet", "#algorand", "#algo"],
+        tags: ["#flennwallet", "#algorand", "#algo"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",
@@ -94,9 +94,9 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
     {
         id: 10,
         title: (
-            <>1 year with Flem Wallet. We <br/> continue to add new currencies and functionality.</>
+            <>1 year with Flenn Wallet. We <br/> continue to add new currencies and functionality.</>
         ),
-        tags: ["#flem", "#flemwallet", "#levelone"],
+        tags: ["#flenn", "#flennwallet", "#levelone"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",
@@ -106,7 +106,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>Terra (LUNA) available now. <br/> Native ecosystem support. Get 100 LUNA airdrop.</>
         ),
-        tags: ["#flem", "#terra", "#luna"],
+        tags: ["#flenn", "#terra", "#luna"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",
@@ -116,7 +116,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>NEO (NEO) available now. <br/> Native ecosystem support. Get 2 NEO airdrop</>
         ),
-        tags: ["#flemwallet", "#neo-ecosystem", "#neo"],
+        tags: ["#flennwallet", "#neo-ecosystem", "#neo"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",
@@ -126,7 +126,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>Compound Coin (COMP) available now. Native ecosystem support. Get 0.5 COMP airdrop.</>
         ),
-        tags: ["#flemwallet", "#compoundcoin", "#comp"],
+        tags: ["#flennwallet", "#compoundcoin", "#comp"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",
@@ -136,7 +136,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>Tezos (XTZ) available now. <br/> Native ecosystem support. Get 15 XTZ airdrop.</>
         ),
-        tags: ["#flemwallet", "#tezos", "#xtz"],
+        tags: ["#flennwallet", "#tezos", "#xtz"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",
@@ -146,7 +146,7 @@ export const promoactionsItemArr: TPromoactionsItemArr = [
         title: (
             <>Cronos (CRO) available now. <br/> Native ecosystem support. Get 15 CRO airdrop.</>
         ),
-        tags: ["#flemwallet", "#cronos", "#cro"],
+        tags: ["#flennwallet", "#cronos", "#cro"],
         btnLabel: "Get airdrop",
         isLink: false,
         linkHref: "",

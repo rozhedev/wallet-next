@@ -19,7 +19,7 @@ export const mainAdvantItemArr: TMainAdvantItemArr = [
         id: 3,
         svgIcon: tireIcon,
         title: "24/7/365 Live support",
-        descr: "For many, creating wallets, managing crypto and making exchanges is a totally new experience. At Flem Wallet, friendly support is always on hand, via instant live chat directly on our website.",
+        descr: "For many, creating wallets, managing crypto and making exchanges is a totally new experience. At Flenn Wallet, friendly support is always on hand, via instant live chat directly on our website.",
     },
     {
         id: 4,
@@ -31,7 +31,7 @@ export const mainAdvantItemArr: TMainAdvantItemArr = [
         id: 5,
         svgIcon: globeIcon,
         title: "Integrated Web3 support",
-        descr: "Seamlessly access your favourite DApps with Flem Wallet integrated Web3 support without any compromise on security.",
+        descr: "Seamlessly access your favourite DApps with Flenn Wallet integrated Web3 support without any compromise on security.",
     },
     {
         id: 6,

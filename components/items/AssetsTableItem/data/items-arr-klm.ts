@@ -1,76 +1,12 @@
 import { AllCurFullNames } from "@/types/data/currencies";
 import type { TAssetsTableItemArr } from "../types";
-import { kadenaKDA, klaytnKLAY, kuCoinTokenKCS, kusamaKSM, litecoinLTC, makerMKR, moneroXMR } from "@/data/pages/currencies-icons";
+import { litecoinLTC, makerMKR, moneroXMR } from "@/data/pages/currencies-icons";
 
 // * Data
 export const assetTableItemArrKLM: TAssetsTableItemArr = [
     {
-        id: "assets-table-item-kadena",
-        order: 41,
-        curIconPath: kadenaKDA,
-        curName: AllCurFullNames.kadena,
-        curIconAlt: "kadena-KDA",
-        iconPaths: {
-            sendPC: true,
-            receivePC: true,
-            sendPhone: true,
-            receivePhone: true,
-            exchange: true,
-            buy: false,
-            stacking: true,
-        },
-    },
-    {
-        id: "assets-table-item-klaytn",
-        order: 42,
-        curIconPath: klaytnKLAY,
-        curIconAlt: "klaytn-KLAY",
-        curName: AllCurFullNames.klaytn,
-        iconPaths: {
-            sendPC: true,
-            receivePC: true,
-            sendPhone: true,
-            receivePhone: false,
-            exchange: true,
-            buy: true,
-            stacking: true,
-        },
-    },
-    {
-        id: "assets-table-item-ku-coin-token",
-        order: 43,
-        curIconPath: kuCoinTokenKCS,
-        curIconAlt: "ku-coin-token-KCS",
-        curName: AllCurFullNames.kuCoinToken,
-        iconPaths: {
-            sendPC: false,
-            receivePC: true,
-            sendPhone: true,
-            receivePhone: true,
-            exchange: true,
-            buy: true,
-            stacking: true,
-        },
-    },
-    {
-        id: "assets-table-item-kusama",
-        order: 44,
-        curIconPath: kusamaKSM,
-        curIconAlt: "kusama-KSM",
-        curName: AllCurFullNames.kusama,
-        iconPaths: {
-            sendPC: true,
-            receivePC: false,
-            sendPhone: true,
-            receivePhone: true,
-            exchange: true,
-            buy: true,
-            stacking: true,
-        },
-    },
-    {
         id: "assets-table-item-litecoin",
-        order: 45,
+        order: 34,
         curIconPath: litecoinLTC,
         curIconAlt: "litecoin-LTC",
         curName: AllCurFullNames.litecoin,
@@ -86,7 +22,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-maker",
-        order: 46,
+        order: 35,
         curIconPath: makerMKR,
         curIconAlt: "maker-MKR",
         curName: AllCurFullNames.maker,
@@ -102,7 +38,7 @@ export const assetTableItemArrKLM: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-monero",
-        order: 47,
+        order: 36,
         curIconPath: moneroXMR,
         curIconAlt: "monero-XMR",
         curName: AllCurFullNames.monero,

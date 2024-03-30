@@ -2,7 +2,7 @@ import { HTMLInputTypeAttribute } from "react";
 import { type TAllCurNotesScope } from "./currencies";
 import { type T_ToggleModifClassNames } from "@/ui/Toggle/types";
 
-export type TRefLink = `https://domain.com/${string}`;
+export type TRefLink = `https://flennovation.pro/${string}`;
 
 type TIconPathFolders = "countries" | "interface" | "web3";
 

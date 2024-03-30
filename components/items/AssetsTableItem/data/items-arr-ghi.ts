@@ -1,12 +1,12 @@
 import { AllCurFullNames } from "@/types/data/currencies";
 import type { TAssetsTableItemArr } from "../types";
-import { galaGALA, harmonyONE, hederaHBAR, heliumHNT, holoHOT, internetComputerICP, iotaMIOTA } from "@/data/pages/currencies-icons";
+import { galaGALA, hederaHBAR, holoHOT, iotaMIOTA } from "@/data/pages/currencies-icons";
 
 // * Data
 export const assetTableItemArrGHI: TAssetsTableItemArr = [
     {
         id: "assets-table-item-gala",
-        order: 34,
+        order: 30,
         curIconPath: galaGALA,
         curIconAlt: "gala-GALA",
         curName: AllCurFullNames.gala,
@@ -21,24 +21,8 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         },
     },
     {
-        id: "assets-table-item-harmony",
-        order: 35,
-        curIconPath: harmonyONE,
-        curIconAlt: "harmony-ONE",
-        curName: AllCurFullNames.harmony,
-        iconPaths: {
-            sendPC: true,
-            receivePC: true,
-            sendPhone: true,
-            receivePhone: false,
-            exchange: true,
-            buy: true,
-            stacking: true,
-        },
-    },
-    {
         id: "assets-table-item-hedera",
-        order: 36,
+        order: 31,
         curIconPath: hederaHBAR,
         curIconAlt: "hedera-HBAR",
         curName: AllCurFullNames.hedera,
@@ -53,24 +37,8 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         },
     },
     {
-        id: "assets-table-item-helium",
-        order: 37,
-        curIconPath: heliumHNT,
-        curIconAlt: "helium-HNT",
-        curName: AllCurFullNames.helium,
-        iconPaths: {
-            sendPC: true,
-            receivePC: false,
-            sendPhone: true,
-            receivePhone: true,
-            exchange: false,
-            buy: true,
-            stacking: true,
-        },
-    },
-    {
         id: "assets-table-item-holo",
-        order: 38,
+        order: 32,
         curIconPath: holoHOT,
         curIconAlt: "holo-HOT",
         curName: AllCurFullNames.holo,
@@ -85,24 +53,8 @@ export const assetTableItemArrGHI: TAssetsTableItemArr = [
         },
     },
     {
-        id: "assets-table-item-internet-computer",
-        order: 39,
-        curIconPath: internetComputerICP,
-        curIconAlt: "internet-computer-ICP",
-        curName: AllCurFullNames.internetComputer,
-        iconPaths: {
-            sendPC: true,
-            receivePC: true,
-            sendPhone: true,
-            receivePhone: false,
-            exchange: true,
-            buy: true,
-            stacking: true,
-        },
-    },
-    {
         id: "assets-table-item-iota",
-        order: 40,
+        order: 33,
         curIconPath: iotaMIOTA,
         curIconAlt: "iota-MIOTA",
         curName: AllCurFullNames.iota,

@@ -6,7 +6,7 @@ import { wavesWAVES, wrappedBitcoinWBTC, xrpXRP, zcashZEC } from "@/data/pages/c
 export const assetTableItemArrWXZ: TAssetsTableItemArr = [
     {
         id: "assets-table-item-waves",
-        order: 71,
+        order: 58,
         curIconPath: wavesWAVES,
         curIconAlt: "waves-WAVES",
         curName: AllCurFullNames.waves,
@@ -22,7 +22,7 @@ export const assetTableItemArrWXZ: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-wrapped-bitcoin",
-        order: 72,
+        order: 59,
         curIconPath: wrappedBitcoinWBTC,
         curIconAlt: "wrapped-bitcoin-WBTC",
         curName: AllCurFullNames.wrappedBitcoin,
@@ -38,9 +38,9 @@ export const assetTableItemArrWXZ: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-xrp",
-        order: 73,
+        order: 60,
         curIconPath: xrpXRP,
-        curIconAlt: "xrp-XRP",
+        curIconAlt: "ripple-XRP",
         curName: AllCurFullNames.xrp,
         iconPaths: {
             sendPC: true,
@@ -54,7 +54,7 @@ export const assetTableItemArrWXZ: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-zcash",
-        order: 74,
+        order: 61,
         curIconPath: zcashZEC,
         curIconAlt: "zcash-ZEC",
         curName: AllCurFullNames.zcash,

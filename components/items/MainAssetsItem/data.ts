@@ -92,7 +92,7 @@ export const mainAssetItemArr: TMainAssetsItemArr = [
         id: "xrp-tooltip",
         disabled: false,
         imgPath: xrpXRP,
-        imgAlt: "xrp-XRP",
+        imgAlt: "ripple-XRP",
         title: AllCurFullNames.xrp,
     },
     {

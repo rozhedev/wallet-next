@@ -54,6 +54,7 @@
 }
 
 .signin-page {
+    min-height: 100vh;
     background: url("../../img/photos/bg/signin.svg") center / cover no-repeat;
     .form-step {
         display: flex;

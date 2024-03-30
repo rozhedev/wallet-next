@@ -20,7 +20,7 @@ import {
 export const assetTableItemArrTUV: TAssetsTableItemArr = [
     {
         id: "assets-table-item-terra",
-        order: 58,
+        order: 45,
         curIconPath: terraLUNA,
         curIconAlt: "terra-LUNA",
         curName: AllCurFullNames.terra,
@@ -36,7 +36,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-tether",
-        order: 59,
+        order: 46,
         curIconPath: tetherUSDT,
         curIconAlt: "tether-USDT",
         curName: AllCurFullNames.tether,
@@ -52,7 +52,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-tezos",
-        order: 60,
+        order: 47,
         curIconPath: tezosXTZ,
         curIconAlt: "tezos-XTZ",
         curName: AllCurFullNames.tezos,
@@ -68,7 +68,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-the-graph",
-        order: 61,
+        order: 48,
         curIconPath: theGraphGRT,
         curIconAlt: "the-graph-GRT",
         curName: AllCurFullNames.theGraph,
@@ -84,7 +84,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-the-sandbox",
-        order: 62,
+        order: 49,
         curIconPath: sandboxSAND,
         curIconAlt: "the-sandbox-SAND",
         curName: AllCurFullNames.theSandbox,
@@ -100,7 +100,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-theta-network",
-        order: 63,
+        order: 50,
         curIconPath: thetaTHETA,
         curIconAlt: "theta-network-THETA",
         curName: AllCurFullNames.thetaNetwork,
@@ -116,7 +116,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-thor-chain",
-        order: 64,
+        order: 51,
         curIconPath: thorChainRUNE,
         curIconAlt: "thor-chain-RUNE",
         curName: AllCurFullNames.thorChain,
@@ -132,7 +132,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-tron",
-        order: 65,
+        order: 52,
         curIconPath: tronTRX,
         curIconAlt: "tron-TRX",
         curName: AllCurFullNames.tron,
@@ -148,7 +148,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-uma",
-        order: 66,
+        order: 53,
         curIconPath: umaUMA,
         curIconAlt: "uma-UMA",
         curName: AllCurFullNames.uma,
@@ -164,7 +164,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-uniswap",
-        order: 67,
+        order: 54,
         curIconPath: uniswapUNI,
         curIconAlt: "uniswap-UNI",
         curName: AllCurFullNames.uniswap,
@@ -180,7 +180,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-unus-sed-leo",
-        order: 68,
+        order: 55,
         curIconPath: unusSedLeoLEO,
         curIconAlt: "unus-sed-leo-LEO",
         curName: AllCurFullNames.unusSedLeo,
@@ -196,7 +196,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-usd-coin",
-        order: 69,
+        order: 56,
         curIconPath: usdCoinUSDC,
         curIconAlt: "usd-coin-USDC",
         curName: AllCurFullNames.usdCoin,
@@ -212,7 +212,7 @@ export const assetTableItemArrTUV: TAssetsTableItemArr = [
     },
     {
         id: "assets-table-item-ve-chain",
-        order: 70,
+        order: 57,
         curIconPath: veChainVET,
         curIconAlt: "ve-chain-VET",
         curName: AllCurFullNames.veChain,

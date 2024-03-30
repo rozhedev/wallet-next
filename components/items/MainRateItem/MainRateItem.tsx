@@ -5,7 +5,6 @@ import type { TApiLinkMask, TMainRateItem } from "./types";
 import { AllCurShortNames, TAllCurNotesScope } from "@/types/data/currencies";
 import Image from "next/image";
 import { getCurRatePromise } from "@/utils/get-cur-rate-promise";
-import RateSkeleton from "@/components/RateSkeleton";
 import { arrowTopRightIcon } from "@/data/pages/ui-icons";
 
 export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurShortNames, TApiLinkMask>> = ({ id, title, imgPath, imgAlt, apiLink }) => {
@@ -53,17 +52,12 @@ export const MainRateItem: FC<TMainRateItem<TAllCurNotesScope, AllCurShortNames,
                         <div className="main-rate-item__dir-icon">{arrowTopRightIcon}</div>
                     </>
                 ) : (
-                    <RateSkeleton
-                        uniqueKey={id}
-                        speed={1.5}
-                        width={160}
-                        height={32}
-                        bgColor={"transparent"}
-                        foregroundColor={"#f5f5f5"}
-                        rectWidth={160}
-                        rectHeight={32}
-                        borderRadius={8}
-                    />
+                    <span
+                        className="output"
+                        style={{ fontSize: "1.4rem", color: "#676767" }}
+                    >
+                        Loading...
+                    </span>
                 )}
             </div>
         </div>

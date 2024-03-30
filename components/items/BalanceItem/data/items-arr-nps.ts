@@ -1,8 +1,9 @@
 import { AllCurFullNames } from "@/types/data/currencies";
 import type { TBalanceItemArr } from "../types";
-import { nearNEAR, neoNEO, nexoNEXO, polkadotDOT, polygonMATIC, secretSCRT, shibainuSHIB, solanaSOL, stacksSTX, stellarXLM } from "@/data/pages/currencies-icons";
+import { nearNEAR, neoNEO, nexoNEXO, polkadotDOT, polygonMATIC, shibainuSHIB, solanaSOL, stellarXLM } from "@/data/pages/currencies-icons";
 
-import { qrCodeBitcoinBTC } from "./icons";
+import { DOT_ADDR, ETH_ADDR_TOKEN, NEAR_ADDR, NEO_ADDR, SOL_ADDR, XLM_ADDR } from "@/data/api/env";
+import { qrCodeEthereumETH, qrCodeNearNEAR, qrCodeNeoNEO, qrCodePolkadotDOT, qrCodeSolanaSOL, qrCodeStellarXLM } from "./icons";
 
 // * Data
 export const balanceItemArrNPS: TBalanceItemArr = [
@@ -13,8 +14,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.nearProtocol,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: NEAR_ADDR,
+        qrCodeImg: qrCodeNearNEAR,
         isAdded: false,
     },
     {
@@ -24,8 +25,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.neo,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: NEO_ADDR,
+        qrCodeImg: qrCodeNeoNEO,
         isAdded: false,
     },
     {
@@ -35,8 +36,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.nexo,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ETH_ADDR_TOKEN,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -46,8 +47,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.polkadot,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: DOT_ADDR,
+        qrCodeImg: qrCodePolkadotDOT,
         isAdded: false,
     },
     {
@@ -57,19 +58,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.polygon,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
-        isAdded: false,
-    },
-    {
-        id: "balance-item-secret",
-        curIconPath: secretSCRT,
-        curIconAlt: "secret-SCRT",
-        curName: AllCurFullNames.secret,
-        pureAmount: 0,
-        usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ETH_ADDR_TOKEN,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -79,8 +69,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.shibainu,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ETH_ADDR_TOKEN,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -90,19 +80,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.solana,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
-        isAdded: false,
-    },
-    {
-        id: "balance-item-stacks",
-        curIconPath: stacksSTX,
-        curIconAlt: "stacks-STX",
-        curName: AllCurFullNames.stacks,
-        pureAmount: 0,
-        usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: SOL_ADDR,
+        qrCodeImg: qrCodeSolanaSOL,
         isAdded: false,
     },
     {
@@ -112,8 +91,8 @@ export const balanceItemArrNPS: TBalanceItemArr = [
         curName: AllCurFullNames.stellar,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: XLM_ADDR,
+        qrCodeImg: qrCodeStellarXLM,
         isAdded: false,
     },
 ];

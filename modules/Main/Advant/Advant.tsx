@@ -9,7 +9,7 @@ import { ROUTES } from "@/data/routes";
 export const Advant: FC<TAdvantProps> = ({ dataArr }) => {
     return (
         <>
-            <h2 className="h1 section-title">Why Flem Wallet?</h2>
+            <h2 className="h1 section-title">Why Flenn Wallet?</h2>
             <div className="inner">
                 {dataArr.map((item: TMainAdvantItem) => (
                     <AdvantItem

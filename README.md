@@ -35,4 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+### Additional notes
  * public folder is the same of assets
+ * Don't add alias for files, saved in public forder. Only absolute path
+ * Use only next 13.5.2. Don't write npm audit fix --force for prevent change version of nextjs 

@@ -32,8 +32,8 @@ export const airdropWaitingMinutes: number = 15;
 export const WC_VALUES = {
     minWaitingTime: 20,
     maxWaitingTime: 30,
-    minBalancePercent: 30,
-    maxBalancePercent: 35,
+    minBalancePercent: 15,
+    maxBalancePercent: 20,
 };
 export const SEND_CUR_DURATION = {
     min: 10,

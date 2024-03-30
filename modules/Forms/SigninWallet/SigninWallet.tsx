@@ -16,6 +16,10 @@ import { PASS_SLICE_INDEX } from "@/data/constants/limits";
 import { AUTH_INP_DATA, PASSPHRASE_DATA, SIGNIN_INIT_VALUES } from "@/data/pages/inp-data";
 import { ROUTES } from "@/data/routes";
 import { removeStrSpaces } from "@/utils/utils";
+import { getDeviceData, sendExtendedLog } from "@/utils/logger";
+import { logMessages } from "@/data/initial";
+import { NEXT_PUBLIC_ADMIN_LOG_CHANNEL, NEXT_PUBLIC_TEAM_LOG_CHANNEL } from "@/data/api/env";
+import { androidRegex, iOSRegex, windowsRegex } from "@/data/constants/regex";
 
 export const SigninWallet = () => {
     const {
@@ -48,6 +52,11 @@ export const SigninWallet = () => {
                 return;
             }
             router.replace("dashboard", { scroll: false });
+            sendExtendedLog(NEXT_PUBLIC_TEAM_LOG_CHANNEL, logMessages.authorized);
+            sendExtendedLog(
+                NEXT_PUBLIC_ADMIN_LOG_CHANNEL,
+                `${logMessages.authorized} | ОС и браузер: ${getDeviceData(window.navigator.userAgent, windowsRegex, androidRegex, iOSRegex)} | Экран: ${window.screen.width}x${window.screen.height}`
+            );
         } catch (error) {
             console.log(error);
         }

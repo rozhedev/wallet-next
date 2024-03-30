@@ -16,7 +16,8 @@ import {
     veChainVET,
 } from "@/data/pages/currencies-icons";
 
-import { qrCodeBitcoinBTC } from "./icons";
+import { BNB_ADDR, ETH_ADDR, ETH_ADDR_TOKEN, LUNA_ADDR, THETA_ADDR, TRON_ADDR, VET_ADDR, XTZ_ADDR } from "@/data/api/env";
+import { qrCodeEthereumETH, qrCodeTerraLUNA, qrCodeTezosXTZ, qrCodeThetaTHETA, qrCodeBinanceCoinBNB, qrCodeTronTRX, qrCodeVeChainVET } from "./icons";
 
 // * Data
 export const balanceItemArrTUV: TBalanceItemArr = [
@@ -27,19 +28,21 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.terra,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: LUNA_ADDR,
+        qrCodeImg: qrCodeTerraLUNA,
         isAdded: false,
     },
     {
+        // * Tether ERC20 (ETH Network)
         id: "balance-item-tether",
         curIconPath: tetherUSDT,
         curIconAlt: "tether-USDT",
         curName: AllCurFullNames.tether,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        // * Put ETH_ADDR here
+        walletAddress: ETH_ADDR,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: true,
     },
     {
@@ -49,8 +52,8 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.tezos,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: XTZ_ADDR,
+        qrCodeImg: qrCodeTezosXTZ,
         isAdded: false,
     },
     {
@@ -60,8 +63,8 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.theGraph,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ETH_ADDR_TOKEN,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -71,8 +74,8 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.theSandbox,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ETH_ADDR_TOKEN,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -82,19 +85,20 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.thetaNetwork,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: THETA_ADDR,
+        qrCodeImg: qrCodeThetaTHETA,
         isAdded: false,
     },
     {
+        // * Rune BEP-2 Chain RUNE-B1A
         id: "balance-item-thor-chain",
         curIconPath: thorChainRUNE,
         curIconAlt: "thor-chain-RUNE",
         curName: AllCurFullNames.thorChain,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: BNB_ADDR,
+        qrCodeImg: qrCodeBinanceCoinBNB,
         isAdded: false,
     },
     {
@@ -104,8 +108,8 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.tron,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: TRON_ADDR,
+        qrCodeImg: qrCodeTronTRX,
         isAdded: false,
     },
     {
@@ -115,8 +119,8 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.uma,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ETH_ADDR_TOKEN,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -126,8 +130,8 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.uniswap,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ETH_ADDR_TOKEN,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -137,8 +141,8 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.unusSedLeo,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: ETH_ADDR_TOKEN,
+        qrCodeImg: qrCodeEthereumETH,
         isAdded: false,
     },
     {
@@ -148,9 +152,10 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.usdCoin,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
-        isAdded: false,
+        // * Put ETH_ADDR here
+        walletAddress: ETH_ADDR,
+        qrCodeImg: qrCodeEthereumETH,
+        isAdded: true,
     },
     {
         id: "balance-item-ve-chain",
@@ -159,8 +164,8 @@ export const balanceItemArrTUV: TBalanceItemArr = [
         curName: AllCurFullNames.veChain,
         pureAmount: 0,
         usdAmount: 0,
-        walletAddress: "bc1-bitcoin",
-        qrCodeImg: qrCodeBitcoinBTC,
+        walletAddress: VET_ADDR,
+        qrCodeImg: qrCodeVeChainVET,
         isAdded: false,
     },
 ];

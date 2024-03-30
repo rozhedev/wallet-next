@@ -6,19 +6,23 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 
 import type { THeaderProps } from "./types";
-import Select from "@/ui/Select/Select";
+// import Select from "@/ui/Select/Select";
+import Dropdown from "@/ui/Dropdown";
 import LinkList from "@/components/LinkList/index";
 
 import { ROUTES } from "@/data/routes";
-import logo from "@/public/img/logo.svg";
-import { doorEnterIcon, globeIcon, userAddIcon } from "@/data/pages/ui-icons";
-import { isWindowUndefined } from "@/utils/predicates";
+import logo from "../../../public/img/logo.svg";
+import { chevronBottomIcon, doorEnterIcon, globeIcon, userAddIcon } from "@/data/pages/ui-icons";
+import { checkScreenWidth, isWindowUndefined } from "@/utils/predicates";
+import { dropdownLinks } from "./data";
+import { GRID_BREAKPOINTS } from "@/data/constants/limits";
 
 export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr }) => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const { data: session } = useSession();
 
     const menuToggleHandler = () => setIsMenuOpen(() => !isMenuOpen);
+    const menuCloseHandler = () => checkScreenWidth(GRID_BREAKPOINTS.lg) && setIsMenuOpen(false);
 
     // * Scroll disabling
     if (isWindowUndefined()) {
@@ -39,7 +43,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                 >
                     <Image
                         src={logo}
-                        alt="Flem Wallet"
+                        alt="Flenn Wallet"
                     />
                 </Link>
                 <div className="menu">
@@ -51,17 +55,35 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                     </div>
                     <nav className={`menu__body ${isMenuOpen ? "_active" : ""}`}>
                         <ul className="menu__list">
-                            <LinkList linksArr={linksArr} />
-
                             {/* //* Additional children for adding dropdown, links, etc. */}
                             <li>{children}</li>
-                            
+
+                            <LinkList
+                                linksArr={linksArr}
+                                handler={menuCloseHandler}
+                            />
+                            <li>
+                                <Dropdown>
+                                    <Dropdown.Btn>
+                                        <span>Discover</span>
+                                        {chevronBottomIcon}
+                                    </Dropdown.Btn>
+                                    <Dropdown.Menu>
+                                        <LinkList
+                                            linksArr={dropdownLinks}
+                                            handler={menuCloseHandler}
+                                        />
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </li>
+
                             {session?.user?.name ? (
                                 <li className="inline-btn">
                                     <Link
                                         href={ROUTES.private.dashboard}
                                         className="navlink"
                                         scroll={false}
+                                        onClick={menuCloseHandler}
                                     >
                                         {doorEnterIcon}
                                         <span>{session?.user?.name}</span>
@@ -74,6 +96,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                             href={ROUTES.public.register}
                                             className="navlink"
                                             scroll={false}
+                                            onClick={menuCloseHandler}
                                         >
                                             {userAddIcon}
                                             <span>Register</span>
@@ -84,6 +107,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                             href={ROUTES.public.signin}
                                             className="navlink"
                                             scroll={false}
+                                            onClick={menuCloseHandler}
                                         >
                                             {doorEnterIcon}
                                             <span>Sign in</span>
@@ -91,7 +115,8 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                     </li>
                                 </>
                             )}
-                            <li>
+                            {/* //* Uncomment, when create multilang versions */}
+                            {/* <li>
                                 <Select
                                     id="header-select-lang"
                                     className="select select--header"
@@ -99,7 +124,7 @@ export const Header: FC<THeaderProps> = ({ linksArr, children, langOptionsArr })
                                     svgIcon={globeIcon}
                                     options={langOptionsArr}
                                 ></Select>
-                            </li>
+                            </li> */}
                         </ul>
                     </nav>
                 </div>

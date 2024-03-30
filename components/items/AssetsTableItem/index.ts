@@ -1,3 +1,3 @@
 export { AssetsTableItem as default } from "./AssetsTableItem";
 export type { TAssetsTableItem } from "./types";
-export { assetTableItemArr } from "./data/concat-data";
+export { assetTableItemArr, assetTableItemLength } from "./data/concat-data";

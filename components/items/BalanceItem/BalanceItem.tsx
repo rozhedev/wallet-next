@@ -9,10 +9,12 @@ import Dropdown from "@/ui/Dropdown";
 import CopyBtn from "@/components/CopyBtn";
 import SendCur from "@/modules/Forms/SendCur";
 import GetCur from "@/modules/Forms/GetCur";
-import { chevronBottomIcon, exportIcon, importIcon, menuDotsVerticalIcon, trashIcon } from "@/data/pages/ui-icons";
+import SendToCard from "@/modules/Forms/SendToCard";
+import { chevronBottomIcon, creditCard, exportIcon, importIcon, menuDotsVerticalIcon, trashIcon } from "@/data/pages/ui-icons";
 
 export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, curIconAlt, curName, pureAmount, usdAmount, walletAddress, qrCodeImg, isAdded, isAssetsCab, toggleItemHandler }) => {
-    const [isOpenModal, setIsOpenModal] = useState<{ send: boolean; get: boolean }>({
+    const [isOpenModal, setIsOpenModal] = useState<{ sendCard: boolean; send: boolean; get: boolean }>({
+        sendCard: false,
         send: false,
         get: false,
     });
@@ -42,10 +44,10 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                     <li>
                                         <span
                                             className="navlink"
-                                            onClick={() => setIsOpenModal({ ...isOpenModal, send: true })}
+                                            onClick={() => setIsOpenModal({ ...isOpenModal, sendCard: true })}
                                         >
-                                            {exportIcon}
-                                            <span>Send</span>
+                                            {creditCard}
+                                            <span>Send to card</span>
                                         </span>
                                     </li>
                                     <li>
@@ -68,10 +70,10 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                                 <li>
                                                     <span
                                                         className="navlink"
-                                                        onClick={toggleItemHandler}
+                                                        onClick={() => setIsOpenModal({ ...isOpenModal, send: true })}
                                                     >
-                                                        {trashIcon}
-                                                        <span>Remove</span>
+                                                        {exportIcon}
+                                                        <span>Send</span>
                                                     </span>
                                                 </li>
                                                 <li>
@@ -82,12 +84,28 @@ export const BalanceItem: FC<TBalanceItem<TAllCurNotesScope>> = ({ curIconPath, 
                                                         value={walletAddress}
                                                     />
                                                 </li>
+                                                <li>
+                                                    <span
+                                                        className="navlink"
+                                                        onClick={toggleItemHandler}
+                                                    >
+                                                        {trashIcon}
+                                                        <span>Remove</span>
+                                                    </span>
+                                                </li>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </li>
                                 </ul>
                             </nav>
 
+                            <SendToCard
+                                modalId={`modal-send-${curIconAlt}`}
+                                formId={`send-${curIconAlt}-form`}
+                                pureAmount={pureAmount}
+                                isOpen={isOpenModal}
+                                setIsOpenModal={setIsOpenModal}
+                            />
                             <SendCur
                                 modalId={`modal-send-${curIconAlt}`}
                                 formId={`send-${curIconAlt}-form`}

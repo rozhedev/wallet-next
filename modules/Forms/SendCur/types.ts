@@ -1,15 +1,11 @@
-import React from 'react';
+import React from "react";
 import { TAllCurNotesScope } from "@/types/data/currencies";
-
-type TModalStates = {
-    send: boolean;
-    get: boolean;
-};
+import { TBalanceModalStates } from "@/components/items/BalanceItem";
 
 export type TSendCurProps = {
     modalId: `modal-send-${TAllCurNotesScope}`;
     formId: `send-${TAllCurNotesScope}-form`;
     pureAmount: number;
-    isOpen: TModalStates;
-    setIsOpenModal: React.Dispatch<React.SetStateAction<TModalStates>>;
+    isOpen: TBalanceModalStates;
+    setIsOpenModal: React.Dispatch<React.SetStateAction<TBalanceModalStates>>;
 };

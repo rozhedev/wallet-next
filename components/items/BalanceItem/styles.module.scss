@@ -114,9 +114,9 @@
         margin-left: 0;
     }
     &__content {
-        flex-basis: 60%;
+        flex-basis: 45%;
         .navlink {
-            max-width: 30rem;
+            max-width: 27rem;
             @include bp(lg) {
                 max-width: 20rem;
             }
@@ -134,7 +134,7 @@
         justify-content: flex-end;
     }
     .asset-actions {
-        flex-basis: 15%;
+        flex-basis: 30%;
         margin-left: 2rem;
     }
     .asset-actions > ul > li:not(:first-of-type) {
@@ -224,11 +224,6 @@
     }
     &:nth-of-type(n + 5) {
         margin-top: 0.75rem;
-    }
-    @include bp(lg) {
-        &:nth-of-type(n + 4) {
-            margin-top: 0.75rem;
-        }
     }
     @include bp(sm) {
         &:nth-of-type(n + 3) {

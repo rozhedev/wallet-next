@@ -59,7 +59,7 @@ export const mainRateItemArr: TMainRateItemArr = [
     {
         id: "main-xrp-rate",
         imgPath: xrpXRP,
-        imgAlt: "xrp-XRP",
+        imgAlt: "ripple-XRP",
         title: AllCurFullNames.xrp,
         apiLink: WS_RATE_API.xrp,
     },

@@ -29,7 +29,7 @@ export const getCurRatePromise = (apiLink: TApiLinkMask) => {
         };
         ws.onerror = function (e) {
             console.error(e, e.timeStamp);
-            reject("Error. Log in console");
+            reject(e);
         };
     });
 };

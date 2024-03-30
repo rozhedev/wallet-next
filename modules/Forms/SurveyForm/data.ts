@@ -24,7 +24,7 @@ export const surveyFormAttrData: Record<"form1" | "form2" | "form3" | "form4" | 
     },
     form6: {
         id: "survey-form6",
-        question: "How did you find out about Flem Wallet?",
+        question: "How did you find out about Flenn Wallet?",
     },
     form7: {
         id: "survey-form7",
@@ -32,7 +32,7 @@ export const surveyFormAttrData: Record<"form1" | "form2" | "form3" | "form4" | 
     },
     form8: {
         id: "survey-form8",
-        question: "Would you like to participate in the Flem Wallet Preview Program?",
+        question: "Would you like to participate in the Flenn Wallet Preview Program?",
     },
     form9: {
         id: "survey-form9",

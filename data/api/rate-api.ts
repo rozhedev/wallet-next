@@ -58,26 +58,26 @@ export const rateObjInit: TRateObj = {
 export const offlineRate: Required<TRateObj> = {
     [AllCurShortNames.algorand]: 0,
     [AllCurShortNames.avalanche]: 0,
-    [AllCurShortNames.binanceCoin]: 300.9,
-    [AllCurShortNames.bitcoin]: 43063.91,
+    [AllCurShortNames.binanceCoin]: 585.38,
+    [AllCurShortNames.bitcoin]: 66220.45,
     [AllCurShortNames.cardano]: 0,
     // ---
     [AllCurShortNames.chainlink]: 0,
-    [AllCurShortNames.dash]: 27.6,
+    [AllCurShortNames.dash]: 36.57,
     [AllCurShortNames.dogecoin]: 0,
-    [AllCurShortNames.ethereum]: 2304.01,
-    [AllCurShortNames.litecoin]: 68.31,
+    [AllCurShortNames.ethereum]: 3515.72,
+    [AllCurShortNames.litecoin]: 85.24,
     // ---
-    [AllCurShortNames.monero]: 167.95,
+    [AllCurShortNames.monero]: 140.01,
     [AllCurShortNames.polkadot]: 0,
     [AllCurShortNames.polygon]: 0,
-    [AllCurShortNames.solana]: 97.94,
-    [AllCurShortNames.stellar]: 0.1116,
+    [AllCurShortNames.solana]: 179.42,
+    [AllCurShortNames.stellar]: 0.1334,
     // ---
     // * tether always == 1
     [AllCurShortNames.tether]: 1,
     [AllCurShortNames.terra]: 0,
-    [AllCurShortNames.tron]: 0.117,
+    [AllCurShortNames.tron]: 0.1213,
     [AllCurShortNames.xrp]: 0,
 };
 
