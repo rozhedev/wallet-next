@@ -10,20 +10,10 @@ export type TRegisterForm = {
 };
 
 export type TSigninForm = {
-    "signin-email": string
+    "signin-email": string;
     "signin-pass": string;
-}
-
-export type TAnswerCheckboxForm = {
-    form2: {
-        [key: string]: boolean;
-    };
-    form3: {
-        [key: string]: boolean;
-    };
-    form5: {
-        [key: string]: boolean;
-    };
 };
+
+export type TAnswerCheckboxForm = Record<"form2" | "form3" | "form5", { [key: string]: boolean }>;
 
 export type TAnswerRadioForm = Record<"form1" | "form4" | "form6" | "form7" | "form8" | "form9", string | null>;

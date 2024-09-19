@@ -44,27 +44,21 @@ export const Modal = ({ modalId, modalDialogClassName, isOpen, onCloseModal, chi
 };
 
 // * Modal header
-const ModalHeader: FC<TModalHeaderProps> = ({ titleIcon, title }) => {
-    return (
-        <div className="modal-header">
-            {titleIcon}
-            <h4 className="h4">{title}</h4>
-        </div>
-    );
-};
+const ModalHeader: FC<TModalHeaderProps> = ({ titleIcon, title }): JSX.Element => (
+    <div className="modal-header">
+        {titleIcon}
+        <h4 className="h4">{title}</h4>
+    </div>
+);
 
 Modal.Header = ModalHeader;
 
 // * Modal content
-const ModalContent: FC<TModalContentProps> = ({ className, children }) => {
-    return <div className={className}>{children}</div>;
-};
+const ModalContent: FC<TModalContentProps> = ({ className, children }): JSX.Element => <div className={className}>{children}</div>;
 
 Modal.Content = ModalContent;
 
 // * Modal footer
-const ModalFooter: FC<TModalFooterProps> = ({ className, children }) => {
-    return <div className={className}>{children}</div>;
-};
+const ModalFooter: FC<TModalFooterProps> = ({ className, children }): JSX.Element => <div className={className}>{children}</div>;
 
 Modal.Footer = ModalFooter;

@@ -11,6 +11,7 @@ import LinkList from "@/components/LinkList";
 import BalanceItem, { type TBalanceItem, type TBalanceItemArr, balanceItems } from "@/components/items/BalanceItem";
 import DashboardStatItem, { type TDashboardStatItem, dashboardStatItemArr } from "@/components/items/DashboardStatItem";
 import HistoryTableItem, { type THistoryTableItem, historyTableItemArr } from "@/components/items/HistoryTableItem";
+import { DashboardOutputIds } from "@/types/data/shared";
 
 import SectionLayout from "@/modules/layout/SectionLayout";
 import { dashboardLinks } from "@/data/cabinet/dashboard";
@@ -93,7 +94,7 @@ export default function Dashboard() {
                 {/* STAT */}
                 <StyledWrapper className="cabinet-card dashboard-stat">
                     {dashboardStatItemArr.map((item: TDashboardStatItem) => {
-                        if (item.idOutput === "stat-total-balance")
+                        if (item.idOutput === DashboardOutputIds.statTotalBalance)
                             return (
                                 <DashboardStatItem
                                     key={item.id}
@@ -104,7 +105,7 @@ export default function Dashboard() {
                                     value={`${totalBalance}$`}
                                 />
                             );
-                        if (item.idOutput === "stat-added-assets")
+                        if (item.idOutput === DashboardOutputIds.statAddedAssets)
                             return (
                                 <DashboardStatItem
                                     key={item.id}
@@ -115,7 +116,7 @@ export default function Dashboard() {
                                     value={addedItems.length}
                                 />
                             );
-                        if (item.idOutput === "stat-server-date")
+                        if (item.idOutput === DashboardOutputIds.statServerDate)
                             return (
                                 <DashboardStatItem
                                     key={item.id}
@@ -126,7 +127,7 @@ export default function Dashboard() {
                                     value={currentDate}
                                 />
                             );
-                        if (item.idOutput === "stat-server-time")
+                        if (item.idOutput === DashboardOutputIds.statServerTime)
                             return (
                                 <DashboardStatItem
                                     key={item.id}

@@ -4,7 +4,7 @@ import React, { JSX, useContext, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
 import type { TSurveyFormProps } from "./types";
-import { type TAnswerRadioForm, type TAnswerCheckboxForm } from "@/types/data/forms";
+import type { TAnswerRadioForm, TAnswerCheckboxForm } from "@/types/data/forms";
 import { AllCurFullNames } from "@/types/data/currencies";
 
 import Checkbox from "@/ui/Checkbox/Checkbox";
@@ -351,6 +351,6 @@ export const SurveyForm = ({ setIsOpenModal, setIsCompleted }: TSurveyFormProps)
             formAction={ROUTES.private.dashboard}
             btnClassNames={["btn btn-outline-sm", "btn btn-fill-sm"]}
             isSurvey={true}
-        ></Multistep>
+        />
     );
 };

@@ -2,6 +2,13 @@ import { HTMLInputTypeAttribute } from "react";
 import { type TAllCurNotesScope } from "./currencies";
 import { type T_ToggleModifClassNames } from "@/ui/Toggle/types";
 
+export enum DashboardOutputIds {
+    statTotalBalance = "stat-total-balance",
+    statAddedAssets = "stat-added-assets",
+    statServerDate = "stat-server-date",
+    statServerTime = "stat-server-time",
+}
+
 export type TRefLink = `https://flennovation.pro/${string}`;
 
 type TIconPathFolders = "countries" | "interface" | "web3";
